@@ -6,7 +6,7 @@ description: Index page
 
 ## Topics and Assignments 
 
-Other pages: [About the Course](Topics), [Resources](Resources).
+Other pages: [About the Course](topics), [Resources](Resources).
 <!-- [Scores](https://goo.gl/ixNDm6), [Course Repository](https://www.github.com/skeoop/skeoop.github.io/). 
  -->
 
