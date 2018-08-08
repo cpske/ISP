@@ -4,11 +4,9 @@ title: Schedule
 description: Index page
 ---
 
-## Topics and Assignments 
+## Individual Software Process
 
-Other pages: [About the Course](topics), [Resources](Resources).
-<!-- [Scores](https://goo.gl/ixNDm6), [Course Repository](https://www.github.com/skeoop/skeoop.github.io/). 
- -->
+Other pages: [About the Course](Topics), [Resources](Resources).
 
 
 <table border="1">
@@ -23,13 +21,14 @@ Other pages: [About the Course](topics), [Resources](Resources).
   -->
 <tr valign="top">
 <td align="center" markdown="span"> 
-Intro
+[Introduction](intro/)
 </td>
 <td markdown="span">
-Google Classroom: for communication and distribute work.
+[Intro to Course](intro/Introduction-to-Course.pdf)    
+[Recommendations from SKE Entrepreneur](intro/Jomzap-Recommendationa.pdf)    
 </td>
 <td markdown="span">
-Join [Google Classroom](https://classroom.google.com) "Individual Software Process". Use your KU Login and code **xxxxxx**.   
+Join [Google Classroom](https://classroom.google.com) "Individual Software Process". Use your KU Login and code **v2jlhfj** to enroll.   
 </td>
 </tr>
 <!-- 
@@ -47,17 +46,20 @@ Review [how to use Git](git/intro-git) and [Intro to Github](git/intro-github). 
 </td>
 </tr>
 <!-- 
-  Business Modeling
+  Iterative Development
   -->
 <tr valign="top">
 <td align="center" markdown="span"> 
-Business Model    
+Iterative Development
 </td>
 <td markdown="span">
-We might cover this. Helps to understand the components of a software business, and forces involved.
+Iterative Software Development is very common,
+and a lot of what we study applies to this kind of process.
+To get an idea of what "iterative development" is, watch this video.
+Its about Scrum, but many of the concepts apply in general.
 </td>
 <td markdown="span">
-[Business Model Canvas Explained](https://www.youtube.com/watch?v=QoAOzMTLP5s) Youtube into to a tool for business modeling.
+[Scrum in Under 10 Minutes](https://youtu.be/XU0llRltyFM) https://youtu.be/XU0llRltyFM    
 </td>
 </tr>
 

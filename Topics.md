@@ -2,21 +2,28 @@
 
 * What is a software process, and what are its components.
 * All devs have a software process, whether they realize it or not.
-* (Maybe later) Overview of some common software processes.
-* "Agile" is *not* a software process. "Agile" describes values, goals, and some practices incorporated into many software processes.
 * The problems of software development that drive the need for a good software process:
   - complexity
   - change
   - (high) defects and errors
   - lack of predictability or consistency
   - (un)maintainability
-* Jittat's slide: 3 dimensions of "Build the Right Product", "Build the Product Right", "Build it Fast".  This course focuses on skills and habits to help you "Build it Right".
-  - A side-effect (maybe) is you can build *faster* and be more adaptive to change (so you build the right product). 
+
+## Later: Overview of Common Software Processes
+
+* Waterfall: the most misrepresented process.
+* "Agile" is *not* a software process. 
+  - Agile describes values, goals, and some practices incorporated into many software processes (see slide).
+  - Created as reaction to perceived inefficiency of existing processes.
+* "Planned Based" or "Plan Driven" - almost opposite of Agile.
+ 
 
 ## Focus of this Course
 
 * Focus on software process related skills, knowledge, habits, and personal characteristics that will help you as professional dev.
 * Learn how software companies in Thailand develop software, and what skills, knowledge, characteristics their managers find important.
+* Jittat's slide: 3 dimensions of "Build the Right Product", "Build the Product Right", "Build it Fast".  This course focuses on skills and habits to help you "Build it Right".
+  - A side-effect (maybe) is you can build *faster* and be more adaptive to change (so you build the right product).
 
 
 ## Habits and Practices of a Professional Developer
@@ -122,23 +129,7 @@ Important topic, but not sure if I'll include it in this course.
 * In Java you can leave assertions in the final code.  They can be enabled or disabled using the run-time `-ea` flag.  You can even selectively enable assertions for some classes but not others!  
   - If assertions are not enabled, the "assert" statements are skipped so there is no performance penalty.
 
-### 8. Logging
 
-Professional, production code usually has some form of logging.
-You can't just print to the console -- there may not even be a "console".
-
-### 9. Basics of Security
-
-Like logging, this is an important part of real code that student
-programmers tend not to think about.
-
-### 10. Deployment
-
-* How to deploy applications?
-* Creating a portable deployment.
-  - Docker for containers, or VM images.
-* Documenting build, dependences, and deployment.
-* Deploying to the "cloud".
 
 ### 11. Measuring Progress and Quality
 
@@ -146,7 +137,7 @@ programmers tend not to think about.
 * Common software metrics, like LOC, functions, code "units".
 * Classify and count defects.  Design defects, coding defects, test defects.
 
-### Estimation
+### 12. Estimation
 
 * How to estimate: dev time, code size.
 * Jittat's Slides: [intro]( ), Jittat
@@ -179,6 +170,23 @@ Helps to understand the components of a software business, and forces involved.
 
 * [Business Model Canvas Explained](https://www.youtube.com/watch?v=QoAOzMTLP5s) Youtube into to a tool for business modeling.
 
+## Development Skills You Didn't Learn in OOP
+
+1. Logging
+  - Professional, production code usually has some form of logging.
+  - You *cannot* print to the console: there may not be a "console".
+  - Example: info on 100K accounts stolen from KTB, 3K stolen from KBANK (Bangkok Post).  **How did they know what was stolen?** 
+
+2. Basics of Security
+  - Like logging, this is an important part of real code. You need to think about during design and development. Don't "add it later".
+
+3. Deployment
+  - How to package and deploy applications?
+  - Creating a portable deployment.
+  - Managing dependencies.
+  - Docker for containers, or VM images.
+  - Documenting build, dependences, and deployment.
+  - Deploying to the "cloud".
 
 ## Application
 
