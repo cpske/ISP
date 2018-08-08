@@ -25,7 +25,7 @@ Other pages: [About the Course](Topics), [Resources](Resources).
 </td>
 <td markdown="span">
 [Intro to Course](intro/Introduction-to-Course.pdf)    
-[Recommendations from SKE Entrepreneur](intro/Jomzap-Recommendationa.pdf)    
+[Recommendations from SKE Entrepreneur](intro/Jomzap-Recommendations.pdf)    
 </td>
 <td markdown="span">
 Join [Google Classroom](https://classroom.google.com) "Individual Software Process". Use your KU Login and code **v2jlhfj** to enroll.   
