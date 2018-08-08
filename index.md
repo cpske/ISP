@@ -39,7 +39,8 @@ Join [Google Classroom](https://classroom.google.com) "Individual Software Proce
 [Git](git/)    
 </td>
 <td markdown="span">
-Using [Git](git/intro-git) and [Intro to Github](git/intro-github) [[PPT](git/Using-Github.pdf)]    
+Understanding Git in more detail.
+Using branches.
 </td>
 <td markdown="span">
 Review [how to use Git](git/intro-git) and [Intro to Github](git/intro-github). [PDF of slides.](git/)     
