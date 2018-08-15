@@ -60,7 +60,9 @@ Understanding Git in more detail.
 Using branches.
 </td>
 <td markdown="span">
-Review [how to use Git](git/intro-git) and [Intro to Github](git/intro-github). [PDF of slides.](git/)     
+[Git basics](git/git-basics) copy the source file [git/git-basics.md](git/git-asics.md) and write your answers after the questions.  **Quiz** on this next week.
+
+[Branching and Merging](git/branch-and-merge).
 </td>
 </tr>
 <!-- 
