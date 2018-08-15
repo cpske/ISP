@@ -32,6 +32,23 @@ Join [Google Classroom](https://classroom.google.com) "Individual Software Proce
 </td>
 </tr>
 <!-- 
+  Iterative Development
+  -->
+<tr valign="top">
+<td align="center" markdown="span"> 
+Iterative Development
+</td>
+<td markdown="span">
+Iterative Software Development is very common,
+and a lot of what we study applies to this kind of process.
+To get an idea of what "iterative development" is, watch this video.
+Its about Scrum, but many of the concepts apply in general.
+</td>
+<td markdown="span">
+[Scrum in Under 10 Minutes](https://youtu.be/XU0llRltyFM) https://youtu.be/XU0llRltyFM    
+</td>
+</tr>
+<!-- 
   Git 
   -->
 <tr valign="top">
@@ -47,20 +64,18 @@ Review [how to use Git](git/intro-git) and [Intro to Github](git/intro-github). 
 </td>
 </tr>
 <!-- 
-  Iterative Development
+  Agile
   -->
 <tr valign="top">
 <td align="center" markdown="span"> 
-Iterative Development
+[Agile](agile/)    
 </td>
 <td markdown="span">
-Iterative Software Development is very common,
-and a lot of what we study applies to this kind of process.
-To get an idea of what "iterative development" is, watch this video.
-Its about Scrum, but many of the concepts apply in general.
+Intro to [Agile Principles and Practices](agile/agile-principles-practices)
 </td>
 <td markdown="span">
-[Scrum in Under 10 Minutes](https://youtu.be/XU0llRltyFM) https://youtu.be/XU0llRltyFM    
+Read about Agile at [Agile 101](https://www.agilealliance.org/agile101/) of Agile Alliance.    
+Think critically.  Do you agree with the principles?   
 </td>
 </tr>
 
