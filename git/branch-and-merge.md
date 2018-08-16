@@ -6,8 +6,7 @@ Agile practices include
 2. Release early and often.  
 3. Development team works in parallel.
 
-Branches let us keep track of what has been released (and fix bugs in needed)
-and separate our "development" code from "releasable" (that is, tested and running) code.
+Branches can help you do these things.
 
 Two examples of how to:
 
@@ -24,9 +23,7 @@ Two examples of how to:
 * [How to Clone all Branches?](https://stackoverflow.com/questions/67699/how-to-clone-all-remote-branches-in-git) Stackover question with extensive explanation.k
 
 
-## Branches 
-
-* What is a "branch" of a repository?
+## Create or Get a Branch 
 
 * Why uses branches? (There are several uses of branches.)
 
@@ -34,7 +31,17 @@ Two examples of how to:
 
 * What is the command to list the local branches?
 
-* What is the command to list all the branches in a repo?
+* What is the command to list all the branches in a repo, including remote branches?
+
+* What is the command to clone a remote branch?
+
+## Using Branches
+
+* What is the command to switch to a branch named "dev"?
+
+* What is the command to che
+
+* Suppose you have 2 branches: master and dev.  What are the commands to merge "dev" into "master"?
 
 * Does a branch create a copy of the original branch's files?
 

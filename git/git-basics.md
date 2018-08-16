@@ -153,3 +153,8 @@ Its much easier to do on Github or using a GUI tool like gitk, SmartGit, or EGit
 [ProGit]: https://www.git-scm.com/book/en/v2 "Pro Git online book on Git-scm.com"
 
 [ProGitPdf]: https://progit2.s3.amazonaws.com/en/2016-03-22-f3531/progit-en.1084.pdf "Pro Git v.2 PDF on AWS. Longer, book format."
+
+
+[Think Like a Git]: http://think-like-a-git.net/ "Understand visually how git works"
+
+[Visualize Git]: http://git-school.github.io/visualizing-git/ "Online tools draws a graph of commits in a repo, as you type"

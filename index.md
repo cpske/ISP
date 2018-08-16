@@ -60,9 +60,9 @@ Understanding Git in more detail.
 Using branches.
 </td>
 <td markdown="span">
-[Git basics](git/git-basics) copy the source file [git/git-basics.md](git/git-asics.md) and write your answers after the questions.  **Quiz** on this next week.
-
-[Branching and Merging](git/branch-and-merge).
+[Git basics](git/git-basics) copy the source file [git/git-basics.md](git/git-basics.md) and write your answers after the questions.      
+[Branching and Merging](git/branch-and-merge).    
+**Quiz** on Git and Scrum next week.
 </td>
 </tr>
 <!-- 
