@@ -12,7 +12,7 @@ Branches can help you do these things.
 
 * [Branching and Merging](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging) from the online [Git Book](https://git-scm.com/book/) (download available).
 * [Git Branch Command Examples](ttps://www.thegeekstuff.com/2017/06/git-branch/) shows commands for 15 common tasks
-* [Git Visualizer](http://git-school.github.io/visualizing-git) type git commands and see a graph of the repository. Can view a remote, too. *Really* helps you understand git.
+* [Git Visualizer](http://git-school.github.io/visualizing-git) type git commands and see a graph of the result! *This really helps understand git*. 
 
 Optional:
 
@@ -22,48 +22,50 @@ Optional:
 
 ## How To Use Branches in a Project?
 
-In your project, your team should agree and follow a convention for using branches. For this course, use Github Flow.
-  * What name will you use for a release tag?  
-  * What names for bugfix branches?
-  * Be consistent.
+In project work, your team should agree to and use a convention for branches and merging. For this course, use Github Flow.
 
 * [Github Flow](https://guides.github.com/introduction/flow/)
 * [Github Branching Convention](https://gist.github.com/digitaljhelms/4287848) has nice graph of using branches as in Github flow.
+
+Please be consistent about...
+* names you use for release tags.  
+* names for bugfix branches.
+
 
 
 ## Questions on Branches
 
 You should be able to answer these.  They will be on a quiz.
 
-* Why uses branches? (There are several uses.)
+1. Why uses branches? (There are several uses.)
 
-* What is the git command to create a local branch?
+2. What is the git command to create a local branch?
 
-* What is the command to list the local branches?
+3. What is the command to list the local branches?
 
-* What is the command to list **all** branches, including remote branches?
+4. What is the command to list **all** branches, including remote branches?
 
 
 ## Questions about Using Branches
 
-* What is the command to switch to a branch named "dev"?
+1. What is the command to switch to a branch named "dev"?
 
-* Suppose you have 2 branches: master and dev.  How can you see what are the differences (diffs)?
+2. Suppose you have 2 branches: master and dev.  How can you see what are the differences (diffs)?
 
-* What are the commands to merge "dev" into "master"?
+3. What are the commands to merge "dev" into "master"?
 
-* Does a branch create a copy of the original branch's files?
+4. Does a branch create a copy of the original branch's files?
 
-* What is a command to show a graphical view of the branches and commits? More than one answer to this.
+5. What is a command to show a graphical view of the branches and commits? More than one answer to this.
 
 
 ## Branches and Remotes
 
-* If you clone a remote repository, does it clone all branches?
+1. If you clone a remote repository, does it clone all branches?
 
-* After you clone a remote, `git branch -a` shows all the branches. What happens if you try to checkout one of the branches?
+2. After you clone a remote, `git branch -a` shows all the branches. What happens if you try to checkout one of the branches?
 
-* What is the command to clone a remote branch? (Clone it *and* track the remote so you can push your work back.)
+3. What is the command to clone a remote branch? (Clone it *and* track the remote so you can push your work back.)
 
 
 ### Remote Branch Examples
@@ -83,7 +85,7 @@ and type:
 cmd> git branch
 * master
 ```
-Only shows master.  Add "--all" or "-a".
+Only shows "master".  Add "--all" or "-a".
 ```
 cmd> git branch -a
 * master
@@ -92,9 +94,9 @@ cmd> git branch -a
   remotes/origin/add_to_table
   remotes/origin/master
 ```
-But we don't have a clone of the other branches, just a reference ("ref") to the branch on "origin" (remote repo).
+This means we have references ("refs") to remote branches on "origin", but no local branch that tracks them.
 
-Suppose we want to look at the branch.  There are 2 cases:
+Suppose we want to look at the branch code.  There are 2 cases:
 
 1. We just want to look at the branch code:
 ```
