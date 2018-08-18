@@ -6,7 +6,9 @@ description: Index page
 
 ## Individual Software Process
 
-Other pages: [About the Course](Topics), [Resources](Resources).
+Other pages: 
+[About the Course](Topics), 
+[Google Classroom](https://classroom.google.com/u/0/c/MTQ5OTI2OTQ3MTJa) for announcements & assignments (class code minx6nj), [Resources](Resources).
 
 
 <table border="1">
@@ -62,6 +64,8 @@ Using branches.
 <td markdown="span">
 [Git basics](git/git-basics) copy the source file [git/git-basics.md](git/git-basics.md) and write your answers after the questions.      
 [Branching and Merging](git/branch-and-merge).    
+Lab: [TicTacToe project](https://bit.ly/2OFGIxM) - branch, merge, Github Flow, and issues.    
+[Aliases](git/aliases) how to create aliases for git commands and less typing.   
 **Quiz** on Git and Scrum next week.
 </td>
 </tr>

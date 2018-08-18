@@ -15,7 +15,10 @@
 * "Agile" is *not* a software process. 
   - Agile describes values, goals, and some practices incorporated into many software processes (see slide).
   - Created as reaction to perceived inefficiency of existing processes.
-* "Planned Based" or "Plan Driven" - almost opposite of Agile.
+* Practices of Scrum, XP, and maybe Crystal as examples of Agile.
+* "Planned Based" or "Plan Driven" compared to Agile.
+  - Unified Process (UP) is main example.
+  - Plan-based vs Agile process is a continuum of choices, not either-or.
  
 
 ## Focus of this Course
