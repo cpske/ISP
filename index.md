@@ -79,8 +79,8 @@ Why use Pull Requests?
 Merging branches.   
 (optional) [Using SSH Keys with Git](https://help.github.com/articles/connecting-to-github-with-ssh/) so you don't need to enter your userid/password. 
 </td>
-<td>
-See a real [pull request in jQuery repo](https://github.com/jquery/jquery/pull/1051).    
+<td markdown="span">
+See a real [pull request in jQuery repo](https://github.com/jquery/jquery/pull/1051)     
 Branch and merge exercise on Github: [http://bit.ly/kucafe2018](http://bit.ly/kucafe2018)
 </td>
 </tr>
