@@ -97,6 +97,7 @@ Intro to [Agile Principles and Practices](agile/agile-principles-practices)
 <td markdown="span">
 Read about Agile at [Agile 101](https://www.agilealliance.org/agile101/) of Agile Alliance.    
 Think critically.  Do you agree with the principles?   
+[Agile at Microsoft](https://www.youtube.com/watch?v=-LvCJpnNljU) how the Visual Studio Team Services transitioned to agile. Interesting, but some fuzzy buzzwords.   
 </td>
 </tr>
 
