@@ -81,7 +81,8 @@ Merging branches.
 </td>
 <td markdown="span">
 See a real [pull request in jQuery repo](https://github.com/jquery/jquery/pull/1051)     
-Branch and merge exercise on Github: [http://bit.ly/kucafe2018](http://bit.ly/kucafe2018)
+Branch and merge exercise on Github: [http://bit.ly/kucafe2018](http://bit.ly/kucafe2018)    
+Unit Tests and Pull Requests: use this code [unittests.zip](unittests.zip)
 </td>
 </tr>
 <!-- 
