@@ -1,4 +1,4 @@
-theme: minima
+# theme: minima
 description: Individual Software Process
 exclude: [bin, misc, Gemfile, Gemfile.lock, Jittat, Paruj]
 # Use Git's markdown syntax

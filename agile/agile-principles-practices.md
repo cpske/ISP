@@ -35,7 +35,7 @@ How does this apply to my software process?
    * Didn't they already write this in #1?
 4. *Collaborate between stakeholders and developers*
 5. *Support, trust, and motivate the people involved*
-6. *Enable face-to-face interactions* applies within team and team-customer.
+6. *Enable face-to-face interactions* within team and between team-customer.
 7. *Working software is the primary measure of progress*
 8. *Maintain a Sustainable Pace* - be able to deliver quality iteration-after-ition, project after project; work/life balance. 
    * P-PC Balance (Stephen Covey's Principle of Effectiveness). 

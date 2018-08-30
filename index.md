@@ -28,9 +28,10 @@ Other pages:
 <td markdown="span">
 [Intro to Course](intro/Introduction-to-Course.pdf)    
 [Recommendations from SKE Entrepreneur](intro/Jomzap-Recommendations.pdf)    
+Intro to [SDLC](intro/software-life-cycle) and [Software Processes](intro/Introduction-software-process.pdf)    
 </td>
 <td markdown="span">
-Join [Google Classroom](https://classroom.google.com) "Individual Software Process". Use your KU Login and code **minx6nj** to enroll.   
+Join [Google Classroom](https://classroom.google.com) "ISP 2018". Use your KU Login and code **minx6nj**.   
 </td>
 </tr>
 <!-- 
@@ -66,7 +67,21 @@ Using branches.
 [Branching and Merging](git/branch-and-merge).    
 Lab: [TicTacToe project](https://bit.ly/2OFGIxM) - branch, merge, Github Flow, and issues.    
 [Aliases](git/aliases) how to create aliases for git commands and less typing.   
-**Quiz** on Git and Scrum next week.
+</td>
+</tr>
+<tr valign="top">
+<td align="center" markdown="span"> 
+More Git
+</td>
+<td markdown="span">
+Why use Pull Requests?
+[Pull Request Tutorial](https://yangsu.github.io/pull-request-tutorial/) good tutorial.    
+Merging branches.   
+(optional) [Using SSH Keys with Git](https://help.github.com/articles/connecting-to-github-with-ssh/) so you don't need to enter your userid/password. 
+</td>
+<td>
+See a real [pull request in jQuery repo](https://github.com/jquery/jquery/pull/1051).    
+Branch and merge exercise on Github: [http://bit.ly/kucafe2018](http://bit.ly/kucafe2018)
 </td>
 </tr>
 <!-- 
