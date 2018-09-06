@@ -21,7 +21,12 @@ Submit your code to Github.
 
 ### Where to Submit
 
-Announced in class.
+In your personal Github account, create a public repository named `unittesting`.
+Commit your source, including tests, to this repository.
+
+> Please spell it **exactly** as shown: `unittesting`
+
+I would suggest that you also keep notes on testing, since you will do it a lot.
 
 ### Project Structure
 
