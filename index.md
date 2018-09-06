@@ -98,7 +98,7 @@ Unit Tests and Pull Requests: use this code [unittests.zip](unittests.zip)
 [Python Unit Testing](testing/PythonUnitTest.pdf)
 </td>
 <td markdown="span">
-Test Exercise in Class
+[Unit Testing Practice](testing/unit-testing-assignment)
 </td>
 </tr>
 <!-- 
