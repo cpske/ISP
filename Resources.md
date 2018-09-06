@@ -29,15 +29,21 @@
 
 ### Books
 
-Professional Developers **read** to keep learning.
-
 Try a Google search: [Top 10 Software Development Books](https://www.google.co.th/search?q=top+10+software+development+books&oq=top+10+software+development+books).
 
 *Clean Code* by Robert Martin.  Advise for writing better code. Developers consistently rate this is one of the most important books to learn from.  Martin has many popular books and writes the [CleanCoder](http://cleancoder.com) blog.  
+  * Online Book: [Clean Code](https://www.investigatii.md/uploads/resurse/Clean_Code.pdf)
 
 *The Clean Coder* by Robert Martin.  A book about habits and practices for a software developer. Directly relevant to this course.
 
-*The Pragmatic Programmer* by Hunt and Thomas.
+*The Pragmatic Programmer* by Hunt and Thomas. [The Pragmatic Programmer](https://www.nceclusters.no/globalassets/filer/nce/diverse/the-pragmatic-programmer.pdf)
+
+*Practices of an Agile Developer* another classic book.
+  * [Quick Reference Card](https://media.pragprog.com/titles/pad/PAD-pulloutcard.pdf) of the practices
+
+[Building Maintainable Software](http://moka.labunix.uqam.ca/~tremblay/MGL7460/Liens/Building_Maintainable_Software_SIG.pdf) Joost Viser (O'Reilly). Free PDF book.
+
+
 
 ### Unified Process
 
@@ -99,4 +105,9 @@ on [extremeprogramming.org](http://www.extremeprogramming.org/) explains xtreme 
 
 [Scrumban](https://en.wikipedia.org/wiki/Scrumban)
 Wikipedia article describes Scrumban combination of Kanban and Scrum.
+
+
+### Web Development
+
+[Web Architecture 101](https://engineering.videoblocks.com/web-architecture-101-a3224e126947) introduces concepts and components in real-world web deployment.
 

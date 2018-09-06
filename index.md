@@ -63,10 +63,10 @@ Understanding Git in more detail.
 Using branches.
 </td>
 <td markdown="span">
-[Git basics](git/git-basics) copy the source file [git/git-basics.md](git/git-basics.md) and write your answers after the questions.      
-[Branching and Merging](git/branch-and-merge).    
+[Git basics](git/git-basics) copy the source file [git/git-basics.md](git/git-basics.md) and write your answers after the questions.    
+[Branching][git-branching] in online Git book.    
 Lab: [TicTacToe project](https://bit.ly/2OFGIxM) - branch, merge, Github Flow, and issues.    
-[Aliases](git/aliases) how to create aliases for git commands and less typing.   
+[Aliases](git/aliases) how to create aliases for git commands. ("git history" is a nice alias)
 </td>
 </tr>
 <tr valign="top">
@@ -74,15 +74,31 @@ Lab: [TicTacToe project](https://bit.ly/2OFGIxM) - branch, merge, Github Flow, a
 More Git
 </td>
 <td markdown="span">
-Why use Pull Requests?
-[Pull Request Tutorial](https://yangsu.github.io/pull-request-tutorial/) good tutorial.    
-Merging branches.   
+[Branching and Merging][git-book-branching-and-merging] in online Git Book.   
+[Pull Request Tutorial](https://yangsu.github.io/pull-request-tutorial/) why and how to use pull requests.    
 (optional) [Using SSH Keys with Git](https://help.github.com/articles/connecting-to-github-with-ssh/) so you don't need to enter your userid/password. 
 </td>
 <td markdown="span">
-See a real [pull request in jQuery repo](https://github.com/jquery/jquery/pull/1051)     
+A real [pull request in jQuery repo](https://github.com/jquery/jquery/pull/1051)     
 Branch and merge exercise on Github: [http://bit.ly/kucafe2018](http://bit.ly/kucafe2018)    
-Unit Tests and Pull Requests: use this code [unittests.zip](unittests.zip)
+Unit Tests and Pull Requests: use this code [unittests.zip](unittests.zip)    
+**Know** [Git Branching][git-branching] chapter in online Git Book.
+</td>
+</tr>
+<!-- 
+  Unit Testing
+  -->
+<tr valign="top">
+<td align="center" markdown="span"> 
+[Unit Testing](testing/)    
+</td>
+<td markdown="span">
+[Unit Testing Basics](testing/UnitTesting.pdf) with JUnit    
+[JUnitParams tutorial](testing/JUnitParams-tutorial.pdf) library for parameterized tests    
+[Python Unit Testing](testing/PythonUnitTest.pdf)
+</td>
+<td markdown="span">
+Test Exercise in Class
 </td>
 </tr>
 <!-- 
@@ -104,3 +120,7 @@ Think critically.  Do you agree with the principles?
 
 </table>
 
+---
+
+[git-book-branching]: https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell "Git Branching in ProGit book"
+[git-book-branching-and-merging]: https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging "Basic Branching and Merging"

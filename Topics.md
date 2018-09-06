@@ -87,7 +87,7 @@ Videos:
   - Data-driven test cases
   - New design of JUnit 5
  
-* PyUnit or UnitTest for Python.
+* PyUnit or unittest for Python.
 
 ### 3. Mock Objects for Testing
 
@@ -119,62 +119,71 @@ Videos:
 
 * Maybe look at *Practices of an Agile Developer*.  Each chapter is short and covers one lesson.  Some parts are online.
 
-* Importance of consistent coding style.
+* Use a coding convention, and consistent coding style.
+
+* Write documentation in code. Javadoc or PyDoc comments.
 
 * How to use Checkstyle. How to configure and safe a code style Eclipse or IntelliJ.
 
 * Look at coding guidelines from some real projects. Apache is good source.
 
-### 7. Refactoring (?)
-
-Important topic, but not sure if I'll include it in this course.
-
-### ?. Assertions and Design by Contract
-
-* Reduce defects, spot defects sooner.
-* In Java you can leave assertions in the final code.  They can be enabled or disabled using the run-time `-ea` flag.  You can even selectively enable assertions for some classes but not others!  
-  - If assertions are not enabled, the "assert" statements are skipped so there is no performance penalty.
-
-
-
-### 11. Measuring Progress and Quality
+### 7. Measuring Progress and Quality
 
 * How to measure your output?
 * Common software metrics, like LOC, functions, code "units".
 * Classify and count defects.  Design defects, coding defects, test defects.
-
-### 12. Estimation
-
-* How to estimate: dev time, code size.
-* Jittat's Slides: [intro]( ), Jittat
-
-* [Agile Estimation](http://www.construx.com/Resources/Presentation/Agile_Estimation__Key_Principlies_and_Practices_for_Successful_Agile_Practices/) talk by Construx (Steve McConnell's company)
 
 ### Planning and Tracking
 
 * [Waffle](https://waffle.io) or [Trello](https://trello.com) for tasks. Wallfe integrates with Github issues.  
 * Github "Project Boards" has similar features. But cards are limited to Github issues, pull requests, and notes.  May not always match project "tasks".
 
-### 12. Tracking Your Own Performance
+### 8. Estimation
+
+* How to estimate: dev time, code size.
+* Jittat's Slides: [intro]( ), Jittat
+
+* [Agile Estimation](http://www.construx.com/Resources/Presentation/Agile_Estimation__Key_Principlies_and_Practices_for_Successful_Agile_Practices/) talk by Construx (Steve McConnell's company)
+
+
+### 9. Refactoring (?)
+
+Important topic, but not sure if I'll include it in this course.
+
+### 10. Assertions and Design by Contract (?)
+
+* Reduce defects, spot defects sooner.
+* In Java you can leave assertions in the final code.  They can be enabled or disabled using the run-time `-ea` flag.  You can even selectively enable assertions for some classes but not others!  
+  - If assertions are not enabled, the "assert" statements are skipped so there is no performance penalty.
+
+### 11. Tracking Your Own Performance
 
 * How do you know you are getting better?
 * You can't improve that which you can't measure.
 * Task Lists and Checklists.
 
-### 13. Self-improvement
+### 12. Self-improvement
 
 * Importance of continual learning and reading
 * See _Pragmatic Programmer_ Item 5: Your Knowledge Portfolio (p. 37).
 * Goal-directed learning for new technology.  Instead of comprehensive learning or random videos.
   - "*Begin with the end in mind*" (Stephen Covey) 
 
-### 14. Communication
+### 13. Communication
 
-### 15. Business Model  
+### 14. Business Model  
 
 Helps to understand the components of a software business, and forces involved.
 
 * [Business Model Canvas Explained](https://www.youtube.com/watch?v=QoAOzMTLP5s) Youtube into to a tool for business modeling.
+
+----
+
+## Anti-Patterns
+
+[10 practices of highly ineffective software developers](https://www.infoworld.com/article/2615765/application-development/10-practices-of-highly-ineffective-software-developers.html) on InfoWorld
+
+----
 
 ## Development Skills You Didn't Learn in OOP
 
