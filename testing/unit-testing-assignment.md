@@ -7,7 +7,7 @@ You can do this in Java or Python.
 Write two methods (Java) or functions (Python) and a *test suite* for each one.
 
 For each problem do the work in the following order:
-1. Write down the input categories in Markdown in a file `test_cases.md` in your project directory.  This helps you think of (and remember) what to test.  You should test:
+1. Write down the test categories in Markdown in a file `test_cases.md` in your project directory.  This helps you think of (and remember) what to test.  You should test:
    * **borderline cases**, such as a list with 0 or 1 elements
    * **typical cases**, such as a list with a few duplicates or no duplicates
    * **impossible cases** where the method should not work
@@ -26,7 +26,19 @@ Commit your source, including tests, to this repository.
 
 > Please spell it **exactly** as shown: `unittesting`
 
-I would suggest that you also keep notes on testing, since you will do it a lot.
+### Example test_cases.md
+
+```
+## Tests for countUnique
+
+| Test case              |  Expected Result    |
+|------------------------|---------------------|
+| empty list             |  return 0           |
+| one item               |  return 1           |
+| one item many times    |  return 1           |
+| 2 items, many times, many order | return 2   |
+| n items with duplicates in various order   | n     |
+```
 
 ### Project Structure
 
@@ -48,6 +60,25 @@ testinglab/
 See: [Structuring Your Project](https://docs.python-guide.org/writing/structure/) in *The Hitchhiker's Guide to Python*.
 
 ## Problem 1: Count Distinct Elements in a List
+
+Example (using Jshell)
+```java
+jshell> List list = Arrays.asList('a','a','b','a','c','b');
+jshell> ListUtil.countUnique( list )
+3
+```
+
+Example (using Python)
+```python
+list = ['a','a','b','a','c','b']
+print( count_unique(list) )
+# prints:
+3
+list = [ ]
+print( count_unique(list) )
+# prints:
+0
+```
 
 Java:
 ```java
