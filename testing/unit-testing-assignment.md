@@ -21,10 +21,17 @@ Submit your code to Github.
 
 ### Where to Submit
 
-In your personal Github account, create a public repository named `unittesting`.
+In your personal Github account, create a public repository named `unittestlab`.
+
 Commit your source, including tests, to this repository.
 
-> Please spell it **exactly** as shown: `unittesting`
+**Correction:**  If you already created a Github repo named `unittesting` then please change it to `unittestlab`.
+
+1. In Github project "Settings" menu, change the name to `unittestlab`.
+2. In your local repository change the URL of "origin"
+```
+cmd> git remote set-url https://github.com/username/unittestlab.git
+```
 
 ### Example test_cases.md
 
