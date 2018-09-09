@@ -14,11 +14,11 @@ If these links don't work, try the [se books][sebooks] collection.
 
 1. Why develop in increments? (PAD Item 17)
 
-2. To ensure that your code is on the right path, and encourage you to write smaller, more cohesive code, what does PAD recommend?  Enter the Tip *number* and *title* from the PAD Refcard, e.g. "1. Blame doesn't fix bugs.", but without quotation marks.
+2. To ensure that your code is on the right path, and encourage you to write smaller, more cohesive code, what does PAD recommend?  Enter the Tip *number* and *title* from the PAD Refcard, such as: *1. Blame doesn't fix bugs.*
 
 3. Why should we "treat warnings as errors"? (PAD Item 34)
 
-4. PAD Tip 2 is "Quick Fixes Become Quick Sand" (or "Don't Fall for the Quick Hack").  What is meant by this?
+4. PAD Tip 2 is "Quick Fixes Become Quick Sand" (or "Don't Fall for the Quick Hack").  What does this mean?
 
 5. What are 3 things the PAD book recommends you do to avoid or correct quick fixes.
   - [ ] Use Test-driven-development.
@@ -73,7 +73,7 @@ def read_dictionary():
         return []
     return words
 ```
-Which Tip from *Practices of an Agile Developer* Reference Card tells you that you should improve this code?  Write the **number** and **title** of the Tip on the Ref Card, e.g. "1. Blame doesn't fix bugs." but without quotation marks.
+Which Tip from *Practices of an Agile Developer* Reference Card tells you that you should improve this code?  Write the **number** and **title** of the Tip on the Ref Card, such as: *1. Blame doesn't fix bugs.*
 
 10. What are good uses of comments? (Check all correct answers.)
   - [ ] Make is easy for inexperienced programmers to understand the code.
