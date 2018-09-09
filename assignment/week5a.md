@@ -7,28 +7,27 @@ in questions.
 
 ## Questions
 
-These questions refer to material in *Practices of an Agile Developer* ([Refcard][pad-refcard] and [book][pad-book]). *[Clean Code][clean-code]* is also useful for answering these question.
+These questions refer to material in *Practices of an Agile Developer* ([Refcard][pad-refcard] and [book][pad]). *[Clean Code][clean-code]* is also useful for answering these question.
 If these links don't work, try the [se books][sebooks] collection.
 
 1. Why keep a solutions log? (PAD Item 33)
 
 2. Why should we "treat warnings as errors"? (PAD Item 34)
 
-3. Give a code example where the compiler or interpretter issue a warning, but it really means an error in your code (often a logic or semantic error).
+3. Give a code example where the compiler or interpretter issues a warning, but it really means an error in your code (often a logic or semantic error).
 Use Java or Python, but its *much* easier in Java.
 Note: this must be your own example, of course.
 
 4. PAD Tip 2 is "Quick Fixed Become Quick Sand" (or "Don't Fall for the Quick Hack").  What is meant by this?
 
 5. What are 3 things the PAD book recommends you do to avoid or correct quick fixes.
+  - [ ] Use Test-driven-development.
+  - [ ] Encourage team members to review and understand all code.
+  - [ ] Use unit tests; they help you design code into manageable pieces and provide runnable documentation.
+  - [ ] Assign ownership of parts of the code to individual team members.
+  - [ ] Never implement a fix without fully understanding the code and cause of the problem.
 
-  [ ] Use Test-driven-development.
-  [ ] Encourage team members to review and understand all code.
-  [ ] Use unit tests; they help you design code into manageable pieces and provide runnable documentation.
-  [ ] Assign ownership of parts of the code to individual team members.
-  [ ] Never implement a fix without fully understanding the code and cause of the problem.
-
-In writing a function or method, there are 4 mechanisms you can implement to indicate a problem or unexpected condition:
+In writing a function or method, there are 4 ways to handle a problem or unexpected condition:
 
    - do nothing and return, or return a special value (such as -1 or null) 
    - throw an Exception
@@ -40,25 +39,25 @@ For each of the situations below, which is the best solution?
 6. As part of a library, you write a `fibonacci(n)` method to return Fibonacci numbers, for `n >= 0`. 
 What should you do if `fibonacci(n)` is called with a value `n < 0`?
 
-   [ ] Return -1 to indicate invalid parameter value.
-   [ ] Use an Assert statement to raise AssertError when `n < 0`.
-   [ ] Throw an exception, such as Python TypeError or Java IllegalArgumentException.
-   [ ] Print error message on the console and return 0.
+   - [ ] Return -1 to indicate invalid parameter value.
+   - [ ] Use an Assert statement to raise AssertError when `n < 0`.
+   - [ ] Throw an exception, such as Python TypeError or Java IllegalArgumentException.
+   - [ ] Print error message on the console and return 0.
 
 7. A chess game has an 8x8 chessboard with a graphical UI (GUI).  When user makes a move on the GUI, the controller receives the input and calls `void game.moveTo(x,y)`, similar to TicTacToe.  What should `game` do if the controller calls `game.moveTo(x,y)` with values not on the chessboard, such as `x` > 8 or `y` > 8?
 
-   [ ] Just do nothing (return). 
-   [ ] Use an Assert statement to raise AssertError when `x` or `y` are invalid.
-   [ ] Throw an exception.
-   [ ] Print an error message (e.g. "Invalid Move") on the console and return.
+   - [ ] Just do nothing (return). 
+   - [ ] Use an Assert statement to raise AssertError when `x` or `y` are invalid.
+   - [ ] Throw an exception.
+   - [ ] Print an error message (e.g. "Invalid Move") on the console and return.
 
 8. You write a `indexOf(array[],value)` method to return the index of `value` 
 in an `array` (Python `list`). What should you do if `value` is not in the array?
 
-   [ ] Return -1 to indicate value not in array.
-   [ ] Use an Assert statement to raise AssertError.
-   [ ] Throw an exception.
-   [ ] Print error message on the console and return 0.
+   - [ ] Return -1 to indicate value not in array.
+   - [ ] Use an Assert statement to raise AssertError.
+   - [ ] Throw an exception.
+   - [ ] Print error message on the console and return 0.
 
 9. Suppose your application reads a list of words from a URL, such as this:
 ```python
