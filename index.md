@@ -117,6 +117,20 @@ Think critically.  Do you agree with the principles?
 [Agile at Microsoft](https://www.youtube.com/watch?v=-LvCJpnNljU) how the Visual Studio Team Services transitioned to agile. Interesting, but some fuzzy buzzwords.   
 </td>
 </tr>
+<!-- 
+  Web Development
+  -->
+<tr valign="top">
+<td align="center" markdown="span"> 
+[Agile](agile/)    
+</td>
+<td markdown="span">
+This is tentative. 
+</td>
+<td markdown="span">
+[Django Web Framework](web/django) uses Python.
+</td>
+</tr>
 
 </table>
 

@@ -13,9 +13,8 @@ It should print "Python 3.6.0" or similar.  If you don't have *at least* Python 
 
 * [Getting Started](https://www.djangoproject.com/start/) on the Django project site.
 * [Django Official Docs](https://docs.djangoproject.com/en/2.1/) on Django Project site.
-* [Tango with Django](https://media.readthedocs.org/pdf/tango-with-django/latest/tango-with-django.pdf) free book at [ReadTheDocs.org](https://readthedocs.org).
 
-This book is sort of a bible for Django:
+This book is sort of a bible for Django, but out-of-date. It covers Django 1.x, which uses Python 2.7.  The current Django uses Python 3.x.
 
 * [The Django Book](https://djangobook.com) online version.
 * [The Django Book](https://media.readthedocs.org/pdf/djangobook/latest/djangobook.pdf) release 2.0, downloadable PDF at [ReadTheDocs.org](https://readthedocs.org).
