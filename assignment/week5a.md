@@ -38,25 +38,22 @@ For each of the situations below, which is the best solution?
 
 6. As part of a library, you write a `fibonacci(n)` method to return Fibonacci numbers, for `n >= 0`. 
 What should you do if `fibonacci(n)` is called with a value `n < 0`?
-
    - [ ] Return -1 to indicate invalid parameter value.
    - [ ] Use an Assert statement to raise AssertError when `n < 0`.
    - [ ] Throw an exception, such as Python TypeError or Java IllegalArgumentException.
    - [ ] Print error message on the console and return 0.
 
 7. A chess game has an 8x8 chessboard with a graphical UI (GUI).  When user makes a move on the GUI, the controller receives the input and calls `void game.moveTo(x,y)`, similar to TicTacToe.  What should `game` do if the controller calls `game.moveTo(x,y)` with values not on the chessboard, such as `x` > 8 or `y` > 8?
-
    - [ ] Just do nothing (return). 
    - [ ] Use an Assert statement to raise AssertError when `x` or `y` are invalid.
-   - [ ] Throw an exception.
+   - [ ] Throw an exception, such as Python TypeError or Java IllegalArgumentException.
    - [ ] Print an error message (e.g. "Invalid Move") on the console and return.
 
 8. You write a `indexOf(array[],value)` method to return the index of `value` 
 in an `array` (Python `list`). What should you do if `value` is not in the array?
-
    - [ ] Return -1 to indicate value not in array.
    - [ ] Use an Assert statement to raise AssertError.
-   - [ ] Throw an exception.
+   - [ ] Throw an exception, such as Python TypeError or Java IllegalArgumentException.
    - [ ] Print error message on the console and return 0.
 
 9. Suppose your application reads a list of words from a URL, such as this:
@@ -70,7 +67,7 @@ def read_dictionary():
     try:
         input = urllib.request.urlopen("http://se.cpe.ku.ac.th/dictionary.txxxt")
         for line in input:
-            # convert line to unicode, strip whitespace and newline
+            # convert line from bytes to unicode, strip whitespace and newline
             words.append( line.decode().strip() )
     except HTTPError:    # this is like Java "catch(HttpError e)"
         return []
@@ -79,17 +76,12 @@ def read_dictionary():
 Which Tip from *Practices of an Agile Developer* Reference Card tells you that you should improve this code? (Write the **number** and **name** of the Tip on the Ref Card.)
 
 10. What are good uses of comments? (Check all correct answers.)
-  [ ] Make is easy for inexperienced programmers to understand the code.
-  [ ] Describe the purpose or behavior of code, e.g. what it is trying to do.
-  [ ] Explain the code, line by line.
-  [ ] Document constraints.
-  [ ] Document what value the variables hold, such as "// first name" for firstName.
-  [ ] Document what exceptions and thrown under what conditions.
-
-
-
-
-
+  - [ ] Make is easy for inexperienced programmers to understand the code.
+  - [ ] Describe the purpose or behavior of code, e.g. what it is trying to do.
+  - [ ] Explain the code, line by line.
+  - [ ] Document constraints.
+  - [ ] Document what value the variables hold, such as "// first name" for firstName.
+  - [ ] Document what exceptions and thrown under what conditions.
 
 
 ## References
@@ -97,11 +89,10 @@ Which Tip from *Practices of an Agile Developer* Reference Card tells you that y
 * [Clean Code][clean-code] by Robert Martin
 * [The Pragmatic Programmer][pragmatic-programmer] by Andrew Hunt, another classic
 * [Practices of an Agile Developer][pad-refcard] quick reference
-* [Practices of an Agile Developer][pad-book] book download, newer than *Pragmatic Programmer*
-* [7 Habits of Highly Effective Programmers][7-habits-programmer]
+* [Practices of an Agile Developer][pad] book download. This is newer than *Pragmatic Programmer*
+* [7 Habits of Highly Effective Programmers][7-habits-programmer] applies Steven Covey's *7 Habits* to programming.
 
-[//]: #(Links for references in this document)
-[//]: #(The reference definitions won't appear on the formatted page)
+<!-- the references in this file.  They won't appear in formatted output. -->
 
 [sebooks]: https://se.cpe.ku.ac.th/doc/books/Programming/
 [clean-code]: http://www.investigatii.md/uploads/resurse/Clean_Code.pdf "Clean Code by Robert Martin"
