@@ -117,22 +117,6 @@ Think critically.  Do you agree with the principles?
 [Agile at Microsoft](https://www.youtube.com/watch?v=-LvCJpnNljU) how the Visual Studio Team Services transitioned to agile. Interesting, but some fuzzy buzzwords.   
 </td>
 </tr>
-<!-- 
-  Web Development
-  -->
-<tr valign="top">
-<td align="center" markdown="span"> 
-Web Development
-</td>
-<td markdown="span">
-Learn developer skills by developing a web app.
-Django is an easy to learn web framework to start with.
-Java fans may switch to Play for course project.
-</td>
-<td markdown="span">
-Install and study [Django Web Framework](web/django). You also need Python 3.x.
-</td>
-</tr>
 
 </table>
 
