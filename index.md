@@ -122,13 +122,15 @@ Think critically.  Do you agree with the principles?
   -->
 <tr valign="top">
 <td align="center" markdown="span"> 
-[Agile](agile/)    
+Web Development
 </td>
 <td markdown="span">
-This is tentative. 
+Learn developer skills by developing a web app.
+Django is an easy to learn web framework to start with.
+Java fans may switch to Play for course project.
 </td>
 <td markdown="span">
-[Django Web Framework](web/django) uses Python.
+Install and study [Django Web Framework](web/django). You also need Python 3.x.
 </td>
 </tr>
 
