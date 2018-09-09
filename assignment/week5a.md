@@ -1,24 +1,24 @@
 # Homework for Week 5, Part 1.
 
-Answer these questions on Google Classroom.
-The questions and references are given here because
-Google Crummy Classroom doesn't enable text formatting 
-in questions.
+1. Read the *Practices of an Agile Developer* [Refcard][pad-refcard].  For some items you'll need to read the section in the *Practices of an Agile Developer* [book][pad].
+
+2. Answer these questions in the Week5 Classwork on [Google Classroom][google-classroom].
+
+The questions and references are posted here because
+Google Crummy Classroom doesn't enable text formatting in questions.
 
 ## Questions
 
 These questions refer to material in *Practices of an Agile Developer* ([Refcard][pad-refcard] and [book][pad]). *[Clean Code][clean-code]* is also useful for answering these question.
 If these links don't work, try the [se books][sebooks] collection.
 
-1. Why keep a solutions log? (PAD Item 33)
+1. Why develop in increments? (PAD Item 17)
 
-2. Why should we "treat warnings as errors"? (PAD Item 34)
+2. To ensure that your code is on the right path, and encourage you to write smaller, more cohesive code, what does PAD recommend?  Enter the Tip *number* and *title* from the PAD Refcard, e.g. "1. Blame doesn't fix bugs.", but without quotation marks.
 
-3. Give a code example where the compiler or interpretter issues a warning, but it really means an error in your code (often a logic or semantic error).
-Use Java or Python, but its *much* easier in Java.
-Note: this must be your own example, of course.
+3. Why should we "treat warnings as errors"? (PAD Item 34)
 
-4. PAD Tip 2 is "Quick Fixed Become Quick Sand" (or "Don't Fall for the Quick Hack").  What is meant by this?
+4. PAD Tip 2 is "Quick Fixes Become Quick Sand" (or "Don't Fall for the Quick Hack").  What is meant by this?
 
 5. What are 3 things the PAD book recommends you do to avoid or correct quick fixes.
   - [ ] Use Test-driven-development.
@@ -73,7 +73,7 @@ def read_dictionary():
         return []
     return words
 ```
-Which Tip from *Practices of an Agile Developer* Reference Card tells you that you should improve this code? (Write the **number** and **name** of the Tip on the Ref Card.)
+Which Tip from *Practices of an Agile Developer* Reference Card tells you that you should improve this code?  Write the **number** and **title** of the Tip on the Ref Card, e.g. "1. Blame doesn't fix bugs." but without quotation marks.
 
 10. What are good uses of comments? (Check all correct answers.)
   - [ ] Make is easy for inexperienced programmers to understand the code.
@@ -100,3 +100,4 @@ Which Tip from *Practices of an Agile Developer* Reference Card tells you that y
 [pad]: https://github.com/mart0/Useful-materials---books-presentations-ant-etc./raw/master/Others/Practices%20of%20an%20Agile%20Developer.pdf "Practices of an Agile Developer, on Github"
 [pragmatic-programmer]: https://www.nceclusters.no/globalassets/filer/nce/diverse/the-pragmatic-programmer.pdf "The Pragmatic Programmer by Andrew Hunt"
 [7-habits-programmer]: https://simpleprogrammer.com/7-habits-highly-effective-programmers/ "7 Habits of Highly Effective Programmers"
+[google-classroom]: https://classroom.google.com/u/0/c/MTQ5OTI2OTQ3MTJa "Classroom for ISP2018"
