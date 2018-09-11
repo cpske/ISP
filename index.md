@@ -128,8 +128,8 @@ Web Dev
 tba
 </td>
 <td markdown="span">
-[Intro to HTTP](web/HTTP.pdf) a very basic intro.    
-[HTTP Live Demo](web/HTTP-in-Action.pdf) in class.
+[Intro to HTTP](web/HTTP.pdf) a very basic intro.     
+[HTTP Protocol Demo](web/HTTP-in-Action.pdf) in class.
 
 </td>
 </tr>
