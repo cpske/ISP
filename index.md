@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Schedule
+title: ISP Topics
 description: Index page
 ---
 
@@ -115,6 +115,22 @@ Intro to [Agile Principles and Practices](agile/agile-principles-practices)
 Read about Agile at [Agile 101](https://www.agilealliance.org/agile101/) of Agile Alliance.    
 Think critically.  Do you agree with the principles?   
 [Agile at Microsoft](https://www.youtube.com/watch?v=-LvCJpnNljU) how the Visual Studio Team Services transitioned to agile. Interesting, but some fuzzy buzzwords.   
+</td>
+</tr>
+<!-- 
+  Web Dev
+  -->
+<tr valign="top">
+<td align="center" markdown="span"> 
+Web Dev
+</td>
+<td markdown="span">
+tba
+</td>
+<td markdown="span">
+[Intro to HTTP](web/HTTP.pdf) a very basic intro.    
+[HTTP Live Demo](web/HTTP-in-Action.pdf) in class.
+
 </td>
 </tr>
 
