@@ -1,6 +1,6 @@
 # Homework for Week 5, Part 1.
 
-1. Read the *Practices of an Agile Developer* [Refcard][pad-refcard].  For some items you'll need to read the section in the *Practices of an Agile Developer* [book][pad].
+1. Read the *Practices of an Agile Developer* (PAD) [Quick Reference][pad-refcard].  For some items you'll need to read the section in the *Practices of an Agile Developer* [book][pad].
 
 2. Answer these questions in the Week5 Classwork on [Google Classroom][google-classroom].
 
@@ -12,15 +12,15 @@ Google Crummy Classroom doesn't enable text formatting in questions.
 These questions refer to material in *Practices of an Agile Developer* ([Refcard][pad-refcard] and [book][pad]). *[Clean Code][clean-code]* is also useful for answering these question.
 If these links don't work, try the [se books][sebooks] collection.
 
-1. Why develop in increments? (PAD Item 17)
+1. Why develop in increments? (PAD Tip 17)
 
-2. To ensure that your code is on the right path, and encourage you to write smaller, more cohesive code, what does PAD recommend?  Enter the Tip *number* and *title* from the PAD Refcard, such as: *1. Blame doesn't fix bugs.*
+2. To ensure that your code is on the right path, and encourage you to write smaller, more cohesive code, what does PAD recommend?  Enter the Tip *number* and *title* from the PAD Quickref, such as: *1. Blame doesn't fix bugs.*
 
-3. Why should we "treat warnings as errors"? (PAD Item 34)
+3. Why should we "treat warnings as errors"? (PAD Tip 34)
 
 4. PAD Tip 2 is "Quick Fixes Become Quick Sand" (or "Don't Fall for the Quick Hack").  What does this mean?
 
-5. What are 3 things the PAD book recommends you do to avoid or correct quick fixes.
+5. What are 3 things the PAD book recommends you do to avoid or correct quick fixes?
   - [ ] Use Test-driven-development.
   - [ ] Encourage team members to review and understand all code.
   - [ ] Use unit tests; they help you design code into manageable pieces and provide runnable documentation.
@@ -36,7 +36,7 @@ In writing a function or method, there are 4 ways to handle a problem or unexpec
 
 For each of the situations below, which is the best solution?
 
-6. As part of a library, you write a `fibonacci(n)` method to return Fibonacci numbers, for `n >= 0`. 
+6. As part of a library, you write a `fibonacci(n)` method that returns Fibonacci numbers, for `n >= 0`. 
 What should you do if `fibonacci(n)` is called with a value `n < 0`?
    - [ ] Return -1 to indicate invalid parameter value.
    - [ ] Use an Assert statement to raise AssertError when `n < 0`.
@@ -50,10 +50,10 @@ What should you do if `fibonacci(n)` is called with a value `n < 0`?
    - [ ] Print an error message (e.g. "Invalid Move") on the console and return.
 
 8. You write a `indexOf(array[],value)` method to return the index of `value` 
-in an `array` (Python `list`). What should you do if `value` is not in the array?
+in an array. What should you do if `value` is not in the array?
    - [ ] Return -1 to indicate value not in array.
    - [ ] Use an Assert statement to raise AssertError.
-   - [ ] Throw an exception, such as Python TypeError or Java IllegalArgumentException.
+   - [ ] Throw an exception, such as NotFoundException.
    - [ ] Print error message on the console and return 0.
 
 9. Suppose your application reads a list of words from a URL, such as this:
@@ -65,22 +65,22 @@ def read_dictionary():
     """Read a dictionary of words and return them as a list"""
     words = []
     try:
-        input = urllib.request.urlopen("http://se.cpe.ku.ac.th/dictionary.txxxt")
+        input = urllib.request.urlopen("http://se.cpe.ku.ac.th/dictionary.txt")
         for line in input:
             # convert line from bytes to unicode, strip whitespace and newline
             words.append( line.decode().strip() )
     except HTTPError:    # this is like Java "catch(HttpError e)"
-        return []
+        return []        # return an empty list
     return words
 ```
-Which Tip from *Practices of an Agile Developer* Reference Card tells you that you should improve this code?  Write the **number** and **title** of the Tip on the Ref Card, such as: *1. Blame doesn't fix bugs.*
+Which Tip from *Practices of an Agile Developer* Reference Card tells you that you should improve this code?  Write the **number** and **title** of the Tip on the Quick Ref, such as: *1. Blame doesn't fix bugs.*
 
 10. What are good uses of comments? (Check all correct answers.)
   - [ ] Make is easy for inexperienced programmers to understand the code.
-  - [ ] Describe the purpose or behavior of code, e.g. what it is trying to do.
+  - [ ] Describe the purpose or code, e.g. what it is trying to do.
   - [ ] Explain the code, line by line.
-  - [ ] Document constraints.
-  - [ ] Document what value the variables hold, such as "// first name" for firstName.
+  - [ ] Document preconditions or constraints.
+  - [ ] Document what value a variable holds, such as "// first name" for firstName.
   - [ ] Document what exceptions and thrown under what conditions.
 
 

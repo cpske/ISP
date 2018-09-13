@@ -77,14 +77,20 @@ jshell> ListUtil.countUnique( list )
 
 Example (using Python)
 ```python
-list = ['a','a','b','a','c','b']
-print( count_unique(list) )
-# prints:
+>>> from listutil import *
+>>> list = ['a','a','b','a','c','b']
+>>> count_unique(list)
 3
-list = [ ]
-print( count_unique(list) )
-# prints:
+>>> list = [ ]
+>>> count_unique(list) 
 0
+# List of 1,000,000 random letters without using a loop
+# chr(65) is 'A', chr(90) is 'Z', so this generates a million random letters
+>>> import random
+>>> list = [chr(random.randint(65,90)) for k in range(1000000)]
+>>> count_unique(list)
+26
+# Its not guaranteed to be 26, but probability is 1 - 26*pow(25/26,1000000)
 ```
 
 Java:
@@ -138,7 +144,7 @@ Exceptions: if the value to find (`element`) is null, throw an exception:
 ```
 or in Python
 ```python
-    raise TypeError("Search element must not be none")
+    raise TypeError("Search element must not be None")
 ```
 Write a unit test to check that this exception is thrown.
 

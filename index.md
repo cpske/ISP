@@ -125,12 +125,12 @@ Think critically.  Do you agree with the principles?
 Web Dev
 </td>
 <td markdown="span">
-tba
+[HTTP Protocol Demo](web/HTTP-in-Action.pdf) in class.    
+[Django](web/django) and [Web Frameworks](web/web-frameworks).
 </td>
 <td markdown="span">
 [Intro to HTTP](web/HTTP.pdf) a very basic intro.     
-[HTTP Protocol Demo](web/HTTP-in-Action.pdf) in class.
-
+Install [Django Web Framework](web/django), implement the tutorial yourself. Study Django and pay attention to the **dev process** parts.
 </td>
 </tr>
 
