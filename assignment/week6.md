@@ -60,19 +60,35 @@ Practice "code review". Ask someone else to review your questions and give feedb
 ```
 ## Questions
 
-Q1: Some software companies have specialists for requirements and software architecture (Architects) who are assigned to a project to do a specific job, but leave the project once their work is done.  A software architect creates a high level and sofware-level design, deployment design, gives these to the developers, and his work is done.    
+Q1: Some software companies have specialists for requirements and software 
+architecture (Architects) who are assigned to a project to do a specific job, 
+but leave the project once their work is done.  A software architect creates 
+a high level and sofware-level design, deployment design, gives these to the 
+developers, and his work is done.    
 
-According to [PAD][pad] what are 2 problems with having an architect create a design, without being part of the implementation?  Write 1 or 2 sentences to describe each of the problems.
+According to [PAD][pad] what are 2 problems with having an architect create
+a design, without participating in the implementation?  
+Write 1 or 2 sentences to describe each of the problems.
 
 ## Answers
 
-Q1: The tip "*Architects must write code*" notes that software design tends to evolve over time, and this can require changes in the architecture. Some issues are:
+Q1: The tip "*Architects must write code*" notes that software design tends 
+to evolve over time, and this can require changes in the architecture. 
+Some issues are:
 
-1. Its hard to come up with the best design without knowing details of actual system, and that understanding comes from building it.  The initial design may not be best or may not even be practical, and this won't be evident until some implementation is done. (contrary view: the architect may already has experience building similar systems.)
+1. Its hard to come up with the best design without knowing details of actual 
+system, and that understanding comes from building it.  The initial design may 
+not be best or may not even be practical, and this won't be evident until some 
+implementation is done. (contrary view: the architect may already has 
+experience building similar systems.)
 
-2. Handing over a design without conveying the reasons *why* the design is a particular way, loses some information.  That lost information could be useful in the implementation of the parts of the design.
+2. Handing over a design without conveying the reasons *why* the design is a 
+particular way, loses some information.  That lost information could be useful 
+in the implementation of the parts of the design.
 
-3. [Martin Fowler][fowler-architects] argues that an architect's job includes "mentor the development team, to raise their level so that they can take on more comlex issues".
+3. [Martin Fowler][fowler-architects] argues that an architect's job includes 
+"mentor the development team, to raise their level so that they can take on 
+more comlex issues".
 
 Ref: [PAD][pad] Tip 39 *Architects Must Write Code" and 
 Martin Fowler ["Who Needs an Architect?"](https://www.martinfowler.com/ieeeSoftware/whoNeedsArchitect.pdf)
