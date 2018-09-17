@@ -130,7 +130,8 @@ Web Dev
 </td>
 <td markdown="span">
 [Intro to HTTP](web/HTTP.pdf) a very basic intro.     
-Install [Django Web Framework](web/django), implement the tutorial yourself. Study Django and pay attention to the **dev process** parts.
+Install [Django Web Framework](web/django), implement the tutorial yourself. Study Django and pay attention to the **dev process** parts.    
+[Web Development in 2018](web/Web_Dev_in_2018.pdf] and [video](https://youtu.be/Zftx68K-1D4) what to know if you want to be a pro web dev.
 </td>
 </tr>
 

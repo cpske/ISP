@@ -7,6 +7,59 @@
 The questions and references are posted here because
 Google Crummy Classroom doesn't enable text formatting in questions.
 
+------
+
+## Answers
+
+1. Why dev in increments (Tip 17)?
+   * Get feedback --> reduce risks
+   * Helps developers stay focused
+   * Achieve frequent milestones and demonstrate progress. An agile axiom is running code is the only real measure of progress.
+   * Not correct: "Keep your code deployable at all times". You could do that without using incremental development.
+
+2. Stay on track, write small, cohesive code.
+   A: 28. Write code in short edit/build/test cycles.
+   5pt: 17. Develop in increments.
+   5pt: 30. Keep classes focused and components small.
+
+3. Why treat warnings as errors (Tip 34)?
+   * Some warnings are really semantic or logic errors.
+   * Improves quality of code (e.g. unused variable or import).
+   *
+
+4. What does "quick fixes become quicksand" mean (Tip 2)?
+   * Code is hard to maintain.
+   * Clarity goes down. Cannot be modified.
+   * Incorrect: "Invest the energy to keep code clean and out in the open." this is advise but does not explain what the phrase means or why quick fixes become quicksand.
+
+5. 3 things to avoid quick fixes.
+   * Encourage team ... understand code.
+   * Use unit tests.
+   * Fully understand code before fixing it.
+
+6. fibonacci(-4)
+   - [x] Throw exception.
+     OK: Assert error
+
+7. game.moveto(piece,x,y) x,y invalide
+   - [x] Assert error
+   - OK: Throw exception
+
+8. indexOf(array,item)
+   - [x] return -1
+
+9. Code ignoring exceptions.
+   36. Handle or propagate all exceptions.
+
+10. Good use of comments?
+   * Describe purpose of code.
+   * Document preconditions.
+   * Dcoument exceptions.
+   2pt each correct answer.
+   checking incorrect answers: no penalty for 1 incorrect,
+     -1 for 2-3 incorrect.
+------
+
 ## Questions
 
 These questions refer to material in *Practices of an Agile Developer* ([Refcard][pad-refcard] and [book][pad]). *[Clean Code][clean-code]* is also useful for answering these question.
