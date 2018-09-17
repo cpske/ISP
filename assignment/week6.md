@@ -13,6 +13,10 @@ If you implement a Todo in Django, then add it as an "app" to the tutorial proje
 
 Create 5 questions with answers and references.
 
+Submit your answers to this Github Assignment: https://classroom.github.com/a/C6UQUlz7
+
+Use a file named `questions.md`.  You may also commit other files, such as images, a file of code, or PDF used in your questions.
+
 The questions can be related to:
 
 * Software process 
