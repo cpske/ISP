@@ -18,9 +18,7 @@ Other pages:
   <th width="45%"> Learning </th>
   <th width="45%"> Assignment </th>
 </tr>
-<!-- 
-  Introduction 
-  -->
+<!-- Introduction -->
 <tr valign="top">
 <td align="center" markdown="span"> 
 [Introduction](intro/)
@@ -34,9 +32,7 @@ Intro to [SDLC](intro/software-life-cycle) and [Software Processes](intro/Introd
 Join [Google Classroom](https://classroom.google.com) "ISP 2018". Use your KU Login and code **minx6nj**.   
 </td>
 </tr>
-<!-- 
-  Iterative Development
-  -->
+<!-- Iterative Development -->
 <tr valign="top">
 <td align="center" markdown="span"> 
 Iterative Development
@@ -51,9 +47,7 @@ Its about Scrum, but many of the concepts apply in general.
 [Scrum in Under 10 Minutes](https://youtu.be/XU0llRltyFM) https://youtu.be/XU0llRltyFM    
 </td>
 </tr>
-<!-- 
-  Git 
-  -->
+<!-- Git -->
 <tr valign="top">
 <td align="center" markdown="span"> 
 [Git](git/)    
@@ -85,9 +79,7 @@ Unit Tests and Pull Requests: use this code [unittests.zip](unittests.zip)
 **Know** [Git Branching][git-branching] chapter in online Git Book.
 </td>
 </tr>
-<!-- 
-  Unit Testing
-  -->
+<!-- Unit Testing -->
 <tr valign="top">
 <td align="center" markdown="span"> 
 [Unit Testing](testing/)    
@@ -101,9 +93,7 @@ Unit Tests and Pull Requests: use this code [unittests.zip](unittests.zip)
 [Unit Testing Practice](testing/unit-testing-assignment)
 </td>
 </tr>
-<!-- 
-  Agile
-  -->
+<!-- Agile -->
 <tr valign="top">
 <td align="center" markdown="span"> 
 [Agile](agile/)    
@@ -117,9 +107,7 @@ Think critically.  Do you agree with the principles?
 [Agile at Microsoft](https://www.youtube.com/watch?v=-LvCJpnNljU) how the Visual Studio Team Services transitioned to agile. Interesting, but some fuzzy buzzwords.   
 </td>
 </tr>
-<!-- 
-  Web Dev
-  -->
+<!-- Web Dev -->
 <tr valign="top">
 <td align="center" markdown="span"> 
 Web Dev
@@ -130,8 +118,22 @@ Web Dev
 </td>
 <td markdown="span">
 [Intro to HTTP](web/HTTP.pdf) a very basic intro.     
-Install [Django Web Framework](web/django), implement the tutorial yourself. Study Django and pay attention to the **dev process** parts.    
+Install [Django Web Framework](web/django), implement the tutorial yourself. Study Django and pay attention to the **development process** parts.    
 [Web Development in 2018](web/Web_Dev_in_2018.pdf] and [video](https://youtu.be/Zftx68K-1D4) what to know if you want to be a pro web dev.
+</td>
+</tr>
+<!-- Midterm -->
+<tr valign="top">
+<td align="center" markdown="span"> 
+Midterm
+</td>
+<td markdown="span">
+Written: 9:00-11:00 AM    
+Program: 12:00-15:00 PM    
+*Dress Like a Programmer*
+</td>
+<td>
+Bring your computer to **both** morning and afternoon.   
 </td>
 </tr>
 
