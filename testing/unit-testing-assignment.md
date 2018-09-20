@@ -107,6 +107,34 @@ public class ListUtil {
     public static int countUnique(List<?> list)
 ```
 
+Java JUnit Test:
+```java
+import org.junit.*;
+import static org.junit.Assert.*;
+
+public class ListUtilClass {
+
+    @Test
+    public void testCountUniqueListSizeOne() {
+        public List<String> list = Arrays.AsList("only one");
+        assertEquals(1, ListUtil.countUnique(list));
+    }
+
+    @Test
+    public void testCountUniqueEmptyList() {
+        public List<String> list = new ArrayList<>();
+        assertEquals(0, ListUtil.countUnique(list));
+    }
+
+    // How to test for exception.
+    @Test(expected=java.lang.ArithmeticException.class)
+    public void testThrowsException() {
+        assertEquals(0, 2/0);
+        fail("Should have thrown ArithmeticException");
+    }
+```
+
+
 Python:
 ```python
 def count_unique(list):
@@ -127,6 +155,21 @@ def count_unique(list):
     >>> count_unique([ ])
     0
     """
+```
+
+Python unittest:
+```python
+import unittest
+from util import count_unique
+ 
+class TestUM(unittest.TestCase):
+ 
+    def test_single_item(self):
+        self.assertEqual( 1, count_unique['hi'])
+        self.assertEqual( 1, count_unique['x','x','x','x','x',x'])
+ 
+if __name__ == '__main__':
+    unittest.main()
 ```
 
 **Question**  There is anything important that is not clearly specified in the problem

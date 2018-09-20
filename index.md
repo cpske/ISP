@@ -125,14 +125,16 @@ Install [Django Web Framework](web/django), implement the tutorial yourself. Stu
 <!-- Midterm -->
 <tr valign="top">
 <td align="center" markdown="span"> 
-Midterm
+Midterm    
+30 Sep (Sunday)
 </td>
 <td markdown="span">
 Written: 9:00-11:00 AM    
 Program: 12:00-15:00 PM    
 *Dress Like a Programmer*
 </td>
-<td>
+<td markdown="span">
+Everything so far.
 Bring your computer to **both** morning and afternoon.   
 </td>
 </tr>
