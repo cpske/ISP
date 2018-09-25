@@ -78,25 +78,26 @@ Write 1 or 2 sentences to describe each of the problems.
 
 Q1: The tip "*Architects must write code*" notes that software design tends 
 to evolve over time, and this can require changes in the architecture. 
-Some issues are:
+Some problems are:
 
 1. Its hard to come up with the best design without knowing details of actual 
 system, and that understanding comes from building it.  The initial design may 
-not be best or may not even be practical, and this won't be evident until some 
-implementation is done. (contrary view: the architect may already has 
-experience building similar systems.)
+not be best or may not even be practical. 
+If the architect doesn't participate in development, he won't see such design issues and make changes. (Contrary view: the architect may already has 
+experience building similar systems so his initial design probably is good.)
 
 2. Handing over a design without conveying the reasons *why* the design is a 
-particular way, loses some information.  That lost information could be useful 
-in the implementation of the parts of the design.
+particular way loses some information.  That lost information could be useful 
+in the implementation.  You could write tons of documentation of "why" but who would read it?  If the architect participates in development there will be direct communication of "why".
 
-3. [Martin Fowler][fowler-architects] argues that an architect's job includes 
+3. [Martin Fowler][fowler-architects] claims that an architect's job includes 
 "mentor the development team, to raise their level so that they can take on 
 more comlex issues".
 
 Ref: [PAD][pad] Tip 39 *Architects Must Write Code" and 
-Martin Fowler ["Who Needs an Architect?"](https://www.martinfowler.com/ieeeSoftware/whoNeedsArchitect.pdf)
+Martin Fowler ["Who Needs an Architect?"][fowler-architects]
 
 ---
 
 [pad]: https://se.cpe.ku.ac.th/doc/books/Programming "Practices of an Agile Developer"
+[fowler-architects]: https://www.martinfowler.com/ieeeSoftware/whoNeedsArchitect.pdf "Who Needs an Architect?"
