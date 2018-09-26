@@ -136,6 +136,7 @@ Program: 12:00-15:00 PM
 <td markdown="span">
 Everything so far.
 Bring your computer to **both** morning and afternoon.   
+[Student Questions on Software Process][isp-qa] some will be on the exam.
 </td>
 </tr>
 
@@ -147,3 +148,4 @@ Bring your computer to **both** morning and afternoon.
 
 [git-book-branching]: https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell "Git Branching in ProGit book"
 [git-book-branching-and-merging]: https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging "Basic Branching and Merging"
+[isp-qa]: https://isp2018.github.io/isp-qa/
