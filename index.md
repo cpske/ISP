@@ -6,9 +6,8 @@ description: Index page
 
 ## Individual Software Process
 
-Other pages: 
 [About the Course](Topics), 
-[Google Classroom](https://classroom.google.com/u/0/c/MTQ5OTI2OTQ3MTJa) for announcements & assignments (class code minx6nj), [Resources](Resources).
+[Google Classroom](https://classroom.google.com/u/0/c/MTQ5OTI2OTQ3MTJa) for assignments (code: minx6nj), [Resources](Resources).
 
 
 <table border="1">
@@ -26,10 +25,25 @@ Other pages:
 <td markdown="span">
 [Intro to Course](intro/Introduction-to-Course.pdf)    
 [Recommendations from SKE Entrepreneur](intro/Jomzap-Recommendations.pdf)    
-Intro to [SDLC](intro/software-life-cycle) and [Software Processes](intro/Introduction-software-process.pdf)    
+[Official Course Description](Course-description-2016.pdf) is phony.
 </td>
 <td markdown="span">
-Join [Google Classroom](https://classroom.google.com) "ISP 2018". Use your KU Login and code **minx6nj**.   
+Join [Google Classroom](https://classroom.google.com) "ISP 2018". Use your KU Login and code **minx6nj**.    
+Join Github Classroom - invitation sent to your KU-Gmail.        
+Update your Github profile: your real name & photo.
+</td>
+</tr>
+<!-- Software Lifecycle and Process --
+<tr valign="top">
+<td align="center" markdown="span"> 
+Software Process &amp; Lifecycle
+</td>
+<td markdown="span">
+Intro to [Software Development Lifecycle](intro/software-life-cycle) (SDLC)    
+Intro to [Software Processes](intro/Introduction-software-process.pdf)    
+</td>
+<td markdown="span">
+   
 </td>
 </tr>
 <!-- Iterative Development -->
@@ -86,7 +100,7 @@ Unit Tests and Pull Requests: use this code [unittests.zip](unittests.zip)
 </td>
 <td markdown="span">
 [Unit Testing Basics](testing/UnitTesting.pdf) with JUnit    
-[JUnitParams tutorial](testing/JUnitParams-tutorial.pdf) library for parameterized tests    
+[JUnitParams tutorial](testing/JUnitParams-tutorial.pdf) for parameterized tests    
 [Python Unit Testing](testing/PythonUnitTest.pdf)
 </td>
 <td markdown="span">
@@ -104,7 +118,7 @@ Intro to [Agile Principles and Practices](agile/agile-principles-practices)
 <td markdown="span">
 Read about Agile at [Agile 101](https://www.agilealliance.org/agile101/) of Agile Alliance.    
 Think critically.  Do you agree with the principles?   
-[Agile at Microsoft](https://www.youtube.com/watch?v=-LvCJpnNljU) how the Visual Studio Team Services transitioned to agile. Interesting, but some fuzzy buzzwords.   
+[Agile at Microsoft](https://www.youtube.com/watch?v=-LvCJpnNljU) how Visual Studio Team Services moved to agile. Interesting, but lots of buzzwords.   
 </td>
 </tr>
 <!-- Web Dev -->
@@ -117,9 +131,9 @@ Web Dev
 [Django](web/django) and [Web Frameworks](web/web-frameworks).
 </td>
 <td markdown="span">
-[Intro to HTTP](web/HTTP.pdf) a very basic intro.     
-Install [Django Web Framework](web/django), implement the tutorial yourself. Study Django and pay attention to the **development process** parts.    
-[Web Development in 2018](web/Web_Dev_in_2018.pdf] and [video](https://youtu.be/Zftx68K-1D4) what to know if you want to be a pro web dev.
+A very basic [Intro to HTTP](web/HTTP.pdf).     
+Install [Django Web Framework](web/django), implement the tutorial yourself. Pay attention to the *development process*.    
+[Web Dev in 2018](web/Web_Dev_in_2018.pdf) and [video](https://youtu.be/Zftx68K-1D4) what to know if you want to be a pro.
 </td>
 </tr>
 <!-- Midterm -->
@@ -130,13 +144,40 @@ Midterm
 </td>
 <td markdown="span">
 Written: 9:00-11:00 AM    
-Program: 12:00-15:00 PM    
+Coding: 12:00-15:00 PM    
 *Dress Like a Programmer*
 </td>
 <td markdown="span">
 Everything so far.
 Bring your computer to **both** morning and afternoon.   
 [Student Questions on Software Process][isp-qa] some will be on the exam.
+</td>
+</tr>
+<!-- Submodules and Testing -->
+<tr valign="top">
+<td align="center" markdown="span"> 
+Git Submodules
+</td>
+<td markdown="span"> 
+Git Submodule for Testing    
+</td>
+<td markdown="span">
+[How to use git submodule](git/submodule) for Tic-Tac-Toe unit tests.
+</td>
+</tr>
+<!-- Automated Testing -->
+<tr valign="top">
+<td align="center" markdown="span"> 
+Build Automation
+</td>
+<td markdown="span"> 
+[Ant](automate/Ant.pdf), [Make](automate/Make.pdf), and other tools    
+Continuous Integration    
+</td>
+<td markdown="span">
+Using Ant and CI with Github: [Java sample project][demo-ci], [Python sample project][demo-pyci]    
+Assignment: 1) add tictactoe-test as git submodule, 2) write an Ant build file for TicTacToe and run unit tests, 3) add Travis-CI to your TicTacToe project to test automatically.
+
 </td>
 </tr>
 
@@ -146,6 +187,8 @@ Bring your computer to **both** morning and afternoon.
 
 [Github Repository](https://github.com/cpske/ISP.git)
 
-[git-book-branching]: https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell "Git Branching in ProGit book"
+[git-branching]: https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell "Git Branching in ProGit book"
 [git-book-branching-and-merging]: https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging "Basic Branching and Merging"
 [isp-qa]: https://isp2018.github.io/isp-qa/
+[demo-ci]: https://github.com/jbrucker/demo-ci
+[demo-ci-python]: https://github.com/jbrucker/demo-pyci
