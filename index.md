@@ -175,8 +175,8 @@ Build Automation
 Continuous Integration    
 </td>
 <td markdown="span">
-Using Ant and CI with Github: [Java sample project][demo-ci], [Python sample project][demo-pyci]    
-Assignment: 1) add tictactoe-test as git submodule, 2) write an Ant build file for TicTacToe and run unit tests, 3) add Travis-CI to your TicTacToe project to test automatically.
+Using Ant and CI with Github: [Java sample project][demo-ci], [Python sample project][demo-ci-python]    
+Assignment: 1) add tictactoe-test as git submodule, 2) write an Ant build file for TicTacToe and run unit tests, 3) add [Travis-CI](git/ci-integration) to your TicTacToe project to test automatically.
 
 </td>
 </tr>
