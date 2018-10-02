@@ -22,9 +22,9 @@ test code.
 
 ```
 TicTacToe/
-   src/         <== your source code
-   test/        <== add a "test/" folder as submodule "clone"
-   build.xml    <== Ant build file to automate testing
+   src/         <-- your source code
+   test/        <-- submodule for "test/" folder (clone submodule here)
+   build.xml    <== Ant build file (create this yourself)
 ```
 
 To add the unit tests to your TicTacToe project use:
@@ -67,9 +67,12 @@ To run the tests in Eclipse, do:
 * add `test` as additional source folder (right-click on the `test` folder to add it to build path, or right-click on project and choose 'Build Path')
 * add JUnit library to your project (right-click on project and choose 'Build Path' -> Add libraries)
 
-This is boring, repetitive work.  Instead, you can...
+This is boring, repetitive work.  
 
-*Automate repetitive tasks:* (1) use [ant](https://ant.apache.org) to run tests, (2) use Continuous Integration to automatically run tests via ant or other tool.
+**Automate repetitive tasks:** 
+
+* use [ant](https://ant.apache.org) to run tests
+* use Continuous Integration to automatically run tests with Ant
 
 ### Updating the Submodule Files
 
