@@ -175,7 +175,7 @@ Build Automation
 Continuous Integration    
 </td>
 <td markdown="span">
-Using Ant and CI with Github: [Java sample project][demo-ci], [Python sample project][demo-ci-python]    
+Using Ant and CI with Github: [Java sample][demo-ci], [Python sample][demo-ci-python]    
 Assignment: [TicTacToe testing with Ant and Travis CI](assignment/week8-ant-ci)
 </td>
 </tr>
