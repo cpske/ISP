@@ -1,6 +1,6 @@
-# Testing with Ant and Travis CI
+## Testing with Ant and Travis CI
 
-## Take Ownership of your TicTacToe repository
+### Take Ownership of your TicTacToe repository
 
 Each student has "admin" authority for their TicTacToe repository on Github Classroom.  Do these exercises, transfer the repo to your own account using Setting - Options and scroll down to "Transfer Ownership".  
 
@@ -17,21 +17,21 @@ cmd> git remote set-url origin https://github.com/new-location-of-remote-repo
 cmd> git remote -v
 ```
 
-## Git Submodule
+### Git Submodule
 
 1. Add a submodule for test code to your TicTacToe project.
    * The Submodule URL is https://github.com/ISP2018/tictactoe-test.git
-   * See course page on cpske.github.io/isp for how to use Git Submodules.
+   * See [git submodules](../git/submodule) on cpske.github.io/isp for how to use Git Submodule.
 2. Commit the changes to your repo: `git commit -m "Add test submodule"`
 3. Push to Github.
 4. On Github, is there any *visual* indication that `test` is a submodule?
-5. Run the unit tests on your computer.  You need to change your project config in the IDE.
+5. Run the unit tests on your computer.  You may need to update your project config in the IDE.
 
-## Build and Test Using Ant
+### Build and Test Using Ant
 
 1. Install Apache Ant from [ant.apache.org](https://ant.apache.org) if you don't already have ant installed.  Use `ant -v` to check the version.  Current version is 1.10.x.
 2. Read [Hello World with Ant](https://ant.apache.org/manual/tutorial-HelloWorldWithAnt.html) for introduction to Ant syntax.
-3. Add an Ant `build.xml` file to your TicTacToe project.
+3. Create an Ant `build.xml` file in your TicTacToe project.
    * Create targets:
 ```
 clean - remove compiler output (*.class) and build directory
@@ -47,7 +47,7 @@ jar  - create a runnable Jar file of the game.
 5. Use the `jar` task to create a runnable JAR file and run it using java -jar.
    * *Hint:* you need to copy the .fxml files to the build directory before creating Jar file.  
 
-## Add Automatic Testing using Travis CI
+### Add Automatic Testing using Travis CI
 
 1. Read the Travis CI [Getting Started](https://docs.travis-ci.com/user/getting-started/) guide. It is short.
 2. Create a Travis CI account according to instructions in *Getting Started*.
@@ -65,7 +65,7 @@ jar  - create a runnable Jar file of the game.
 "Trigger Build".
 > He accepted the default settings and clicked "Trigger custom build". It worked.
 
-## Fix your TicTacToe
+### Fix your TicTacToe Game
 
 If your TicTacToe game passed all tests: *Congratulations!*
 
