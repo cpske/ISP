@@ -120,13 +120,13 @@ See: [Jar task][ant-jar], [Copy task][ant-copy], and [Hello World with Ant][hell
 5. In your TicTacToe project, add a `.travis.yml` file containing configuration information.  You can use the file in [demo-ci][demo-ci] to get started, but you need to edit it for your project.
 6. Verify that Travis is building and testing your project.
 
-> Fatalai Jon reported that when he did this, Travis showed his 
-> TicTacToe project, but it did not build it.
-> He solved it by clicking the "More Options" box on the right, and select 
-"Trigger Build".
+> Fatalai Jon reported that when he did this, Travis would not build his
+> TicTacToe project.
+> He solved it by clicking the "More Options" box on right side of the Travis CI page, 
+< and select "Trigger Build".
 > He accepted the default settings and clicked "Trigger custom build". It worked.
 
-### 7. Display Travis CI Status in project README
+### 7. Display Travis CI Status in project README.md
 
 1 In the `README.md` of your Github project, add an icon that shows the start of the latest Travis CI build.  If you click on the icon, it should open the Travis CI web page for the project.
 
@@ -134,7 +134,7 @@ See: [Jar task][ant-jar], [Copy task][ant-copy], and [Hello World with Ant][hell
 
 If your TicTacToe game passed all tests: *Congratulations!*
 
-Otherwise, make some change to the source code and push to Github.  Watch as Travis automatically rebuilds and tests the project.
+Otherwise, fix your source code and push to Github.  Watch as Travis automatically rebuilds and tests the project.
 
 ### What to Submit
 
