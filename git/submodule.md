@@ -46,9 +46,9 @@ Changes to be committed:
 	new file:   .gitmodules
 	new file:   test
 ```
-The contents of the `test/` directory won't be committed as part of your repository, even though git added the directory to your git repo.
+The files in the `test/` directory will **not** be commited to your repo. Only the directory name itself is added.
 
-In older version of `git`, after you add a submodule you must run the `git submodule update` to clone its contents. In the current Git, this isn't necessary (does nothing):
+In old versions of `git`, after adding a submodule you must run the `git submodule update` to clone its contents. In the current Git, this isn't necessary. In older git, type:
 ```shell
 cmd> git submodule update --init
 ```
@@ -59,25 +59,21 @@ Git updated your project configuration with .gitsubmodules, and created a clone 
 
 In effect you have a separate Git repository inside your project repository.
 
-### Running the Tests
+### Running the Tests in an IDE
 
-To run the tests in Eclipse, do:
+To run the tests in an IDE (Eclipse, IntelliJ, etc.) you probably need to add `test` to the build path, and maybe add the JUnit library to the project build path.
 
-* use "File -> Refresh" to refresh Eclipse's view of the project files
-* add `test` as additional source folder (right-click on the `test` folder to add it to build path, or right-click on project and choose 'Build Path')
-* add JUnit library to your project (right-click on project and choose 'Build Path' -> Add libraries)
+### Automate Unit Tests
 
-This is boring, repetitive work.  
+A more efficient way to run tests is:
 
-**Automate repetitive tasks:** 
-
-* use [ant](https://ant.apache.org) to run tests
-* use Continuous Integration to automatically run tests with Ant
+* use [Ant](https://ant.apache.org) 
+* use Continuous Integration to automatically checkout code and run tests. For this, your project needs a build configuration using Ant, Gradle, or Maven.
 
 ### Updating the Submodule Files
 
 The files in the `tictactoe-test` project may be updated on Github.
-To update your clone of this project, 
+To update your clone,
 just change directory to the submodule directory (`test`) and use `git pull`:
 ```shell
 cmd> cd test
