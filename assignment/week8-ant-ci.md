@@ -87,7 +87,8 @@ For example
 2. Create the Jar file in the project root directory.
 3. Jar must be runnable!  Specify the "Main-Class" in the Jar's Manifest file.
 4. Jar doesn't need test classes! Exclude test classes from the JAR using "excludes=*pattern*".  See [Ant Jar][ant-jar] manual page for how to do this.
-```
+
+```xml
 <target name="jar" depends="TODO" 
         description="Create runnable JAR file of project">
     <jar destfile="TODO/TicTacToe.jar"
@@ -98,8 +99,10 @@ For example
     </jar>
 </target>
 ```
-5. The Jar file needs the `.fxml` files, so ant should **copy** those files from the `src` tree to the `bin` tree.  This should really be part of the "compile" task, so add it there.    
-```
+
+Step-5. The Jar file needs the `.fxml` files, so ant should **copy** those files from the `src` tree to the `bin` tree.  This should really be part of the "compile" task, so add it there.    
+
+```xml
 <target name="compile" ... />
     <javac ...>
        compile source
