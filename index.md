@@ -179,6 +179,19 @@ Using CI with Github: [Java sample][demo-ci], [Python sample][demo-ci-python]
 Assignment: [TicTacToe testing with Ant and Travis CI](assignment/week8-ant-ci)
 </td>
 </tr>
+<!-- Midterm -->
+<tr valign="top">
+<td align="center" markdown="span"> 
+6 Dec 
+</td>
+<td markdown="span">
+Last day of class.
+Projects should be done, deployable, and deployed to cloud.
+</td>
+<td markdown="span">
+
+</td>
+</tr>
 
 </table>
 

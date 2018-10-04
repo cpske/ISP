@@ -1,21 +1,29 @@
 ## Testing with Ant and Travis CI
 
-### 1. Take Ownership of your TicTacToe repository
+### 1. Take Ownership of your TicTacToe repository and RENAME it
 
-Each student has "admin" authority for their TicTacToe repository on Github Classroom.  Do these exercises, transfer the repo to your own account using Setting - Options and scroll down to "Transfer Ownership".  
+Each student has "admin" authority for their TicTacToe repository on Github Classroom.  Do these exercises, transfer the repo to your own Github account using Setting -> Options and scroll down to "Transfer Ownership".  
 
-Transfer ownership to your own account, so you can use Travis CI.
+1. Transfer ownership of "tictactoe-yourname" to your own account, so you can use Travis CI.
+   * During transfer **rename the repo** to `tictactoe` (remove the `-yourname`)
+   * If you forget to rename, you can do it later, using to repo Settings page.
 
-After you transfer ownership the Github URL changes to:
+2. After you transfer ownership the Github URL changes to:
 ```
-https://github.com/yourlogin/tictactoe-yourlogin.git
+   https://github.com/yourlogin/tictactoe.git
 ```
-Then, in your **local tictactoe repo** change the URL of "origin" to this new URL (if you prefer ssh, change to the ssh URL):
+3. In your **local tictactoe repo** change the URL of "origin" to this new URL (if you prefer ssh, change to the ssh URL):
 ```shell
-cmd> git remote set-url origin https://github.com/new-location-of-remote-repo
+cmd> git remote set-url origin https://github.com/yourlogin/tictactoe.git
 # Verify it:
 cmd> git remote -v
 ```
+
+**Note:** I will check your build on Travis CI, so the project URL should be
+```
+https://travis-ci.com/your_github_id/tictactoe
+```
+If the URL is something else, then you won't get credit.
 
 ### 2. Add Git Submodule for Tests
 
