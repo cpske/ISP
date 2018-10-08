@@ -32,9 +32,9 @@
 ## Videos
 
 * [Django Crash Course](https://www.youtube.com/watch?v=D6esTdOLXh4) on Youtube (1:08:00).
-   - Django is MTV framework. "V" is "View controller" or "business logic layer" (I don't agree with "business logic" part). "T" is presentation layer.
-   - Includes (boring) instructions to install Python, XAMPP on Windows. 
-   - You don't need "phpmyadmin".  For learning, using Sqlite is simpler.
+   - Django is MTV framework. "V" is "View controller" or "business logic layer" (I don't agree with "business logic" part). "T" is "template" or the presentation layer.
+   - Video includes boring instructions to install Python, XAMPP on Windows. 
+   - You don't need "phpmyadmin" or MySQL.  For learning, the the use SQLite database.
    - **Don't use MySQL root user for database access.** Bad habit and lazy.
 
 ## Learning Python
@@ -42,11 +42,12 @@
 Python is easy to learn and fun to program. 
 
 * [Dive into Python 3](http://www.diveintopython3.net/) - Django recommends.
-* Many online courses, tutorials, books.  Choose what you like.
+* [Python Tutorial](https://docs.python.org/3/tutorial/) on Python official site.
+* Many excellent online courses, tutorials, books to choose from.
 
-To write Django code you need to understand basic O-O concepts and how to write O-O programs using classes and objects.
+To write Django code you need to understand basic O-O concepts and how to use classes and objects in Python.
 
-## Test-Driven-Development
+## Testing and Test-Driven-Development
 
 * [Obey the Testing Goat](http://www.obeythetestinggoat.com/) apply TDD to Django and Python. Thai calls it "fun to read and ingrain TDD practices".  Example: write a test to verify that Django is correctly installed **before** you install Django.
 * [Test-Driven Development with Python](http://www.obeythetestinggoat.com/) - scroll down for chapters.  Individual [pages](http://www.obeythetestinggoat.com/pages/book.html).

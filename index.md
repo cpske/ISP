@@ -179,7 +179,39 @@ Using CI with Github: [Java sample][demo-ci], [Python sample][demo-ci-python]
 Assignment: [TicTacToe testing with Ant and Travis CI](assignment/week8-ant-ci)
 </td>
 </tr>
-<!-- Midterm -->
+<!-- Thai -->
+<tr valign="top">
+<td align="center" markdown="span"> 
+Guest Speaker    
+18 Oct
+</td>
+<td markdown="span">
+Software development at TaskWorld, C.I., and other topics
+presented by Thai Phangsakulyanont, an SKE alumnus.
+</td>
+<td markdown="span">
+
+</td>
+</tr>
+
+<!-- Lab Exam -->
+<tr valign="top">
+<td align="center" markdown="span"> 
+*Hackathon*    
+Date TBA 
+</td>
+<td markdown="span">
+Design, implement, test, automate, and deploy a simple web application
+to a cloud provider.  This individual assignment counts as lab exam.
+</td>
+<td markdown="span">
+A one-day project to implement a simple but complete web app in Django
+or Play Framework for Java.  Demonstrate good development
+skills and knowledge of a web framework by writing and
+deploying a complete web app. 
+</td>
+</tr>
+<!-- Final -->
 <tr valign="top">
 <td align="center" markdown="span"> 
 6 Dec 
@@ -189,7 +221,6 @@ Last day of class.
 Projects should be done, deployable, and deployed to cloud.
 </td>
 <td markdown="span">
-
 </td>
 </tr>
 
