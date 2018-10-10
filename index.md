@@ -171,7 +171,7 @@ Git Submodule for Testing
 Build Automation
 </td>
 <td markdown="span"> 
-[Ant](automate/Ant.pdf), [Make](automate/Make.pdf), and other tools    
+[Ant](automate/Ant.pdf), [Make](automate/Make.pdf), and other build tools    
 Continuous Integration    
 </td>
 <td markdown="span">

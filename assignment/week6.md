@@ -61,9 +61,6 @@ Practice "code review". Ask someone else to review your questions and give feedb
 
 ### Example
 
-```
-## Questions
-
 Q1: Some software companies have specialists for requirements and software 
 architecture (Architects) who are assigned to a project to do a specific job, 
 but leave the project once their work is done.  A software architect creates 
@@ -76,7 +73,7 @@ Write 1 or 2 sentences to describe each of the problems.
 
 ## Answers
 
-Q1: The tip "*Architects must write code*" notes that software design tends 
+A1: The tip "*Architects must write code*" notes that software design tends 
 to evolve over time, and this can require changes in the architecture. 
 Some problems are:
 
@@ -92,7 +89,7 @@ in the implementation.  You could write tons of documentation of "why" but who w
 
 3. [Martin Fowler][fowler-architects] claims that an architect's job includes 
 "mentor the development team, to raise their level so that they can take on 
-more comlex issues".
+more complex issues".
 
 Ref: [PAD][pad] Tip 39 *Architects Must Write Code" and 
 Martin Fowler ["Who Needs an Architect?"][fowler-architects]
