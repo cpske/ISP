@@ -153,6 +153,18 @@ Bring your computer to **both** morning and afternoon.
 [Student Questions on Software Process][isp-qa] some will be on the exam.
 </td>
 </tr>
+<!-- Project -->
+<tr valign="top">
+<td align="center" markdown="span"> 
+Project Proposal
+</td>
+<td markdown="span"> 
+Course Project [Guidelines](project/project-guide)
+</td>
+<td markdown="span">
+Develop a proposal for course project and create a link on [Google Sheet](http://bit.ly/isp2018proposals). See template and instructions on Google Classroom.
+</td>
+</tr>
 <!-- Submodules and Testing -->
 <tr valign="top">
 <td align="center" markdown="span"> 
