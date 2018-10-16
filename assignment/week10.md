@@ -12,8 +12,7 @@ In your Github project README, please include:
 Of course, you can also have links to other items, such as link to design
 documents, installation guide, or your CI server.
 
-The content is different, but here is a good project homepage
-from a [Software Spec & Design team project](https://github.com/SSD2015/TeamGG)
+Here is a [nice project homepage](https://github.com/SSD2015/TeamGG) from Software Spec & Design course. Your homepage content will be **different** from this. 
 
 ## Iteration Plan
 
@@ -26,6 +25,6 @@ This can be pretty simple but should include:
   > Identify most use-cases for game, and record them in project wiki with brief description of each use case.    
 * One or more **milestones**. A "milestone" is something concrete, and usually related to running software.  But in first iteration a milestone can be a non-code artifact.
   > * Setup shared git repository with automatic unit testing using Jenkins.    
-  > * Create a domain model for quiz game, and produce a working prototype that shows questions.    
-* List of **features** to implement. In first iteration, there may not be any.
-* **Tasks** recorded on your task board.  If your proposal mentions using Scrum, then tasks must have time estimates.
+  > * Create a domain model for quiz game, and produce a working prototype that shows questions from a database.    
+* List of **features** to implement. In the first iteration, there may not be any.
+* **Tasks** recorded on your task board.  If your team is using Scrum, then tasks must have time estimates.
