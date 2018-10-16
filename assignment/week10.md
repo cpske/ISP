@@ -12,7 +12,9 @@ In your Github project README, please include:
 Of course, you can also have links to other items, such as link to design
 documents, installation guide, or your CI server.
 
-Here is a [nice project homepage](https://github.com/SSD2015/TeamGG) from Software Spec & Design course. Your homepage content will be **different** from this. 
+Here is a [nice project homepage][TeamGG-README] from Software Spec & Design course. Your homepage content will be **different** from this. 
+
+[TeamGG-README]: https://github.com/SSD2015/TeamGG/blob/master/README.md
 
 ## Iteration Plan
 
