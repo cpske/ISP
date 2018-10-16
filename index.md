@@ -202,7 +202,7 @@ Software development at TaskWorld, C.I., and other topics
 presented by Thai Phangsakulyanont, an SKE alumnus.
 </td>
 <td markdown="span">
-1. Provide a link to your project repo on [Google Project Sheet](http://bit.ly/isp2018proposals).
+1. Provide a link to your project repo on [Google Project Sheet](http://bit.ly/isp2018proposals).    
 2. Create a project README.md containing [this information](assignments/week10).
 
 </td>
