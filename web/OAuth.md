@@ -1,3 +1,58 @@
+## OAuth 2 Authorization Flows and Grant Types
+
+**Authorization Code** is a 3-party flow used by web applications.
+This is also the flow in the original OAuth 1.0 (but details differ in OAuth 2).
+
+Authorization Code flow is used in web apps.  It can also be used in mobile
+apps using the *Proof Key for Code Exchange" (PKCE) technique.
+
+**Implicit** a 2-party flow, used in Javascript apps, e.g. single-page web apps.
+
+**Resource Owner Password Credentials** is a flow where the user (resource owner)
+gives the application his userid/password for relay to the auth server.
+Obviously this is reasonable only for trusted apps.
+It is used in mobile apps, even though "trusted" is maybe a bad idea.
+
+**Client Credentials** for machine-to-machine (or app-to-app) communication,
+such as an application accessing a protected API.
+
+
+
+## OAuth Roles
+
+**Client** - an applicatoin that wants to access some data or "resrource" owned by someone on another site/application (the resource server).  Or, the client application may merely want to identify a person via another site/application.
+
+**Resource Owner** - person or principal that "owns" the resource that the client wants to access.
+
+**Resource Server** the application/site that stores (provides access to) the user's(Resource Owner) information.
+
+**Authorization Server** the server that grants access to a user's information.  This is often the same as the Resource Server.
+
+| Role                 | Google           | Twitter               |
+|----------------------|------------------|-----------------------|
+| client               |
+
+## OAuth Tokens
+
+* Grant Token
+* Bearer Token
+
+A token is an opaque string or object used to identify or authorize a request.
+In OAuth a token can either be a String or JSON Web Token (JWT).
+As a String, it would look like:
+
+
+### Managing Tokens in an App
+
+Tokens need to be used multiple times, so they need to be stored
+while the app is running.  They *might* need to be stored between
+user sessions.  How to store them?
+
+Client-side such as single-page apps.
+Tokens are stored either in session storage, local storage, or cookies.
+Delete them when no longer needed (even though they are opaque strings
+that expire anyway).
+
 ## OAuth 2 Web App Flow
 
 There are 3 parties involved:
@@ -41,117 +96,14 @@ This is a different OAuth Flow for apps that have rich front-ends that mostly co
 
 This flow is described in the TopTal article on Social auth.
 
-## Python Social Auth Library
 
-[Python Social Auth][psa] library on Github provides methods making it easier to create an OAuth client for different providers, including Google, Github, Facebook.
-
-PSA has several subprojects, including a Django component to integrate social-auth-core in a Django project.
-
-### Python components to include in your project
-
-In `requirements.txt` and your actual environment, include:
-```
-social-auth-core
-social-auth-app-django
-```
-Execute:
-```
-# On my machine, run these as root (sudo) to install globally
-pip install social-auth-core
-pip install social-auth-app-django
-```
-
-### Django Project: configure authentication backends
-
-In project settings file, add:
-```
-AUTHENTICATION_BACKENDS = (
-    'social_core.backends.google.GoogleOAuth2',
-    'social_core.backends.facebook.FacebookOAuth2',
-    'django.contrib.auth.backends.ModelBackend',
-)
-for key in ['GOOGLE_OAUTH2_KEY',
-            'GOOGLE_OAUTH2_SECRET',
-            'FACEBOOK_KEY',
-            'FACEBOOK_SECRET']:
-    # Use exec instead of eval here because we're not just trying 
-    # to evaluate a dynamic value here
-    # we're setting a module attribute whose name varies.
-    exec("SOCIAL_AUTH_{key} = os.environ.get('{key}')".format(key=key))
-```
-The Social Auth Pipeline depends on which OAuth flow you use.
-This example is from [Social Auth Docs][psadocs].  An example with optional parts enabed is in the Toptal article
-```
-SOCIAL_AUTH_PIPELINE = (
-    # Get the information we can about the user and return it in a simple
-    # format to create the user instance later. On some cases the details are
-    # already part of the auth response from the provider, but sometimes this
-    # could hit a provider API.
-    'social_core.pipeline.social_auth.social_details',
-
-    # Get the social uid from whichever service we're authing thru. The uid is
-    # the unique identifier of the given user in the provider.
-    'social_core.pipeline.social_auth.social_uid',
-
-    # Verifies that the current auth process is valid within the current
-    # project, this is where emails and domains whitelists are applied (if
-    # defined).
-    'social_core.pipeline.social_auth.auth_allowed',
-
-    # Checks if the current social-account is already associated in the site.
-    'social_core.pipeline.social_auth.social_user',
-
-    # Make up a username for this person, appends a random string at the end if
-    # there's any collision.
-    'social_core.pipeline.user.get_username',
-
-    # Send a validation email to the user to verify its email address.
-    # Disabled by default.
-    # 'social_core.pipeline.mail.mail_validation',
-
-    # Associates the current social details with another user account with
-    # a similar email address. Disabled by default.
-    # 'social_core.pipeline.social_auth.associate_by_email',
-
-    # Create a user account if we haven't found one yet.
-    'social_core.pipeline.user.create_user',
-
-    # Create the record that associates the social account with the user.
-    'social_core.pipeline.social_auth.associate_user',
-
-    # Populate the extra_data field in the social record with the values
-    # specified by settings (and the default ones like access_token, etc).
-    'social_core.pipeline.social_auth.load_extra_data',
-
-    # Update the user record with any changed info from the auth service.
-    'social_core.pipeline.user.user_details',
-)
-```
-The pipeline is explained in the [Social Auth Docs][psadocs],
-in the section [/en/latest/pipeline.html](https://python-social-auth.readthedocs.io/en/latest/pipeline.html).
-
-### How to Test?
-
-The Toptal article suggests using the Django Responses library.  Article has a link to the author's test code.
+## References
 
 
-## Registering Your App with OAuth Provider
+* [OAuth 2.0: The Complete Guide](https://auth0.com/blog/oauth2-the-complete-guide/) basic explanation of OAuth concepts and operation.  Not a "complete guide" but worth reading.
 
-During registration you must provide:
-* callback URL
+* [OAuth 2 Overview](https://auth0.com/docs/protocols/oauth2) on [oauth0.com](https://ouath0.com). oauth0 is a commercial provider of OAuth products (not the OAuth official site oauth.com). Their articles on OAuth and OpenID Connect are well-written.
 
-You will receive:
-* client key
-* client secret
+* [10 Things You Should Know About Tokens](https://auth0.com/blog/ten-things-you-should-know-about-tokens-and-cookies/) explains how to use and store tokens in client-side apps, i.e. Javascript. Useful general information.
 
-## Resources
-
-[How to Integrate OAuth 2 Into Your Django/DRF Back-end](https://www.toptal.com/django/integrate-oauth-2-into-django-drf-back-end) explains how to implement OAuth client that authenticates via Google or Facebook, uses SocialAuth. (toptal.com)
-
-[Python Social Auth][psa] library on Github and [documentation][psadocs]. Library for auth via Social sites.o
-
-[Simple Todo API with Django and OAuth2](https://www.madewithtea.com/simple-todo-api-with-django-and-oauth2.html) - looks a bit out-of-date, not much about OAuth.
-
-[psa]: https://github.com/python-social-auth "Python Social Auth library on Github"
-
-[psadocs]: http://python-social-auth.readthedocs.org/ "PSA Documentation"
+* [JWT for OAuth Client Authhorization Grants](https://www.ibm.com/support/knowledgecenter/en/SSEQTP_liberty/com.ibm.websphere.wlp.doc/ae/cwlp_jwttoken.html) by IBM, describes JWT tokens and gives example how to create one in Java (requires several libaries to compile Java code).

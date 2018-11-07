@@ -1,20 +1,33 @@
-### Project 
+## Projects 
 
-During first iteration:
+During first iteration he mainly does:
 
 - Experimentation.
-- Set up test, CI, deploy tooling early.
+- Set up test, CI, deployment tooling early.
 - Identify what's risky and attack it first.
 - Create a simple proof of concept.
 
 Advise for Chat, OWSA:
 
 - Do performance (load) testing.  Don't try to optimize.
+- If your solution approach works for your target user load, its good enough.
 
-Thai's App, from his senior project at KU: [Bemuse](github.com/bemusic/bemuse).
+## Bemuse
+
+[Bemuse](github.com/bemusic/bemuse) Thai's music app, from his senior project at KU.
+In-browser game with music, entirely Javascript.
+
+- When he started the project at KU, he committed to continue for at least 5 years.
 - Its open source and has several contributors.
 - He applies CI, auto deployment, E2E testing
 - Uses Amplitude for analytics.
+- [Google Search "bemuse"](https://www.google.co.th/search?q=bemuse) - Thai's application
+is the top search result!
+
+> be-muse:
+>
+> *verb*: puzzle confuse, or bewilder.  "He had a bemused expression".    
+> *synonyms*: bewildered, confused, puzzled, perplexed.
 
 ## Coding
 
@@ -27,6 +40,7 @@ ESLint
 [PyLint](https://www.pylint.org/) for Python.
 
 Using PyLint in VSCode (from VSCode Documentation):
+
   1. Enter Control-Shift-P to open command palette.
   2. Choose "Python Select Linter".  Choose pylint.
   3. VS Code prompts to install PyLint if not already installed.
@@ -43,18 +57,18 @@ Linter for English - https://github.com/btford/write-good
 
 ### Testing
 
-Practical Test Pyramid on MartinFowler.com
+"Practical Test Pyramid" on MartinFowler.com describes 3 levels of testing:
 
-1. End to End (E2E) Tests
-2. Integration Tests
-3. Unit Tests
+1. Unit Tests
+2. Integration TEsts
+3. End to End (E2E) Tests
 
 Tools:
 
 * Prescript - test runner
 * Puppeteer - Google in-browser tester. 
 * Selenium - another tester, used at TaskWorld.
-* Mocha, Chai - test tools
+* Mocha, Chai - test tools for Javascript
 
 ### Code Coverage
 
@@ -62,13 +76,13 @@ Shows how much code is exercised by tests.
 
 ### Automatic Deployment
 
-Deploy to preview site.
+Deploy application to a preview site, not the production site.
 
 ### Communication
 
 Majority of project failures are due to people problems.
 
-Always connecting with goals.
+Always connect with goals.
 
 ### For Web Apps, how to you keep track of routes, URLs, and their purpose?
 

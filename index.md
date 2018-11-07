@@ -204,7 +204,20 @@ presented by Thai Phangsakulyanont, an SKE alumnus.
 <td markdown="span">
 1. Provide a link to your project repo on [Google Project Sheet](http://bit.ly/isp2018proposals).    
 2. Create a project README.md containing [this information](assignment/week10).
-
+</td>
+</tr>
+<!-- Week 12 -->
+<tr valign="top">
+<td align="center" markdown="span"> 
+Project Updates   
+08 Nov
+</td>
+<td markdown="span">
+Assignments to do in lieu of class.
+</td>
+<td markdown="span">
+[Team Assignment for Week 12](assignment/week12)    
+Individual assignment to be added.
 </td>
 </tr>
 

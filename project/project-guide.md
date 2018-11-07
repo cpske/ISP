@@ -67,16 +67,20 @@ Team size is 3-4 people.  If you want a team with fewer or more than this, pleas
    * Attendee "voting" for talks they want.
    * Rating or feedback on talks by attendees.
 
+
  ## Platform
 
  Django or Play framework OK.  No PHP frameworks.
 
- For any other framework,
+ If you use a framework other than Django:
+
  1. implement an app in the framework and demonstrate it.  Include some tests.
  2. give a reason why you prefer this framework
 
  ### Client-side Frameworks and Testing
 
- Code in the client side needs to have unit tests, too.  The are several good tools for testing Javascript, esp. with React or Angular.
+ You aren't required to use a client-side fraemwork, but some teams plan to.
+
+ Code in the client side needs to have unit tests, too.  The are several good tools for testing Javascript, esp. code using React or Angular.
 
  * [How React Components Make UI Testing Easy](https://www.toptal.com/react/how-react-components-make-ui-testing-easy)

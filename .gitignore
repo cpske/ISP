@@ -21,5 +21,7 @@ misc/
 private/
 Jittat/
 Paruj/
+web/django-deployment.md
+web/django-howto.md
 # This is a separate repository
 resources/
