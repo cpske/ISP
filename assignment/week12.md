@@ -1,16 +1,23 @@
 ## Project Homepage Updates
 
+**Due:** Thursday, 8 Nov.
+
 Update the home page (README.md) of your Github repository to
 include the following information, in this order.
 
 1. Description of the project.  At least one paragraph.
 
-2. Links to documents
+2. Team members.
+
+3. Links to documents
    a. Link to iteration plans.  When someone clicks on this link it should actually show a list of iteration plans (if you have one doc per iteration) or directly open the iteration plan (if all in one document).  Just linking to the wiki is not good enough.
    b. Link to task board.
    c. Link to issues (for most projects this is the Github issue tracker)
+   d. Links to any other online docs, such as development plan, mockups, design.
 
-3. Instructions to Install and Run Application Locally (see below)
+4. Instructions to Install and Run application locally (see below)
+
+You can, of course, have other information on the home page. Showing CI test status is good **if** it is accurate.
 
 ## Write Better Iteration Plans
 
@@ -67,6 +74,6 @@ Instructions should include:
 4.  Please **do not** require someone install a database like MySQL or PostgreSQL.  Use a lightweight database, such as SQLite for Python projects or H2 for Play (whatever is included with Play).
 5. How to run the application and verify its working.
 
-## Your Peers with Validate Your Instructions
+### Your Peers with Validate Your Installation Instructions
 
 Other students will be assigned to follow your instructions and run your app.
