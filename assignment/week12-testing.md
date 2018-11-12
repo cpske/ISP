@@ -12,28 +12,28 @@ and you may learn something that helps your own project.
 
 Since you are running the project locally, OAuth authentication probably won't
 work.  So, if login is required then find some other way to login (such as
-a test user).
+a locally stored test login).
 
 ### Instructions for Tester
 
-1. Find the project that you are assigned to run here: [Project Testing](http://bit.ly/isp-project-testing)
+1. Find the project that you are assigned to test here: [Project Testing](http://bit.ly/isp-project-testing)
 
 2. Copy the test report template: [http://bit.ly/isp-project-test](http://bit.ly/isp-project-test) and customize it according to instructions in the template.
 
-3. Share your test report doc with everyone at ku.th (or everyone on the web) and add a link in [Project Testing](http://bit.ly/isp-project-testing)
+3. Share your test report doc with everyone at ku.th (or everyone on the web) and add a link in [Project Testing](http://bit.ly/isp-project-testing) spreadsheet.
 
 4. Go to the project's Github site and read the instructions for installing and running the project.  Two projects (Manatee Chat and Travel Planner) require you to install 2 Github projects.
 
 5. Follow their instructions, and: 
    a) create a report of what you encountered (using the template from step 2)
-   b) post issues on the team's Github project
+   b) post issues on the team's Github repo
 
 6. Things to report:
    - instructions that are incomplete or hard to understand
    - things the don't work or cause errors
    - undocumented dependencies. For Python projects, there may be dependencies on packages not listed in `requirements.txt`.
    - A good way to find undocumented dependencies is run the project in a virtualenv, using only the project `requirements.txt` to add packages to virtualenv.
-   - instructions that require too much work and could be simpler.
+   - instructions that require too much work
        * Example: requiring many modifications to `settings.py` instead of using the [python-decouple][decouple] package and providing an example `.env` file, e.g. `test.env`.
 
 7. Run the application and perform whatever functionality has been implemented so far.
