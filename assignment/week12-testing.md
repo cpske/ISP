@@ -57,3 +57,14 @@ a locally stored test login).
 4. If your project **really** can't work with a local database, then provide the tester with test credentials (limited privelages) to access your cloud-based database and configure the cloud-based database to accept connections from anywhere.  
 
 
+## Ref
+
+[Python-decouple][decouple] module and [how to use it][decouple-howto].
+
+If you don't like depending on *yet another package*, you could do the same thing using environment variables (envvariables) or a Python script that sets configuring variables and is invoked by settings.py.
+
+For Java or Scala, the standard approach is to use a Properties file.  You used properties in one of the Coin Purse labs.
+
+
+[decouple]: https://pypi.org/project/python-decouple/ "Python-decouple module"
+[decouple-howto]: https://simpleisbetterthancomplex.com/2015/11/26/package-of-the-week-python-decouple.html
