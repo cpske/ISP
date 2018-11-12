@@ -217,7 +217,7 @@ Assignments to do in lieu of class.
 </td>
 <td markdown="span">
 [Team Assignment for Week 12](assignment/week12)    
-Individual assignment to be added.
+[Individual Testing Assignment](assignment/week12-testing)    
 </td>
 </tr>
 
