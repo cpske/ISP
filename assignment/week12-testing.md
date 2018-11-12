@@ -63,7 +63,7 @@ a locally stored test login).
 
 If you don't like depending on *yet another package*, you could do the same thing using environment variables (envvariables) or a Python script that sets configuring variables and is invoked by settings.py.
 
-For Java or Scala, the standard approach is to use a Properties file.  You used properties in one of the Coin Purse labs.
+For Java or Scala, the standard approach is to use a Properties file for configuration values.  You used properties in one of the Coin Purse labs.
 
 
 [decouple]: https://pypi.org/project/python-decouple/ "Python-decouple module"
