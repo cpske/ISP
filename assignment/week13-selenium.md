@@ -4,7 +4,7 @@
 
 You need the selenium package and at least one browser driver.
 
-Install instructions: https://pypi.org/project/selenium/
+Installation instructions: https://pypi.org/project/selenium/
 
 This only installs Selenium, not the browser drivers:
 ```shell
