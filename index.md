@@ -221,6 +221,24 @@ Assignments to do in lieu of class.
 </td>
 </tr>
 
+<!-- Week 13 -->
+<tr valign="top">
+<td align="center" markdown="span"> 
+Testing    
+15 Nov
+</td>
+<td markdown="span">
+[Code Coverage](testing/test-coverage)    
+Organizing your tests in Django   
+[Testing Pyramid](testing/WebTesting.pdf)    
+</td>
+<td markdown="span">
+1. Refactor your Django tests into separate files, based on what is being tested.    
+2. Perform code coverage on your Django tutorial code and your project code.    
+3. 
+</td>
+</tr>
+
 <!-- Lab Exam -->
 <tr valign="top">
 <td align="center" markdown="span"> 
@@ -232,10 +250,7 @@ Design, implement, test, automate, and deploy a simple web application
 to a cloud provider.  This individual assignment counts as lab exam.
 </td>
 <td markdown="span">
-A one-day project to implement a simple but complete web app in Django
-or Play Framework for Java.  Demonstrate good development
-skills and knowledge of a web framework by writing and
-deploying a complete web app. 
+Details to be provided.
 </td>
 </tr>
 <!-- Final -->

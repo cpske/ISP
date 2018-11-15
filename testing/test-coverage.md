@@ -27,6 +27,7 @@ coverage html
 ```
 5. View the file `htmlcov/index.html` in your web browser.
 
+
 ## Configure Coverage
 
 You can configure what files are checked by `coverage` using
@@ -52,6 +53,35 @@ omit =
 include =
     polls/*
 ```
+
+## How Many Unit Tests Are Enough?
+
+Consider this example of computing the discount for a Sale:
+> If the sale total is at least 1,000 Baht, give a 50 Baht discount.
+> If the customer pays using cash, then give a 2% discount.
+
+```python
+def total(sale):
+    """Compute total price of a sale, including discounts."""
+    total_price = sale.get_total()
+    if sale.payment.type == PaymentType.CASH:
+        total_price = 0.98*total_price
+    if total_price >= 1000:
+        total_price -= 50
+    return total_price
+```
+
+How many test cases -- that is, how many different calls to total(sale) -- do we
+need to thoroughly test this code?
+
+**Cyclomatic Complexity** is a measure of the complexity of a method, class, or package.  For a method, cyclomatic complexity is the number of different paths of execution through the method.
+
+A simple formula for computing it is:
+```
+   complexity = #branches - #decision_points + 1
+```
+
+JaCoCo (Java coverage tool) computes complexity and reports how much "complexity" was tested or missed.
 
 ## Code Coverage for Java Projects
 
