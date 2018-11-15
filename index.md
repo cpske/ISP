@@ -231,6 +231,7 @@ Testing
 [Code Coverage](testing/test-coverage)    
 Organizing your tests in Django   
 [Testing Pyramid](testing/WebTesting.pdf)    
+[Externalize Configuration](web/decouple-configuration)   
 </td>
 <td markdown="span">
 1. Refactor your Django tests into separate files, based on what is being tested.    
