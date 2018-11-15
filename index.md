@@ -229,14 +229,14 @@ Testing
 </td>
 <td markdown="span">
 [Code Coverage](testing/test-coverage)    
-Organizing your tests in Django   
+[Organizing your tests in Django](web/django-test-cases)       
 [Testing Pyramid](testing/WebTesting.pdf)    
 [Externalize Configuration](web/decouple-configuration)   
 </td>
 <td markdown="span">
 1. Refactor your Django tests into separate files, based on what is being tested.    
 2. Perform code coverage on your Django tutorial code and your project code.    
-3. 
+3. Selenium: [Find Bad Links](assignment/week13-selenium)
 </td>
 </tr>
 
