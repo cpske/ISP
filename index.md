@@ -229,7 +229,7 @@ Testing
 </td>
 <td markdown="span">
 [Code Coverage](testing/test-coverage)    
-[Organizing your tests in Django](web/django-test-cases)       
+[Organizing your tests in Django](web/django-testing)       
 [Testing Pyramid](testing/WebTesting.pdf)    
 [Externalize Configuration](web/decouple-configuration)   
 </td>

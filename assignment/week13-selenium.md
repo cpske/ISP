@@ -52,9 +52,10 @@ Return a new list containing all the invalid or unreachable URLs.
 
 You can use Selenium WebDriver or Python httplib or urllib2 for this.
 Try sending just a HEAD request instead of GET request. 
-The HEAD request only returns the response header without the page content, which will be a lot faster.
+The HEAD request only returns the response header without the page content, which is a lot faster.
 
- For urllib2, just open the URL.
+For urllib2, just open() the URL.  If the URL doesn't exist,
+opening it will raise an exception.
 
 ### 4. Print all Invalid Links on the Course Homepage
 
@@ -74,6 +75,9 @@ browser.
 
 Can you find a way to tell the browser **not** load images on the page?  It will make loading faster.
 
+### What to Submit
 
+**Ancient File Upload:**
+Submit your Python code to Google Classroom.  
 
 

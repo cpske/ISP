@@ -28,7 +28,7 @@ An empty file is OK.
 
 ### 2. Name your test files `test_*.py`
 
-By default, the Django test runner only looks for files named `test_something.py`.
+By default, the Django test runner looks for files named `test_something.py`.
 This is **not the standard naming** for Python unit tests (should be something_test.py), but it will enable tests to run without more configuration.
 
 Since the tests are now in their own package, you may need

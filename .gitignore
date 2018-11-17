@@ -3,6 +3,7 @@ bin/
 isp-qa/
 misc/
 old/
+projects/
 _site/
 .*
 !.gitignore
