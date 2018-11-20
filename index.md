@@ -237,6 +237,8 @@ Testing
 1. Refactor your Django tests into separate files, based on what is being tested.    
 2. Perform code coverage on your Django tutorial code and your project code.    
 3. Selenium: [Find Bad Links](assignment/week13-selenium)
+
+[Feedback on Selenium assignment](assignment/week13-selenium-feedback)
 </td>
 </tr>
 

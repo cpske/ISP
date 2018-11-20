@@ -21,17 +21,27 @@ DATABASES = {
 STATIC_URL = 'https://storage.googleapis.com/ske-polls/static/'
 ```
 
-A recommended practice in programming is to separate configuration constants 
-that are likely to change from code.
+A recommended practice in programming is to separate configuration constants from code.
 
 Its also important to remove passwords and private credentials from code.
 
 ## Techniques
 
 In Java, a standard technique is to put configuration data in a Java Properties
-file.  In OOP (Programming 2) we used a properties file for the Coin Purse.
+file.  In OOP (Programming 2) we used a Properties file for the Coin Purse.
+A properties file is plain text like this:
+```
+# the default currency
+purse.currency = Baht
+# name of default withdraw strategy
+purse.strategy = purse.strategy.GreedyWithdraw
 
-In Django, one technique is to use **environment variables** for configuration data.  In `settings.py` we could write:
+# Example JDBC properties
+jdbc.url = jdbc:h2:file:/path/file.db
+```
+As the example shows, property names (like `purse.capacity`) may include a period, and string values (like Baht) are **not** surrounded by quotes, even if they contain spaces.
+
+In Django, one way to handle configuration values is to use **environment variables**.  In `settings.py` we could write:
 ```
 SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = os.getenv('DEBUG') == 'True'
@@ -49,15 +59,14 @@ DATABASES = {
 }
 STATIC_URL = os.getenv('STATIC_URL','/static/')
 ```
-
-and then set the environment variable before running the application.
+and then set environment variables before running the application.
 Most PaaS services, like Heroku, provide a way of setting env-variables
 before running your web application.
 
 If you use this technique, you should provide sensible defaults in case
 some env-variable is not set.  For example, the default value of `DATABASE_HOST	 is '127.0.0.1' and default static URL is '/static/'.
 
-Environment variables can also pose a security risk: a bad guy may find a way to read environment variables.  In Django, if DEBUG=True and an error occurs, Django prints debugging output in the browser window **including environment variables**.
+Environment variables can pose a security risk: a bad guy may find a way to read environment variables.  In Django, if DEBUG=True and an error occurs, Django prints debugging output in the browser window **including environment variables**.
 
 There are two Python packages that provide a nice alternative to using environment variables.
 
@@ -117,7 +126,7 @@ DATABASES = {
 SECRET_KEY = config('SECRET_KEY')
 ```
 
-### How to Use Alternate Configuration Files?
+### How to Use Alternate Configuration Files
 
 Decouple can read configuration file from a file other than `.env` or `settings.ini`.  This is explained at the end of the python-decouple docs page.
 
@@ -127,11 +136,11 @@ create a new `decouple.Config` object using `RepositoryEnv('/path/to/env-file')`
 from decouple import Config, RepositoryEnv
 
 ENV_FILE = '/opt/envs/my-project/local.env'
-env_config = Config(RepositoryEnv(ENV_FILE))
+myconfig = Config(RepositoryEnv(ENV_FILE))
 
 # use the Config.get() method in the same way you would use config('var').
 # decouple.config uses the get() method internally, 
-SECRET_KEY = env_config.get('SECRET_KEY')
+SECRET_KEY = myconfig.get('SECRET_KEY')
 ```
 
 ### References 
