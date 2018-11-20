@@ -25,14 +25,13 @@ This is the way you **should** write Python. Very good!
 > If they had written **docstring** comments 
 > on *all* methods (as Kunyarak did) it would be really Professional code.
 
-In Python, `__name__` is a global variable set automatically at runtime.
+In Python, `__name__` is an automatic global variable.
 If a file is executed as a module, such as by using `import module` 
 and invoking a function in the file, then `__name__` is the name of the module.
 
 If a file is being directly interpretted by Python, such as when you run
-`python filename`, then `__name__` has the value `"__main__"`.
+`python filename`, then `__name__` is `"__main__"`.
 
-In Python, a `main()` function has so special meaning.
 If your file has code you want to run as the "main method" (like in Java), 
 put it inside an `if __name__ == "__main__"` block as in the above example.
 
