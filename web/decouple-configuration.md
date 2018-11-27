@@ -60,6 +60,23 @@ DATABASES = {
 STATIC_URL = os.getenv('STATIC_URL','/static/')
 ```
 and then set environment variables before running the application.
+In Bash you can write:
+```
+SECRET_KEY=AElek13407aseasej39
+DEBUG=True
+DATABASE_USER-admin
+DATABASE_PASSWORD=mint2840
+DATABASE_HOST=sql.cloud.google.com
+```
+You can write these values in a file and then "*source*" the file
+in the shell before starting the web app, such as:
+```
+# read config values. In some shells type "." instead of "source"
+cmd> source config.sh  
+# start web app with config values now in the environment
+cmd> python manage.py runserver
+```
+
 Most PaaS services, like Heroku, provide a way of setting env-variables
 before running your web application.
 
@@ -147,6 +164,7 @@ SECRET_KEY = myconfig.get('SECRET_KEY')
 
 * https://pypi.org/project/python-decouple/
 * https://stackoverflow.com/questions/43570838/how-do-you-use-python-decouple-to-load-a-env-file-outside-the-expected-paths
+* Java Properties: Javadoc for `java.util.Properties` explains how to use Properties in Java.
 
 
 ### Questions

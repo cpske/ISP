@@ -1,40 +1,35 @@
 ## Team Assignment for 22 Nov
 
-1. Your application should have at least 3 methods of deployment:
-   * Local install ("dev" deployment)
+1. Separate configuration data from code.  Use a configuration file and/or the environment.
+   * Consider using the `python-decouple` package
+   * Provide a sample configuration file, with comments
+
+2. Your application should have at least 3 methods of deployment:
+   * Local installation ("dev" deployment)
    * Cloud install ("production")
    * Testing (Django provides this)
 
-2. The "local (dev) install" **must not** use the production (cloud) database!  Use a separate database.
+3. The "local" (dev) installation and test installation **must not** use the production (cloud) database!  Use a separate database.
 
-3. Provide initial data for local installation.  Installation instructions must include an **easy** way to initialize the database and add data, so app can be used.
+4. Provide initial data for local installation.  Installation instructions must include an **easy** way to initialize the database and add data, so app can be used.
    * Example: for recipes app, provide data for some categories and recipies.
    * Look at Django `manage.py loaddata ...` for this.
    * Include data for a local user with known username and password.
 
-4. Separate "config" data from code.  Use a configuration file and/or the environment.
-   * Consider the `python-decouple` package
-
-5. There must be a way to **change** which configuration file is used, so you can have separate config data for "dev", "production", and other configs (e.g. demo).
-   * For configuration values read from the environment, this is easy to do.
-
-6. Install Instructions:
+5. Improve your installation instructions:
    * Installation steps must be numbered 1, 2, 3 ....
-   * Separate "installation" instructions from "running the app"
+   * Separate "Installation" instructions from "Running the app"
+   * Also see the next item
 
-7. Dependencies should be accurate and realistic!
+6. Dependencies should be accurate and realistic!
    * Wrong: "Requires Python 3.6.6."
        - *Really?* Python 3.6.5 or 3.6.7 won't work? Python 3.5 won't work?
-   * Wrong: in `requirements.txt`:
-   ```
-   pytz==2018.4
-   ```
-       - `pytz` contains Timezone info. Use the latest version: `pytz>=2018.4`.
 
-8. Use a standard order of sections in README.md - see below.
-9. **Deploy To Cloud by Saturday, 24 Nov, 12 midnight**.
+7. Use a standard order of sections in README.md - see below.
 
-10. Add Logging to your application.
+8. **Deploy To Cloud by Saturday, 24 Nov, 12 midnight**.
+
+9. Add Logging to your application.
 
 11. Create a thorough End-to-Ending test using Selenium.
     * Must test many features of your app using Selenium to control browser.

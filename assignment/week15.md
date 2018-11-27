@@ -1,25 +1,12 @@
-## 1. Separate Configuration from Code
-
-See the Google Spreadsheet.
-
-Download the current version of the master branch and check
-the following:
-
-1. Is configuration data separate from code?
-    * Only data that is a) likely to change based on deployment, or b) confidential (secret) needs to be separate from code.  Things like the Django TEMPLATES setting or STATIC_URL do not need to be separate.
-2. If you find any configuration data still in code then open an issue on team's repository.
-3. Write your findings in spreadsheet.
-
-## 2. Test 'Production' Web Apps
-
-Try to find defects (bugs) in other teams' web apps,
-using the cloud-deployed version.
+## Bug Bounty Hunting:  Test 'Production' Web Apps
 
 **Note:** By 25 November, every team should have some version of their app
-deployed to the cloud.
+deployed to the cloud and the URL shown in their README.md. (This was specified in class last week.)
 
-1. Everyone is **required** to test the web app
-listed on the Google sheet (same as for first round testing).
+Try to find defects (bugs) in other teams' web apps, using the cloud-deployed version.
+
+1. Everyone **must** test the cloud deployment of the web app
+listed on the Google sheet (same as for config testing).
 2. You can also test as many apps as you like to find defects and earn bug bounty points.
 3. **Report Defects** 2 places:
     - First, open an issue on team's project web.
@@ -61,15 +48,18 @@ Please report the following, even though they don't earn bug points.
 * **question** - request for more information is needed, because the problem isn't clear or you can't reproduce it.
 * **not a bug** - if you can't reproduce it, or conclude that its not a bug. You should explain *why* to the person who opened the issue.
 
-> Non-Intuitive Behavior:    
-> Phatra Asset Management has web-based account services at https://phatraclick.phatraasset.com.  After logging in, the user's account page has a `logout` link in upper right corner.
->
-> If the user clicks "Logout", it then shows a page like this:
-> ![Phatra Logout Screen](/images/PhatraLogoutScreen.png)
->
-> 
+## Example of Non-Intuitive Behavior
 
+Phatra Asset Management has web-based account services application at https://phatraclick.phatraasset.com.  
+A client can view his portfolio, buy or redeem mutual funds, or view/print a transaction report.
 
+On the top of the page is a `logout` link.  Most users would **expect** that clicking on this link will log them out.
 
-By Sunday, 25 Nov, teams should have deployed their
-apps to the web nad
+However, after clicking on the link it shows a page like this:
+
+![Phatra Logout Screen](/images/PhatraLogoutScreen.png)
+
+Is the person logged out?  The answer is **no**.
+You can use the browser "Back" button to re-enter the site and perform more actions.  This is both *non-intuitive* and a potential security risk.
+
+Its also stupid.  The "Close" button won't actually close the window on most web browsers.

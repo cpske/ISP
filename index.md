@@ -251,36 +251,37 @@ Logging, 12-Factors
 [Logging](logging/Logging.pdf)    
 [12-Factor App](we/12FactorApp.pdf)   
 </td>
-<td>
+<td markdown="span">
 [Logging Exercise](assignment/logging)     
-[Week 14 Assignment](assignment/week14) for team
+[Week 14 Assignment](assignment/week14) for team -
 </td>
 </tr>
 
-<!-- Lab Exam -->
-<tr valign="top">
-<td align="center" markdown="span"> 
-*Hackathon*    
-Date TBA 
-</td>
-<td markdown="span">
-Design, implement, test, automate, and deploy a simple web application
-to a cloud provider.  This individual assignment counts as lab exam.
-</td>
-<td markdown="span">
-Details to be provided.
-</td>
-</tr>
-<!-- Final -->
+<!-- Last week -->
 <tr valign="top">
 <td align="center" markdown="span"> 
 6 Dec 
 </td>
 <td markdown="span">
 Last day of class.
-Projects should be done, deployable, and deployed to cloud.
+Projects should be done, tested, reviewed, and deployed to cloud.
 </td>
 <td markdown="span">
+Presentation: describe your dev process and technology used.  Not a demo -- the class will use your cloud deployment and give feedback.
+</td>
+</tr>
+<!-- Final -->
+<!-- Lab Exam -->
+<tr valign="top">
+<td align="center" markdown="span"> 
+14 Dec
+</td>
+<td markdown="span">
+*Lab Exam:*
+Implement and write tests for a simple web application.
+</td>
+<td markdown="span">
+Details to be provided.
 </td>
 </tr>
 
