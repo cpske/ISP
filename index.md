@@ -241,6 +241,22 @@ Assignment [Feedback](assignment/week13-selenium-feedback)
 </td>
 </tr>
 
+<!-- Week 14 -->
+<tr valign="top">
+<td align="center" markdown="span"> 
+Logging, 12-Factors
+22 Nov
+</td>
+<td markdown="span">
+[Logging](logging/Logging.pdf)    
+[12-Factor App](we/12FactorApp.pdf)   
+</td>
+<td>
+[Logging Exercise](assignment/logging)     
+[Week 14 Assignment](assignment/week14) for team
+</td>
+</tr>
+
 <!-- Lab Exam -->
 <tr valign="top">
 <td align="center" markdown="span"> 
