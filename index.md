@@ -244,7 +244,7 @@ Assignment [Feedback](assignment/week13-selenium-feedback)
 <!-- Week 14 -->
 <tr valign="top">
 <td align="center" markdown="span"> 
-Logging, 12-Factors
+Logging, 12-FactorApp    
 22 Nov
 </td>
 <td markdown="span">
@@ -253,7 +253,23 @@ Logging, 12-Factors
 </td>
 <td markdown="span">
 [Logging Exercise](assignment/logging)     
-[Week 14 Assignment](assignment/week14) for team -
+[Week 14 Assignment](assignment/week14) for team
+</td>
+</tr>
+
+<!-- Week 15 -->
+<tr valign="top">
+<td align="center" markdown="span"> 
+Pull Requests & Review   
+29 Nov
+</td>
+<td markdown="span">
+[Pull Requests](git/Pull-Requests.pdf)    
+Dependency checking tools (in pull request slides)
+</td>
+<td markdown="span">
+[Week 15 Team Assignment](assignment/week15-team)     
+[Week 15 Indiv. Assignment](assignment/week15-individual) - bug hunting
 </td>
 </tr>
 

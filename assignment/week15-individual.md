@@ -5,16 +5,16 @@
 By now, every team should have a  version of their app
 deployed to the cloud and the URL shown in their README.md.
 
-### Assignment
+## Assignment
 
 Try to find defects (bugs) in other teams' apps, using the cloud-deployed version.
 
 1. Everyone **must** test the cloud deployment of the project
-listed on the Google sheet for installation testing (old assignment).
+listed on the Google sheet for installation testing (the project you installed locally).
     - Spreadsheet is at http://bit.ly/isp-project-testing
 2. Test as many other apps as you want to find defects and earn bug bounties.
     - The first report of a confirmed, unique defect earns 1 point.
-3. **Report Defects** 2 places:
+3. **Report Defects** in 2 places:
     - First, open an issue on team's project repository.
       Provide enough information for them to reproduce the issue.
     - Second, add a row to the Google spreadsheet at http://bit.ly/isp-project-testing on the "Bug Reports" page.  Include:
@@ -23,7 +23,7 @@ listed on the Google sheet for installation testing (old assignment).
         3. issue number
         4. brief description of defect
 4. Wait for team to **confirm the bug**.  (See below)
-5. No points for finding defects in your own application.  But you should report issues anyway.
+5. No points for finding defects in your own application. But you should report issues anyway.
 
 ## Earn Bug Bounty Points
 
@@ -37,6 +37,7 @@ A "bug" or "defect" includes:
 * page navigation errors
 * authorization errors, such as being able to modify data submitted by someone else or access a restricted page without login
 * anything that causes the app to crash, return an exception page, or a 5xx status code page.
+* other kinds of errors may earn a point
 
 ## Other Defects (No Bounty But Please Report)
 
@@ -44,16 +45,16 @@ Please report the following, even though they don't earn bug points.
 
 * spelling mistakes
 * confusing navigation
-* non-intuitive behavior (app behaves differently from other similar apps in the same situation).  
+* non-intuitive behavior (app behaves differently from what users would normally experience in a web app).  
 
 ## Validation by Development Team
 
-**Promptly** review each issue. Apply a label to the issue:
+**Promptly** review each issue. Apply a label to the issue (Github lets you add labels to issues).
 
-### Labels
+Use these labels:
 
 * **bug** - if you confirm its a bug that hasn't been reported before.
-* **duplicate** - the issue duplicates another issue. Add a comment like "See #18" or "Duplicates #18" to the issue, and close it.
+* **duplicate** - the issue duplicates another issue. Add a comment like "Duplicates #18" to the issue, and close it.
 * **question** - request for more information is needed, because the problem isn't clear or you can't reproduce it.  Add **bug**, **duplicate**, or **not a bug** label when you understand the issue.
 * **not a bug** - if you can't reproduce it, or conclude that its not a bug. You should explain *why* its not a bug in your comment closing the issue.
 

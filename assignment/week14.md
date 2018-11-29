@@ -1,15 +1,16 @@
 ## Team Assignment for 22 Nov
 
-1. Separate configuration data from code.  Use a configuration file and/or the environment.
+1. **Separate configuration data from code**.  Use a configuration file and/or the environment.
    * Consider using the `python-decouple` package
    * Provide a sample configuration file, with comments
 
 2. Your application should have at least 3 methods of deployment:
    * Local installation ("dev" deployment)
-   * Cloud install ("production")
-   * Testing (Django provides this)
+   * Cloud deployment ("production")
+   * Test deployment (Django provides this)
+   * **Extra Credit** a "preview" cloud deployment that is entirely separate from "production"
 
-3. The "local" (dev) installation and test installation **must not** use the production (cloud) database!  Use a separate database.
+3. The local installation **must not** use the production (cloud) database!  Use a separate database, and make it user-selectable.
 
 4. Provide initial data for local installation.  Installation instructions must include an **easy** way to initialize the database and add data, so app can be used.
    * Example: for recipes app, provide data for some categories and recipies.
@@ -29,12 +30,9 @@
 
 8. **Deploy To Cloud by Saturday, 24 Nov, 12 midnight**.
 
-9. Add Logging to your application.
-
-11. Create a thorough End-to-Ending test using Selenium.
-    * Must test many features of your app using Selenium to control browser.
-    * Use the most important features, including input and search.
-    * Must detect and report problems.
+9. **Add Logging** to your application. 
+    * Log all unexpected exceptions.
+    * Log user events.  At least login and logout.
 
 ### Order of Info in README.md
 
