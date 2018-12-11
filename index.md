@@ -293,11 +293,14 @@ Presentation: describe your dev process and technology used.  Not a demo -- the 
 14 Dec
 </td>
 <td markdown="span">
-*Lab Exam:*
-Implement and write tests for a simple web application.
+Written: 9:00-12:00 AM    
+Coding: 13:00-16:00 PM    
+*Dress Like a Programmer*
 </td>
 <td markdown="span">
-Details to be provided.
+Programming exam will be to write a simple web application,
+with some info saved to a database, and write some tests.
+[Additonal details](review/web-dev-exam.html).
 </td>
 </tr>
 
