@@ -9,6 +9,38 @@
   - lack of predictability or consistency
   - (un)maintainability
 
+## Topics To Cover Next Time
+
+* Refactoring - I covered this in a 2015 course and its on the final exam,
+  referring to specific refactoring cases from Martin Fowler's book.
+  Each one has a name, a motivation, and how to apply.
+   - [Refactoring Techniques](https://refactoring.guru/refactoring/techniques) lots of them
+   - [Refactoring Guru](https://refactoring.guru/refactoring)
+
+* Writing
+   - How to write a project proposal
+   - Writing goals, objectives, and milestones
+
+* Velocity - computed from Story Points and actual time spent, or just time.
+
+* The RUP framework and a few key concepts.
+
+* ORM mapping concepts.  After doing the Django tutorial, explain how
+  relationships are mapped to database tables.
+   - identity field as key.  Synthetic id, sequence, natural id, or compound key
+   - many-to-1, 1-to-1 (not that common), 1-to-many
+   - Foreign Keys 
+   - cascading (cascading save, cascading delete) for foreign-key objects
+   - lazy instantiation
+   - object uniqueness for entities
+   - 2 design patterns: DAO and Active Object
+   - anti-pattern: anemic models (and fat controllers)
+
+* Prioritizing development
+   - Larman and RUP: value to customer, high risk, importance to architecture
+   - Prototype to reduce risk or uncertainly about suitability
+
+
 ## Later: Overview of Common Software Processes
 
 * Waterfall: the most misrepresented process.

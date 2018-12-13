@@ -18,10 +18,10 @@
    Explanation:  Prioritize your log messages so that events which
    are more likely to need attention have a higher priority.
    The usual meanings of the priorities are:
-   * TRACE - flow of execution of the program, such as entering or leaving a method. Even more verbose than DEBUG.
-   * DEBUG - messages useful for debugging the application
-   * INFO - events, activity, or actions that might help explain "what happened" while program was running.
-   * WARNING - an unusual condition, or something that may need attention
+   * TRACE - flow of execution of the program, such as entering or leaving methods. Even more verbose than DEBUG.
+   * DEBUG - messages useful to developers for debugging or analyzing the application
+   * INFO - events, activity, or actions that might help explain "what happened" while program was running. Routine activity is usually logged here.
+   * WARNING - an unusual condition, or something that may need attention.
    * ERROR - software, hardware, or environment error. Something that should normally not occur.
    * CRITICAL or FATAL - an error that causes the application (or part of it) to stop working.
 
@@ -46,7 +46,7 @@
    And running multiple apps in one container means that one app can suffer 
    if another app is using all the compute resources.
 
-   To simplify deployment and make web apps more portable, a more current approach 
+   To simplify deployment and make web apps more portable, the current approach 
    is for web apps to be (almost) completely self-contained.
    The web server is included as part of the application.
    For Python apps, include Gunicorn with your app.
@@ -60,7 +60,6 @@
 
 5. What's wrong with this Django settings.py file?
    - Answer: Configuration data should not be stored in code.  Almost everything in the above code fragment is configuration data that should not be in code.  Some of the values need to be kept private, too.
-
 ```python
 from dj_database_url import parse
 
@@ -83,7 +82,7 @@ SOCIAL_AUTH_FACEBOOOK_SECRET = 'we-sell-your-data-hahaha'
 
 8. Deployment for development and production are different. How should we separate the source code for these two cases?
    - Keep development and production code as similar as possible. Vary only the config.   
-   *This is consistent with the recommendation to have only one code base.*
+   *This is related to the recommendation to have only one code base.*
 
 9. In a web app using an MVC design, where should we put application logic, such as computing total votes in a poll?
    - The models
@@ -98,7 +97,7 @@ SOCIAL_AUTH_FACEBOOOK_SECRET = 'we-sell-your-data-hahaha'
 
 12. In the polls application, suppose that a user must login before he can submit a vote. What's the best way to perform this check in code?
    - The *best* way (in my opinion) is:
-       * Use method annotations, such as Django's `@Login_required`.  Its best because it separates the "concern" of verifying someone is logged in, from application logic and avoids duplicate code.
+       * Use method annotations, such as Django's `@Login_required`.  Its best because it separates the "concern" of verifying someone is logged in, from application logic and avoids a lot of duplicate code.
    - An *acceptable* way is:
        * Any of the above (URL router, an annotation, or a check inside the code)
 

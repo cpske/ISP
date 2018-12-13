@@ -76,3 +76,19 @@ For any web app, you need a place to deploy it.
 * Creating an admin user: `python manage.py createsuperuser --username=foo --email=foo@gmail.com`. It will prompt for a password (cannot be all numeric).
 
 * Other Highly Ranked Python Frameworks: Flask, Pyramid (includes Pylons), CherryPy, and Turbo Gears.
+
+### Running a Django App using Gunicorn
+
+    cd myproject
+    gunicorn [--bind 0.0.0.0:8080] myproject.wsgi
+
+Other options:
+
+    --workers 3      # or: -w 3
+    --daemon         # run in daemon mode. or: -d
+
+[Gunicorn Docs](http://docs.gunicorn.org/en/stable)
+
+Run a Django App with [Gunicorn](http://rahmonov.me/posts/run-a-django-app-with-gunicorn-in-ubuntu-16-04/), 
+[Nginx](http://rahmonov.me/posts/run-a-django-app-with-nginx-and-gunicorn/),
+and [Supervisord](http://rahmonov.me/posts/run-a-django-app-with-nginx-gunicorn-and-supervisor/) for Linux.
