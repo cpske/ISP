@@ -1,11 +1,11 @@
 ## Comments on Programming Exam
 
-It is great that you can write a working, useful web application in only 4 hours. 
+It is great that you can write a working, useful web application in only 4 hours!  This class *raises the bar* for future SKE students.  
 
 In grading, I looked for:
+* correctness of logic and code
 * code shows you understand what you are writing
-* use good coding practices
-* correctness of both logic and code
+* use of good coding practices
 
 Score awarded as follows:
 
@@ -26,20 +26,22 @@ Score awarded as follows:
 ### Grading Details
 
 1. `localhost:port/expense/` shows List of 20 most recent expenses, by date.  Graded on a scale of 0-10:
-    - If page only shows "Welcome to Expense Tracker" (or similar) then -1.
-    - -1 no links to other pages, e.g. Add Expense. 
+    - -1 if page only shows "Welcome to Expense Tracker" (or similar).
+    - -1 no links to other pages, e.g. "Add Expense". 
     - -1 more than 20 expenses shown
-    - -1 not sorted by date
+    - -1 expenses not sorted by date
     - -1 date, description, or amount not shown
     - -1 or more if errors or very poor formatting
 2. `Expense` model class.
-    - should have 3 fields: date as DateField, description as CharField, amount as FloatField or DecimalField
+    - should have exactly 3 fields: date as DateField, description as CharField, amount as FloatField or DecimalField
     - -1 if date is CharField, -2 amount is CharField
-    - -1 for poor class name such as "Book" or "Menu"
+    - -1 for poor class name such as "Book" or "Menu", or poor field names such as "title", "pub_date"
     - -2 if class has extra fields, such as `is_done`, `category`
+    - -1 if `amount` field is too small for typical expenses.  Should accept at least 0 - 9,999.99.
 3. `Add Expense` dialog should have labels and input fields for the 3 expense attributes.
     - deduct 1-2 if no labels on input fields. How will user know which value to input in which box?
-4. `Input Validation`. I tried submitting: a) a blank form, b) invalid date, c) omit description, d) negative amount, e) amount 0.25 or 0.01
+    - no credit if it doesn't add the expense to saved expenses
+4. `Input Validation`. I tried submitting: a) a blank form, b) invalid date, c) omit description or 1-letter description, d) negative amount, e) amount 0.25 or 0.01
     - -2 per field with no validation
     - -1 validator does not allow decimal values (12.25)
     - -2 validator returns an exception page (throws exception) instead of a message on the Add Expense page	
@@ -61,16 +63,16 @@ Score awarded as follows:
 
 Since you had very limited time to write the application, should I overlook minor errors, such as List of Expenses showing more than 20 items?  Or, "Add Expense" accepts an empty descripton?
 
-Software today is **plagued** with bugs. As software becomes more important, these bugs have a greater cost.
+Software today is **plagued** with bugs. The costs of these bugs is huge and the bugs hurt everyone.
 
-Developers need to develop habits to produce correct software, and not tolerate avoidable mistakes.  So, I decided to deduct for most mistakes.
+Developers need to develop habits to produce correct software, and not tolerate avoidable mistakes.  So, I decided to deduct for mistakes that you could have avoided or corrected.
 
 
 ## Some Specifics and Code Ideas
 
 ### Expense model
 
-Should contain:
+Model should contain:
 ```python
 class Expense(models.Model):
     date = models.DateField(default=django.utils.timezone.now)
@@ -86,21 +88,21 @@ def total_by_month(cls, year):
     for expense in expenses:
         m = epxense.date.month
         totals[m] += expense.amount
-    return totals;
+    return totals
 ```
+
+The `total_by_month` method isn't required, but its much easier to test this important code if its in the model rather than a view (controller).  Putting it in the model is consistent with the *Information Expert* design principle.
 
 #### How many digits for DecimalField?
 
-What is the biggest expense we might encounter?  For Thai currency, probably 9,999,999,999.99 is reasonable. Even Thaksin doesn't spend that much. That would be `DecimalField(max_digits=12,decimal_places=2)`.  Its OK to use different value for `max_digits`, but is should be reasonable.
+What is the biggest expense we might encounter?  For Thai currency, probably 9,999,999,999.99 is big enough. Even Thaksin doesn't spend that much. That would be `DecimalField(max_digits=12,decimal_places=2)`.  I accepted 6 or more for max_digits.
 
 The following are not acceptable:
 * `models.DecimalField(max_digits=5,decimal_places=2)` the largest expense would be 999.99 (too small)
-* `models.DecimalField(max_digits=50,decimal_places=2)` is ridiculous. This will make the field width too large, and complicate conversion to Python float type (which cannot store that many digits). `max_digits=50` would hold: 
+* `models.DecimalField(max_digits=50,decimal_places=2)` is way to large! This will make the field width too large, and complicate conversion to Python float type (which cannot store that many digits). `max_digits=50` would hold: 
 999,999,999,999,999,999,999,999,999,999,999,999,999,999,999,999.99.
 
-#### Setting Default date Value
-
-### Wrong Type for Dates
+### Setting Default Value for Date Field
 
 Some people tried to set the default date to today's date in Expense like this:
 ```python
@@ -108,25 +110,28 @@ class Expense(models.Model):
     date = models.DateField(default=datetime.today())
 ```
 
-When you run `python manage.py migrate`, Django **warns you** that this isn't what you want.
+When you run `python manage.py makemigrations`, Django **warns you** that this is not what you want.
 The message is:
 ```
 System check identified some issues:
 
 WARNINGS:
 expenses.Expense.date_ex: (fields.W161) Fixed default value provided.
-	HINT: It seems you set a fixed date / time / datetime value as default for this field. This may not be what you want. If you want to have the current date as default, use `django.utils.timezone.now`
-Migrations for 'expense':
-  expense/migrations/0005_auto_20181217_0629.py
-    - Alter field date on expense
+	HINT: It seems you set a fixed date / time / datetime value as default for this field.    
+This may not be what you want.    
+If you want to have the current date as default, use `django.utils.timezone.now`
 ```
-Django is telling you that you should write:
+This means that you should write:
 ```python
 class Expense(models.Model):
     date = models.DateField(
-        default=django.utils.timezone.now)
+        default=django.utils.timezone.now
+    )
 ```
-This way, the function `timezone.now` will be invoked when a new Expense object is created, instead of being set to the value of date() when Expense is loaded into memory and evaluated.
+This way the function `timezone.now` will be invoked when a new Expense object is created, instead of being set to the value of today() when `makemigrations` is run.
+
+No deduction for this, but you should pay attention to the warning messages.
+(PAD: "*Treat warnings like errors*")
 
 #### Model Validators
 
@@ -145,10 +150,10 @@ class Expense(models.Model):
         )
 ```
 
- This is good if the input Form uses the validators.
- If you write your own view code for add_expense, then you need to check if values are valid.  
+This is good if the input Form uses the validators.
+If you write your own view code for add_expense, then you need to check if values are valid.   If any data are invalid, then add an error message(s) to the context and redisplay the "Add Expense" input form.
 
-If you write your own HTML template and view function for "add expense", then you should write code to check for valid data.  If anything is invalid, redisplay the "Add Expense" template with some message(s) about what is invalid.
+If you use a Django form, it does this automatically.
 
 Regardless of how you validate input, input errors should be shown on the 'Add Expense' form so the user can correct them.  **Don't** return an exception screen like this:
 
@@ -169,7 +174,7 @@ Some unacceptable coding practices are:
 Here are some examples and how to improve them.
 
 
-### Example 1
+#### Example 1
 
 This view method for monthly total expenses has problems:
 
@@ -239,7 +244,7 @@ def total_exp(expenses):
     return total
 ```
 
-### Example 2
+#### Example 2
 
 1. Hard-coding year "2018" into code.
 2. Verbose initialization of `total1` list.
