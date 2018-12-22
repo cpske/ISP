@@ -303,6 +303,18 @@ with some info saved to a database, and write some tests.
 [Additonal details](review/web-dev-exam.html).
 </td>
 </tr>
+<!-- Results -->
+<tr valign="top">
+<td align="center" markdown="span"> 
+Results
+</td>
+<td markdown="span">
+[Lab Exam Scores](http://bit.ly/isp-individual-scores) in "FinalLabExam" sheet.
+</td>
+<td markdown="span">
+[Feedback on Lab Exam](review/final-feedback)
+</td>
+</tr>
 
 </table>
 
