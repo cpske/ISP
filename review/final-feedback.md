@@ -1,6 +1,6 @@
 ## Comments on Programming Exam
 
-It is great that you can write a working, useful web application in only 4 hours!  This class *raises the bar* for future SKE students.  
+It is great that you can write a useful, working web application in only 4 hours!  This class *raises the bar* for future SKE students.  
 
 In grading, I looked for:
 * correctness of logic and code
@@ -17,7 +17,7 @@ Score awarded as follows:
 | Validation of Add Expense input dialog | 10% |
 | Report of total expense by month | 10% |
 | Unit tests                       | 10% |
-| Branch for development on Github |  5% |
+| Development branch and commits on Github |  5% |
 | Instructions to build and run in README | 5% |
 | Task Board with tasks               | 0% |
 
@@ -34,14 +34,14 @@ Score awarded as follows:
     - -1 or more if errors or very poor formatting
 2. `Expense` model class.
     - should have exactly 3 fields: date as DateField, description as CharField, amount as FloatField or DecimalField
-    - -1 if date is CharField, -2 amount is CharField
+    - -1 if date is CharField (should be DateField), -2 if amount is CharField (should be DecimalField)
     - -1 for poor class name such as "Book" or "Menu", or poor field names such as "title", "pub_date"
-    - -2 if class has extra fields, such as `is_done`, `category`
-    - -1 if `amount` field is too small for typical expenses.  Should accept at least 0 - 9,999.99.
+    - -2 if Expense class has extra fields, such as `is_done`, `category`
+    - -1 if `amount` field is too small for typical expenses.  Should accept at least 0 to 9,999.99.
 3. `Add Expense` dialog should have labels and input fields for the 3 expense attributes.
     - deduct 1-2 if no labels on input fields. How will user know which value to input in which box?
     - no credit if it doesn't add the expense to saved expenses
-4. `Input Validation`. I tried submitting: a) a blank form, b) invalid date, c) omit description or 1-letter description, d) negative amount, e) amount 0.25 or 0.01
+4. `Input Validation`. I tried submitting: a) a blank form, b) invalid date, c) omit description or 1-letter description, d) negative amount, e) amount 0.25 or 0.01 (should be allowed)
     - -2 per field with no validation
     - -1 validator does not allow decimal values (12.25)
     - -2 validator returns an exception page (throws exception) instead of a message on the Add Expense page	
@@ -65,7 +65,7 @@ Since you had very limited time to write the application, should I overlook mino
 
 Software today is **plagued** with bugs. The costs of these bugs is huge and the bugs hurt everyone.
 
-Developers need to develop habits to produce correct software, and not tolerate avoidable mistakes.  So, I decided to deduct for mistakes that you could have avoided or corrected.
+Developers need to develop good habits to produce correct software, and not tolerate avoidable mistakes.  So, I decided to deduct for mistakes that you could have avoided or detected & fixed yourself.
 
 
 ## Some Specifics and Code Ideas
@@ -91,15 +91,16 @@ def total_by_month(cls, year):
     return totals
 ```
 
-The `total_by_month` method isn't required, but its much easier to test this important code if its in the model rather than a view (controller).  Putting it in the model is consistent with the *Information Expert* design principle.
+The `total_by_month` method isn't required, but its much easier to test this important code if its in the model rather than a controller (Django "view").  Putting it in the model is recommended by the *Information Expert* design principle.
 
 #### How many digits for DecimalField?
 
-What is the biggest expense we might encounter?  For Thai currency, probably 9,999,999,999.99 is big enough. Even Thaksin doesn't spend that much. That would be `DecimalField(max_digits=12,decimal_places=2)`.  I accepted 6 or more for max_digits.
+What is the biggest expense we might encounter?  For Thai currency, probably 9,999,999,999.99 is big enough.    
+Even Thaksin doesn't spend that much. That would be `DecimalField(max_digits=12,decimal_places=2)`.  I accepted 6 or more for max_digits.
 
 The following are not acceptable:
 * `models.DecimalField(max_digits=5,decimal_places=2)` the largest expense would be 999.99 (too small)
-* `models.DecimalField(max_digits=50,decimal_places=2)` is way to large! This will make the field width too large, and complicate conversion to Python float type (which cannot store that many digits). `max_digits=50` would hold: 
+* `models.DecimalField(max_digits=50,decimal_places=2)` is way to large! This will make the field width very large, and complicate conversion to Python float type (which cannot store that many digits). `max_digits=50` can hold: 
 999,999,999,999,999,999,999,999,999,999,999,999,999,999,999,999.99.
 
 ### Setting Default Value for Date Field
@@ -124,14 +125,12 @@ If you want to have the current date as default, use `django.utils.timezone.now`
 This means that you should write:
 ```python
 class Expense(models.Model):
-    date = models.DateField(
-        default=django.utils.timezone.now
-    )
+    date = models.DateField( default=django.utils.timezone.now )
 ```
 This way the function `timezone.now` will be invoked when a new Expense object is created, instead of being set to the value of today() when `makemigrations` is run.
 
-No deduction for this, but you should pay attention to the warning messages.
-(PAD: "*Treat warnings like errors*")
+No deduction for this, but you should pay attention to warning messages.
+(PAD Advise: "*Treat warnings like errors*")
 
 #### Model Validators
 
@@ -151,11 +150,13 @@ class Expense(models.Model):
 ```
 
 This is good if the input Form uses the validators.
-If you write your own view code for add_expense, then you need to check if values are valid.   If any data are invalid, then add an error message(s) to the context and redisplay the "Add Expense" input form.
+If you write your own view code for add_expense, then you need to check if values are valid.   If any data are invalid, then add an error message(s) to the form's context and redisplay the "Add Expense" input form.
 
-If you use a Django form, it does this automatically.
+If you use a Django Form class, it does this automatically.
 
-Regardless of how you validate input, input errors should be shown on the 'Add Expense' form so the user can correct them.  **Don't** return an exception screen like this:
+Regardless of how you validate input, input errors should be shown on the 'Add Expense' form so the user can correct them.  
+
+**Don't** return an exception screen like this:
 
 ![validation_exception](validation_exception.png)
 
@@ -181,9 +182,9 @@ This view method for monthly total expenses has problems:
 1. Getting all objects from database (`objects.all`) is inefficient, even though Django tries to make it efficient by returning an iterator.
 2. Using a global variable `totals` instead of a local variable to store totals.  Don't depend on side-effects if you can avoid it.
     - **Bug** if you display the Monthly Report and click "refresh" the monthly totals increase each time you refresh. This also occurs each time you show the report from the home page. This is because the global `total` array is initialized only once.
-3. Ridiculous if ... elif instead of just computing the index.
-4. Calling total_exp once for each expense, instead of passing it a list of expenses to total, is very inefficient.
-6. Not using Python native syntax to initialize `totals` list.
+3. Long `if ... elif ...` instead of just computing the index.
+4. Calling total_exp once for each expense, instead of calling it once with a list of expenses to total.
+6. Not using Python native syntax to initialize `totals` list. (minor issue)
 
 ```python
 ### The calling code is like this:
@@ -227,12 +228,11 @@ def total_exp(exp):
 The above code can replaced by just this:
 ```python
 ### In the calling method:
-    # This year
     this_year = datetime.date.today().year
     all_expense = Expense.objects.filter(date__year = this_year)
-    totals = total_exp(all_expense)
+    totals = total_expense(all_expense)
 
-def total_exp(expenses):
+def total_expense(expenses):
     """Compute monthly totals for a list of expenses.
        Return a list of totals, indexed by month, with 1=January.
     """
@@ -248,15 +248,16 @@ def total_exp(expenses):
 
 1. Hard-coding year "2018" into code.
 2. Verbose initialization of `total1` list.
-3. Abbreviated names: `ex` (don't abbreviate)
-3. Retrieving all objects from the database instead of only what you need.
+3. Abbreviated variable names: `ex` (for readability, don't abbreviate)
+3. Retrieving all objects from the database instead of only objects you need.
 4. `Expense.amount` is defined as a `FloatField`, so writing `float(i.amount)` is unnecessary.
 5. Ridiculous if-elif-elif instead of directly using Expense.month as index.
 
 ```python
 def report(request):
     ex = Expense.objects.all()
-    total1 = [["Jan",0.0] ,["Feb",0.0] ,["Mar",0.0] ,["Apr",0.0] ,["May",0.0] ,["Jun",0.0] ,["Jul",0.0] ,["Aug",0.0] ,["Sep",0.0] ,["Oct",0.0] ,["Nov",0.0], ["Dec",0.0]]
+    total1 = [["Jan",0.0],["Feb",0.0],["Mar",0.0], ["Apr",0.0],["May",0.0],["Jun",0.0],
+        ["Jul",0.0],["Aug",0.0],["Sep",0.0], ["Oct",0.0],["Nov",0.0],["Dec",0.0]]
     for i in ex:
         if i.date.year == 2018:
             if i.date.month == 1:
@@ -287,7 +288,7 @@ def report(request):
          return render(request, 'expense/report', {'totals': total1})
 ```
 
-Better:
+This code can be simplified as:
 ```python
 import calendar, datetime
 
@@ -302,5 +303,6 @@ def report(request):
     context = {'totals': totals}
     return render(request, 'expense/report', context)
 ```
+In this code, `calendar.month_name[m]` returns the name of the month, such as "January".  `calendar.month_name[m][0:3]` gets the first 3 letters of month name, as in the original code.
 
 
