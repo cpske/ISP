@@ -25,7 +25,7 @@ description: Index page
 <td markdown="span">
 [Intro to Course](intro/Introduction-to-Course.pdf)    
 [Recommendations from SKE Entrepreneur](intro/Jomzap-Recommendations.pdf)    
-[Official Course Description](Course-description-2016.pdf) is phony.
+[Official Course Description](intro/Course-description-2016.pdf) is phony.
 </td>
 <td markdown="span">
 Join [Google Classroom](https://classroom.google.com) "ISP 2018". Use your KU Login and code **minx6nj**.    
