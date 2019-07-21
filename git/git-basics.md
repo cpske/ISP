@@ -52,12 +52,24 @@ git ___________
 ```
 > Note: if you have not yet committed anything then `reset` won't work.  In that case use `git rm --cached filename` which removes the file from the "index" (list of tracked files).
 
-2. You modify a file in your working copy, but its messed up! You to reset your working copy of this file to be the most recent copy in repo? (checkout the most up-to-date revision of this file)
+2. You accidentially mess up the file "exam.py" in your working copy.  What is the command to replace this file (in your working copy) with the last version you committed to git? (That is, checkout the most up-to-date revision of this file)
+
+```shell
+cmd> 
+```
 
 3. You accidentally DELETE the (tracked) file A.txt from your working copy.  How can you recover the file from the repository?
 
+4. You make changes to many files in your working copy, and the application is totally screwed up.  What is the git command to completely replace your working copy with the last commit to git (discards all changes to the working copy)?
 
-4. Even Worse! You accidentally delete some files and commit the changes! Now the files are deleted in the current Git HEAD.   How can you get back the the most up-to-date revision from git?
+```shell
+# replace working copy with latest git command. This cannot be undone.
+cmd> git reset --hard
+```
+  
+    * Suppose your working copy contains some new, untracked file.  When you perform the above command, does git alter or remove this untracked file?
+
+5. Even Worse! You accidentally delete some files and commit the changes! Now the files are deleted in the current Git HEAD.   How can you get back the the most up-to-date revision from git?
 
 ```
 // Find the most recent commit containing the file:

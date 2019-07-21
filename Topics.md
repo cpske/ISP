@@ -1,29 +1,132 @@
+## Sequence of Topics
+
+### Introduction
+ - intro to course content and grading
+ - intro to software process and SDLC
+ - join Github Organization and Google Classroom. Edit your profile on both.
+ - using Github classroom for coding assignments
+
+### Developer Skills
+ - review of OOP fundamentals in Python (assessment exercise)
+ - coding convention
+ - unit testing
+ - using UML
+
+### Git
+ - git basic concepts (git commit graph, staging area, working copy, HEAD...)
+ - common use scenarios
+      - view history of commits
+      - recover deleted or mangled file
+      - "undo" staging
+      - "undo" a commit
+      - see what has changed (diffs)
+      - checkout a particular commit or particular file
+      - working with remotes
+ - branching and tagging
+ - merge and conflict resolution
+ - using remotes. push, fetch, pull
+
+### Git and Development
+ - Github Flow
+ - using issues
+ - write good commit messages, sometimes referencing issues using links
+
+
+-------------------------------------------------------------------------
+# Topics (not in order)
+
+## Introduction: Focus of this Course
+
+* Focus on the basic knowledge, skills, and habits that every developer should know.
+* Learn how software companies in Thailand develop software, and what their managers find important.
+* Jittat's slide: 3 dimensions of "Build the Right Product", "Build the Product Right", "Build it Fast".  This course focuses on skills and habits to help you "Build it Right".
+  - A side-effect (maybe) is you can build *faster* and be more adaptive to change (so you build the right product).
+
+Knowledge and Skills:
+    * Jomzaap's slides
+
+## Habits and Practices of a Professional Developer
+
+* Get help from working pros.
+* Book we sometimes use: *Practices of an Agile Developer*
+* Others worth reading: *Clean Code*, *Code Complete 2*, *The Pragmatic Programmer*
+
 ## Introduction to Software Process
 
-* What is a software process, and what are its components.
-* All devs have a software process, whether they realize it or not.
+* What is a software process, and what are its components?
+* All devs have a software process, whether they realize it (explicit) or not (implicit).
 * The problems of software development that drive the need for a good software process:
   - complexity
   - change
   - (high) defects and errors
   - lack of predictability or consistency
   - (un)maintainability
+* Along with software process you need to know the software development lifecycle, since the process is influenced by the SDLC (process says how to perform it) and influences the SDLC.
 
-## Topics To Cover Next Time
+## Key Dimensions in a Software Project
 
-* Refactoring - I covered this in a 2015 course and its on the final exam,
+1. Budget and effort.
+2. Features (scope).
+3. Time.
+4. Quality.
+
+These may be given to you as requirements or things you have some control over -- that is, you can negotiate them with customer or management.
+
+You can "trade off" one dimension to meet requirements of another.  For example, to meet a time or budget constraint you either reduce features or reduce effort in design and testing (quality).
+
+Example:
+
+* Time
+    - constraint: For a game, the deadline might be Nov 1 for the Christmas shopping season.  For a NASA space mission, time is dictated by the entire project -- they can't wait for software to be ready.
+    - negiotiable: 
+
+## Fifth Dimension: Process
+
+* How can you reduce time or effort with reducing scope or quality?
+* Can you improve quality without increasing effort or time?
+
+One way is a change in technology: a different language or better development tools (IDE instead of a text editor).  But these usually don't have a big effect.
+
+Another factor is training and education.  But may not be timely enough to help on a current project.
+
+One factor that *may* have a big effect is **software process**.
+
+A good process helps to:
+
+   - structure development so you get the most done while maintaining quality
+       - use iterative development with short iterations and specific milestones
+       - have defined roles and responsibilities
+   - incorporate practices to make development more efficient or to produce good quality software
+       - make "pull requests", code review, and unit testing a part of the workflow
+       - "retrospective" meeting after each iteration to improve process
+       - use continuous integration (CI) to automatically build and test your software
+       - tracking of issues and defects
+   - make routine decisions automatic so you don't waste time deciding them
+       - a defined set of process steps, 
+       - defined workflow for version control (Github Flow)
+       - checklist of things to do for a code review
+   - provide data and guidance for improving the process
+       - keep a record of defects and their causes
+
+
+
+## Refactoring
+
+* I covered this in a 2015 course and its on the final exam,
   referring to specific refactoring cases from Martin Fowler's book.
   Each one has a name, a motivation, and how to apply.
    - [Refactoring Techniques](https://refactoring.guru/refactoring/techniques) lots of them
    - [Refactoring Guru](https://refactoring.guru/refactoring)
 
-* Writing
+## Writing
    - How to write a project proposal
    - Writing goals, objectives, and milestones
 
 * Velocity - computed from Story Points and actual time spent, or just time.
 
 * The RUP framework and a few key concepts.
+
+## Database Basics and ORM
 
 * ORM mapping concepts.  After doing the Django tutorial, explain how
   relationships are mapped to database tables.
@@ -56,32 +159,25 @@ Videos:
 * [Agile at Microsoft](https://www.youtube.com/watch?v=-LvCJpnNljU) about the Visual Studio Team Services transition to agile. Interesting, but some fuzzy use of buzzwords like "team owns X", "team is empowered to ...". 41 minutes.
  
 
-## Focus of this Course
-
-* Focus on software process related skills, knowledge, habits, and personal characteristics that will help you as professional dev.
-* Learn how software companies in Thailand develop software, and what skills, knowledge, characteristics their managers find important.
-* Jittat's slide: 3 dimensions of "Build the Right Product", "Build the Product Right", "Build it Fast".  This course focuses on skills and habits to help you "Build it Right".
-  - A side-effect (maybe) is you can build *faster* and be more adaptive to change (so you build the right product).
-
-
-## Habits and Practices of a Professional Developer
-
-* Get help from working pros.
-
-
 ## Useful Skills and Habits for Software Developer
 
-### 1. Git and Github - beyond the basics. 
+### Git and Github - beyond the basics. 
 
-* Prerequisite: you should already know:
-  - 2 ways to create a local git repo.
-  - Concepts: local repo, remote, working copy, staging area (or "index"), commit.
+* Basics you should already know:
+  - 2 ways to create a local git repo with a remote.
+  - Concepts: local repo, remote, working copy, staging area ("index"), commit, HEAD.
   - How to check status of local repo.
   - How to add files to repo or update them.
   - Synchronize local repo with a remote repo.
 * Review, if necessary:
   - Git covered in Programming 2: [Intro to Git](https://skeoop.github.io/git/intro-git) and [Github](https://skeoop.github.io/git/intro-github), [dumb slides](https://skeoop.github.io/git/)
   - [Git Basics](https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository) from the excellent [ProGit Book](https://git-scm.com/book/en/v2). Free PDF and ePub of *ProGit* also on [git-scm.com](https://git-scm.com/book/en/v2).
+* Using Git
+    - understand git as a graph of commits. This really helps.
+    - use `git diff` (many forms) to see differences between last commit, stagin
+    - undo a change in file in working copy
+    - revise a commit, such as adding something you forget (w/o creating a new commit)
+    - "undo" a commit by rolling back HEAD to previous commit
 * How to view the history of a repository, and see what changed.
   - `git log`, `git log2`, `git history`, `gitk`, other visual tools
   - What is the meaning of commit ids? (`734a00b`)?  
@@ -105,7 +201,7 @@ Videos:
 * Forking
 * Github flow
 
-### 2. Testing
+### Testing
 
 * Different kinds of testing:
   - unit testing
@@ -121,13 +217,13 @@ Videos:
  
 * PyUnit or unittest for Python.
 
-### 3. Mock Objects for Testing
+### Mock Objects for Testing
 
 * Why use Mock objects?
 * Some mock frameworks.
 * Mocks and design.  As example, mock a database or external data source (a common use of mocks).
 
-### 4. Build Tools, Build Management, and Automatic Build-and-Test
+### Build Tools, Build Management, and Automatic Build-and-Test
 
 * Basic build tools: using Ant or Maven for Java.
   - maybe cover "make" and GNU make for perspective
@@ -139,13 +235,15 @@ Videos:
 
 * Using automatic build and test with CircleCI or Travis on Github.
 
-### 5. Reviews
+### Reviews
 
 * Reviews find more defects than testing, according to many studies.
 * Different kinds of reviews.
 * For ISP, desk check and pair reviews probably most relevant.
 
-### 6. Clean Code, Literate Code
+### Clean Code, Literate Code
+
+[Clean Code](http://www.jeremybytes.com/Downloads/CleanCode.pdf) PDF by JeremyBytes. His web page on [clean code](ww.jeremybytes.com/Demos.aspx#CC) has other useful material.
 
 * Important lessons from *Clean Code* and *Code Complete*.
 
@@ -153,11 +251,30 @@ Videos:
 
 * Use a coding convention, and consistent coding style.
 
-* Write documentation in code. Javadoc or PyDoc comments.
-
 * How to use Checkstyle. How to configure and safe a code style Eclipse or IntelliJ.
 
 * Look at coding guidelines from some real projects. Apache is good source.
+
+### Documenting Your Code
+
+* Python Docstrings, Javadoc, or Scaladoc to create documentation for everyone to use.  
+* Syntax of Python Docstrings.
+    - 3 variations: Python official docstrings, Google style, Numpy style
+* Tools for formatting them:
+    - pydoc
+    - python interactive: help(something)
+    - Sphinx and the Napolean addon
+* Code comments to explain *why* and details not obvious from code
+
+### Project Documentation
+
+* What to document
+    - installation instructions
+    - project requirements
+    - user guide
+    - software design and rationale, for other developers.  Record important design decisions and *why* you made them.
+* For projects, using Github wiki, Github pages, or readthedocs.io (can link to Github).
+* Everyone should know how to use Markdown
 
 ### 7. Measuring Progress and Quality
 
@@ -181,6 +298,8 @@ Videos:
 ### 9. Refactoring (?)
 
 Important topic, but not sure if I'll include it in this course.
+
+[JeremyBytes](http://www.jeremybytes.com/Demos.aspx) has material on refactoring as part of "Clean Code".
 
 ### 10. Assertions and Design by Contract (?)
 
