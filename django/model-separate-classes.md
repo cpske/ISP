@@ -75,6 +75,10 @@ we want that to stay the same!
 
 ## 1. Meta-class Information for Django
 
+> This `Meta` class information may not be necessary anymore.
+> According the [wiki page][splitting-model-data], the Django code has been modified to detect this automatically.
+> In my test using Django 2.2.2, the Meta class *is* needed for correct table names.
+
 In each model class add a `Meta` class to specify the app and database table.
 
 * `db_table` - name of the database table
@@ -102,7 +106,7 @@ class TodoList(models.Model):
         return self.name
 ```
 
-Similarly for the Todo class (in file `models/todo.py`).
+Similarly for the Todo class in file `models/todo.py`.
 
 
 ## 2. New code for `models/__init__.py`
@@ -114,3 +118,11 @@ from .todo_list import TodoList
 from .todo import Todo
 ```
 The Django wiki page doesn't have a "." in `from .todo_list` for relative import, but in my test the dot is needed.
+
+## Reference
+
+[Cookbook - Splitting Models across multiple files][splitting-data-models] from the Django [code wiki][django-code-wiki].
+
+[splitting-data-models]: https://code.djangoproject.com/wiki/CookBookSplitModelsToFiles
+
+[django-code-wiki]: https://code.djangoproject.com/wiki/

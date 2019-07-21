@@ -35,7 +35,8 @@ to use these views you must create a template for each in a folder named `regist
 The templates should have the same name as the views, so the `login` view 
 expects a template named `login.html`.  The login view encapsulates its data in a Form named `form`,
 so in your `login.html` template do something like this:
-```html
+{% raw %}
+```
 <form method="POST">
   {% csrf_token %}
   {{ form.as_p }}
@@ -44,6 +45,7 @@ so in your `login.html` template do something like this:
   <input type="hidden" name="next" value="{{ next }}" />
 </form>
 ```
+{% endraw %}
 
 ## What is a User?
 
@@ -67,6 +69,7 @@ The model classes in `django.contrib.auth` are:
 
 You can check if a user is authenticated in HTML templates and in views.
 In a template use:
+{% raw %}
 ```html
 {% if user.is_authenticated %}
    Welcome back, {% user.username %}
@@ -74,10 +77,12 @@ In a template use:
    Please <a href="{% url 'login' %}">Login</a>
 {% endif %}
 ```
+{% endraw %}
 
 If your app has a navbar on the left side you might use offer context-senstive
 login-logout links:
 In a template use:
+{% raw %}
 ```html
 {% if user.is_authenticated %}
    <a href="{% url 'logout' %}">Logout</a>
@@ -85,6 +90,8 @@ In a template use:
    <a href="{% url 'login' %}">Login</a>
 {% endif %}
 ```
+{% endraw %}
+
 In `settings.py`, specify where to redirect a user after login or logout:
 ```python
 LOGIN_REDIRECT_URL = '/'
@@ -118,6 +125,7 @@ and in `mysite/views.py` define a "signup" method that handles both GET and POST
 A POST request validates the form data.  If it is valid, then `form.save()` causes the user data to be saved to the Users table (auth_users).  This shows how
 forms can simplify code by encapsulating (and inheriting) common actions for
 accepting, validating, and saving data.
+{% raw %}
 ```python
 def signup(request):
     """Register a new user."""
@@ -136,12 +144,14 @@ def signup(request):
         form = UserCreationForm()
     return render(request, 'registration/signup.html', {'form': form})
 ```
+{% endraw %}
 
 Finally, we need a template for sign-up.  As shown in the above view code,
 we inject the UserCreationForm object as a variable named `form`.
 You can put the template anywhere you like. As shown in the `render()` function call in the view, I put mine in a subdirectory of `templates/` named `registrations`.  That is, BASE_DIR/templates/registion/signup.html.
 
 A simple user sign-up template is:
+{% raw %}
 ```html
 {% block content %}
 <h2>Register</h2>
@@ -158,6 +168,8 @@ A simple user sign-up template is:
 </form>
 {% endblock %}
 ```
+{% endraw %}
+
 The important parts of this template are a) render the form `{{form.as_table}}`
 and b) POSTing the form back to the correct URL.  Since the &lt;form method='POST'&gt; block doesn't specify an action, the default action is to send it back to the same URL the page came from.
 
