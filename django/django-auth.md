@@ -14,6 +14,16 @@ After adding this backend you need to run **migrations** to update the database 
 
 To validate user password, add one or more PASSWORD_VALIDATORS.
 
+You need 2 "apps", which are included by default when you create a new project. The apps are:
+```python
+INSTALLED_APPS = [
+    ...
+    'django.contrib.auth',  # Core authentication framework
+    'django.contrib.contenttypes',  # Content type system
+    ...
+    ]
+```
+
 You also need two middleware applications for interface to your python code.
 
 ```python
@@ -27,6 +37,7 @@ MIDDLEWARE = [
 
 ### Creating a User
 
+To create a user in code you can use (but there are better ways using forms):
 ```python
 from django.contrib.auth.models import User
 
@@ -78,6 +89,11 @@ def vote(request, question_id):
     print("Real name:", user.first_name, user.last_name)
 ```
 
+## Resources
+
+[Django User Authentication System](https://docs.djangoproject.com/en/2.2/topics/auth/default/) https://docs.djangoproject.com/en/2.2/topics/auth/default/.
+
+[User Authentication and Permissions](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Authentication) in Mozilla Django Tutorial, Part 8. This tutorial is very good, step-by-step, with more explanation than the Django official tutorial.
 
 
 ### Assignment

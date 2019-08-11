@@ -12,4 +12,3 @@ description: Index page
 
 * Jomzap's Recommendations to Developers [PDF](Jomzap-Recommendations.pdf) [ODP](Jomzap-Recommendations.odp)
 
-* [Course Description](Course-description-2016.pdf) from IUP (2016)
