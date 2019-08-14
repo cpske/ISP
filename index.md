@@ -14,7 +14,7 @@ description: Index page
 
 <tr valign="top">
   <th> Topic </th>  
-  <th width="45%"> Learning </th>
+  <th width="45%"> Description </th>
   <th width="45%"> Assignment </th>
 </tr>
 <!-- Introduction -->
@@ -23,42 +23,42 @@ description: Index page
 [Introduction](intro/)
 </td>
 <td markdown="span">
-[Intro to Course](intro/Introduction-to-Course.pdf)    
-[Recommendations from SKE Entrepreneur](intro/Jomzap-Recommendations.pdf)    
-[Official Course Description](intro/Course-description-2016.pdf) is phony.
+[Intro to Course and Software Process](intro/index)    
+[Advice from SKE Graduate & Entrepenuer](intro/Jomzap-Recommendations.pdf)
 </td>
 <td markdown="span">
-Join [Google Classroom](https://classroom.google.com) "ISP 2018". Use your KU Login and code **minx6nj**.    
+Join [Google Classroom](https://classroom.google.com). Use your KU Login and code **minx6nj**.    
 Join Github Classroom - invitation sent to your KU-Gmail.        
 Update your Github profile: your real name & photo.
 </td>
 </tr>
-<!-- Software Lifecycle and Process --
-<tr valign="top">
-<td align="center" markdown="span"> 
-Software Process &amp; Lifecycle
-</td>
-<td markdown="span">
-Intro to [Software Development Lifecycle](intro/software-life-cycle) (SDLC)    
-Intro to [Software Processes](intro/Introduction-software-process.pdf)    
-</td>
-<td markdown="span">
-   
-</td>
-</tr>
+
 <!-- Iterative Development -->
 <tr valign="top">
 <td align="center" markdown="span"> 
 Iterative Development
 </td>
 <td markdown="span">
-Iterative Software Development is very common,
-and a lot of what we study applies to this kind of process.
+Iterative Software Development is very common.
 To get an idea of what "iterative development" is, watch this video.
 Its about Scrum, but many of the concepts apply in general.
 </td>
 <td markdown="span">
 [Scrum in Under 10 Minutes](https://youtu.be/XU0llRltyFM) https://youtu.be/XU0llRltyFM    
+</td>
+</tr>
+<!-- Unit Testing -->
+<tr valign="top">
+<td align="center" markdown="span"> 
+[Unit Testing](testing/)    
+</td>
+<td markdown="span">
+[Intro to Testing](testing/Intro-to-Testing.pdf)   
+[Python Unit Testing](testing/PythonUnitTest.pdf)    
+The [index](testing/index) has links to Java unit testing slides.
+</td>
+<td markdown="span">
+[Unit Testing Assignment](assignment/week1/unit-testing-assignment)
 </td>
 </tr>
 <!-- Git -->
@@ -77,6 +77,7 @@ Lab: [TicTacToe project](https://bit.ly/2OFGIxM) - branch, merge, Github Flow, a
 [Aliases](git/aliases) how to create aliases for git commands. ("git history" is a nice alias)
 </td>
 </tr>
+<!-- More Git -->
 <tr valign="top">
 <td align="center" markdown="span"> 
 More Git
@@ -91,20 +92,6 @@ A real [pull request in jQuery repo](https://github.com/jquery/jquery/pull/1051)
 Branch and merge exercise on Github: [http://bit.ly/kucafe2018](http://bit.ly/kucafe2018)    
 Unit Tests and Pull Requests: use this code [unittests.zip](unittests.zip)    
 **Know** [Git Branching][git-branching] chapter in online Git Book.
-</td>
-</tr>
-<!-- Unit Testing -->
-<tr valign="top">
-<td align="center" markdown="span"> 
-[Unit Testing](testing/)    
-</td>
-<td markdown="span">
-[Unit Testing Basics](testing/UnitTesting.pdf) with JUnit    
-[JUnitParams tutorial](testing/JUnitParams-tutorial.pdf) for parameterized tests    
-[Python Unit Testing](testing/PythonUnitTest.pdf)
-</td>
-<td markdown="span">
-[Unit Testing Practice](testing/unit-testing-assignment)
 </td>
 </tr>
 <!-- Agile -->

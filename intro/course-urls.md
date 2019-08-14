@@ -1,3 +1,8 @@
+## Class Time and Room
+
+Monday 10:00-12:00 and 13:00-16:00 Room E204
+
+
 ## URLs for the Course
 
 1. Google Classroom: [https://classroom.google.com](https://classroom.google.com)  use code **f2xplp** to enrol.
