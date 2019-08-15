@@ -11,13 +11,13 @@ Starter code is provided in the Github Classroom assignment.
 
 3. Clone the repository (command to do this is shown on Github).  If you are using the HTTPS protocol with Git, the command will be similar to this:
 ```
-# change to a directory where you store projects in (NOT the Desktop!)
+[change to a directory where you store projects in. NOT the Desktop!]
 cd workspace
 
-# clone the repository
+[clone the repository]
 git clone https://github.com/ISP19/unittesting-your_github_id.git unittesting
 ```
-Notice the last argument (`unittesting`). That's the name you want git to create for your local copy.  If you omit this, it will be named `unittesting-your_github_id`.
+The last argument (`unittesting`) is the name you want git to use for your local copy.  If you don't specify this, git uses the same name as the remote repo (`unittesting-your_github_id`).
 
 
 ## What to Submit
@@ -88,46 +88,72 @@ Here are some examples:
 ```
 
 Python lets you define operators like +, -, \*, /, and unary minus (-f) methods for your own classes, called *operator overloading*. You can also overload relational operators like `a==b`, `a<b`, `a>=b`.
-You do this by defining special methods, namely:
+You do this by defining special methods in your class:
 
 | Operator Syntax | Method invoked        |
 |:----------------|:----------------------|
-| f + g           | `f.__add__(g)`        |
-| f - g           | `f.__sub__(g)`        |
-| f * g           | `f.__mul__(g)`        |
-| -f              | `f.__neg__()`         |
-| f == g          | `f.__eq__(g)`         |
+| f + g           | `__add__(f,g)`        |
+| f - g           | `__sub__(f,g)`        |
+| f * g           | `__mul__(f,g)`        |
+| -f              | `__neg__(f)`          |
+| f == g          | `__eq__(f,g)`         |
 
+When you write `f+g`, python invokes `__add__(f,g)`, that is `self=f`.
 Each of these methods returns a **new** Fraction, except `__eq__` which returns boolean.
 For example:
 ```python
 class Fraction:
 
     def __add__(self, frac: Fraction):
+        """Add two fractions and return the sum as a new Fraction"""
         numerator =        # compute numerator of self + frac
         denominator =      # compute denominator of self + frac
         return Fraction(numerator, denominator)
 ```
-When you write `f+g`, python invokes `__add__(f,g)`, that is `self=f`.
 
 1. In the Fraction class, first write a *class method* named `gcd` that returns the greatest common divisor of two integers.
     * The `gcd` is always positive, even if `a` and/or `b` is zero or negative!
-    * See starter code for documentation.
-    * Use Euclid's algorithm to compute GCD efficiently. **Don't** use a for loop.
-2. **Test-Driven Development:** Tests for `gcd` are given in the starter code!  To apply TDD: first write a gcd that always returns 1.  The tests will fail.  Then write code to make the tests pass. Code - test - code - test...
+    * See fraction.py starter code for documentation and examples.
+    * Use Euclid's algorithm to compute GCD efficiently. **Don't** use a "for" loop.
+2. **Test-Driven Development of gcd:** Tests for `gcd` are given in the starter code for FractionTest.py!  To apply TDD: first write a gcd that always returns 1.  The tests will fail.  Then write code to make the tests pass. Code - test - code - test...
 3. Write these methods in the Fraction class:
 
-| Method Name         | Meaning               |
-|:--------------------|:----------------------|
-| `__add__(self,g)`   | add two fractions, `f+g` |
-| `__mul__(self,g)`   | multiplication, `f*g`    |
-| `__str__(self)`     | show fraction as a string |
-| `__eq__(self,g)`    | test for equality, `f == g` |
-| `Fraction(num,denom=1)` | constructor          |
+<table border="1" align="center">
+<tr>
+<th>Method Name</th> <th>Meaning</th>
+</tr>
+<tr valign="top">
+<td align="center" markdown="span">
+`__add__(self,g)` </td>
+ <td align="center" markdown="span">add two fractions `f+g` </td>
+</tr>
+<tr valign="top">
+<td align="center" markdown="span">
+`__mul__(self,g)`  </td> 
+<td align="center" markdown="span">multiplication `f*g` </td> 
+</tr>
+<tr valign="top">
+<td align="center" markdown="span">
+`__str__(self)`</td>
+<td align="center" markdown="span">fraction as a string </td>
+</tr>
+<tr valign="top">
+<td align="center" markdown="span"> `__eq__(self,g)`</td>
+<td align="center" markdown="span"> test for equality, `f == g` </td>
+</tr>
+<tr valign="top">
+<td align="center" markdown="span"> `Fraction(num,denom=1)`</td>
+<td align="center" markdown="span"> Constructor sets fraction numerator and denominator in proper form. </td>
+</table>
 3. The constructor should always store a Fraction in **proper form**.  This means:
     * numerator and denominator have no common factors (use `gcd`)
-    * denominator is always positive or zero. For example, Fraction(3,0) has denom=0.
-4. Write unittests for all methods, including the constructor.
+    * denominator is always positive or zero. 
+    * Fraction(3,0) has numerator=1 and denom=0.
+4. `__str__` should return fraction as a string, such as "2/3" or "4" (fraction with denominator 1 is printed as integer).
+5. `__eq__` is true if fractions have the same value.
+    * Example:  `Fraction(3,4) == Fraction(-9,-12)` should be `true`.
+    * If constructor always stores fractions in proper form, then this method is trivially easy. 
+6. Write **unittests** for all methods, including the constructor.
 
 
 ### Example Test Cases in README.md

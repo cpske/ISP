@@ -54,7 +54,7 @@ Its about Scrum, but many of the concepts apply in general.
 </td>
 <td markdown="span">
 [Intro to Testing](testing/Intro-to-Testing.pdf)   
-[Python Unit Testing](testing/PythonUnitTest.pdf)    
+[Python Unit Testing](testing/PythonUnitTesting.pdf)    
 The [index](testing/index) has links to Java unit testing slides.
 </td>
 <td markdown="span">
