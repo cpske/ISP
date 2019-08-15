@@ -1,6 +1,6 @@
 # Unit Testing
 
-There are two parts to this assignment. The first part is to test a single function.  The second part is writing a Fraction class and testing its methods.
+There are two parts to this assignment. The first part is to test a single function.  The second part is writing a Fraction class and test its methods.
 Starter code is provided in the Github Classroom assignment.
 
 ## Clone Your Project from Github Classroom
@@ -64,7 +64,7 @@ Examples: `unique(list)` returns a list containing unique elements `list`, in th
 
 ## Problem 2. Fraction and FractionTest
 
-The Fraction class will be discussed in class.
+The Fraction class and *operator overloading* will be discussed in class.
 
 Write a Fraction class that performs exact arithmetic using fractions.
 Here are some examples:
@@ -72,10 +72,10 @@ Here are some examples:
 >>> from fraction import Fraction
 >>> f = Fraction(2,3)   # = 2/3
 >>> g = Fraction(1,12)  # = 1/12
->>> sum = f + g         # 2/3 + 1/12 = 9/12 = 3/4
+>>> sum = f + g         # = 2/3 + 1/12 = 9/12 = 3/4
 >>> sum                 # invokes sum.__str__()
 3/4
->>> f * g               # 2/3 * 1/12 = 2/36 = 1/18
+>>> f * g               # 2/3 * 1/12 = 1/18
 1/18
 >>> two = Fraction(2)   # default denominator is 1. Same as Fraction(2,1)
 >>> two + f
@@ -87,7 +87,7 @@ Here are some examples:
 -2/5
 ```
 
-Python lets you define operators like +, -, \*, /, and unary minus (-f) methods for your own classes, called *operator overloading*. You can also overload relational operators like `a==b`, `a<b`, 'a>=b`.
+Python lets you define operators like +, -, \*, /, and unary minus (-f) methods for your own classes, called *operator overloading*. You can also overload relational operators like `a==b`, `a<b`, `a>=b`.
 You do this by defining special methods, namely:
 
 | Operator Syntax | Method invoked        |
@@ -108,26 +108,25 @@ class Fraction:
         denominator =      # compute denominator of self + frac
         return Fraction(numerator, denominator)
 ```
-When you use `f+g`, python invokes `__add__(f,g)`, that is `self=f`.
+When you write `f+g`, python invokes `__add__(f,g)`, that is `self=f`.
 
 1. In the Fraction class, first write a *class method* named `gcd` that returns the greatest common divisor of two integers.
     * The `gcd` is always positive, even if `a` and/or `b` is zero or negative!
     * See starter code for documentation.
     * Use Euclid's algorithm to compute GCD efficiently. **Don't** use a for loop.
-2. **Test-Driven Development:** Test your `gcd` method using tests given in the starter code.  To apply TDD, first write a gcd that always returns 1.  The tests will fail.  Then write code to make the tests pass.
+2. **Test-Driven Development:** Tests for `gcd` are given in the starter code!  To apply TDD: first write a gcd that always returns 1.  The tests will fail.  Then write code to make the tests pass. Code - test - code - test...
 3. Write these methods in the Fraction class:
+
 | Method Name         | Meaning               |
 |:--------------------|:----------------------|
 | `__add__(self,g)`   | add two fractions, `f+g` |
 | `__mul__(self,g)`   | multiplication, `f*g`    |
-| `__neg__(self)`     | negation, `-f`           |
 | `__str__(self)`     | show fraction as a string |
 | `__eq__(self,g)`    | test for equality, `f == g` |
 | `Fraction(num,denom=1)` | constructor          |
-3. The constructor should always store a Fraction in **proper form**, maning that:
-    * numerator and denominator have no common factors
-    * denominator is always positive or zero (for example, Fraction(3,0))
-    * use the `gcd` method to eliminate common factors.
+3. The constructor should always store a Fraction in **proper form**.  This means:
+    * numerator and denominator have no common factors (use `gcd`)
+    * denominator is always positive or zero. For example, Fraction(3,0) has denom=0.
 4. Write unittests for all methods, including the constructor.
 
 
