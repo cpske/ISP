@@ -3,18 +3,19 @@
 There are two parts to this assignment. The first part is to test a single function.  The second part is writing a Fraction class and test its methods.
 Starter code is provided in the Github Classroom assignment.
 
-## Clone Your Project from Github Classroom
+## Clone The Project from Github Classroom
 
 1. Accept the assignment by going to the URL given in class.
 
 2. Wait for Github to create a repository for you.
 
 3. Clone the repository (command to do this is shown on Github).  If you are using the HTTPS protocol with Git, the command will be similar to this:
+
 ```
-[change to a directory where you store projects in. NOT the Desktop!]
+(change to a directory where you store projects in. NOT the Desktop!)
 cd workspace
 
-[clone the repository]
+(clone the repository)
 git clone https://github.com/ISP19/unittesting-your_github_id.git unittesting
 ```
 The last argument (`unittesting`) is the name you want git to use for your local copy.  If you don't specify this, git uses the same name as the remote repo (`unittesting-your_github_id`).
@@ -28,9 +29,9 @@ Commit your work to Github classroom. You should have these files:
 |:-----------------|:--------------|
 | README.md        | Describe your test cases |
 | listutil.py      | Code for `unique` including docstring and doctest |
-| listutil_test.py | Unit tests for `unique` |
+| listutil_test.py | Unit tests for `unique` and `average` |
 | fraction.py      | Code for Fraction class |
-| fraction_test.py | Unit tests for Fraction and gcd |
+| fraction_test.py | Unit tests for Fraction |
 
 
 ## Problem 1. listutil
@@ -42,8 +43,8 @@ The starter code for `listutil.py` describes the `unique` function.
    * **borderline cases**, such as a list with 0 or 1 elements
    * **typical cases**, such as a list with a few duplicates or **no** duplicates
    * an **impossible case** where the method should not work. 
-   * **extreme cases**, such as a huge list
-3. Write the tests using Python unittest.  The test file should be `listutil_test.py`.
+   * **extreme case**, such as a very large list
+3. Write the tests using Python unittest.  The test file should be `listutil_test.py`.  Each test case is a separate method.
 4. Run the tests until your code passes them all.
 
 Examples: `unique(list)` returns a list containing unique elements `list`, in the same order as their first occurence in `list`.  That is, `unique` removes duplicate elements. 
@@ -57,9 +58,9 @@ Examples: `unique(list)` returns a list containing unique elements `list`, in th
 >>> unique( [] )    # empty list
 [ ]
 # unique does not do a recursive scan of embedded lists
->>> lst = [1,2,2,4,[1,2,2,4],1]
+>>> lst = [1,2,2,4,[1,2,3],1]
 >>> unique(lst)
-[1, 2, 4, [1,2,2,4]] 
+[1, 2, 4, [1,2,3]] 
 ```
 
 ## Problem 2. Fraction and FractionTest
@@ -98,7 +99,7 @@ You do this by defining special methods in your class:
 | -f              | `__neg__(f)`          |
 | f == g          | `__eq__(f,g)`         |
 
-When you write `f+g`, python invokes `__add__(f,g)`, that is `self=f`.
+When you write `f+g`, python invokes `__add__(self,g)` where `self=f`.
 Each of these methods returns a **new** Fraction, except `__eq__` which returns boolean.
 For example:
 ```python
@@ -111,11 +112,6 @@ class Fraction:
         return Fraction(numerator, denominator)
 ```
 
-1. In the Fraction class, first write a *class method* named `gcd` that returns the greatest common divisor of two integers.
-    * The `gcd` is always positive, even if `a` and/or `b` is zero or negative!
-    * See fraction.py starter code for documentation and examples.
-    * Use Euclid's algorithm to compute GCD efficiently. **Don't** use a "for" loop.
-2. **Test-Driven Development of gcd:** Tests for `gcd` are given in the starter code for FractionTest.py!  To apply TDD: first write a gcd that always returns 1.  The tests will fail.  Then write code to make the tests pass. Code - test - code - test...
 3. Write these methods in the Fraction class:
 
 <table border="1" align="center">
@@ -124,13 +120,13 @@ class Fraction:
 </tr>
 <tr valign="top">
 <td align="center" markdown="span">
-`__add__(self,g)` </td>
- <td align="center" markdown="span">add two fractions `f+g` </td>
+`__add__(self,frac)` </td>
+ <td align="center" markdown="span">add fractions `self` and `frac` </td>
 </tr>
 <tr valign="top">
 <td align="center" markdown="span">
-`__mul__(self,g)`  </td> 
-<td align="center" markdown="span">multiplication `f*g` </td> 
+`__mul__(self,frac)`  </td> 
+<td align="center" markdown="span">multiply fractions `self` and `frac` </td> 
 </tr>
 <tr valign="top">
 <td align="center" markdown="span">
@@ -138,18 +134,20 @@ class Fraction:
 <td align="center" markdown="span">fraction as a string </td>
 </tr>
 <tr valign="top">
-<td align="center" markdown="span"> `__eq__(self,g)`</td>
-<td align="center" markdown="span"> test for equality, `f == g` </td>
+<td align="center" markdown="span"> `__eq__(self,f)`</td>
+<td align="center" markdown="span"> test if two fractions have same value, `self == f` </td>
 </tr>
 <tr valign="top">
-<td align="center" markdown="span"> `Fraction(num,denom=1)`</td>
-<td align="center" markdown="span"> Constructor sets fraction numerator and denominator in proper form. </td>
+<td align="center" markdown="span"> `__init__(num,denom=1)`</td>
+<td align="center" markdown="span"> Constructor sets fraction numerator and denominator in proper form. Default value of denominator is 1.</td>
 </table>
+
 3. The constructor should always store a Fraction in **proper form**.  This means:
-    * numerator and denominator have no common factors (use `gcd`)
+    * numerator and denominator have no common factors
     * denominator is always positive or zero. 
-    * Fraction(3,0) has numerator=1 and denom=0.
-4. `__str__` should return fraction as a string, such as "2/3" or "4" (fraction with denominator 1 is printed as integer).
+    * Fraction(3,0) has numerator=1 and denominator=0.
+    * Hint: Python has a function `math.gcd()` you can use to remove the greatest common denominator. `math.gcd(a,b)` is always positive unless `a` and `b` are both 0. 
+4. `__str__` should return fraction as a string, such as "2/3" or "4" (if fraction has denominator 1 then print it as integer).
 5. `__eq__` is true if fractions have the same value.
     * Example:  `Fraction(3,4) == Fraction(-9,-12)` should be `true`.
     * If constructor always stores fractions in proper form, then this method is trivially easy. 
@@ -168,7 +166,7 @@ You must design your own test cases -- more than shown here.
 | one item               |  list with 1 item   |
 | one item many times    |  list with 1 item   |
 | 2 items, many times, many orders | 2 item list  |
-| argument not a list    |  raises Invalid
+| argument not a list    |  throws exception   |
 
 
 ### Example Python unittest
@@ -179,12 +177,9 @@ from listutil import unique
  
 class ListUtilTest(unittest.TestCase):
  
-    def test_single_item(self):
-        self.assertListEqual( ['hi'], unique['hi'])
-        self.assertListEqual( ['x'], unique['x','x','x','x','x',x'])
+    def test_single_item_list(self):
+        self.assertListEqual( ['hi'], unique(['hi']) )
  
 if __name__ == '__main__':
     unittest.main()
 ```
-
-The `FractionTest.py` file has more examples for testing gcd.
