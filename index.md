@@ -59,6 +59,7 @@ The [index](testing/index) has links to Java unit testing slides.
 </td>
 <td markdown="span">
 [Unit Testing Assignment](assignment/week1/unit-testing-assignment)    
+Github Classroom URL: [https://classroom.github.com/a/fbbn_6eq](https://classroom.github.com/a/fbbn_6eq) to create your repo.    
 Example tests for gcd: [gcd_test.py](testing/gcd_test.py) 
 </td>
 </tr>

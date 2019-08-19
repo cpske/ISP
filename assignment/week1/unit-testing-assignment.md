@@ -5,9 +5,10 @@ Starter code is provided in the Github Classroom assignment.
 
 ## Clone The Project from Github Classroom
 
-1. Accept the assignment by going to the URL given in class.
+1. Accept the assignment by going to the URL given in class and click "Accept".
+Assignment URL: [https://classroom.github.com/a/fbbn_6eq](https://classroom.github.com/a/fbbn_6eq)
 
-2. Wait for Github to create a repository for you.
+2. Wait for Github to create a repository for you. It contains starter code.
 
 3. Clone the repository (command to do this is shown on Github).  If you are using the HTTPS protocol with Git, the command will be similar to this:
 
