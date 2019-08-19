@@ -58,7 +58,8 @@ Its about Scrum, but many of the concepts apply in general.
 The [index](testing/index) has links to Java unit testing slides.
 </td>
 <td markdown="span">
-[Unit Testing Assignment](assignment/week1/unit-testing-assignment)
+[Unit Testing Assignment](assignment/week1/unit-testing-assignment)    
+Example tests for gcd: [gcd_test.py](testing/gcd_test.py) 
 </td>
 </tr>
 <!-- Git -->
