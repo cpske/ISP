@@ -30,7 +30,7 @@ Commit your work to Github classroom. You should have these files:
 |:-----------------|:--------------|
 | README.md        | Describe your test cases |
 | listutil.py      | Code for `unique` including docstring and doctest |
-| listutil_test.py | Unit tests for `unique` and `average` |
+| listutil_test.py | Unit tests for `unique`, at least 3 tests |
 | fraction.py      | Code for Fraction class |
 | fraction_test.py | Unit tests for Fraction |
 
@@ -121,7 +121,7 @@ For example:
 ```python
 class Fraction:
 
-    def __add__(self, frac: Fraction):
+    def __add__(self, frac):
         """Add two fractions and return the sum as a new Fraction"""
         numerator =        # compute numerator of self + frac
         denominator =      # compute denominator of self + frac
@@ -152,20 +152,20 @@ __add__(self,frac)
 <td align="left">
 __mul__(self,frac)  
 </td> 
-<td align="left">multiply fractions `self` and `frac` </td> 
+<td align="left">multiply fractions self and frac </td> 
 </tr>
 <tr valign="top">
 <td align="left">
 __str__(self)
 </td>
-<td align="left">fraction as a string </td>
+<td align="left">return fraction as a string, such as "3/4" or "2" (if denominator=1)</td>
 </tr>
 <tr valign="top">
 <td align="left"> 
-__eq__(self,f)
+__eq__(self,frac)
 </td>
 <td align="left"> 
-test if two fractions have same value, `self == f` 
+test if two fractions have same value, self == frac 
 </td>
 </tr>
 </table>
@@ -175,16 +175,16 @@ test if two fractions have same value, `self == f`
     * denominator is always positive or zero. 
     * Fraction(3,0) has numerator=1 and denominator=0.
     * Hint: Python has a function `math.gcd()` you can use to remove the greatest common denominator. `math.gcd(a,b)` is always positive unless `a` and `b` are both 0. 
-5. `__str__` should return fraction as a string, such as "2/3" or "4" (if fraction has denominator 1 then print it as integer).
+5. `__str__` should return fraction as a string, such as "2/3" or "4" (if fraction has denominator 1 then return as integer).
 6. `__eq__` is true if fractions have the same value.
-    * Example:  `Fraction(3,4) == Fraction(-9,-12)` should be `true`.
-    * If constructor always stores fractions in proper form, then this method is trivially easy. 
+    * Example:  `Fraction(3,4) == Fraction(-9,-12)` should be `True`.
+    * If constructor always stores fractions in proper form, then this method is easy. 
 7. Write **unittests** for all methods, including the constructor.
 
 
 ### Example Test Cases in README.md
 
-You must design your own test cases -- more than shown here.
+You should design your own test cases.  Can you think of anything not should here?
 
 ### Tests for unique
 
@@ -193,7 +193,7 @@ You must design your own test cases -- more than shown here.
 | empty list             |  empty list         |
 | one item               |  list with 1 item   |
 | one item many times    |  list with 1 item   |
-| 2 items, many times, many orders | 2 item list  |
+| 2 items, many times, many orders | list with each item only once |
 | argument not a list    |  throws exception   |
 
 
