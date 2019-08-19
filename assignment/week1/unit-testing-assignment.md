@@ -33,7 +33,6 @@ Commit your work to Github classroom. You should have these files:
 | fraction.py      | Code for Fraction class |
 | fraction_test.py | Unit tests for Fraction |
 
-
 ## Problem 1. listutil
 
 The starter code for `listutil.py` describes the `unique` function.
@@ -61,6 +60,22 @@ Examples: `unique(list)` returns a list containing unique elements `list`, in th
 >>> lst = [1,2,2,4,[1,2,3],1]
 >>> unique(lst)
 [1, 2, 4, [1,2,3]] 
+```
+
+
+## Example Python unittest for Unique
+
+```python
+import unittest
+from listutil import unique
+ 
+class ListUtilTest(unittest.TestCase):
+ 
+    def test_single_item_list(self):
+        self.assertListEqual( ['hi'], unique(['hi']) )
+ 
+if __name__ == '__main__':
+    unittest.main()
 ```
 
 ## Problem 2. Fraction and FractionTest
@@ -119,39 +134,51 @@ class Fraction:
 <th>Method Name</th> <th>Meaning</th>
 </tr>
 <tr valign="top">
-<td align="center" markdown="span">
-`__add__(self,frac)` </td>
- <td align="center" markdown="span">add fractions `self` and `frac` </td>
+<td align="left"> 
+__init__(num,denom=1)
+</td>
+<td align="left"> 
+Constructor sets fraction numerator and denominator in proper form. Default value of denominator is 1.
+</td>
 </tr>
 <tr valign="top">
-<td align="center" markdown="span">
-`__mul__(self,frac)`  </td> 
-<td align="center" markdown="span">multiply fractions `self` and `frac` </td> 
+<td align="left">
+__add__(self,frac)
+</td>
+<td align="left">add fractions self and frac </td>
 </tr>
 <tr valign="top">
-<td align="center" markdown="span">
-`__str__(self)`</td>
-<td align="center" markdown="span">fraction as a string </td>
+<td align="left">
+__mul__(self,frac)  
+</td> 
+<td align="left">multiply fractions `self` and `frac` </td> 
 </tr>
 <tr valign="top">
-<td align="center" markdown="span"> `__eq__(self,f)`</td>
-<td align="center" markdown="span"> test if two fractions have same value, `self == f` </td>
+<td align="left">
+__str__(self)
+</td>
+<td align="left">fraction as a string </td>
 </tr>
 <tr valign="top">
-<td align="center" markdown="span"> `__init__(num,denom=1)`</td>
-<td align="center" markdown="span"> Constructor sets fraction numerator and denominator in proper form. Default value of denominator is 1.</td>
+<td align="left"> 
+__eq__(self,f)
+</td>
+<td align="left"> 
+test if two fractions have same value, `self == f` 
+</td>
+</tr>
 </table>
 
-3. The constructor should always store a Fraction in **proper form**.  This means:
+4. The constructor should always store a Fraction in **proper form**.  This means:
     * numerator and denominator have no common factors
     * denominator is always positive or zero. 
     * Fraction(3,0) has numerator=1 and denominator=0.
     * Hint: Python has a function `math.gcd()` you can use to remove the greatest common denominator. `math.gcd(a,b)` is always positive unless `a` and `b` are both 0. 
-4. `__str__` should return fraction as a string, such as "2/3" or "4" (if fraction has denominator 1 then print it as integer).
-5. `__eq__` is true if fractions have the same value.
+5. `__str__` should return fraction as a string, such as "2/3" or "4" (if fraction has denominator 1 then print it as integer).
+6. `__eq__` is true if fractions have the same value.
     * Example:  `Fraction(3,4) == Fraction(-9,-12)` should be `true`.
     * If constructor always stores fractions in proper form, then this method is trivially easy. 
-6. Write **unittests** for all methods, including the constructor.
+7. Write **unittests** for all methods, including the constructor.
 
 
 ### Example Test Cases in README.md
@@ -169,17 +196,3 @@ You must design your own test cases -- more than shown here.
 | argument not a list    |  throws exception   |
 
 
-### Example Python unittest
-
-```python
-import unittest
-from listutil import unique
- 
-class ListUtilTest(unittest.TestCase):
- 
-    def test_single_item_list(self):
-        self.assertListEqual( ['hi'], unique(['hi']) )
- 
-if __name__ == '__main__':
-    unittest.main()
-```
