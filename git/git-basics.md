@@ -15,13 +15,13 @@ In particular, you should know what's is section _1.3 Git Basics_.
 
 3. What is the main difference between Git and Subversion?  Subversion is great, so why switch to Git?
 
-4. When working with Git locally, what are these?
+4. When working with Git locally, what are these? Describe each one.
    * Staging area
    * Working copy
    * master
 
 5. When you modify a file and commit it to a repository, what is stored in the repository? (_1.3 Git Basics_)
-   [ ] Differences between this version and previous one.
+   [ ] Differences between this version and previous version.
    [ ] A snapshot of the file.  The complete file, possibly compressed.
 
 ## How To Use
