@@ -175,7 +175,7 @@ test if two fractions have same value, self == frac
     * denominator is always positive or zero. 
     * Fraction(3,0) has numerator=1 and denominator=0.
     * Hint: Python has a function `math.gcd()` you can use to remove the greatest common denominator. `math.gcd(a,b)` is always positive unless `a` and `b` are both 0. 
-5. `__str__` should return fraction as a string, such as "2/3" or "4" (if fraction has denominator 1 then return as integer).
+5. `__str__` should return fraction as a string, such as "2/3" or "4" (if fraction has denominator 1 then omit it from string).
 6. `__eq__` is true if fractions have the same value.
     * Example:  `Fraction(3,4) == Fraction(-9,-12)` should be `True`.
     * If constructor always stores fractions in proper form, then this method is easy. 
@@ -184,7 +184,7 @@ test if two fractions have same value, self == frac
 
 ### Example Test Cases in README.md
 
-You should design your own test cases.  Can you think of anything not should here?
+Design your own test cases.  Can you think of any other important test cases?
 
 ### Tests for unique
 

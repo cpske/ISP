@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Introductoin to Course and Software Process
+title: Introduction to Course and Software Process
 description: Index page
 ---
 

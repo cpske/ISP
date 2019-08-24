@@ -39,12 +39,39 @@ Update your Github profile: your real name & photo.
 Iterative Development
 </td>
 <td markdown="span">
-Iterative Software Development is very common.
-To get an idea of what "iterative development" is, watch this video.
-Its about Scrum, but many of the concepts apply in general.
+Iterative Software Development was discussed in week 1 in the topic "Intro to Software Process".  Most software processes use iterative development, including the Unifed Process (UP) framework and all Agile processes.
 </td>
 <td markdown="span">
-[Scrum in Under 10 Minutes](https://youtu.be/XU0llRltyFM) https://youtu.be/XU0llRltyFM    
+Nothing to do.
+</td>
+</tr>
+<!-- Agile -->
+<tr valign="top">
+<td align="center" markdown="span"> 
+[Agile](agile/)    
+</td>
+<td markdown="span">
+Intro to [Agile Principles and Practices](agile/agile-principles-practices).    
+</td>
+<td markdown="span">
+Read about Agile at [Agile 101](https://www.agilealliance.org/agile101/) of Agile Alliance.    
+Think critically.  Do you agree with the principles?   
+Optional: [Agile at Microsoft](https://www.youtube.com/watch?v=-LvCJpnNljU) how Visual Studio Team Services moved to agile.
+</td>
+</tr>
+<!-- Scrum -->
+<tr valign="top">
+<td align="center" markdown="span"> 
+[Scrum](agile/)    
+</td>
+<td markdown="span">
+A popular technique for iterative development, which can used in any iterative software project.     
+See [Agile index](agile/index) page for references.  The video at right is best place to start.
+</td>
+<td markdown="span">
+Watch [Scrum in Under 10 Minutes](https://youtu.be/XU0llRltyFM) https://youtu.be/XU0llRltyFM    
+Then answer these [Questions about Scrum](https://forms.gle/wUCG2FCg3uS31bjz6).    
+In class: [Scrum Questions and Answers](agile/Scrum-Questions-and-Answers.pdf).
 </td>
 </tr>
 <!-- Unit Testing -->
@@ -94,20 +121,6 @@ A real [pull request in jQuery repo](https://github.com/jquery/jquery/pull/1051)
 Branch and merge exercise on Github: [http://bit.ly/kucafe2018](http://bit.ly/kucafe2018)    
 Unit Tests and Pull Requests: use this code [unittests.zip](unittests.zip)    
 **Know** [Git Branching][git-branching] chapter in online Git Book.
-</td>
-</tr>
-<!-- Agile -->
-<tr valign="top">
-<td align="center" markdown="span"> 
-[Agile](agile/)    
-</td>
-<td markdown="span">
-Intro to [Agile Principles and Practices](agile/agile-principles-practices)
-</td>
-<td markdown="span">
-Read about Agile at [Agile 101](https://www.agilealliance.org/agile101/) of Agile Alliance.    
-Think critically.  Do you agree with the principles?   
-[Agile at Microsoft](https://www.youtube.com/watch?v=-LvCJpnNljU) how Visual Studio Team Services moved to agile. Interesting, but lots of buzzwords.   
 </td>
 </tr>
 <!-- Web Dev -->

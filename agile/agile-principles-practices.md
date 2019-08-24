@@ -53,3 +53,14 @@ How does this apply to my software process?
 ![Agile Practices Map](../images/agile-practices.png)    
 
 [Agile Practices Map](https://www.agilealliance.org/agile101/subway-map-to-agile-practices/) at [Agile Alliance](https://www.agilealliance.org/).
+
+## Agile Practices You Can Use
+
+* Test-Driven Development - write unit tests before writing the code
+* Code Review - ask others to review and comment on your code.
+* Pair Programming - one person codes while another navigates and reviews.
+* Time-boxed iterations 
+* Maintain a Sustainable Pace - do work early and regularly, not at the deadline
+* Continuous Integration - automate building and testing of your product, so it is tested each time you commit to Github.
+    * Travis-CI, Circle CI, and Jenkins are tools for this
+    * We will do this for your Django web app project
