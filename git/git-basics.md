@@ -11,16 +11,15 @@ In particular, you should know what's is section _1.3 Git Basics_.
 
 1. What is Git?
 
-2. Who invented Git?
+2. What is the main difference between Git and Subversion?  Subversion is great, so why switch to Git?
 
-3. What is the main difference between Git and Subversion?  Subversion is great, so why switch to Git?
-
-4. When working with Git locally, what are these? Describe each one.
+3. When working with Git locally, what are these? Describe each one.
    * Staging area
    * Working copy
    * master
+   * HEAD
 
-5. When you modify a file and commit it to a repository, what is stored in the repository? (_1.3 Git Basics_)
+4. When you modify a file and commit it to a repository, what is stored in the repository? (_1.3 Git Basics_)
    [ ] Differences between this version and previous version.
    [ ] A snapshot of the file.  The complete file, possibly compressed.
 
@@ -38,9 +37,21 @@ In particular, you should know what's is section _1.3 Git Basics_.
 
 6. The output of `git status` is verbose (but helpful!). How to get a short view of the status?
 
-7. What is `HEAD`?
+
+## The Files
+
+1. Where on your computer's filesystem is the git repository for a project?
 
 
+2. (Advanced) How can you move the git repository to someplace else, **not** inside your working copy?
+    a. Move the `.git` directory someplace else.  For example `/home/gits/myproject`.
+    b. Create a plain text file named `.git` in place of the directory you just moved, and in the file write:
+    ```
+    gitdir: /home/gits/myproject
+    ```
+
+
+## Viewing Changes and Commits
 
 ## Undoing Changes
 

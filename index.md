@@ -102,7 +102,6 @@ Using branches.
 <td markdown="span">
 [Git basics](git/git-basics) copy the source file [git/git-basics.md](git/git-basics.md) and write your answers after the questions.    
 [Branching][git-branching] in online Git book.    
-Lab: [TicTacToe project](https://bit.ly/2OFGIxM) - branch, merge, Github Flow, and issues.    
 [Aliases](git/aliases) how to create aliases for git commands. ("git history" is a nice alias)
 </td>
 </tr>
@@ -189,8 +188,7 @@ Build Automation
 Continuous Integration    
 </td>
 <td markdown="span">
-Using CI with Github: [Java sample][demo-ci], [Python sample][demo-ci-python]    
-Assignment: [TicTacToe testing with Ant and Travis CI](assignment/week8-ant-ci)
+Using CI with Github: [Java sample][demo-ci], [Python sample][demo-ci-python] 
 </td>
 </tr>
 <!-- Thai -->

@@ -61,6 +61,7 @@ How does this apply to my software process?
 * Pair Programming - one person codes while another navigates and reviews.
 * Time-boxed iterations 
 * Maintain a Sustainable Pace - do work early and regularly, not at the deadline
+* Retrospectives - reflect on how to do better, and take action
 * Continuous Integration - automate building and testing of your product, so it is tested each time you commit to Github.
     * Travis-CI, Circle CI, and Jenkins are tools for this
     * We will do this for your Django web app project
