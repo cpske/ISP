@@ -7,9 +7,9 @@ In particular, you should know what's is section _1.3 Git Basics_.
 
 1. What is Git?
 
-2. What is the main difference between Git and Subversion?  
+2. What is the main difference between Git and Subversion (another VCS)?  
 
-3. When working with Git locally, what are these? Describe each one.
+3. When working with Git locally, what are these?  Describe each one.
    * Staging area
    * Working copy
    * master
@@ -23,7 +23,7 @@ In particular, you should know what's is section _1.3 Git Basics_.
 
 1. What command(s) create a new local repository for a project named `Tetris`?
 
-2. There are 2 ways to get a local Git repo.  What is the other way?
+2. There are 2 ways to get a local Git repo.  What are they?
     a.
     b.
 
@@ -36,24 +36,22 @@ In particular, you should know what's is section _1.3 Git Basics_.
 
 6. The output of `git status` is verbose (but helpful!). How to get a short view of the status?
 
+7. Suppose A.txt is in the git repository (a "tracked file") and you want to delte it (from the repo **and** your working copy).  What is the command?
 
-## Where's the Repository?
+
+   * Someone could just delete the file in their working copy (using command line or File Explorer) and then "commit" changes to git.  Explain why this won't delete the file from repo.
+
+## The Repository
 
 1. Where on your computer's filesystem is the git repository for a project?
 
 
-2. (Advanced) How can you move the git repository to someplace else, **not** inside your working copy?
-    a. Move the `.git` directory someplace else.  For example `/home/gits/myproject`.
-    b. Create a plain text file named `.git` in place of the directory you just moved, and in the file write:
-    ```
-    gitdir: /home/gits/myproject
-    ```
+2. In your project directory, what kind(s) of files should you *not* commit to a Git repo?
 
-3. In your project directory, what kind(s) of files should you *not* commit to a Git repo?
+3. How can you avoid accidentally committing unwanted files to a git repo?
 
-4. How can you avoid accidentally committing unwanted files to a git repo?
 
-5. Many Git tutorials instruct people to add their project to a git repo like this:
+4. Many Git tutorials instruct people to add their project to a git repo like this:
     ```
     cd /somepath/myproject
     git init
@@ -74,15 +72,18 @@ In particular, you should know what's is section _1.3 Git Basics_.
 
 ## Undoing Changes
 
-1. Suppose you add some files to the staging area and accidentally add a file you don't want to commit (say, B.txt).  How to remove it from staging area?
+1. Suppose you add a file to the staging area and decide you don't want to commit it.  What is command to remove a file from staging area?  (undo "git add filename")
 ```
-git ___________
+# to remove file "foo" from staging are:
+git _______________
 # to remove everything from staging area:
-git ___________
+git _______________
 ```
-> Note: if you have not yet committed anything then `reset` won't work.  In that case use `git rm --cached filename` which removes the file from the "index" (list of tracked files).
+> Note: if you have not yet committed anything to the repo, then `reset` won't work.  In that case use `git rm --cached filename` which removes the file from the "index" (list of tracked files).
 
-2. You accidentially mess up the file "exam.py" in your working copy.  What is the command to replace this file (in your working copy) with the last version you committed to git? (That is, checkout the most up-to-date revision of this file)
+2. Suppose you commit files and want to "undo" the commit? What is the command to "undo" a commit?  (It resets location of HEAD but does not change your working copy.)
+
+3. You accidentially mess up the file "foo.py" in your working copy.  What is the command to replace this file (in your working copy) with the last version you committed to git? (That is, checkout the most up-to-date revision of this file)
 
 ```shell
 cmd> 
