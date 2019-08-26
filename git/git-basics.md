@@ -20,15 +20,9 @@ git config --global core.editor "mate -w"
 
 Branches, Tags, and HEAD are just labels pointing to commits.
 
-Try the [Git Viusalizer][GitVisualizer].
+Try the [Git Visualizer][GitVisualizer] at http://git-school.github.io/visualizing-git/ to see a graph of a Git repo.
 
 [Think Like a Git][ThinkLikeaGit] also has visual explanation of git.
-
-## Background and Basic Information
-
-Chapter 1 of [Pro Git][ProGit] covers these questions.
-In particular, you should know what's is section _1.3 Git Basics_.
-
 
 ## Good Git Questions Online
 
@@ -48,5 +42,5 @@ In particular, you should know what's is section _1.3 Git Basics_.
 [ProGitPdf]: https://progit2.s3.amazonaws.com/en/2016-03-22-f3531/progit-en.1084.pdf "Pro Git v.2 PDF on AWS. Longer, book format."
 
 [ThinkLikeaGit]: http://think-like-a-git.net/ "Understand visually how git works"
-[VisualizeGit]: http://git-school.github.io/visualizing-git/ "Online tools draws a graph of commits in a repo, as you type"
+[GitVisualizer]: http://git-school.github.io/visualizing-git/ "Online tools draws a graph of commits in a repo, as you type"
 

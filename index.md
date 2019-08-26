@@ -139,7 +139,7 @@ Install [Django Web Framework](web/django), implement the tutorial yourself. Pay
 <tr valign="top">
 <td align="center" markdown="span"> 
 Midterm    
-30 Sep (Sunday)
+5 Oct (Sunday)
 </td>
 <td markdown="span">
 Written: 9:00-11:00 AM    
@@ -147,9 +147,8 @@ Coding: 12:00-15:00 PM
 *Dress Like a Programmer*
 </td>
 <td markdown="span">
-Everything so far.
+Covers all material so far.
 Bring your computer to **both** morning and afternoon.   
-[Student Questions on Software Process][isp-qa] some will be on the exam.
 </td>
 </tr>
 <!-- Project -->
