@@ -65,8 +65,7 @@ Optional: [Agile at Microsoft](https://www.youtube.com/watch?v=-LvCJpnNljU) how 
 [Scrum](agile/)    
 </td>
 <td markdown="span">
-A popular technique for iterative development, which can used in any iterative software project.     
-See [Agile index](agile/index) page for references.  The video at right is best place to start.
+A popular technique for iterative development.  The video at right is best place to start.  The [Agile index](agile/index) has more Scrum material.
 </td>
 <td markdown="span">
 Watch [Scrum in Under 10 Minutes](https://youtu.be/XU0llRltyFM) https://youtu.be/XU0llRltyFM    
@@ -96,13 +95,13 @@ Example tests for gcd: [gcd_test.py](testing/gcd_test.py)
 [Git](git/)    
 </td>
 <td markdown="span">
-Understanding Git in more detail.
-Using branches.
+[Git Basics](git/git-basics).     
+Using [branches][git-branching] (online Git book).    
+[Aliases](git/aliases) how to create aliases for git commands.
 </td>
 <td markdown="span">
-[Git basics](git/git-basics) copy the source file [git/git-basics.md](git/git-basics.md) and write your answers after the questions.    
-[Branching][git-branching] in online Git book.    
-[Aliases](git/aliases) how to create aliases for git commands. ("git history" is a nice alias)
+[Git Questions](git/git-questions) copy the source file [git/git-questions.md](git/git-questions.md) and write your answers after the questions.    
+**Know** [Git Branching][git-branching] chapter in online Git Book.
 </td>
 </tr>
 <!-- More Git -->
@@ -112,14 +111,13 @@ More Git
 </td>
 <td markdown="span">
 [Branching and Merging][git-book-branching-and-merging] in online Git Book.   
+Using Github Flow in projects.    
 [Pull Request Tutorial](https://yangsu.github.io/pull-request-tutorial/) why and how to use pull requests.    
 (optional) [Using SSH Keys with Git](https://help.github.com/articles/connecting-to-github-with-ssh/) so you don't need to enter your userid/password. 
 </td>
 <td markdown="span">
 A real [pull request in jQuery repo](https://github.com/jquery/jquery/pull/1051)     
 Branch and merge exercise on Github: [http://bit.ly/kucafe2018](http://bit.ly/kucafe2018)    
-Unit Tests and Pull Requests: use this code [unittests.zip](unittests.zip)    
-**Know** [Git Branching][git-branching] chapter in online Git Book.
 </td>
 </tr>
 <!-- Web Dev -->

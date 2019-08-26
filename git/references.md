@@ -1,8 +1,8 @@
-## Git Visualizer!
+## Interactive Git Visualizer
 
 [Git Visualizer](http://git-school.github.io/visualizing-git) type git commands and see a graph of the result! *This really helps understand git*. 
 
-## Project Flow with Git
+## Using Git in a Project: Github Flow
 
 [Github Flow](https://guides.github.com/introduction/flow/)
 
@@ -37,3 +37,9 @@ Each Git commit is a node on a graph.  But what is in that node?  This article e
 Optional:
 * [Understanding Git Branches](https://www.sbf5.com/~cduan/technical/git/git-2.shtml) short article with pictures of what branch commands do.
 * [How to Clone all Branches?](https://stackoverflow.com/questions/67699/how-to-clone-all-remote-branches-in-git) Stackover question with extensive explanation. Cloning and tracking remotes branches is a common problem.
+
+## Good Git Questions Online
+
+* [15 Git Questions Every Developer Should Know](https://medium.com/@gauravtaywade/15-interview-questions-about-git-that-every-developer-should-know-bcaf30409647)
+* [Frequently Asked Git Questions](https://www.git-tower.com/learn/git/faq)
+* [13 Essential Git Interview Questions](https://www.toptal.com/git/interview-questions)
