@@ -113,11 +113,12 @@ More Git
 [Branching and Merging][git-book-branching-and-merging] in online Git Book.   
 Using Github Flow in projects.    
 [Pull Request Tutorial](https://yangsu.github.io/pull-request-tutorial/) why and how to use pull requests.    
+[Commenting on Pull Requests](https://yangsu.github.io/pull-request-tutorial/) - examples of providing feedback.    
 (optional) [Using SSH Keys with Git](https://help.github.com/articles/connecting-to-github-with-ssh/) so you don't need to enter your userid/password. 
 </td>
 <td markdown="span">
+[Reading Assignment for Github Flow & Pull Requests](assignments/week2/github-flow.md)    
 A real [pull request in jQuery repo](https://github.com/jquery/jquery/pull/1051)     
-Branch and merge exercise on Github: [http://bit.ly/kucafe2018](http://bit.ly/kucafe2018)    
 </td>
 </tr>
 <!-- Web Dev -->
