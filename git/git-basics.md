@@ -24,6 +24,28 @@ Try the [Git Visualizer][GitVisualizer] at http://git-school.github.io/visualizi
 
 [Think Like a Git][ThinkLikeaGit] also has visual explanation of git.
 
+## Navigating a Repository.
+
+[Advanced Git Tips for Python Developers][git-tips-python] has good examples of navigating a git repository and using `git stash` to save uncommited changes in your working copy.
+
+Some useful tips:
+
+* `HEAD~` (HEAD tilde) means "the predecessor of HEAD". Instead of HEAD, you can put any commit label, e.g. `git checkout bugfix~` for the predecessor of commit "bugfix".
+* `HEAD~3` means 3 commits before current HEAD.
+* `HEAD^` means a parent of HEAD, by default the first parent.
+* `foo^1` and `foo^2` are parents of a commit `foo` created by a merge (commit with 2 parents).
+
+Example use: what files did the most recent commit change?
+```
+ git diff HEAD^ HEAD
+ # to see just the names of changed files:
+ git diff HEAD^ HEAD --name-only
+```
+
+Github has nice visual tools for showing changes between any commits, 
+but (of course) they are only available for the remote on Github not your local repo.
+
+
 ## Good Git Questions Online
 
 * [15 Git Questions Every Developer Should Know](https://medium.com/@gauravtaywade/15-interview-questions-about-git-that-every-developer-should-know-bcaf30409647)
@@ -43,4 +65,4 @@ Try the [Git Visualizer][GitVisualizer] at http://git-school.github.io/visualizi
 
 [ThinkLikeaGit]: http://think-like-a-git.net/ "Understand visually how git works"
 [GitVisualizer]: http://git-school.github.io/visualizing-git/ "Online tools draws a graph of commits in a repo, as you type"
-
+[git-tips-python]: https://realpython.com/advanced-git-for-pythonistas/

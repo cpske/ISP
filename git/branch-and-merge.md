@@ -1,12 +1,51 @@
 ## Why Branches and How to Use in Your Project
 
-Agile practices include
+1. Use a branch to develop new features, so code on the master branch is always tested and runnable.  Errors on the branch don't affect code on "master".
+2. Enable several people to work on different features or parts of program -- each uses his own branch.  Your changes won't conflict with someone else's changes.
+3. You can release code (from master) while work is going on (in branches).
 
-1. Maintain runnable, potentially releasable code.
-2. Release early and often.  
-3. Development team works in parallel.
+## Merging
 
-Branches can help you do these things.
+* Merging is combining files from different branches.  
+* Merging may also involve same branch from different repositories.
+    - `git pull` first fetches changes from a remote (`git fetch`) and then merges them.
+
+What can happen?
+
+* Best case: no conflicts or overlaps.
+* Conflicting changes to a file.
+* Non-conflicting changes in a file (successful merge) but result is incorrect!
+    - example: two people add the **same** method to a class.
+    - one person adds method at **top** of file, the other adds in at **bottom**.
+    - first person "pushes" his changes to Github.  No problem since he's ahead of the branch on Github.
+    - second person must "pull" or "fetch" and "merge" from Github to update his version.
+    - `git merge` sees that person 1 added something at top, but line range doesn't conflict with person 2's changes, so it copies in the lines.   Merge succeeds.
+    - Now the file has 2 copies of the same method!
+
+## Branches and Tracking Branches
+
+A "tracking branch" is a local branch with a corresponding remote.
+When you clone a remote repository, your local "master" branch is
+set to track "origin/master" (master branch at URL nicknamed origin).
+
+To create a local "tracking branch" for some branch that already
+exists on a remote, use:
+```
+git checkout --track origin/branch_name
+# another command that does the same thing:
+git checkout -b branch_name origin/branch_name
+```
+
+
+
+
+## Bitbucket Interactive Branch & Merge Tutorial
+
+https://www.atlassian.com/git/tutorials/learn-branching-with-bitbucket-cloud
+
+* 30-35 minutes
+* requires a (free) Bitbucket account
+* you "fork" a public repo for the tutorial
 
 ## Reading: Basics of Branch and Merge
 
