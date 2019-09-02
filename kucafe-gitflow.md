@@ -35,6 +35,11 @@ File:  **menu.md**
 |:---------------------------------------|------:|
 | nothing yet                            |  0.0  |
 
+## Beverages
+
+| Item                                   | Price |
+|:---------------------------------------|------:|
+| nothing yet                            |  0.0  |
 
 ---
 
@@ -65,6 +70,7 @@ We accept PromptPay, KUPay, Alipay, and cash. No credit cards.
    - pair updates their copy of master
    - pair creates a branch named breakfast-menu and switches to it
    - add menu items (your choice) in menu.md to the table
+   - add beverage items (your choice) in menu.md to the table
    - change the title line from "Menu" to "Breakfast Menu"
    - commit and push your changes
    - open a pull request
