@@ -36,6 +36,9 @@ git checkout --track origin/branch_name
 git checkout -b branch_name origin/branch_name
 ```
 
+To add a remote for a local branch (no remote copy yet) do:
+```
+git remote add 
 
 
 
@@ -148,4 +151,16 @@ this creates a detached branch.
 git checkout -b add_to_table origin/add_to_table
 ```
 creates a local "tracking branch".  It tracks changes to the remote branch, and can push changes to the remote branch.
+
+3. Somehow you screw up and you have a local copy of existing branch,
+but its not tracking a remote.  You can specify the remote tracking branch:
+```
+git checkout some_branch
+git branch --set-upstream-to  origin/some_branch
+```
+This doesn't seem to be needed in practice.
+
+## References
+
+* [Push a new local branch to a remote](https://www.freecodecamp.org/forum/t/push-a-new-local-branch-to-a-remote-git-repository-and-track-it-too/13222) on freecodecamp.org
 
