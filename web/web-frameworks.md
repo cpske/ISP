@@ -1,3 +1,10 @@
+## Understanding Web Frameworks
+
+This article on [Full Stack Python](https://www.fullstackpython.com) is a great place to learn about what a web framework does, and how to compare Python web frameworks:
+
+[https://www.fullstackpython.com/web-frameworks.html][fullstackpython-web-frameworks]
+
+
 ## Web Development
 
 https://developer.mozilla.org/en-US/docs/Web/Tutorials MDN recommended tutorials on HTML, CSS, and Javascript.
@@ -7,6 +14,12 @@ https://www.udemy.com/python-and-django-full-stack-developer-bootcamp/
    Paid course with some free lectures.
 
 ## Web Frameworks
+
+[4 Python Web Frameworks Compared](https://talkpython.fm/episodes/show/149/4-python-web-frameworks-compared) episode of the "Talk Python" podcast.  
+He compares Django, Flask, Pyramid, and Tornado, and explains the
+important differences between them and which one may be best for
+which kind of project.
+
 
 [HotFrameworks][hotframeworks] - chart showing popularity of web frameworks.
 
@@ -51,3 +64,4 @@ Some top rankings are:
 [hotframeworks]: https://hotframeworks.com "Popularity of different web frameworks based on appearance on Github and Stackoverflow." 
 [calavijo]: http://blog.websitesframeworks.com "Comparison of Web Frameworks - Rails, Grails, Django, Code Igniter"
 [calavijo_pdf]: https://acceda.ulpgc.es:8443/bitstream/10553/11428/3/0695395_00000_0000.pdf "PDF of report comparing Rails, Grails, Django, Code Igniter"
+[fullstackpython-web-frameworks]: https://www.fullstackpython.com/web-frameworks.html
