@@ -107,11 +107,11 @@ Using [branches][git-branching] (online Git book).
 <!-- More Git -->
 <tr valign="top">
 <td align="center" markdown="span"> 
-More Git
+More [Git](git/)    
 </td>
 <td markdown="span">
 [Branching and Merging][git-book-branching-and-merging] in online Git Book.   
-Using Github Flow in projects.    
+Using [Github Flow](git/index#github-flow).    
 [Pull Request Tutorial](https://yangsu.github.io/pull-request-tutorial/) why and how to use pull requests.    
 [Commenting on Pull Requests](https://yangsu.github.io/pull-request-tutorial/) - examples of providing feedback.    
 (optional) [Using SSH Keys with Git](https://help.github.com/articles/connecting-to-github-with-ssh/) so you don't need to enter your userid/password. 

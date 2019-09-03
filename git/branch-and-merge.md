@@ -1,8 +1,21 @@
 ## Why Branches and How to Use in Your Project
 
-1. Use a branch to develop new features, so code on the master branch is always tested and runnable.  Errors on the branch don't affect code on "master".
+Branches let you create separate versions of a repository that can be merged and compared.  Common uses are:
+
+1. Use a branch to develop new features, so new work doesn't mess up the tested and runnable verion on the "master" branch.  Errors on the branch don't affect other branches.
 2. Enable several people to work on different features or parts of program -- each uses his own branch.  Your changes won't conflict with someone else's changes.
-3. You can release code (from master) while work is going on (in branches).
+3. Use a branch to work on bug fixes.  Once the fix is tested and verified it can be "merged" into production code.
+4. You can release code (from master) while work is going on (in branches).
+
+## Understanding Branches
+
+A git repositry is a **graph**.  
+
+* Commits are nodes on the graphs. 
+* Git branches are branches on the graph.
+* Branch names like "master", and tags like HEAD are just **labels** that point to nodes.
+
+Try the online [Git Visualizer](http://git-school.github.io/visualizing-git) - type git commands like "git commit", "git branch", "git checkout", "git reset" and see results on the graph.  *This really helps understand git*. 
 
 ## Merging
 
@@ -31,24 +44,50 @@ set to track "origin/master" (master branch at URL nicknamed origin).
 To create a local "tracking branch" for some branch that already
 exists on a remote, use:
 ```
-git checkout --track origin/branch_name
+git checkout  -b branch_name  origin/branch_name
 # another command that does the same thing:
-git checkout -b branch_name origin/branch_name
+git checkout --track origin/branch_name
 ```
 
-To add a remote for a local branch (no remote copy yet) do:
+### Creating a New Remote Branch
+
+You have a branch in your local repo named `dev-food`,
+but there isn't any remote branch (on origin) for it.
+
+What is the command to push your work to a *new* remote
+branch with the same name (`dev-food`)?
 ```
-git remote add 
+git checkout dev-food
+# in this command, "dev-food" is the name of the REMOTE branch
+# usually you want it to be same as your branch name.
+git push -u origin dev-food
+```
+
+The flag `-u` is short for `--set-upstream`.
 
 
+### Fetch a Remote Branch and Track It
 
-## Bitbucket Interactive Branch & Merge Tutorial
+You are working on a project and a teammate asks you to review his
+work on the branch `dev-auth` (an important feature!).  You don't
+have that branch in your local repo yet.
 
-https://www.atlassian.com/git/tutorials/learn-branching-with-bitbucket-cloud
+What is the command to fetch `dev-auth` from origin and create 
+a tracking branch for it?
+```
+cmd>  git checkout --track origin/dev-auth
+```
 
-* 30-35 minutes
-* requires a (free) Bitbucket account
-* you "fork" a public repo for the tutorial
+### Good Collection of "How To" for Git Branching
+
+This page has some useful Git commands for working with branches and remotes:
+
+https://www.freecodecamp.org/forum/t/push-a-new-local-branch-to-a-remote-git-repository-and-track-it-too/13222
+
+* Rename a branch: `git branch -m old_name new_name`  (or use `--move`)
+* Delete a branch: `git branch -d branch_name  (or use `--delete`)
+* Force delete a branch with unmerged commits: `git branch -d --force branch-name` (`-D` is same as `-d --force`)
+
 
 ## Reading: Basics of Branch and Merge
 
@@ -164,3 +203,6 @@ This doesn't seem to be needed in practice.
 
 * [Push a new local branch to a remote](https://www.freecodecamp.org/forum/t/push-a-new-local-branch-to-a-remote-git-repository-and-track-it-too/13222) on freecodecamp.org
 
+* [Bitbucket Interactive Branch & Merge Tutorial][bitbucket-learn-branching] uses Bitbucket cloud. You "fork" a public repo, make changes, and merge.  30-35 minutes.  
+
+[bitbucket-learn-branching]: https://www.atlassian.com/git/tutorials/learn-branching-with-bitbucket-cloud
