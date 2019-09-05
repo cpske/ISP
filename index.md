@@ -124,16 +124,16 @@ A real [pull request in jQuery repo](https://github.com/jquery/jquery/pull/1051)
 <!-- Web Dev -->
 <tr valign="top">
 <td align="center" markdown="span"> 
-Web Dev
+Web Apps
 </td>
 <td markdown="span">
-[HTTP Protocol Demo](web/HTTP-in-Action.pdf) in class.    
-[Django](web/django) and [Web Frameworks](web/web-frameworks).
+[Introduction to HTTP](web/HTTP.pdf).     
+Web servers, web apps, and [Web Frameworks](web/web-frameworks).    
 </td>
 <td markdown="span">
-A very basic [Intro to HTTP](web/HTTP.pdf).     
+[HTTP Exercises](web/HTTP-in-Action.pdf) in class.    
+Assignment:
 Install [Django Web Framework](web/django), implement the tutorial yourself. Pay attention to the *development process*.    
-[Web Dev in 2018](web/Web_Dev_in_2018.pdf) and [video](https://youtu.be/Zftx68K-1D4) what to know if you want to be a pro.
 </td>
 </tr>
 <!-- Midterm -->
