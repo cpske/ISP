@@ -132,15 +132,14 @@ Web servers, web apps, and [Web Frameworks](web/web-frameworks).
 </td>
 <td markdown="span">
 [HTTP Exercises](web/HTTP-in-Action.pdf) in class.    
-Assignment:
-Install [Django Web Framework](web/django), implement the tutorial yourself. Pay attention to the *development process*.    
+Assignment: [Implement the Django Tutorial parts 1-5](assignment/week4/learn-django). 
 </td>
 </tr>
 <!-- Midterm -->
 <tr valign="top">
 <td align="center" markdown="span"> 
 Midterm    
-5 Oct (Sunday)
+5 Oct (Saturday)
 </td>
 <td markdown="span">
 Written: 9:00-11:00 AM    
@@ -149,7 +148,7 @@ Coding: 12:00-15:00 PM
 </td>
 <td markdown="span">
 Covers all material so far.
-Bring your computer to **both** morning and afternoon.   
+Bring your computer to **both** exams.
 </td>
 </tr>
 <!-- Project -->
