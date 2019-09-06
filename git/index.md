@@ -1,7 +1,7 @@
 ## Git Related Material
 
-* Git Basics [class notes](git-basics), some guidelines given in class [PDF](Git-Basics.pdf), [PPT]([Git-Basics.ppt)
-* [Git Aliases](aliases) how to create an alias for a git subcommand, such as "git co" as alias for "git checkout".
+* Git Basics [class notes](git-basics) guidelines given in class, including .gitignore [PDF](Git-Basics.pdf), [PPT]([Git-Basics.ppt)
+* [Git Aliases](aliases) how to create an alias for a git command, such as "git co" alias for "git checkout".
 * Using Github [PDF](Using-Github.pdf), [PPT](Using-Github.ppt) some guidelines for this course
 * Using Git [Submodules](submodule)
 * [Suggested Reading and References](references)

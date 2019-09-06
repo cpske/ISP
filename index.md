@@ -117,7 +117,7 @@ Using [Github Flow](git/index#github-flow).
 (optional) [Using SSH Keys with Git](https://help.github.com/articles/connecting-to-github-with-ssh/) so you don't need to enter your userid/password. 
 </td>
 <td markdown="span">
-[Reading Assignment for Github Flow & Pull Requests](assignment/week2/github-flow)    
+[Assignment for Github Flow & Pull Requests](assignment/week2/github-flow)    
 A real [pull request in jQuery repo](https://github.com/jquery/jquery/pull/1051)     
 </td>
 </tr>
