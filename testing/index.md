@@ -10,7 +10,7 @@ description: Index page
 
 * Python Unit Testing: [PDF](PythonUnitTesting.pdf) [PPT](PythonUnitTesting.ppt)
 
-* [Test Coverage](test-coverage.md) - a tool to show how much of your code is being tested by unit tests.
+* [Code Coverage](code-coverage.md) - using tools to assess how much of your code is really being tested by unit tests.
 
 ## Web Testing
 * Web Testing [PDF](WebTesting.pdf) [PPT](WebTesting.ppt)

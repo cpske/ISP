@@ -39,7 +39,7 @@ What can happen?
 
 A "tracking branch" is a local branch with a corresponding remote.
 When you clone a remote repository, your local "master" branch is
-set to track "origin/master" (master branch at URL nicknamed origin).
+set to track "origin/master" (master branch on the remote repo named "origin").
 
 To create a local "tracking branch" for some branch that already
 exists on a remote, use:
@@ -113,7 +113,6 @@ Please be consistent about...
 * names for bugfix branches.
 
 
-
 ## Questions on Branches
 
 You should be able to answer these.  They will be on a quiz.
@@ -126,18 +125,15 @@ You should be able to answer these.  They will be on a quiz.
 
 4. What is the command to list **all** branches, including remote branches?
 
+5. What is the command to switch to a branch named "dev"?
 
-## Questions about Using Branches
+6. Suppose you have 2 branches: master and dev.  What is the command to show differences between files on those branches (diffs)?
 
-1. What is the command to switch to a branch named "dev"?
+7. What are the commands to merge "dev" into "master" (need at least 2)?
 
-2. Suppose you have 2 branches: master and dev.  How can you see what are the differences (diffs)?
+8. Does a branch create a copy of the original branch's files?
 
-3. What are the commands to merge "dev" into "master"?
-
-4. Does a branch create a copy of the original branch's files?
-
-5. What is a command to show a graphical view of the branches and commits? More than one answer to this.
+9. What is a command to show a graphical view of the branches and commits? More than one answer to this.
 
 
 ## Branches and Remotes

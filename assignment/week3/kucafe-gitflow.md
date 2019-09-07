@@ -7,14 +7,16 @@ The purpose is to practice project initialization, Github Flow, and merging with
 ### The Goal
 
 When your are done, "master" on  your github repo will contain:
+
 * a `README.md` with link to the menu and your team names.
-* a menu with 4 sections: Breakfast Menu, Lunch Menu, Dinner Menu, and Beverages
+* a menu with **4 sections**: Breakfast Menu, Lunch Menu, Dinner Menu, and Beverages
+    - there is only one Beverages section
 * instead of "Dinner Menu" you may use "Night Food Menu"
 
 ### Requirements
 
 * **Everyone** must have at least one commit (with work) on Github
-* **Everyone** must have at least one comment on Pull Requests
+* **Everyone** must have at least one constructive comment on Pull Requests
 * Feature branches must be on Github (proof of work)
 * I will check these on Github
 
@@ -23,7 +25,7 @@ When your are done, "master" on  your github repo will contain:
 1. **One** team member create a repo named `kucafeN` (`N`=your row number) in the **ISP19** organzation (not personal repo).
    - Only one repo per TEAM.
    - Public
-   - URL: `https://github.com/ISP19/kucafeN` (N = a number)
+   - URL: `https://github.com/ISP19/kucafeN` (N = a number assigned in class)
 
 2. Clone it to your machine.
 
@@ -90,17 +92,19 @@ We accept PromptPay, KUPay, Alipay, and cash. No credit cards.
    - Modify `menu.md`
        * change the title line from "## Menu" to "## Breakfast Menu"
        * add menu items (your choice) to the menu table
-       * add beverage items (your choice) to the beverage table
+       * add beverage items (your choice) to the "## Beverage" section
    - **WRONG**, **WRONG** do **not** rename "menu.md" or create a new file name "breakfast-menu.md".
    - **CORRECT** put your work directly in `menu.md`. **DO NOT RENAME THIS FILE**.
+   - Check your work.  Is markdown correct? Spelling? Consistent formatting?
    - Commit and push your changes
-   - Open a pull request
-   - EVERYONE on team pulls the branch and comments on pull request
-   - Look for SPELLING ERRORS, wrong words, formatting errors
+   - Open a Pull Request
+   - EVERYONE on team pulls the branch and comments on Pull Request
+   - Look for SPELLING ERRORS, wrong words, formatting errors, inconsistencies
 
 9. Merge your menu into master!
    - When TEAM approves your changes, pull an update of master branch.
-   - Merge your branch into master.
+   - Merge your branch **into** master. **NOT** merge master into your branch.
+   - Check the result for correctness.
    - Push the changes.
 
 ---

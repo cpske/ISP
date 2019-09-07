@@ -1,59 +1,63 @@
-# A simple web server.
+# A simple web server in under 30 lines of code (excluding comments).
 # It accepts requests from the network on port PORT
 # and sends a 200 OK response with simple text.
-# It also prints the request on the terminal.
 #
 # Imagine you had to write all the code to handle requests,
 # routing, session management, etc., yourself.  A lot of work.
 # That's why we have frameworks.
 #
-# Python strings: a byte-string looks like b'data\nmore data\n'
-# To convert to a regular string:
-# string = str( bstr, 'utf-8' )
-# string = bstr.decode()   or .decode('utf-8')
-# To convert unicode to byte string:  bstr = string.encode()
-import socket
+# Python strings: network data is sent as byte-strings.
+# A byte-string looks like b'data\nmore data\n'
+# To convert byte-string regular string:
+#     string = str( bstr, 'utf-8' )
+# or  string = bstr.decode()   or bstr.decode('utf-8')
+# To convert unicode string to byte string:  
+#     bstr = string.encode()
+import sys, socket, datetime
 
 HOST = ''
-PORT = 8080
+PORT = 80
 MAX_REQUEST_SIZE = 65535
+
 try:
     listen_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     listen_socket.bind((HOST, PORT))
-except Error as e:
-    print("Excepption raised while setting up socket:")
-    print(e)
+    # Put the socket into listening mode to accept connections
+    listen_socket.listen()
+except:
+    print("Exception raised while creating socket:")
+    print( sys.exc_info()[0] )
+    print( sys.exc_info()[1] )
+    sys.exit(1)
 
-# 1 means accept at most 1 simultaneous connection
-# We should accept many connections, and
-# use a worker thread to handle each one.
-listen_socket.listen(1)
-print("Listening for connections on port", PORT)
-# socket.accept() will wait for a connection.
-# It returns a connection object and an address (a tuple).
-# The address contains (ip_address, port) of the remote host.
-connection, address = listen_socket.accept()
-request = connection.recv(MAX_REQUEST_SIZE)
-# What did we get?
-print("Got a connection from host", address[0], "port", address[1])
-print("")
-# The request and response are byte-strings, not regular unicode strings.
-# Use request.decode() for a readable version.
-print( request )
-# Send a response and close the connection
-response = """HTTP/1.1 200 OK
-Content-type: text/html
+while True:
+    # Wait for a connection and return a connection object and an address.
+    # The address contains (ip_address, port) of the remote host.
+    print("Waiting for connections on port", PORT)
+    connection, address = listen_socket.accept()
+    request = connection.recv(MAX_REQUEST_SIZE)
+    # What did we get?
+    print("Got a connection from host", address[0], "port", address[1])
+    print("")
+    # The request and response are byte-strings, not regular unicode strings.
+    # Use request.decode() for a readable version.
+    print( request.decode(), "\n" )
+    # include timestamp in reply so multiple requests are distinguishable. 
+    timestamp = datetime.datetime.now().strftime("%H:%H:%S")
+    # Send a response and close the connection
+    response = f"""HTTP/1.1 200 OK
+    Content-type: text/html
 
-<html>
-    <body>
-        <h1>Got your Request</h1>
-        <p>I'll get to work on it right away!</p>
-        <p>Have a nice day.:-)</p>
-    </body>
-</html>
-"""
-connection.sendall(response.encode()) 
-connection.close()
-# A real server would loop and accept another connection now.
-# For demo, just close the socket to free the port.
+    <html>
+      <body>
+            <h2>Hello {address[0]}! Got your Request at {timestamp}</h2>
+            <p>I'll get to work on it right away.</p>
+            <p>Have a nice day.:-)</p>
+        </body>
+    </html>
+    """
+    connection.sendall(response.encode()) 
+    connection.close()
+
+# If you ever get out of the loop... close the socket to free the port.
 listen_socket.close()
