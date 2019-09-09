@@ -128,6 +128,7 @@ Web Apps
 </td>
 <td markdown="span">
 [Introduction to HTTP](web/HTTP.pdf).     
+[Introduction to Django](django/Intro-to-Django.pdf).    
 Web servers, web apps, and [Web Frameworks](web/web-frameworks).    
 </td>
 <td markdown="span">
