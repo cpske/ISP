@@ -153,10 +153,12 @@ Object-Relational Mapping
 <!-- Coding and Agile Practice -->
 <tr valign="top">
 <td align="center" markdown="span"> 
-Good Developer Practices 
+Good Developer Practices     
 </td>
 <td markdown="span">
-Good practices for developers (even non-agile).
+Good practices for developers (even non-agile)    
+Importance of descriptive commit messages and Pull Requests    
+Separate configuration from code
 </td>
 <td markdown="span">
 Assignment from *Practices of an Agile Developer*, TBA.
