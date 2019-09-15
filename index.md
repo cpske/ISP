@@ -136,6 +136,32 @@ Web servers, web apps, and [Web Frameworks](web/web-frameworks).
 Assignment: [Implement the Django Tutorial parts 1-5](assignment/week4/learn-django). 
 </td>
 </tr>
+<!-- Database and ORM-->
+<tr valign="top">
+<td align="center" markdown="span"> 
+Database   
+ORM
+</td>
+<td markdown="span">
+Intro to Databases        
+Object-Relational Mapping 
+</td>
+<td markdown="span">
+[Database exercise](database/database-exercise)
+</td>
+</tr>
+<!-- Coding and Agile Practice -->
+<tr valign="top">
+<td align="center" markdown="span"> 
+Good Developer Practices 
+</td>
+<td markdown="span">
+Good practices for developers (even non-agile).
+</td>
+<td markdown="span">
+Assignment from *Practices of an Agile Developer*, TBA.
+</td>
+</tr>
 <!-- Midterm -->
 <tr valign="top">
 <td align="center" markdown="span"> 
