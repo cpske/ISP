@@ -27,30 +27,39 @@ Some apps you can use to answer these questions:
 
 1. The Django Polls database contains many tables.  Which tables contain the data for your "polls" app?
 
-2. What are the **fields** in the table for poll "choices"?
+2. What are the **fields** in the database table for "choice"?
 
 3. Explain or draw a diagram for how to relate a "choice" to a "question".
 
+   > In the following questions use a query expression to retreive
+   > Model objects from the database.
+   > Use the Django shell to try your answers.
+   > See [Making Queries][making_queries] for syntax of querying.
 
-### Use the Django shell to try your answers to the following.
-
-4. Write Python statements (as if part of the Django polls app) to count all the votes for poll 1 (whatever poll has id=1).
+4. Write a Python function (as if part of the Django polls app) to count all the votes for poll for an `id` (id=1, 2, ...).
     ```python
        def vote_count(id):
           """Return total votes for a given poll. id is poll id"""
+          # Hint: get the question from the database 
+          #       Easiest is use Question.objects.get(...) 
+          # question has a choice_set attribute that is a set of choices
+          # for that question.
 
     ```
 
 5. Write a method using Django query statements to find all polls where the question contains some specific text.  Use `Question.objects.filter(...)` or similar query statement instead of fetching all objects.
     ```python
        def find_polls_for_text(text):
-          """Return list of Question objects for all polls containing some text"""
+          """Return list of Question objects for all polls containing some text"""        # Hint: Question.objects.filter( expression )
+          # and use the relations question_text__contains or __icontains 
 
     ```
-
 
 ---
 ### Reference
 
 *Making Queries* in the Django documentation: 
-https://docs.djangoproject.com/en/2.2/topics/db/queries/
+[https://docs.djangoproject.com/en/2.2/topics/db/queries/][making_queries]
+
+[making_queries]: https://docs.djangoproject.com/en/2.2/topics/db/queries/
+
