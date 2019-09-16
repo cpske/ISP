@@ -29,9 +29,28 @@ Some apps you can use to answer these questions:
 
 2. What are the **fields** in the table for poll "choices"?
 
-3. What **field** in **which table** is used to count votes for a poll?
+3. Explain or draw a diagram for how to relate a "choice" to a "question".
 
-4. In the source code, a **Choice** object belongs to a **Question**. In the Polls database how can we relate a row in the "choice" table to a row in the "question" table?     
-Write an SQL Join clause like    
-"`City.country_code = Country.code`" (connects a City to a Country using the country's code).   
-   
+
+### Use the Django shell to try your answers to the following.
+
+4. Write Python statements (as if part of the Django polls app) to count all the votes for poll 1 (whatever poll has id=1).
+    ```python
+       def vote_count(id):
+          """Return total votes for a given poll. id is poll id"""
+
+    ```
+
+5. Write a method using Django query statements to find all polls where the question contains some specific text.  Use `Question.objects.filter(...)` or similar query statement instead of fetching all objects.
+    ```python
+       def find_polls_for_text(text):
+          """Return list of Question objects for all polls containing some text"""
+
+    ```
+
+
+---
+### Reference
+
+*Making Queries* in the Django documentation: 
+https://docs.djangoproject.com/en/2.2/topics/db/queries/
