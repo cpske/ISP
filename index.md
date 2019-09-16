@@ -143,8 +143,8 @@ Database
 ORM
 </td>
 <td markdown="span">
-Intro to Databases        
-Object-Relational Mapping 
+[Intro to Databases](database/Database-Basics.pdf)        
+[Object-Relational Mapping](database/Persistence-and-ORM.pdf)
 </td>
 <td markdown="span">
 [Database exercise](database/database-exercise)
@@ -158,7 +158,7 @@ Good Developer Practices
 <td markdown="span">
 Good practices for developers (even non-agile)    
 Importance of descriptive commit messages and Pull Requests    
-Separate configuration from code
+[Separate configuration from code](refactoring/Separate-config-from-code.pdf)
 </td>
 <td markdown="span">
 Assignment from *Practices of an Agile Developer*, TBA.
