@@ -7,7 +7,7 @@ description: Index page
 ## Individual Software Process
 
 [About the Course](Topics), 
-[Google Classroom](https://classroom.google.com/u/0/c/MTQ5OTI2OTQ3MTJa) for assignments (code: minx6nj), [Resources](Resources).
+[Google Classroom](https://classroom.google.com/) for assignments (code: minx6nj), [Resources](Resources).
 
 
 <table border="1">
@@ -140,7 +140,7 @@ Assignment: [Implement the Django Tutorial parts 1-5](assignment/week4/learn-dja
 <tr valign="top">
 <td align="center" markdown="span"> 
 Database   
-ORM
+&amp; ORM
 </td>
 <td markdown="span">
 [Intro to Databases](database/Database-Basics.pdf)        
@@ -161,7 +161,20 @@ Importance of descriptive commit messages and Pull Requests
 [Separate configuration from code](refactoring/Separate-config-from-code.pdf)
 </td>
 <td markdown="span">
-Assignment from *Practices of an Agile Developer*, TBA.
+[Agile and Coding Questions](assignment/week5/agile-and-coding) questions from *Practices of an Agile Developer*.  Answer on the Google Form in Week5 of [Google Classroom for ISP2019](https://classroom.google.com) and **submit** it.
+</td>
+</tr>
+<!-- Django Stuff -->
+<tr valign="top">
+<td align="center" markdown="span"> 
+Django    
+</td>
+<td markdown="span">
+[Import and Export Data](django/data-import-export) and how to create 
+a backup or "starter" data for others to easily use your polls application.
+</td>
+<td markdown="span">
+&nbsp;
 </td>
 </tr>
 <!-- Midterm -->

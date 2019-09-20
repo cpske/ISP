@@ -46,7 +46,7 @@ Q7. You write a `index_of(list, value)` method that returns the index of the fir
 For example, `index_of(['ant','dog','cat'], 'dog')` returns 1. 
 What should you do if `value` is not in the list?
 - [ ] Return -1 to indicate value is not in list.
-- [ ] Use an Assert statement to raise an AssertError.
+- [ ] Use an Assert statement to raise an AssertionError.
 - [ ] Throw an exception, such as NotFoundError.
 - [ ] Print an error message on the console and return 0.
 
