@@ -1,8 +1,12 @@
 ## Understanding Web Frameworks
 
-This article on [Full Stack Python](https://www.fullstackpython.com) is a great place to learn about what a web framework does, and how to compare Python web frameworks:
+This article on [Full Stack Python](https://www.fullstackpython.com) is a good place to learn about what a web framework does, and how to compare Python web frameworks:
 
 [https://www.fullstackpython.com/web-frameworks.html][fullstackpython-web-frameworks]
+
+The Mozilla Develper Network (MDN) also has a good series of articles.
+[Client-Server Overview](https://developer.mozilla.org/en-US/docs/Learn/Server-side/First_steps/Client-Server_overview) describes HTTP requests and responses, and difference between static and dynamic content.  It then describes what web frameworks do.  They mention Django and Flask for Python.
+
 
 
 ## Web Development
@@ -22,8 +26,9 @@ which kind of project.
 
 
 [HotFrameworks][hotframeworks] - chart showing popularity of web frameworks.
+But its not representative of what is used for *production* web sites.
 
-Some top rankings are:
+Some top rankings in 2018 were:
 
 | Framework      |  Score |
 |:---------------|-------:|
@@ -48,9 +53,8 @@ Some top rankings are:
 | Struts         |    64  |
 | **Pyramid**    |    63  |
 
-[Empirical comparison of Rails, Grails, Django, Code Igniter][clavijo] compared time students needed to (a) complete some programming problems in each language, (b) develop a blogging web site in each one.  Django was the most productive of the 4.
+[Empirical comparison of Rails, Grails, Django, Code Igniter][clavijo] compared time students needed to (a) complete some programming problems in each language, (b) develop a blogging web site in each one.  **Django** was the most productive of the 4 frameworks.
 
-[Gearheart][Gearheart] reviews a few standard frameworks including Django, Ruby on Rails, and Angular.js, and React.  He feels that Rails enables writing less code, but has some learning curve if you don't know Ruby.   He didn't review any Java frameworks.
 
 ## Cool Analytics
 
@@ -60,7 +64,6 @@ Some top rankings are:
 
 ---
 
-[gearheart]: https://gearheart.io/blog/7-best-frameworks-for-web-development-in-2017/ "7 Best Frameworks for Web Development in 2017"
 [hotframeworks]: https://hotframeworks.com "Popularity of different web frameworks based on appearance on Github and Stackoverflow." 
 [calavijo]: http://blog.websitesframeworks.com "Comparison of Web Frameworks - Rails, Grails, Django, Code Igniter"
 [calavijo_pdf]: https://acceda.ulpgc.es:8443/bitstream/10553/11428/3/0695395_00000_0000.pdf "PDF of report comparing Rails, Grails, Django, Code Igniter"

@@ -161,7 +161,9 @@ Importance of descriptive commit messages and Pull Requests
 [Separate configuration from code](refactoring/Separate-config-from-code.pdf)
 </td>
 <td markdown="span">
-[Agile and Coding Questions](assignment/week5/agile-and-coding) questions from *Practices of an Agile Developer*.  Answer on the Google Form in Week5 of [Google Classroom for ISP2019](https://classroom.google.com) and **submit** it.
+"Agile and Coding Questions" assignment in Week 5 of [Google Classroom for ISP2019](https://classroom.google.com). Answer using the Google Form and **submit** it. Due Sunday, midnight.
+The questions and code examples are in
+[Agile and Coding Questions](assignment/week5/agile-and-coding).
 </td>
 </tr>
 <!-- Django Stuff -->
