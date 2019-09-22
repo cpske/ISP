@@ -179,6 +179,18 @@ a backup or "starter" data for others to easily use your polls application.
 &nbsp;
 </td>
 </tr>
+<!-- UML -->
+<tr valign="top">
+<td align="center" markdown="span"> 
+UML    
+</td>
+<td markdown="span">
+[UML Class Diagram](uml/UML-Class-Diagram.pdf)    
+</td>
+<td markdown="span">
+&nbsp;
+</td>
+</tr>
 <!-- Midterm -->
 <tr valign="top">
 <td align="center" markdown="span"> 
