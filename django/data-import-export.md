@@ -57,7 +57,7 @@ python manage.py migrate
 python manage.py loaddata init.json   (or whatever filename you choose)
 ```
 
-## Using a Migration instead of "`manage.py loaddata`"
+## Using a Migration instead of "manage.py loaddata"
 
 You can create a migration file to load initial data into the database.
 This makes it easier for others to install your app, since they
@@ -71,19 +71,8 @@ There's a good description and example in
 Can you write a data migration (in Python) do read a JSON file
 created by `dumpdata` and load it into the database?
 
-That would give you both the simplicity of initializing data using
-a migration, 
-and convenience of having data in a file you can easily modify.
-
-## Other Ways to Import and Export Data
-
-You can also use the database's own import/export commands.
-These are specific to each database and the output format may differ slightly.
-
-There is a Django add-on named `import-export`, with
-[good documentation](https://django-import-export.readthedocs.io/en/latest/index.html) on ReadTheDocs.io.
-This modules gives you model-level control over import and export.
-The downside is that you are adding another dependency to your project.
+That would give you both the simplicity of initializing data using a migration, 
+and convenience of having data in a separate file you can easily modify.
 
 ---
 ## References
@@ -91,6 +80,14 @@ The downside is that you are adding another dependency to your project.
 [Providing Initial Data for Models][django-initial-data] describes how to create initial data using a Migration or a "fixture". A "fixture" is a file containing data in JSON, XML, or Yaml format.
 
 [Data Migrations][data-migrations] on RealPython.com describes how to create a data migration for initial data.
+## Other Ways to Import and Export Data
+
+You can also use the database's own import/export commands.
+These are specific to each database and the output format may differ slightly.
+
+Django [import-export](https://django-import-export.readthedocs.io/en/latest/index.html) add-on, with good documentation on ReadTheDocs.io.
+This add-on gives you finer control over import and export.
+The downside: adding another dependency to your project.
 
 [django-initial-data]: https://docs.djangoproject.com/en/2.2/howto/initial-data/
 [django-admin]: https://docs.djangoproject.com/en/2.2/ref/django-admin/

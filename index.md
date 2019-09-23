@@ -176,7 +176,9 @@ Django
 a backup or "starter" data for others to easily use your polls application.
 </td>
 <td markdown="span">
-&nbsp;
+Share Some Useful Django Skill -
+(a) send markdown to me for addition here,
+or (b) add it yourself to class Wiki.
 </td>
 </tr>
 <!-- UML -->
@@ -231,17 +233,18 @@ Git Submodule for Testing
 [How to use git submodule](git/submodule) for Tic-Tac-Toe unit tests.
 </td>
 </tr>
-<!-- Automated Testing -->
+<!-- Automation and Testing -->
 <tr valign="top">
 <td align="center" markdown="span"> 
 Build Automation
 </td>
 <td markdown="span"> 
-[Ant](automate/Ant.pdf), [Make](automate/Make.pdf), and other build tools    
-Continuous Integration    
+[Ant](automation/Ant.pdf), [Make](automation/Make.pdf), and other build tools    
+[Continuous Integration]()    
 </td>
 <td markdown="span">
-Using CI with Github: [Java sample][demo-ci], [Python sample][demo-ci-python] 
+[Travis-CI Assignment](week6/ci-travis)    
+Demo CI projects: [Java sample][demo-ci], [Python sample][demo-ci-python] 
 </td>
 </tr>
 <!-- Thai -->
