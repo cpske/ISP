@@ -202,11 +202,13 @@ Midterm
 <td markdown="span">
 Written: 9:00-11:00 AM    
 Coding: 12:00-15:00 PM    
-*Dress Like a Programmer*
+*Dress Like a Programmer*    
+*Bring your computer to **both** exams*
 </td>
 <td markdown="span">
-Covers all material so far.
-Bring your computer to **both** exams.
+Covers all material so far.    
+Coding exam will include unit testing, 
+and adding a simple feature to a Django project.
 </td>
 </tr>
 <!-- Project -->
@@ -240,10 +242,10 @@ Build Automation
 </td>
 <td markdown="span"> 
 [Ant](automation/Ant.pdf), [Make](automation/Make.pdf), and other build tools    
-[Continuous Integration]()    
+[Continuous Integration](https://docs.travis-ci.com/user/for-beginners)    
 </td>
 <td markdown="span">
-[Travis-CI Assignment](week6/ci-travis)    
+[Travis-CI Assignment](assignment/week6/ci-travis)    
 Demo CI projects: [Java sample][demo-ci], [Python sample][demo-ci-python] 
 </td>
 </tr>

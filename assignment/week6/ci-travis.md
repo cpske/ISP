@@ -2,7 +2,7 @@
 
 ### Prerequisite:  Take Ownership of your unittesting Github Repository
 
-Travis-CI.org can only access projects owned by you.
+Travis-CI.com can only access projects owned by you.
 You have "admin" rights on your Github repo for the unittesting assignment,
 so you can take ownership.
 
@@ -36,10 +36,7 @@ Useful later:
 
 * [Language-specific Guides][travis-ci-docs] at bottom of the page has additional info for [Python][travis-ci-python]
 
-### 2. Create Account on travis-ci.org and Give Access to Selected Repos
-
-Use `travis-ci.org` not `travis-ci.com` (commercial version).
-The `.org` version is free but can only access public repos, and builds are slower.
+### 2. Create Account on travis-ci.com and Give Access to Selected Repos
 
 1. Follow the instructions in [Travis-CI Tutorial][travis-ci-tutorial]
 2. Give Travis access to some or all of your Github projects.
