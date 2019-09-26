@@ -173,7 +173,8 @@ Django
 </td>
 <td markdown="span">
 [Import and Export Data](django/data-import-export) and how to create 
-a backup or "starter" data for others to easily use your polls application.
+a backup or "starter" data for others to easily use your polls application.    
+[Virtualenv Quickstart](django/virtualenv-quickstart) and [Using Virtualenv](django/virtualenv) how to run apps in a virtual environment (its easy).
 </td>
 <td markdown="span">
 Share Some Useful Django Skill -
