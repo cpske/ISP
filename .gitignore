@@ -1,4 +1,4 @@
-# File to not commit to git
+# Files to not commit to git
 bin/
 isp-qa/
 misc/
@@ -24,6 +24,7 @@ quiz/
 Jittat/
 Paruj/
 solution/
+TA/
 web/puppeteer/
 # This is a separate repository.
 resources/
