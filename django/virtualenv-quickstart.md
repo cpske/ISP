@@ -11,14 +11,14 @@ cmd>  python3 -m pip install virtualenv
 cmd>  cd /someplace/django-polls
 cmd>  virtualenv env
 
-# activate the virtualenv by reading a script
+# activate the virtualenv using "activate" script
 # some shells use "." instead of "source"
 cmd>  source env/bin/activate 
 
-# install packages into this virtualenv
+# install packages into this virtualenv (only once)
 (env)cmd>  pip3 install -r requirements.txt
 
-# run python inside this virtualenv
+# run app inside this virtualenv
 (env)cmd>  python3 manage.py runserver
 
 # exit the virtualenv
@@ -30,8 +30,11 @@ You can delete the directory anytime, but you don't need to.
 
 ## Don't Commit the `env` Directory to Git!
 
-Add the `env` directory (or whatever name you use) to `.gitignore`
-and update .gitignore in your repo.  **Don't commit virtualenv dirs** to git.
+Add the "env" directory (or whatever name you use) to `.gitignore`
+and update .gitignore in your git repo.    
+**Don't commit virtualenv dirs** to git.
+
+**Note**: The `env` directory **is totally unrelated** to the `.env` file used by python-decouple.
 
 ## More Info
 
