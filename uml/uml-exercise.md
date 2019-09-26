@@ -1,16 +1,20 @@
 ## UML Exercises
 
+These exercises use Java notation for code.
+In Python some methods would be different, and you can have
+
 1. Draw a UML class diagram of the Student class.
     
     A Student has a firstname, lastname, studentID, and email.
 |Method   |Description   |
 |---------|--------------|
 |Student(String first,String last)|Constructor for a new student. ID is assigned automatically.  |
-|Student(String first, String last, String id)|Constructor for a new student. ID is specified as parm.   |
-|get_____()   |Get methods for each attribute.   |
-|setEmail(String email)|Set the email. |
+|setEmail(String email)| Set the email. |
+|setId(Long studentId) | Set the student id. |
 |boolean equals(Object other)|Test if two Students have same value.|
 |String toString() | Get a string representation of this Student.|
+
+We don't show "get" methods since they are pretty obvious and usual. Adds clutter to the diagram without conveying using info.
 
 2. Draw a UML class diagram of the Course class.
     A Course has a course ID (courseId) and a bunch of enrolled students.
