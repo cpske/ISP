@@ -7,12 +7,13 @@ Your `python` and `pip` commands may be different from those shown here.
 cmd>  python3 -m pip --upgrade pip3
 cmd>  python3 -m pip install virtualenv
 
-# create a virtualenv for one project
+# create a virtualenv for django-polls project
 cmd>  cd /someplace/django-polls
 cmd>  virtualenv env
 
-# activate the virtualenv using "activate" script
+# Activate the virtualenv using "activate" script
 # some shells use "." instead of "source"
+# Windows: enter 'env\Scripts\activate' (no "source")
 cmd>  source env/bin/activate 
 
 # install packages into this virtualenv (only once)
@@ -25,8 +26,8 @@ cmd>  source env/bin/activate
 (env)cmd>  deactivate
 ```
 
-This example created a directory named `env` for the project virtual environment files.
-You can delete the directory anytime, but you don't need to.
+This example created a directory named `env` for the project virtual environment files.    
+To delete the virtualenv, delete the `env` directory.
 
 ## Don't Commit the `env` Directory to Git!
 
