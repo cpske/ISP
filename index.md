@@ -130,6 +130,7 @@ Web Apps
 [Introduction to HTTP](web/HTTP.pdf).     
 [Introduction to Django](django/Intro-to-Django.pdf).    
 Web servers, web apps, and [Web Frameworks](web/web-frameworks).    
+[WSGI](web/wsgi-servers) standard for connecting Python web apps to web app servers.
 </td>
 <td markdown="span">
 [HTTP Exercises](web/HTTP-in-Action.pdf) in class.    

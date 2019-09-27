@@ -1,11 +1,15 @@
 ### Logging Exercise
 
-Add logging to the following code for recursively computing prime factors.
+First, study the way Python's logger works.  
 
-1. Print a DEBUG level log message each time factor(n) in entered and before it returns.
-2. Print an ERROR level message if it is invoked with invalid argument.
-3. Remove all the `print` statements.
-4. Use the following log format and log to the console.
+Add logging to the following code to recursively compute prime factors.  
+
+**Replace** all "print" statements with log messages.
+
+1. Log a DEBUG level message each time factor(n) in entered and before it returns.
+2. Log an ERROR level message if it is invoked with invalid argument.
+3. Configure the logger so messages go to file `factors.log` instead of the console.
+4. Use the following log format:
 
 ```
 2018-11-22 14:30:00 factor INFO factor(6)
@@ -29,11 +33,11 @@ def config():
 def test():
     log = logging.getLogger('factor')
     log.info("an info message")
-    log.warning("a warning")
-    log.error("an error")
+    log.warning("a warning message")
+    log.error("an error message")
 
 def factor(n):
-    """Return the prime factors of n.  n must be a positive integer."""
+    """Return the prime factors of n, including 1.  n must be a positive integer."""
     print("factor({0})".format(n))
     if n == 1:
         print("return [1]") 
@@ -45,12 +49,12 @@ def factor(n):
             result = [f] + factor(n//f)
             print("return {}".format(result))
             return result
-    # something missing?
+    # is something missing?
     return [n]
 
 if __name__ == '__main__':
-     """Write some code here"""
      config()
+     test()
      print("factor(36) = ", factor(6))
 ```
 
