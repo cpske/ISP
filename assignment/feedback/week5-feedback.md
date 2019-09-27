@@ -32,7 +32,7 @@ def vote_count(id):
     count = 0
     choices = Choice.objects.all()
     for i in choices:
-  	    if i.question_id == id:
+        if i.question_id == id:
             count += i.votes
         else:
             pass
@@ -205,12 +205,13 @@ The Django [QuerySet API](https://docs.djangoproject.com/en/2.2/ref/models/query
 
 This is sometimes called "lazy instantiation" and most ORM do it.  It means, "don't go get something until you need it" (be lazy).
 
-For example, `Question.objects.all()` returns a `QuerySet`.    
+For example, `Question.objects.all()` returns a `QuerySet` but doesn't access the database yet.    
 If you write:
 ```python
 top_ten = Question.objects.all()[0:10]
 ```
-it only retrieves the first 10 objects from the database.
+it only retrieves the first 10 rows from the database.  
+No other data is retrieved.
 
 A QuerySet is *iterable* and the first time you use it in
 an iterator it will retrieve data from the database.    
@@ -219,6 +220,6 @@ If you write:
     for choice in queryset:
         votes += choice.votes
 ```
-then you are using `queryset` as an iterator and all the data will be retrieved as objects. (Actually, its an "iterable" that creates an "iterator".)
+then you are using `queryset` as an iterator and **all** the data will be retrieved as objects. (Actually, its an "iterable" that creates an "iterator".)
 
-The Django [QuerySet API](https://docs.djangoproject.com/en/2.2/ref/models/querysets/) describes when QuerySets are evaluated. 
+The Django [QuerySet API](https://docs.djangoproject.com/en/2.2/ref/models/querysets/) describes when QuerySets access the database.
