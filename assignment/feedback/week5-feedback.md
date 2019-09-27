@@ -29,27 +29,27 @@ I'm sure some of these are **copied**.  Hence, no credit for the following code:
 
 ```python
 def vote_count(id):
-	count = 0
-	choices = Choice.objects.all()
-	for i in choices:
-		if i.question_id == id:
-			count += i.votes
-		else:
-			pass
-	return count
+    count = 0
+    choices = Choice.objects.all()
+    for i in choices:
+  	    if i.question_id == id:
+            count += i.votes
+        else:
+            pass
+    return count
 ```
 There are 2 problems with this code:
 
-1. It forces the database manager to create Choice objects for **all** the choices in the database, even the ones you don't want.  That wastes time and memory, and could be a *lot* of Choice objects.  Better to retreive only the choices you want using `Choice.objects.filter(id=id)`.
+1. It forces Django to create Choice objects for **all** the choices in the database, even the ones you don't want.  This wastes time and memory, and could be a *lot* of Choice objects.  Better to retreive **only the choices you want** using `Choice.objects.filter(id=id)`.
     > In general, avoid database queries that return ALL the data or LOTS of
-    > data unless you really need all the data.  You want to write code that
-    > "scales" to larger datasets, not just small ones.
+    > data unless you really need all the data.    
+    > You want to write code that "scales" to larger datasets, not just small ones.
 
 2. Writing `else: pass` has no purpose!  You can omit `else` after an `if`, so why write an empty `else` block?
 
 
 I think many students who wrote answers like this also **copied code**,
-but gave credit for this anyway since its not so definite:
+but gave credit anyway since its not so definitive:
 
 ```python
 def vote_count(id):
@@ -60,7 +60,7 @@ def vote_count(id):
     return count
 ```
 
-1. Stringing together a long chain of references and method calls should be avoided.  It makes code hard to read and can be fragile. *Clean Code* also recommends this.
+1. Stringing together a long chain of references and method calls should be avoided.  It makes code hard to read and can be fragile. *Clean Code* discusses this. Instead, assign an intermediate result to an *explanatory variable*.
 2. The `all()` in `choice_set.all()` is not necessary.
 3. `i` is not a descriptive variable name. 
 
@@ -71,7 +71,7 @@ Better to write:
         count += choice.votes
 ```
 
-## Question 5 on Week 5 Database Assignment
+## Question 5 on Database Assignment
 
 Most people wrote something like this:
 ```python
@@ -93,39 +93,39 @@ Does this code look like copying to you?
 Apipark:
 ```python
 def vote_count(id):
-	count = 0
-	number_of_choices =  Choice.objects.all()
-	for i in number_of_choices:
-		if i.question_id == id:
-			count += i.votes
-		else:
-			pass
-	return count
+    count = 0
+    number_of_choices =  Choice.objects.all()
+    for i in number_of_choices:
+        if i.question_id == id:
+            count += i.votes
+        else:
+            pass
+    return count
 ```
 
 Kasidit:
 ```python
 def votes_count(id):
-    vote = 0
-    choice = Choice.objects.all()
-    for i in choice:
-        if i.question_id == id:
-            vote += i.votes
-        else:
-            pass
-    return vote
+    vote = 0
+    choice = Choice.objects.all()
+    for i in choice:
+        if i.question_id == id:
+            vote += i.votes
+        else:
+            pass
+    return vote
 ```
 
 Natapol:
 ```python
 def vote_count(id):
-	count = 0
-	polls_choice = Choice.object.all()
-	for i in polls_choice:
-		if i.question_id == id:
-			count += i.votes
-		else:
-			pass
+    count = 0
+    polls_choice = Choice.object.all()
+    for i in polls_choice:
+        if i.question_id == id:
+            count += i.votes
+        else:
+            pass
     return count
 ```
 
@@ -177,7 +177,7 @@ def votes_count(id):
         if i.question_id == id:
             vote += i.votes
         else:
-	        pass
+            pass
     return vote
 ```
 

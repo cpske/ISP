@@ -2,7 +2,7 @@
 
 Your `python` and `pip` commands may be different from those shown here.
 
-```
+```bash
 # update pip and install virtualenv
 cmd>  python3 -m pip --upgrade pip3
 cmd>  python3 -m pip install virtualenv

@@ -23,7 +23,7 @@ On MacOS and Linux, you can execute Python scripts like commands.
 The shell will examine the first line of the script to see what
 to invoke.  If the first line starts with "#!" then the rest of the
 line defines the command to run.  In my case:
-```
+```bash
 #!/usr/bin/env python3
 ```
 Otherwise, just run `python manage.py shell -i python`.
@@ -88,12 +88,12 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 ```
 
 Also specify `{apphome}/staticfiles` as location of static content:
-```
+```python
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 ```
 
 And in templates, use the `{\% static "file" \%}` tag:
-```
+```html
 {\% load static \%}
 <img src="{\% static "images/button.jpg" \%}" alt="button" />
 ```
@@ -101,15 +101,15 @@ And in templates, use the `{\% static "file" \%}` tag:
 ## Read Database URL from Envvar (dj-database-url)
 
 [dj-database-url](https://github.com/kennethreitz/dj-database-url) parses a single environment variable named DATABASE_URL and returns a dictionary of values as expected in settings.py:
-```
+```python
 DATABASES['default'] = dj_database_url.config(conn_max_age=600)
 ```
 and in the environment:
-```
+```python
 export DATABASE_URL="postgres://admin:password@hostname:port/mydatabase"
 ```
 The syntax for the [URL schema][dj-database-schema] is:
-```
+```python
 database://user:password@host:port/databae_name
 # for SQLite
 sqlite:///database_path
@@ -166,14 +166,14 @@ Module description: https://pypi.org/project/python-decouple/
 Example: https://simpleisbetterthancomplex.com/2015/11/26/package-of-the-week-python-decouple.html    
 the examples show how to use decouple with Heroku and Travis-CI.
 
-```
+```bash
 pip install python-decouple
 ```
 
 `config(var,default=value)` Reads data from first of: (1) environment variable, (2) .ini or .env file, (3) default value.
 
 ### `.env` file
-```
+```bash
 # variables and their values
 DEBUG=True
 TEMPLATE_DEBUG=True
@@ -182,7 +182,7 @@ DATABASE_URL=mysql://myuser:mypassword@myhost/mydatabase
 ```
 
 ### `settings.ini` file
-```
+```bash
 # this is a comment
 [settings]
 DEBUG=True
@@ -193,7 +193,7 @@ DATABASE_URL=mysql://myuser:mypassword@myhost/mydatabase
 
 ### Using decouple in `settings.ini`
 
-```
+```python
 from decouple import config
 # optional: if you want to parse database config from a single variable
 from dj_database_url import parse as db_url
@@ -218,7 +218,7 @@ create a new decouple.Config object using RepositoryEnv('/path/to/env-file').
 
 from decouple import Config, RepositoryEnv
 
-```
+```python
 ENV_FILE = '/opt/envs/my-project/local.env'
 env_config = Config(RepositoryEnv(ENV_FILE))
 
@@ -232,6 +232,5 @@ Ref:
 
 * https://stackoverflow.com/questions/43570838/how-do-you-use-python-decouple-to-load-a-env-file-outside-the-expected-paths
 * https://pypi.org/project/python-decouple/
-
 
 

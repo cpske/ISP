@@ -1,7 +1,7 @@
 Django has two kinds of Forms:
 
-django.forms.Form - generic form. You define field in a Form subclass.
-django.forms.models.ModelForm - form that wraps a Model.
+* django.forms.Form - generic form. You define field in a Form subclass.
+* django.forms.models.ModelForm - form that wraps a Model.
 
 ## What can forms do?
 

@@ -5,7 +5,7 @@ However, putting all your tests in one file is probably not a good idea.
 
 A better approach is to divide your tests into multiple files.  
 For the Django Polls tutorial, the recommended structure for tests would be:
-```
+```listing
 polls/
     __init__.py
     apps.py
@@ -34,7 +34,7 @@ This is **not the standard naming** for Python unit tests (should be something_t
 Since the tests are now in their own package, you may need
 to modify the `import` statements in your tests.  
 For example:
-```
+```python
 # OLD: this won't work
 from .models import Question, Choice
 
@@ -76,7 +76,7 @@ Django has 4 test classes:
 
 This class has functionality for retrieving a page, without using an HTTP server.  For example:
 
-```
+```python
 import django.test.TestCase
 
 class MyTest(django.test.TestCase):

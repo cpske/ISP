@@ -12,7 +12,7 @@ Useful for:
 The `manage.py` interface to [django-admin][django-admin] has a `dumpdata` command to export part or all of your application database data to a file.  There are many useful options described in the [django-admin dumpdata][django-admin] documentation.
 
 Create a dump of the "polls" models in JSON format, and output to the console:
-```
+```bash
 python manage.py dumpdata --indent=2 polls
 ```
 The output is in JSON format. The `--indent=2` option requests formatted, easy-to-read output.
@@ -21,7 +21,7 @@ The output is in JSON format. The `--indent=2` option requests formatted, easy-t
 
 For import, the Django convention is to look for data in a `fixtures` directory inside an "app" directory such as `polls/fixtures`.
 To dump data to a file named `seed.json` in our polls app, use:
-```
+```bash
 mkdir polls/fixtures          (if directory doesn't exist)
 python manage.py dumpdata --indent=2 -o polls/fixtures/seed.json polls
 ```
@@ -30,7 +30,7 @@ The `-o outputfile` option specifies a file to receive dump data, the `polls` pa
 Edit `polls/fixtures/seed.json` to remove any unwanted data.
 
 To load the data into a fresh, empty database use:
-```
+```bash
 python manage.py loaddata seed.json
 ```
 Django will look in every app's `fixtures` directory for files named `seed.json`, and import the data into the database.
@@ -52,7 +52,7 @@ do a little more work.
 
 When someone installs your Django Polls project he won't have a database,
 so he needs to run:
-```
+```bash
 python manage.py migrate
 python manage.py loaddata init.json   (or whatever filename you choose)
 ```

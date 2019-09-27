@@ -62,7 +62,7 @@ def some_view(request):
 
 this redirects the user to a login url, specified by the `LOGIN_URL`
 variable in `settings.py`.  The default is:
-```
+```python
 LOGIN_URL = '/accounts/login/'`
 ```
 

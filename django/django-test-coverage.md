@@ -34,7 +34,7 @@ a `.coveragerc` file in your project directory, as described
 in the [Coverages Docs][coverage-docs].
 
 In the Django Polls tutorial, I used:
-```
+```bash
 [run]
 # measure branch coverage
 branch = True

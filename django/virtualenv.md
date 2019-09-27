@@ -29,7 +29,7 @@ It is included in some Python distrubutions, otherwise install it using `pip`.
 On Linux/MacOS the commands are usually `python3` and `pip3`; on other systems just `python` and `pip`.
 
 1. Make sure your `pip` is up-to-date:
-    ```
+    ```bash
     python3 -m pip install --upgrade pip3
     python3 -m pip --version
     # Check consistency. This should be the same thing.
@@ -49,15 +49,15 @@ On Linux/MacOS the commands are usually `python3` and `pip3`; on other systems j
 The basic workflow is like this. 
 
 1. Create a virtualenv directory named `env` inside the project directory. You can use any name instead of "env".
-   ```
+   ```bash
    cd /some/directory/django-polls
    virtualenv env
    ```
-2. Activate the virtualenv using the `activate` script. On Linux/MacOS and bash shell, you *source* this script, meaning to run it in your current shell, using the "." command or "source" command.
-    ```
+2. Activate the virtualenv using the `activate` script. On Linux/MacOS and bash shell, you *source* this script, meaning to run it in your current shell. Use the "." command or "source" command.
+    ```bash
     .  env/bin/activate
     ```
-    Some shells have a "source" command:
+    or:
     ```
     source env/bin/activate
     ```
@@ -65,19 +65,19 @@ The basic workflow is like this.
     ```
     env\Scripts\activate
     ```
-    When virtualenv is activated it changes your shell prompt so you know you are working in a virtualenv.
+    When virtualenv is activated it changes your shell prompt so you know it is active.
 3. (First time only) Install requirements from `requirements.txt`:
-    ```
+    ```bash
     (env)cmd>  pip install -r requirements.txt
     ```
     Requirements are installed only in the virtual env directory (`env`).
 4. Run your app or do whatever you want:
-    ```
+    ```bash
     (env)cmd>  python3 manage.py runserver
     ```
 5. Exit the virtualenv using `deactivate`.  
 You can also exit by closing the shell window.
-    ```
+    ```bash
     (env)cmd>  deactivate
     ```
 After initial setup, to run the app just "activate" the virtualenv and run the app.

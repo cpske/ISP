@@ -54,7 +54,7 @@ Become familiar with it.
 ### Steps to Deploy on GAE
 
 1. Download the Cloud SQL Proxy, which lets you access a Google cloud database from your local machine.
-```
+```bash
 wget https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64 -O bin/cloud_sql_proxy
 chmod +x bin/cloud_sql_proxy
 ```
@@ -75,7 +75,7 @@ chmod +x bin/cloud_sql_proxy
    
 
 2. Use `gcloud` command from Google Cloud SDK to check the connection:
-```shell
+```bash
 # the last argument is name of the sql database instance
 gcloud sql instances describe --project django-polls-218907 polls
 ```
@@ -89,14 +89,14 @@ gcloud sql instances describe --project django-polls-218907 polls
    - separate database setting for when running locally, and connecting via cloud_sql_proxy.
 
 4. Start the SQL Cloud Proxy using a TCP port:
-```
+```bash
   bin/cloud_sql_proxy -instances="instance_connection_name"=tcp:3306
   # for sample project
   bin/cloud_sql_proxy -instances="django-polls-218907:asia-southeast1:polls"=tcp:3306
 ```
 5. Create a database and database user in the Cloud SQL database, by connecting to the proxy with an sql client of your choice.
    * Using `mysql` client connecting to cloud_sql_proxy:
-```
+```bash
    # Confusing. "polls" is name of the MySQL database
    # and also name of the schema (in the database) used for this app.
    # Better to give the MySQL database a different name.
@@ -109,7 +109,7 @@ gcloud sql instances describe --project django-polls-218907 polls
      3. Give full control:  GRANT ALL ON polls.* TO 'polls_admin';
 
 6. Start the database on GCP, then initialize it:
-```
+```bash
 ./manage.py makemigrations
 ./manage.py makemigrations polls
 ./manage.py migrate
@@ -128,7 +128,7 @@ Many of them involve creating a *socket* the a `/gcloud` directory,
 and connecting to that socket. One proxy intance can server many sockets.
 
 There are many ways to start the proxy using sockets:
-```shell
+```bash
 # 1. Automatic instance discovery
 ./cloud_sql_proxy -dir=/cloudsql &
 # 2. Project discovery
@@ -147,6 +147,7 @@ mysql -u username =S /cloudsql/myProject:asia-southeast1:myInstance
 # Collect all static content to top-level STATIC_ROOT (in settings.py) dir
 ./manage.py collectstatic
 gcloud --project django-polls-218907 app deploy
+```
 
 ### Using a Service Account
 
@@ -186,6 +187,7 @@ You can make this more secure in two ways.
 ```
 Todo: add the commands
 ```
+
 2. **Move credentials from settings.py to app.yaml, and don't commit app.yaml to Github**.  Here's an example.  In `app.yaml` define some environment variables:
 ```yaml
 runtime: python37
