@@ -1,30 +1,30 @@
 ## Running Python Apps in a Virtual Environment
 
-You can run Python apps in a *virtual environment* that contains a separate, stand-alone copy of Python and all the Python add-ons that the app requires.
+You can run Python apps in a *virtual environment* that contains a separate, stand-alone copy of Python and all the Python add-ons that the application requires.
 
-This lets you configure and test apps in a stable
-environment that isolates them from other Python stuff on your computer.  
+A virtual environment lets you configure and test apps in a stable
+environment that **isolates the app** from other Python stuff on your computer.  
+When installing and testing other people's apps, 
+you can install the application's dependencies in its own virtualenv
+without modifying your own Python installation.    
+And, you can delete the virtualenv when you are done using the app.
 
-A big problem in development is that
-code runs differently (or not at all!) on different
-machines due to differences in the version of Python and the add-ons installed.
+A big problem in development is that code runs differently (or not at all!) 
+on different computers due to differences in the version of Python and 
+the add-ons installed.
 
-This may even happen on *your own* computer if you change the version of Python you use!
+Even on your *own machine*, an app may stop working when you upgrade
+Python or add-on packages.
 
-Using a virtual environment mostly eliminates these problems.
+Using a virtual environment eliminates most of these problems.
 
-### Virtual Environment is Good for Testing Other Apps
-
-Using a virtual environment is great for testing other people's apps. 
-Install and run the app in a virtual env so it does not change the configuration of your own system.  
-All the app's dependencies are installed inside the virtual environment (a directory).  When you are done, just delete it!
 
 ### Installing Virtualenv
 
 Python has a package named [virtualenv][virtualenv].
 It is included in some Python distrubutions, otherwise install it using `pip`.
 
-> Note: if you want to install pip and virtualenv **globally** (instead of your personal python packages dir) then run these commands as root or "admin".
+> Note: if you want to install pip and virtualenv **globally** (instead of your personal python packages dir) then run these commands as root or admin.
 
 On Linux/MacOS the commands are usually `python3` and `pip3`; on other systems just `python` and `pip`.
 
@@ -65,13 +65,13 @@ The basic workflow is like this.
     ```
     env\Scripts\activate
     ```
-    When virtualenv is activated it changes your shell prompt so you know it is active.
+    When virtualenv is activated it prepends `(env)` to your shell prompt so you know it is active.
 3. (First time only) Install requirements from `requirements.txt`:
     ```bash
     (env)cmd>  pip install -r requirements.txt
     ```
     Requirements are installed only in the virtual env directory (`env`).
-4. Run your app or do whatever you want:
+4. Run the app or do whatever you want:
     ```bash
     (env)cmd>  python3 manage.py runserver
     ```
@@ -80,9 +80,10 @@ You can also exit by closing the shell window.
     ```bash
     (env)cmd>  deactivate
     ```
+
 After initial setup, to run the app just "activate" the virtualenv and run the app.
 
-### Exclude venv files from Git!
+### Exclude virtualenv files from Git!
 
 Add the virtualenv directory to your `.gitignore` file and **don't commit virtualenv directories** into git.
 
@@ -96,7 +97,7 @@ for preparing a venv configuration to run on a cloud service.
 
 ## Pipenv
 
-[Pipenv][pipenv] is a newer package that fixes some virtualenv problems of dependency mismatch, improves the management interface, and has a consistent interface on all OS (including Windows). "Under the hood" pipenv using virtualenv for the virtual environment. 
+[Pipenv][pipenv] is a newer package that fixes some virtualenv problems of dependency mismatch, improves the management interface, and has a consistent interface on all OS (including Windows). "Under the hood" pipenv uses virtualenv for the virtual environment. 
 
 ---
 ### References
