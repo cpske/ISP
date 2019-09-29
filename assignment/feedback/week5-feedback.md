@@ -61,13 +61,13 @@ def vote_count(id):
 ```
 
 1. Stringing together a long chain of references and method calls should be avoided.  It makes code hard to read and can be fragile. *Clean Code* discusses this. Instead, assign an intermediate result to an *explanatory variable*.
-2. The `all()` in `choice_set.all()` is not necessary.
-3. `i` is not a descriptive variable name. 
+2. `i` is not a descriptive variable name. 
+3. Only some student's code use `pk` as attribute in Question. In others, the variable for primary key is `id`.
 
 Better to write:
 ```
     question = Question.objects.get(pk=id)
-    for choice in question.choice_set:
+    for choice in question.choice_set.all():
         count += choice.votes
 ```
 

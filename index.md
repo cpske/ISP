@@ -175,12 +175,13 @@ Django
 <td markdown="span">
 [Import and Export Data](django/data-import-export) and how to create 
 a backup or "starter" data for others to easily use your polls application.    
-[Virtualenv Quickstart](django/virtualenv-quickstart) and [Using Virtualenv](django/virtualenv) how to run apps in a virtual environment (its easy).
+[Virtualenv Quickstart](django/virtualenv-quickstart) and [Using Virtualenv](django/virtualenv) how to run apps in a virtual environment (its easy).    
+[Messages Framework](django/messages-framework) how to pass messages from a view to a template
 </td>
 <td markdown="span">
-Share Some Useful Django Skill -
-(a) send markdown to me for addition here,
-or (b) add it yourself to class Wiki.
+Share Some Useful Django Tips or Howto -    
+(a) send markdown file to me for addition here, or    
+(b) add it yourself to class Wiki.
 </td>
 </tr>
 <!-- UML -->
