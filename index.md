@@ -210,7 +210,8 @@ Coding: 12:00-15:00 PM
 </td>
 <td markdown="span">
 Covers all material so far.    
-Coding exam will include unit testing, 
+[Topics for Programming Exam](review/midterm-topics)
+includes unit testing
 and adding a simple feature to a Django project.
 </td>
 </tr>
