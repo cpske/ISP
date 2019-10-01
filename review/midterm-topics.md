@@ -116,7 +116,7 @@ Can you write a template containing an HTML table to display the product data fo
 `Product` contains a method `quantity_in_stock`.  Can you invoke that method inside a template?  How?
 
 | UPC Code   | Description       | Qnty in Stock | Unit Price |
-|:-----------|:------------------|---------------|-----------:|
+|:-----------|:------------------|--------------:|-----------:|
 | 1012223333 | Sun dried banana  |    20         |   25.00    |
 | 1013334444 | Brown Rice, 5kg   |    65         |  180.00    |
 | etc.       | ...               |    ...        |  ...       |

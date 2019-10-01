@@ -1,23 +1,25 @@
 ## Django Messages Framework
 
 * When a user clicks a "Save" button your app saves something
-then returns to the current page.  How does user know that "save" succeeded?
+then returns to the current page.   
+How does user know that "save" succeeded?
 
-* User submits a vote but he was so slow that the poll question has expired (no more voting).
+* User submits a vote but the app was unable to save his vote.    
   How do you inform the user of this?
 
 The Django Messages Framework addresses these situations and more.
 
-"messages" are associated with one request and response,
-and can be accessed in both views and templates.
-After a response is processed the messages are cleared, 
-so the next request will have an empty messages object.
-In other frameworks (like Play!) these short-lived request-scoped
-messages are called *flash messages*.
+"messages" is an object that is automatically included in the
+context to every HTML template.  You can set messages in a view
+(see example below) so the template can display them.
+You don't need to add messages to the context yourself!
+
+Messages are cleared after a response is successfully returned,
+so the next request will have a clean, empty messages object.
 
 ## Configuration
 
-The default `settings.py` contains the required messages components.
+The default `settings.py` contains all the required messages components.
 They are:
 
 * **INSTALLED_APPS** includes `django.contrib.messages`
@@ -38,26 +40,23 @@ of some event or problem, e.g. "Your vote was recorded"
 or "Sorry, that's not a valid choice".
 
 Here's an example:
+
 ```python
 from django.contrib import messages
 
 def vote_for_poll(request, question_id):
     choice_id = request.POST['choice']
-    try:
-        # Make sure user's choice belongs to this question
-        question = Question.objects.get(id=question_id)
-        choice = question.choice_set.get(pk=choice_id)
-    except DoesNotExist:
-        messages.error(request, f"Choice id {choice_id} is invalid.")
-        return redirect('polls:detail')
-    # TODO: Record vote - code omitted. See tutorial.
-    messages.info(request, "Vote successfully recorded. Thank you.")
+    if not choice_id:
+        messages.error(request, f"You didn't make a choice")
+        return redirect('polls:someplace')
+    # TODO: Record the vote (choice)
+    messages.success(request, "Your choice successfully recorded. Thank you.")
     return redirect('polls:results')
 ```
 
-To display messages in a template use code similar to shown below.
 Messages is a collection; each message has its own level and CSS tags. If there are no messages to display then `if messages` is `False`.
 
+To display messages in an html template, use code such as:
 {% raw %}
 ```html
 {% if messages %}
@@ -177,6 +176,8 @@ ignore this.
 * [Django Messages Framework][messages-framework]
 * [Django Tips: Using the messages framework][django-tips-messages] (first part is same as the Django Messages docs)
 * [Working with forms][django-forms] in the Django docs
+* Other web frameworks also have "messages".  In Play! Framework they are called
+*flash messages*.
 
 [django-tips-messages]: https://simpleisbetterthancomplex.com/tips/2016/09/06/django-tip-14-messages-framework.html, "Django Tips 14 Using the Messages Framework"
 [django-forms]: https://docs.djangoproject.com/en/2.2/topics/forms/, "Working with forms"

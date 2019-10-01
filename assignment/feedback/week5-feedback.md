@@ -223,3 +223,4 @@ If you write:
 then you are using `queryset` as an iterator and **all** the data will be retrieved as objects. (Actually, its an "iterable" that creates an "iterator".)
 
 The Django [QuerySet API](https://docs.djangoproject.com/en/2.2/ref/models/querysets/) describes when QuerySets access the database.
+
