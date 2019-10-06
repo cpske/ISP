@@ -1,7 +1,7 @@
 ## Connecting Web Apps to Web App Servers
 
 We'd like to run our Django app inside a production quality web server
-that can handle high volume traffic.  But what server can we use?
+that can handle high volume traffic.  What server can we use?
 
 Developers using Flask, Pyramid, CherryPy, and other Python web 
 frameworks also want this.  
