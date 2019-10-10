@@ -12,13 +12,16 @@ In [1]:
 
 when I do this, some the commands don't work as in the tutorial.
 Others on the web have the same problem. Appears to be due to IPython
-instead of Python.  So I tried `manage.py help shell` and learned
-that there is an option `-i {ipython|python|bpython}`.
+instead of Python.  `manage.py help shell` shows that there
+is an option `-i {ipython|python|bpython}`.
 
 Choose `python` and it works:
 ```
 ./manage.py shell -i python
 ```
+
+## Run manage.py as a script
+
 On MacOS and Linux, you can execute Python scripts like commands.
 The shell will examine the first line of the script to see what
 to invoke.  If the first line starts with "#!" then the rest of the
@@ -26,9 +29,14 @@ line defines the command to run.  In my case:
 ```bash
 #!/usr/bin/env python3
 ```
-Otherwise, just run `python manage.py shell -i python`.
 
-## Adding a Constructor to Model Class
+You also need to make the script executable (`chmod a+x manage.py`).
+Then you can run it by typing:
+```
+./manage.py runserver
+```
+
+## Adding a Constructor to a Model Class
 
 I tried adding a contructor to the `polls.models.Question` class
 so I could set question text as first parameter.
@@ -64,6 +72,12 @@ and then type:
 ```python
 >>> q = Question.create("What's up?")
 ```
+
+## Many Ways to use Redirect
+
+This article has good explanation of different ways to redirect in Django:
+
+https://realpython.com/django-redirects/
 
 ## Manage Static Files with WhiteNoise
 
