@@ -28,7 +28,7 @@ description: Index page
 </td>
 <td markdown="span">
 Join [Google Classroom](https://classroom.google.com). Use your KU Login and code **minx6nj**.    
-Join Github Classroom - invitation sent to your KU-Gmail.        
+Join **Github Classroom** - invitation sent to your KU-Gmail.        
 Update your Github profile: your real name & photo.
 </td>
 </tr>
@@ -54,8 +54,9 @@ Nothing to do.
 Intro to [Agile Principles and Practices](agile/agile-principles-practices).    
 </td>
 <td markdown="span">
-Read about Agile at [Agile 101](https://www.agilealliance.org/agile101/) of Agile Alliance.    
-Think critically.  Do you agree with the principles?   
+Read [Agile 101](https://www.agilealliance.org/agile101/) at Agile Alliance.    
+Video [Agile Product Ownership](https://blog.crisp.se/2012/10/25/henrikkniberg/agile-product-ownership-in-a-nutshell)    
+Think critically.  Do you agree with the principles?     
 Optional: [Agile at Microsoft](https://www.youtube.com/watch?v=-LvCJpnNljU) how Visual Studio Team Services moved to agile.
 </td>
 </tr>
