@@ -9,6 +9,7 @@ description: Index page
 [About the Course](Topics), 
 [Google Classroom](https://classroom.google.com/) for assignments (code: minx6nj), [Resources](Resources).
 
+[Course Projects](http://bit.ly/isp2019projects)
 
 <table border="1">
 
@@ -221,11 +222,14 @@ and adding a simple feature to a Django project.
 <td align="center" markdown="span"> 
 Project Proposal
 </td>
-<td markdown="span"> 
-Course Project [Guidelines](project/project-guide)
+<td markdown="span">
+[Project Guidelines](http://bit.ly/isp2019proj-guide)     
+[Proposal Template](http://bit.ly/isp2019=template)
 </td>
 <td markdown="span">
-Develop a proposal for course project and create a link on [Google Sheet](http://bit.ly/isp2018proposals). See template and instructions on Google Classroom.
+See assignments and links on Google Classroom.    
+Provide a link to your project repo on [Google Project Sheet](http://bit.ly/isp2019projects).    
+Create a project README.md containing [this information](assignment/week10).
 </td>
 </tr>
 <!-- Submodules and Testing -->
@@ -246,27 +250,12 @@ Git Submodule for Testing
 Build Automation
 </td>
 <td markdown="span"> 
-[Ant](automation/Ant.pdf), [Make](automation/Make.pdf), and other build tools    
 [Continuous Integration](https://docs.travis-ci.com/user/for-beginners)    
+[Ant](automation/Ant.pdf), [Make](automation/Make.pdf), and other build tools    
 </td>
 <td markdown="span">
-[Travis-CI Assignment](assignment/week6/ci-travis)    
-Demo CI projects: [Java sample][demo-ci], [Python sample][demo-ci-python] 
-</td>
-</tr>
-<!-- Thai -->
-<tr valign="top">
-<td align="center" markdown="span"> 
-Guest Speaker    
-18 Oct
-</td>
-<td markdown="span">
-Software development at TaskWorld, C.I., and other topics
-presented by Thai Phangsakulyanont, an SKE alumnus.
-</td>
-<td markdown="span">
-1. Provide a link to your project repo on [Google Project Sheet](http://bit.ly/isp2018proposals).    
-2. Create a project README.md containing [this information](assignment/week10).
+[Travis-CI Assignment](assignment/week7/ci-travis)    
+Demo CI projects: [Java sample][demo-ci], [Python sample][demo-ci-python], [Explained](automation/travis-demo-project.md)
 </td>
 </tr>
 <!-- Week 12 -->
