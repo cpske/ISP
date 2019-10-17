@@ -115,6 +115,7 @@ More [Git](git/)
 [Branching and Merging][git-book-branching-and-merging] in online Git Book.   
 Using [Github Flow](git/index#github-flow).    
 [Pull Request Tutorial](https://yangsu.github.io/pull-request-tutorial/) why and how to use pull requests.    
+[Pull Request slides](git/Pull-Requests.pdf)    
 [Commenting on Pull Requests](https://help.github.com/en/articles/commenting-on-a-pull-request)- examples of providing feedback.    
 (optional) [Using SSH Keys with Git](https://help.github.com/articles/connecting-to-github-with-ssh/) so you don't need to enter your userid/password. 
 </td>
@@ -178,7 +179,8 @@ Django
 [Import and Export Data](django/data-import-export) and how to create 
 a backup or "starter" data for others to easily use your polls application.    
 [Virtualenv Quickstart](django/virtualenv-quickstart) and [Using Virtualenv](django/virtualenv) how to run apps in a virtual environment (its easy).    
-[Messages Framework](django/messages-framework) how to pass messages from a view to a template
+[Messages Framework](django/messages-framework) how to pass messages from a view to a template    
+[Externalize Configuration](web/decouple-configuration)   
 </td>
 <td markdown="span">
 Share Some Useful Django Tips or Howto -    
@@ -247,7 +249,7 @@ Git Submodule for Testing
 <!-- Automation and Testing -->
 <tr valign="top">
 <td align="center" markdown="span"> 
-Build Automation
+Build Automation and CI
 </td>
 <td markdown="span"> 
 [Continuous Integration](https://docs.travis-ci.com/user/for-beginners)    
@@ -258,32 +260,16 @@ Build Automation
 Demo CI projects: [Java sample][demo-ci], [Python sample][demo-ci-python], [Explained](automation/travis-demo-project.md)
 </td>
 </tr>
-<!-- Week 12 -->
-<tr valign="top">
-<td align="center" markdown="span"> 
-Project Updates   
-08 Nov
-</td>
-<td markdown="span">
-Assignments to do in lieu of class.
-</td>
-<td markdown="span">
-[Team Assignment for Week 12](assignment/week12)    
-[Individual Testing Assignment](assignment/week12-testing)    
-</td>
-</tr>
 
 <!-- Week 13 -->
 <tr valign="top">
 <td align="center" markdown="span"> 
-Testing    
-15 Nov
+More Testing    
 </td>
 <td markdown="span">
-[Code Coverage](testing/test-coverage)    
-[Organizing your tests in Django](web/django-testing)       
+[Code Coverage](testing/code-coverage)    
 [Testing Pyramid](testing/WebTesting.pdf)    
-[Externalize Configuration](web/decouple-configuration)   
+[Organizing your tests in Django](web/django-testing)       
 </td>
 <td markdown="span">
 1. Refactor your Django tests into separate files, based on what is being tested.    
@@ -297,7 +283,6 @@ Assignment [Feedback](assignment/week13-selenium-feedback)
 <tr valign="top">
 <td align="center" markdown="span"> 
 Logging, 12-FactorApp    
-22 Nov
 </td>
 <td markdown="span">
 [Logging](logging/Logging.pdf)    
@@ -312,12 +297,11 @@ Logging, 12-FactorApp
 <!-- Week 15 -->
 <tr valign="top">
 <td align="center" markdown="span"> 
-Pull Requests & Review   
-29 Nov
+Refactoring
 </td>
 <td markdown="span">
-[Pull Requests](git/Pull-Requests.pdf)    
-Dependency checking tools (in pull request slides)
+Intro to Refactoring    
+[Externalize Configuration](web/decouple-configuration)   
 </td>
 <td markdown="span">
 [Week 15 Team Assignment](assignment/week15-team)     
@@ -342,7 +326,7 @@ Presentation: describe your dev process and technology used.  Not a demo -- the 
 <!-- Lab Exam -->
 <tr valign="top">
 <td align="center" markdown="span"> 
-14 Dec
+XX Dec
 </td>
 <td markdown="span">
 Written: 9:00-12:00 AM    
@@ -351,7 +335,7 @@ Coding: 13:00-16:00 PM
 </td>
 <td markdown="span">
 Programming exam will be to write a simple web application,
-with some info saved to a database, and write some tests.
+with some info saved to a database.  May have a separate problem on other topics we covered.    
 [Additonal details](review/web-dev-exam.html).
 </td>
 </tr>
@@ -361,13 +345,12 @@ with some info saved to a database, and write some tests.
 Results
 </td>
 <td markdown="span">
-[Lab Exam Scores](http://bit.ly/isp-individual-scores) in "FinalLabExam" sheet.
+&nbsp;
 </td>
 <td markdown="span">
-[Feedback on Lab Exam](review/final-feedback)
+&nbsp;
 </td>
 </tr>
-
 </table>
 
 ---
