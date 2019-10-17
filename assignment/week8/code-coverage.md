@@ -1,6 +1,6 @@
 ## Code Coverage Assignment
 
-Learn about [Code Coverage](/testing/code-coverage).
+Learn about [Code Coverage](/ISP/testing/code-coverage).
 Then add code coverage analysis to your unittesting project.
 
 
@@ -16,9 +16,9 @@ project, and modify your `.travis.yml` file so that Travis runs coverage when te
    * Got to https://codecov.io, click the "Get Started" link, and follow instructions.  It is similar to the way you gave Travis-CI permission to pull your project.
    * You need to modify your `.travis.yml` file to make it work.
    * You must understand what is going on, not just copy someone else's .travis.yml file.
-
 3. Add a CodeCov icon ("badge") to your project README.md to show the coverage result.
    * The "badge" should include a clickable link to your project on codecov.io
+4. Push the updated project to Github.
 
 
 ## Resources

@@ -4,37 +4,37 @@ How thorough are your tests?
 Do your unit tests really test *all* the code?
 
 **Code Coverage** is a measure of how much of your source code
-is tested or "exercised" by unit tests. Code coverage measures how many
-functions, methods, statements or lines of code, and branches are tested.
+is tested or "exercised" by unit tests. It measures how many
+functions, methods, statements, and branches are tested.
 
 ## Python Code Coverage
 
-The [coverage package][coverage-docs] is a 
-tool for measuring Python code coverage.  It measures how much of your
-code is executed when a program is run.
+The [coverage][coverage-docs] package performs code coverage analysis 
+for Python code.
+It analyzes how much of your code is executed when a program is run.
 
 [Coverage][coverage-docs] works with unit tests on any Python app, including Django.  To integrate code coverage with a CI server (like Travis-CI) use the online service [CodeCov](https://codecov.io).
 
-To runs tests on a project with coverage, do the following.
+To runs tests on a project with code coverage, do the following.
 
 1. [Install coverage package](https://coverage.readthedocs.io/en/coverage-4.5.x/install.html).  The instructions are different for each OS, so read the instructions.
 In some cases you just type
-    ```bash
+    ```
     pip install coverage 
     ```
 2. Check the installed version of coverage and read the list of command line uses:
-    ```bash
+    ```
     coverage --version
     coverage help
     ```
     The commands you'll probably use most are:
     ```
     coverage run some_program.py
-    coverage report    # view results
+    coverage report    # view results as text
     coverage html      # create html report
-    coverage erase     # delete old reports
+    coverage erase     # delete old data
     ```
-2. Use `coverage` to run your Python code.  To create a coverage report for your fraction testing assignment you need a test runner.  Its easy to add a "main" block to `fraction_test.py`:
+3. Use `coverage` to analyze your Python code.  To create coverage analysis data for your fraction testing assignment you need a test runner you can run.  Its easy to add a "main" block to `fraction_test.py` for this:
     ```python
     if __name__ == '__main__':
         unittest.main(verbosity=2)
@@ -44,11 +44,11 @@ In some cases you just type
     coverage run fraction_test.py
     ```
     You will see the usual unittest output on the console.  
-3. View the coverage report as plain text:
+4. View the coverage report as plain text:
     ```
     coverage report
     ```
-4. Create HTML pages containing detailed information with links:
+5. Create HTML pages containing detailed information with links:
    ```
    coverage html
    ```
@@ -56,13 +56,13 @@ In some cases you just type
 
 ## Configure Coverage
 
-You can configure what files are analyzied by `coverage` using
+You can configure what files are analyzed by `coverage` using
 a `.coveragerc` file in your project directory, as described
 in the [Coverages Docs][coverage-docs].
 
 When using a library or framework, you usually want to **exclude** the library or framework from coverage analysis, to avoid distorting the results (and its not useful anyway).
 
-For Django projects, you want to migrations, settings.py, manage.py, static files, and anything else you don't write unit tests for.
+For Django projects you want to exclude migrations, settings.py, manage.py, static files, and anything else you don't write unit tests for.
 
 In the Django Polls tutorial, I used:
 ```
@@ -85,7 +85,7 @@ include =
 ## How Many Unit Tests Are Enough?
 
 Consider this example of computing the discount for a Sale:
-> If the sale total is at least 1,000 Baht, give a 50 Baht discount.
+> If the sale total is at least 1,000 Baht, give customer a 50 Baht discount.
 > If the customer pays using cash, then give a 2% discount.
 
 ```python
@@ -99,7 +99,7 @@ def total(sale):
     return total_price
 ```
 
-How many test cases do we need to thoroughly test the code? That is, how many calls to `total(sale)`?
+How many test cases do we need to thoroughly test this code? 
 
 **Cyclomatic Complexity** is a measure of the complexity of a method, class, or package.  For a method, cyclomatic complexity is the number of different paths of execution through the method.
 
@@ -144,9 +144,9 @@ class Register {
 }
 ```
 * We might have unit tests that test for "Platinum" customer discounts and the 50 Baht discount, but not both.  We might miss the cases where both discounts apply.
-* We might also miss some unclear requirements: what if a platinum customer buys 1,020 Baht?  
+* We might also miss an unclear requirement: *what if a platinum customer buys 1,020 Baht?*  
     - Should he get both discounts?  
-    - Which discount should be applied first? (the discount will be different)
+    - Which discount should be applied first? (the discount will be different!)
 
 
 ## CodeCov for Automated Coverage Analysis
@@ -155,9 +155,10 @@ class Register {
 that integrates with CI pipelines, including Travis-CI and Circle-CI.
 
 For Python projects, Codecov.io uses the Python "coverage" package
-to perform the actual coverage analsys, so you still need "coverage" in your project.
+to perform the actual coverage analysis.
 
 To get started, go to [codecov.io](https://codecov.io) and register using your Github ID.  Give Codecov access to the project(s) you want it to pull and analyze.  It is similar to the way you give Travis permission to pull and build a project.
+Then modify your `.travis.yml` file to perform coverage analysis and send the data to codecov.io.
 
 You can add or remove projects later by going into your Setting page on Github, look for the Codecov app, and add/remove projects.  This is the same procedure as adding Travis-CI to a Github project.
 
@@ -177,7 +178,6 @@ You can send your coverage reports directly to codecov.io from your own computer
    ```
    export CODECOV_TOKEN="02468aef00-1234..."
    ```
-
 4. Send the coverage data to codecov.io:
    ```
    codecov
@@ -205,7 +205,7 @@ after_success:
   - codecov
 ```
 
-We installed `codecov` as a package in the "install" phase rather than adding it to requirements.txt.  That's becuase codecov is only needed for CI, not for production.
+We installed `codecov` as a package in the "install" phase rather than adding it to requirements.txt.  That's becuase codecov is only needed for CI, not for running our app in production.
 
 [Example Python Project](https://github.com/codecov/example-python) has example and explanation of configuring your project for codecov.
 
