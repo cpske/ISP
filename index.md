@@ -278,6 +278,21 @@ More Testing
 Assignment [Feedback](assignment/week13-selenium-feedback)
 </td>
 </tr>
+<!-- Refactoring -->
+<tr valign="top">
+<td align="center" markdown="span"> 
+Refactoring
+</td>
+<td markdown="span">
+[Intro to Refactoring](refactoring/Refactoring.pdf)    
+[Externalize Configuration](web/decouple-configuration) you already did    
+</td>
+<td markdown="span">
+1. refactoring exercise in class    
+2. Fowler's movierental example    
+3. read about refactoring and create your own question    
+</td>
+</tr>
 
 <!-- Week 14 -->
 <tr valign="top">
@@ -291,21 +306,6 @@ Logging, 12-FactorApp
 <td markdown="span">
 [Logging Exercise](assignment/logging)     
 [Week 14 Assignment](assignment/week14) for team
-</td>
-</tr>
-
-<!-- Week 15 -->
-<tr valign="top">
-<td align="center" markdown="span"> 
-Refactoring
-</td>
-<td markdown="span">
-Intro to Refactoring    
-[Externalize Configuration](web/decouple-configuration)   
-</td>
-<td markdown="span">
-[Week 15 Team Assignment](assignment/week15-team)     
-[Week 15 Indiv. Assignment](assignment/week15-individual) - bug hunting
 </td>
 </tr>
 
