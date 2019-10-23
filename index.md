@@ -226,7 +226,7 @@ Project Proposal
 </td>
 <td markdown="span">
 [Project Guidelines](http://bit.ly/isp2019proj-guide)     
-[Proposal Template](http://bit.ly/isp2019=template)
+[Proposal Template](http://bit.ly/isp2019-template)
 </td>
 <td markdown="span">
 See assignments and links on Google Classroom.    
@@ -285,12 +285,13 @@ Refactoring
 </td>
 <td markdown="span">
 [Intro to Refactoring](refactoring/Refactoring.pdf)    
-[Externalize Configuration](web/decouple-configuration) you already did    
+[Refactoring Patterns](refactoring/Refactoring-Patterns.pdf)    
+[Externalize Configuration](web/decouple-configuration) in Python, you already did    
 </td>
 <td markdown="span">
-1. refactoring exercise in class    
-2. Fowler's movierental example    
-3. read about refactoring and create your own question    
+[Pizzashop refactoring exercise](https://github.com/ISP19/pizzashop)     
+[Movie Rental refactoring example](https://github.com/jbrucker/movierental)    
+Read about refactoring and create your own refactoring exercise 
 </td>
 </tr>
 
