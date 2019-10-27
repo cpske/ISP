@@ -117,7 +117,7 @@ Using [Github Flow](git/index#github-flow).
 [Pull Request Tutorial](https://yangsu.github.io/pull-request-tutorial/) why and how to use pull requests.    
 [Pull Request slides](git/Pull-Requests.pdf)    
 [Commenting on Pull Requests](https://help.github.com/en/articles/commenting-on-a-pull-request)- examples of providing feedback.    
-(optional) [Using SSH Keys with Git](https://help.github.com/articles/connecting-to-github-with-ssh/) so you don't need to enter your userid/password. 
+[Using SSH Keys with Git](https://help.github.com/articles/connecting-to-github-with-ssh/) so you don't need to enter your userid/password (optional).
 </td>
 <td markdown="span">
 [Assignment for Github Flow & Pull Requests](assignment/week2/github-flow)    
@@ -306,7 +306,6 @@ Logging, 12-FactorApp
 </td>
 <td markdown="span">
 [Logging Exercise](assignment/logging)     
-[Week 14 Assignment](assignment/week14) for team
 </td>
 </tr>
 
