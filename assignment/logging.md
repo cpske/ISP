@@ -1,63 +1,17 @@
-### Logging Exercise
+## Logging Assignment
 
-First, study the way Python's logger works.  
+1. Add logging to your Django Polls project code.
 
-Add logging to the following code to recursively compute prime factors.  
+   * Use a named logger.
+   * Log an INFO message whenever someone votes on a poll.
+   * Its insecure to log confidentially info, but for practice include the poll id and choice id that the user voted for.
+   * Log a WARNING message if someone votes for a non-existing question or a choice number that doesn't exist.
+   * Is there any way to detect if someone is viewing (say) poll question 1 and votes for a choice that belongs to a *different* question?  If you can detect it, log it as ERROR.  Its eiter a programming error or indicates someone manually fabricated a POST request for voting.
+   * Log all exceptions caught by the app using `log.exception`.
 
-**Replace** all "print" statements with log messages.
+2. Configure logging.
 
-1. Log a DEBUG level message each time factor(n) in entered and before it returns.
-2. Log an ERROR level message if it is invoked with invalid argument.
-3. Configure the logger so messages go to file `factors.log` instead of the console.
-4. Use the following log format:
+   * Log all messages from the 'polls' app to a file (e.g. `polls.log`).
+   * Log ERROR messages from the 'polls' app to the console.
 
-```
-2018-11-22 14:30:00 factor INFO factor(6)
-2018-11-22 14:30:01 factor INFO factor(3)
-2018-11-22 14:30:02 factor INFO factor(2)
-2018-11-22 14:30:03 factor INFO return [2]
-2018-11-22 14:30:04 factor INFO return [2,3]
-2018-11-22 14:30:05 factor INFO return [1,2,3]
-2018-11-22 14:30:06 factor ERROR Invalid argument "one"
-```
-
-### Starter Code
-
-```python
-import logging
-
-def config():
-    """configure the logger"""
-    pass
-
-def test():
-    log = logging.getLogger('factor')
-    log.info("an info message")
-    log.warning("a warning message")
-    log.error("an error message")
-
-def factor(n):
-    """Return the prime factors of n, including 1.  n must be a positive integer."""
-    print("factor({0})".format(n))
-    if n == 1:
-        print("return [1]") 
-        return [1]
-    if n < 1:
-        raise ValueError("must be positive integer")
-    for f in range(2, n):
-        if n % f == 0:
-            result = [f] + factor(n//f)
-            print("return {}".format(result))
-            return result
-    # is something missing?
-    return [n]
-
-if __name__ == '__main__':
-     config()
-     test()
-     print("factor(36) = ", factor(6))
-```
-
-### What to Submit
-
-Don't need to submit this.
+3. Verify your logging works, merge it into master, and commit your work to master branch on Github.

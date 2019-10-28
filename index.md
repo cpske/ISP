@@ -305,7 +305,8 @@ Logging, 12-FactorApp
 [12-Factor App](we/12FactorApp.pdf)   
 </td>
 <td markdown="span">
-[Logging Exercise](assignment/logging)     
+[Logging Practiced]logging/logging-practice)     
+[Logging Assignment](assignment/logging)     
 </td>
 </tr>
 
