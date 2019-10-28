@@ -295,18 +295,29 @@ Read about refactoring and create your own refactoring exercise
 </td>
 </tr>
 
-<!-- Week 14 -->
+<!-- Logging -->
 <tr valign="top">
 <td align="center" markdown="span"> 
-Logging, 12-FactorApp    
+Logging    
 </td>
 <td markdown="span">
 [Logging](logging/Logging.pdf)    
+</td>
+<td markdown="span">
+[Logging Practice](logging/logging-practice)     
+[Logging Assignment](assignment/logging)     
+</td>
+</tr>
+<!-- 12-Factor App -->
+<tr valign="top">
+<td align="center" markdown="span"> 
+12-FactorApp    
+</td>
+<td markdown="span">
 [12-Factor App](we/12FactorApp.pdf)   
 </td>
 <td markdown="span">
-[Logging Practiced]logging/logging-practice)     
-[Logging Assignment](assignment/logging)     
+nothing yet
 </td>
 </tr>
 

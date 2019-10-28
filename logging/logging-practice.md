@@ -1,3 +1,9 @@
+---
+layout: page
+title: Logging Practice
+description: Practice using Python logging
+---
+
 Create a project named `logging` containing a file `example.py`.  
 In `example.py` do the following.
 
