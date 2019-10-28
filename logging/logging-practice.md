@@ -32,7 +32,7 @@ In `example.py` do the following.
     * which log messages are printed?
     * Looking only at the log messages, can you tell which log messages were created by which logger?
 
-2. Change the *threshold* level for the root logger to INFO and foo logger to DEBUG and run again:
+2. Set the *threshold* logging level for the `root` logger to INFO and `foo` logger to DEBUG and run again:
     ```python
     # root logger
     logger = logging.getLogger()
@@ -46,7 +46,7 @@ In `example.py` do the following.
     * Did the root logger print INFO messages?  Did foo print DEBUG messages?
     * Did *anything* change?
     * Hint: *If you don't configure any "handlers" for your loggers then Python
-       uses a default handler which cannot be modified.*
+       uses a default handler which always uses log threshold WARNING.*
 
 3. To explicitly add a "handler" to loggers, call the ugly, static `basicConfig` method
    before getting the loggers:
