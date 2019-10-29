@@ -3,6 +3,11 @@ layout: page
 title: Logging Practice
 description: Practice using Python logging
 ---
+This exercise shows how to configure loggers and log handlers.
+The goal is to understand how you can configure loggers so that 
+messages are recorded in different places (different handlers) 
+and configure how much detail gets logged (log level and formatter).
+
 
 Create a project named `logging` containing a file `example.py`.  
 In `example.py` do the following.
@@ -13,9 +18,9 @@ In `example.py` do the following.
         # Log some messages.  Which ones are printed?
         logger.debug("This is a debug message")
         logger.info("This is an info message")
-        logger.warn("You have been warned")
+        logger.warning("You have been warned")
         logger.error("This is an error")
-        logger.critical("Something TERRIBLE happened.")
+        logger.critical("Something TERRIBLE happened")
     ```
     Write a `main` block to create a root logger and a named logger, and call log_test for each one:
     ```python
@@ -67,13 +72,14 @@ In `example.py` do the following.
         format='%(asctime)s %(name)s %(levelname)s: %(message)s'
     )   
     # root logger
-   logger = logging.getLogger()
-   logger.setLevel( logging.INFO )
-   log_test(logger)
-   etc.
-   ```
+    logger = logging.getLogger()
+    logger.setLevel( logging.INFO )
+    log_test(logger)
+    etc.
+    ```
    * Does it print the logging levels you'd expect?
-   * Is this log format easier to read?  Can you easily identify the source of messages?
+   * Is this log format easier to read?  
+   * Can you easily identify the source of messages?
 
 5. Comment out the static `basicConfig` and instead define 2 handlers for the root logger: (1) a handler that logs *everything* to a file with timestamp, (2) a handler that prints warnings and more serious messages to the console, without timestamp.  Since this is a lot of code, put it in a function named `configure()`:
     ```python
@@ -102,7 +108,7 @@ In `example.py` do the following.
     #logging.basicConfig( format='...' )
     configure()
     logger = logging.getLogger()
-    #logger.setLevel(logging.INFO)  Don't set logging threshold
+    #logger.setLevel(logging.INFO)  -- Don't set logger threshold
     print("Logging to ", logger)
     log_test(logger)
     etc.
@@ -122,7 +128,7 @@ In `example.py` do the following.
     ```
     * Rerun the file.  Are all messages recorded in the log file?
 
-7. What if we call `foo_log.setLevel(level)` after configuring log handlers?  Which log level will be used?  In the main block, change the log level on `foo` to ERROR:
+7. If we call `foo_log.setLevel(logging.ERROR)` after configuring log handlers, what messages will be logged?  Which log level will be used?  In the main block, change the log level on `foo` to ERROR:
     ```python
     foo_log = logging.getLogger('foo')
     foo_log.setLevel( logging.ERROR )
@@ -130,3 +136,5 @@ In `example.py` do the following.
     log_test(foo_log)
     ```
     * Rerun the file.  Does `foo_log` now filter out messages from both logs?
+
+

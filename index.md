@@ -261,6 +261,20 @@ Demo CI projects: [Java sample][demo-ci], [Python sample][demo-ci-python], [Expl
 </td>
 </tr>
 
+<tr valign="top">
+<td align="center" markdown="span"> 
+Early Project
+Activities
+</td>
+<td markdown="span">
+Record Requirements as User Stories/Use Cases    
+[Domain Modeling](https://www.scaledagileframework.com/domain-modeling/)    
+Make an Iterative Project Plan    
+</td>
+<td markdown="span">
+Do it for your project.
+</td>
+</tr>
 <!-- Week 13 -->
 <tr valign="top">
 <td align="center" markdown="span"> 
@@ -294,7 +308,6 @@ Refactoring
 Read about refactoring and create your own refactoring exercise 
 </td>
 </tr>
-
 <!-- Logging -->
 <tr valign="top">
 <td align="center" markdown="span"> 
