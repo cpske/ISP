@@ -1,6 +1,6 @@
 ## Django Users and Authentication
 
-### Django Configuration for Users and Authentication
+### Django Settings for Users and Authentication
 
 For authentication of users you need at least one authentication "backend" application.
 The standard app included with Django is:
@@ -29,7 +29,9 @@ You also need two middleware applications for interface to your python code.
 ```python
 MIDDLEWARE = [
     ...
+    # SessionMiddleware manages sessions spanning multiple requests
     'django.contrib.sessions.middleware.SessionMiddleware',
+    # Associates users with sessions and requests
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     ...
     ]
