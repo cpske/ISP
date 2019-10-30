@@ -137,4 +137,12 @@ In `example.py` do the following.
     ```
     * Rerun the file.  Does `foo_log` now filter out messages from both logs?
 
+### Important Lessons
 
+* Python logging uses severity levels named debug, info, warning, error, and critical.
+* You can control what messages are logged and where the messages are output, such as file, syslog service, or console.
+* Loggers form a hierachy based on the dotted logger name, "", "a", "a.b", etc.
+* Configure loggers using a Handler and Formatter.  One logger may have several handlers.
+* Each logger and handler has its own log-severity threshold level (debug, info,...), which is a threshold to filter log messages.
+* Its usually enough to configure handlers on the root logger, since log messages from decendent logger propagate back to the handler of root log.
+* Add special loggers for special purposes.  For example, a logger for security.In this case, you might set `propagate=False` so security-related messages are not recorded in other logs.

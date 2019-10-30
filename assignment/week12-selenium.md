@@ -43,7 +43,7 @@ on the course homepage, one per line.
 
 Homepage:  https://cpske.github.io/ISP/
 
-### 3.Function to Test all Links
+### 3. Function to Test all Links
 
 Write a `invalid_urls( urllist )` function
 to test a list of urls (as Strings).
@@ -52,7 +52,7 @@ Return a new list containing all the invalid or unreachable URLs.
 
 You can use Selenium WebDriver or Python httplib or urllib2 for this.
 Try sending just a HEAD request instead of GET request. 
-The HEAD request only returns the response header without the page content, which is a lot faster.
+The HEAD request only returns the response header without the page content, which is a lot faster and smaller.
 
 For urllib2, just open() the URL.  If the URL doesn't exist,
 opening it will raise an exception.

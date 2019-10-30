@@ -1,3 +1,9 @@
+## Refactoring Problem
+
+1. What is the **sign** or **symptom** that this class should be refactored?
+
+2. What refactoring would help?  Use the refactoring name if you know it.
+
 ```python
 class Person:
     def __init__(self, firstName, lastName, 
@@ -12,9 +18,15 @@ class Person:
         self.province = province
         self.postal_code = postalCode
 
+    def get_address(self):
+        address = {'street1': self.address_line1,
+                   'street2': self.address_line2,
+                   'subdistrict': self.subdistrict,
+                   'district': self.district,
+                   'province': self.province,
+                   'postalcode': self.postal_code
+                  }
+        return address
 
 ```
 
-1. What is (are) sign(s) that this code needs to be refactored?
-
-2. What refactoring would you suggest?

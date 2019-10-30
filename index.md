@@ -243,7 +243,7 @@ Git Submodules
 Git Submodule for Testing    
 </td>
 <td markdown="span">
-[How to use git submodule](git/submodule) for Tic-Tac-Toe unit tests.
+[How to use git submodule](git/submodule) for unit tests.
 </td>
 </tr>
 <!-- Automation and Testing -->
@@ -260,7 +260,7 @@ Build Automation and CI
 Demo CI projects: [Java sample][demo-ci], [Python sample][demo-ci-python], [Explained](automation/travis-demo-project.md)
 </td>
 </tr>
-
+<!-- project -->
 <tr valign="top">
 <td align="center" markdown="span"> 
 Early Project
@@ -268,7 +268,7 @@ Activities
 </td>
 <td markdown="span">
 Record Requirements as User Stories/Use Cases    
-[Domain Modeling](https://www.scaledagileframework.com/domain-modeling/)    
+Create a [Domain Model](https://www.scaledagileframework.com/domain-modeling/)    
 Make an Iterative Project Plan    
 </td>
 <td markdown="span">
@@ -337,14 +337,14 @@ nothing yet
 <!-- Last week -->
 <tr valign="top">
 <td align="center" markdown="span"> 
-6 Dec 
+4 Dec 
 </td>
 <td markdown="span">
 Last day of class.
 Projects should be done, tested, reviewed, and deployed to cloud.
 </td>
 <td markdown="span">
-Presentation: describe your dev process and technology used.  Not a demo -- the class will use your cloud deployment and give feedback.
+Presentation: describe your dev process and technology used.  Not a project demo -- the class will use your cloud deployment and give feedback.
 </td>
 </tr>
 <!-- Final -->
@@ -362,18 +362,6 @@ Coding: 13:00-16:00 PM
 Programming exam will be to write a simple web application,
 with some info saved to a database.  May have a separate problem on other topics we covered.    
 [Additonal details](review/web-dev-exam.html).
-</td>
-</tr>
-<!-- Results -->
-<tr valign="top">
-<td align="center" markdown="span"> 
-Results
-</td>
-<td markdown="span">
-&nbsp;
-</td>
-<td markdown="span">
-&nbsp;
 </td>
 </tr>
 </table>
