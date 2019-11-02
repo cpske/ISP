@@ -174,12 +174,12 @@ ignore this.
 ### References
 
 * [Django Messages Framework][messages-framework]
-* [Django Tips: Using the messages framework][django-tips-messages] (first part is same as the Django Messages docs)
+* [Django Tips: Using the messages framework][django-tips-messages], first part is same as the Django Messages docs.
 * [Working with forms][django-forms] in the Django docs
-* Other web frameworks also have "messages".  In Play! Framework they are called
+* Other web frameworks also have "messages".  In Play Framework they are called
 *flash messages*.
 
 [django-tips-messages]: https://simpleisbetterthancomplex.com/tips/2016/09/06/django-tip-14-messages-framework.html, "Django Tips 14 Using the Messages Framework"
-[django-forms]: https://docs.djangoproject.com/en/2.2/topics/forms/, "Working with forms"
+[django-forms]: https://docs.djangoproject.com/en/2.2/topics/forms/
 [django-shortcuts]: https://docs.djangoproject.com/en/2.2/topics/http/shortcuts/
 [messages-framework]: https://docs.djangoproject.com/en/2.2/ref/contrib/messages/

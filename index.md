@@ -160,14 +160,13 @@ Database
 Good Developer Practices     
 </td>
 <td markdown="span">
-Good practices for developers (even non-agile)    
 Importance of descriptive commit messages and Pull Requests    
-[Separate configuration from code](refactoring/Separate-config-from-code.pdf)
+[Separate configuration from code](refactoring/Separate-config-from-code.pdf)   
+[Checking Code Quality](code-quality/code-quality-tools), style guides and tools 
 </td>
 <td markdown="span">
-"Agile and Coding Questions" assignment in Week 5 of [Google Classroom for ISP2019](https://classroom.google.com). Answer using the Google Form and **submit** it. Due Sunday, midnight.
-The questions and code examples are in
-[Agile and Coding Questions](assignment/week5/agile-and-coding).
+Use pylint to check your code.
+You can integrate pylint into your IDE.
 </td>
 </tr>
 <!-- Django Stuff -->
@@ -180,7 +179,8 @@ Django
 a backup or "starter" data for others to easily use your polls application.    
 [Virtualenv Quickstart](django/virtualenv-quickstart) and [Using Virtualenv](django/virtualenv) how to run apps in a virtual environment (its easy).    
 [Messages Framework](django/messages-framework) how to pass messages from a view to a template    
-[Externalize Configuration](web/decouple-configuration)   
+[Externalize Configuration](web/decouple-configuration)    
+[Organize Your Django Tests](django/django-test-organization)       
 </td>
 <td markdown="span">
 Share Some Useful Django Tips or Howto -    
@@ -283,7 +283,6 @@ More Testing
 <td markdown="span">
 [Code Coverage](testing/code-coverage)    
 [Testing Pyramid](testing/WebTesting.pdf)    
-[Organizing your tests in Django](web/django-testing)       
 </td>
 <td markdown="span">
 1. Refactor your Django tests into separate files, based on what is being tested.    

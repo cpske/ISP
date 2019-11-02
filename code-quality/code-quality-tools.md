@@ -36,10 +36,10 @@ This [Github repo][github-code-analysis-tools] has more details and even more to
 
 A few good ones are:
 
-* [Pylint](https://www.pylint.org/) one of the oldest and most widely used.  Checks for style using PEP8 guidelines and looks for bad code signs.  Needs some configuration to avoid extraneous messages.
+* [Pylint](https://www.pylint.org/) one of the most widely used tools.  Checks for style using PEP8 guidelines and looks for bad code signs.  
     - Checks code style and possible problems
     - Assigns **quality score** to your code
-    - Can configure to ignore some items or some parts of code
+    - Can configure to ignore some items or some parts of code (.pylintrc)
     - Can create UML class diagrams
     - Don't expect to eliminate all warnings
     - Install: `pip install pylint`
