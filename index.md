@@ -275,6 +275,18 @@ Make an Iterative Project Plan
 Do it for your project.
 </td>
 </tr>
+<!-- Authentication -->
+<tr valign="top">
+<td align="center" markdown="span"> 
+Authentication  
+</td>
+<td markdown="span">
+[Django Authentication](django/authentication)    
+</td>
+<td markdown="span">
+Add authentication to Django Polls, so a user must login to vote.   
+</td>
+</tr>
 <!-- Week 13 -->
 <tr valign="top">
 <td align="center" markdown="span"> 

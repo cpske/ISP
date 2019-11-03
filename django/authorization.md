@@ -78,3 +78,4 @@ current user has this permission using:
    {# allow user to vote #}
 {% endif %}
 ```
+{% endraw %}
