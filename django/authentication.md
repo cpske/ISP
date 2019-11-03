@@ -204,7 +204,7 @@ def vote(request, question_id):
     """Vote for one of the answers to a question."""
     user = request.user
 ```
-The default login_url is `/accounts/login/` so you can omit it.
+The default login_url is `/accounts/login/` so you can **omit it**.
 The decorator also sets the `next` field so the user will be redirected
 to the same view after logging in.
 
@@ -223,6 +223,42 @@ class EyesOnlyView(LoginRequiredMixin, ListView):
 > functionality from multiple classes is combined into another
 > class.  That is, behavior is "mixed in".
 
+### Access User Information in a Template
+
+Inside HTML templates access information about a user using:
+{% raw %}
+```
+{% user %}                   - reference to user object, not null
+{% user.is_authenticated %}  - true if user is logged in
+{% user.username %}          - the user login name or empty string
+{% user.first_name %}        - may be empty string if not set in model
+```
+{% endraw %}
+For example, to greet a user or ask him to login:
+{% raw %}
+```html
+{% if user.is_authenticated %}
+   Welcome back, {% user.username %}
+{% else %}
+   Please <a href="{% url 'login' %}">Login</a>
+{% endif %}
+```
+{% endraw %}
+But, in the above code after logging in the user will be redirected to the default LOGIN_REDIRECT_URL.  To cause the browser to come back to this page after login, append the `next=` query parameter to the login URL:
+{% raw %}
+```
+{% if user.is_authenticated %} 
+    Welcome back, {% user.username %}
+{% else %}
+    Please <a href="{% url 'login'%}?next={{request.path}}">Login</a>
+{% endif %}
+```
+{% endraw %}
+This example shows that you can access the `request` object inside a template, too.
+
+**Note:** This only works if your `login.html` template *also* passes `next` to the Django login view.  You should include a *hidden field* in the template for the `next` field.
+
+
 ### Access User Information in a View
 
 The logged in user is saved as part of the *session* and included in the `request` object (HttpRequest), which is passed to every view.
@@ -236,35 +272,10 @@ def vote(request, question_id):
     print("Real name:", user.first_name, user.last_name)
 ```
 
-### Getting the Logged-in User
+### Django Redirects for Login and Logout
 
-You can check if a user is authenticated in HTML templates and in views.
-In a template use:
-
-{% raw %}
-```html
-{% if user.is_authenticated %}
-   Welcome back, {% user.username %}
-{% else %}
-   Please <a href="{% url 'login' %}">Login</a>
-{% endif %}
-```
-{% endraw %}
-
-If your app has a navbar on the left side you might use offer context-senstive
-login-logout links:
-In a template use:
-{% raw %}
-```html
-{% if user.is_authenticated %}
-   <a href="{% url 'logout' %}">Logout</a>
-{% else %}
-   <a href="{% url 'login' %}">Login</a>
-{% endif %}
-```
-{% endraw %}
-
-In `settings.py`, specify where to redirect a user after login or logout:
+The Django `auth` login and logout views will redirect the browser after login or logout.
+Specify where to redirect a user after login or logout in `settings.py`:
 ```python
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
@@ -274,6 +285,13 @@ Instead of a hard-coded URL, you can use the name of a view.  If the URL does no
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
 ```
+
+For a particular `login` or `logout` request, you can specify where to redirect the browser using the `?next=url` query parameter.  For example:
+{% raw %}
+```
+Please <a href="{% url 'login'%}?next={{request.path}}">Login</a>
+```
+{% endraw %}
 
 ### Signing Up a New User
 
@@ -344,8 +362,6 @@ A simple user sign-up template is:
 
 The important parts of this template are a) render the form `{{form.as_table}}`
 and b) POSTing the form back to the correct URL.  Since the &lt;form method='POST'&gt; block doesn't specify an action, the default action is to send it back to the same URL the page came from.
-
-
 
 ---
 
