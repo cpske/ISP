@@ -281,10 +281,14 @@ Do it for your project.
 Authentication  
 </td>
 <td markdown="span">
+[Intro to Authentication](authentication/Authentication-and-Authorization.pdf)    
 [Django Authentication](django/authentication)    
 </td>
 <td markdown="span">
 Add authentication to Django Polls, so a user must login to vote.   
+First, [refactor tests.py to a "tests" directory](django/django-test-organization).    
+[Authentication requirements](assignment/django-auth-stories)    
+
 </td>
 </tr>
 <!-- Week 13 -->

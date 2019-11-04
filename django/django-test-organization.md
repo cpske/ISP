@@ -3,11 +3,11 @@
 When you create a new app, Django creates a `tests.py` file for the app.
 However, putting all your tests in one file is usually not a good idea.
 
-In particular, on a team project with development done in git branches
+Especially on a team project with development done in git branches,
 you will have conflicts every time you merge a branch into master.
 
 A better approach is to divide your tests into multiple files.  
-For the Django Polls tutorial, the recommended structure for tests would be:
+For the Django Polls tutorial, the structure for tests would be:
 ```listing
 polls/
     __init__.py
