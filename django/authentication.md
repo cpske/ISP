@@ -228,17 +228,17 @@ class EyesOnlyView(LoginRequiredMixin, ListView):
 Inside HTML templates access information about a user using:
 {% raw %}
 ```
-{% user %}                   - reference to user object, not null
-{% user.is_authenticated %}  - true if user is logged in
-{% user.username %}          - the user login name or empty string
-{% user.first_name %}        - may be empty string if not set in model
+{{ user }}                     - reference to user object, not null
+{% if user.is_authenticated %} - true if user is logged in
+{{ user.username }}            - the user login name or empty string
+{{ user.first_name }}          - may be empty string if not set in model
 ```
 {% endraw %}
 For example, to greet a user or ask him to login:
 {% raw %}
 ```html
 {% if user.is_authenticated %}
-   Welcome back, {% user.username %}
+   Welcome back, {{ user.username }}
 {% else %}
    Please <a href="{% url 'login' %}">Login</a>
 {% endif %}
@@ -248,7 +248,7 @@ But, in the above code after logging in the user will be redirected to the defau
 {% raw %}
 ```
 {% if user.is_authenticated %} 
-    Welcome back, {% user.username %}
+    Welcome back, {{ user.username }}
 {% else %}
     Please <a href="{% url 'login'%}?next={{request.path}}">Login</a>
 {% endif %}
@@ -277,8 +277,8 @@ def vote(request, question_id):
 The Django `auth` login and logout views will redirect the browser after login or logout.
 Specify where to redirect a user after login or logout in `settings.py`:
 ```python
-LOGIN_REDIRECT_URL = '/'
-LOGOUT_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/polls/'
+LOGOUT_REDIRECT_URL = '/polls/'
 ```
 Instead of a hard-coded URL, you can use the name of a view.  If the URL does not contain a '/' then Django will look for a named view.  If you have a view named '`home`' then use:
 ```python
