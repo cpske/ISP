@@ -15,7 +15,9 @@ except as in User Story 4 below.
 </td>
 </tr>
 <tr>
-<td>How to Demo: <em>to be added</em> </td>
+<td>
+How to Demo: demo along with story #2.
+</td>
 </tr>
 </table>
 </p>
@@ -35,7 +37,13 @@ can view list of polls and view poll details page, but cannot vote.
 </td>
 </tr>
 <tr>
-<td>How to Demo: <em>to be added</em> </td>
+<td>
+How to Demo: user visits polls index page and sees visual indication
+that he can login, such as login button or link.  He follows link and
+sees that it goes to /accounts/login/.  After login, he is redirected
+to polls index, and is greeted by first name (if known) or username.
+Since he is already logged in, there is no login link/button.
+</td>
 </tr>
 </table>
 </p>
@@ -51,7 +59,9 @@ After logout, redirect the user to the polls index page a confirmation message i
 </td>
 </tr>
 <tr>
-<td>How to Demo:  login, browser around, and logout. Verify user really is logged out. </td>
+<td>
+How to Demo:  login and browser around as in US #2.  Then logout using a link or navigating to /accounts/logout.  User should be redirected to polls index (or other "home" page) with visual confirmation he is not logged in.
+</td>
 </tr>
 </table>
 </p>
@@ -76,7 +86,12 @@ showing choices.
 </td>
 </tr>
 <tr>
-<td>How to Demo: <em>to be added</em> </td>
+<td>
+How to Demo:  as a non-authenticated visitor, navigate to a polls detail page.  There should not be any "Vote" or "Submit" button to vote. Instead there should be a "Please login to vote" message with link to login page.  Aftr logging in, visitor is redirected to polls detail page, and now he can submit a vote. 
+Verify that the vote was counted.    
+
+Next, as a non-authenticated visitor go directly to http://host:port/polls/n/vote/ where n is a poll id.  Should be redirected to the login page.
+</td>
 </tr>
 </table>
 </p>
@@ -132,5 +147,3 @@ voting) and a link to the list of polls.
 </tr>
 </table>
 </p>
-
-
