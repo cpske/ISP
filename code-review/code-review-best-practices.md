@@ -1,4 +1,3 @@
-
 ## Code Review Best Practices from SmartBear
 
 Ref: [Best Practices for Peer Code Review](https://www.kessler.de/prd/smartbear/BestPracticesForPeerCodeReview.pdf), somewhat self-promotional
@@ -19,7 +18,7 @@ Ref: [Best Practices for Peer Code Review](https://www.kessler.de/prd/smartbear/
     - this requires you record some data about defect rates, support calls, etc., for comparison
     - not a vague, fuzzy goal like "find more bugs"
 
-6. Checklists substantially improve results
+6. Use a checklist.  Checklists improve results
     - start with a standard checklist
     - add a personal checklist of your own common mistakes, or things you forget to review
 
@@ -81,5 +80,26 @@ Ref: [9 Code Review Best Practices](https://www.perforce.com/blog/qac/9-code-rev
    - teams should appreciate code reviews, not dread them
 
 9. Automate to Save Time
-   - use static code analysis to help find problems, such as unused or uninitialized variables
-   - use a style checker to find violations of coding style
+   - use tools to automate what you can. Don't waste reviewers' time.
+   - static code analysis to help find problems
+       * Ex: uninitialize or unused variables, wrong parameters passed to function
+   - IDE to find syntax errors
+   - style checker(s) for coding style
+
+## Best Practices from JetBrains
+
+ref: [Code Review Best Practices](https://blog.jetbrains.com/upsource/2018/08/30/code-review-best-practices/) at https://blog.jetbrains.com. Transcript of their [video](https://youtu.be/EjwD7Pi7J_0)
+
+1. Automate as much as possible
+2. Agree on goals for Code Review
+3. Use a common check list for review
+4. Prepare for review
+    * author should check his own code
+    * annotate (comment) to help reviewers understand
+5. During Review
+    * Respond timely
+    * Set clear expectations
+    * Try to resolve review issues quickly
+6. Close the Review when everyone is satisfied
+
+Some of the best practices in the video apply to online reviews where reviewers work separately and asynchronously.  I tried to extratract the best practices that also apply to face-to-face reviews.

@@ -1,0 +1,321 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 11 (filtered)">
+<title>Software Walk-Through</title>
+
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";}
+h1
+	{margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	page-break-after:avoid;
+	font-size:16.0pt;
+	font-family:Arial;}
+h2
+	{margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:Arial;
+	font-style:italic;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	text-align:center;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;}
+p.Message, li.Message, div.Message
+	{margin-top:6.0pt;
+	margin-right:0cm;
+	margin-left:108.0pt;
+	text-align:justify;
+	punctuation-wrap:simple;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:"Times New Roman";}
+p.Figure, li.Figure, div.Figure
+	{margin-top:6.0pt;
+	margin-right:0cm;
+	margin-left:0cm;
+	text-align:center;
+	punctuation-wrap:simple;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+p.ListBullet1, li.ListBullet1, div.ListBullet1
+	{margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:39.6pt;
+	margin-bottom:.0001pt;
+	text-indent:-18.0pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";}
+ /* Page Definitions */
+ @page Section1
+	{size:21.0cm 842.0pt;
+	margin:2.0cm 2.0cm 42.55pt 2.0cm;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US link=blue vlink=purple>
+
+<div class=Section1>
+
+<h1 align=center style='text-align:center'>Software Walk-Through</h1>
+
+<h2>Overview</h2>
+
+<p class=MsoNormal>A walk-through is an informal review of an artifact (work
+product).  The artifact can be a project document such as the SRS (or a section
+of the SRS), a technical document like a domain model, source code, a set of UI
+forms, test cases, etc.</p>
+
+<p class=MsoNormal>The walk-through should be scheduled in advance and the
+participants given some time (at least 1 day) to study the artifact they will
+review.  Usually the <i>author</i> of the artifact requests the walk-through,
+the <i>project manager</i> helps schedule the walk-through. One participant
+acts as a <i>recorder</i> to complete the walk-through form.</p>
+
+<p class=MsoNormal>The result of the walk-through is a list of defects or
+problems, suggestions, and open issues.  The <i>recorder</i> posts the
+completed walk-through form on the project management site (Redmine: in
+Documents section).  The <i>author</i> is responsible for entering bugs and
+issues into the tracking system; the <i>author </i>may also fix bugs himself,
+requests someone to fix them, or decides they should not be fixed; or the
+walk-through team may decide this.</p>
+
+<p class=MsoNormal>The <i>PMC</i> person is responsible to verify that this
+procedure is followed.</p>
+
+<p class=MsoNormal>A <i>PPQA</i> person should check that all items on the
+walk-through form are actually tracked and resolved (fixed, deferred,
+determined it is not a bug, etc).</p>
+
+<h2>Purpose</h2>
+
+<p class=MsoNormal style='margin-left:36.0pt;text-indent:-18.0pt'>(1)<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span>Find defects, including coding
+errors, ambiguity, incompleteness, standards violations, bad design, or <i>extra</i>
+features or code that is <i><u>not</u></i> required of the spec (these are also
+defects).</p>
+
+<p class=MsoNormal style='margin-left:36.0pt;text-indent:-18.0pt'>(2)<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span> Share knowledge about an
+artifact, technology, or how/why something is implemented.</p>
+
+<p class=MsoNormal style='margin-left:36.0pt;text-indent:-18.0pt'>(3)<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span>Obtain feedback about
+technical quality of the artifact.</p>
+
+<h2>Roles</h2>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=133 valign=top style='width:79.5pt;border:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoHeader><b><i>Author</i></b></p>
+  </td>
+  <td width=689 valign=top style='width:413.25pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoHeader>The producer or current owner of the artifact.  The author
+  initiates the request. </p>
+  <p class=MsoHeader>After the walk-through, the author is responsible to enter
+  all issues into issue tracking system and see that they are assigned.  He may
+  fix himself, get someone else to fix, defer to later time, or decide not to
+  fix.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=133 valign=top style='width:79.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoHeader><b><i>Product Manager</i></b></p>
+  </td>
+  <td width=689 valign=top style='width:413.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoHeader>Decides whether or not to approve walk-through request;
+  helps choose walk-through team and schedule a time.  PM may also initiate a walk-through
+  request.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=133 valign=top style='width:79.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoHeader><b><i>Moderator</i></b></p>
+  </td>
+  <td width=689 valign=top style='width:413.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoHeader>Moderates the meeting, handles administrative tasks, keep
+  the meeting on track, ensure everyone has fair chance to speak, and results
+  are recorded, and on-time.  The Moderator may be the Author.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=133 valign=top style='width:79.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoHeader><b><i>Recorder</i></b></p>
+  </td>
+  <td width=689 valign=top style='width:413.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoHeader>Completes the walk-through form and posts it on project
+  management site.  Also give to Author.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=133 valign=top style='width:79.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoHeader><b><i>PMC</i></b></p>
+  </td>
+  <td width=689 valign=top style='width:413.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoHeader>Responsible to verify that this process is followed,
+  including recording of issues.  If non-compliance, then take corrective
+  action.  If cannot correct, report to the PM.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=133 valign=top style='width:79.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoHeader><b><i>PPQA</i></b></p>
+  </td>
+  <td width=689 valign=top style='width:413.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoHeader>Responsible to verify that issues are properly addressed
+  and resolved.  For bugs in source code products, test cases should be created
+  to ensure bugs are fixed and don’t occur again (regression testing).</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoHeader>&nbsp;</p>
+
+<h2>How To Do a Walk-Through</h2>
+
+<ol style='margin-top:0cm' start=1 type=1>
+ <li class=MsoNormal>Author of an artifact (work product) contacts PM and
+     requests a walk-through.</li>
+ <li class=MsoNormal>PM and Author agree on walk-through team, amount of time,
+     and date.</li>
+ <li class=MsoNormal>Author arranges meeting, contacts team members, and
+     informs them which artifact (including <i>version</i>!) to review.</li>
+ <li class=MsoNormal>Team members familiarize themselves with artifact before
+     walk-through.</li>
+ <li class=MsoNormal>At start of walk-through, Recorder completes first part of
+     walk-through template.</li>
+ <li class=MsoNormal>Author presents artifact to team, describing its purpose,
+     and leads (“walks”) team through the entire artifact, line-by-line.</li>
+ <li class=MsoNormal>The team members ask questions, look for defects,
+     ambiguity, incompleteness, and suggest possible improvements.</li>
+ <li class=MsoNormal>Recorder enters the defects and issues on form.</li>
+ <li class=MsoNormal><b>Ending the walk-through:</b> when entire document is
+     reviewed or the scheduled time is up, the moderator should conclude the
+     walk-through. The Recorder enters the amount of times spent on the form.</li>
+ <li class=MsoNormal><b>Debriefing:</b> Moderator gives each person a chance to
+     share his experience.  The purpose is to clear up any tension introduced
+     during meeting, and suggest how to improve future walk-throughs.</li>
+ <li class=MsoNormal>Recorder posts the walk-through form on project web site,
+     and gives a copy to the Author.</li>
+ <li class=MsoNormal>Author enters issues into tracking system and decides what
+     to do with them (fix, get someone to fix, defer, etc).  Alternatively, the
+     walk-through team can decide this.</li>
+ <li class=MsoNormal>PPQA verifies that all issues are adequately resolved and
+     tested.</li>
+ <li class=MsoNormal>PMC verifies that this procedure is followed.</li>
+</ol>
+
+<h2>Alternative</h2>
+
+<ol style='margin-top:0cm' start=12 type=1>
+ <li class=MsoNormal>The walk-through team can decide what to do with each
+     issue/defect instead of the Author deciding this.  This may help in
+     prioritizing and assigning work.</li>
+</ol>
+
+<h2>Time Required</h2>
+
+<p class=MsoNormal>Less time than it looks!  Preparation time about 30 minutes
+per reviewer; actual walk-through time depends on size of artifact, typically
+30 minutes – 2 hours.  Walk-throughs can save time by finding defects earlier
+than testing.</p>
+
+<h2>References</h2>
+
+<p class=MsoNormal>Walk-through template on the project web site (Redmine
+Documents page).</p>
+
+<p class=MsoNormal style='margin-left:36.0pt;text-indent:-36.0pt'>Wikipedia: <a
+href="http://en.wikipedia.org/wiki/Software_walkthrough">http://en.wikipedia.org/wiki/Software_walkthrough</a></p>
+
+<p class=MsoNormal>Ackerman, Frank A. “Software Inspections and the Cost
+Effective Production of Reliable Software.” <u>Software Engineering.</u>  p.
+235-255. Los Alamitos, CA: 1997.</p>
+
+<p class=ListBullet1 style='margin-left:0cm;text-indent:0cm'><span
+style='font-size:10.0pt'>&nbsp;</span></p>
+
+</div>
+
+</body>
+
+</html>

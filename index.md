@@ -336,13 +336,28 @@ Logging
 [Logging Assignment](assignment/logging)     
 </td>
 </tr>
+<!-- Reviews -->
+<tr valign="top">
+<td align="center" markdown="span"> 
+Code Review
+</td>
+<td markdown="span">
+[Software Review](code-review/Reviews.pdf) slides and [Summary](code-review/code-review)       
+[Code Review Best Practices](code-review/code-review-best-practices) from various sources
+</td>
+<td markdown="span">
+[Reviews chapter from Stellman &amp; Greene](code-review/Reviews-Stellman-and-Greene.pdf)    
+Example Checklists: [Java](code-review/Java-Code-Review-Checklist.pdf), 
+[PSP](code-review/PSP-Review-Script-Checklist.pdf)
+</td>
+</tr>
 <!-- 12-Factor App -->
 <tr valign="top">
 <td align="center" markdown="span"> 
 12-FactorApp    
 </td>
 <td markdown="span">
-[12-Factor App](we/12FactorApp.pdf)   
+[12-Factor App](web/12FactorApp.pdf)   
 </td>
 <td markdown="span">
 nothing yet
