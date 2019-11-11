@@ -348,7 +348,8 @@ Code Review
 <td markdown="span">
 [Reviews chapter from Stellman &amp; Greene](code-review/Reviews-Stellman-and-Greene.pdf)    
 Example Checklists: [Java](code-review/Java-Code-Review-Checklist.pdf), 
-[PSP](code-review/PSP-Review-Script-Checklist.pdf)
+[PSP](code-review/PSP-Review-Script-Checklist.pdf)    
+[Assignment: Code Review Checklist and Script](assignment/code-review)
 </td>
 </tr>
 <!-- 12-Factor App -->
