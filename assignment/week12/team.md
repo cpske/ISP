@@ -3,10 +3,14 @@
 On your Github project homepage, please include:
 
 1. Link to your **up to date** iteration plans 
-    - Iteration plans must either be in Github project Wiki (recommended) or a shared Google doc
+    - Iteration plans must be in Github project Wiki (recommended) or a shared Google doc
+    - Can put all plans in one file or one file per iteration plan
 2. Link to your task board, showing tasks for current iteration
-    - Tasks must have required info below
-3. Link to your project documentation
+    - Tasks have details, person, estimated time
+3. Links to your project documentation
+    - You can put all this in Wiki, which makes it easy to organize and use
+    - Link to your **Code Review Script** and **Code Review Checklist**
+    - Link to project proposal
 
 
 ### Iteration Plan
@@ -20,13 +24,14 @@ Each Iteration Plan includes:
   > Identify most use-cases, and record them in project wiki with brief description of each use case.    
   > Implement "play game" use case for demo user
 * **Milestone(s)**. 
-]   * A "milestone" is something concrete and verifiable ("its been done").
-    * Milestones usually related to running software (not documents).  But in first 1-2 iterations a milestone can be a non-code artifact.
-    * "Learn to use xxx" is **not** a milestone.
+    * A "milestone" is something that shows progress toward finishing the project.
+    * Is concrete and verifiable ("its been done").
+    * Milestone is usually related to running software -- not documents.  But in first 1-2 iterations a milestone can be a non-code artifact.
+    * **Not** a milestone: "Learn to use xxx".
     * Some early iteration milestones:
-    > Setup shared git repository with automatic unit testing using Jenkins.    
-    > Create a domain model for game, and produce a working prototype that shows questions.       
-    > This is only a "milestone" if you create a good, *written* domain model and capture it online.   
+    > "Create a domain model for game, and produce a working prototype that shows questions."       
+    > This is only a "milestone" if you make a good, *written* domain model and capture it online.    
+    > "Demo User can view/answer questions and his score is recorded"
 * List of **features** to implement in this iteration and **major tasks**. In first iteration, there may not be any features.
 * **Summary** of Retrospective.
     * Record import results of iteration.
@@ -35,8 +40,8 @@ Each Iteration Plan includes:
 
 ### Iteration "Script" - How to Do Iteration
 
-This is based on typical Agile project workflow.
-Use it to get started, and customize to suit your team process.
+This is a guide to get started, based on typical Agile project workflow.
+Customize it to suit your team process. You should do iteration planning (with written output), iteration review/demo, and retrospective.
 
 <table border="1">
 <tr valign="top">
@@ -50,20 +55,21 @@ Planning Meeting
 (start of iteration)
 </td>
 <td align="left" markdown="span">
-1. Review results of previous iteration. 
-    - Any unfinished work from last iteration?  Add it to project backlog.
-    - Any new work you discovered? Add that to project backlog, too.
-    - Any major problems or risks you should address?  How?
-2. Decide on...
-    - major work to do this iteration
-    - goal(s)
-    - milestones - markers that demonstrate real progress
-    - Get help with issues you don't know how to solve (TA/instructor)
-3. Revise or write current iteraion plan in Wiki or Google docs.
-4. Plan the work!
-    - update your domain model or user-interaction model
-    - decide on tasks and add them to Task Board as backlog
-    - annotate tasks: a) write detailed description or steps, b) estimate time
+
+1. Review results of previous iteration.     
+    - Any unfinished work from last iteration?  Add it to Project Backlog.    
+    - Any new work you discovered? Add that to Project Backlog, too.    
+    - Any major problems or risks you should address?  How?    
+2. Decide on...    
+    - major work to do this iteration    
+    - goal(s)    
+    - milestones - markers that demonstrate real progress    
+    - Get help with issues you don't know how to solve (TA/instructor)    
+3. Revise or write current iteraion plan in Wiki or Google docs.    
+4. Plan the work!    
+    - update your software design or user-interaction model    
+    - decide on tasks and add them to Task Board as Iteration Backlog    
+    - annotate tasks: a) write detailed description or steps, b) estimate time    
 </td>
 </tr>
 <tr valign="top">
@@ -72,9 +78,11 @@ Output of
 Planning Meeting    
 </td>
 <td align="left" markdown="span">
-* Iteration plan in Wiki/Google Docs
-* Goals and Milestones recorded
-* Tasks in iteration backlog (or Sprint backlog) on task board
+
+- Iteration plan in Wiki/Google Docs    
+- Goals and Milestones recorded    
+- Tasks in iteration backlog (or Sprint backlog) on task board    
+
 </td>
 </tr>
 <tr valign="top">
@@ -82,11 +90,13 @@ Planning Meeting
 During Iteration
 </td>
 <td align="left" markdown="span">
-* Update task status and details. 
-* Record person doing task and time spent.
-* Meet regularly to share progress
-* Test and review work
-* Use Github issues to record issues.
+
+- Update task status and details     
+- Record person doing task and time spent    
+- Meet regularly to share progress    
+- Test and review work    
+- Use Github issues to record issues    
+
 </td>
 </tr>
 <tr valign="top">
@@ -94,10 +104,12 @@ During Iteration
 End of Iteration
 </td>
 <td align="left" markdown="span">
-* Stabilize, test, and review finished work
-* Demo work products
-* Hold a short retrospective
-* Write the key results in "Summary" of iteration plan
+
+- Stabilize, test, and review finished work    
+- Demo work products    
+- Hold a short retrospective    
+- Write the key results in "Summary" of iteration plan    
+
 </td>
 </tr>
 </table>
