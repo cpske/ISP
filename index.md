@@ -81,7 +81,7 @@ In class: [Scrum Questions and Answers](agile/Scrum-Questions-and-Answers.pdf).
 [Unit Testing](testing/)    
 </td>
 <td markdown="span">
-[Intro to Testing](testing/Intro-to-Testing.pdf)   
+[Intro to Unit Testing](testing/Intro-to-Unit-Testing.pdf)   
 [Python Unit Testing](testing/PythonUnitTesting.pdf)    
 The [index](testing/index) has links to Java unit testing slides.
 </td>
@@ -291,7 +291,7 @@ First, [refactor tests.py to a "tests" directory](django/django-test-organizatio
 
 </td>
 </tr>
-<!-- Week 13 -->
+<!-- More Testing (week 13) -->
 <tr valign="top">
 <td align="center" markdown="span"> 
 More Testing    
@@ -299,6 +299,7 @@ More Testing
 <td markdown="span">
 [Code Coverage](testing/code-coverage)    
 [Testing Pyramid](testing/WebTesting.pdf)    
+[Intro to Testing](testing/Intro-Testing.pdf) for review
 </td>
 <td markdown="span">
 1. Refactor your Django tests into separate files, based on what is being tested.    

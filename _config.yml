@@ -1,5 +1,8 @@
 # theme: minima
-description: Individual Software Process
+title: Individual Software Process
+description: Course material for Individual Software Process course
+url: "https://cpske.github.io/ISP/"
 exclude: [bin, misc, Gemfile, Gemfile.lock, Jittat, Paruj]
 # Use Git's markdown syntax
 markdown: kramdown
+permalink: pretty

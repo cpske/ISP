@@ -58,9 +58,8 @@ listed as a table.  Don't include student ID (its not relevant)
 **Installation Instructions**
 
 * Required Software
-1. step 1
-2. next step
-3. next step
+1. first install step
+2. second install step
 
 **Wrong**:
 
@@ -70,7 +69,7 @@ listed as a table.  Don't include student ID (its not relevant)
 4. Run: `python manage.py runserver 8000`
 5. Browse to http://localhost:8000
 
-1-3 should all be in a `requirements.txt` file. Steps 4-5 are "How to Run" not "installation".
+1-3 should all be in a `requirements.txt` file. Steps 4-5 are "How to Run" not "installation".  Instructions should note differences in operating system.
 
 **How to Run**
 
