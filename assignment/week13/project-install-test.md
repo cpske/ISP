@@ -1,7 +1,5 @@
 ## Project Testing Assignment
 
-**Due:** Wednesday, 14 November, 23:59
-
 This is an individual assignment.
 Install another team's project on your computer and try to run it.
 Use the instructions on the project's homepage (README.md) for how

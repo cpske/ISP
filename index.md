@@ -297,15 +297,15 @@ First, [refactor tests.py to a "tests" directory](django/django-test-organizatio
 More Testing    
 </td>
 <td markdown="span">
-[Code Coverage](testing/code-coverage)    
+[Intro to Testing](testing/Intro-Testing.pdf) more than just unit tests     
 [Testing Pyramid](testing/WebTesting.pdf)    
-[Intro to Testing](testing/Intro-Testing.pdf) for review
+Testing Behavior - don't only test code (TBA)   
+[Code Coverage](testing/code-coverage)    
 </td>
 <td markdown="span">
 1. Refactor your Django tests into separate files, based on what is being tested.    
 2. Perform code coverage on your Django tutorial code and your project code.    
 3. Selenium: [Find Bad Links](assignment/week13-selenium). 
-Assignment [Feedback](assignment/week13-selenium-feedback)
 </td>
 </tr>
 <!-- Refactoring -->
