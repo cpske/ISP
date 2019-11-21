@@ -124,7 +124,24 @@ Using [Github Flow](git/index#github-flow).
 A real [pull request in jQuery repo](https://github.com/jquery/jquery/pull/1051)     
 </td>
 </tr>
-<!-- Web Dev -->
+<!-- Types and Type Checking -->
+<tr valign="top">
+<td align="center" markdown="span"> 
+Types and    
+Type Checking
+</td>
+<td markdown="span">
+[Intro to Types and Type Checking](code-quality/Type-Checking.pdf) (slides)    
+[Type Hints][type-hints] in Python
+</td>
+<td markdown="span">
+Add type hints to detect errors: [scorecard.py][scorecard.py]      
+Do the exercises in Mai's [Type Hints][type-hints] write-up     
+Study these types: [Typing][python-typing], 
+[Collections base classes][python-abc-collections] show what methods each type provides
+</td>
+</tr>
+<!-- Web Apps -->
 <tr valign="top">
 <td align="center" markdown="span"> 
 Web Apps
@@ -407,3 +424,7 @@ with some info saved to a database.  May have a separate problem on other topics
 [isp-qa]: https://isp2018.github.io/isp-qa/
 [demo-ci]: https://github.com/jbrucker/demo-ci
 [demo-ci-python]: https://github.com/jbrucker/demo-pyci
+[scorecard.py]: assignments/scorecard.py
+[type-hints]: https://github.com/ISP19/problems/blob/master/type-hints/README.md
+[python-abc-collections]: https://docs.python.org/3/library/collections.abc.html
+[python-typing]: https://docs.python.org/3/library/typing.html
