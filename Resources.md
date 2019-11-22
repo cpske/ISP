@@ -1,3 +1,9 @@
+---
+layout: page
+title: Resources
+description: useful references
+---
+
 ## Resources
 
 ### Online Courses
