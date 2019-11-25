@@ -3,7 +3,7 @@
 Selenium is a tool for *browser automation*.  You can programmatically
 control what the browser does.
 
-Its most often used for testing, but can be used for other applications.
+It is often used for testing, but can also be used for other applications.
 
 ## Installation
 
@@ -66,12 +66,12 @@ The two most important classes are `WebDriver` and `WebElement`:
 * [selenium.webdriver.remote.webdriver.WebDriver][selenium.webdriver.remote.webdriver.WebDriver]
    - this is the class that the browser implements
    - provides `get(url)`, `back()`, `find_element_by_*(value)`, `quit()`, `save_screenshot()`, and more
+
 * [selenium.webdriver.remote.webelement.WebElement][selenium.webdriver.remote.webelement.WebElement]
    - represents an element on a web page
    - this is how you interact with a web page 
    - WebElement is returned when you invoke `find_element_by_*(value)` or (in list) `find_elements_by_*(value)`
 
-The 
 
 ## Running Firefox in Headless Mode
 

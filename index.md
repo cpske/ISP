@@ -315,14 +315,15 @@ More Testing
 </td>
 <td markdown="span">
 [Intro to Testing](testing/Intro-Testing.pdf) more than just unit tests     
-[Testing Pyramid](testing/WebTesting.pdf)    
+[Web App E2E Testing with Selenium](testing/WebTesting.pdf)    
 Testing Behavior - don't only test code (TBA)   
 [Code Coverage](testing/code-coverage)    
 </td>
 <td markdown="span">
+[Intro to Selenium](testing/Selenium-intro)    
 1. Refactor your Django tests into separate files, based on what is being tested.    
 2. Perform code coverage on your Django tutorial code and your project code.    
-3. Selenium: [Find Bad Links](assignment/week13-selenium). 
+3. Selenium: [Find Bad Links](assignment/selenium). 
 </td>
 </tr>
 <!-- Refactoring -->
