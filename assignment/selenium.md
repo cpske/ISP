@@ -107,3 +107,14 @@ tests to use.  You a `setUp` method or `setUpClass` (done only once).
 Write tests to do this.  You may want to modify your templates to make page elements easier to find.
 
 For example, in your `index.html` template, add an `id` or `class` attribute to your elements for polls questions.
+
+## More Info
+
+[My Intro to Selenium](../testing/Selenium-intro)
+
+[My Intro to Page Scraping](../testing/Selenium-scraping)
+
+[Selenium API Docs](https://selenium.dev/selenium/docs/api/py/), best for API reference
+
+[ReadTheDocs for Selenium](https://selenium-python.readthedocs.io/api.html) unofficial docs, has API and also info about installing and using Selenium.
+

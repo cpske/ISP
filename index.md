@@ -4,8 +4,6 @@ title: ISP Topics
 description: Index page
 ---
 
-## Individual Software Process
-
 [About the Course](Topics), 
 [Google Classroom](https://classroom.google.com/) for assignments (code: minx6nj), [Resources](Resources).
 
@@ -56,7 +54,7 @@ Intro to [Agile Principles and Practices](agile/agile-principles-practices).
 </td>
 <td markdown="span">
 Read [Agile 101](https://www.agilealliance.org/agile101/) at Agile Alliance.    
-Video [Agile Product Ownership](https://blog.crisp.se/2012/10/25/henrikkniberg/agile-product-ownership-in-a-nutshell)    
+Video [Agile Product Ownership](https://www.youtube.com/watch?v=502ILHjX9EE)    
 Think critically.  Do you agree with the principles?     
 Optional: [Agile at Microsoft](https://www.youtube.com/watch?v=-LvCJpnNljU) how Visual Studio Team Services moved to agile.
 </td>
@@ -248,7 +246,6 @@ Project Proposal
 <td markdown="span">
 See assignments and links on Google Classroom.    
 Provide a link to your project repo on [Google Project Sheet](http://bit.ly/isp2019projects).    
-Create a project README.md containing [this information](assignment/week10).
 </td>
 </tr>
 <!-- Submodules and Testing -->
@@ -411,7 +408,7 @@ Coding: 13:00-16:00 PM
 <td markdown="span">
 Programming exam will be to write a simple web application,
 with some info saved to a database.  May have a separate problem on other topics we covered.    
-[Additonal details](review/web-dev-exam.html).
+[Additional details](review/web-dev-exam).
 </td>
 </tr>
 </table>
@@ -420,12 +417,12 @@ with some info saved to a database.  May have a separate problem on other topics
 
 [Github Repository](https://github.com/cpske/ISP.git)
 
-[git-branching]: https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell "Git Branching in ProGit book"
-[git-book-branching-and-merging]: https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging "Basic Branching and Merging"
+[git-branching]: https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell
+[git-book-branching-and-merging]: https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging
 [isp-qa]: https://isp2018.github.io/isp-qa/
 [demo-ci]: https://github.com/jbrucker/demo-ci
 [demo-ci-python]: https://github.com/jbrucker/demo-pyci
-[scorecard.py]: assignments/scorecard.py
+[scorecard.py]: assignment/scorecard.py
 [type-hints]: https://github.com/ISP19/problems/blob/master/type-hints/README.md
 [python-abc-collections]: https://docs.python.org/3/library/collections.abc.html
 [python-typing]: https://docs.python.org/3/library/typing.html
