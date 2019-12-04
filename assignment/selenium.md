@@ -110,9 +110,9 @@ For example, in your `index.html` template, add an `id` or `class` attribute to 
 
 ## More Info
 
-[My Intro to Selenium](../testing/Selenium-intro)
+[My Intro to Selenium](/ISP/testing/Selenium-intro)
 
-[My Intro to Page Scraping](../testing/Selenium-scraping)
+[My Intro to Page Scraping](/ISP/testing/Selenium-scraping)
 
 [Selenium API Docs](https://selenium.dev/selenium/docs/api/py/), best for API reference
 
