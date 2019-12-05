@@ -48,6 +48,7 @@ Record the procedure (script) and checklist with your project documentation and 
 Grading:
 
 1. Use of good English.
-2. Clarity and preciseness.
-3. Consistency.
+2. Clarity and consistency.
+3. Applies to your project. Shows some thought, not copied from examples.
 4. Uniqueness of items - two items don't state same thing.
+5. Make use of automation tools. If something can be checked using a tool then do that instead of doing it via manual review.

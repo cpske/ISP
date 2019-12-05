@@ -133,10 +133,12 @@ Type Checking
 [Type Hints][type-hints] in Python
 </td>
 <td markdown="span">
+Read Mai's [Type Hints][type-hints] write-up     
+and these Python docs: [Typing][python-typing], 
+[Collections base classes][python-abc-collections] (shows what methods each type provides)
 Add type hints to detect errors: [scorecard.py][scorecard.py]      
-Do the exercises in Mai's [Type Hints][type-hints] write-up     
-Study these types: [Typing][python-typing], 
-[Collections base classes][python-abc-collections] show what methods each type provides
+Do the exercises in Mai's [Type Hints][type-hints] write-up    
+[Type Hint Practice](code-quality/type-hint-practice.pdf) exercise     
 </td>
 </tr>
 <!-- Web Apps -->
