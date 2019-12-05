@@ -396,23 +396,6 @@ Projects should be done, tested, reviewed, and deployed to cloud.
 Presentation: describe your dev process and technology used.  Not a project demo -- the class will use your cloud deployment and give feedback.
 </td>
 </tr>
-<!-- Final -->
-<!-- Lab Exam -->
-<tr valign="top">
-<td align="center" markdown="span"> 
-XX Dec
-</td>
-<td markdown="span">
-Written: 9:00-12:00 AM    
-Coding: 13:00-16:00 PM    
-*Dress Like a Programmer*
-</td>
-<td markdown="span">
-Programming exam will be to write a simple web application,
-with some info saved to a database.  May have a separate problem on other topics we covered.    
-[Additional details](review/web-dev-exam).
-</td>
-</tr>
 </table>
 
 ---

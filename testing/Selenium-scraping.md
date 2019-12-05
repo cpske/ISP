@@ -1,18 +1,27 @@
-## Navigate to a Web Page
+"Page scraping" means to extract content from web pages.
+Its often used when the information you want is only available
+on web pages.
 
+These notes are the typical steps in doing page scraping
+with Selenium, but not a single example.
+
+### Navigate to a Web Page
+
+```python
 driver.get("https://www.google.com")
+```
 
-## Find an element on the page
+### Find an element on the page
 
 Suppose we want to find:
-```
+```html
 <input type="text" id="input_username" name="username" 
        placeholder="Type your name" />
 ```
 
 We can use:
 
-```
+```python
 # find type id
 element = driver.find_element_by_id("input_username")
 # or find it by name
@@ -70,7 +79,7 @@ text - element.text
 ## Don't Load Images (Make the Webdriver More Efficient)
 
 For Firefox, use:
-```
+```python
 from selenium import webdriver
 
 profile = webdriver.FirefoxProfile()
