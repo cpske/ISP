@@ -1,5 +1,6 @@
 # Files to not commit to git
 bin/
+code/
 isp-qa/
 misc/
 old/

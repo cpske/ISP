@@ -1,10 +1,32 @@
-# Introduction to ISP 2019
+# Introduction to ISP 2020
 
 ## Class Time and Room
 
-Monday 10:00-12:00 and 13:00-16:00 in Room E204
+Monday 10:00-12:00 and 13:00-16:00.
 
-## Online Content
+* Occasional Live Class in E204.
+* Weekly Online Meeting 10:00-12:00 via Google Meet and Microsoft Teams
+* Weekly Lab and Assignment 13:00-16:00
+* Weekly assigned reading and problems. You must do the reading.
+* All material will be online
+
+## Online Course Require More Discipline & Commitment
+
+Many students don't benefit from online courses because they
+fall behind or drop out.  Online learning requires you to plan
+your time, make a commitment to the course, and have discipline.
+
+**Commit**: plan to spend about 10-12 hours per week on ISP
+
+**Plan**: about 4-5 hours on Monday, another 6-8 hours at other times.
+    1. read assigned material
+    2. do exercises
+    3. write and review code
+    4. learn new tools and online services
+
+**Project**: during project you will need more than 6 hours/week.
+
+## Content
 
 ISP will use:
 
@@ -37,8 +59,6 @@ Please do the following as soon as possible (and remind other students).
 ## Dress Code
 
 *Dress Like a Programmer* -- where whatever is comfortable. T-shirts are OK.
-
-You don't need to wear the university uniform (I wouldn't :-).
 
 
 ## Preview of Course

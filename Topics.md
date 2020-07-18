@@ -1,18 +1,35 @@
-## Sequence of Topics
+## Schedule
 
-### Introduction
- - intro to course content and grading
- - intro to software process and SDLC
- - join Github Organization and Google Classroom. Edit your profile on both.
- - using Github classroom for coding assignments
+01219245 ISP Mon 10-12, 13-16 room E204
 
-### Developer Skills
- - review of OOP fundamentals in Python (assessment exercise)
- - coding convention
- - unit testing
- - using UML
+First day of class 10 Aug 2020
 
-### Git
+## [Introduction to Course](introduction/index)
+
+Introduction to the course, required work and grading, and how to access material.  You should join the Github organization and Google Classroom for this course immediately, update your profile and photo (as needed), and verify you have the required software on your computer.
+
+Why do we have a team project in a course on "*Individual* Software Process"?
+
+The focus of the course is on (a) ability to write good code, (b) the skills a developer needs to work on a team, (c) ability to apply iterative development process to a real project.  "Good code" means consistently using a coding convention, documenting code, writing code that is readable and testable, reviewing and updating code when needed.
+
+## [Software Processes](software-process)
+
+An introduction to software process concepts, goals, and practices. The Waterfall process as a simple linear (and still widely used) process, the Unified Software Develop Process (UP) as a good model for iterative and incremental processes, and Scrum for small team projects.
+
+Agile principles and practices are a separate topic, but they apply to all processes.
+
+*Process* is one of the key dimensions of a software project that determines speed and outcome.  The other dimension are budget, time (effort), features (scope), 
+
+## [Git](git) for Version Control
+
+Version Control (aka VCS) is an essential part of every development project. Git is by far the most widely used VCS, so you should master it.
+
+The basics of using a git repository to commit work, update work, and compare or recover previous versions, and how to work with remote repositories.
+
+Git *branches* are used to manage work on features or fixes, and *tags* are used to mark specific points in a repository, such as a release.
+
+
+
  - git basic concepts (git commit graph, staging area, working copy, HEAD...)
  - common use scenarios
       - view history of commits
@@ -27,10 +44,17 @@
  - using remotes. push, fetch, pull
 
 ### Git and Development
- - Github Flow
- - using issues
- - write good commit messages, sometimes referencing issues using links
 
+Using Github Flow, issues,
+write good commit messages, 
+pull request reviews, and referencing code in issues.
+
+
+### Developer Skills
+ - review of OOP fundamentals in Python (assessment exercise)
+ - coding convention
+ - unit testing
+ - using UML
 
 -------------------------------------------------------------------------
 # Topics (not in order)
@@ -119,6 +143,7 @@ A good process helps to:
    - [Refactoring Guru](https://refactoring.guru/refactoring)
 
 ## Writing
+
    - How to write a project proposal
    - Writing goals, objectives, and milestones
 
@@ -441,3 +466,22 @@ This allows for keeping the master branch stable, which is important later for w
 - Automated testing skills — how to write good tests. Tests should make software easier to change safely, not harder. Bad tests prevents the code from being refactored.
 
 
+
+
+## Software Development Processes
+
+https://www.freestudy.com/best-free-online-software-engineering-courses/
+
+
+
+Useful online courses:
+
+These 2 are part of the "Software Development Lifecycle" specialization, offered by University of Minnesota.
+
+*Software Development Processes and Methodologies* on coursera.org (free).
+
+*Engineering Practices for Building Quality Software* on coursera.org (free).
+
+Useful book:
+
+*Head First Agile* - very memorable explanation and examples of Agile practices and values.  But long.

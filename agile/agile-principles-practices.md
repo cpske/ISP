@@ -65,3 +65,31 @@ How does this apply to my software process?
 * Continuous Integration - automate building and testing of your product, so it is tested each time you commit to Github.
     * Travis-CI, Circle CI, and Jenkins are tools for this
     * We will do this for your Django web app project
+
+## Story Map versus Task Board
+
+A Task Board shows tasks for the current iteration and their status.
+
+You can also have a Task Board for current release (release backlog).
+
+A Story Map shows relationship between stories.
+* stories that are "core" or "foundation" of the product.
+* stories that build on other stories.
+* stories ordered by release
+
+
+## Burn down and Burn up charts
+
+In a Burn up chart, there is a top line for the total number of points (scope) of the iteration.  The line may change as: (a) work is added or removed (unplanned tasks), (b) tasks are re-estimated.
+
+## Retrospectives
+
+Purpose of retrospective is to improve the team's development process.
+
+1. Set the stage - ensure everyone understands the goal and focus of retrospective. Give people a chance to talk at start of meeting; so they'll be more open later one.
+
+2. Gather data - look at events of last sprint. Walk through work done and decisions made.  Get team to express view/feeling of the events.
+
+3. Generate insights. Zero in on problematic events. Identify causes and try to trace them to "root" causes.
+
+4. Decide what to do.  What improvements or changes to make in the next sprint?

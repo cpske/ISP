@@ -19,11 +19,11 @@ description: Index page
 <!-- Introduction -->
 <tr valign="top">
 <td align="center" markdown="span"> 
-[Introduction](intro/)
+[Introduction](introduction/)
 </td>
 <td markdown="span">
-[Intro to Course and Software Process](intro/index)    
-[Advice from SKE Graduate & Entrepenuer](intro/Jomzap-Recommendations.pdf)
+[Intro to Course and Software Process](introduction/index)    
+[Advice from SKE Graduate & Entrepenuer](introduction/Jomzap-Recommendations.pdf)
 </td>
 <td markdown="span">
 Join [Google Classroom](https://classroom.google.com). Use your KU Login and code **minx6nj**.    
@@ -41,7 +41,8 @@ Iterative Development
 Iterative Software Development was discussed in week 1 in the topic "Intro to Software Process".  Most software processes use iterative development, including the Unifed Process (UP) framework and all Agile processes.
 </td>
 <td markdown="span">
-Nothing to do.
+Support for SDLC on Github:
+[Github Features](https://github.com/features). Its not complete, though.
 </td>
 </tr>
 <!-- Agile -->
@@ -70,7 +71,8 @@ A popular technique for iterative development.  The video at right is best place
 <td markdown="span">
 Watch [Scrum in Under 10 Minutes](https://youtu.be/XU0llRltyFM) https://youtu.be/XU0llRltyFM    
 Then answer these [Questions about Scrum](https://forms.gle/wUCG2FCg3uS31bjz6).    
-In class: [Scrum Questions and Answers](agile/Scrum-Questions-and-Answers.pdf).
+In class: [Scrum Questions and Answers](agile/Scrum-Questions-and-Answers.pdf).    
+[Scrum Guide](https://www.scrum.org) by inventors of Scrum contains up-to-date ideas for how to apply Scrum in your team.
 </td>
 </tr>
 <!-- Unit Testing -->
@@ -122,6 +124,7 @@ Using [Github Flow](git/index#github-flow).
 A real [pull request in jQuery repo](https://github.com/jquery/jquery/pull/1051)     
 </td>
 </tr>
+
 <!-- Types and Type Checking -->
 <tr valign="top">
 <td align="center" markdown="span"> 
@@ -399,6 +402,23 @@ Presentation: describe your dev process and technology used.  Not a project demo
 </table>
 
 ---
+
+### Software Engineering and Skills that Startups Need
+
+In an [IEEE Spectrum article](https://spectrum.ieee.org/the-institute/ieee-member-news/software-engineering-grads-lack-the-skills-startups-need), software engineer Nitish Devadiga claims that software engineering programs emphasize traditional skills like software processes, analysis, and project management, while startups need graduates who can build scalable systems for distributed, data-intensive apps using cloud computing.  His view is biased since he is principle engineer at a startup specializing in data analytics.
+
+At startups, engineers must participate in a broad variety of work including market research, new product ideas, designing system architecture, and cost-effective development.
+
+Iterative development and rapid time to market are important to a startup's survival.  Startups also depend on cloud resources such as AWS and Google Cloud.
+
+"*When you join a startup, there's a lot of emphasis on design of the applicatoin, reusability and clean code, and the ability ot conduct and undergo code reviews, as well as the ability to think of and build systems that can scale...*", Devadiga says.
+
+Because of the emphasis on use of cloud computing, Davadiga says students "*need a practical understanding of infrastructure architecture design patterns, DevOps, and cloud platform services like compute instances, object storage, and queueing services.*" Ability to create apps that run on Amazon Elastic Comput Cloud is important.
+
+IEEE describes some [free online resources](https://spectrum.ieee.org/the-institute/ieee-member-news/educational-resources-that-get-students-up-to-speed-on-advanced-manufacturing-and-programming-languages) students can use to supplement their education.
+
+---
+
 
 [Github Repository](https://github.com/cpske/ISP.git)
 
