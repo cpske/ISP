@@ -1,14 +1,24 @@
 ---
 layout: page
-title: Introduction to Course and Software Process
+title: Introduction to Course
 description: Index page
 ---
 
-## Introduction
+## Focus of this Course
 
-* Introduction to Course [PDF](Introduction-to-Course.pdf) [PPT](Introduction-to-Course.ppt)
+* Focus on the basic knowledge, skills, and habits that every developer should know.
+* Learn how software companies in Thailand develop software, and what their managers find important.
+* 3 project dimensions of "Build the Right Product", "Build the Product Right", "Build it Fast".  This course focuses on skills and habits to help you "Build it Right".
+* Learn to develop *faster* by automating a lot of repetitive work, and following a process instead of re-inventing one for each project (*ad hoc* process).
 
-* Introduction to Software Process [PDF](Introduction-software-process.pdf) [PPT](Introduction-software-process.ppt)
+Introduction to Course [PDF](Introduction-to-Course.pdf), [PPT](Introduction-to-Course.ppt)
 
-* Jomzap's Recommendations to Developers [PDF](Jomzap-Recommendations.pdf) [ODP](Jomzap-Recommendations.odp)
+## Skills Every Developer Should Have
+
+A brilliant entrepeneur and SKE 2 graduate named Jomzaap, founder of Exzy Corp,
+gave a presentation where he offered
+8 Recommendations to Developers [PDF](Jomzap-Recommendations.pdf) or [ODP](Jomzap-Recommendations.odp).
+
+
+
 

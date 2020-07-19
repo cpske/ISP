@@ -12,6 +12,10 @@ description: Index page
 * *Practices Of An Agile Developer*, slides from the book: [PDF](PracticesOfAnAgileDeveloper-slides.pdf)
     - we will use parts of this book in this course
 
+## Video
+
+* [Agile at Microsoft](https://www.youtube.com/watch?v=-LvCJpnNljU) about the Visual Studio Team Services transition to agile. Interesting, but some fuzzy use of buzzwords like "team owns X", "team is empowered to ...". 41 minutes.
+
 ## Scrum
 
 Scrum is a popular technique for managing iterations. It can be used with many iterative processes.

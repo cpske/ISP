@@ -1,3 +1,63 @@
+---
+layout: page
+title: Git and Github
+description: Index page
+---
+
+Software Version Control means managing the versions and history of software work products.
+
+Important functions a version control system (VCS) provide are:
+* authentication of users
+* access control - only authorized users can view or change files
+* history of all changes to files, with attribution (who changed it) and reason (commit message)
+* ability to "check out" or "check in" a bunch of files at once and maintain them as a single version (a *commit* in git)
+* maintain integrity of work -- avoid corruption of files or loss of work. VCS does not allow work to be checked in or "committed" if it not based on the most current version of what's in the VCS.
+* manage multiple variations of the same work products, so that teams can work on different versions of the software or its features without affecting others
+
+Git is the dominant VCS in the world today, so we will focus on how to use Git.
+
+## Git Basics
+
+* Basics you should already know:
+  - 2 ways to create a local git repo with a remote.
+  - Concepts: local repo, remote, working copy, staging area ("index"), commit, HEAD.
+  - How to check status of a local repo.
+  - How to add files to repo or update them.
+  - How to rename, move, or delete files from a local repo.
+  - Synchronize local repo with a remote repo.
+  
+* Review, if necessary:
+  - Git covered in Programming 2: [Intro to Git](https://skeoop.github.io/git/intro-git) and [Github](https://skeoop.github.io/git/intro-github), [dumb slides](https://skeoop.github.io/git/)
+  - [Git Basics](https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository) from the excellent [ProGit Book](https://git-scm.com/book/en/v2). Free PDF and ePub of *ProGit* also on [git-scm.com](https://git-scm.com/book/en/v2).
+* Using Git
+    - understand git as a graph of commits. This really helps.
+    - use `git diff` (many forms) to see differences between last commit, stagin
+    - undo a change in file in working copy
+    - revise a commit, such as adding something you forget (w/o creating a new commit)
+    - "undo" a commit by rolling back HEAD to previous commit
+* How to view the history of a repository, and see what changed.
+  - `git log`, `git log2`, `git history`, `gitk`, other visual tools
+  - What is the meaning of commit ids? (`734a00b`)?  
+  - Why not use `1`, `2`, `,3` for commit numbers (like Subversion)?
+  - Git in Eclipse
+* How to create and use branches. When to delete a branch?
+  - Read Branch and Merge from ProGit: 
+  - How `git push` handles branches depends on your configuration:
+  ```
+  git config --global push.default simple
+  ```
+  This is the default behavior in Git 2.0.  There are several choice with these meaning:
+     * `simple` - push the current branch to upstream, but only if the upstream branch name is exactly the same
+    * `upstream` - push the current branch to its upstream branch.
+    * `tracking` - old, deprecated alias for `upstream`
+    * `matching` - push all matching branches (branches on local that also exist on the remote)
+* Use of tags
+* Merging
+* How to examine and fix conflicts
+* Tracking work on Github
+* Forking
+* Github flow
+
 ## Learning Git
 
 * Git Basics [class notes](git-basics) guidelines given in class, including .gitignore [PDF](Git-Basics.pdf), [PPT]([Git-Basics.ppt)
@@ -32,6 +92,10 @@ A git "workflow" for solo or team projects.  We will use this:
 [Github Branching Convention](https://gist.github.com/digitaljhelms/4287848) has nice graph of using branches as in Github flow.
 * [Commenting on Pull Requests](https://help.github.com/en/articles/commenting-on-a-pull-request) - examples of providing feedback to a Pull Request.
 * Slides on Pull Requests [PDF](Pull-Requests.pdf) [PPT](Pull-Requests.ppt)
+
+
+
+
 
 ### Specific Git Uses
 

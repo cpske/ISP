@@ -20,6 +20,7 @@ Agile principles and practices are a separate topic, but they apply to all proce
 
 *Process* is one of the key dimensions of a software project that determines speed and outcome.  The other dimension are budget, time (effort), features (scope), 
 
+
 ## [Git](git) for Version Control
 
 Version Control (aka VCS) is an essential part of every development project. Git is by far the most widely used VCS, so you should master it.
@@ -27,8 +28,6 @@ Version Control (aka VCS) is an essential part of every development project. Git
 The basics of using a git repository to commit work, update work, and compare or recover previous versions, and how to work with remote repositories.
 
 Git *branches* are used to manage work on features or fixes, and *tags* are used to mark specific points in a repository, such as a release.
-
-
 
  - git basic concepts (git commit graph, staging area, working copy, HEAD...)
  - common use scenarios
@@ -49,6 +48,22 @@ Using Github Flow, issues,
 write good commit messages, 
 pull request reviews, and referencing code in issues.
 
+## [Agile Principles and Practices](agile/index)
+
+Agile describes a set of values, principles, and practices for software development,
+that emphasize frequent delivery of running software, customer collaboration, 
+and self-managing teams.  The values and principles can be incorporated into any
+development process.
+
+* "Agile" is *not* a software process -- Agile describes values, goals, and practices incorporated into many software processes 
+* Created as reaction to perceived inefficiency of existing processes.
+* Scrum and XP are development-focused processes based on Agile values.
+* "Planned Based" or "Plan Driven" compared to Agile.
+  - Unified Process (UP) is main example.
+  - Plan-based vs Agile process is a continuum of choices, not either-or.
+
+
+## Scrum
 
 ### Developer Skills
  - review of OOP fundamentals in Python (assessment exercise)
@@ -59,33 +74,7 @@ pull request reviews, and referencing code in issues.
 -------------------------------------------------------------------------
 # Topics (not in order)
 
-## Introduction: Focus of this Course
 
-* Focus on the basic knowledge, skills, and habits that every developer should know.
-* Learn how software companies in Thailand develop software, and what their managers find important.
-* Jittat's slide: 3 dimensions of "Build the Right Product", "Build the Product Right", "Build it Fast".  This course focuses on skills and habits to help you "Build it Right".
-  - A side-effect (maybe) is you can build *faster* and be more adaptive to change (so you build the right product).
-
-Knowledge and Skills:
-    * Jomzaap's slides
-
-## Habits and Practices of a Professional Developer
-
-* Get help from working pros.
-* Book we sometimes use: *Practices of an Agile Developer*
-* Others worth reading: *Clean Code*, *Code Complete 2*, *The Pragmatic Programmer*
-
-## Introduction to Software Process
-
-* What is a software process, and what are its components?
-* All devs have a software process, whether they realize it (explicit) or not (implicit).
-* The problems of software development that drive the need for a good software process:
-  - complexity
-  - change
-  - (high) defects and errors
-  - lack of predictability or consistency
-  - (un)maintainability
-* Along with software process you need to know the software development lifecycle, since the process is influenced by the SDLC (process says how to perform it) and influences the SDLC.
 
 ## Key Dimensions in a Software Project
 
@@ -136,11 +125,21 @@ A good process helps to:
 
 ## Refactoring
 
-* I covered this in a 2015 course and its on the final exam,
+Refactoring refers to modifying the design of existing code to improve it.
+
+But what does "improve" mean?  There are many guides to spot situations
+where refactoring may be a good idea.
+* guide lines for when to refactor
+* common refactorings, with names
+* refactoring Python and Java using an IDE. Eclipse, IntelliJ (aka PyCharm), and Netbeans provide good refactoring tools, VS Code can perform mediocre refactoring.
+
+* I covered this in a 2015 course and it is on the final exam,
   referring to specific refactoring cases from Martin Fowler's book.
   Each one has a name, a motivation, and how to apply.
    - [Refactoring Techniques](https://refactoring.guru/refactoring/techniques) lots of them
    - [Refactoring Guru](https://refactoring.guru/refactoring)
+
+[JeremyBytes](http://www.jeremybytes.com/Demos.aspx) has material on refactoring as part of "Clean Code".
 
 ## Writing
 
@@ -169,62 +168,12 @@ A good process helps to:
    - Prototype to reduce risk or uncertainly about suitability
 
 
-## Later: Overview of Common Software Processes
 
-* Waterfall: the most misrepresented process.
-* "Agile" is *not* a software process. 
-  - Agile describes values, goals, and some practices incorporated into many software processes (see slide).
-  - Created as reaction to perceived inefficiency of existing processes.
-* Practices of Scrum, XP, and maybe Crystal as examples of Agile.
-* "Planned Based" or "Plan Driven" compared to Agile.
-  - Unified Process (UP) is main example.
-  - Plan-based vs Agile process is a continuum of choices, not either-or.
-
-Videos:
-* [Agile at Microsoft](https://www.youtube.com/watch?v=-LvCJpnNljU) about the Visual Studio Team Services transition to agile. Interesting, but some fuzzy use of buzzwords like "team owns X", "team is empowered to ...". 41 minutes.
  
 
 ## Useful Skills and Habits for Software Developer
 
-### Git and Github - beyond the basics. 
 
-* Basics you should already know:
-  - 2 ways to create a local git repo with a remote.
-  - Concepts: local repo, remote, working copy, staging area ("index"), commit, HEAD.
-  - How to check status of local repo.
-  - How to add files to repo or update them.
-  - Synchronize local repo with a remote repo.
-* Review, if necessary:
-  - Git covered in Programming 2: [Intro to Git](https://skeoop.github.io/git/intro-git) and [Github](https://skeoop.github.io/git/intro-github), [dumb slides](https://skeoop.github.io/git/)
-  - [Git Basics](https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository) from the excellent [ProGit Book](https://git-scm.com/book/en/v2). Free PDF and ePub of *ProGit* also on [git-scm.com](https://git-scm.com/book/en/v2).
-* Using Git
-    - understand git as a graph of commits. This really helps.
-    - use `git diff` (many forms) to see differences between last commit, stagin
-    - undo a change in file in working copy
-    - revise a commit, such as adding something you forget (w/o creating a new commit)
-    - "undo" a commit by rolling back HEAD to previous commit
-* How to view the history of a repository, and see what changed.
-  - `git log`, `git log2`, `git history`, `gitk`, other visual tools
-  - What is the meaning of commit ids? (`734a00b`)?  
-  - Why not use `1`, `2`, `,3` for commit numbers (like Subversion)?
-  - Git in Eclipse
-* How to create and use branches. When to delete a branch?
-  - Read Branch and Merge from ProGit: 
-  - How `git push` handles branches depends on your configuration:
-  ```
-  git config --global push.default simple
-  ```
-  This is the default behavior in Git 2.0.  There are several choice with these meaning:
-     * `simple` - push the current branch to upstream, but only if the upstream branch name is exactly the same
-    * `upstream` - push the current branch to its upstream branch.
-    * `tracking` - old, deprecated alias for `upstream`
-    * `matching` - push all matching branches (branches on local that also exist on the remote)
-* Use of tags
-* Merging
-* How to examine and fix conflicts
-* Tracking work on Github
-* Forking
-* Github flow
 
 ### Testing
 
@@ -293,15 +242,23 @@ Videos:
 
 ### Project Documentation
 
-* What to document
-    - installation instructions
-    - project requirements
-    - user guide
-    - software design and rationale, for other developers.  Record important design decisions and *why* you made them.
-* For projects, using Github wiki, Github pages, or readthedocs.io (can link to Github).
-* Everyone should know how to use Markdown
+What to document?
 
-### 7. Measuring Progress and Quality
+- installation instructions
+- requirements and features
+- software design
+- rationale for decisions and design. Record important design decisions and *why* you made them.  This helps other developers, including you in the future.
+- user guide
+
+Good places for documentation
+* Github pages or readthedocs.io for user and programmer documentation
+* Github wiki for design notes and rationale
+
+A Github pages (github.io) site can be generated from your main project repository, using (a) a docs directory, (b) a specific branch (usually `gh_pages`), or use a separate repo.
+
+Everyone should know how to use Markdown. Its much more readable than HTML, so you'll make fewer errors.
+
+### Measuring Progress and Quality
 
 * How to measure your output?
 * Common software metrics, like LOC, functions, code "units".
@@ -309,24 +266,30 @@ Videos:
 
 ### Planning and Tracking
 
-* [Waffle](https://waffle.io) or [Trello](https://trello.com) for tasks. Wallfe integrates with Github issues.  
-* Github "Project Boards" has similar features. But cards are limited to Github issues, pull requests, and notes.  May not always match project "tasks".
+Your project needs *at least*:
 
-### 8. Estimation
+* vision statement, describing goal and "vision" of the project
+* project plan - what to build and plan for what to build in each iteration
+* task board for each iteration, containing tasks for that iteration and their status
+* issue tracker for bugs, change requests, and more
+* (desirable) burn-down or burn-up chart.  "Burn up" is similar to an "earned value" chart.
 
-* How to estimate: dev time, code size.
+Task Boards that can also be used for iteration plans:
+* Github "Project Boards" has similar features. Cards are limited to Github issues, pull requests, and notes.  These may not always match project "tasks".
+* [Trello](https://trello.com)
+* [Asana](https://asana.com) 
+
+
+## Estimation
+
+* How to estimate: development time and code size.
 * Jittat's Slides: [intro]( ), Jittat
 
 * [Agile Estimation](http://www.construx.com/Resources/Presentation/Agile_Estimation__Key_Principlies_and_Practices_for_Successful_Agile_Practices/) talk by Construx (Steve McConnell's company)
 
 
-### 9. Refactoring (?)
 
-Important topic, but not sure if I'll include it in this course.
-
-[JeremyBytes](http://www.jeremybytes.com/Demos.aspx) has material on refactoring as part of "Clean Code".
-
-### 10. Assertions and Design by Contract (?)
+## Assertions and Design by Contract (?)
 
 * Reduce defects, spot defects sooner.
 * In Java you can leave assertions in the final code.  They can be enabled or disabled using the run-time `-ea` flag.  You can even selectively enable assertions for some classes but not others!  
