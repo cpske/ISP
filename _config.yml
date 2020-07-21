@@ -1,8 +1,16 @@
 # theme: minima
 title: Individual Software Process
-description: Course material for Individual Software Process course
+description: Course material for Individual Software Process
 url: "https://cpske.github.io/ISP/"
 exclude: [bin, code, quiz, solution, misc, Gemfile, Gemfile.lock, Jittat, Paruj, TA]
 # Use Git's markdown syntax
 markdown: kramdown
 permalink: pretty
+# Default layout for pages, so you don't need to set "layout: page" in each
+defaults:
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"

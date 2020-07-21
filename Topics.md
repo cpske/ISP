@@ -6,11 +6,9 @@ First day of class 10 Aug 2020
 
 ## [Introduction to Course](introduction/index)
 
-Introduction to the course, required work and grading, and how to access material.  You should join the Github organization and Google Classroom for this course immediately, update your profile and photo (as needed), and verify you have the required software on your computer.
-
-Why do we have a team project in a course on "*Individual* Software Process"?
-
-The focus of the course is on (a) ability to write good code, (b) the skills a developer needs to work on a team, (c) ability to apply iterative development process to a real project.  "Good code" means consistently using a coding convention, documenting code, writing code that is readable and testable, reviewing and updating code when needed.
+Introduction to the course, required work and grading, and how to access material.    
+Recommendations from SKE graduate entrepeneur &amp; tech innovator.    
+Why do a team project in a course on "*Individual* Software Process"?
 
 ## [Software Processes](software-process)
 
@@ -18,7 +16,6 @@ An introduction to software process concepts, goals, and practices. The Waterfal
 
 Agile principles and practices are a separate topic, but they apply to all processes.
 
-*Process* is one of the key dimensions of a software project that determines speed and outcome.  The other dimension are budget, time (effort), features (scope), 
 
 
 ## [Git](git) for Version Control
@@ -71,75 +68,22 @@ development process.
  - unit testing
  - using UML
 
--------------------------------------------------------------------------
-# Topics (not in order)
+
+--------------------------------------------------------------------
 
 
 
-## Key Dimensions in a Software Project
+## [Refactoring](refactoring/index)
 
-1. Budget and effort.
-2. Features (scope).
-3. Time.
-4. Quality.
-
-These may be given to you as requirements or things you have some control over -- that is, you can negotiate them with customer or management.
-
-You can "trade off" one dimension to meet requirements of another.  For example, to meet a time or budget constraint you either reduce features or reduce effort in design and testing (quality).
-
-Example:
-
-* Time
-    - constraint: For a game, the deadline might be Nov 1 for the Christmas shopping season.  For a NASA space mission, time is dictated by the entire project -- they can't wait for software to be ready.
-    - negiotiable: 
-
-## Fifth Dimension: Process
-
-* How can you reduce time or effort with reducing scope or quality?
-* Can you improve quality without increasing effort or time?
-
-One way is a change in technology: a different language or better development tools (IDE instead of a text editor).  But these usually don't have a big effect.
-
-Another factor is training and education.  But may not be timely enough to help on a current project.
-
-One factor that *may* have a big effect is **software process**.
-
-A good process helps to:
-
-   - structure development so you get the most done while maintaining quality
-       - use iterative development with short iterations and specific milestones
-       - have defined roles and responsibilities
-   - incorporate practices to make development more efficient or to produce good quality software
-       - make "pull requests", code review, and unit testing a part of the workflow
-       - "retrospective" meeting after each iteration to improve process
-       - use continuous integration (CI) to automatically build and test your software
-       - tracking of issues and defects
-   - make routine decisions automatic so you don't waste time deciding them
-       - a defined set of process steps, 
-       - defined workflow for version control (Github Flow)
-       - checklist of things to do for a code review
-   - provide data and guidance for improving the process
-       - keep a record of defects and their causes
-
-
-
-## Refactoring
-
-Refactoring refers to modifying the design of existing code to improve it.
+Refactoring refers to improving existing code without changing its external functionality.
 
 But what does "improve" mean?  There are many guides to spot situations
 where refactoring may be a good idea.
+
 * guide lines for when to refactor
 * common refactorings, with names
 * refactoring Python and Java using an IDE. Eclipse, IntelliJ (aka PyCharm), and Netbeans provide good refactoring tools, VS Code can perform mediocre refactoring.
 
-* I covered this in a 2015 course and it is on the final exam,
-  referring to specific refactoring cases from Martin Fowler's book.
-  Each one has a name, a motivation, and how to apply.
-   - [Refactoring Techniques](https://refactoring.guru/refactoring/techniques) lots of them
-   - [Refactoring Guru](https://refactoring.guru/refactoring)
-
-[JeremyBytes](http://www.jeremybytes.com/Demos.aspx) has material on refactoring as part of "Clean Code".
 
 ## Writing
 
@@ -167,15 +111,7 @@ where refactoring may be a good idea.
    - Larman and RUP: value to customer, high risk, importance to architecture
    - Prototype to reduce risk or uncertainly about suitability
 
-
-
- 
-
-## Useful Skills and Habits for Software Developer
-
-
-
-### Testing
+## Testing
 
 * Different kinds of testing:
   - unit testing
@@ -295,26 +231,22 @@ Task Boards that can also be used for iteration plans:
 * In Java you can leave assertions in the final code.  They can be enabled or disabled using the run-time `-ea` flag.  You can even selectively enable assertions for some classes but not others!  
   - If assertions are not enabled, the "assert" statements are skipped so there is no performance penalty.
 
-### 11. Tracking Your Own Performance
+### Tracking Your Own Performance
 
 * How do you know you are getting better?
 * You can't improve that which you can't measure.
 * Task Lists and Checklists.
 
-### 12. Self-improvement
+### Self-improvement
 
 * Importance of continual learning and reading
 * See _Pragmatic Programmer_ Item 5: Your Knowledge Portfolio (p. 37).
 * Goal-directed learning for new technology.  Instead of comprehensive learning or random videos.
   - "*Begin with the end in mind*" (Stephen Covey) 
 
-### 13. Communication
+### Communication
 
-### 14. Business Model  
 
-Helps to understand the components of a software business, and forces involved.
-
-* [Business Model Canvas Explained](https://www.youtube.com/watch?v=QoAOzMTLP5s) Youtube into to a tool for business modeling.
 
 ----
 
@@ -400,7 +332,7 @@ This is because I’ve read through docs of the utility library (_) proactively.
 *More generally, if you are working at the edge of your knowledge you will make more mistakes
 and be less productive because you didn't use some capabilities beyond the edge of your knowledge.*
 
-## Understanding/appreciation of design principles]
+## Understanding and appreciation of design principles
 
 I heard that students don’t get much from learning design patterns in OOP.
 It feels like they had to remember class diagrams for whatever reason.
@@ -408,7 +340,7 @@ I would focus more on getting students to feel the experience of a working but u
 Then when design principles and patterns come to the rescue, students may have a better appreciation of them.
 Refactoring katas may help.
 
-## Understanding/appreciation of project management tools
+## Understanding and appreciation of project management tools
 
 One engineer told me that when working in a group project,
 they don’t see why they have to use tools like Trello.
@@ -431,20 +363,4 @@ This allows for keeping the master branch stable, which is important later for w
 
 
 
-## Software Development Processes
 
-https://www.freestudy.com/best-free-online-software-engineering-courses/
-
-
-
-Useful online courses:
-
-These 2 are part of the "Software Development Lifecycle" specialization, offered by University of Minnesota.
-
-*Software Development Processes and Methodologies* on coursera.org (free).
-
-*Engineering Practices for Building Quality Software* on coursera.org (free).
-
-Useful book:
-
-*Head First Agile* - very memorable explanation and examples of Agile practices and values.  But long.

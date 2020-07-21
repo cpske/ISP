@@ -30,3 +30,10 @@ Scrum is a popular technique for managing iterations. It can be used with many i
 This book has a lot of practical info about doing Scrum:
 
 * *Scrum and XP from the Trenches* - free from InfoQ.  Maybe on se.cpe.
+
+* 
+
+
+## Agile Book
+
+*Head First Agile* - very memorable explanation and examples of Agile practices and values.  But long.

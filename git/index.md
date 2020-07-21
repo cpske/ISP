@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Git and Github
-description: Index page
 ---
 
 Software Version Control means managing the versions and history of software work products.
