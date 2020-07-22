@@ -36,17 +36,25 @@ SKE 2 graduate Jomzaap, entrepreneur, innovator, and founder of Exzy Corp,
 presented
 [8 Recommendations to Developers (PDF)](Jomzap-Recommendations.pdf) or [ODP](Jomzap-Recommendations.odp).
 
+[Advise from TaskWorld](TaskWorld-Advise)
+
 ### Why a Team Software Project?
 
 In this course you will design, implement, and deploy a web application
-using a team of approx. 4 people.  Since this is a course on *individual* process, why a *team* project?
+using a team of approx. 4 people.  You can choose the project topic (subject
+to approval by instructor) and use either Python or Java.
 
+Since this is a course on *individual* process, why a *team* project?
 Part of the challenge of creating software is working effectively
 as a team.  Many of the skills we study in this course are intended
 for teams (such as pull requests, retrospectives).
 
+Hence, we need a *team* project to practice both individual and project-related skills.
+A side benefit is learning the basics of HTTP and web application development.
+
 Previous students say that the project is the most valuable part
 of the course.
+
 
 ### Not a Powerpoint Course
 
