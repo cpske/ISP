@@ -6,7 +6,15 @@ description: Index page
 
 ## Agile
 
-"Agile" is a set of principles and a philosophy (or mind-set) about software development.  Agile is covered in your third year software process course, so we only discuss the basic principles here.
+"Agile" is a set of values, principles, and a philosophy (or mind-set) about software development.  Agile is covered in your third year software process course, so we only discuss the basic principles here.
+
+Agile is *not* a software process -- Agile values and practices are used in many software processes.
+
+* Agile created as reaction to perceived inefficiency of existing processes.
+* Scrum and XP are development-focused processes based on Agile values.
+* "Planned Based" or "Plan Driven" processes are considered non-agile, but its not really true.
+  - Unified Process (UP) is main example.
+  - Plan-based vs Agile process is a continuum of choices, not either-or.
 
 * [Agile Principles and Practices](agile-principles-practices)
 * *Practices Of An Agile Developer*, slides from the book: [PDF](PracticesOfAnAgileDeveloper-slides.pdf)
@@ -30,8 +38,7 @@ Scrum is a popular technique for managing iterations. It can be used with many i
 This book has a lot of practical info about doing Scrum:
 
 * *Scrum and XP from the Trenches* - free from InfoQ.  Maybe on se.cpe.
-
-* 
+* what else? 
 
 
 ## Agile Book

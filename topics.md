@@ -31,57 +31,76 @@ Why do a team project in a course on "*Individual* Software Process"?
 </td>
 <td align="left" markdown="span">
 An introduction to software process concepts, goals, and practices. The Waterfall process as a simple linear (and still widely used) process, the Unified Software Develop Process (UP) as a good model for iterative and incremental processes, and Scrum for small team projects.
+</td>
+</tr>
 
-Agile principles and practices are a separate topic, but they apply to all processes.
+<tr valign="top">
+<td align="left" markdown="span">
+[Agile Principles and Practices](agile)
+</td>
+<td align="left" markdown="span">
+Agile describes a set of values, principles, and practices for software development,
+that emphasize frequent delivery of running software, customer collaboration, 
+and self-managing teams.  The values and principles can be incorporated into any
+development process.
+</td>
+</tr>
+
+<tr valign="top">
+<td align="left" markdown="span">
+## Scrum
+[Scrum](agile/index#scrum)
+</td>
+<td align="left" markdown="span">
+Scrum is a set of Agile practices for iterative development. Scrum focuses on
+develop activities and can be incorporated in many software (or non-software) projects.
+</td>
+</tr>
+
+<tr valign="top">
+<td align="left" markdown="span">
+[Git](git) and Version Control
+</td>
+<td align="left" markdown="span">
+Basics of using a git to manage work products, compare or recover previous versions, and how to work with remote repositories.
+
+Git *branches* are used to manage work on features or fixes, and *tags* are used to mark specific points in a repository, such as a release.
+</td>
+</tr>
+
+<tr valign="top">
+<td align="left" markdown="span">
+Git and Development
+</td>
+<td align="left" markdown="span">
+Using Github Flow, issues, commit messages, 
+pull request reviews, and referencing code in issues.
+</td>
+</tr>
+
+<tr valign="top">
+<td align="left" markdown="span">
+[Unit Testing](testing)
+</td>
+<td align="left" markdown="span">
+Unit testing is testing of individual "units" of code, such as classes and methods.
+We study unit testing concepts and testing in Java (JUnit) and Python (unittest and doctest).
+</td>
+</tr>
+
+<tr valign="top">
+<td align="left" markdown="span">
+[Refactoring](refactoring)
+</td>
+<td align="left" markdown="span">
+Refactoring means to improve existing code without changing its external functionality.
+We cover common refactoring situations and how to do them using an IDE.
 </td>
 </tr>
 
 </table>
 
-
-## [Git](git) for Version Control
-
-Version Control (aka VCS) is an essential part of every development project. Git is by far the most widely used VCS, so you should master it.
-
-The basics of using a git repository to commit work, update work, and compare or recover previous versions, and how to work with remote repositories.
-
-Git *branches* are used to manage work on features or fixes, and *tags* are used to mark specific points in a repository, such as a release.
-
- - git basic concepts (git commit graph, staging area, working copy, HEAD...)
- - common use scenarios
-      - view history of commits
-      - recover deleted or mangled file
-      - "undo" staging
-      - "undo" a commit
-      - see what has changed (diffs)
-      - checkout a particular commit or particular file
-      - working with remotes
- - branching and tagging
- - merge and conflict resolution
- - using remotes. push, fetch, pull
-
-### Git and Development
-
-Using Github Flow, issues,
-write good commit messages, 
-pull request reviews, and referencing code in issues.
-
-## [Agile Principles and Practices](agile/index)
-
-Agile describes a set of values, principles, and practices for software development,
-that emphasize frequent delivery of running software, customer collaboration, 
-and self-managing teams.  The values and principles can be incorporated into any
-development process.
-
-* "Agile" is *not* a software process -- Agile describes values, goals, and practices incorporated into many software processes 
-* Created as reaction to perceived inefficiency of existing processes.
-* Scrum and XP are development-focused processes based on Agile values.
-* "Planned Based" or "Plan Driven" compared to Agile.
-  - Unified Process (UP) is main example.
-  - Plan-based vs Agile process is a continuum of choices, not either-or.
-
-
-## Scrum
+--------------------------------------------------------------------
 
 ### Developer Skills
  - review of OOP fundamentals in Python (assessment exercise)
@@ -90,20 +109,6 @@ development process.
  - using UML
 
 
---------------------------------------------------------------------
-
-
-
-## [Refactoring](refactoring/index)
-
-Refactoring refers to improving existing code without changing its external functionality.
-
-But what does "improve" mean?  There are many guides to spot situations
-where refactoring may be a good idea.
-
-* guide lines for when to refactor
-* common refactorings, with names
-* refactoring Python and Java using an IDE. Eclipse, IntelliJ (aka PyCharm), and Netbeans provide good refactoring tools, VS Code can perform mediocre refactoring.
 
 
 ## Writing
@@ -132,21 +137,6 @@ where refactoring may be a good idea.
    - Larman and RUP: value to customer, high risk, importance to architecture
    - Prototype to reduce risk or uncertainly about suitability
 
-## Testing
-
-* Different kinds of testing:
-  - unit testing
-  - function testing
-  - integration test
-  - system and acceptance tests
-
-* Unit Testing
-  - Using JUnit for Java
-  - Why use unit testing?  How to design test cases.
-  - Data-driven test cases
-  - New design of JUnit 5
- 
-* PyUnit or unittest for Python.
 
 ### Mock Objects for Testing
 
@@ -303,13 +293,15 @@ For learning value, writing a web app using a framework may be most valuable.
 
 But, some of what we learned is hard to apply when you are working with a new framework, language, or problem domain. Estimates and defects will be worse when working with something unfamiliar.
 
+---
+
 ## Suggestions from SKE Graduates at TaskWorld
 
 I put the ones I think are most important first.
 
 ### Resourcefulness
 
-When working, they will face issues that they have never been taught.
+When working, developers face issues that they have never been taught.
 An important skill is how to find answers.
 - Understanding stack traces and logs
 - Reading API docs
@@ -341,31 +333,32 @@ Many developers learn reactively and just-in-time when they need to solve a prob
 This means they only know few methods that they had to use.
 When they encounter a new problem, they try to use what they know little about, and come up with a convoluted code, when there is a method that solves it more effectively.
 
-Example, some people write this (JS):
+Example, some people write this (Javascript):
     const finishedTasks = _.filter(tasks, task => task.finished)
     const unnishedTasks = _.reject(tasks, task => task.finished)
 
-But having read through the docs, I know that we can do this instead:
+But having proactively read through the docs of the utility library (`_`), I know that we can do this instead:
+
     const [finishedTasks, unfinishedTasks] = _.partition(tasks, task => task.finished)
 
-This is because I’ve read through docs of the utility library (_) proactively.
+More generally, *if you are working at the edge of your knowledge you will make more mistakes
+and be less productive because you don't use some capabilities beyond the edge of your knowledge.*
 
-*More generally, if you are working at the edge of your knowledge you will make more mistakes
-and be less productive because you didn't use some capabilities beyond the edge of your knowledge.*
-
-## Understanding and appreciation of design principles
+## Understand and appreciate design principles
 
 I heard that students don’t get much from learning design patterns in OOP.
+
 It feels like they had to remember class diagrams for whatever reason.
+
 I would focus more on getting students to feel the experience of a working but unmaintainable code.
-Then when design principles and patterns come to the rescue, students may have a better appreciation of them.
+Then, when design principles and patterns come to the rescue, they may have a better appreciation of them.
 Refactoring katas may help.
 
 ## Understanding and appreciation of project management tools
 
 One engineer told me that when working in a group project,
 they don’t see why they have to use tools like Trello.
-So the tool gets unused and problems arise.
+So the tool is unused and problems arise.
 I would focus on common communication problems that occurs when doing group projects before introducing tools, so students can associate a tool with a problem it’s intended to solve from the beginning.
 
 ## Using Git and GitHub and a Git workflow
@@ -375,13 +368,9 @@ The code in master branch is live in production (automatically deployed by CI).
 To not break production, a developer pushes work in progress and changes in a topic branch, opens a pull request early, reviews it, and once tested, merge it into production.
 This allows for keeping the master branch stable, which is important later for working in teams.
 
-## Others
+## Other Suggestions
 
 - Good error handling practices makes debugging easier.
 - Most likely, the students will have to work on assignments in other subjects, so time management is essential.
 - Automated testing skills — how to write good tests. Tests should make software easier to change safely, not harder. Bad tests prevents the code from being refactored.
-
-
-
-
 

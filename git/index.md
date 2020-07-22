@@ -4,13 +4,15 @@ title: Git and Github
 ---
 
 Software Version Control means managing the versions and history of software work products.
+It is an essential part of every development project.
 
-Important functions a version control system (VCS) provide are:
+A version control system (VCS) performs:
+
 * authentication of users
 * access control - only authorized users can view or change files
 * history of all changes to files, with attribution (who changed it) and reason (commit message)
 * ability to "check out" or "check in" a bunch of files at once and maintain them as a single version (a *commit* in git)
-* maintain integrity of work -- avoid corruption of files or loss of work. VCS does not allow work to be checked in or "committed" if it not based on the most current version of what's in the VCS.
+* maintains integrity of files -- does not allow corruption of files or loss of work. VCS does not allow work to be checked in or "committed" if it not based on the most current version of what's in the VCS.
 * manage multiple variations of the same work products, so that teams can work on different versions of the software or its features without affecting others
 
 Git is the dominant VCS in the world today, so we will focus on how to use Git.
@@ -20,10 +22,23 @@ Git is the dominant VCS in the world today, so we will focus on how to use Git.
 * Basics you should already know:
   - 2 ways to create a local git repo with a remote.
   - Concepts: local repo, remote, working copy, staging area ("index"), commit, HEAD.
+  - git repository as a graph (commits are nodes)
   - How to check status of a local repo.
   - How to add files to repo or update them.
   - How to rename, move, or delete files from a local repo.
   - Synchronize local repo with a remote repo.
+
+* common use scenarios
+  - view history of commits
+  - recover deleted or mangled file
+  - "undo" staging
+  - "undo" a commit
+  - see what has changed (diffs)
+  - checkout a particular commit or a particular file
+  - work with remotes - push, fetch, pull. How to add, change, and view remotes.
+
+* branching and tagging
+  - merge and conflict resolution
   
 * Review, if necessary:
   - Git covered in Programming 2: [Intro to Git](https://skeoop.github.io/git/intro-git) and [Github](https://skeoop.github.io/git/intro-github), [dumb slides](https://skeoop.github.io/git/)

@@ -6,10 +6,14 @@ description: Index page
 
 Refactoring refers to modifying the design of existing code to improve it.
 
-* guide lines for when and how to refactor
 * signs that code needs refactoring (sometimes called "code smells", a term I dislike)
+* what does "improve" mean?  Software principles provide some objective guides.
+* guide lines for when and how to refactor
+   - code should be working before refactoring
+   - you must have tests before refactoring
+   - refactor is small steps and only one at a time. Test the result of each refactoring and commit it before doing the next refactoring.
 * common refactorings, with names
-* refactoring Python and Java using an IDE. Eclipse, IntelliJ (aka PyCharm), and Netbeans provide good refactoring tools, VS Code can perform mediocre refactoring.
+* refactoring Python and Java using an IDE. Eclipse, IntelliJ (aka PyCharm), and Netbeans provide good refactoring tools, VS Code can perform simple refactoring.
 
 ### Lessons
 
