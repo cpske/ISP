@@ -1,13 +1,15 @@
 ---
 layout: page
-title: Introduction to Course
----  
+title: Introduction to ISP
+---
 
-This course covers the basics of common software processes and process models,
-and focuses on on the knowledge, skills, and habits that you need to be an effective software developer -- either solo or on a team. This includes:
+Individual Software Process (ISP)
+covers the basics of common software processes and process models,
+and focuses on on the knowledge, skills, and habits that you need to be an effective software developer -- either solo or on a team.
+This includes:
 
 * Ability to write good code that's testable and maintainable.
-* Apply an iterative and increment life cycle to develop software 
+* Applying an iterative and increment life cycle to develop software 
 * Using version control as part of a workflow that includes branching, issue tracking, testing, and review
 * Consistenting using a coding standard and documenting code
 * Testing

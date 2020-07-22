@@ -7,10 +7,7 @@ title: ISP Topics
 **Location** class will be online with some meetings and live lectures in room E204.  Location of online meeting will be announced before class starts.
 
 <table border="0">
-<tr valign="top">
-<th width="25%">Topic</th>
-<th width="75%">Description</th>
-</tr>
+<tr valign="top"> <th width="25%">Topic</th> <th width="75%">Description</th> </tr>
 
 <tr valign="top">
 <td align="left" markdown="span">
@@ -27,19 +24,20 @@ Why do a team project in a course on "*Individual* Software Process"?
 
 <tr valign="top">
 <td align="left" markdown="span">
-[Software Processes](software-process)
+[Software Processes](software-process) <br/>
+Iterative &amp; Incremental Development
 </td>
 <td align="left" markdown="span">
-An introduction to software process concepts, goals, and practices. The Waterfall process as a simple linear (and still widely used) process, the Unified Software Develop Process (UP) as a good model for iterative and incremental processes, and Scrum for small team projects.
+An introduction to software process concepts and practices. The Waterfall process compared to iterative and incremental development; the Unified Software Develop Process (UP) as a model, and Scrum for managing iterations.
 </td>
 </tr>
 
 <tr valign="top">
 <td align="left" markdown="span">
-[Agile Principles and Practices](agile)
+[Agile](agile)
 </td>
 <td align="left" markdown="span">
-Agile describes a set of values, principles, and practices for software development,
+Agile is a set of values, principles, and practices for software development,
 that emphasize frequent delivery of running software, customer collaboration, 
 and self-managing teams.  The values and principles can be incorporated into any
 development process.
@@ -83,7 +81,37 @@ pull request reviews, and referencing code in issues.
 </td>
 <td align="left" markdown="span">
 Unit testing is testing of individual "units" of code, such as classes and methods.
-We study unit testing concepts and testing in Java (JUnit) and Python (unittest and doctest).
+Testing Behavior - don't only test code (TBA)   
+[Code Coverage](testing/code-coverage)      
+Unit testing in Java (JUnit) and Python (unittest). Python doctest.
+</td>
+</tr>
+
+<tr valign="top">
+<td align="left" markdown="span">
+Mock Objects
+</td>
+<td align="left" markdown="span">
+Mock Objects for testing.
+</td>
+</tr>
+
+<!-- Types and Type Checking -->
+<tr valign="top">
+<td align="left" markdown="span"> 
+Types and    
+Type Checking
+</td>
+<td markdown="span">
+[Intro to Types and Type Checking](code-quality/Type-Checking.pdf) (slides)    
+[Type Hints][type-hints] in Python
+
+Read Mai's [Type Hints][type-hints] write-up     
+and these Python docs: [Typing][python-typing], 
+[Collections base classes][python-abc-collections] (shows what methods each type provides)
+Add type hints to detect errors: [scorecard.py][scorecard.py]      
+Do the exercises in Mai's [Type Hints][type-hints] write-up    
+[Type Hint Practice](code-quality/type-hint-practice.pdf) exercise     
 </td>
 </tr>
 
@@ -97,58 +125,178 @@ We cover common refactoring situations and how to do them using an IDE.
 </td>
 </tr>
 
+<tr valign="top">
+<td align="left" markdown="span"> 
+Code Review
+</td>
+<td markdown="span">
+[Software Review](code-review/Reviews.pdf) slides and [Summary](code-review/code-review)       
+[Code Review Best Practices](code-review/code-review-best-practices) from various sources    
+[Reviews chapter from Stellman &amp; Greene](code-review/Reviews-Stellman-and-Greene.pdf)    
+Example Checklists: [Java](code-review/Java-Code-Review-Checklist.pdf), 
+[PSP](code-review/PSP-Review-Script-Checklist.pdf)    
+[Assignment: Code Review Checklist and Script](assignment/code-review)
+</td>
+</tr>
+
+<tr valign="top">
+<td align="center" markdown="span"> 
+End-to-End Testing    
+</td>
+<td markdown="span">    
+[Web App E2E Testing with Selenium](testing/WebTesting.pdf)    
+   
+[Intro to Selenium](testing/Selenium-intro)    
+1. Refactor your Django tests into separate files, based on what is being tested.    
+2. Perform code coverage on your Django tutorial code and your project code.    
+3. Selenium: [Find Bad Links](assignment/selenium). 
+</td>
+</tr>
+
+<tr valign="top">
+<td align="left" markdown="span"> 
+[12-Factor App](web/12FactorApp.pdf)   
+</td>
+<td markdown="span">
+The [12-Factor App](web/12FactorApp.pdf) is a set of recommendations for maintainable
+cloud-based applications, developed by Heroku. 
+</td>
+</tr>
+
 </table>
 
---------------------------------------------------------------------
+---
+## Web Applications
 
-### Developer Skills
+<table border="0">
+<tr valign="top"> <th width="25%">Topic</th> <th width="75%">Description</th> </tr>
+
+<tr valign="top">
+<td align="left" markdown="span">
+[HTTP](web/index#http)
+</td>
+<td align="left" markdown="span">
+HTTP is the communicatoin protocol used by web apps and web services.    
+[Introduction to HTTP](web/HTTP.pdf)    
+[HTTP in Action](web/HTTP-in-Action.pdf) class exercises using HTTP, requires ncat or netcat.    
+Useful [Http Tools](web/http#tools) for manually testing and debugging web apps.
+</td>
+</tr>
+
+<tr valign="top">
+<td align="left" markdown="span">
+Web Apps and Frameworks
+</td>
+<td align="left" markdown="span">
+Short intro to how a web server and web app typically handle requests and responses.  This helps make sense of the various components of a [web framework](web/web-frameworks).    
+[WSGI](web/wsgi-servers) standard for connecting Python web apps to web app servers.
+</td>
+</tr>
+
+<tr valign="top">
+<td align="left" markdown="span">
+Django
+</td>
+<td align="left" markdown="span">
+[Introduction to Django](django/Intro-to-Django.pdf).    
+</td>
+</tr>
+
+<tr valign="top">
+<td align="left" markdown="span">
+Django Polls Project
+</td>
+<td align="left" markdown="span">
+Everyone will implement the Django Polls tutorial project.  We'll structure it as an iterative software project. At each iteration you'll learn new material that will help with your course project.
+</td>
+</tr>
+
+<tr valign="top">
+<td align="left" markdown="span">
+Database Basics
+</td>
+<td align="left" markdown="span">
+Intro to database concepts and how to use a database in code.
+Essentials to know are:
+- table schema and field types
+- identity field as key
+- how to relate tables using foreign keys
+- how to view and edit schema
+- 4 basic CRUD operations
+</td>
+</tr>
+
+<tr valign="top">
+<td align="left" markdown="span">
+Object-Relaltional Mapping
+</td>
+<td align="left" markdown="span">
+ORM concepts and frameworks.  All web frameworks either include an ORM
+or rely on one for persisting data.  Two common design patterns for
+ORM.    
+Django models provide ORM services, but they are obscured.   
+Understanding ORM concepts will make it easier to understand and work
+with Django models.
+</td>
+</tr>
+
+<tr valign="top">
+<td align="left" markdown="span">
+[Logging](logging/Logging.pdf)
+</td>
+<td markdown="span">
+[Logging](logging/Logging.pdf)    
+[Logging Practice](logging/logging-practice)
+</td>
+</tr>
+</table>
+
+---
+
+## Developer Skills
  - review of OOP fundamentals in Python (assessment exercise)
  - coding convention
  - unit testing
  - using UML
 
+## Project Planning
 
-
-
-## Writing
-
-   - How to write a project proposal
-   - Writing goals, objectives, and milestones
+* Writing Goals and Milestones.
 
 * Velocity - computed from Story Points and actual time spent, or just time.
 
 * The RUP framework and a few key concepts.
 
-## Database Basics and ORM
-
-* ORM mapping concepts.  After doing the Django tutorial, explain how
-  relationships are mapped to database tables.
-   - identity field as key.  Synthetic id, sequence, natural id, or compound key
-   - many-to-1, 1-to-1 (not that common), 1-to-many
-   - Foreign Keys 
-   - cascading (cascading save, cascading delete) for foreign-key objects
-   - lazy instantiation
-   - object uniqueness for entities
-   - 2 design patterns: DAO and Active Object
-   - anti-pattern: anemic models (and fat controllers)
-
-* Prioritizing development
+* Prioritize Development
    - Larman and RUP: value to customer, high risk, importance to architecture
-   - Prototype to reduce risk or uncertainly about suitability
+   - Use a Prototype to reduce risk or uncertainly about suitability
+
+Your project needs *at least*:
+
+* vision statement, describing goal and "vision" of the project
+* project plan - what to build and plan for what to build in each iteration
+* task board for each iteration, containing tasks for that iteration and their status
+* issue tracker for bugs, change requests, and more
+* (desirable) burn-down or burn-up chart.
+
+Task Boards 
+
+* [Trello](https://trello.com)
+* [Asana](https://asana.com) 
+* Github "Project Boards" has similar features. Cards are limited to Github issues, pull requests, and notes.  These may not always match project "tasks".
+
+Some projects use Trello or Asana for iteration plans.  In the course project, use
+the Github Wiki for visibility.
 
 
-### Mock Objects for Testing
 
-* Why use Mock objects?
-* Some mock frameworks.
-* Mocks and design.  As example, mock a database or external data source (a common use of mocks).
 
 ### Build Tools, Build Management, and Automatic Build-and-Test
 
 * Basic build tools: using Ant or Maven for Java.
   - maybe cover "make" and GNU make for perspective
 
-* Build and Dependency Management Tools:
+* Build and Dependency Management Tools
   - ant and ivy (for dependency mgmt)
   - maven
   - gradle
@@ -210,20 +358,6 @@ Everyone should know how to use Markdown. Its much more readable than HTML, so y
 * Common software metrics, like LOC, functions, code "units".
 * Classify and count defects.  Design defects, coding defects, test defects.
 
-### Planning and Tracking
-
-Your project needs *at least*:
-
-* vision statement, describing goal and "vision" of the project
-* project plan - what to build and plan for what to build in each iteration
-* task board for each iteration, containing tasks for that iteration and their status
-* issue tracker for bugs, change requests, and more
-* (desirable) burn-down or burn-up chart.  "Burn up" is similar to an "earned value" chart.
-
-Task Boards that can also be used for iteration plans:
-* Github "Project Boards" has similar features. Cards are limited to Github issues, pull requests, and notes.  These may not always match project "tasks".
-* [Trello](https://trello.com)
-* [Asana](https://asana.com) 
 
 
 ## Estimation
