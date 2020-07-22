@@ -1,4 +1,6 @@
-## Test Installation of Another Student's django-polls Project
+---
+title: Test Installation of Another Student's django-polls Project
+---
 
 This assignment was given before students added external configuration,
 so they may not have instructions for creating a `.env` file.

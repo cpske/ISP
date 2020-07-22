@@ -1,4 +1,6 @@
-# Questions about Agile Practices
+---
+title: Questions about Agile Practices
+---
 
 PAD refers to the book *Practices of an Agile Developer*, mentioned in class last week.
 For some questions you are asked to name a "Tip" from the PAD book or PAD Quick Reference.

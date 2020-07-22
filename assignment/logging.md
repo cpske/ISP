@@ -1,4 +1,6 @@
-## Logging Assignment
+---
+title: Logging Assignment
+---
 
 1. Add logging to your Django Polls project code.
 

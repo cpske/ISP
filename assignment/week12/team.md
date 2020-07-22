@@ -1,4 +1,6 @@
-## Team Assignment
+---
+title: Iteration Planning and Github Site Setup (Team Assignment)
+---
 
 On your Github project homepage (README.md), please include in this order:
 

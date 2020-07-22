@@ -1,10 +1,7 @@
 ---
 layout: page
-title: Project Review Feedback
-description: Feedback from TAs on Projects
+title: Project Review Feedback from TAs
 ---
-
-## Feedback from TAs on Projects
 
 The TAs reported several common problems in projects.
 

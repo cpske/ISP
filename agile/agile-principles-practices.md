@@ -1,6 +1,8 @@
-## Four Values of Agile Manifesto
+---
+title: Agile Values 
+---
 
-Ref: [Agile Alliance](https://www.agilealliance.org/agile101/the-agile-manifesto/)
+The "*Agile Manifesto*" laid down the core values for agile software development.
 
 These values motivate the development process and practices.
 
@@ -15,6 +17,8 @@ These values motivate the development process and practices.
 3. **Customer Collaboration Over Contract Negotiation**
 
 4. **Responding to Change Over Following a Plan**
+
+Ref: [Agile Alliance](https://www.agilealliance.org/agile101/the-agile-manifesto/)
 
 ## So What?
 
@@ -80,7 +84,10 @@ A Story Map shows relationship between stories.
 
 ## Burn down and Burn up charts
 
-In a Burn up chart, there is a top line for the total number of points (scope) of the iteration.  The line may change as: (a) work is added or removed (unplanned tasks), (b) tasks are re-estimated.
+A **burn down** chart shows the remaining work versus time.
+The y-axis (remaining work) is measured in hours or story points.
+
+In a burn up chart, there is a top line for the total number of points (scope) of the iteration.  The line may change as: (a) work is added or removed (unplanned tasks), (b) tasks are re-estimated.
 
 ## Retrospectives
 

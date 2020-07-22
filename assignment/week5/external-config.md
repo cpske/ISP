@@ -1,4 +1,6 @@
-## Improvements to your Django Project
+---
+title: Improvements to your Django Project
+---
 
 You can do items 1 and 2 on the master branch.
 Item 3 should be on a separate branch, test it,

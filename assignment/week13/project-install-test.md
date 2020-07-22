@@ -1,4 +1,6 @@
-## Project Testing Assignment
+---
+title: Project Testing Assignment
+---
 
 This is an individual assignment.
 Install another team's project on your computer and try to run it.

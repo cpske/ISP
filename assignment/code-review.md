@@ -1,9 +1,11 @@
-## Code Review
+---
+title: Code Review Assignment
+---
 
 1. Read Code Review best practices 
 2. Study some example checklists and "script".
-2. Write your own script or procedure for your team project.
-3. Write your own code review checklist.
+3. Write your own script or procedure for your team project.
+4. Write your own code review checklist.
 
 
 ### 1. Read Code Review best practices

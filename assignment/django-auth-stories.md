@@ -1,4 +1,6 @@
-## User Stories for Authenticated Voting in Django Polls
+---
+Title: User Stories for Authenticated Voting in Django Polls
+---
 
 Everyone will implement these in your Django Polls project.
 

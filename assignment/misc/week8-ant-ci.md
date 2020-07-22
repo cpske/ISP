@@ -1,4 +1,6 @@
-## Testing with Ant and Travis CI
+---
+title: Testing with Ant and Travis CI
+---
 
 ### 1. Take Ownership of your TicTacToe repository and RENAME it
 

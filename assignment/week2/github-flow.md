@@ -1,12 +1,13 @@
-## Learn Git Branching, Pull Requests, and Github Flow
+---
+title: Learn Git Branching, Pull Requests, and Github Flow
+---
 
 Github Flow is a workflow for projects using Git, 
 whether you work alone or on a team.    
 Github Flow uses branches and "pull requests", 
 so you need to understand those, too.   
-Don't worry, they are pretty simple.
 
-Please read the following material.  Its all short:
+Please read and learn the following material.  It is all short:
 
 1. Github Flow
    * Github Flow Illustrated Guide: [https://guides.github.com/introduction/flow/](https://guides.github.com/introduction/flow/)

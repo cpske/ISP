@@ -1,4 +1,6 @@
-# Unit Testing
+---
+title: Unit Testing
+---
 
 There are two parts to this assignment. The first part is to test a single function.  The second part is writing a Fraction class and test its methods.
 Starter code is provided in the Github Classroom assignment.

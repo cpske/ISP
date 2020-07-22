@@ -1,4 +1,6 @@
-## Team Assignment for 22 Nov
+---
+title: Team Assignment for 22 Nov
+---
 
 1. **Separate configuration data from code**.  Use a configuration file and/or the environment.
    * Consider using the `python-decouple` package

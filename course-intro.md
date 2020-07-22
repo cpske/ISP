@@ -1,13 +1,17 @@
-# Introduction to ISP 2020
+---
+layout: page
+title: Introduction to ISP 2020
+---
 
-## Class Time and Room
+## Class Time and Location
 
 Monday 10:00-12:00 and 13:00-16:00.
 
-* Occasional Live Class in E204.
 * Weekly Online Meeting 10:00-12:00 via Google Meet and Microsoft Teams
+* Occasional Live Class in E204.
 * Weekly Lab and Assignment 13:00-16:00
 * Weekly assigned reading and problems. You must do the reading.
+* Small Team Software Project
 * All material will be online
 
 ## Online Course Require More Discipline & Commitment
@@ -38,7 +42,7 @@ ISP will use:
 
 Please do the following as soon as possible (and remind other students).
 
-1. Join [Google Classroom][google-classroom] course "*219245 ISP (2019)*".
+1. Join [Google Classroom][google-classroom] course "*219245 ISP (2020)*".
     * You should receive invitation at your KU-Gmail acct. Click link to join.
     * Another way to join: 
         1. Login to Google using you KU-Google account (not personal email).
@@ -60,6 +64,13 @@ Please do the following as soon as possible (and remind other students).
 
 *Dress Like a Programmer* -- where whatever is comfortable. T-shirts are OK.
 
+## Prerequisites
+
+* Programming ability equivalent to Programming 1 and 2, including object-oriented programming.
+* Knowledge and capability to write code in Java and Python.
+* Ability to use Git and Github.
+
+If you have not *at least* worked through Prog 2, then you should do that before enrolling in this course. No one without Prog 2 background has *ever* passed this course when I teach it.
 
 ## Preview of Course
 
@@ -70,9 +81,7 @@ Please do the following as soon as possible (and remind other students).
 
 ## Teaching Assistants (TAs)
 
-We are fortunate to have two very talented developers and explainers as TA:
-
-[Wisa Tong](https://github.com/wisaTong)
+[Mai Norapong](https://github.com/MaiNorapong)
 
 [Pakanon Pantisawat](https://github.com/pknn1)
 

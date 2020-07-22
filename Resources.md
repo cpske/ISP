@@ -1,15 +1,12 @@
 ---
 layout: page
-title: Resources
-description: useful references
+title: Learning Resources
 ---
-
-## Resources
 
 ### Online Courses
 
 [Writing Professional Code](https://courses.edx.org/courses/course-v1:Microsoft+DEV275x+2T2017) Course DEV275x at edX.  A course by Microsoft. It uses dot-net for exercises and has some dot-net specific questions.  You should study the whole course, but OK to skip .Net problems.
-  * This course is part of [Microsoft Entry-Level Software Development Professional Program](https://www.edx.org/microsoft-professional-program-entry-level-software) on edX.  Looks interesting. Relevent to this course:
+  * This course is part of [Microsoft Entry-Level Software Development Professional Program](https://www.edx.org/microsoft-professional-program-entry-level-software) on edX.  Looks interesting. Each "course" is short. Relevent to this course are:
   * Course 5: Writing Professional Code
   * Course 8: Building Prototypes with JavaScript
   * Course 9: Building a Functional Prototype with Node.js
@@ -19,7 +16,7 @@ description: useful references
 [Software Processes and Agile Practices](https://www.coursera.org/learn/software-processes-and-agile-practices), U. of Alberta on Coursera. 
   * The course title describes it.  Fairly short course (4 modules).
   * Has a good 40-page PDF of course material you can download.
-  * Videos not very inspiring -- just a video of speaker talking.
+  * Videos not very inspiring -- just a speaker talking.
   * List of resources for each module contain useful links:
     - [Module 1](https://www.coursera.org/learn/software-processes-and-agile-practices/resources/bSF4Y) - processes and practices, software engineering activities
     - [Module 2](https://www.coursera.org/learn/software-processes-and-agile-practices/resources/oxN4J) - process models including UP and Continuous Delivery
@@ -32,7 +29,6 @@ description: useful references
 
 
 
-
 ### Books
 
 Try a Google search: [Top 10 Software Development Books](https://www.google.co.th/search?q=top+10+software+development+books&oq=top+10+software+development+books).
@@ -42,12 +38,12 @@ Try a Google search: [Top 10 Software Development Books](https://www.google.co.t
 
 *The Clean Coder* by Robert Martin.  A book about habits and practices for a software developer. Directly relevant to this course.
 
-*The Pragmatic Programmer* by Hunt and Thomas. [The Pragmatic Programmer](https://www.nceclusters.no/globalassets/filer/nce/diverse/the-pragmatic-programmer.pdf)
-
 *Practices of an Agile Developer* another classic book.
   * [Quick Reference Card](https://media.pragprog.com/titles/pad/PAD-pulloutcard.pdf) of the practices
 
 [Building Maintainable Software](http://moka.labunix.uqam.ca/~tremblay/MGL7460/Liens/Building_Maintainable_Software_SIG.pdf) Joost Viser (O'Reilly). Free PDF book.
+
+*The Pragmatic Programmer* by Hunt and Thomas is a classic but a bit out of date; the material is quite similar to *Practices of an Agile Developer* (newer). [The Pragmatic Programmer](https://www.nceclusters.no/globalassets/filer/nce/diverse/the-pragmatic-programmer.pdf)
 
 
 
@@ -117,3 +113,4 @@ Wikipedia article describes Scrumban combination of Kanban and Scrum.
 
 [Web Architecture 101](https://engineering.videoblocks.com/web-architecture-101-a3224e126947) introduces concepts and components in real-world web deployment.
 
+[The Web in Depth](https://www.hacker101.com/sessions/web_in_depth) from Hacker101.com. This video tutorial emphasizes web security. The first part is basics of HTTP.

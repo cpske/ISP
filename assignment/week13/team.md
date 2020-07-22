@@ -1,4 +1,6 @@
-## Project Homepage Updates (Week 13)
+---
+title: Project Homepage Updates (Week 13)
+---
 
 
 ## Better and More Unit Testing

@@ -1,4 +1,6 @@
-## Refactoring Problem
+---
+title: Refactoring Problem
+---
 
 1. What is the **sign** or **symptom** that this class should be refactored?
 

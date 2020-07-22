@@ -1,4 +1,6 @@
-## Questoins about Github Flow
+---
+title: Questoins about Github Flow
+---
 
 There are other questions in the Google form (assignment) for week 2.
 

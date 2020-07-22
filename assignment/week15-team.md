@@ -1,4 +1,6 @@
-## Team Assignment for Nov 25 - Dec 5
+---
+title: Team Assignment for Nov 25 - Dec 5
+---
 
 1. Complete or improve all **past work** that got less than perfect score.
 

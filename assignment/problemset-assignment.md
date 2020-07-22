@@ -1,4 +1,6 @@
-## Create One Good Question or Problem 
+---
+title: Create One Good Question or Problem 
+---
 
 Create one question or problem related to software development that *you think everyone in the class should know* or would benefit from knowing.
 

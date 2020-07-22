@@ -1,4 +1,6 @@
-## Github Flow Practice
+---
+title: Github Flow Practice
+---
 
 In a team create a menu for KU Cafe.  Follow the steps below!
 

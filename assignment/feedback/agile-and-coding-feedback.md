@@ -1,4 +1,6 @@
-## Answers to Agile and Coding Practices Assignment
+---
+title: Answers to Agile and Coding Practices Assignment
+---
 
 Q1. Why develop in increments (Tip 17)?
    * Get quicker feedback which reduces risk from misunderstanding between customer and developers

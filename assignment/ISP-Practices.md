@@ -1,4 +1,6 @@
-## Practices of an Effective Developer
+---
+title: Practices of an Effective Developer
+---
 
 What are common practices or habits of an effective software developer?
 

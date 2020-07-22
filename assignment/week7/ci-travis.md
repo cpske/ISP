@@ -1,8 +1,10 @@
-## Automatic Testing with Travis CI
+---
+title: Automatic Testing with Travis CI
+---
 
 You will use Travis-CI to automatically test your **unittesting** project (Fraction class).
 
-### Prerequisite:  Take Ownership of your unittesting Github Repository
+### Prerequisite: Take Ownership of your unittesting Github Repository
 
 Travis-CI.com can only access projects **owned by you**.
 You have "admin" rights on the Github repo for your unittesting project,
@@ -15,7 +17,7 @@ so you can take ownership.
 3. At the bottom of the page ("Danger Zone") click "Transfer Ownership".
 4. Transfer it to your **own account**.
 
-#### Should you update the remote (origin) for your local repo?
+### Should you update the remote (origin) for your local repo?
 
 When you take ownership, Github moves the repository from https://github.com/ISP19/someplace to https://github.com/*your_github_id*/someplace.  So the URL for "origin" in your local repo is different.
 

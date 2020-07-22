@@ -1,21 +1,42 @@
-## Schedule
+---
+layout: page
+title: ISP Topics
+---
 
-01219245 ISP Mon 10-12, 13-16 room E204
+**Schedule** 01219245 ISP Mon 10-12, 13-16 starting 10 Aug 2020.   
+**Location** class will be online with some meetings and live lectures in room E204.  Location of online meeting will be announced before class starts.
 
-First day of class 10 Aug 2020
+<table border="0">
+<tr valign="top">
+<th width="25%">Topic</th>
+<th width="75%">Description</th>
+</tr>
 
-## [Introduction to Course](introduction/index)
-
-Introduction to the course, required work and grading, and how to access material.    
-Recommendations from SKE graduate entrepeneur &amp; tech innovator.    
+<tr valign="top">
+<td align="left" markdown="span">
+[Introduction to Course](introduction/index)
+</td>
+<td align="left" markdown="span">
+[Introduction to course goals and topics](introduction/index), 
+prerequisites, required work and grading, and how to access material.    
+Assignment to do by first week.    
+[Advice from an SKE scholar & entrepeneur](introduction/Jomzap-Recommendations.pdf).    
 Why do a team project in a course on "*Individual* Software Process"?
+</td>
+</tr>
 
-## [Software Processes](software-process)
-
+<tr valign="top">
+<td align="left" markdown="span">
+[Software Processes](software-process)
+</td>
+<td align="left" markdown="span">
 An introduction to software process concepts, goals, and practices. The Waterfall process as a simple linear (and still widely used) process, the Unified Software Develop Process (UP) as a good model for iterative and incremental processes, and Scrum for small team projects.
 
 Agile principles and practices are a separate topic, but they apply to all processes.
+</td>
+</tr>
 
+</table>
 
 
 ## [Git](git) for Version Control

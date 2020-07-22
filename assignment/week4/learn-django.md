@@ -1,4 +1,6 @@
-## Learn Django by Implementing the Tutorial App
+---
+title: Learn Django by Implementing the Tutorial App
+---
 
 We will use Django and the Django tutorial app to learn several concepts.    
 You will add to this app in future weeks, so don't fall behind on this assignment.

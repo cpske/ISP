@@ -1,4 +1,6 @@
-## Bug Bounty Hunting:  Test 'Production' Web Apps
+---
+title: Bug Bounty:  Test 'Production' Web Apps
+---
 
 **Deadline:** Dec 3, midnight (so teams can fix the bugs)
 

@@ -1,4 +1,6 @@
-## Code Coverage Assignment
+---
+title: Code Coverage Assignment
+---
 
 Learn about [Code Coverage](/ISP/testing/code-coverage).
 Then add code coverage analysis to your unittesting project.
