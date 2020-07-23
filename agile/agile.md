@@ -1,24 +1,37 @@
 ---
-title: Agile Values 
+title: Agile Software Development
 ---
+
+"Agile" is a set of values, principles, and a philosophy (or mind-set) about software development. 
+
+Agile is *not* a software process -- Agile values and practices are used in many software processes.
+
+* Agile created in reaction to perceived inefficiency of existing processes.
+* Scrum and XP are development-focused processes based on Agile values.
+* "Planned Based" or "Plan Driven" processes are considered non-agile, but its not really true.
+  - Unified Process (UP) is main example.
+  - Plan-based vs Agile process is a continuum of choices, not either-or.
 
 The "*Agile Manifesto*" laid down the core values for agile software development.
 
-These values motivate the development process and practices.
+These **values** motivate the development process and practices.
 
-1. **Individuals and Interactions Over Processes and Tools**
+1. **Individuals and Interactions** over *Processes and Tools*
      * People respond to business needs and direct the development process
 
-2. **Working Software Over Comprehensive Documentation**
+2. **Working Software** over *Comprehensive Documentation*
      * "Just enough" documentation - the customer wants software, not lots of software docs.
      * If requirements are likely to change, writing up-front docs can be a waste.
      * This is not an excuse to _not_ write documentation.
 
-3. **Customer Collaboration Over Contract Negotiation**
+3. **Customer Collaboration** over *Contract Negotiation*
 
-4. **Responding to Change Over Following a Plan**
+4. **Responding to Change** over *Following a Plan*
 
 Ref: [Agile Alliance](https://www.agilealliance.org/agile101/the-agile-manifesto/)
+
+Agile encourages frequent delivery of running software, customer collaboration,
+face-to-face meetins, and self-managing teams.
 
 ## So What?
 
@@ -27,7 +40,7 @@ How does this apply to my software process?
 ## Twelve Agile Principles
 
 [12 Principles](https://www.agilealliance.org/agile101/12-principles-behind-the-agile-manifesto/) at Agile Alliance.    
-[12 Principles](https://www.smartsheet.com/comprehensive-guide-values-principles-agile-manifesto#the-twelve-agile-manifesto-principles) with commentary.    
+[Another version, with commentary](https://www.smartsheet.com/comprehensive-guide-values-principles-agile-manifesto#the-twelve-agile-manifesto-principles).    
 [Nice interpretation of the 12 principles](http://www.consultparagon.com/blog/12-principles-of-agile-methodologies) at Paragon Consulting.    
 
 1. *Satisfy the Customer* through early and frequent release of software. Collaboration and communication with Customer.
@@ -81,7 +94,6 @@ A Story Map shows relationship between stories.
 * stories that build on other stories.
 * stories ordered by release
 
-
 ## Burn down and Burn up charts
 
 A **burn down** chart shows the remaining work versus time.
@@ -100,3 +112,18 @@ Purpose of retrospective is to improve the team's development process.
 3. Generate insights. Zero in on problematic events. Identify causes and try to trace them to "root" causes.
 
 4. Decide what to do.  What improvements or changes to make in the next sprint?
+
+## Read/View
+
+[Agile 101](https://www.agilealliance.org/agile101/) at Agile Alliance.    
+[Agile Product Ownership in a Nutshell](https://www.youtube.com/watch?v=502ILHjX9EE) (video)    
+* Think critically.  Do you agree with the principles? 
+Optional: [Agile at Microsoft](https://www.youtube.com/watch?v=-LvCJpnNljU) (video) how Visual Studio Team Services moved to agile.
+* *Practices Of An Agile Developer*, slides from the book: [PDF](PracticesOfAnAgileDeveloper-slides.pdf)
+    - we will use parts of this book in this course
+* Video: [Agile at Microsoft](https://www.youtube.com/watch?v=-LvCJpnNljU) about the Visual Studio Team Services transition to agile. Interesting, but some fuzzy use of buzzwords like "team owns X", "team is empowered to ...". 41 minutes.
+
+
+## Agile Book
+
+*Head First Agile* - very memorable explanation and examples of Agile practices and values.  But long.

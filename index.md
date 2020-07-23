@@ -52,7 +52,7 @@ Support for SDLC on Github:
 [Agile](agile/)    
 </td>
 <td markdown="span">
-Intro to [Agile Principles and Practices](agile/agile-principles-practices).    
+Intro to [Agile Principles and Practices](agile/agile).    
 </td>
 <td markdown="span">
 Read [Agile 101](https://www.agilealliance.org/agile101/) at Agile Alliance.    
@@ -64,7 +64,7 @@ Optional: [Agile at Microsoft](https://www.youtube.com/watch?v=-LvCJpnNljU) how 
 <!-- Scrum -->
 <tr valign="top">
 <td align="center" markdown="span"> 
-[Scrum](agile/)    
+[Scrum](agile/scrum)    
 </td>
 <td markdown="span">
 A popular technique for iterative development.  The video at right is best place to start.  The [Agile index](agile/index) has more Scrum material.
@@ -129,7 +129,6 @@ A real [pull request in jQuery repo](https://github.com/jquery/jquery/pull/1051)
 <!-- Types and Type Checking -->
 <tr valign="top">
 <td align="center" markdown="span"> 
-Types and    
 Type Checking
 </td>
 <td markdown="span">

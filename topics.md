@@ -11,7 +11,7 @@ title: ISP Topics
 
 <tr valign="top">
 <td align="left" markdown="span">
-[Introduction to Course](introduction/index)
+[Introduction](introduction/index)
 </td>
 <td align="left" markdown="span">
 [Introduction to course goals and topics](introduction/index), 
@@ -28,16 +28,17 @@ Why do a team project in a course on "*Individual* Software Process"?
 Iterative &amp; Incremental Development
 </td>
 <td align="left" markdown="span">
-An introduction to software process concepts and practices. The Waterfall process compared to iterative and incremental development; the Unified Software Develop Process (UP) as a model, and Scrum for managing iterations.
+An introduction to software process concepts and practices. The Waterfall process compared to iterative and incremental development; the Unified Software Develop Process (UP) as a model, and Scrum for managing iterations.    
+[Github features that support SDLC](https://github.com/features)
 </td>
 </tr>
 
 <tr valign="top">
 <td align="left" markdown="span">
-[Agile](agile)
+[Agile](agile/agile)
 </td>
 <td align="left" markdown="span">
-Agile is a set of values, principles, and practices for software development,
+[Agile values, principles, and practices](agile/agile) for software development,
 that emphasize frequent delivery of running software, customer collaboration, 
 and self-managing teams.  The values and principles can be incorporated into any
 development process.
@@ -46,11 +47,10 @@ development process.
 
 <tr valign="top">
 <td align="left" markdown="span">
-[Scrum](agile/index#scrum)
+[Scrum](agile/scrum)
 </td>
 <td align="left" markdown="span">
-Scrum is a set of practices for iterative development. Scrum focuses on
-development activities and can be incorporated in many software (or non-software) projects.
+Scrum is a set of practices for iterative development. 
 </td>
 </tr>
 
@@ -59,9 +59,7 @@ development activities and can be incorporated in many software (or non-software
 [Git](git) and Version Control
 </td>
 <td align="left" markdown="span">
-Basics of using a git to manage work products, compare or recover previous versions, and how to work with remote repositories.
-
-Git *branches* are used to manage work on features or fixes, and *tags* are used to mark specific points in a repository, such as a release.
+[Basics](git/git-basics) of using a git, common use cases, [branches][git-branching], [aliases](git/aliases), and how to work with remote repositories.
 </td>
 </tr>
 
@@ -70,8 +68,13 @@ Git *branches* are used to manage work on features or fixes, and *tags* are used
 Git and Development
 </td>
 <td align="left" markdown="span">
-Using Github Flow, issues, commit messages, 
-pull request reviews, and referencing code in issues.
+Using [Github Flow](git/index#github-flow), issues, commit messages, 
+[pull request](git/Pull-Requests.pdf) reviews, and referencing code in issues.
+Using tags. Tags and Releases on Github.
+[Branching and Merging][git-book-branching-and-merging] in online Git Book.   
+Using [Github Flow](git/index#github-flow).    
+[Pull Request Tutorial](https://yangsu.github.io/pull-request-tutorial/) why and how to use pull requests.     
+[Using SSH Keys](https://help.github.com/articles/connecting-to-github-with-ssh/) so you don't need to enter your password!
 </td>
 </tr>
 
@@ -80,10 +83,11 @@ pull request reviews, and referencing code in issues.
 [Unit Testing](testing)
 </td>
 <td align="left" markdown="span">
-Unit testing is testing of individual "units" of code, such as classes and methods.
-Testing Behavior - don't only test code (TBA)   
+Testing of individual "units" of code, such as classes and methods.
+Test Behavior - don't only test code.      
 [Code Coverage](testing/code-coverage)      
-Unit testing in Java (JUnit) and Python (unittest). Python doctest.
+[JUnit for Java](/testing/Intro-to-Unit-Testing.pdf) and 
+[unit testing in Python](testing/PythonUnitTesting.pdf)
 </td>
 </tr>
 
@@ -99,19 +103,26 @@ Mock Objects for testing.
 <!-- Types and Type Checking -->
 <tr valign="top">
 <td align="left" markdown="span"> 
-Types and    
-Type Checking
+Static Typing
 </td>
 <td markdown="span">
-[Intro to Types and Type Checking](code-quality/Type-Checking.pdf) (slides)    
-[Type Hints][type-hints] in Python
+[Intro to Types and Type Checking](code-quality/Type-Checking.pdf) (slides)
+and [Python Type Hinting](type-hints/introduction) by Mai.       
+Python docs [Typing support][python-typing], and
+[Collections base classes][python-abc-collections] are very useful!    
 
-Read Mai's [Type Hints][type-hints] write-up     
-and these Python docs: [Typing][python-typing], 
-[Collections base classes][python-abc-collections] (shows what methods each type provides)
-Add type hints to detect errors: [scorecard.py][scorecard.py]      
-Do the exercises in Mai's [Type Hints][type-hints] write-up    
-[Type Hint Practice](code-quality/type-hint-practice.pdf) exercise     
+Add type hints to detect errors: [scorecard.py](type-hints/scorecard.py)      
+Do the exercises in Mai's [Type Hints](type-hints/introduction) write-up, and this   
+[Type Hint Practice](type-hints/type-hint-practice.pdf).     
+</td>
+</tr>
+
+<tr valign="top">
+<td align="left" markdown="span">
+Clean Code
+</td>
+<td align="left" markdown="span">
+What is clean code?
 </td>
 </tr>
 
@@ -140,12 +151,11 @@ Example Checklists: [Java](code-review/Java-Code-Review-Checklist.pdf),
 </tr>
 
 <tr valign="top">
-<td align="center" markdown="span"> 
+<td align="left" markdown="span"> 
 End-to-End Testing    
 </td>
-<td markdown="span">    
-[Web App E2E Testing with Selenium](testing/WebTesting.pdf)    
-   
+<td markdown="span">
+[Web App E2E Testing](testing/WebTesting.pdf) with Selenium.    
 [Intro to Selenium](testing/Selenium-intro)    
 1. Refactor your Django tests into separate files, based on what is being tested.    
 2. Perform code coverage on your Django tutorial code and your project code.    
@@ -164,7 +174,16 @@ cloud-based applications, developed by Heroku.
 </tr>
 
 </table>
+---
 
+[git-branching]: https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell
+[git-book-branching-and-merging]: https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging
+[isp-qa]: https://isp2018.github.io/isp-qa/
+[demo-ci]: https://github.com/jbrucker/demo-ci
+[demo-ci-python]: https://github.com/jbrucker/demo-pyci
+[type-hints]: type-hints/introduction.md
+[python-abc-collections]: https://docs.python.org/3/library/collections.abc.html
+[python-typing]: https://docs.python.org/3/library/typing.html
 ---
 ## Web Applications
 
@@ -176,7 +195,7 @@ cloud-based applications, developed by Heroku.
 [HTTP](web/index#http)
 </td>
 <td align="left" markdown="span">
-HTTP is the communicatoin protocol used by web apps and web services.    
+HTTP is the communication protocol used by web apps and web services.    
 [Introduction to HTTP](web/HTTP.pdf)    
 [HTTP in Action](web/HTTP-in-Action.pdf) class exercises using HTTP, requires ncat or netcat.    
 Useful [Http Tools](web/http#tools) for manually testing and debugging web apps.
@@ -228,7 +247,7 @@ Essentials to know are:
 
 <tr valign="top">
 <td align="left" markdown="span">
-Object-Relaltional Mapping
+Object-Relational Mapping
 </td>
 <td align="left" markdown="span">
 ORM concepts and frameworks.  All web frameworks either include an ORM
@@ -309,7 +328,7 @@ the Github Wiki for visibility.
 * Different kinds of reviews.
 * For ISP, desk check and pair reviews probably most relevant.
 
-### Clean Code, Literate Code
+### Clean Code
 
 [Clean Code](http://www.jeremybytes.com/Downloads/CleanCode.pdf) PDF by JeremyBytes. His web page on [clean code](ww.jeremybytes.com/Demos.aspx#CC) has other useful material.
 
