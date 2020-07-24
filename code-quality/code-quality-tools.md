@@ -1,18 +1,5 @@
 ## Checking Code Quality
 
-## Style Guide and Coding Convention
-
-For coding style, start with these standards:
-
-1. [pep8.org](http://pep8.org/) is a single page easy-to-read summary of how to use [PEP 8](https://www.python.org/dev/peps/pep-0008/) the official Python Style Guide.
-2. Python Guide for Docstrings [PEP 257](https://www.python.org/dev/peps/pep-0257/)
-3. [Google Python Style Guide](https://google.github.io/styleguide/pyguide.html)
-    - Part 2 is guidelines for using the Python language 
-    - Rule #1 is "run `pylint` over your code"!
-    - Part 3 "Python Style Rules" are rules for coding style
-    - Part 4 "Parting Words" is *Be Consistent*
-    - Google's guide is very prescriptive (do and don't) on how to write code.
-
 ## Tools to Check Your Code
 
 Tools can check for coding style and possible code problems. They are called "linters","code analyzers", or "code auditors".  "Lint" comes from the `lint` tool for C-language programs.  Pycharm and Pydev provide *some* of this by default.

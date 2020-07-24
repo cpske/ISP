@@ -50,7 +50,7 @@ development process.
 [Scrum](agile/scrum)
 </td>
 <td align="left" markdown="span">
-Scrum is a set of practices for iterative development. 
+Scrum is a "process" for iterative development. 
 </td>
 </tr>
 
@@ -65,16 +65,21 @@ Scrum is a set of practices for iterative development.
 
 <tr valign="top">
 <td align="left" markdown="span">
+[More Git](git)
+</td>
+<td align="left" markdown="span">
+[Branching and Merging][git-book-branching-and-merging]    
+[Using SSH Keys](https://help.github.com/articles/connecting-to-github-with-ssh/) so you never need to enter your Github password
+<tr valign="top">
+<td align="left" markdown="span">
 Git and Development
 </td>
 <td align="left" markdown="span">
 Using [Github Flow](git/index#github-flow), issues, commit messages, 
 [pull request](git/Pull-Requests.pdf) reviews, and referencing code in issues.
-Using tags. Tags and Releases on Github.
-[Branching and Merging][git-book-branching-and-merging] in online Git Book.   
-Using [Github Flow](git/index#github-flow).    
-[Pull Request Tutorial](https://yangsu.github.io/pull-request-tutorial/) why and how to use pull requests.     
-[Using SSH Keys](https://help.github.com/articles/connecting-to-github-with-ssh/) so you don't need to enter your password!
+Using tags; Tags and Releases on Github.   
+[Pull Request Tutorial](https://yangsu.github.io/pull-request-tutorial/) why and how to use pull requests.    
+[Git submodules](git/submodule) to divide a project among multiple repositories.
 </td>
 </tr>
 
@@ -84,7 +89,7 @@ Using [Github Flow](git/index#github-flow).
 </td>
 <td align="left" markdown="span">
 Testing of individual "units" of code, such as classes and methods.
-Test Behavior - don't only test code.      
+Test Behavior - not just code.      
 [Code Coverage](testing/code-coverage)      
 [JUnit for Java](/testing/Intro-to-Unit-Testing.pdf) and 
 [unit testing in Python](testing/PythonUnitTesting.pdf)
@@ -108,21 +113,21 @@ Static Typing
 <td markdown="span">
 [Intro to Types and Type Checking](code-quality/Type-Checking.pdf) (slides)
 and [Python Type Hinting](type-hints/introduction) by Mai.       
-Python docs [Typing support][python-typing], and
-[Collections base classes][python-abc-collections] are very useful!    
+Useful Python docs: [Typing support][python-typing] and
+[Collections base classes][python-abc-collections].
 
 Add type hints to detect errors: [scorecard.py](type-hints/scorecard.py)      
-Do the exercises in Mai's [Type Hints](type-hints/introduction) write-up, and this   
+Exercises: Mai's [Type Hints](type-hints/introduction) and    
 [Type Hint Practice](type-hints/type-hint-practice.pdf).     
 </td>
 </tr>
 
 <tr valign="top">
 <td align="left" markdown="span">
-Clean Code
+[Code Quality](code-quality/code-quality)
 </td>
 <td align="left" markdown="span">
-What is clean code?
+Principles, guides, tips, and tools for writing good quality, "clean" code.  Coding standard, comments as documentation, and code checkers.
 </td>
 </tr>
 
@@ -165,6 +170,16 @@ End-to-End Testing
 
 <tr valign="top">
 <td align="left" markdown="span"> 
+[Automation and CI](automation)  
+</td>
+<td markdown="span">
+[Continuous Integration](https://docs.travis-ci.com/user/for-beginners)    
+[Ant](automation/Ant.pdf), [Make](automation/Make.pdf), and other build tools  
+</td>
+</tr>
+
+<tr valign="top">
+<td align="left" markdown="span"> 
 [12-Factor App](web/12FactorApp.pdf)   
 </td>
 <td markdown="span">
@@ -179,8 +194,6 @@ cloud-based applications, developed by Heroku.
 [git-branching]: https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell
 [git-book-branching-and-merging]: https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging
 [isp-qa]: https://isp2018.github.io/isp-qa/
-[demo-ci]: https://github.com/jbrucker/demo-ci
-[demo-ci-python]: https://github.com/jbrucker/demo-pyci
 [type-hints]: type-hints/introduction.md
 [python-abc-collections]: https://docs.python.org/3/library/collections.abc.html
 [python-typing]: https://docs.python.org/3/library/typing.html
@@ -260,6 +273,53 @@ with Django models.
 </tr>
 
 <tr valign="top">
+<td markdown="span">
+Data Import
+</td>
+<td markdown="span">
+[Import and Export Data](django/data-import-export) how to create 
+"starter" data for others to easily use your polls application. 
+</td>
+</tr> 
+
+<tr valign="top">
+<td markdown="span">
+Virtual Environment
+</td>
+<td markdown="span"> 
+[Virtualenv Quickstart](django/virtualenv-quickstart) and [Using Virtualenv](django/virtualenv) show how to run apps in a virtual environment, 
+for portability and security.
+</td>
+</tr>
+
+<tr valign="top">
+<td markdown="span">
+[Messages Framework](django/messages-framework) 
+</td>
+<td markdown="span">
+Easily pass message from a view to a template.
+</td>
+</tr>
+   
+<tr valign="top">
+<td markdown="span">
+[Externalize Configuration](django/decouple-configuration)  
+</td>
+<td markdown="span"> 
+separate configuration data from code, one of the 12-Factor App recommendations.
+</td>
+</tr>
+<tr valign="top">
+<td markdown="span"> 
+Organize Tests & Models
+</td>
+<td markdown="span">
+[Separate your tests](django/django-test-organization) and [models](django/separate-model-classes) into individual files. Improves team work
+by removing conflicts.
+</td>
+</tr>
+
+<tr valign="top">
 <td align="left" markdown="span">
 [Logging](logging/Logging.pdf)
 </td>
@@ -309,49 +369,13 @@ the Github Wiki for visibility.
 
 
 
-
-### Build Tools, Build Management, and Automatic Build-and-Test
-
-* Basic build tools: using Ant or Maven for Java.
-  - maybe cover "make" and GNU make for perspective
-
-* Build and Dependency Management Tools
-  - ant and ivy (for dependency mgmt)
-  - maven
-  - gradle
-
-* Using automatic build and test with CircleCI or Travis on Github.
-
 ### Reviews
 
 * Reviews find more defects than testing, according to many studies.
 * Different kinds of reviews.
 * For ISP, desk check and pair reviews probably most relevant.
 
-### Clean Code
 
-[Clean Code](http://www.jeremybytes.com/Downloads/CleanCode.pdf) PDF by JeremyBytes. His web page on [clean code](ww.jeremybytes.com/Demos.aspx#CC) has other useful material.
-
-* Important lessons from *Clean Code* and *Code Complete*.
-
-* Maybe look at *Practices of an Agile Developer*.  Each chapter is short and covers one lesson.  Some parts are online.
-
-* Use a coding convention, and consistent coding style.
-
-* How to use Checkstyle. How to configure and safe a code style Eclipse or IntelliJ.
-
-* Look at coding guidelines from some real projects. Apache is good source.
-
-### Documenting Your Code
-
-* Python Docstrings, Javadoc, or Scaladoc to create documentation for everyone to use.  
-* Syntax of Python Docstrings.
-    - 3 variations: Python official docstrings, Google style, Numpy style
-* Tools for formatting them:
-    - pydoc
-    - python interactive: help(something)
-    - Sphinx and the Napolean addon
-* Code comments to explain *why* and details not obvious from code
 
 ### Project Documentation
 

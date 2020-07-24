@@ -4,9 +4,10 @@ When you create a new app, Django creates a `tests.py` file for the app.
 However, putting all your tests in one file is usually not a good idea.
 
 Especially on a team project with development done in git branches,
-you will have conflicts every time you merge a branch into master.
+different developers will add tests to the same file.
+You will have conflicts every time you merge a branch into master.
 
-A better approach is to divide your tests into multiple files.  
+A better way is to divide your tests into multiple files.  
 For the Django Polls tutorial, the structure for tests would be:
 ```listing
 polls/
@@ -21,7 +22,7 @@ polls/
         test_choice.py
         test_views.py
 ```
-        
+     
 
 ### 1. Put your tests in a folder named `tests`
 
@@ -50,7 +51,7 @@ polls/
 
 and then delete `tests.py` or rename it so it won't be run, e.g. 'test-orig.py'.
 
-### 4. Modify imports
+### 4. Modify imports in test files
 
 Since the tests are now in their own package, you will need
 to modify relative imports in your tests.
@@ -72,8 +73,8 @@ python manage.py test -v 2 polls
 ```
 The `-v 2` is optional; it displays one line for each test method run.
 
-## Refactor Models, too?
+## Refactor Models
 
-You can also refactor your `models.py` into a `models` directory and separate files for each class.  
+You can (probably should) refactor your models classes into individual files, instead of putting them all in `models.py`.  
 
-Refactoring models requires some extra work is needed so that you don't need to rewrite your imports and so that Django migrations work.  This is covered in a separate write-up.
+This is described in [Separate Models into Separate Files](separate-model-classes).

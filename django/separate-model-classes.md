@@ -1,4 +1,4 @@
-## Refactoring Django Models to use Separate Classes
+## Separate Model Classes into Individual Files
 
 The default organization of a Django "app" is for all model classes
 to be defined in a single file named `models.py`.
@@ -7,10 +7,10 @@ This has a couple of drawbacks:
 
 1. As you application grows this file becomes large and harder to read or navigate.
 
-2. When adding new features on a team, different team members may add models (using different branches of the git repo).  Merging these branches may produce conflicts.  
+2. When working with a team,  different team members may add models using different branches of the git repo.  Merging these branches may produce conflicts.  
     - Even without conflicts, every time you change one model class the file needs to me merged.
 
-## Splitting Mdoels into Separate Files
+## Separate Model classes into Separate Files
 
 Suppose we have a todo-list application (as in *TDD in Python*) with a `lists` app and two model classes:
 
@@ -43,7 +43,7 @@ list-project/
            (templates for web pages)
 ```
 
-We will split `models.py` into a separate class for each model and put each class-file in a subdirectory named `models`.  Our project will look like this:
+We will split `models.py` into separate files for `Todo` and `Todo_List` classes, and put all models in a subdirectory named `models`.  The project will look like this:
 
 ```
 list-project/
@@ -66,7 +66,7 @@ Some extra code is needed to address two issues:
 
 1. Django migrations needs to locate the models and associate them with the correct database table.  And we don't want to change the table names.
     - The default table names are `app_model` such as `lists_todo` and `lists_todolist`.
-2. We don't want to change our code that refers to models.  In the default configuration (all models in models.py) we would write:
+2. We don't want to change other code that refers to models.  In the default configuration (all models in models.py) we would write:
 ```python
 from lists.models import Todo
 from lists.models import TodoList
