@@ -1,407 +1,493 @@
 ---
-layout: page
 title: ISP Topics
-description: Index page
 ---
 
-[About the Course](introduction/index), 
-[Topics](topics), 
-[Google Classroom](https://classroom.google.com/) for assignments (code: minx6nj), [Resources](Resources).
+**Schedule** Monday 10-12, 13-16 starting 10 Aug 2020.   
+**Location** class will be online. Some meetings and live lectures in room E204.  Location of online meeting will be announced before first day of class.    
+[Google Classroom](https://classroom.google.com) code **3blhnrs** for assignments and announcements    
+Github Classroom & Org [ISP2020](https://github.com/org/ISP2020) for programming assignments. Sign-up form:  https://forms.gle/fh9SqvmA9yPh1ur6A    
 
-[Course Projects](http://bit.ly/isp2019projects)
+[Learning Resources](Resources), [old index](index2019)
 
-<table border="1">
-
+<table border="0">
+<tr valign="top"> <th width="25%">Topic</th> <th width="75%">Description</th> </tr>
 <tr valign="top">
-  <th> Topic </th>  
-  <th width="45%"> Description </th>
-  <th width="45%"> Assignment </th>
-</tr>
-<!-- Introduction -->
-<tr valign="top">
-<td align="center" markdown="span"> 
-[Introduction](introduction/)
+<td markdown="span">
+[Introduction](introduction/index)
 </td>
 <td markdown="span">
-[Intro to Course and Software Process](introduction/index)    
-[Advice from SKE Graduate & Entrepenuer](introduction/Jomzap-Recommendations.pdf)
-</td>
-<td markdown="span">
-Join [Google Classroom](https://classroom.google.com). Use your KU Login and code **minx6nj**.    
-Join **Github Classroom** - invitation sent to your KU-Gmail.        
-Update your Github profile: your real name & photo.
+[Introduction to course goals and topics](introduction/index), 
+prerequisites, required work and grading, and how to access material.    
+[Advice from an SKE scholar & entrepeneur](introduction/Jomzap-Recommendations.pdf).    
+[Assignment](assignment/week1/signup-and-software) to do by first week.    
 </td>
 </tr>
 
-<!-- Iterative Development -->
 <tr valign="top">
-<td align="center" markdown="span"> 
-Iterative Development
+<td markdown="span">
+[Software Processes](software-process) <br/>
+Iterative &amp; Incremental Development
 </td>
 <td markdown="span">
-Iterative Software Development was discussed in week 1 in the topic "Intro to Software Process".  Most software processes use iterative development, including the Unifed Process (UP) framework and all Agile processes.
-</td>
-<td markdown="span">
-Support for SDLC on Github:
-[Github Features](https://github.com/features). Its not complete, though.
+An introduction to software process concepts and practices. The Waterfall process compared to iterative and incremental development; the Unified Software Develop Process (UP) as a model, and Scrum for managing iterations.    
+[Github features that support SDLC](https://github.com/features)
 </td>
 </tr>
-<!-- Agile -->
+
 <tr valign="top">
-<td align="center" markdown="span"> 
-[Agile](agile/)    
+<td markdown="span">
+[Agile](agile/agile)
 </td>
 <td markdown="span">
-Intro to [Agile Principles and Practices](agile/agile).    
-</td>
-<td markdown="span">
-Read [Agile 101](https://www.agilealliance.org/agile101/) at Agile Alliance.    
-Video [Agile Product Ownership](https://www.youtube.com/watch?v=502ILHjX9EE)    
-Think critically.  Do you agree with the principles?     
-Optional: [Agile at Microsoft](https://www.youtube.com/watch?v=-LvCJpnNljU) how Visual Studio Team Services moved to agile.
+[Agile values, principles, and practices](agile/agile) for software development,
+that emphasize frequent delivery of running software, customer collaboration, 
+and self-managing teams.  The values and principles can be incorporated into any
+development process.
 </td>
 </tr>
-<!-- Scrum -->
+
 <tr valign="top">
-<td align="center" markdown="span"> 
-[Scrum](agile/scrum)    
+<td markdown="span">
+[Scrum](agile/scrum)
 </td>
 <td markdown="span">
-A popular technique for iterative development.  The video at right is best place to start.  The [Agile index](agile/index) has more Scrum material.
-</td>
-<td markdown="span">
-Watch [Scrum in Under 10 Minutes](https://youtu.be/XU0llRltyFM) https://youtu.be/XU0llRltyFM    
-Then answer these [Questions about Scrum](https://forms.gle/wUCG2FCg3uS31bjz6).    
-In class: [Scrum Questions and Answers](agile/Scrum-Questions-and-Answers.pdf).    
-[Scrum Guide](https://www.scrum.org) by inventors of Scrum contains up-to-date ideas for how to apply Scrum in your team.
+Scrum is a "process" for managing work in an iteration. 
 </td>
 </tr>
-<!-- Unit Testing -->
+
 <tr valign="top">
-<td align="center" markdown="span"> 
-[Unit Testing](testing/)    
+<td markdown="span">
+[Git](git) and Version Control
 </td>
 <td markdown="span">
-[Intro to Unit Testing](testing/Intro-to-Unit-Testing.pdf)   
-[Python Unit Testing](testing/PythonUnitTesting.pdf)    
-The [index](testing/index) has links to Java unit testing slides.
-</td>
-<td markdown="span">
-[Unit Testing Assignment](assignment/week1/unit-testing-assignment)    
-Github Classroom URL: [https://classroom.github.com/a/fbbn_6eq](https://classroom.github.com/a/fbbn_6eq) to create your repo.    
-Example tests for gcd: [gcd_test.py](testing/gcd_test.py) 
+[Basics](git/git-basics) of using a git, common tasks, [branches][git-branching], [aliases](git/aliases), and working with remote repositories.   
+Visualizing a git repo.
 </td>
 </tr>
-<!-- Git -->
+
 <tr valign="top">
-<td align="center" markdown="span"> 
-[Git](git/)    
+<td markdown="span">
+[More Git](git)
 </td>
 <td markdown="span">
-[Git Basics](git/git-basics).     
-Using [branches][git-branching] (online Git book).    
-[Aliases](git/aliases) how to create aliases for git commands.
-</td>
-<td markdown="span">
-[Git Questions](git/git-questions) copy the source file [git/git-questions.md](git/git-questions.md) and write your answers after the questions.    
-**Know** [Git Branching][git-branching] chapter in online Git Book.
+[Branching and Merging][git-book-branching-and-merging]    
+[Using SSH Keys](https://help.github.com/articles/connecting-to-github-with-ssh/) so you never need to enter your Github password
 </td>
 </tr>
-<!-- More Git -->
 <tr valign="top">
-<td align="center" markdown="span"> 
-More [Git](git/)    
+<td markdown="span">
+Git and Development
 </td>
 <td markdown="span">
-[Branching and Merging][git-book-branching-and-merging] in online Git Book.   
-Using [Github Flow](git/index#github-flow).    
+Using [Github Flow](git/index#github-flow), issues, commit messages, 
+[pull request](git/Pull-Requests.pdf), referencing code in issues.    
+Importance of descriptive commit messages and Pull Requests     
+Using tags; Tags and Releases on Github.   
 [Pull Request Tutorial](https://yangsu.github.io/pull-request-tutorial/) why and how to use pull requests.    
-[Pull Request slides](git/Pull-Requests.pdf)    
-[Commenting on Pull Requests](https://help.github.com/en/articles/commenting-on-a-pull-request)- examples of providing feedback.    
-[Using SSH Keys with Git](https://help.github.com/articles/connecting-to-github-with-ssh/) so you don't need to enter your userid/password (optional).
+[Git submodules](git/submodule) to divide a project among multiple repositories.
+</td>
+</tr>
+
+<tr valign="top">
+<td markdown="span">
+[Unit Testing](testing)
 </td>
 <td markdown="span">
-[Assignment for Github Flow & Pull Requests](assignment/week2/github-flow)    
-A real [pull request in jQuery repo](https://github.com/jquery/jquery/pull/1051)     
+Testing of "units" of code, such as classes and methods.    
+Testing Behavior - not just code.      
+[Code Coverage](testing/code-coverage)      
+[JUnit for Java](/testing/Intro-to-Unit-Testing.pdf) and 
+[unit test in Python](testing/PythonUnitTesting.pdf)
+</td>
+</tr>
+
+<tr valign="top">
+<td markdown="span">
+Mock Objects
+</td>
+<td markdown="span">
+Mock Objects for testing.
 </td>
 </tr>
 
 <!-- Types and Type Checking -->
 <tr valign="top">
-<td align="center" markdown="span"> 
-Type Checking
-</td>
-<td markdown="span">
-[Intro to Types and Type Checking](code-quality/Type-Checking.pdf) (slides)    
-[Type Hints][type-hints] in Python
-</td>
-<td markdown="span">
-Read Mai's [Type Hints][type-hints] write-up     
-and these Python docs: [Typing][python-typing], 
-[Collections base classes][python-abc-collections] (shows what methods each type provides)
-Add type hints to detect errors: [scorecard.py][scorecard.py]      
-Do the exercises in Mai's [Type Hints][type-hints] write-up    
-[Type Hint Practice](code-quality/type-hint-practice.pdf) exercise     
-</td>
-</tr>
-<!-- Web Apps -->
-<tr valign="top">
-<td align="center" markdown="span"> 
-Web Apps
-</td>
-<td markdown="span">
-[Introduction to HTTP](web/HTTP.pdf).     
-[Introduction to Django](django/Intro-to-Django.pdf).    
-Web servers, web apps, and [Web Frameworks](web/web-frameworks).    
-[WSGI](web/wsgi-servers) standard for connecting Python web apps to web app servers.
-</td>
-<td markdown="span">
-[HTTP Exercises](web/HTTP-in-Action.pdf) in class.    
-Assignment: [Implement the Django Tutorial parts 1-5](assignment/week4/learn-django). 
-</td>
-</tr>
-<!-- Database and ORM-->
-<tr valign="top">
-<td align="center" markdown="span"> 
-Database   
-&amp; ORM
-</td>
-<td markdown="span">
-[Intro to Databases](database/Database-Basics.pdf)        
-[Object-Relational Mapping](database/Persistence-and-ORM.pdf)
-</td>
-<td markdown="span">
-[Database exercise](database/database-exercise)
-</td>
-</tr>
-<!-- Coding and Agile Practice -->
-<tr valign="top">
-<td align="center" markdown="span"> 
-Good Developer Practices     
-</td>
-<td markdown="span">
-Importance of descriptive commit messages and Pull Requests    
-[Separate configuration from code](refactoring/Separate-config-from-code.pdf)   
-[Checking Code Quality](code-quality/code-quality-tools), style guides and tools 
-</td>
-<td markdown="span">
-Use pylint to check your code.
-You can integrate pylint into your IDE.
-</td>
-</tr>
-<!-- Django Stuff -->
-<tr valign="top">
-<td align="center" markdown="span"> 
-Django    
-</td>
-<td markdown="span">
-[Import and Export Data](django/data-import-export) and how to create 
-a backup or "starter" data for others to easily use your polls application.    
-[Virtualenv Quickstart](django/virtualenv-quickstart) and [Using Virtualenv](django/virtualenv) how to run apps in a virtual environment (its easy).    
-[Messages Framework](django/messages-framework) how to pass messages from a view to a template    
-[Externalize Configuration](web/decouple-configuration)    
-[Organize Your Django Tests](django/django-test-organization)       
-</td>
-<td markdown="span">
-Share Some Useful Django Tips or Howto -    
-(a) send markdown file to me for addition here, or    
-(b) add it yourself to class Wiki.
-</td>
-</tr>
-<!-- UML -->
-<tr valign="top">
-<td align="center" markdown="span"> 
-UML    
-</td>
-<td markdown="span">
-[UML Class Diagram](uml/UML-Class-Diagram.pdf)    
-</td>
-<td markdown="span">
-&nbsp;
-</td>
-</tr>
-<!-- Midterm -->
-<tr valign="top">
-<td align="center" markdown="span"> 
-Midterm    
-5 Oct (Saturday)
-</td>
-<td markdown="span">
-Written: 9:00-11:00 AM    
-Coding: 12:00-15:00 PM    
-*Dress Like a Programmer*    
-*Bring your computer to **both** exams*
-</td>
-<td markdown="span">
-Covers all material so far.    
-[Topics for Programming Exam](review/midterm-topics)
-includes unit testing
-and adding a simple feature to a Django project.
-</td>
-</tr>
-<!-- Project -->
-<tr valign="top">
-<td align="center" markdown="span"> 
-Project Proposal
-</td>
-<td markdown="span">
-[Project Guidelines](http://bit.ly/isp2019proj-guide)     
-[Proposal Template](http://bit.ly/isp2019-template)
-</td>
-<td markdown="span">
-See assignments and links on Google Classroom.    
-Provide a link to your project repo on [Google Project Sheet](http://bit.ly/isp2019projects).    
-</td>
-</tr>
-<!-- Submodules and Testing -->
-<tr valign="top">
-<td align="center" markdown="span"> 
-Git Submodules
-</td>
 <td markdown="span"> 
-Git Submodule for Testing    
+Static Typing
 </td>
 <td markdown="span">
-[How to use git submodule](git/submodule) for unit tests.
-</td>
-</tr>
-<!-- Automation and Testing -->
-<tr valign="top">
-<td align="center" markdown="span"> 
-Build Automation and CI
-</td>
-<td markdown="span"> 
-[Continuous Integration](https://docs.travis-ci.com/user/for-beginners)    
-[Ant](automation/Ant.pdf), [Make](automation/Make.pdf), and other build tools    
-</td>
-<td markdown="span">
-[Travis-CI Assignment](assignment/week7/ci-travis)    
-Demo CI projects: [Java sample][demo-ci], [Python sample][demo-ci-python], [Explained](automation/travis-demo-project.md)
-</td>
-</tr>
-<!-- project -->
-<tr valign="top">
-<td align="center" markdown="span"> 
-Early Project
-Activities
-</td>
-<td markdown="span">
-Record Requirements as User Stories/Use Cases    
-Create a [Domain Model](https://www.scaledagileframework.com/domain-modeling/)    
-Make an Iterative Project Plan    
-</td>
-<td markdown="span">
-Do it for your project.
-</td>
-</tr>
-<!-- Authentication -->
-<tr valign="top">
-<td align="center" markdown="span"> 
-Authentication  
-</td>
-<td markdown="span">
-[Intro to Authentication](authentication/Authentication-and-Authorization.pdf)    
-[Django Authentication](django/authentication)    
-</td>
-<td markdown="span">
-Add authentication to Django Polls, so a user must login to vote.   
-First, [refactor tests.py to a "tests" directory](django/django-test-organization).    
-[Authentication requirements](assignment/django-auth-stories)    
+[Intro to Types and Type Checking](code-quality/Type-Checking.pdf) (slides)
+and [Python Type Hinting](type-hints/introduction) by Mai.       
+Useful Python docs: [Typing support][python-typing] and
+[Collections base classes][python-abc-collections].
 
+Add type hints to detect errors: [scorecard.py](type-hints/scorecard.py)      
+Exercises: Mai's [Type Hints](type-hints/introduction) and
+[Type Hint Practice](type-hints/type-hint-practice.pdf).     
 </td>
 </tr>
-<!-- More Testing (week 13) -->
+
 <tr valign="top">
-<td align="center" markdown="span"> 
-More Testing    
+<td markdown="span">
+[Code Quality](code-quality/code-quality)
 </td>
 <td markdown="span">
-[Intro to Testing](testing/Intro-Testing.pdf) more than just unit tests     
-[Web App E2E Testing with Selenium](testing/WebTesting.pdf)    
-Testing Behavior - don't only test code (TBA)   
-[Code Coverage](testing/code-coverage)    
+Principles, guides, tips, and tools for writing good quality, "clean" code.  Coding standard, comments as documentation, and code checkers.
+Essential for all developers!
+</td>
+</tr>
+
+
+<tr valign="top">
+<td markdown="span">
+Assertions
 </td>
 <td markdown="span">
+Assertions are executable statments of what should be true at some point in code, often used to "*assert*" requirements for parameters.  Assertions reduce errors and document code-level assumptions.
+</td>
+</tr>
+
+<tr valign="top">
+<td markdown="span">
+[Refactoring](refactoring)
+</td>
+<td markdown="span">
+Improve existing code by restructiring it without changing its external functionality.
+Common refactoring situations and how to do them using an IDE.
+</td>
+</tr>
+
+<tr valign="top">
+<td markdown="span"> 
+Code Review
+</td>
+<td markdown="span">
+[Software Review](code-review/Reviews.pdf) slides and [Summary](code-review/code-review)       
+[Code Review Best Practices](code-review/code-review-best-practices) from various sources    
+[Reviews chapter from Stellman &amp; Greene](code-review/Reviews-Stellman-and-Greene.pdf)    
+[Assignment: Code Review Checklist and Script](assignment/code-review)    
+Example Review Checklists: [Java](code-review/Java-Code-Review-Checklist.pdf), 
+[PSP](code-review/PSP-Review-Script-Checklist.pdf)
+</td>
+</tr>
+
+<tr valign="top">
+<td markdown="span"> 
+End-to-End Testing    
+</td>
+<td markdown="span">
+[Web App E2E Testing](testing/WebTesting.pdf) with Selenium.    
 [Intro to Selenium](testing/Selenium-intro)    
 1. Refactor your Django tests into separate files, based on what is being tested.    
 2. Perform code coverage on your Django tutorial code and your project code.    
 3. Selenium: [Find Bad Links](assignment/selenium). 
 </td>
 </tr>
-<!-- Refactoring -->
+
 <tr valign="top">
-<td align="center" markdown="span"> 
-Refactoring
+<td markdown="span"> 
+[Automation and CI](automation)  
 </td>
 <td markdown="span">
-[Intro to Refactoring](refactoring/Refactoring.pdf)    
-[Refactoring Patterns](refactoring/Refactoring-Patterns.pdf)    
-[Externalize Configuration](web/decouple-configuration) in Python, you already did    
-</td>
-<td markdown="span">
-[Pizzashop refactoring exercise](https://github.com/ISP19/pizzashop)     
-[Movie Rental refactoring example](https://github.com/jbrucker/movierental)    
-Read about refactoring and create your own refactoring exercise 
-</td>
-</tr>
-<!-- Logging -->
-<tr valign="top">
-<td align="center" markdown="span"> 
-Logging    
-</td>
-<td markdown="span">
-[Logging](logging/Logging.pdf)    
-</td>
-<td markdown="span">
-[Logging Practice](logging/logging-practice)     
-[Logging Assignment](assignment/logging)     
-</td>
-</tr>
-<!-- Reviews -->
-<tr valign="top">
-<td align="center" markdown="span"> 
-Code Review
-</td>
-<td markdown="span">
-[Software Review](code-review/Reviews.pdf) slides and [Summary](code-review/code-review)       
-[Code Review Best Practices](code-review/code-review-best-practices) from various sources
-</td>
-<td markdown="span">
-[Reviews chapter from Stellman &amp; Greene](code-review/Reviews-Stellman-and-Greene.pdf)    
-Example Checklists: [Java](code-review/Java-Code-Review-Checklist.pdf), 
-[PSP](code-review/PSP-Review-Script-Checklist.pdf)    
-[Assignment: Code Review Checklist and Script](assignment/code-review)
-</td>
-</tr>
-<!-- 12-Factor App -->
-<tr valign="top">
-<td align="center" markdown="span"> 
-12-FactorApp    
-</td>
-<td markdown="span">
-[12-Factor App](web/12FactorApp.pdf)   
-</td>
-<td markdown="span">
-nothing yet
+[Continuous Integration](https://docs.travis-ci.com/user/for-beginners)    
+[Ant](automation/Ant.pdf), [Make](automation/Make.pdf), and other build tools  
 </td>
 </tr>
 
-<!-- Last week -->
 <tr valign="top">
-<td align="center" markdown="span"> 
-4 Dec 
+<td markdown="span"> 
+[12-Factor App](web/12FactorApp.pdf)   
 </td>
 <td markdown="span">
-Last day of class.
-Projects should be done, tested, reviewed, and deployed to cloud.
+12 recommendations from Heroku for maintainable
+cloud-based applications. 
+</td>
+</tr>
+
+<tr valign="top">
+<td markdown="span"> 
+UML 
 </td>
 <td markdown="span">
-Presentation: describe your dev process and technology used.  Not a project demo -- the class will use your cloud deployment and give feedback.
+Visual software design, function, and deployment using UML.
+</td>
+</tr>
+</table>
+
+[git-branching]: https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell
+[git-book-branching-and-merging]: https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging
+[isp-qa]: https://isp2018.github.io/isp-qa/ 	
+[type-hints]: type-hints/introduction.md
+[python-abc-collections]: https://docs.python.org/3/library/collections.abc.html
+[python-typing]: https://docs.python.org/3/library/typing.html
+---
+
+## Web Applications and Django
+
+<table border="0">
+<tr valign="top"> <th width="25%">Topic</th> <th width="75%">Description</th> </tr>
+
+<tr valign="top">
+<td markdown="span">
+[HTTP](web/index#http)
+</td>
+<td markdown="span">
+HTTP is the communication protocol used by web apps and web services.    
+[Introduction to HTTP](web/HTTP.pdf)    
+[HTTP in Action](web/HTTP-in-Action.pdf) class exercises using HTTP, requires ncat or netcat.    
+Useful [Http Tools](web/http#tools) for manually testing and debugging web interactions.
+</td>
+</tr>
+
+<tr valign="top">
+<td markdown="span">
+Web Apps and Frameworks
+</td>
+<td markdown="span">
+Short intro to how a web server and web app typically handle requests and responses.  This helps make sense of the various components of a [web framework](web/web-frameworks).    
+[WSGI](web/wsgi-servers) standard for connecting Python web apps to web app servers.
+</td>
+</tr>
+
+<tr valign="top">
+<td markdown="span">
+Django
+</td>
+<td markdown="span">
+[Introduction to Django](django/Intro-to-Django.pdf)
+</td>
+</tr>
+
+<tr valign="top">
+<td markdown="span">
+Django Polls Project
+</td>
+<td markdown="span">
+Everyone will implement the Django Polls tutorial project.  We'll structure it as an iterative software project. In each iteration you'll implement new features and learn new material.
+</td>
+</tr>
+
+<tr valign="top">
+<td markdown="span">
+Database Basics
+</td>
+<td markdown="span">
+Intro to database concepts and how to use a database in code.
+Tables, field types, identity fields, relating tables, the basic CRUD operations.
+</td>
+</tr>
+
+<tr valign="top">
+<td markdown="span">
+Object-Relational Mapping
+</td>
+<td markdown="span">
+ORM concepts and frameworks.  All web frameworks include or rely on ORM.
+Two common design patterns for ORM.  
+Table schema for different domain models. 
+Understanding ORM concepts makes it easier to understand and work
+with Django models.
+</td>
+</tr>
+
+<tr valign="top">
+<td markdown="span">
+Data Import
+</td>
+<td markdown="span">
+[Import and Export Data](django/data-import-export) how to create 
+"starter" data for others to easily install and use your polls application
+</td>
+</tr> 
+
+<tr valign="top">
+<td markdown="span">
+Virtual Environment
+</td>
+<td markdown="span"> 
+[Virtualenv Quickstart](django/virtualenv-quickstart) and [Using Virtualenv](django/virtualenv) - how to run apps in a virtual environment,
+for portability and security
+</td>
+</tr>
+
+<tr valign="top">
+<td markdown="span">
+[Messages Framework](django/messages-framework) 
+</td>
+<td markdown="span">
+Easily pass messages from a view to a template
+</td>
+</tr>
+   
+<tr valign="top">
+<td markdown="span">
+[Externalize Configuration](django/decouple-configuration)  
+</td>
+<td markdown="span"> 
+[Separate configuration from code](refactoring/Separate-config-from-code.pdf) is a practice that applies to all software, not just web apps.
+For Django, use [decouple](django/decouple-configuration)  
+</td>
+</tr>
+
+<tr valign="top">
+<td markdown="span"> 
+Organize Tests & Models
+</td>
+<td markdown="span">
+[Separate your tests](django/django-test-organization) and [models](django/separate-model-classes) into individual files. Improves team work
+by avoiding conflicts.
+</td>
+</tr>
+
+<tr valign="top">
+<td markdown="span">
+[Logging](logging/Logging.pdf)
+</td>
+<td markdown="span">
+[Logging](logging/Logging.pdf)    
+[Logging Practice](logging/logging-practice)
+</td>
+</tr>
+
+<tr valign="top">
+<td markdown="span"> 
+Deployment
+</td>
+<td markdown="span">
+How to package and deploy a web application.
+Manage dependencies and isolate apps in containers.
 </td>
 </tr>
 </table>
 
 ---
+
+## Other Topics
+
+Some of these may be *implicitly* covered as part of other topics.
+
+<table border="0">
+<tr valign="top"> <th width="25%">Topic</th> <th width="75%">Description</th> </tr>
+<tr valign="top">
+<td markdown="span">
+Project Planning
+</td>
+<td markdown="span">
+1. Writing a good Vision statement    
+2. Defining Goals and Milestones    
+3. Key planning concepts from the RUP framework    
+4. Prioritizing development (RUP: value to customer, high risk, importance to architecture)    
+5. Prototyping to reduce risk and uncertainly
+</td>
+</tr>
+<tr valign="top">
+<td markdown="span">
+Process Improvement
+</td>
+<td markdown="span">
+Retrospectives and self-assessments to discover and *implement* improvements to
+your development process
+</td>
+</tr>
+<tr valign="top">
+<td markdown="span">
+Essential Project Documents
+</td>
+<td markdown="span">
+*Vision Statement* - describes goal and "vision" of the product    
+*Requirements* - features, use cases or user stories ("Software Requirements Specification" in some projects)    
+*Project Plan* - overall plan of what to build at each iteration, and the process to use   
+*Iteration Plan* - goal, milestones, and tasks for one iteration    
+*Software design* - document at least high level design    
+*Project notebook*, e.g. wiki, to record:
+	- decisions related to architecture 
+	- important design decisions and *why* you made them (rationale)    
+	- solutions and knowledge      
+*Build & installation instructions* - including dependencies
+</td>
+</tr>
+<tr valign="top">
+<td markdown="span">
+Project Tools
+</td>
+<td markdown="span">
+Project board - whole project and each iteration   
+Issue tracker - bugs, change requests, and more    
+Burn-down or Burn-up chart (optional)    
+Project wiki - good location for iteration plans, software design notebook, recording knowledge and solutions    
+**Information Radiators**:  project tools should quickly convey useful info & easily visible as part of your normal workflow
+</td>
+</tr>
+<tr valign="top">
+<td markdown="span">
+Measuring Progress and Quality
+</td>
+<td markdown="span">
+Velocity - the team's rate of task completion <br/>
+Common software metrics, like LOC, functions, code "units". <br/>
+Count and classify defects.  Design defects, coding defects, test defects, regression defects.
+</td>
+</tr>
+<tr valign="top">
+<td markdown="span">
+Estimation
+</td>
+<td markdown="span">
+Frequent question from managers and customers is "*how long will it take?*" or "*when will be ready?*"  Planning requires good estimates, but most developers are very poor at estimation.
+<br/>
+- How to estimate development time and code size <br/>
+- Jittat's Slides <br/>
+- Tracking your effort in order to improve ability to estimate <br/>
+- [Agile Estimation](http://www.construx.com/Resources/Presentation/Agile_Estimation__Key_Principlies_and_Practices_for_Successful_Agile_Practices/) talk by Construx (Steve McConnell's company)
+</td>
+</tr>
+<tr valign="top">
+<td markdown="span">
+Self-improvement
+</td>
+<td markdown="span">
+- Importance of continual learning and reading<br/>
+- _Pragmatic Programmer_ Item 5: Your Knowledge Portfolio (p. 37) and recommendation from TaskWord (intro folder)<br/>
+- Goal-directed learning instead of comprehensive learning or random videos<br/>
+- Tracking your own performance<br/>
+- Create and improve your own personal software process
+</td>
+</tr>
+<tr valign="top">
+<td markdown="span">
+Communication
+</td>
+<td markdown="span">
+One of the main causes of unsuccessful projects is poor communication.
+</td>
+</tr>
+<tr valign="top">
+<td markdown="span">
+Anti-Patterns for Developers
+</td>
+<td markdown="span">
+[10 practices of highly ineffective software developers](https://www.infoworld.com/article/2615765/application-development/10-practices-of-highly-ineffective-software-developers.html) on InfoWorld
+</td>
+</tr>
+
+</table>
+
+Project & Task Boards:
+- [Trello](https://trello.com)
+- [Asana](https://asana.com) 
+- Github "Project Boards" (cards are a bit limited as to what you can record)
+- [7 Scrum Software Tools สำหรับใช้บริหารจัดการโปรเจค](https://www.borntodev.com/2020/02/20/scrum-software-tools/) (Thai)
+- Note: task board must to viewable by TAs and instructor!
+
+Good places for final project documentation:
+* Github pages - can be created from files in a specified directory or branch of your project repository.
+* readthedocs.io
+* swagger.io - mainly for API and programmer docs
+
+Everyone should know how to use Markdown. It's the *lingua franca* of online project docs.
+
+----
+
 
 ### Software Engineering and Skills that Startups Need
 
@@ -413,24 +499,9 @@ But, software engineering programs emphasize traditional skills like software pr
 At startups, engineers participate in a broad variety of work including market research, new product ideas, designing system architecture, and cost-effective development.
 Iterative development and rapid time to market are important to a startup's survival.  Startups also depend on cloud resources.
 
-"*When you join a startup, there's a lot of emphasis on design of the applicatoin, reusability and clean code, and the ability ot conduct and undergo code reviews, as well as the ability to think of and build systems that can scale...*", Devadiga says.
+"*When you join a startup, there's a lot of emphasis on design of the application, reusability and clean code, and the ability ot conduct and undergo code reviews, as well as the ability to think of and build systems that can scale...*", Devadiga says.
 A "*practical understanding of infrastructure architecture design patterns, DevOps, and cloud platform services like compute instances, object storage, and queueing services*" also helps, he says
 
 His view is biased since he is principle engineer at a startup specializing in data analytics.
 
-IEEE describes [free online resources](https://spectrum.ieee.org/the-institute/ieee-member-news/educational-resources-that-get-students-up-to-speed-on-advanced-manufacturing-and-programming-languages) students can use to supplement their education.
-
----
-
-
-[Github Repository](https://github.com/cpske/ISP.git)
-
-[git-branching]: https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell
-[git-book-branching-and-merging]: https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging
-[isp-qa]: https://isp2018.github.io/isp-qa/
-[demo-ci]: https://github.com/jbrucker/demo-ci
-[demo-ci-python]: https://github.com/jbrucker/demo-pyci
-[scorecard.py]: assignment/scorecard.py
-[type-hints]: https://github.com/ISP19/problems/blob/master/type-hints/README.md
-[python-abc-collections]: https://docs.python.org/3/library/collections.abc.html
-[python-typing]: https://docs.python.org/3/library/typing.html
+IEEE lists [free online resources](https://spectrum.ieee.org/the-institute/ieee-member-news/educational-resources-that-get-students-up-to-speed-on-advanced-manufacturing-and-programming-languages) students can use to supplement their education.
