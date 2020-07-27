@@ -6,7 +6,7 @@ title: Git and Github
 Software Version Control means managing the versions and history of software work products.
 It is an essential part of every development project.
 
-A version control system (VCS) performs:
+A **version control system** (VCS) performs:
 
 * authentication of users
 * access control - only authorized users can view or change files
@@ -15,18 +15,20 @@ A version control system (VCS) performs:
 * maintains integrity of files -- does not allow corruption of files or loss of work. VCS does not allow work to be checked in or "committed" if it not based on the most current version of what's in the VCS.
 * manage multiple variations of the same work products, so that teams can work on different versions of the software or its features without affecting others
 
-Git is the dominant VCS in the world today, so we will focus on how to use Git.
+Git is the dominant VCS in the world today, so we will focus on how to use Git.   
+Other VCS are Mercurial, Subversion (a centralized vcs).
 
 ## Git Basics
 
-* Basics you should already know:
-  - 2 ways to create a local git repo with a remote.
-  - Concepts: local repo, remote, working copy, staging area ("index"), commit, HEAD.
-  - git repository as a graph (commits are nodes)
-  - How to check status of a local repo.
-  - How to add files to repo or update them.
-  - How to rename, move, or delete files from a local repo.
-  - Synchronize local repo with a remote repo.
+1. Review [git basics]( ) from Programming 2.
+  - Concepts: local repo, remote, working copy, staging area ("index"), commit, HEAD
+  - Git repository as a graph (commits are nodes)
+  - How to check status of a local repo
+  - How to add files to repo or update them
+  - How to rename, move, or delete files from a local repo
+  - Creating and using a remote repository
+  - [Git Basics](https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository) from the excellent [ProGit Book](https://git-scm.com/book/en/v2). Free PDF and ePub of *ProGit* also on [git-scm.com](https://git-scm.com/book/en/v2).
+  - Programming 2 [Intro to Git](https://skeoop.github.io/git/Git-Basics.pdf) and [Github](https://skeoop.github.io/git/intro-github), [dumb slides](https://skeoop.github.io/git/)
 
 * common use scenarios
   - view history of commits
@@ -40,9 +42,6 @@ Git is the dominant VCS in the world today, so we will focus on how to use Git.
 * branching and tagging
   - merge and conflict resolution
   
-* Review, if necessary:
-  - Git covered in Programming 2: [Intro to Git](https://skeoop.github.io/git/intro-git) and [Github](https://skeoop.github.io/git/intro-github), [dumb slides](https://skeoop.github.io/git/)
-  - [Git Basics](https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository) from the excellent [ProGit Book](https://git-scm.com/book/en/v2). Free PDF and ePub of *ProGit* also on [git-scm.com](https://git-scm.com/book/en/v2).
 * Using Git
     - understand git as a graph of commits. This really helps.
     - use `git diff` (many forms) to see differences between last commit, stagin
@@ -108,34 +107,21 @@ A git "workflow" for solo or team projects.  We will use this:
 * Slides on Pull Requests [PDF](Pull-Requests.pdf) [PPT](Pull-Requests.ppt)
 
 
-
-
-
-### Specific Git Uses
+## Specialized Git Uses
 
 * [Git Aliases](aliases) how to create an alias for a git command, such as "git co" alias for "git checkout".
 
 * Using Git [Submodules](submodule) to include another repository *inside* an existing Git repository tree.  Very useful for managing work, such as a separate repo for tests.
 
-### Github and Continuous Integration
 
-Github integrates with other cloud services, including CI servers and Heroku.
-When you commit something to Github, it will notify the service that there is new code and the service (typically) will "pull" the new code.
-
-You configure the services for want for each repository.
-
-* [C.I. Integration with Github](ci-integration) my notes, incomplete
-
-## References
-
-### Interactive Git Visualizer
+## Git Visualizer
 
 [Git Visualizer](http://git-school.github.io/visualizing-git) type git commands and see a graph of the result! *This really helps understand git*. 
 
 [Learn Git Interactive](https://learngitbranching.js.org) interactive graphical tutorial on git, includes branch, merge, rebase, and more.
 
 
-### Git Books
+## Git Books
 
 [ProGit Online Book](https://www.git-scm.com/book/en/v2) at [https://www.git-scm.com] read online or download PDF.  Online version has good nagivation aids, and is *much* shorter than full book but still has all the content you need.
 
@@ -147,7 +133,7 @@ Each Git commit is a node on a graph.  But what is in that node?  This article e
 
 [Anatomy of a Git Commit](https://blog.thoughtram.io/git/2014/11/18/the-anatomy-of-a-git-commit.html) explains *what* is in a Git "commit".  
 
-### Git Command Summary (cheatsheet)
+## Git Command Summary (cheatsheet)
 
 [Git Cheatsheet](https://gist.github.com/raineorshine/5128563) Gist as a bash shell file.
 
@@ -156,7 +142,7 @@ Each Git commit is a node on a graph.  But what is in that node?  This article e
 [Git-tips](https://github.com/git-tips/tips) how to perform common tasks in Git. 
 [Git Book]: https://git-scm.com/book/
 
-### Good Git Questions Online
+## Good Git Questions Online
 
 * [15 Git Questions Every Developer Should Know](https://medium.com/@gauravtaywade/15-interview-questions-about-git-that-every-developer-should-know-bcaf30409647)
 * [Frequently Asked Git Questions](https://www.git-tower.com/learn/git/faq)
