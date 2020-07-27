@@ -72,6 +72,15 @@ survey results showing popularity of methods in software industry.  Should have 
 
 [The Agile Unified Process](http://www.ambysoft.com/unifiedprocess/agileUP.html) Scott Amber and AmberSoft. An Agile version of UP. 
 
+
+### Scrum
+
+[Intro to Scrum in 10 Minutes](https://www.youtube.com/watch?v=XU0llRltyFM) YouTube video is good overview of Scrum.
+
+[Scrum Guide](http://www.scrumguides.org/) description of Scrum and how to do it. Missing: Scrum board, task sizes, measuring progress.
+
+[Scrum &amp; XP from the Trenches](resources/Scrum-and-XP-From-The-Trenches.pdf) from e-book from InfoQ.  Short and practical.
+
 ### Extreme Programming
 
 [Extreme Programming: A Gentle Introduction](http://www.extremeprogramming.org/)
@@ -81,13 +90,6 @@ on [extremeprogramming.org](http://www.extremeprogramming.org/) explains xtreme 
 - Jera Design.  Simple explanation of Extreme Programming and it’s practices.
 
 [Extreme Programming](http://www.umsl.edu/~sauter/analysis/f06Papers/Hutagalung/) Paper.  Another simple XP guide. Explains the practices and has a few diagrams. 
-
-
-### Scrum
-
-[Intro to Scrum in 10 Minutes](https://www.youtube.com/watch?v=XU0llRltyFM) YouTube video is very good overview of Scrum.
-
-[Scrum Guide](http://www.scrumguides.org/) description of Scrum and how to do it. Missing: Scrum board, task sizes, measuring progress.
 
 
 ### Lean Development

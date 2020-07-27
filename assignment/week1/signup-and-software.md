@@ -3,7 +3,8 @@ title: Course Preparation
 ---
 
 1. Join Google Classroom for "219245 ISP (2020)". Class code: **3blhnrs**
-2. Join Github Organization "ISP2020".
+2. Tell us your Github login on this form: https://forms.gle/fh9SqvmA9yPh1ur6A
+    - After you submit the form, you'll receive an email invitation to join Github organization "ISP2020". Please join. The email is sent manually, so please be patient.
 3. Make sure your Github profile includes a photo that clearly shows your face (at least 50% of vertical space) and real name - at least first name - correctly capitalized.  
 4. Include a photo that clearly shows your face in your Google profile, too.
 

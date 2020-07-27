@@ -4,10 +4,10 @@ title: ISP Topics
 
 **Schedule** Monday 10-12, 13-16 starting 10 Aug 2020.   
 **Location** class will be online. Some meetings and live lectures in room E204.  Location of online meeting will be announced before first day of class.    
-[Google Classroom](https://classroom.google.com) code **3blhnrs** for assignments and announcements    
-Github Classroom & Org [ISP2020](https://github.com/org/ISP2020) for programming assignments. Sign-up form:  https://forms.gle/fh9SqvmA9yPh1ur6A    
+[Google Classroom](https://classroom.google.com) for assignments and announcements: class code **3blhnrs**
+Github Classroom & Org [ISP2020](https://github.com/org/ISP2020) for programming work: [Sign-up form](https://forms.gle/fh9SqvmA9yPh1ur6A)     
 
-[Learning Resources](Resources), [old index](index2019)
+[Learning Resources](Resources), [Old 2019 index](index2019)
 
 <table border="0">
 <tr valign="top"> <th width="25%">Topic</th> <th width="75%">Description</th> </tr>
@@ -16,8 +16,8 @@ Github Classroom & Org [ISP2020](https://github.com/org/ISP2020) for programming
 [Introduction](introduction/index)
 </td>
 <td markdown="span">
-[Introduction to course goals and topics](introduction/index), 
-prerequisites, required work and grading, and how to access material.    
+[Introduction to course and goals](introduction/index), 
+prerequisites, required work, project, and grading.
 [Advice from an SKE scholar & entrepeneur](introduction/Jomzap-Recommendations.pdf).    
 [Assignment](assignment/week1/signup-and-software) to do by first week.    
 </td>
@@ -39,10 +39,8 @@ An introduction to software process concepts and practices. The Waterfall proces
 [Agile](agile/agile)
 </td>
 <td markdown="span">
-[Agile values, principles, and practices](agile/agile) for software development,
-that emphasize frequent delivery of running software, customer collaboration, 
-and self-managing teams.  The values and principles can be incorporated into any
-development process.
+[Agile values, principles, and practices](agile/agile) for software development.
+Agile values and practices can be incorporated into any development process.
 </td>
 </tr>
 
@@ -51,7 +49,7 @@ development process.
 [Scrum](agile/scrum)
 </td>
 <td markdown="span">
-Scrum is a "process" for managing work in an iteration. 
+Scrum for managing work in an iteration. 
 </td>
 </tr>
 
@@ -60,8 +58,8 @@ Scrum is a "process" for managing work in an iteration.
 [Git](git) and Version Control
 </td>
 <td markdown="span">
-[Basics](git/git-basics) of using a git, common tasks, [branches][git-branching], [aliases](git/aliases), and working with remote repositories.   
-Visualizing a git repo.
+Basics of git and Github, common tasks, [branches][git-branching], [aliases](git/aliases), and working with remote repositories.   
+[Visualizing](git/index#git-visualizer) a git repo.
 </td>
 </tr>
 
