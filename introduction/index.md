@@ -3,58 +3,61 @@ layout: page
 title: Introduction to ISP
 ---
 
-Individual Software Process (ISP) focuses on on the knowledge, skills, and habits to be an effective software developer -- either solo or on a team.
-The course also covers basics of common software processes and process models.
+Individual Software Process (ISP) covers the fundamentals of software process
+and process models,
+focusing on the knowledge aand skills to be an effectiv software developer -- either solo or on a team.
 
 The goals are:
 
-1. Knowledge, skills, and habits to be an effective member of a development team
+1. Gain knowledge, skills, and habits to be an effective member of a development team
 2. Ability to write good, maintainable code
-3. Understanding of software process fundamentals, and their purpose.
+3. Understanding of software process fundamentals and their purpose.
 
 
 The specific topics are listed on the [course index page](/ISP/) on github.io.
+Topics include
 
-* Ability to write good code that's testable and maintainable.
-* Iterative and incremental development life cycle 
-* version control as part of a workflow that includes branching, issue tracking, testing, and review
+* Ability to write good code that's testable and maintainable
 * Coding standard and documenting code
+* Iterative and incremental development life cycle 
+* Version control as part of a workflow
 * Testing
 * Design and code reviews
 * Refactoring existing software
 * Automation of tests and deployment
-* Attention to detail
+* Good developer habits, esp. attention to detail
 * Learn to develop *faster* by automating repetitive work and following a process instead of re-inventing one for each project (*ad hoc* process).
 
 
-"Good code" requirs consistently using a coding convention, documenting code, writing code that is readable and testable, reviewing, and updating (refactoring) code when needed.
+"Good code" requires consistently using a coding convention, documenting code, writing code that is readable and testable, reviewing, and updating (refactoring) code when needed.
 
 01219346 *Software Process &amp; Project Management*
-covers software process in more depth, including things aimed in "building the right product".
+covers software process in more depth, including areas aimed in "building the right product".  This course is more aimed at "*building the product right*".
 
 Presentation slides:  [Introduction to Course](Introduction-to-Course.pdf)
 
 ### Skills Every Developer Should Have
 
-SKE 2 graduate Jomzaap, entrepreneur, innovator, and founder of Exzy Corp,
+SKE graduate Jomzaap, entrepreneur, innovator, and founder of Exzy Corp,
 presented
 [8 Recommendations to Developers (PDF)](Jomzap-Recommendations.pdf) or [ODP](Jomzap-Recommendations.odp).
 
-[Advise from TaskWorld](TaskWorld-Advise)
+[Advise from TaskWorld](TaskWorld-Advise) by SKE grads working at TaskWorld
 
 ### Why a Team Software Project?
 
 In this course you will design, implement, and deploy a web application
-using a team of approx. 4 people.  You can choose the project topic, subject
-to approval by instructor.
+using a team of approx. 4 people.  You can choose the project topic, 
+subject to approval by instructor.
 
 Part of the challenge of creating software is working effectively
-as a team.  Many of the skills we study  require other people, and are intended to improve team work.
+as a team.  Many of the skills we study involve other people, 
+and are intended to improve team work.
 
 Hence, we need a *team* project to practice both individual and project-related skills.
-A side benefit is learning the basics of HTTP and web application development.
+The project is also an opportunity to learn the basics of HTTP, web frameworks, and web application development.
 
-Previous students say that the project is the most valuable part of the course.
+Prior year students say that the project is the most valuable part of the course.
 
 
 ### Not a Powerpoint Course
@@ -73,7 +76,7 @@ Your grade is based on
 - *quizzes and exams*    
 - *assignments*    
 - *participation in class*    
-- *project work*
+- *project work and use of good software process*
 
 The project score is based on how well you apply a process, effort, and consistent contribution.  The final product is only a small part of the project score.
 
@@ -91,4 +94,4 @@ The approximate grading scale is:
 |  0 - 55       |   F   |
 
 **Minimum Exam Average**: 
-You must also achieve an overall average exam score of at least 50% to pass.
+You must achieve an overall average exam score of at least 50% to pass.

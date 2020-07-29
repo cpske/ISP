@@ -58,7 +58,7 @@ Scrum for managing work in an iteration.
 [Git](git) and Version Control
 </td>
 <td markdown="span">
-Basics of git and Github, common tasks, [branches][git-branching], [aliases](git/aliases), and working with remote repositories.   
+Git commands and common tasks, structure of a git repo, [branches][git-branching], [aliases](git/aliases), and using remote repositories.   
 [Visualizing](git/index#git-visualizer) a git repo.
 </td>
 </tr>
@@ -77,9 +77,9 @@ Basics of git and Github, common tasks, [branches][git-branching], [aliases](git
 Git and Development
 </td>
 <td markdown="span">
-Using [Github Flow](git/index#github-flow), issues, commit messages, 
-[pull request](git/Pull-Requests.pdf), referencing code in issues.    
-Importance of descriptive commit messages and Pull Requests     
+[Github Flow](git/index#github-flow), issues, branches, &amp;
+[pull request](git/Pull-Requests.pdf).    
+Importance of descriptive commit messages and Pull Requests.     
 Using tags; Tags and Releases on Github.   
 [Pull Request Tutorial](https://yangsu.github.io/pull-request-tutorial/) why and how to use pull requests.    
 [Git submodules](git/submodule) to divide a project among multiple repositories.
@@ -91,8 +91,7 @@ Using tags; Tags and Releases on Github.
 [Unit Testing](testing)
 </td>
 <td markdown="span">
-Testing of "units" of code, such as classes and methods.    
-Testing Behavior - not just code.      
+Testing of "units" of code.  Testing Behavior - not just methods.      
 [Code Coverage](testing/code-coverage)      
 [JUnit for Java](/testing/Intro-to-Unit-Testing.pdf) and 
 [unit test in Python](testing/PythonUnitTesting.pdf)
@@ -116,12 +115,10 @@ Static Typing
 <td markdown="span">
 [Intro to Types and Type Checking](code-quality/Type-Checking.pdf) (slides)
 and [Python Type Hinting](type-hints/introduction) by Mai.       
-Useful Python docs: [Typing support][python-typing] and
-[Collections base classes][python-abc-collections].
-
+Good Python docs: [Typing support][python-typing] and
+[Collections base classes][python-abc-collections].    
 Add type hints to detect errors: [scorecard.py](type-hints/scorecard.py)      
-Exercises: Mai's [Type Hints](type-hints/introduction) and
-[Type Hint Practice](type-hints/type-hint-practice.pdf).     
+Mai's [Type Hint Practice](type-hints/type-hint-practice.pdf).     
 </td>
 </tr>
 
@@ -130,7 +127,8 @@ Exercises: Mai's [Type Hints](type-hints/introduction) and
 [Code Quality](code-quality/code-quality)
 </td>
 <td markdown="span">
-Principles, guides, tips, and tools for writing good quality, "clean" code.  Coding standard, comments as documentation, and code checkers.
+Principles, guides, tips, and tools for writing good quality, "clean" code.    
+Coding standard, comments as documentation, and code checkers.
 Essential for all developers!
 </td>
 </tr>
@@ -141,7 +139,7 @@ Essential for all developers!
 Assertions
 </td>
 <td markdown="span">
-Assertions are executable statments of what should be true at some point in code, often used to "*assert*" requirements for parameters.  Assertions reduce errors and document code-level assumptions.
+Assertions are executable statements of what should be true at some point in code, often used to "*assert*" conditions for parameters.  Assertions reduce errors and document code-level assumptions.
 </td>
 </tr>
 
@@ -150,7 +148,7 @@ Assertions are executable statments of what should be true at some point in code
 [Refactoring](refactoring)
 </td>
 <td markdown="span">
-Improve existing code by restructiring it without changing its external functionality.
+Improve existing code by restructiring it without changing external functionality.
 Common refactoring situations and how to do them using an IDE.
 </td>
 </tr>
@@ -178,7 +176,7 @@ End-to-End Testing
 [Intro to Selenium](testing/Selenium-intro)    
 1. Refactor your Django tests into separate files, based on what is being tested.    
 2. Perform code coverage on your Django tutorial code and your project code.    
-3. Selenium: [Find Bad Links](assignment/selenium). 
+3. [Find Bad Links](assignment/selenium) using Selenium. 
 </td>
 </tr>
 
@@ -197,8 +195,7 @@ End-to-End Testing
 [12-Factor App](web/12FactorApp.pdf)   
 </td>
 <td markdown="span">
-12 recommendations from Heroku for maintainable
-cloud-based applications. 
+Recommendations for maintainable cloud-based applications, by Heroku. 
 </td>
 </tr>
 
@@ -242,7 +239,7 @@ Useful [Http Tools](web/http#tools) for manually testing and debugging web inter
 Web Apps and Frameworks
 </td>
 <td markdown="span">
-Short intro to how a web server and web app typically handle requests and responses.  This helps make sense of the various components of a [web framework](web/web-frameworks).    
+Intro to how a web server and web app typically handle requests and responses.  This helps make sense of the various components of a [web framework](web/web-frameworks).    
 [WSGI](web/wsgi-servers) standard for connecting Python web apps to web app servers.
 </td>
 </tr>
@@ -271,7 +268,7 @@ Database Basics
 </td>
 <td markdown="span">
 Intro to database concepts and how to use a database in code.
-Tables, field types, identity fields, relating tables, the basic CRUD operations.
+Tables, field types, identity fields, relating tables, basic CRUD operations.
 </td>
 </tr>
 
@@ -280,9 +277,9 @@ Tables, field types, identity fields, relating tables, the basic CRUD operations
 Object-Relational Mapping
 </td>
 <td markdown="span">
-ORM concepts and frameworks.  All web frameworks include or rely on ORM.
-Two common design patterns for ORM.  
-Table schema for different domain models. 
+ORM concepts and frameworks.  All web frameworks use ORM.
+Two common design patterns for ORM. 
+Table schema for different domain models.    
 Understanding ORM concepts makes it easier to understand and work
 with Django models.
 </td>
@@ -303,8 +300,8 @@ Data Import
 Virtual Environment
 </td>
 <td markdown="span"> 
-[Virtualenv Quickstart](django/virtualenv-quickstart) and [Using Virtualenv](django/virtualenv) - how to run apps in a virtual environment,
-for portability and security
+[Virtualenv Quickstart](django/virtualenv-quickstart) and [Using Virtualenv](django/virtualenv) - how to run apps in a virtual environment
+for portability, reliability, and security.
 </td>
 </tr>
 
@@ -435,7 +432,7 @@ Frequent question from managers and customers is "*how long will it take?*" or "
 <br/>
 - How to estimate development time and code size <br/>
 - Jittat's Slides <br/>
-- Tracking your effort in order to improve ability to estimate <br/>
+- Track your effort in order to improve ability to estimate <br/>
 - [Agile Estimation](http://www.construx.com/Resources/Presentation/Agile_Estimation__Key_Principlies_and_Practices_for_Successful_Agile_Practices/) talk by Construx (Steve McConnell's company)
 </td>
 </tr>
@@ -445,10 +442,11 @@ Self-improvement
 </td>
 <td markdown="span">
 - Importance of continual learning and reading<br/>
-- _Pragmatic Programmer_ Item 5: Your Knowledge Portfolio (p. 37) and recommendation from TaskWord (intro folder)<br/>
+- Advice from SKE @ TaskWorld in [introduction](introduction) folder<br/>
+- _Pragmatic Programmer_ Item 5: Your Knowledge Portfolio (p. 37) <br/>
 - Goal-directed learning instead of comprehensive learning or random videos<br/>
-- Tracking your own performance<br/>
-- Create and improve your own personal software process
+- Track your own performance<br/>
+- Create and improve your own Personal Software Process
 </td>
 </tr>
 <tr valign="top">
@@ -470,7 +468,9 @@ Anti-Patterns for Developers
 
 </table>
 
-Project & Task Boards:
+---
+Project & Task Boards
+
 - [Trello](https://trello.com)
 - [Asana](https://asana.com) 
 - Github "Project Boards" (cards are a bit limited as to what you can record)
@@ -485,7 +485,6 @@ Good places for final project documentation:
 Everyone should know how to use Markdown. It's the *lingua franca* of online project docs.
 
 ----
-
 
 ### Software Engineering and Skills that Startups Need
 
