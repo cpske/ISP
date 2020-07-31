@@ -111,6 +111,68 @@ You should write docstring comments for:
     - put package docstrings in the package's `___init__.py` file.
 
 
+## Python Doctest Comments
+
+Doctest comments are runnable code examples included in docstrings.
+They provide examples of how to invoke a method, class, or function,
+and also provide a quick test.  Here's an example
+
+```python
+def average( values ):
+    """Return the average of a list of numbers.
+    Parameters:
+        values is a list or tuple of numbers
+
+    >>> average([2,3,4])
+    3.0
+    >>> average([2,3,4,0])
+    2.25
+    >>> average([2])
+    2.0
+    """
+    return sum(values)/len(values) if len(values) > 0 else 0.0
+```
+Each line starting with `>>>` is a Python statement that produces
+some result.  The next line(s) are the expected result.
+The `doctest` module will execute the doctest statements and
+compare the actual and expected results.  
+
+By default, doctest  prints *nothing* if the test is correct
+and an error if it fails.  Use the "verbose" option (or -v flag)
+to always print the result.
+
+There are two ways to run doctest. Using the command line:
+```shell
+cmd>  python -m doctest -v average.py
+
+3 tests in 1 item.
+3 passed and 0 failed.
+```
+
+Or by providing a "main" block that runs doctest:
+```python
+if __name__ == '__main__':
+    import doctest
+    doctest.testmod(verbose=True)
+```
+The `-v` flag and `verbose=True` arguments are optional, of course.
+
+Doctest are most commonly used in function and method docstrings,
+but you can also use them in a class docstring to illustrate how
+to use the class.
+
+The expected output that you write for a doctest must **exactly**
+match the actual output. For the `average` function, if we wrote:
+```python
+def average( values ):
+   """
+   >>> average([2,3,4])
+   3
+```
+The test would fail! Because the actual output is `3.0` not `3`.
+If the expected output is a string, then use single quotes (not double quotes)
+because that's the way the Python interpretter displays string results.
+
 
 ## Python Type Annotations
 
