@@ -124,15 +124,14 @@ Mai's [Type Hint Practice](type-hints/type-hint-practice.pdf).
 
 <tr valign="top">
 <td markdown="span">
-[Code Quality](code-quality/code-quality)
+[Code Quality](code-quality/index)
 </td>
 <td markdown="span">
-Principles, guides, tips, and tools for writing good quality, "clean" code.    
+Principles, guides, tips, and tools for writing good quality "clean" code.    
 Coding standard, comments as documentation, and code checkers.
 Essential for all developers!
 </td>
 </tr>
-
 
 <tr valign="top">
 <td markdown="span">
@@ -377,15 +376,6 @@ Project Planning
 </tr>
 <tr valign="top">
 <td markdown="span">
-Process Improvement
-</td>
-<td markdown="span">
-Retrospectives and self-assessments to discover and *implement* improvements to
-your development process
-</td>
-</tr>
-<tr valign="top">
-<td markdown="span">
 Essential Project Documents
 </td>
 <td markdown="span">
@@ -411,6 +401,14 @@ Issue tracker - bugs, change requests, and more
 Burn-down or Burn-up chart (optional)    
 Project wiki - good location for iteration plans, software design notebook, recording knowledge and solutions    
 **Information Radiators**:  project tools should quickly convey useful info & easily visible as part of your normal workflow
+</td>
+</tr>
+<tr valign="top">
+<td markdown="span">
+Process Improvement
+</td>
+<td markdown="span">
+How discover and *implement* improvements to your development process
 </td>
 </tr>
 <tr valign="top">
