@@ -1,13 +1,7 @@
 ---
 title: ISP Topics
 ---
-
-**Schedule** Monday 10-12, 13-16 starting 10 Aug 2020.   
-**Location** class will be online. Some meetings and live lectures in room E204.  Location of online meeting will be announced before first day of class.    
-[Google Classroom](https://classroom.google.com) for assignments and announcements: class code **3blhnrs**
-Github Classroom & Org [ISP2020](https://github.com/org/ISP2020) for programming work: [Sign-up form](https://forms.gle/fh9SqvmA9yPh1ur6A)     
-
-[Learning Resources](Resources), [Old 2019 index](index2019)
+[Old 2019 index](index2019)
 
 <table border="0">
 <tr valign="top"> <th width="25%">Topic</th> <th width="75%">Description</th> </tr>
@@ -17,7 +11,7 @@ Github Classroom & Org [ISP2020](https://github.com/org/ISP2020) for programming
 </td>
 <td markdown="span">
 [Introduction to course and goals](introduction/index), 
-prerequisites, required work, project, and grading.
+prerequisites, required work, project, and grading.    
 [Advice from an SKE scholar & entrepeneur](introduction/Jomzap-Recommendations.pdf).    
 [Assignment](assignment/week1/signup-and-software) to do by first week.    
 </td>
@@ -26,10 +20,9 @@ prerequisites, required work, project, and grading.
 <tr valign="top">
 <td markdown="span">
 [Software Processes](software-process) <br/>
-Iterative &amp; Incremental Development
 </td>
 <td markdown="span">
-An introduction to software process concepts and practices. The Waterfall process compared to iterative and incremental development; the Unified Software Develop Process (UP) as a model, and Scrum for managing iterations.    
+An introduction to software process concepts and practices. The Waterfall process compared to iterative and incremental development; the Unified Software Develop Process (UP) as a model.    
 [Github features that support SDLC](https://github.com/features)
 </td>
 </tr>
@@ -49,7 +42,7 @@ Agile values and practices can be incorporated into any development process.
 [Scrum](agile/scrum)
 </td>
 <td markdown="span">
-Scrum for managing work in an iteration. 
+Scrum for managing development work and iterations.
 </td>
 </tr>
 
@@ -92,9 +85,9 @@ Using tags; Tags and Releases on Github.
 </td>
 <td markdown="span">
 Testing of "units" of code.  Testing Behavior - not just methods.      
-[Code Coverage](testing/code-coverage)      
 [JUnit for Java](/testing/Intro-to-Unit-Testing.pdf) and 
-[unit test in Python](testing/PythonUnitTesting.pdf)
+[unit test in Python](testing/PythonUnitTesting.pdf)    
+[Code Coverage](testing/code-coverage) 
 </td>
 </tr>
 
@@ -115,8 +108,8 @@ Static Typing
 <td markdown="span">
 [Intro to Types and Type Checking](code-quality/Type-Checking.pdf) (slides)
 and [Python Type Hinting](type-hints/introduction) by Mai.       
-Good Python docs: [Typing support][python-typing] and
-[Collections base classes][python-abc-collections].    
+Python docs [Typing support][python-typing] and
+[Collections base classes][python-abc-collections] are excellent.    
 Add type hints to detect errors: [scorecard.py](type-hints/scorecard.py)      
 Mai's [Type Hint Practice](type-hints/type-hint-practice.pdf).     
 </td>

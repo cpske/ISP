@@ -9,8 +9,8 @@ focusing on the knowledge and skills to be an effective software developer -- ei
 
 The goals are:
 
-1. Gain knowledge, skills, and habits to be an effective member of a development team
-2. Ability to write good, maintainable code
+1. Gain knowledge, skills, and habits to be an effective developer -- either solo or on a team
+2. Ability to write good quality, correct, maintainable code
 3. Understand software process fundamentals and their purpose.
 
 
@@ -19,18 +19,18 @@ Topics include
 
 * Introduction to Software Process Models and the purpose of a defined process
 * Iterative and incremental development
-* How to write good code that's testable and maintainable
+* Writing good code that's testable and maintainable
 * Coding standard and documenting code
+* Good developer habits, esp. attention to detail and continual learning
 * Version control as part of a workflow
 * Testing
 * Design and code reviews
 * Refactoring existing software
 * Automation of tests and deployment
 * Estimating, planning, and tracking your work
-* Good developer habits, esp. attention to detail
 * Develop *faster* by automating repetitive work and following a process
 
-"Good code" requires consistently using a coding convention, documenting code, writing code that is readable and testable, reviewing, and updating (refactoring) code when needed.
+"Good code" includes consistently using a coding convention, documenting code, writing code that is readable and testable, reviewing, and updating (refactoring) code when needed.
 
 *01219346 Software Process &amp; Project Management*
 covers software process in more depth.  This course is aimed at 
@@ -49,7 +49,7 @@ Monday 10:00-12:00 and 13:00-16:00.
 * Weekly Online Meeting 10:00-12:00 via Google Meet
   - Do students prefer Google Classroom &amp; Google Meet or Microsoft Teams?
 * Occasional Live Class in E204.  Announced in advance.
-* Weekly Lab in afternoon 13:00-16:00 (online for now)
+* Weekly Lab 13:00-16:00 (online, for now)
 * Quiz some weeks
 * Weekly Assigned Reading and Problems. You must do the reading.
 * Small Team Software Project
@@ -61,6 +61,9 @@ Platform we will use, at least to start:
 * Github Classroom for some assignments and quizzes. 
 [Complete this form](https://forms.gle/9PW1L9Hsmx6ygHR9A) (https://forms.gle/9PW1L9Hsmx6ygHR9A) to tell us your Github ID.  You will be invited to join the Github "ISP2020" organization.
 * Course Material on [cpske.github.io/ISP/](https://cpske.github.io/ISP/). Material is organized by topic (not sequentially). Click on topic link for summary and learning path. Some material is optional.
+
+> Students usually don't need this, but the Github Classroom URL is
+> https://classroom.github.com/classrooms/68801168-isp-2020
 
 ### Effort and Commitment
 

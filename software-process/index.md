@@ -74,6 +74,7 @@ According to Pressman, the "framework activities" are:
 Activities consist of a sequence of actions, which can be broken down into
 "task chains".
 
+
 ## Do You Have a Software Process? 
 
 describe your own software process (if you have one :-)
@@ -146,6 +147,45 @@ A good process helps to:
    - provide data and guidance for improving the process
        - keep a record of defects and their causes
 
+### Summary of Software Process
+
+Software process models view a process as **activities** broken down into smaller, more specific and tangible **actions** and/or **tasks**.
+
+Activities, actions, and tasks depend on some inputs including work products, guidance, standards, checklists, and more, collectively called **artifacts**.  There is also some output, also a work product.
+
+For any activity, action, or task you need a clear *goal* and a way to know when the task is "done".  That is, an *evaluation criteria*.
+
+In the Waterfall Model, activities match phases of the project life cycle. 
+Ideally, a project would progress linearly from the Requirements phase through Maintenance.  In practice, its often necessary to backtrack to previous phases to correct errors or deficiencies.  This often leads to schedule and cost overrun.
+
+In Waterfall or any linear process, engineers feel compelled to "get it right"
+the first time,
+leading to [Analysis Paralysis](https://en.wikipedia.org/wiki/Analysis_paralysis) -- which aflicts decision-making of all forms.
+They prolong work to ensure that nothing is overlooked.
+This, too, causes schedule overrun and often fails anyway.
+
+Iterative and Increment Processes, develop a product iteratively.
+In each iteration some feature(s) of the product are chosen to implement (the increment) and all activities (requirements, analysis, design, coding, verification) are performed.  When an increment is done, there should be a working, "potentially shippable" product, even though it has limited functionality.
+
+The motivation behind iterative and incremental is provide frequent
+opportunities for customer feedback, and opportunity for developers to learn
+and improve the product during development.  This reduces risk and
+uncetainly, but creates extra develepment work.
+
+The U.P. is a popular software process framework.  It claims to be 
+"architecture centric" and emphasizes early risk (of failure) reduction.
+The project life cycle consists of of 4 major phases which can be
+further subdivided.  Each phase has one or more iterations with defined
+goals.
+Activities are categorized into *workflows* or *disciplines* and
+provide a second dimension to the process (the first dimension being
+time or phases).
+
+The UP is often criticized as "document heavy" and overly plan-based.
+This criticism isn't really justified.  
+Craig Larman's *Applying UML and Patterns* (textbook on software design,
+used in Software Spec &amp; Design) explains
+that you can tailor the UP to be as light-weight as you want.
 
 
 ## Software Development Life Cycle Models

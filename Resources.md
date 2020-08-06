@@ -1,9 +1,40 @@
 ---
-layout: page
-title: Learning Resources
+title: Resources
 ---
 
+### Books Used in This Course
+
+*We won't cover everything in these.* :-)
+
+*Clean Code* by Robert Martin.  Advise for writing better code. Developers rate this one of the most important books to read.  Martin also writes the [CleanCoder](http://cleancoder.com) blog.  
+  * Online Book: [Clean Code](https://www.investigatii.md/uploads/resourse/Clean_Code.pdf)
+
+*Practices of an Agile Developer* general guidance that applies to this course.
+  * [PAD Quick Reference Card](resources/PAD-Quickref.pdf)
+
+[Scrum &amp; XP from the Trenches](resources/Scrum-and-XP-From-The-Trenches.pdf) free e-book.  Short and practical, based on actual experience.
+
+> Try a Google search: [Best Software Engineering Books](https://www.google.co.th/search?q=best+software+engineering+books) or
+> [Best Software Development Books](https://www.google.co.th/search?q=best+software+development+books).
+>
+>Every "top ten" list includes several of these:
+>
+>* *The Pragmatic Programmer* by Hunt and Thomas
+>* *Clean Code* by Robert Martin
+>* *Code Complete*, 2E by Steve McConnell
+>* *The Mythical Man-Month* by Fred Brooks
+>* *Soft Skills* and/or *Peopleware*
+>* *Refactoring* by Martin Fowler
+>* *The Clean Coder* by Robert Martin
+>* *Design Patterns* by Gamma, et al. The "*Gang of Four*" book.
+>* *Head First Design Patterns* easier to read than Gamma, et al
+
 ### Online Courses
+
+[Software Development Processes and Methodologies](https://www.coursera.org/learn/software-processes/), U. of Minnesota on Coursera.  A good overview course for the activities in a software process. Some good advise on developer habits.
+ * activities of a software process - requirements, specification, architecture design, software design, testing, deployment
+ * SDLC models: waterfall, iterative, Unified Process, Agile
+ * This course is part of a 4-course series that looks interesting.
 
 [Writing Professional Code](https://courses.edx.org/courses/course-v1:Microsoft+DEV275x+2T2017) Course DEV275x at edX.  A course by Microsoft. It uses dot-net for exercises and has some dot-net specific questions.  You should study the whole course, but OK to skip .Net problems.
   * This course is part of [Microsoft Entry-Level Software Development Professional Program](https://www.edx.org/microsoft-professional-program-entry-level-software) on edX.  Looks interesting. Each "course" is short. Relevent to this course are:
@@ -11,7 +42,7 @@ title: Learning Resources
   * Course 8: Building Prototypes with JavaScript
   * Course 9: Building a Functional Prototype with Node.js
 
-[Engineering Software as a Service](https://courses.edx.org/courses/BerkeleyX/CS_CS169.1x/1T2014/course/) Berkeley CS169.1x at edX.  A very popular course from UC Berkeley.  The courses uses Ruby (we don't) but the content is very valuable.  Some of it belongs in "Workgroup Software Process".
+[Engineering Software as a Service](https://courses.edx.org/courses/BerkeleyX/CS_CS169.1x/1T2014/course/) Berkeley CS169.1x at edX.  A very popular course from UC Berkeley.  The courses uses Ruby on Rails (a web framework) but the content is very valuable.  
 
 [Software Processes and Agile Practices](https://www.coursera.org/learn/software-processes-and-agile-practices), U. of Alberta on Coursera. 
   * The course title describes it.  Fairly short course (4 modules).
@@ -23,29 +54,14 @@ title: Learning Resources
     - [Module 3](https://www.coursera.org/learn/software-processes-and-agile-practices/resources/LeuQL) - Agile methods and practices
     - [Module 4](https://www.coursera.org/learn/software-processes-and-agile-practices/resources/UWBx1) -
 
-[Software Development Processes and Methodologies](https://www.coursera.org/learn/software-processes/), U. of Minnesota on Coursera. I haven't viewed this course. Covers 
- * activities of a software process - requirements, specification, architecture design, software design, testing, deployment
- * SDLC models: waterfall, "spiral", iterative, Unified Process, Agile
 
+## Recommended Reading, by Topic 
 
+### Developer Practices and Habits
 
-### Books
+*The Clean Coder* by Robert Martin.  Habits and practices for a software developer. Directly relevant to this course.
 
-Try a Google search: [Top 10 Software Development Books](https://www.google.co.th/search?q=top+10+software+development+books&oq=top+10+software+development+books).
-
-*Clean Code* by Robert Martin.  Advise for writing better code. Developers consistently rate this is one of the most important books to learn from.  Martin has many popular books and writes the [CleanCoder](http://cleancoder.com) blog.  
-  * Online Book: [Clean Code](https://www.investigatii.md/uploads/resurse/Clean_Code.pdf)
-
-*The Clean Coder* by Robert Martin.  A book about habits and practices for a software developer. Directly relevant to this course.
-
-*Practices of an Agile Developer* another classic book.
-  * [Quick Reference Card](https://media.pragprog.com/titles/pad/PAD-pulloutcard.pdf) of the practices
-
-[Building Maintainable Software](http://moka.labunix.uqam.ca/~tremblay/MGL7460/Liens/Building_Maintainable_Software_SIG.pdf) Joost Viser (O'Reilly). Free PDF book.
-
-*The Pragmatic Programmer* by Hunt and Thomas is a classic but a bit out of date; the material is quite similar to *Practices of an Agile Developer* (newer). [The Pragmatic Programmer](https://www.nceclusters.no/globalassets/filer/nce/diverse/the-pragmatic-programmer.pdf)
-
-
+*The Pragmatic Programmer*, 2nd Ed by Hunt and Thomas is a classic but the first edition is out-of-date. The material is quite similar to *Practices of an Agile Developer* (newer). First Edn: [The Pragmatic Programmer](https://www.nceclusters.no/globalassets/filer/nce/diverse/the-pragmatic-programmer.pdf)
 
 ### Unified Process
 
@@ -60,8 +76,6 @@ Try a Google search: [Top 10 Software Development Books](https://www.google.co.t
 [Practical Guide to Seven Agile Methodologies, Part 2](http://www.devx.com/architect/Article/32836)
 
 
-[Peopleware: Productive Projects and Teams](https://www.amazon.com/Peopleware-Productive-Projects-Teams-Second/dp/0932633439), 2E. Solutions to dealing with people in software projects. 
-
 [Traditional and Agile Methods: An Interpretation](https://www.scrumalliance.org/community/articles/2013/january/traditional-and-agile-methods-an-interpretation) - Scrum Alliance. Biased toward Scrum, of course. 
 
 [Agile Methodologies for Software Development](https://www.versionone.com/agile-101/agile-methodologies/)
@@ -70,7 +84,7 @@ Try a Google search: [Top 10 Software Development Books](https://www.google.co.t
 [8th Annual State of Agile Survey - VersionOne](https://www.versionone.com/pdf/2013-state-of-agile-survey.pdf)
 survey results showing popularity of methods in software industry.  Should have a newer one by one.
 
-[The Agile Unified Process](http://www.ambysoft.com/unifiedprocess/agileUP.html) Scott Amber and AmberSoft. An Agile version of UP. 
+[The Agile Unified Process](http://www.ambysoft.com/unifiedprocess/agileUP.html) Scott Amber and AmberSoft. An Agile version of UP.  Kind of vague.
 
 
 ### Scrum
@@ -78,8 +92,6 @@ survey results showing popularity of methods in software industry.  Should have 
 [Intro to Scrum in 10 Minutes](https://www.youtube.com/watch?v=XU0llRltyFM) YouTube video is good overview of Scrum.
 
 [Scrum Guide](http://www.scrumguides.org/) description of Scrum and how to do it. Missing: Scrum board, task sizes, measuring progress.
-
-[Scrum &amp; XP from the Trenches](resources/Scrum-and-XP-From-The-Trenches.pdf) from e-book from InfoQ.  Short and practical.
 
 ### Extreme Programming
 
@@ -91,6 +103,9 @@ on [extremeprogramming.org](http://www.extremeprogramming.org/) explains xtreme 
 
 [Extreme Programming](http://www.umsl.edu/~sauter/analysis/f06Papers/Hutagalung/) Paper.  Another simple XP guide. Explains the practices and has a few diagrams. 
 
+### Software Development in General
+
+[Building Maintainable Software](http://moka.labunix.uqam.ca/~tremblay/MGL7460/Liens/Building_Maintainable_Software_SIG.pdf) Joost Viser (O'Reilly). Free PDF book.
 
 ### Lean Development
 
@@ -101,7 +116,7 @@ on [extremeprogramming.org](http://www.extremeprogramming.org/) explains xtreme 
 [Lean Software Development: An Agile Toolkit](https://www.amazon.com/Lean-Software-Development-Agile-Toolkit/dp/0321150783) book my Mary Poppendieck. The "ultimate resource" for Lean.
 
 
-### Kanban
+### Kanban (we don't cover Kanban)
 
 [What is Kanban? Kanban Blog](http://kanbanblog.com/explained/) site explains what Kanban is and how to implement it. Good visuals.
 

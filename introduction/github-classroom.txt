@@ -1,0 +1,8 @@
+Github Classroom ISP2020
+https://classroom.github.com/classrooms/68801168-isp-2020
+
+Instructions for Integrating "roster" with LMS
+https://classroom.github.com/help/connect-to-lms
+
+You can also pull it from Google Classroom. 
+Wait for students to join Google Classroom before doing this.
