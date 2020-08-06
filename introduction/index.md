@@ -86,6 +86,13 @@ Successful online learners **commit time and effort** to continue the course.
 Learning takes time and consistent effort. You need to plan
 your time, make a commitment, and have discipline.
 
+### Software You Need
+
+* IDE such as Eclipse, IntelliJ IDEA, NetBeans, or VS Code
+* Python 3.6 or newer, Java JDK 8 or 11
+* Good text editor (something better than Notepad). IDE is OK, but slow for editing a single file.
+* Git command line client. Git GUI is also useful (most IDEs include it)
+
 
 ### Why a Team Software Project?
 
