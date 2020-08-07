@@ -161,7 +161,7 @@ You must achieve an overall average exam score of at least 50% to pass.
 
 [Mai Norapong](https://github.com/MaiNorapong) 	`email("Mai","Norapong",2)`
 
-[Pakanon Pantisawat](https://github.com/pknn1) (*tentative*)  `email("Pakanon","Pantisawat",1)`
+[Pakanon Pantisawat](https://github.com/pknn)  `email("Pakanon","Pantisawat",1)`
 
 The 2 languages you will use in this course:
 
