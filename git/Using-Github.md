@@ -10,13 +10,13 @@ You also need a **remote** copy of your project that you can easily update.
 Git supports **remote** repositories.
 [Github](https://github.com) and [Bitbucket](https://bitbucket.org) are 2 well known project hosting sites for git.  Both places let you store projects for free.
 
-Using a **remote** git hosting site (such as Github) you can:
+A **remote** git hosting site (such as Github) let's use:
 
 * synchronize your local repository with the remote. Only the changes are updated, so its efficient and fast.
 * create a new local copy from the remote
 * view project activity, updates, and compare changes to files
-* give read-only or read-write access to other people 
-* create a professional looking web site for your project (*Github pages*, which are shown on github.io)
+* share access (read-only or read-write) with other people 
+* create a professional looking web site for your project (*Github pages*, on github.io)
 
 ### Two Ways to Use Github
 
@@ -43,8 +43,8 @@ In this case, there are 3 steps
 2. On Github, create an **empty** repository for the project.
     a. on [github.com](https://github.com) click on the "+" icon at upper-right of your home page and choose "create a new repository".
     b. give the repository a name. It does **not** need to be the same as your local project name.  For Programming 1, use the name the instructor specifies.
-    c. don't put any files in the new repo -- not even a README.md
-    d. copy the URL that Github shows you, for example `https://github.com/billgates/assignment1.git`.  (this is the URL for the "https" protocol)
+    c. don't put any files in the new repo -- it must be EMPTY
+    d. copy the URL that Github shows you, for example `https://github.com/billgates/assignment1.git`. 
 3. On your local computer, add Github as "remote" repository.  Suppose the repo you created in Step 2 has URL "https://github.com/billgates/assignment1.gif". Then you'd do:
    ```shell
    cmd> git remote add origin https://github.com/billgates/assignment1.git
@@ -57,11 +57,11 @@ You only need to type `git push -u origin master` the **first time** you connect
     cmd> git push
 ```
 
-### Case 2: A project already exists on Github, but not on your computer.
+### Case 2: A project already exists on Github, but not on your computer
 
 If the project already exists on Github then do:
 
-1. Using a web browser, go to the project page on github so you can get the URL
+1. Using a web browser, go to the project page on github so you can copy the URL
 2. Click the "Clone or Download" button. This will show the URL of the project. It also gives instructions.
     * There is a button to copy this URL directly to your clipboard 
 3. In the **parent directory** of where you want to clone the project, enter the `git clone` command:
@@ -88,6 +88,18 @@ Once you have connected a local repository with a Github repository using either
 is saved in the local git configuration.  You can "upload" your changes to Github using:
 ```
 cmd> git push
+```
+
+### What is My Remote?
+
+If you forget what is the "remote" for a local git repository, open a terminal window and change dir to the repository. Then type:
+```
+cmd>  git remote -v
+```
+it will print something like this:
+```
+origin https://github.com/hacker/assignment1 (fetch)
+origin https://github.com/hacker/assignment1 (pull)
 ```
 
 ### Normal Workflow Using Git and Github

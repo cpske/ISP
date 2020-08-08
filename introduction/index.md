@@ -22,7 +22,7 @@ Topics include
 * Writing good code that's testable and maintainable
 * Coding standard and documenting code
 * Good developer habits, esp. attention to detail and continual learning
-* Version control as part of a workflow
+* Version control as part of a work flow
 * Testing
 * Design and code reviews
 * Refactoring existing software
@@ -75,10 +75,11 @@ Plan to spend about 12 hours per week on ISP.
 * write and review code regularly
 * ask TAs and instructors for help, instead of other students.
   - other students don't know any more than you do
-  - asking for help often borders on cheating
+  - asking for help on assignments often borders on cheating
 * Team Project: mostly in 2nd half of course. This may require extra time.
 
 **Online Education Requires Discipline & Commitment**    
+
 Most learners don't complete online courses.  They fall behind 
 or drop out.  
 Successful online learners **commit time and effort** to continue the course.
@@ -112,8 +113,8 @@ Last year's students say that the project is the most valuable part of the cours
 
 ### Not a Powerpoint Course
 
-Powerpoint slides are an aid to presentation,
-but don't contain much material or depth. 
+Powerpoint slides are an aid to presentation.
+They don't contain much depth and missing some important material. 
 
 You must read the assigned material and learn from hands-on work 
 for a real understanding.
@@ -133,12 +134,12 @@ If you have not *at least* worked through Prog 2, then you should take Prog. 2 b
 ## Grading
 
 Your grade is based on    
-- *quizzes and exams*    
-- *assignments*    
-- *participation in class*    
+- *quizzes and exams*
+- *assignments*
+- *participation in class*
 - *project work and use of good software process*
 
-The project score is based on how well you apply a process, effort, and consistent contribution.  The final product is only a small part of the project score.
+The project score is based on how well you apply a process and your consistent contribution.  The final product is only a small part of the project score.
 
 The approximate grading scale is:
 
@@ -161,20 +162,21 @@ You must achieve an overall average exam score of at least 50% to pass.
 
 [Mai Norapong](https://github.com/MaiNorapong) 	`email("Mai","Norapong",2)`
 
-[Pakanon Pantisawat](https://github.com/pknn1) (*tentative*)  `email("Pakanon","Pantisawat",1)`
+[Pakanon Pantisawat](https://github.com/pknn1) `email("Pakanon","Pantisawat",1)`
 
-The 2 languages you will use in this course:
+TA email, in Python and Java:
 
 ```python
 DOMAIN = "ku.th"
 
 def email(firstname: str, lastname: str, nlast: int = 1) -> str:
     """Return the email address for a KU person"""
-    # "\u0040" is the Unicode character code for 'at' symbol
+    # "\u0040" is Unicode for 'at' symbol
     return f"{firstname}.{lastname[0:nlast]}\u0040{DOMAIN}"
 
 if __name__ == '__main__':
-    print("Contact Santa Claus ", email("Santa","Claus", 2))
+    print("Contact Mai ", email("mai","norapong",2));
+    print("Contact Pakanon ", email("pakanon","pantisawat",1));
 ```
 ---
 ```java
@@ -195,4 +197,11 @@ public static String email(String first, String last, int nlast) {
       .append(DOMAIN);
     return sb.toString();
 }
+
+// you could use String.format instead of StringBuilder
 ```
+
+*Why obfuscate email addresses?* 
+
+Bots scrape web pages for email addresses (and login credentials!)
+to create databases for spam and phishing.
