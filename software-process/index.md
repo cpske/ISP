@@ -3,8 +3,7 @@ title: Software Process
 ---
 
 Presentation: 
-[Introduction to Software Process (PDF)](Introduction-software-process.pdf),
-[(PPT)](Introduction-software-process.ppt)
+[Introduction to Software Process (PDF)](Introduction-software-process.pdf) 
 
 ## What is a software process?
 
