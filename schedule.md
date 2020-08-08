@@ -1,16 +1,9 @@
 ---
 title: Schedule
+navigation_order: 1
 ---
 
-Monday 10-12, 13-16 starting 10 Aug 2020.   
-**Location:** class will be online. Some meetings and live lectures in room E204.     
-Online meeting location announced before first day of class.    
-[Google Classroom](https://classroom.google.com) for assignments and announcements: join using class code **3blhnrs**    
-Github Classroom & Org [ISP2020](https://github.com/org/ISP2020) for programming work.    
-[Sign-up form](https://forms.gle/fh9SqvmA9yPh1ur6A) - so we know your Github ID
-
---- 
-*This is an overview and schedule may change. Details and weekly assignments will be posted on Google Classroom.*
+*This is an overview and may change. Details and weekly assignments will be posted on Google Classroom.*
 
 ### Week 1
 
@@ -25,7 +18,7 @@ Github Classroom & Org [ISP2020](https://github.com/org/ISP2020) for programming
 
 * Agile
 * Scrum
-* Version control & Git - understanding git repos; common scenarios
+* Version Control & Git - understanding git repos; common scenarios
 * Git branch & merge
 * Git practice in class
 

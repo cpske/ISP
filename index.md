@@ -1,7 +1,7 @@
 ---
-title: ISP Topics
+title: Topics
+navigation_order: 2
 ---
-[Old 2019 index](index2019)
 
 <table border="0">
 <tr valign="top"> <th width="25%">Topic</th> <th width="75%">Description</th> </tr>
@@ -459,6 +459,8 @@ Anti-Patterns for Developers
 
 </table>
 
+[Old 2019 ISP index](index2019)
+
 ---
 Project & Task Boards
 
@@ -468,10 +470,11 @@ Project & Task Boards
 - [7 Scrum Software Tools สำหรับใช้บริหารจัดการโปรเจค](https://www.borntodev.com/2020/02/20/scrum-software-tools/) (Thai)
 - Note: task board must to viewable by TAs and instructor!
 
-Good places for final project documentation:
+Good places for project documentation:
 * Github pages - can be created from files in a specified directory or branch of your project repository.
 * readthedocs.io
 * swagger.io - mainly for API and programmer docs
+* Github Wiki - good for project docs, iteration plans, design and architecture notes and diagrams, retrospective reports
 
 Everyone should know how to use Markdown. It's the *lingua franca* of online project docs.
 

@@ -1,5 +1,5 @@
 # default theme is jekyll-theme-primer (https://github.com/pages-themes/primer)
-# theme: minima
+theme: minima
 title: Individual Software Process
 #description: Course material for Individual Software Process
 url: "https://cpske.github.io/ISP/"
