@@ -143,16 +143,17 @@ The project score is based on how well you apply a process and your consistent c
 
 The approximate grading scale is:
 
-| Overall Score | Grade |
-|:-------------:|-------|
-| 85 - 100      |   A   |
-| 80 - 85       |   B+  |
-| 75 - 80       |   B   |
-| 70 - 75       |   C+  |
-| 65 - 70       |   C   |
-| 60 - 65       |   D+  |
-| 55 - 60       |   D   |
-|  0 - 55       |   F   |
+<table align="center" border="1" width="40%">
+<tr> <th width="20%">Overall Score</th> <th width="20%"> Grade </th> </tr>
+<tr> <td> 85 - 100</td> <td>  A  </td></tr>
+<tr> <td> 80 - 85 </td> <td>  B+ </td></tr>
+<tr> <td> 75 - 80 </td> <td>  B  </td></tr>
+<tr> <td> 70 - 75 </td> <td>  C+ </td></tr>
+<tr> <td> 65 - 70 </td> <td>  C  </td></tr>
+<tr> <td> 60 - 65 </td> <td>  D+ </td></tr>
+<tr> <td> 55 - 60 </td> <td>  D  </td></tr>
+<tr> <td> &nbsp;0 - 55 </td> <td>  F  </td></tr>
+</table>
 
 **Minimum Exam Average**: 
 You must achieve an overall average exam score of at least 50% to pass.
@@ -173,10 +174,6 @@ def email(firstname: str, lastname: str, nlast: int = 1) -> str:
     """Return the email address for a KU person"""
     # "\u0040" is Unicode for 'at' symbol
     return f"{firstname}.{lastname[0:nlast]}\u0040{DOMAIN}"
-
-if __name__ == '__main__':
-    print("Contact Mai ", email("mai","norapong",2));
-    print("Contact Pakanon ", email("pakanon","pantisawat",1));
 ```
 ---
 ```java

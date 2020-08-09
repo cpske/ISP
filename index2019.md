@@ -1,7 +1,7 @@
 ---
 layout: page
-title: ISP Topics
-description: Index page
+title: ISP 2019 Topics
+description: Topics covered in 2019 ISP course
 ---
 
 [About the Course](introduction/index), 

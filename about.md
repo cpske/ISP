@@ -17,3 +17,16 @@ Github Classroom & Org [ISP2020](https://github.com/org/ISP2020) for programming
 [Mai Norapong](https://github.com/MaiNorapong)  `email("Mai","Norapong",2)`
 
 [Pakanon Pantisawat](https://github.com/pknn1) `email("Pakanon","Pantisawat",1)`
+
+```python
+DOMAIN = "ku.th"
+
+def email(firstname: str, lastname: str, nlast: int = 1) -> str:
+    """Return the email address for a KU person"""
+    # \u0040 is Unicode for 'at' symbol
+    return f"{firstname}.{lastname[0:nlast]}\u0040{DOMAIN}"
+
+if __name__ == '__main__':
+    print("Contact Mai ", email("mai","norapong",2));
+    print("Contact Pakanon ", email("pakanon","pantisawat",1));
+```
