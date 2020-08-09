@@ -10,19 +10,28 @@ documentation in code.
 
 1. Clone the starter code from Github.
 2. Write a class name Counter that reads data from one or more files.  
-3. Each line of the data files is either a) blank, b) comment line starting with '#', or c) data line containing a single number.  The Counter class should skip blank and comment lines, and compute the sum and number of values read from data lines.  It should accumulate all values from all files read -- **not** reset the count or sum for each file.
+3. The Counter class's `readfile` method sums data values read from a file and counts how many values have been read.
+3. Each line in a data file is either 
+   - blank line (skip blank lines)
+   - comment line starting with '#' (skip comment lines)
+   - data line containing a single number
 4. Use the Main class (Java) or main.py (Python) to run your class. `main` uses command line arguments as name(s) of data file(s) to read.
-5. (*This really doesn't need to be mentioned*) Use the Java or Python language standard naming and coding convention.
+5. Use the Java or Python language standard naming and coding convention. (*This should be something you always do.*) 
+6. Push your source code to Github.
 
 Java: 
 ```shell
 cmd> java Main sample.txt
+Total of 5 values is xxx.xx
 ```
 
 Python: 
 ```shell
 cmd> python main.py sample.txt
+Total of 5 values is xxx.xx
 ```
+
+`rainfall.txt` contains monthly rainfall data for Bangkok.
 
 ### Java
 
@@ -72,7 +81,7 @@ If the file doesn't exist then print "File not found: *filename*" and return.
 </tr>
 <tr valign="top">
 <td markdown="span">
-count: int
+count
 </td>
 <td>
 A read-only property for the count of values read.
@@ -80,7 +89,7 @@ A read-only property for the count of values read.
 </tr>
 <tr valign="top">
 <td markdown="span">
-total: float
+total
 </td>
 <td>
 A read-only property for the sum of values read.
