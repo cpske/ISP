@@ -16,7 +16,7 @@ Github Classroom & Org [ISP2020](https://github.com/org/ISP2020) for programming
 
 [Mai Norapong](https://github.com/MaiNorapong)  `email("Mai","Norapong",2)`
 
-[Pakanon Pantisawat](https://github.com/pknn1) `email("Pakanon","Pantisawat",1)`
+[Pakanon Pantisawat](https://github.com/pknn) `email("Pakanon","Pantisawat",1)`
 
 ```python
 DOMAIN = "ku.th"
