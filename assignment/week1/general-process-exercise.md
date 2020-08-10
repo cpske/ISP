@@ -23,6 +23,10 @@ Optional:
 Evaluation:
 * Your process description should be well-formatted, clear, complete, and fit on 1 page.
 
+**Name of File Submitted**:
+* Use a name of the form: "Process Name - First Name" (without quotes)
+* Example: `Wash a Car - Fatalai` (if your name is Fatalai)
+
 ### Example Processes
 
 * Wash a Car

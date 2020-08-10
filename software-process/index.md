@@ -4,6 +4,7 @@ title: Software Process
 
 Presentation: 
 [Introduction to Software Process (PDF)](Introduction-software-process.pdf) 
+[(Google Doc)](https://docs.google.com/presentation/d/1IfBcNJ5Pnuiji7cqcFctj_N9SEhx4KwJnJn_vUe3GLI/edit?usp=sharing)
 
 ## What is a software process?
 
