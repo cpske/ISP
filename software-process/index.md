@@ -199,17 +199,24 @@ Common SDLC's are:
 2. Iterative and Incremental
 3. Unified (Software Development) Process - a framework for software processes.  It is iterative and incremental.
 
-You should be familiar with the details of Waterfall and the UP.
+Less common but often mentioned in textbooks are:
+
+* Spiral Model - iterative and incremental with focus on risk
+* Rapid Prototype - learn from prototypes.  Many processes do this and its not a complete model.
+* Reuse-Oriented Engineering - this isn't a process, it's a strategy for implementing the requirements. Almost all projects reuse software at different levels; for example, using a *framework* for a web application.
+
+You should be familiar with the details of Waterfall, iterative and incremental, and the UP.
 Its not sufficient just to know their names and vaguely what they are.
 
 
 ## Online Courses
 
-These 2 are part of the "Software Development Lifecycle" specialization, offered by University of Minnesota.
 
-*Software Development Processes and Methodologies* on coursera.org (free).
+[Software Development Processes and Methodologies](https://www.coursera.org/learn/software-processes/), U. of Minnesota on Coursera.  A good overview course for the activities in a software process. Some good advise on developer habits.
+ * This course is part of a 4-course series "Software Development Lifecycle" by U.M. that looks interesting.
 
 *Engineering Practices for Building Quality Software* on coursera.org (free).
+ * Also by U. of Minnesota.
 
 https://www.freestudy.com/best-free-online-software-engineering-courses/ description and links to other software engineering courses.
 
@@ -217,3 +224,21 @@ There are many good courses on edX and Coursera related to this subject.  Many a
 
 A popular course pair on edX is "Agile Development using Ruby on Rails" by David Patterson and Armando Fox of U.C. Berkeley.
 
+### Reading
+
+* [Software Processes - Summerville, Chapter 2][summerville] from *Software Engineering*, 9E, by Ian Summerville.
+  - simple, concise description of software process models and activities
+
+* [Software Life-Cycle Models (ch. 2) and Software Processes (ch. 3)][schach] from *Object-Oriented and Classical Software Engeering*, 8E, by William Schach.
+  - more detail than Summerville's explanation, emphasis on the U.P. as model
+  - chapter 2 contains most of what you need to know
+  - chapter 3 describes the "workflows" in a software process, using the UP as a model
+
+* Pressman, Chapter 2 [Process Models][pressman] is a slightly more abstract introduction to software processes, from *Software Engineering: A Practioner's Approach*, 7E, a well-known book by William Pressman.
+
+* Winston Royce, [Managing the Development of Large Software Systems][royce], the original article describing the waterfall model (Royce didn't call it that). This classic paper is very short.
+
+[summerville]: https://cpske.github.io/ISP/resources/Software-Process-Summerville-ch2.pdf
+[schach]: https://cpske.github.io/ISP/resources/Software-Process-Schach-ch2-3.pdf
+[pressman]: https://cpske.github.io/ISP/resources/Software-Process-Pressman-ch2.pdf
+[royce]: https://cpske.github.io/ISP/resources/Royce1970-Managing-the-Development-of-Large-Software-Systems.pdf
