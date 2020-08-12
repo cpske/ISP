@@ -26,6 +26,7 @@ navigation_order: 1
 
 * Unit testing in Java and Python
 * Code coverage
+* Github Flow for managing work in git
 
 ### Week 4
 

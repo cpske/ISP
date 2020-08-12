@@ -227,16 +227,16 @@ A popular course pair on edX is "Agile Development using Ruby on Rails" by David
 ### Reading
 
 * [Software Processes - Summerville, Chapter 2][summerville] from *Software Engineering*, 9E, by Ian Summerville.
-  - simple, concise description of software process models and activities
+  - short, concise description of software process models and activities
 
 * [Software Life-Cycle Models (ch. 2) and Software Processes (ch. 3)][schach] from *Object-Oriented and Classical Software Engeering*, 8E, by William Schach.
   - more detail than Summerville's explanation, emphasis on the U.P. as model
-  - chapter 2 contains most of what you need to know
+  - chapter 2 contains describes different life cycles
   - chapter 3 describes the "workflows" in a software process, using the UP as a model
 
-* Pressman, Chapter 2 [Process Models][pressman] is a slightly more abstract introduction to software processes, from *Software Engineering: A Practioner's Approach*, 7E, a well-known book by William Pressman.
+* Pressman, Chapter 2 [Process Models][pressman] is a slightly more abstract introduction to software processes, from Pressman *Software Engineering: A Practioner's Approach*, 7E, another highly-regarded textbook.
 
-* Winston Royce, [Managing the Development of Large Software Systems][royce], the original article describing the waterfall model (Royce didn't call it that). This classic paper is very short.
+* Winston Royce, [Managing the Development of Large Software Systems][royce], the original article describing the waterfall model (Royce didn't call it waterfall). This classic paper is very short.
 
 [summerville]: https://cpske.github.io/ISP/resources/Software-Process-Summerville-ch2.pdf
 [schach]: https://cpske.github.io/ISP/resources/Software-Process-Schach-ch2-3.pdf
