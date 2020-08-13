@@ -4,31 +4,53 @@ title: Git and Github
 ---
 
 Software Version Control means managing the versions and history of software work products.
-It is an essential part of every development project.
+Version Control is an essential part of every development project.
 
 A **version control system** (VCS) performs:
 
 * authentication of users
 * access control - only authorized users can view or change files
 * history of all changes to files, with attribution (who changed it) and reason (commit message)
-* ability to "check out" or "check in" a bunch of files at once and maintain them as a single version (a *commit* in git)
-* maintains integrity of files -- does not allow corruption of files or loss of work. VCS does not allow work to be checked in or "committed" if it not based on the most current version of what's in the VCS.
+* ability to "check out" or "check in" several files and other changes at once and maintain them as a single transaction (a *commit* in git)
+* maintains integrity of files -- does not allow corruption of files or loss of work. 
+  - VCS does not allow people to accidentally overwrite each other's work
+  - git does this by requiring a commit always be based on the current version of what is in the repository
 * manage multiple variations of the same work products, so that teams can work on different versions of the software or its features without affecting others
 
 Git is the dominant VCS in the world today, so we will focus on how to use Git.   
-Other VCS are Mercurial, Subversion (a centralized vcs).
+Other VCS are Mercurial and Subversion (a centralized vcs).
 
 ## Git Basics
 
-1. Review [git basics]( ) from Programming 2.
-  - Concepts: local repo, remote, working copy, staging area ("index"), commit, HEAD
-  - Git repository as a graph (commits are nodes)
-  - How to check status of a local repo
-  - How to add files to repo or update them
-  - How to rename, move, or delete files from a local repo
-  - Creating and using a remote repository
-  - [Git Basics](https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository) from the excellent [ProGit Book](https://git-scm.com/book/en/v2). Free PDF and ePub of *ProGit* also on [git-scm.com](https://git-scm.com/book/en/v2).
-  - Programming 2 [Intro to Git](https://skeoop.github.io/git/Git-Basics.pdf) and [Github](https://skeoop.github.io/git/intro-github), [dumb slides](https://skeoop.github.io/git/)
+Presentation: [Git Basics](Git-Basics.pdf)
+
+[Git Basics](https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository) from the excellent [ProGit Book](https://git-scm.com/book/en/v2). 
+  - Free PDF and ePub of *ProGit* also on [git-scm.com](https://git-scm.com/book/en/v2).
+
+
+## Understanding Git
+
+A git repository is structures as a **graph**. The **nodes** are commits.  
+
+Each commit includes
+* time stamp
+* author
+* message
+* link to previous commit
+* link to files in the commit, and other transactions
+
+Branches are just **movable labels** referring to commits.
+
+[Git Visualizer](http://git-school.github.io/visualizing-git) type git commands and see a graph of the result! *This really helps understand git*. 
+
+[Learn Git Interactive](https://learngitbranching.js.org) interactive graphical tutorial on git, includes branch, merge, rebase, and more.
+
+## Remotes and Github
+
+[Remotes and Github](Using-Github.pdf)
+
+
+## Git Common Use Cases
 
 * common use scenarios
   - view history of commits
@@ -91,10 +113,6 @@ Other VCS are Mercurial, Subversion (a centralized vcs).
 * [Understanding Git Branches](https://www.sbf5.com/~cduan/technical/git/git-2.shtml) short article with pictures of what branch commands do.
 * [How to Clone all Branches?](https://stackoverflow.com/questions/67699/how-to-clone-all-remote-branches-in-git)  This Stackover question explains the problem and soluations. Cloning and tracking remotes branches is a common issue (its not done automatically when you clone a repo)..
 
-## Using Github
-
-* Github guidelines for this course [PDF](Using-Github.pdf), [PPT](Using-Github.ppt)
-
 ## Github Flow - Managing Work on a Project
 
 A git "workflow" for solo or team projects.  We will use this:
@@ -114,11 +132,6 @@ A git "workflow" for solo or team projects.  We will use this:
 * Using Git [Submodules](submodule) to include another repository *inside* an existing Git repository tree.  Very useful for managing work, such as a separate repo for tests.
 
 
-## Git Visualizer
-
-[Git Visualizer](http://git-school.github.io/visualizing-git) type git commands and see a graph of the result! *This really helps understand git*. 
-
-[Learn Git Interactive](https://learngitbranching.js.org) interactive graphical tutorial on git, includes branch, merge, rebase, and more.
 
 
 ## Git Books
