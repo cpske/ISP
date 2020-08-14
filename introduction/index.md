@@ -49,7 +49,7 @@ Monday 10:00-12:00 and 13:00-16:00.
 * Weekly Online Meeting 10:00-12:00 via Google Meet
   - Do students prefer Google Classroom &amp; Google Meet or Microsoft Teams?
 * Occasional Live Class in E204.  Announced in advance.
-* Weekly Lab 13:00-16:00 (online, for now)
+* Weekly Lab 13:00-16:00. This is online, for now.
 * Quiz some weeks
 * Weekly Assigned Reading and Problems. You must do the reading.
 * Small Team Software Project
@@ -62,8 +62,6 @@ Platform we will use, at least to start:
 [Complete this form](https://forms.gle/9PW1L9Hsmx6ygHR9A) (https://forms.gle/9PW1L9Hsmx6ygHR9A) to tell us your Github ID.  You will be invited to join the Github "ISP2020" organization.
 * Course Material on [cpske.github.io/ISP/](https://cpske.github.io/ISP/). Material is organized by topic (not sequentially). Click on topic link for summary and learning path. Some material is optional.
 
-> Students usually don't need this, but the Github Classroom URL is
-> https://classroom.github.com/classrooms/68801168-isp-2020
 
 ### Effort and Commitment
 
@@ -90,7 +88,8 @@ your time, make a commitment, and have discipline.
 ### Software You Need
 
 * IDE such as Eclipse, IntelliJ IDEA, NetBeans, or VS Code
-* Python 3.6 or newer, Java JDK 8 or 11
+* Python 3.6 or newer, 3.7 preferred
+* Java JDK 8 or 11
 * Good text editor (something better than Notepad). IDE is OK, but slow for editing a single file.
 * Git command line client. Git GUI is also useful (most IDEs include it)
 
@@ -108,13 +107,13 @@ and are intended to improve team work.
 Hence, we need a *team* project to practice both individual and project-related skills.
 The project is also an opportunity to learn the basics of HTTP, web frameworks, and web application development.
 
-Last year's students say that the project is the most valuable part of the course.
+Last year's students report that the project is the most valuable part of the course.
 
 
 ### Not a Powerpoint Course
 
 Powerpoint slides are an aid to presentation.
-They don't contain much depth and missing some important material. 
+They don't contain much depth and not all the material. 
 
 You must read the assigned material and learn from hands-on work 
 for a real understanding.
@@ -129,7 +128,8 @@ pass the course.
 * Know how to write code in Java and Python
 * Ability to use Git and Github
 
-If you have not *at least* worked through Prog 2, then you should take Prog. 2 before enrolling in this course. No one without Prog 2 background has *ever* passed this course (when I teach it).
+If you have not *at least* worked through Prog 2, then you should take Prog. 2 before enrolling in this course.    
+No one without Prog 2 background has *ever* passed this course (when I teach it).
 
 ## Grading
 
@@ -172,33 +172,32 @@ DOMAIN = "ku.th"
 
 def email(firstname: str, lastname: str, nlast: int = 1) -> str:
     """Return the email address for a KU person"""
-    # "\u0040" is Unicode for 'at' symbol
+    # \u0040 is Unicode for 'at' symbol
     return f"{firstname}.{lastname[0:nlast]}\u0040{DOMAIN}"
 ```
----
+
 ```java
 /**
  * Return the Email address for a KU person. Works only for Thai names.
- * @param first person's first name
- * @param last  person's last name
+ * @param firstname person's first name
+ * @param lastname  person's last name
  * @param nlast number of chars from last name to use
  * @return email address, of course
  */
-public static String email(String first, String last, int nlast) {
+public static String email(String firstname, String lastname, int nlast) {
     final String DOMAIN = "ku.th";
     var sb = new StringBuilder();
-    sb.append(first)
+    sb.append(firstname)
       .append(".")
-      .append(last.substring(0,nlast))
+      .append(lastname.substring(0,nlast))
       .append("\u0040")    // Unicode for 'at' symbol
       .append(DOMAIN);
     return sb.toString();
 }
-
 // you could use String.format instead of StringBuilder
 ```
 
 *Why obfuscate email addresses?* 
 
-Bots scrape web pages for email addresses (and login credentials!)
+Bots scrape web pages for email addresses and login credentials
 to create databases for spam and phishing.

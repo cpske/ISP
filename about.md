@@ -4,10 +4,10 @@ navigation_order: 3
 ---
 
 Monday 10-12, 13-16 starting 10 Aug 2020.   
-**Location:** class will be online. Some meetings and live lectures in room E204.     
+**Location:** class is online. Some meetings and live lectures in room E204.     
 **Online Meeting Location:** Google Meet using the link shown on Google Classroom for this course. Just click on the Meet link or icon.    
-[Google Classroom](https://classroom.google.com) for assignments and announcements: join using class code **3blhnrs**    
-Github Classroom & Org [ISP2020](https://github.com/org/ISP2020) for programming work.    
+[Google Classroom](https://classroom.google.com) for assignments and announcements. Join using class code **3blhnrs**    
+Github Classroom Organization [ISP2020](https://github.com/org/ISP2020) for programming work.    
 [Sign-up form](https://forms.gle/fh9SqvmA9yPh1ur6A) - so we know your Github ID
 
 ### [Introduction to Course](/introduction/index)
@@ -27,6 +27,8 @@ def email(firstname: str, lastname: str, nlast: int = 1) -> str:
     return f"{firstname}.{lastname[0:nlast]}\u0040{DOMAIN}"
 
 if __name__ == '__main__':
-    print("Contact Mai ", email("mai","norapong",2));
-    print("Contact Pakanon ", email("pakanon","pantisawat",1));
+    print("Contact Mai ", email("mai","norapong",2))
+    print("Contact Pakanon ", email("pakanon","pantisawat",1))
 ```
+
+Java version is in [introduction](/introduction/index)

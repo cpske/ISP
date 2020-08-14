@@ -1,31 +1,38 @@
-# Git Tag
+---
+title: Git Tag
+---
 
-Git **tag** is used to bookmark (label) a particular commit in a git repository. Tags serve as a marker for a milestone or version of software, which is easier to refer to than a commit number (a hashcode).
+A Git **tag** is a label (or bookmark) to a particular commit in a git repository. Tags let you assign meaningful names to mark a milestone, release version, or bug fix. 
 
 ## How to use tag
 
 List the tags in a repository:
 ```
-$ git tag
+cmd> git tag
 v0.1
 v1.0
 v1.1
 v2.0
 v1_bug_fix
 ```
-There is an option to list only interesting tags using a *pattern*, such as "v1.*":
+Or, list only the tags that match a *pattern*, such as "v1.*":
 ```
-$ git tag -l 'v1.*'
+cmd> git tag -l 'v1.*'
 v1.0
 v1.1
 ```
 
 ## Creating a tag
 
-There are two types of tag. First is **annotated tag**, which contains additional information and a message. The second is **lightweight tag**, which doesn't contain additional information or message.  For tagging a release of software, you should use an annotated tag.
+There are two types of tag. 
+* **annotated tag** contains additional information, author, and a message. For tagging a release of software, you should use an annotated tag.
+* **lightweight tag** doesn't contain additional information or message.
+
+Only annotated tags can be pushed to a remote repository.
 
 ### Create an Annotated tag (with -a option)
-To create an annotated tag you must use `git tag -a` (the -a means annotated).
+
+To create an annotated tag, use `git tag -a` (the -a means annotated).
 ```
 $ git tag -a v1.0 -m 'released version 1.0'
 ```

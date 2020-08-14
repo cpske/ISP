@@ -1,56 +1,107 @@
 ---
-layout: page
-title: Git and Github
+title: Git, Version Control, and Github
 ---
 
 Software Version Control means managing the versions and history of software work products.
-Version Control is an essential part of every development project.
 
-A **version control system** (VCS) performs:
+A **Version Control System** (VCS) performs:
 
-* authentication of users
-* access control - only authorized users can view or change files
-* history of all changes to files, with attribution (who changed it) and reason (commit message)
-* ability to "check out" or "check in" several files and other changes at once and maintain them as a single transaction (a *commit* in git)
-* maintains integrity of files -- does not allow corruption of files or loss of work. 
+* authenticate users
+* control who can view, copy, or change files (access control)
+* history of all changes with attribution (who changed it) and reason (commit message)
+* ability to "check out" or "check in" several files or other changes at once as a single transaction (git *commit*)
+* let's you checkout any previous version of the files -- so you never lose work
+* maintains integrity of files -- does not allow corruption of files or loss of work 
   - VCS does not allow people to accidentally overwrite each other's work
-  - git does this by requiring a commit always be based on the current version of what is in the repository
-* manage multiple variations of the same work products, so that teams can work on different versions of the software or its features without affecting others
+  - git requires a new commit always be based on the current version of what is in the repository
+* manage multiple variations (branches) of the same project, so that teams can work on different features without affecting other's work
 
-Git is the dominant VCS in the world today, so we will focus on how to use Git.   
-Other VCS are Mercurial and Subversion (a centralized vcs).
+Git is the dominant VCS in the world today, so we will focus on how to use Git. 
+Other VCS are Mercurial and Subversion (a centralized VCS).
 
-## Git Basics
+## Learning Git
 
 Presentation: [Git Basics](Git-Basics.pdf)
 
-[Git Basics](https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository) from the excellent [ProGit Book](https://git-scm.com/book/en/v2). 
-  - Free PDF and ePub of *ProGit* also on [git-scm.com](https://git-scm.com/book/en/v2).
+Each of these covers the basics (one is enough):
 
+[Git Basics](https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository) from the excellent, free [Pro Git Book](https://git-scm.com/book/en/v2). 
+
+[Learn Git Interactive](https://learngitbranching.js.org) interactive graphical tutorial, includes branch, merge, rebase, and more.
+
+My [Intro to Git](intro-git) - but *Pro Git* is better.
 
 ## Understanding Git
 
-A git repository is structures as a **graph**. The **nodes** are commits.  
+A git repository is structured as a **graph**. The **nodes** are commits.  
 
 Each commit includes
 * time stamp
-* author
+* author name and email
 * message
 * link to previous commit
-* link to files in the commit, and other transactions
+* link to files in this commit, and other transactions (rename, delete)
 
-Branches are just **movable labels** referring to commits.
+Branches and HEAD are just **movable labels** referring to commits.
 
-[Git Visualizer](http://git-school.github.io/visualizing-git) type git commands and see a graph of the result! *This really helps understand git*. 
+[Git Visualizer][GitVisualizer] type git commands and see a graph of the result! *This really helps understand git*. 
 
-[Learn Git Interactive](https://learngitbranching.js.org) interactive graphical tutorial on git, includes branch, merge, rebase, and more.
+[Learn Git Interactive](https://learngitbranching.js.org) interactive graphical tutorial, includes branch, merge, rebase, and more.
+
+## Git Branches
+
+* [Branching and Merging](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging) from the online [Pro Git Book][Git Book]
+* My [branch and merge](branch-and-merge) notes
+* [Merge Practice](Merge-Practice.pdf) in class exercise
+
+
+### Learn More About Branch and Merge
+
+* [How to use local branches with remotes](https://www.freecodecamp.org/forum/t/push-a-new-local-branch-to-a-remote-git-repository-and-track-it-too/13222) article has good exmaple of working with branches, such as:
+   - Push your local branch to remote (creates remote branch): `git push -u origin branch_name`
+   - Create a local branch to track a remote: `git checkout -b branch_name origin/branch_name` (and then maybe `git pull` to be sure your branch is up-to-date)
+   - Rename (move) a branch: `git branch -m old_name new_name`
+* [Git Branch Command Examples](ttps://www.thegeekstuff.com/2017/06/git-branch/) shows commands for 15 common tasks
+* [Understanding Git Branches](https://www.sbf5.com/~cduan/technical/git/git-2.shtml) short article with pictures of what branch commands do.
+* [How to Clone all Branches?](https://stackoverflow.com/questions/67699/how-to-clone-all-remote-branches-in-git)  
+  - This Stackover question explains the problem and soluations. 
+  - Cloning and tracking remotes branches is a common issue and it's **not done** automatically when you clone a repo.
 
 ## Remotes and Github
 
-[Remotes and Github](Using-Github.pdf)
+[Remotes and Github](Using-Github.pdf) presentation and [notes](Using-Github.md)
 
+## Navigating a Repository
+
+[Advanced Git Tips for Python Developers][git-tips-python] has good examples of navigating a git repository and using `git stash` to save uncommited changes in your working copy.
+
+Some useful tips:
+
+* `HEAD~` (HEAD tilde) means "the predecessor of HEAD". Instead of HEAD, you can put any commit label, e.g. `git checkout bugfix~` for the predecessor of commit "bugfix".
+* `HEAD~3` means 3 commits before current HEAD.
+* `HEAD^` means a parent of HEAD, by default the first parent.
+* `foo^1` and `foo^2` are parents of a commit `foo` created by a merge (commit with 2 parents).
+
+Example use: what files did the most recent commit change?
+```
+ git diff HEAD^ HEAD
+ # to see just the names of changed files:
+ git diff HEAD^ HEAD --name-only
+```
+
+Github has nice visual tools for showing changes between any commits, 
+but (of course) they are only available for the remote on Github not your local repo.
+
+## Tags
+
+A **tag** is a name assigned to a commit, like a bookmark, to make it easy to refer to it later.  On Github, tags are used to mark *releases* of a product.
+
+[Git Tags](git-tag) - my notes on how to use tags.
 
 ## Git Common Use Cases
+
+[Git-tips](https://github.com/git-tips/tips) how to perform common tasks in Git. 
+
 
 * common use scenarios
   - view history of commits
@@ -60,9 +111,6 @@ Branches are just **movable labels** referring to commits.
   - see what has changed (diffs)
   - checkout a particular commit or a particular file
   - work with remotes - push, fetch, pull. How to add, change, and view remotes.
-
-* branching and tagging
-  - merge and conflict resolution
   
 * Using Git
     - understand git as a graph of commits. This really helps.
@@ -91,31 +139,13 @@ Branches are just **movable labels** referring to commits.
 * How to examine and fix conflicts
 * Tracking work on Github
 * Forking
-* Github flow
 
-## Learning Git
 
-* Git Basics [class notes](git-basics) guidelines given in class, including .gitignore [PDF](Git-Basics.pdf), [PPT]([Git-Basics.ppt)
-* [Learn Git Interactive](https://learngitbranching.js.org) interactive graphical tutorial on git, includes branch, merge, rebase, and more.
 
-### Branch and Merge
-
-* [Branching and Merging](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging) from the online [Git Book][Git Book].
-* My [branch and merge](branch-and-merge) notes.
-* Merge Practice (in class): [PDF](Merge-Practice.pdf), [PPT](Merge-Practice.ppt)
-* [How to use local branches with remotes](https://www.freecodecamp.org/forum/t/push-a-new-local-branch-to-a-remote-git-repository-and-track-it-too/13222) article has good exmaple of working with branches, such as:
-    - Push your local branch to remote (creates remote branch): `git push -u origin branch_name`
-    - Create a local branch to track a remote: `git checkout -b branch_name origin/branch_name` (and maybe do a `git pull` to be sure your branch is up-to-date)
-    - Rename (move) a branch: `git branch -m old_name new_name`
-
-* [Git Branch Command Examples](ttps://www.thegeekstuff.com/2017/06/git-branch/) shows commands for 15 common tasks
-
-* [Understanding Git Branches](https://www.sbf5.com/~cduan/technical/git/git-2.shtml) short article with pictures of what branch commands do.
-* [How to Clone all Branches?](https://stackoverflow.com/questions/67699/how-to-clone-all-remote-branches-in-git)  This Stackover question explains the problem and soluations. Cloning and tracking remotes branches is a common issue (its not done automatically when you clone a repo)..
 
 ## Github Flow - Managing Work on a Project
 
-A git "workflow" for solo or team projects.  We will use this:
+A git "workflow" for solo or team projects. 
 
 * [Github Flow Illustrated Guide](https://guides.github.com/introduction/flow/) and
 * [Description on Githubflow.io](https://githubflow.github.io/). Step #5 -merge only after pull request review is important! 
@@ -124,6 +154,10 @@ A git "workflow" for solo or team projects.  We will use this:
 * [Commenting on Pull Requests](https://help.github.com/en/articles/commenting-on-a-pull-request) - examples of providing feedback to a Pull Request.
 * Slides on Pull Requests [PDF](Pull-Requests.pdf) [PPT](Pull-Requests.ppt)
 
+
+[Github Flow](https://guides.github.com/introduction/flow/)
+
+[Github Branching Convention](https://gist.github.com/digitaljhelms/4287848) has nice graph of using branches as in Github flow.
 
 ## Specialized Git Uses
 
@@ -134,26 +168,25 @@ A git "workflow" for solo or team projects.  We will use this:
 
 
 
-## Git Books
-
-[ProGit Online Book](https://www.git-scm.com/book/en/v2) at [https://www.git-scm.com] read online or download PDF.  Online version has good nagivation aids, and is *much* shorter than full book but still has all the content you need.
-
-[ProGit Book PDF](https://progit2.s3.amazonaws.com/en/2016-03-22-f3531/progit-en.1084.pdf) on AWS (free PDF).  This version is longer, with book-like formattingand pagination.
-
-[Think Like a Git](http://think-like-a-git.net/) online book helps understand visually how git works.  Helps understand how to use Git.
-
-Each Git commit is a node on a graph.  But what is in that node?  This article explains, with diagrams:
-
-[Anatomy of a Git Commit](https://blog.thoughtram.io/git/2014/11/18/the-anatomy-of-a-git-commit.html) explains *what* is in a Git "commit".  
-
 ## Git Command Summary (cheatsheet)
 
-[Git Cheatsheet](https://gist.github.com/raineorshine/5128563) Gist as a bash shell file.
+[Git Cheatsheet](https://gist.github.com/raineorshine/5128563) Git commands in a bash shell file    
+[Github Cheatsheet](/git/git-cheat-sheet.pdf) PDF file
 
-[Hub.github.com](https://hub.github.com/) command line wrapper for git.
+## Resources
 
-[Git-tips](https://github.com/git-tips/tips) how to perform common tasks in Git. 
-[Git Book]: https://git-scm.com/book/
+* [Pro Git Book][ProGit] and downloadable book [PDF][ProGitPdf]
+  - online version has good navigation aids, but is *much shorter* than the book
+* [Think Like a Git][ThinkLikeaGit] visually understand how Git works.
+* [Visualizing Git][VizualizeGit] interactive tool is view graph of a repository.
+* [Anatomy of a Git Commit](https://blog.thoughtram.io/git/2014/11/18/the-anatomy-of-a-git-commit.html) explains *what* is in a Git "commit". 
+
+[ProGit]: https://www.git-scm.com/book/en/v2 "Pro Git online book on Git-scm.com"
+[ProGitPdf]: https://github.com/progit/progit2/releases/download/2.1.245/progit.pdf
+[ProGitAws]: https://progit2.s3.amazonaws.com/en/2016-03-22-f3531/progit-en.1084.pdf "Pro Git book v.2 PDF on AWS."
+[ThinkLikeaGit]: http://think-like-a-git.net/ "Understand visually how git works"
+[GitVisualizer]: http://git-school.github.io/visualizing-git/ "Interative tool draws a graph of commits in a repo"
+[git-tips-python]: https://realpython.com/advanced-git-for-pythonistas/
 
 ## Good Git Questions Online
 

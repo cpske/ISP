@@ -48,21 +48,13 @@ Scrum for managing development work and iterations.
 
 <tr valign="top">
 <td markdown="span">
-[Git](git) and Version Control
+[Git](git)
 </td>
 <td markdown="span">
-Git commands and common tasks, structure of a git repo, [branches][git-branching], [aliases](git/aliases), and using remote repositories.   
-[Visualizing](git/index#git-visualizer) a git repo.
-</td>
-</tr>
-
-<tr valign="top">
-<td markdown="span">
-[More Git](git)
-</td>
-<td markdown="span">
-[Branching and Merging][git-book-branching-and-merging]    
-[Using SSH Keys](https://help.github.com/articles/connecting-to-github-with-ssh/) so you never need to enter your Github password
+Git commands and common tasks, structure of a git repo, [branches][git-branching], merging, and remote repos.    
+[Visualizing](git/index#git-visualizer) a git repo.    
+Optionally, [use SSH Keys](https://help.github.com/articles/connecting-to-github-with-ssh/) so you don't need to enter your Github password,
+and [aliases](git/aliases) to reduce typing.
 </td>
 </tr>
 <tr valign="top">
