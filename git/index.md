@@ -9,8 +9,8 @@ A **Version Control System** (VCS) performs:
 * authenticate users
 * control who can view, copy, or change files (access control)
 * history of all changes with attribution (who changed it) and reason (commit message)
-* ability to "check out" or "check in" several files or other changes at once as a single transaction (git *commit*)
-* let's you checkout any previous version of the files -- so you never lose work
+* let's you view or checkout any previous version of files -- so you never lose work
+* ability to "check in" several changes at once as a single transaction (git *commit*)
 * maintains integrity of files -- does not allow corruption of files or loss of work 
   - VCS does not allow people to accidentally overwrite each other's work
   - git requires a new commit always be based on the current version of what is in the repository
@@ -19,7 +19,7 @@ A **Version Control System** (VCS) performs:
 Git is the dominant VCS in the world today, so we will focus on how to use Git. 
 Other VCS are Mercurial and Subversion (a centralized VCS).
 
-## Learning Git
+## Learning Git Basics
 
 Presentation: [Git Basics](Git-Basics.pdf)
 
@@ -31,6 +31,17 @@ Each of these covers the basics (one is enough):
 
 My [Intro to Git](intro-git) - but *Pro Git* is better.
 
+
+### Three Areas: Repository, Staging Area (Index), Working Copy
+
+This is covered in the Git Basics.
+
+1. How do you add file "main.py" to the staging area?
+2. How to show what has been staged for commit?
+3. How to remove "main.py" from the staging area?
+
+
+
 ## Understanding Git
 
 A git repository is structured as a **graph**. The **nodes** are commits.  
@@ -40,13 +51,78 @@ Each commit includes
 * author name and email
 * message
 * link to previous commit
-* link to files in this commit, and other transactions (rename, delete)
+* link to files in this commit
+
+![git commit](commit-structure.png)
+
+The commit graph refers to previous commits.
+![git commit graph](commit-graph-detail.png)
 
 Branches and HEAD are just **movable labels** referring to commits.
 
-[Git Visualizer][GitVisualizer] type git commands and see a graph of the result! *This really helps understand git*. 
+A git graph with branches "master" and "feature/2", and tags "v0.1" and "v1.0".
+Where is HEAD?
+
+![git graph](git-graph.jpg)
+
+### Example: View Student Project Repo using gitk
+
+You can view all branches of a repo using `gitk --all`.
+
+Checkout the first commit!  View gitk again (notice the yellow node).
+
+Try "Dailigram" ISP 2018 student project.  It has many branches and tags.
+> The commit messages are not good; later those students asked me to
+> tell your class that commit messages are important!
+> *You should write descriptive commit messages.*
+
+### Visualize Git
+
+[Git Visualizer][GitVisualizer] type git commands and see a graph of the result!
 
 [Learn Git Interactive](https://learngitbranching.js.org) interactive graphical tutorial, includes branch, merge, rebase, and more.
+
+### Navigating the Graph
+
+You can move around the graph, checkout or view older commits, view differences,
+or **move** the labels!
+
+How to refer to nodes:
+* `af840b` the first part of commit hash, any number of chars is OK
+* `HEAD`  the location (commit) in the repo that your working copy is based on
+* `HEAD~` (HEAD tilde) means "the predecessor of HEAD". 
+* `v0.1`  using the label on a node
+* `bugfix~` the node **before** "bugfix"
+* `HEAD~3` (HEAD tilde 3) means 3 commits before current HEAD
+* `HEAD^` means a parent of HEAD, by default the first parent
+* `foo^1` and `foo^2` are parents of a commit `foo` created by a merge (commit with 2 parents).
+
+1. what was changed in the most recent commit?
+```
+ git diff HEAD^ HEAD
+ # to see just the names of changed files:
+ git diff HEAD^ HEAD --name-only
+```
+2. checkout `main.py` from the commit before HEAD
+```
+git checkout HEAD~ -- main.py
+```
+3. checkout everything from a named commit
+```
+git checkout 3fa94b
+```
+4. reset "master" to an older commit.  For example, reset to previous commit:
+```
+git checkout master
+git branch -f master HEAD^
+```
+
+
+[Advanced Git Tips for Python Developers][git-tips-python] has good examples of navigating a git repository and using `git stash` to save uncommited changes in your working copy.
+
+
+Github has nice visual tools for showing changes between any commits, 
+but they are only available for the remote on Github -- not your local repo.
 
 ## Git Branches
 
@@ -71,26 +147,7 @@ Branches and HEAD are just **movable labels** referring to commits.
 
 [Remotes and Github](Using-Github.pdf) presentation and [notes](Using-Github.md)
 
-## Navigating a Repository
 
-[Advanced Git Tips for Python Developers][git-tips-python] has good examples of navigating a git repository and using `git stash` to save uncommited changes in your working copy.
-
-Some useful tips:
-
-* `HEAD~` (HEAD tilde) means "the predecessor of HEAD". Instead of HEAD, you can put any commit label, e.g. `git checkout bugfix~` for the predecessor of commit "bugfix".
-* `HEAD~3` means 3 commits before current HEAD.
-* `HEAD^` means a parent of HEAD, by default the first parent.
-* `foo^1` and `foo^2` are parents of a commit `foo` created by a merge (commit with 2 parents).
-
-Example use: what files did the most recent commit change?
-```
- git diff HEAD^ HEAD
- # to see just the names of changed files:
- git diff HEAD^ HEAD --name-only
-```
-
-Github has nice visual tools for showing changes between any commits, 
-but (of course) they are only available for the remote on Github not your local repo.
 
 ## Tags
 
@@ -101,8 +158,6 @@ A **tag** is a name assigned to a commit, like a bookmark, to make it easy to re
 ## Git Common Use Cases
 
 [Git-tips](https://github.com/git-tips/tips) how to perform common tasks in Git. 
-
-
 * common use scenarios
   - view history of commits
   - recover deleted or mangled file
@@ -145,27 +200,21 @@ A **tag** is a name assigned to a commit, like a bookmark, to make it easy to re
 
 ## Github Flow - Managing Work on a Project
 
-A git "workflow" for solo or team projects. 
+Github Flow is a convention for using Git.
+Development work is always done on branches, and pull requests used for review before merging into master.  *Github Flow* is useful for both team and solo projects.
 
 * [Github Flow Illustrated Guide](https://guides.github.com/introduction/flow/) and
 * [Description on Githubflow.io](https://githubflow.github.io/). Step #5 -merge only after pull request review is important! 
 * [Pull Request Tutorial](https://yangsu.github.io/pull-request-tutorial/) why and how to use pull requests.
-[Github Branching Convention](https://gist.github.com/digitaljhelms/4287848) has nice graph of using branches as in Github flow.
+* [Github Branching Convention](https://gist.github.com/digitaljhelms/4287848) has nice graph of using branches as in Github flow.
 * [Commenting on Pull Requests](https://help.github.com/en/articles/commenting-on-a-pull-request) - examples of providing feedback to a Pull Request.
 * Slides on Pull Requests [PDF](Pull-Requests.pdf) [PPT](Pull-Requests.ppt)
-
-
-[Github Flow](https://guides.github.com/introduction/flow/)
-
-[Github Branching Convention](https://gist.github.com/digitaljhelms/4287848) has nice graph of using branches as in Github flow.
 
 ## Specialized Git Uses
 
 * [Git Aliases](aliases) how to create an alias for a git command, such as "git co" alias for "git checkout".
 
-* Using Git [Submodules](submodule) to include another repository *inside* an existing Git repository tree.  Very useful for managing work, such as a separate repo for tests.
-
-
+* [Submodules](submodule) to include another repository *inside* an existing Git repository tree.  Very useful for managing work, such as a separate repo for tests.
 
 
 ## Git Command Summary (cheatsheet)
@@ -178,7 +227,7 @@ A git "workflow" for solo or team projects.
 * [Pro Git Book][ProGit] and downloadable book [PDF][ProGitPdf]
   - online version has good navigation aids, but is *much shorter* than the book
 * [Think Like a Git][ThinkLikeaGit] visually understand how Git works.
-* [Visualizing Git][VizualizeGit] interactive tool is view graph of a repository.
+* [Visualizing Git][GitVizualizer] interactive tool is view graph of a repository.
 * [Anatomy of a Git Commit](https://blog.thoughtram.io/git/2014/11/18/the-anatomy-of-a-git-commit.html) explains *what* is in a Git "commit". 
 
 [ProGit]: https://www.git-scm.com/book/en/v2 "Pro Git online book on Git-scm.com"

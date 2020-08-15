@@ -1,27 +1,29 @@
-### Why Use Github?
+---
+title: Why Use Github?
+---
 
 Using Git on your local computer is a good habit, but...
 
-* What if your hard disk fails?
-* How can your share a project with someone else?
-* You do work on one computer at home, a different computer at KU?
+* what if your hard disk fails?
+* how can your share a project with someone else?
+* how can you work on a project from 2 computers (home computer and laptop at KU)?
 
-By keeping an up-to-date copy of your project on Github, you and others
+Using an up-to-date copy of your project on Github, you and others
 can access it anywhere.
 
 Git supports **remote** repositories. Popular git hosting sites are:
-* [Github](https://github.com) - owned by Microsoft
+* [Github](https://github.com) owned by Microsoft
 * [Gitlab](https://gitlab.com)
-* [Bitbucket](https://bitbucket.org) - owned by Atlassian
+* [Bitbucket](https://bitbucket.org) owned by Atlassian
 
 A **remote** git hosting site let's you:
 
-* synchronize your local repository with the remote. Only the changes are updated, so its efficient and fast.
+* synchronize your local repository with the remote. Only changes are updated, so its efficient and fast.
 * create a new local copy (clone) from the remote
 * view project activity, updates, and compare changes to files in a browser
 * share access (read-only or read-write) with other people 
-* create a professional looking web site for your project (*Github pages*, on github.io)
-* create an online copy (fork) of another online repository
+* create a professional looking web site for your project (*Github pages* on github.io)
+* create an online copy (fork) of another repository
 
 ### Two Ways to Use Github
 
@@ -30,7 +32,6 @@ The choice depends on these cases:
 
 **Case 1**: You already have code on your computer; you want to copy it to Github.    
 **Case 2**: A project already exists on Github; you want to copy it to your computer.    
-**Case 3**: A new project -- nothing on Github or your computer.
 
 The only thing that differs is how you create your local project repository and connect it with Github.  After that, the normal workflow is the same in all cases.
 
@@ -99,10 +100,12 @@ local changes using `git push`.
 > workspace/
 >      project1/
 >          project1/      (created by "git clone")
->              .git
+>              .git/
 >              README.md
 >              more files
 > ```
+> The project is in `workspace/project1/project1/`.
+
 
 ### Case 3: You don't have ANYTHING yet
 

@@ -57,6 +57,7 @@ Optionally, [use SSH Keys](https://help.github.com/articles/connecting-to-github
 and [aliases](git/aliases) to reduce typing.
 </td>
 </tr>
+
 <tr valign="top">
 <td markdown="span">
 Git and Development
@@ -64,10 +65,9 @@ Git and Development
 <td markdown="span">
 [Github Flow](git/index#github-flow), issues, branches, &amp;
 [pull request](git/Pull-Requests.pdf).    
-Importance of descriptive commit messages and Pull Requests.     
-Using tags; Tags and Releases on Github.   
-[Pull Request Tutorial](https://yangsu.github.io/pull-request-tutorial/) why and how to use pull requests.    
-[Git submodules](git/submodule) to divide a project among multiple repositories.
+Importance of descriptive commit messages and Pull Requests.
+[Pull Request Tutorial](https://yangsu.github.io/pull-request-tutorial/) why and how.    
+Using tags; Tags and Releases on Github.
 </td>
 </tr>
 
