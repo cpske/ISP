@@ -29,11 +29,10 @@ Each of these covers the basics (reading one is enough):
 
 My [Intro to Git](git-basics) - but *Pro Git* (above) is better.
 
-
 ### Three Areas: Repository, Staging Area (Index), Working Copy
 
+Git uses 3 special areas, and one special reference.
 This is covered in the Git Basics.  
-Git uses 3 special areas, and one special reference:
 
 * local repository
 * staging area (index)
@@ -72,8 +71,16 @@ Branches and HEAD are just **movable labels** referring to commits.
 
 Question: *Where is HEAD?*
 
+## Visualize Git
 
-### Example: View Student Projects using gitk
+[Git Visualizer][GitVisualizer] type git commands and see a graph of the result!
+
+[Learn Git Interactive](https://learngitbranching.js.org) interactive graphical tutorial, includes branch, merge, rebase, and more.
+
+* You should do the first 2 parts: *Intro Sequence* and *Ramping Up*
+* Optional: *Moving Work Around* is useful, too.
+
+## Example: View Student Projects using gitk
 
 You can view all branches of a repo using `gitk --all`.
 
@@ -99,15 +106,6 @@ You can view all branches of a repo using `gitk --all`.
 > but the branch commits are not in your local repo.    
 > To create a "tracking branch" (local branch that connects to a remote branch) use:
 > `git branch -t remotes/origin/branch_name`
-
-### Visualize Git
-
-[Git Visualizer][GitVisualizer] type git commands and see a graph of the result!
-
-[Learn Git Interactive](https://learngitbranching.js.org) interactive graphical tutorial, includes branch, merge, rebase, and more.
-
-* You should do the first 2 parts: *Intro Sequence* and *Ramping Up*
-* Optional: *Moving Work Around* is useful, too.
 
 ### Navigating the Graph
 
@@ -158,24 +156,31 @@ but they are only available for the remote on Github -- not your local repo.
 * My [branch and merge](branch-and-merge) notes
 * [Merge Practice](Merge-Practice.pdf) in class exercise
 
+Branches and Remotes:
+* How `git push` handles branches depends on your configuration:
+  ```
+  git config --global push.default simple
+  ```
+* "sample" is the default behavior in Git 2.0.  Other choices are:
+   - `simple` - push the current branch to upstream, but only if the upstream branch name is exactly the same
+   - `upstream` - push the current branch to its upstream branch.
+   - `tracking` - old, deprecated alias for `upstream`
+   - `matching` - push all matching branches (branches on local that also exist on the remote)
 
-### Learn More About Branch and Merge
+### More About Branches and Remotes
 
 * [How to use local branches with remotes](https://www.freecodecamp.org/forum/t/push-a-new-local-branch-to-a-remote-git-repository-and-track-it-too/13222) article has good exmaple of working with branches, such as:
    - Push your local branch to remote (creates remote branch): `git push -u origin branch_name`
    - Create a local branch to track a remote: `git checkout -b branch_name origin/branch_name` (and then maybe `git pull` to be sure your branch is up-to-date)
    - Rename (move) a branch: `git branch -m old_name new_name`
-* [Git Branch Command Examples](ttps://www.thegeekstuff.com/2017/06/git-branch/) shows commands for 15 common tasks
-* [Understanding Git Branches](https://www.sbf5.com/~cduan/technical/git/git-2.shtml) short article with pictures of what branch commands do.
+* [Git Branch Command Examples](ttps://www.thegeekstuff.com/2017/06/git-branch/) commands for 15 common tasks
 * [How to Clone all Branches?](https://stackoverflow.com/questions/67699/how-to-clone-all-remote-branches-in-git)  
   - This Stackover question explains the problem and soluations. 
-  - Cloning and tracking remotes branches is a common issue and it's **not done** automatically when you clone a repo.
+  - Cloning and tracking remotes branches is **not done** automatically when you clone a repo. You must do it yourself.
 
 ## Remotes and Github
 
 [Remotes and Github](Using-Github.pdf) presentation and [notes](Using-Github.md)
-
-
 
 ## Tags
 
@@ -183,48 +188,19 @@ A **tag** is a name assigned to a commit, like a bookmark, to make it easy to re
 
 [Git Tags](git-tag) - my notes on how to use tags.
 
-## Git Common Use Cases
+## Common Use Cases
 
 [Git-tips](https://github.com/git-tips/tips) how to perform common tasks in Git. 
-* common use scenarios
+* Common use scenarios
   - view history of commits
-  - recover deleted or mangled file
-  - "undo" staging
-  - "undo" a commit
   - see what has changed (diffs)
+  - recover deleted or mangled file
+  - "undo" staging of files
+  - "undo" a commit
   - checkout a particular commit or a particular file
-  - work with remotes - push, fetch, pull. How to add, change, and view remotes.
-  
-* Using Git
-    - understand git as a graph of commits. This really helps.
-    - use `git diff` (many forms) to see differences between last commit, stagin
-    - undo a change in file in working copy
-    - revise a commit, such as adding something you forget (w/o creating a new commit)
-    - "undo" a commit by rolling back HEAD to previous commit
-* How to view the history of a repository, and see what changed.
-  - `git log`, `git log2`, `git history`, `gitk`, other visual tools
-  - What is the meaning of commit ids? (`734a00b`)?  
-  - Why not use `1`, `2`, `,3` for commit numbers (like Subversion)?
-  - Git in Eclipse
-* How to create and use branches. When to delete a branch?
-  - Read Branch and Merge from ProGit: 
-  - How `git push` handles branches depends on your configuration:
-  ```
-  git config --global push.default simple
-  ```
-  This is the default behavior in Git 2.0.  There are several choice with these meaning:
-     * `simple` - push the current branch to upstream, but only if the upstream branch name is exactly the same
-    * `upstream` - push the current branch to its upstream branch.
-    * `tracking` - old, deprecated alias for `upstream`
-    * `matching` - push all matching branches (branches on local that also exist on the remote)
-* Use of tags
-* Merging
-* How to examine and fix conflicts
-* Tracking work on Github
-* Forking
-
-
-
+  - work with remotes - push, fetch, pull. 
+  - How to add, change, and view remotes.
+  - revise a commit, such as adding files you forget
 
 ## Github Flow - Managing Work on a Project
 
@@ -236,14 +212,13 @@ Development work is always done on branches, and pull requests used for review b
 * [Pull Request Tutorial](https://yangsu.github.io/pull-request-tutorial/) why and how to use pull requests.
 * [Github Branching Convention](https://gist.github.com/digitaljhelms/4287848) has nice graph of using branches as in Github flow.
 * [Commenting on Pull Requests](https://help.github.com/en/articles/commenting-on-a-pull-request) - examples of providing feedback to a Pull Request.
-* Slides on Pull Requests [PDF](Pull-Requests.pdf) [PPT](Pull-Requests.ppt)
+* My [Slides on Pull Requests](Pull-Requests.pdf)
 
 ## Specialized Git Uses
 
 * [Git Aliases](aliases) how to create an alias for a git command, such as "git co" alias for "git checkout".
 
 * [Submodules](submodule) to include another repository *inside* an existing Git repository tree.  Very useful for managing work, such as a separate repo for tests.
-
 
 ## Git Command Summary (cheatsheet)
 
