@@ -2,151 +2,128 @@
 title: Git Questions
 ---
 
-## Part 1. Background and Basic Information
+Answer these questions using Markdown.  Check that your formatting is correct (points deducted if incorrect).
+Note that VS Code and IntelliJ have markdown previewers.
 
-Chapter 1 of [Pro Git][ProGit] covers these questions.
-In particular, you should know what's is section _1.3 Git Basics_.
-
-1. What is Git?
-
-2. What is the main difference between Git and Subversion (another VCS)?  
-
-3. When working with Git locally, what are these?  Describe each one.
-   * Staging area
-   * Working copy
-   * master
-   * HEAD
-
-4. When you modify a file and commit it to a repository, what is stored in the repository? (_1.3 Git Basics_)
-   [ ] Differences between this version and previous version.
-   [ ] A snapshot of the file.  The complete file, possibly compressed.
-
-### Part 2. How To Use Git
-
-1. What command(s) create a new local repository for a project named `Tetris`?
-
-2. There are 2 ways to get a local Git repo.  What are they?
-    a.
-    b.
-
-3. How can you see what files are in the local repository?
-
-4. What are 2 commands to add files in your working copy *to* the git repository?
-
-5. How do you compare status of your working copy to the local repo?
-
-
-6. The output of `git status` is verbose (but helpful!). How to get a short view of the status?
-
-7. Suppose A.txt is in the git repository (a "tracked file") and you want to delte it (from the repo **and** your working copy).  What is the command?
-
-
-   * Someone could just delete the file in their working copy (using command line or File Explorer) and then "commit" changes to git.  Explain why this won't delete the file from repo.
-
-## The Repository
-
-1. Where on your computer's filesystem is the git repository for a project?
-
-
-2. In your project directory, what kind(s) of files should you *not* commit to a Git repo?
-
-3. How can you avoid accidentally committing unwanted files to a git repo?
-
-
-4. Many Git tutorials instruct people to add their project to a git repo like this:
+If you want to have line displayed as *unformatted text* (like HTML `code` tag) there are 2 ways to do it:
+1. leave 4 spaces at start of a line (but the text on the line must not "look like" a Markdown numbered or bulleted item)
+2. put the lines between triple backquotes (as done in the source code for this file)
     ```
-    cd /somepath/myproject
-    git init
-    git add .
+    unformatted text
     ```
-    This is a bad idea. Why?
+
+## Part 1. Basic Information
+
+1. When working with Git locally, what are these?  Describe each one in a sentence
+   * Staging area -
+   * Working copy -
+   * master -
+   * HEAD -
+
+2. A git commit includes the author's name and email.  How does git know this?  When you install git on a new machine (or in a new user account) you should perform what 2 git commands?
+    ```
+    # Git essential configuration commands for a new account
 
 
+    ```
+3. There are 2 ways to create a local Git repo.  What are they?
+    - describe first way (one sentence)
+    - describe second way
+
+
+4. Suppose you create a git repository in a folder (directory) named "project1". Where does git put the repository files for this project?
+
+
+### Part 2. Adding and changing stuff
+
+Suppose your working copy of a repository contains these files and directories:
+```
+README
+out/
+     a.exe
+src/ a
+     b
+	 c
+test/
+     d
+```     
+
+1. What is the command to add README and *everything* in the `src` directory to the git staging area?
+
+
+2. Write the command to add `test/d` to staging area.
+
+
+3. Write the command to list files in the staging area.
+
+
+4. You decide you **don't** want to add `test/d` to git.  Write the command to remove `test/d` from staging area.
+
+
+5. You **never** want any files in the `out/` directory to be commited to git. Describe 2 steps to configure git for this:
+    * step one
+	* step two
+
+6. Write the command to commit the staging area to the repository.
+
+
+7. What is the command to move `src/a`, `src/b`, and `src/c` to the top-level directory of the project, so that they are also moved in the repository?
+
+
+8. Commit this change with the message "moved src directory".
+
+
+9. If you change a **lot** of files, using `git add` for each one can be tedious.  Write a command to add *all modified files* to the staging area.   
+    (After doing this you should use "git status" to verify you didn't add unintended files.)
+
+
+10. What is the command to delete the file `c` from both your working copy and the repository? (This stages the change but its not deleted from repo until you commit it.)
+
+
+11. What is the command to show all differences between your working copy and the most recent commit? (Can be kind of hard to read.)
+
+
+## Part 3. Undoing Changes
+
+12. Use an editor to make some changes to file `a`.  What is the command to view the **differences** between your working copy `a` and the current version in repository?
+
+
+12. You decide you don't like the changes to `a`. What is the command to **replace** your working copy of `a` with the current version in the repository?    
+    (This also works if you accidentally *delete* a file from your working copy.)
+
+
+13. How do you "undo" a commit?  What is the command to move the "head" of the current branch to the **previous** commit?
+
+
+14. Even Worse! You accidentally delete some files and commit the changes! Now the files are deleted in the current Git HEAD.   How can you get back the the most up-to-date revision from git without "undoing" the commit?
+
+    ```
+    // Find the most recent commit containing the file:
+    git rev-list -n 1 HEAD -- filename
+    e4a6b2961974958a84c94ae36cde489d201b2d45
+    // For last 3 commits of a file use "-n 3"
+    // To see more detail about the commit, use "-v"
+    git rev-list -v -n 2 HEAD -- filename
+    e4a6b2961974958a84c94ae36cde489d201b2d45
+    tree d20c971afa4c4a2b83c6c15e00dd9c870e70813a
+    parent 8d3a2862282090ee50f4a11f26b333391ebb8be6
+    author fatalaijon <fatalaijon@gmail.com> 1534318476 +0700
+
+       Fix #42, also add JUnit test and better Javadoc
+
+    // Now you found the file! how to check it out? 
+    ____________________________________
+    ```
 
 ## Viewing Changes and Commits
 
-1. What are some commands to show a history of commits?
-    * brief format: one line per commit
-    * longer format
-    * how to show all branches?
-    * a GUI tool to show history
-    
+* Command to show the history of a repository in the terminal (command) window.  This form shows one line per commit, with a graph, and all branches.
+    ```
+    git log --oneline --graph --all
+    ```
+    Some versions of git have an *alias* "log1" for this (`git log1`).
+* The GUI tool `gitk` or `gitk --all` displays even more info about the commit history.
 
-## Undoing Changes
-
-1. Suppose you add a file to the staging area and decide you don't want to commit it.  What is command to remove a file from staging area?  (undo "git add filename")
-```
-# to remove file "foo" from staging are:
-git _______________
-# to remove everything from staging area:
-git _______________
-```
-> Note: if you have not yet committed anything to the repo, then `reset` won't work.  In that case use `git rm --cached filename` which removes the file from the "index" (list of tracked files).
-
-2. Suppose you commit files and want to "undo" the commit? What is the command to "undo" a commit?  (It resets location of HEAD but does not change your working copy.)
-
-3. You accidentially mess up the file "foo.py" in your working copy.  What is the command to replace this file (in your working copy) with the last version you committed to git? (That is, checkout the most up-to-date revision of this file)
-
-```shell
-cmd> 
-```
-
-3. You accidentally DELETE the (tracked) file A.txt from your working copy.  How can you recover the file from the repository?
-
-4. You make changes to many files in your working copy, and the application is totally screwed up.  What is the git command to completely replace your working copy with the last commit to git (discards all changes to the working copy)?
-
-```shell
-# replace working copy with latest git command. This cannot be undone.
-cmd> git reset --hard
-```
-  
-    * Suppose your working copy contains some new, untracked file.  When you perform the above command, does git alter or remove this untracked file?
-
-5. Even Worse! You accidentally delete some files and commit the changes! Now the files are deleted in the current Git HEAD.   How can you get back the the most up-to-date revision from git?
-
-```
-// Find the most recent commit containing the file:
-git rev-list -n 1 HEAD -- filename
-e4a6b2961974958a84c94ae36cde489d201b2d45
-// For last 3 commits of a file use "-n 3"
-// To see more detail about the commit, use "-v"
-git rev-list -v -n 2 HEAD -- filename
-e4a6b2961974958a84c94ae36cde489d201b2d45
-tree d20c971afa4c4a2b83c6c15e00dd9c870e70813a
-parent 8d3a2862282090ee50f4a11f26b333391ebb8be6
-author fatalaijon <fatalaijon@gmail.com> 1534318476 +0700
-
-    Fix #42, also add JUnit test and better Javadoc
-// Now that you found the file, how to check it out? 
-____________________________________
-```
-> Note: Git almost never really deletes anything.  There are special commands to delete branches and squash a range of commits; these commands do delete old stuff.
-
-
-## View the Commit History
-
-1. What commands show the commit history? (many answers)
-   * 
-   * 
-   * 
-
-2. What command shows you the files changed for each commit?
-
-
-3. The history may be long.  How can you limit how much is shown?
-
-
-## Viewing Changes in Your Work
-
-1. How can you see the differences between your working copy and most recent commit?
->```git diff```
-
-2. How do you view what **files** are staged for commit?
->```git status```
-
-3. How do you view differences between staged files and last commit (HEAD)? Two solutions.
-  * one
-  * two
 
 4. The output of `git diff` is too hard to read. Can "git" show it graphically?
 > Yes. There are 3 better ways:
@@ -161,30 +138,6 @@ ____________________________________
    4. Use `git difftool` instead of `git diff`
 
 
-## Viewing Changes in the Repository
-
-These commands are useful for seeing what has changed.
-Its much easier to do on Github or using a GUI tool like gitk, SmartGit, or EGit (Eclipse).
-
-1. What git command shows Difference between last 2 commits.
-
-
-2. How to view Difference between 2 commits, where you specify the commit ids.
-   First, view the history
-   ```
-   # git history, git log, git log1, or gitk
-   git history
-   git history
-   * 8d3a286 - (22 hours ago) Add some MOOCs to References - jbrucker (HEAD -> master)
-   * 051c9d4 - (4 days ago) change classroom code - jbrucker (origin/master)
-   * e15706f - (5 days ago) remove bad git links - jbrucker
-   * e771d36 - (5 days ago) fix typo in link reference - jbrucker
-   * 76105d1 - (5 days ago) intro slides - jbrucker
-   ```
-   Specify 2 commits to compare, separated by "..." (3 periods).
-   ```
-   git diff 051c9d4...e771d36
-   ```
 
 # Branch and Merge Questions
 
@@ -227,19 +180,17 @@ Its much easier to do on Github or using a GUI tool like gitk, SmartGit, or EGit
     cmd> git push --set-upstream origin dev-food
     ```
 
+## Part 4: Branching
 
-## Good Git Questions Online
-
-* [15 Git Questions Every Developer Should Know](https://medium.com/@gauravtaywade/15-interview-questions-about-git-that-every-developer-should-know-bcaf30409647)
-* [Frequently Asked Git Questions](https://www.git-tower.com/learn/git/faq)
-* [13 Essential Git Interview Questions](https://www.toptal.com/git/interview-questions)
 
 
 ## References
 
-The Git [References](references) file has docs about Git.
+[Learn Git Interactive Tutorial][LearnGitInteractive]    
+[Pro Git Online Book][ProGit]    
+[Pro Git PDF][ProGitPdf]
 
 [ProGit]: https://www.git-scm.com/book/en/v2 "Pro Git online book on Git-scm.com"
 [ProGitPdf]: https://progit2.s3.amazonaws.com/en/2016-03-22-f3531/progit-en.1084.pdf "Pro Git v.2 PDF on AWS. Longer, book format."
-[Think Like a Git]: http://think-like-a-git.net/ "Understand visually how git works"
+[LearnGitInteractive]: https://learngitbranching.js.org "Interactive graphical git tutorial"
 [Visualize Git]: http://git-school.github.io/visualizing-git/ "Online tools draws a graph of commits in a repo, as you type"

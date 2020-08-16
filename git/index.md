@@ -2,79 +2,103 @@
 title: Git, Version Control, and Github
 ---
 
-Software Version Control means managing the versions and history of software work products.
-
-A **Version Control System** (VCS) performs:
+A **Version Control System** (VCS) manages versions of source code and other documents [Wikipedia](https://en.wikipedia.org/wiki/Version_control).  A VCS performs:
 
 * authenticate users
 * control who can view, copy, or change files (access control)
-* history of all changes with attribution (who changed it) and reason (commit message)
-* let's you view or checkout any previous version of files -- so you never lose work
-* ability to "check in" several changes at once as a single transaction (git *commit*)
+* keep a history of all changes to every file, with attribution (who changed it) and reason (commit message)
+* users can view or checkout any previous version of files -- so you never lose work
+* "check in" many items at once as a single transaction (git *commit*). A transaction can include renaming, moving, or deleting items as well as updates.
 * maintains integrity of files -- does not allow corruption of files or loss of work 
   - VCS does not allow people to accidentally overwrite each other's work
   - git requires a new commit always be based on the current version of what is in the repository
 * manage multiple variations (branches) of the same project, so that teams can work on different features without affecting other's work
 
-Git is the dominant VCS in the world today, so we will focus on how to use Git. 
+**Git** is the dominant VCS in the world today, so we will focus on using Git. 
 Other VCS are Mercurial and Subversion (a centralized VCS).
 
-## Learning Git Basics
+## Git Basics
 
 Presentation: [Git Basics](Git-Basics.pdf)
 
-Each of these covers the basics (one is enough):
+Each of these covers the basics (reading one is enough):
 
 [Git Basics](https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository) from the excellent, free [Pro Git Book](https://git-scm.com/book/en/v2). 
 
 [Learn Git Interactive](https://learngitbranching.js.org) interactive graphical tutorial, includes branch, merge, rebase, and more.
 
-My [Intro to Git](intro-git) - but *Pro Git* is better.
+My [Intro to Git](git-basics) - but *Pro Git* (above) is better.
 
 
 ### Three Areas: Repository, Staging Area (Index), Working Copy
 
-This is covered in the Git Basics.
+This is covered in the Git Basics.  
+Git uses 3 special areas, and one special reference:
+
+* local repository
+* staging area (index)
+* working copy
+* HEAD
+
+Can you answer these?
 
 1. How do you add file "main.py" to the staging area?
 2. How to show what has been staged for commit?
 3. How to remove "main.py" from the staging area?
+4. What happens if you add "main.py" to the staging area, then edit it again? Do you need re re-stage the file?
 
-
-
-## Understanding Git
+## Understanding Git as a Graph
 
 A git repository is structured as a **graph**. The **nodes** are commits.  
 
 Each commit includes
+* id - a hash of the contents
 * time stamp
 * author name and email
-* message
+* message describing the commit
 * link to previous commit
 * link to files in this commit
 
 ![git commit](commit-structure.png)
 
-The commit graph refers to previous commits.
-![git commit graph](commit-graph-detail.png)
+Each commit (node) refers to previous commits:
+
+![git commit graph](git-commit-graph.gif)
 
 Branches and HEAD are just **movable labels** referring to commits.
+(This graph also contains *tags*, "v0.1", "v1.0").
 
-A git graph with branches "master" and "feature/2", and tags "v0.1" and "v1.0".
-Where is HEAD?
+![git commit graph](git-commit-graph-long.jpg)
 
-![git graph](git-graph.jpg)
+Question: *Where is HEAD?*
 
-### Example: View Student Project Repo using gitk
+
+### Example: View Student Projects using gitk
 
 You can view all branches of a repo using `gitk --all`.
 
-Checkout the first commit!  View gitk again (notice the yellow node).
-
-Try "Dailigram" ISP 2018 student project.  It has many branches and tags.
+* [Dailigram](https://github.com/bankkeez/dailigram.git) ISP 2018 project.  It has many branches and tags.
 > The commit messages are not good; later those students asked me to
 > tell your class that commit messages are important!
 > *You should write descriptive commit messages.*
+* Koocock ISP 2019 project, by Mai and friends.
+* [VS Code](https://github.com/microsoft/vscode) by Microsoft has hundreds of branches, tags, and project docs.
+
+**Demo:** 
+  - Show the graph of Dailigram. It uses branches and tags.
+  - Look at all the files in the repo. 
+  - Checkout the first commit using its hash: `git checkout xxxx` (*How can you find this?*)
+  - Files in your working copy have disappeared!
+  - View gitk again (notice the yellow node)
+  - Checkout the final commit using its hash: `git checkout xxxx`
+  - Working copy now matches final version
+  - Note: non-tracked files are not affected when you use "checkout"
+
+> When you clone a remote repository git only clones `master` (by default). 
+> You can see references and history of other (remote) branches, 
+> but the branch commits are not in your local repo.    
+> To create a "tracking branch" (local branch that connects to a remote branch) use:
+> `git branch -t remotes/origin/branch_name`
 
 ### Visualize Git
 
@@ -82,20 +106,25 @@ Try "Dailigram" ISP 2018 student project.  It has many branches and tags.
 
 [Learn Git Interactive](https://learngitbranching.js.org) interactive graphical tutorial, includes branch, merge, rebase, and more.
 
+* You should do the first 2 parts: *Intro Sequence* and *Ramping Up*
+* Optional: *Moving Work Around* is useful, too.
+
 ### Navigating the Graph
 
 You can move around the graph, checkout or view older commits, view differences,
 or **move** the labels!
 
-How to refer to nodes:
+How to refer to a node (commit):
+
+* `master` use the name of a branch or tag
 * `af840b` the first part of commit hash, any number of chars is OK
-* `HEAD`  the location (commit) in the repo that your working copy is based on
-* `HEAD~` (HEAD tilde) means "the predecessor of HEAD". 
-* `v0.1`  using the label on a node
-* `bugfix~` the node **before** "bugfix"
+* `HEAD`  refers to the commit that your working copy is based on
+* `HEAD~` (HEAD tilde) means "the predecessor of HEAD" 
 * `HEAD~3` (HEAD tilde 3) means 3 commits before current HEAD
 * `HEAD^` means a parent of HEAD, by default the first parent
-* `foo^1` and `foo^2` are parents of a commit `foo` created by a merge (commit with 2 parents).
+* `foo^1` and `foo^2` are parents of a commit `foo` created by a merge (commit with 2 parents)
+* `v0.1`  using the label on a node
+* `bugfix~` the node **before** "bugfix"
 
 1. what was changed in the most recent commit?
 ```
@@ -103,20 +132,19 @@ How to refer to nodes:
  # to see just the names of changed files:
  git diff HEAD^ HEAD --name-only
 ```
-2. checkout `main.py` from the commit before HEAD
-```
-git checkout HEAD~ -- main.py
-```
-3. checkout everything from a named commit
+3. checkout everything from a named commit (this also moves HEAD to that commit)
 ```
 git checkout 3fa94b
+```
+3. checkout `main.py` from the commit before this one (does not change HEAD)
+```
+git checkout HEAD~ -- main.py
 ```
 4. reset "master" to an older commit.  For example, reset to previous commit:
 ```
 git checkout master
 git branch -f master HEAD^
 ```
-
 
 [Advanced Git Tips for Python Developers][git-tips-python] has good examples of navigating a git repository and using `git stash` to save uncommited changes in your working copy.
 
@@ -226,8 +254,9 @@ Development work is always done on branches, and pull requests used for review b
 
 * [Pro Git Book][ProGit] and downloadable book [PDF][ProGitPdf]
   - online version has good navigation aids, but is *much shorter* than the book
-* [Think Like a Git][ThinkLikeaGit] visually understand how Git works.
+* [Learn Git Interactive](https://learngitbranching.js.org) interactive graphical tutorial, includes branch, merge, rebase, and more.
 * [Visualizing Git][GitVizualizer] interactive tool is view graph of a repository.
+* [Think Like a Git][ThinkLikeaGit] visually understand how Git works.
 * [Anatomy of a Git Commit](https://blog.thoughtram.io/git/2014/11/18/the-anatomy-of-a-git-commit.html) explains *what* is in a Git "commit". 
 
 [ProGit]: https://www.git-scm.com/book/en/v2 "Pro Git online book on Git-scm.com"

@@ -199,10 +199,22 @@ For a team project, you should follow [Github Flow][understanding-github-flow].
 
 A free [student developer pack](https://education.github.com/pack) gives you free private repositories, free builds on Travis CI, and other resources.  Some of the offers are limited to 1 year (starts the first time you use them), so you should read the details before activating a special offer.
 
+### Authentication
+
+There are 2 protocols you can use to access a remote git repository, like Github:
+
+1. HTTPS - the Github URL looks like `https://github.com/your_github_id/reponame.git`
+   * You enter your username and password to authenticate
+2. SSH - the Github URL looks like `git@github.com:your_github_id/reponame.git`
+   * Uses an "ssh key" to respond to a challenge from Github. 
+   * Generally more secure since password is **not** sent over the Internet
+
+Which ever protocol you use, you can instruct Git to save your password during a session so you don't need to type it each time you push or fetch:
+```
+cmd> git config --global credential.helper cache
+```
 
 ### Use SSH Keys instead of your Github password
-
-Every time you `push` an update to Github or Bitbucket, it prompts you for your username and password.  You can eliminate this by setting up a public/private key pair for Github.
 
 The steps are described in [Connecting to Github with ssh](https://help.github.com/articles/connecting-to-github-with-ssh/).
 

@@ -389,6 +389,7 @@ Branches, Tags, and HEAD are just labels pointing to commits (nodes).
 
 Try the [Git Visualizer][GitVisualizer] at http://git-school.github.io/visualizing-git/ to see a graph of a Git repo.
 
+
 [Think Like a Git][ThinkLikeaGit] also has visual explanation of git.
 
 [ThinkLikeaGit]: http://think-like-a-git.net/ "Understand visually how git works"
