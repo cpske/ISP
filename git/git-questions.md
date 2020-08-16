@@ -85,35 +85,52 @@ test/
 
 ## Part 3. Undoing Changes
 
-12. Use an editor to make some changes to file `a`.  What is the command to view the **differences** between your working copy `a` and the current version in repository?
+1. Use an editor to make some changes to file `a`.  What is the command to view the **differences** between your working copy `a` and the current version in repository?
 
 
-12. You decide you don't like the changes to `a`. What is the command to **replace** your working copy of `a` with the current version in the repository?    
+2. You decide you don't like the changes to `a`. What is the command to **replace** your working copy of `a` with the current version in the repository?    
     (This also works if you accidentally *delete* a file from your working copy.)
 
 
-13. How do you "undo" a commit?  What is the command to move the "head" of the current branch to the **previous** commit?
+3. How do you "undo" a commit?  What is the command to move the "head" of the current branch to the **previous** commit?
 
 
-14. Even Worse! You accidentally delete some files and commit the changes! Now the files are deleted in the current Git HEAD.   How can you get back the the most up-to-date revision from git without "undoing" the commit?
+
+# Branch and Merge Questions
+
+1. What is the command to create a new branch named `dev-food`?
+
+ 
+
+2. What is the command to print what your current branch is?
+
+
+
+3. What command to list **all** branches including remote ones?
+
+
+
+4. What is command to switch your working copy to a branch named `dev-food`?
+
+
+
+5. You commit some files to `dev-food` and try to "push" them to Github, but it fails:
 
     ```
-    // Find the most recent commit containing the file:
-    git rev-list -n 1 HEAD -- filename
-    e4a6b2961974958a84c94ae36cde489d201b2d45
-    // For last 3 commits of a file use "-n 3"
-    // To see more detail about the commit, use "-v"
-    git rev-list -v -n 2 HEAD -- filename
-    e4a6b2961974958a84c94ae36cde489d201b2d45
-    tree d20c971afa4c4a2b83c6c15e00dd9c870e70813a
-    parent 8d3a2862282090ee50f4a11f26b333391ebb8be6
-    author fatalaijon <fatalaijon@gmail.com> 1534318476 +0700
-
-       Fix #42, also add JUnit test and better Javadoc
-
-    // Now you found the file! how to check it out? 
-    ____________________________________
+    cmd>  git checkout dev-food
+    cmd>  git push
+    fatal:  The current branch dev-food has no upstream branch. 
     ```
+    Explain this error.
+
+6. What is the command to push `dev-food` to `origin` as a new remote branch on `origin`?
+
+
+
+7. Suppose your remote repository (Github or `origin`) has a branch named `beverages` that you don't have in your local repository.  What is the command to create a new local branch that **tracks** the `beverages` branch on `origin`?
+    There are many commands that do this.  For your own reference you may want to write several.
+
+
 
 ## Viewing Changes and Commits
 
@@ -122,67 +139,16 @@ test/
     git log --oneline --graph --all
     ```
     Some versions of git have an *alias* "log1" for this (`git log1`).
+
 * The GUI tool `gitk` or `gitk --all` displays even more info about the commit history.
 
 
-4. The output of `git diff` is too hard to read. Can "git" show it graphically?
-> Yes. There are 3 better ways:
-> * GUI tool or Eclipse EGit.
-> * `git difftool`
-> * `gitk`
+* The output of `git diff` can be hard to read. To view differences more visually:
 
-5. How do you use `git difftool` instead of `git diff`?
-   1. Type `git difftool --tool-help``` for a list of tools git can use.
-   2. Choose one you like and install it. I use meld or diffuse.
-   3. `git config diff.tool meld` to specify "meld" as diff tool.
-   4. Use `git difftool` instead of `git diff`
-
-
-
-# Branch and Merge Questions
-
-1. What is the command to create a new branch named `dev-food`?
-
-    git branch dev-food
-
-2. What is command to find out what your current branch is?
-
-    git branch
-
-3. Command to show **all** branches including remote ones?
-
-    git branch -a
-
-4. What is command to switch working copy to `dev-food`?
-
-    git checkout dev-food
-
-
-5. You commit some files to `dev-food` and try to "push" them to Github, but it fails:
-
-    ```
-    cmd>  git add pizza.py
-    cmd>  git commit -m "add a new food"
-    cmd>  git push
-    fatal:  The current branch dev-food has no upstream branch. 
-    ```
-
-    Explain why the error and how to fix the problem.
-
-    > Fixing is easy -- git tells you what to do.
-
-     (its the same command as adding a remote to "master")
-
-6. Add "origin" as remote and push dev-food all in one command
-
-    ```
-    #    git push -u  upstream_name upstream_branch
-    cmd> git push --set-upstream origin dev-food
-    ```
-
-## Part 4: Branching
-
-
+    1. View differences on Github.
+    2. Meld or Diffuse to compare and merge files. `git difftool` lists more tools.
+    3. `gitk` shows diffs between commits
+    4. Eclipse EGit shows side-by-side diffs and can merge interactively
 
 ## References
 

@@ -63,4 +63,22 @@ Its much easier to do on Github or using a GUI tool like gitk, SmartGit, or EGit
     ```
     #    git push -u  upstream_name upstream_branch
     cmd> git push --set-upstream origin dev-food
+    ```4. Even Worse! You accidentally delete some files and commit the changes! Now the files are deleted in the current Git HEAD.   How can you get back the the most up-to-date revision from git without "undoing" the commit?
+
+    ```
+    // Find the most recent commit containing the file:
+    git rev-list -n 1 HEAD -- filename
+    e4a6b2961974958a84c94ae36cde489d201b2d45
+    // For last 3 commits of a file use "-n 3"
+    // To see more detail about the commit, use "-v"
+    git rev-list -v -n 2 HEAD -- filename
+    e4a6b2961974958a84c94ae36cde489d201b2d45
+    tree d20c971afa4c4a2b83c6c15e00dd9c870e70813a
+    parent 8d3a2862282090ee50f4a11f26b333391ebb8be6
+    author fatalaijon <fatalaijon@gmail.com> 1534318476 +0700
+
+       Fix #42, also add JUnit test and better Javadoc
+
+    // Now you found the file! how to check it out? 
+    ____________________________________
     ```
