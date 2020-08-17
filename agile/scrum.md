@@ -23,11 +23,12 @@ The 5 key values of Scrum are
 * Openness
 * Respect
 
-What do they mean by those?  Some answers from creators of Scrum:
+What do these values mean? Some good answers:
 
 * [Scrum Values](https://www.scrumalliance.org/about-scrum/values) from ScrumAlliance.org
-* [Scrum Tutorial/Values](https://www.knowledgehut.com/tutorials/scrum-tutorial/scrum-values)
-* *Managing Projects with Scrum* (Head First) - see [Resources](#resources-to-learn-more).
+* [Scrum Tutorial: Values](https://www.knowledgehut.com/tutorials/scrum-tutorial/scrum-values)
+* [Scrum for Dummies: Values](https://www.dummies.com/careers/project-management/the-5-scrum-values/)
+* *Managing Projects with Scrum* (Head First) in [Resources](#resources-to-learn-more).
 
 ## Three Pillars of Scrum
 

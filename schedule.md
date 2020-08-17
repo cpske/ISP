@@ -16,31 +16,35 @@ navigation_order: 1
 
 ### Week 2 (17 Aug)
 
-* Agile
 * Scrum
 * Version Control & Git - understanding git repos; common scenarios
 * Git branch & merge
-* Git practice in class
+* Git practice
 
 ### Week 3 (24 Aug)
 
-* Unit testing in Java and Python
-* Code coverage
-* Github Flow for managing work in git
+* **Preparation:** install netcat or ncat on your computer
+* Intro to HTTP Protocol
+* HTTP in Action: manually enter HTTP requests using netcat or ncat
+* Write a specification for the Polls App requirements
 
 ### Week 4 (31 Aug)
 
-* Intro to HTTP Protocol
-* Exercise: manually enter HTTP requests using netcat or ncat
-* Web app and web framework overview - general structure and handling requests
+* Web app and web framework overview - general structure and operation
+* Github Flow for managing work in git
 * Intro to Django
-* Write a specification for Polls app requirements
-* Homework: Polls first iteration (Django Polls tutorial)
+* Homework: Polls App first iteration (Django Polls tutorial)
 
 ### Week 5 (7 Sep)
 
 * No class meeting due to Songkran
-* TA Review of Polls app iteration 1
-* Homework: Polls Iteration 2
+* Review progress on Polls App iteration 1 (meet online)
 
 ### Week 6 (14 Sep)
+
+* Agile
+
+### Unscheduled
+
+* Unit testing in Java and Python
+* Code coverage
