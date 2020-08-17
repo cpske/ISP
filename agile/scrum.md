@@ -27,7 +27,7 @@ What do they mean by those?  Some answers from creators of Scrum:
 
 * [Scrum Values](https://www.scrumalliance.org/about-scrum/values) from ScrumAlliance.org
 * [Scrum Tutorial/Values](https://www.knowledgehut.com/tutorials/scrum-tutorial/scrum-values)
-* *Managing Projects with Scrum* (Head First) - see [Resources](#resources).
+* *Managing Projects with Scrum* (Head First) - see [Resources](#resources-to-learn-more).
 
 ## Three Pillars of Scrum
 
@@ -49,12 +49,12 @@ Important characteristics of Scrum:
 
 * [Scrum and XP from the Trenches][Scrum-XP-Trenches] short e-book has a lot of practical info about doing Scrum.  Free from InfoQ.
 
-* [Scrum Primer](/resources/Scrum-Primer.pdf) 20-page detailed decription of how to do Scrum. Very good.
+* [Scrum Primer](/ISP/resources/Scrum-Primer.pdf) 20-page detailed decription of how to do Scrum. Very good.
 
-* [Managing Projects with Scrum](/resources/Head-First-Scrum.pdf) chapter from *Head First Agile*. Very memorable with examples.
+* [Managing Projects with Scrum](/ISP/resources/Head-First-Scrum.pdf) chapter from *Head First Agile*. Very memorable with examples.
 
-* [Introduction to Scrum slides](Intro-Scrum-MountainGoat.pdf) ([ODP](Intro-Scrum-MountainGoat.odp)) by MountainGoat Softwareware. 
-    - [MountainGoatSoftware](https://www.mountaingoatsoftware.com) is owned by Mike Cohn, co-inventer of Scrum. Web site has other material about Scrum.
+* [Introduction to Scrum slides](Intro-Scrum-MountainGoat.pdf) ([ODP](Intro-Scrum-MountainGoat.odp)) by MountainGoat Software. 
+    - [MountainGoat Software](https://www.mountaingoatsoftware.com) is owned by Mike Cohn, co-inventer of Scrum. Web site has other material about Scrum.
 
 [Scrum Guide]: https://www.scrumguides.org
 [Scrum-XP-Trenches]: https://www.infoq.com/minibooks/scrum-xp-from-the-trenches-2/
