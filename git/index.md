@@ -230,7 +230,7 @@ Development work is always done on branches, and pull requests used for review b
 * [Pro Git Book][ProGit] and downloadable book [PDF][ProGitPdf]
   - online version has good navigation aids, but is *much shorter* than the book
 * [Learn Git Interactive](https://learngitbranching.js.org) interactive graphical tutorial, includes branch, merge, rebase, and more.
-* [Visualizing Git][GitVizualizer] interactive tool is view graph of a repository.
+* [Visualizing Git][GitVisualizer] interactive tool is view graph of a repository.
 * [Think Like a Git][ThinkLikeaGit] visually understand how Git works.
 * [Anatomy of a Git Commit](https://blog.thoughtram.io/git/2014/11/18/the-anatomy-of-a-git-commit.html) explains *what* is in a Git "commit". 
 
