@@ -15,6 +15,11 @@ Then answer these [Questions about Scrum](https://forms.gle/wUCG2FCg3uS31bjz6).
 
 ## Scrum Key Values
 
+> Why study values?    
+> Values guide behavior and decisions.  Understanding the values
+> (and principles) underlying a process will help you make better
+> decisions, esp. in an unfamiliar or challenging situation.
+
 The 5 key values of Scrum are
 
 * Commitment
@@ -23,7 +28,8 @@ The 5 key values of Scrum are
 * Openness
 * Respect
 
-What do these values mean? Some good answers:
+What do these values mean?    
+Some good answers:
 
 * [Scrum Values](https://www.scrumalliance.org/about-scrum/values) from ScrumAlliance.org
 * [Scrum Tutorial: Values](https://www.knowledgehut.com/tutorials/scrum-tutorial/scrum-values)
@@ -34,9 +40,11 @@ What do these values mean? Some good answers:
 
 Important characteristics of Scrum:
 
-* Transparency - the process and progress are visible to those affected by the outcome. For example, a shared definition for when something is "done"
-* Inspection - frequently inspect artifacts and progress toward the Sprint goal. 
-* Adaptation - when a product or process is deviating from target, the process or the work products must be adjusted. Adjustment should be done as soon as possible.
+* **Transparency** - the process and progress are visible to those affected by the outcome. For example, a shared definition for when something is "done"
+* **Inspection** - frequently inspect artifacts and progress toward the Sprint goal. 
+* **Adaptation** - when a product or process is deviating from target, the process or the work products must be adjusted. Adjustment should be done as soon as possible.
+
+Ref: *Scrum Guide*, *Scrum Primer*, and *Managing Projects with Scrum* (links below).
 
 ## Resources to Learn More
 

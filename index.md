@@ -51,10 +51,9 @@ Scrum for managing development work and iterations.
 [Git](git)
 </td>
 <td markdown="span">
-Git commands and common tasks, structure of a git repo, [branches][git-branching], merging, and remote repos.    
+Git commands and common tasks, structure of a git repo, branches, merging, and remote repos.    
 [Visualizing](git/index#git-visualizer) a git repo.    
-Optionally, [use SSH Keys](https://help.github.com/articles/connecting-to-github-with-ssh/) so you don't need to enter your Github password,
-and [aliases](git/aliases) to reduce typing.
+[Use SSH Keys](https://help.github.com/articles/connecting-to-github-with-ssh/) for authentication instead of your Github password.
 </td>
 </tr>
 
@@ -64,10 +63,9 @@ Git and Development
 </td>
 <td markdown="span">
 [Github Flow](git/index#github-flow), issues, branches, &amp;
-[pull request](git/Pull-Requests.pdf).    
+[pull requests](git/Pull-Requests.pdf).    
 Importance of descriptive commit messages and Pull Requests.
-[Pull Request Tutorial](https://yangsu.github.io/pull-request-tutorial/) why and how.    
-Using tags; Tags and Releases on Github.
+Using tags. Tags and Releases on Github.
 </td>
 </tr>
 
@@ -76,7 +74,7 @@ Using tags; Tags and Releases on Github.
 [Unit Testing](testing)
 </td>
 <td markdown="span">
-Testing of "units" of code.  Testing Behavior - not just methods.      
+Testing "units" of code.  Testing behavior - not just methods.      
 [JUnit for Java](/testing/Intro-to-Unit-Testing.pdf) and 
 [unit test in Python](testing/PythonUnitTesting.pdf)    
 [Code Coverage](testing/code-coverage) 
@@ -123,7 +121,7 @@ Essential for all developers!
 Assertions
 </td>
 <td markdown="span">
-Assertions are executable statements of what should be true at some point in code, often used to "*assert*" conditions for parameters.  Assertions reduce errors and document code-level assumptions.
+Assertions are executable statements of what should be true at some point in code.  Assertions reduce errors and document code-level assumptions.
 </td>
 </tr>
 
