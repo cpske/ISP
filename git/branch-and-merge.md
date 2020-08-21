@@ -8,51 +8,56 @@ without affecting other branches.
 
 Each branch has a name, like "master".  The name is just a ***movable label** that points to the head of the branch.
 
-Create a new branch named foo:
-```
-cmd> git branch foo
-```
-"checkout" this branch so it is your current branch:
-```
-cmd> git checkout foo
-```
-Create branch and checkout in one command: `git checkout -b foo`.
+### Commands for Branches
 
-Now, any commits will be added to the `foo` branch.
+* Create a new branch named foo:
+   ```
+   cmd> git branch foo
+   ```
+* Checkout this branch so it is your current branch:
+   ```
+   cmd> git checkout foo
+   ```
+* Create branch and checkout in one command: `git checkout -b foo`.
 
-Switch back to the master branch:
-```
-cmd> git checkout master
-```
-List your branches (the "*" indicates current branch):
-```
-cmd> git branch
-* master
-  foo
-```
-Display branch history as a tree: `gitk --all`.
+  Now, any commits will be added to the `foo` branch.
 
-Display history on command line (there are many variations):
-```
-cmd> git log --oneline --graph --all
-```
+* Switch back to the master branch:
+   ```
+   cmd> git checkout master
+   ```
+* List branches (the "*" indicates current branch):
+   ```
+   cmd> git branch
+   * master
+   foo
+   ```
+* List all branches including remote branches:
+   ```
+   cmd> git branch -a
+   ```
+* Display branch history as a tree: `gitk --all`.
 
-EXAMPLE:  ISP 2018 "Dailigram" project. "gitk --all" shows branches and tags.
+* Display history on command line (there are many variations):
+  ```
+  cmd> git log --oneline --graph --all
+  ```
 
-EXAMPLE:  ISP 2019 "Koocook" project (Mai and friends).
+### Example Repositories with Many Branches
 
-EXAMPLE:  VS Code https://github.com/microsoft/vscode
+ISP 2018 "Dailigram" project. "gitk --all" shows branches and tags.
+
+ISP 2019 "Koocook" project (Mai and friends).
+
+VS Code https://github.com/microsoft/vscode
 
 ## Understanding Branches
 
 A git repository is a **graph**, with commits as nodes.
-Each git branch is a branch on the graph.  The branch names are movable **labels** that point to the head of each branch.    
+Each git branch is a branch on the graph.  The branch name is a **label** that points to the head of the branch.    
 
 Try the online [Git Visualizer](http://git-school.github.io/visualizing-git) - type git commands like "git commit", "git branch", "git checkout", "git reset" and see results on the graph. 
 
-## Branch Commands for Local Repo
-
- 
 
 ## Merging
 
@@ -72,36 +77,41 @@ What can happen?
     - `git merge` sees that person 1 added something at top, but line range doesn't conflict with person 2's changes, so it copies in the lines.   Merge succeeds.
     - Now the file has 2 copies of the same method!
 
-## Branches and Tracking Branches
+## Tracking Branches
 
 A "tracking branch" is a local branch with a corresponding remote.
+It tracks changes to the remote branch (use `fetch` or `pull` to copy), 
+and can push changes to the remote branch.
+
 When you clone a remote repository, your local "master" branch is
-set to track "origin/master" (master branch on the remote repo named "origin").
+set to track "origin/master", meaning "master" on the remote repo named "origin".  Other branches are not cloned, by default.
 
 To create a local "tracking branch" for some branch that already
-exists on a remote, use:
+exists on a remote repository, use:
 ```
-git checkout  -b branch_name  origin/branch_name
-# another command that does the same thing:
+git checkout  -b branch_name  origin/remote_branch_name
+```
+If the local and remote branch have the same name, you can write:
+```
 git checkout --track origin/branch_name
 ```
+and abbreviate `--track` to `-t`.
 
-### Creating a New Remote Branch
+### Create a New Remote Branch for a Local Branch
 
 You have a branch in your local repo named `dev-food`,
-but there isn't any remote branch (on origin) for it.
+but no remote branch (on origin) for it.
 
-What is the command to push your work to a *new* remote
-branch with the same name (`dev-food`)?
+To create a remote `dev-food` branch and track it:
 ```
 git checkout dev-food
-# in this command, "dev-food" is the name of the REMOTE branch
-# usually you want it to be same as your branch name.
+# "dev-food" is the name of the REMOTE branch
 git push -u origin dev-food
 ```
-
 The flag `-u` is short for `--set-upstream`.
 
+Usually you want the local and remote branch names to be the same,
+but you can use a different name.
 
 ### Remote Branch Examples
 
@@ -137,13 +147,13 @@ Suppose we want to look at the branch code.  There are 2 cases:
 ```
 git checkout origin/add_to_table
 ```
-this creates a detached branch.  
+this creates a **detached branch**.  
 
-2. We want to commit changes to the branch:
+2. We want to be able to make changes to the remote branch:
 ```
 git checkout -b add_to_table origin/add_to_table
 ```
-creates a local "tracking branch".  It tracks changes to the remote branch, and can push changes to the remote branch.
+creates a local "tracking branch".  
 
 3. Somehow you screw up and you have a local copy of existing branch,
 but its not tracking a remote.  You can specify the remote tracking branch:
