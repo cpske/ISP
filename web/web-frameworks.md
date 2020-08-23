@@ -4,7 +4,7 @@ This article on [Full Stack Python](https://www.fullstackpython.com) is a good p
 
 [https://www.fullstackpython.com/web-frameworks.html][fullstackpython-web-frameworks]
 
-The Mozilla Develper Network (MDN) also has a good series of articles.
+The Mozilla Develper Network (MDN) has a good series of articles.
 [Client-Server Overview](https://developer.mozilla.org/en-US/docs/Learn/Server-side/First_steps/Client-Server_overview) describes HTTP requests and responses, and difference between static and dynamic content.  It then describes what web frameworks do.  They mention Django and Flask for Python.
 
 

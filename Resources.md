@@ -125,9 +125,3 @@ on [extremeprogramming.org](http://www.extremeprogramming.org/) explains xtreme 
 [Scrumban](https://en.wikipedia.org/wiki/Scrumban)
 Wikipedia article describes Scrumban combination of Kanban and Scrum.
 
-
-### Web Development
-
-[Web Architecture 101](https://engineering.videoblocks.com/web-architecture-101-a3224e126947) introduces concepts and components in real-world web deployment.
-
-[The Web in Depth](https://www.hacker101.com/sessions/web_in_depth) from Hacker101.com. This video tutorial emphasizes web security. The first part is basics of HTTP.

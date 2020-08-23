@@ -11,7 +11,7 @@ So, it helps to have some understanding of IP, TCP, and HTTP. They are layered p
 
 Presentation: [Introduction to HTTP](HTTP.pdf)    
 [HTTP Exercise](HTTP-in-Action.pdf) send and receive HTTP yourself!   
-[UC Berkeley Presentation](Intro-web-and-tcp-UCB.pdf) from Edx course on design of long-lasting web apps.
+[UC Berkeley Presentation](Intro-web-and-tcp-UCB.pdf) from Edx course on *Engineering Software as a Service*.
 
 The HTTP exercises require the use of netcat or ncat.
 
@@ -36,12 +36,11 @@ You can close the window or type CTRL-C to kill the netcat process.
 
 ## Web Frameworks
 
-A framework provides reusable, customizable software for a particular type of application.
-Web Frameworks are the way modern web apps are created; almost no one would try to
+A **framework** provides reusable, customizable software for creating a particular type of application.
+Modern web apps are primarily written using web frameworks; no one would try to
 write a web app "from scratch", except as a learning project.
 
-**Back-end** frameworks run a a server, handle client requests, manage data, and
-contain application logic.  For some apps, a backend framework is all that is needed.
+**Back-end** frameworks run a a server, handle client requests, create responses (web pages), manage data, and contain application logic.  For many apps, a backend framework is all that is needed.
 
 As of 2020, some of the most used frameworks for new applications are:
 
@@ -53,18 +52,25 @@ As of 2020, some of the most used frameworks for new applications are:
 * Express - Javascript
 * Lavarel - PHP
 
-There are (too) many back-end frameworks to list, and search results are biased
+There are (too) many good back-end frameworks to list, and search results are biased
 in favor of what is *cool* right now.
 
 A **front-end** framework runs on the client, meaning in the web browser, 
-to provide a richer user experience and more functionality.
+to provide a richer user experience and more client-side functionality.
 The most popular ones as of 2020, all in Javascript, are:
 * React
 * Angular and Angular.JS
 * Vue.js
-These frameworks all require JQuery, which is more a library than a framework.
+These frameworks all require JQuery, which is a library rather than a framework.
 
-The Mozilla Develper Network (MDN) has a good series of articles.
-[Client-Server Overview](https://developer.mozilla.org/en-US/docs/Learn/Server-side/First_steps/Client-Server_overview) describes HTTP requests and responses, and difference between static and dynamic content.  It then describes what web frameworks do.  They mention Django and Flask for Python.
+The Mozilla Develper Network (MDN) has a good series of articles about the web.
+[Client-Server Overview](https://developer.mozilla.org/en-US/docs/Learn/Server-side/First_steps/Client-Server_overview) describes HTTP requests and responses, and difference between static and dynamic content.  It then describes what web frameworks do.  It mentions Django and Flask as web frameworks.
 
+---
+## Resources
 
+[HotFrameworks](https://hotframeworks.com) has a ranking of web frameworks based on number of uses in Github projects and Stack Overflow mentions.  The results are biased in favor of whatever frameworks are popular among newbie developers.
+
+[Web Architecture 101](https://engineering.videoblocks.com/web-architecture-101-a3224e126947) introduces concepts and components in real-world web deployment.
+
+[The Web in Depth](https://www.hacker101.com/sessions/web_in_depth) from Hacker101.com. This video tutorial emphasizes web security. The first part is basics of HTTP.
