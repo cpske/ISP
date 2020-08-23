@@ -1,9 +1,10 @@
 # A simple web server in under 30 lines of code (excluding comments).
 # It accepts requests from the network on port PORT
-# and sends a 200 OK response with simple text.
+# and sends a 200 OK response with a simple text.
 #
 # Imagine you had to write all the code to handle requests,
-# routing, session management, etc., yourself.  A lot of work.
+# routing, session management, etc., yourself.  
+# That's a lot of work!
 # That's why we have frameworks.
 #
 # Python strings: network data is sent as byte-strings.
