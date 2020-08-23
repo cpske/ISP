@@ -180,7 +180,10 @@ Branches and Remotes:
 
 ## Remotes and Github
 
-[Remotes and Github](Using-Github.pdf) presentation and [notes](Using-Github.md)
+[Remotes](Git-Remotes.pdf), remote branches, and tracking branches.    
+[Exercise on Merging and Conflict Resolution](Merge-and-Conflict-Practice.pdf)    
+
+Using Github [presentation](Using-Github.pdf) and [notes](Using-Github.md)
 
 ## Tags
 
