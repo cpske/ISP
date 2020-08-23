@@ -206,7 +206,7 @@ Visual software design, function, and deployment using UML.
 
 <tr valign="top">
 <td markdown="span">
-[HTTP](web/index#http)
+[HTTP](web/index)
 </td>
 <td markdown="span">
 HTTP is the communication protocol used by web apps and web services.    
