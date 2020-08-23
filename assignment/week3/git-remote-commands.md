@@ -8,13 +8,15 @@ In the `git-commands` repository you created last week, add this work.
 
 2. In the `remote-commands` branch, add a file named `remote-commands.md`.
 
-3. Write the questions below and there answer in this file. Use good Markdown formatting.
+3. Write the questions below and their answers in that file. Use good Markdown formatting.
 
-4. In README.md, add a hyperlink to this file, near the top.  Your README might look like this:
+4. In README.md, add a hyperlink to the new file, near the top.  Your README might look like this (its up to you whether the first 4 sections are in README or in separate files):
    ```
+   EXAMPLE ONLY - DON'T COPY THIS
+   <!-- example: hyperlinks to sections in this file -->
    [Git Basics](#1.-basics)
    [Adding and Changing Stuff)(#2.-adding-and-changing-stuff)
-   <!-- these three sections are in separate files -->
+   <!-- example: links to separate files -->
    [Undoing Changes](undoing-changes.md)
    [Branch and Merge](branch-and-merge.md)
    [Remote Commands](remote-commands.md)         <-- new section
