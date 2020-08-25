@@ -26,7 +26,9 @@ navigation_order: 1
 * **Preparation:** install netcat or ncat on your computer
 * Intro to HTTP Protocol
 * HTTP in Action: manually enter HTTP requests using netcat or ncat
-* Write a specification for the Polls App requirements
+* Git Remotes
+* Git Merging and Conflict Resolution
+* Assignment: vision and requirements for KU Polls
 
 ### Week 4 (31 Aug)
 

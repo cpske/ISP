@@ -199,5 +199,5 @@ public static String email(String firstname, String lastname, int nlast) {
 
 *Why obfuscate email addresses?* 
 
-Bots scrape web pages for email addresses and login credentials
-to create databases for spam and phishing.
+Bots scan web pages for email addresses and login credentials
+to gather data for spam and phishing.

@@ -16,7 +16,7 @@ Github Classroom Organization [ISP2020](https://github.com/org/ISP2020) for prog
 
 [Mai Norapong](https://github.com/MaiNorapong)  `email("Mai","Norapong",2)`
 
-[Pakanon Pantisawat](https://github.com/pknn) `email("Pakanon","Pantisawat",1)`
+[Pakanon Pantisawat](https://github.com/pknn) `email("Pakanon","Pantisawat")`
 
 ```python
 DOMAIN = "ku.th"
@@ -27,8 +27,7 @@ def email(firstname: str, lastname: str, nlast: int = 1) -> str:
     return f"{firstname}.{lastname[0:nlast]}\u0040{DOMAIN}"
 
 if __name__ == '__main__':
-    print("Contact Mai ", email("mai","norapong",2))
-    print("Contact Pakanon ", email("pakanon","pantisawat",1))
+    print("Contact Mai ", email("mai", "norapong", 2))
+    print("Contact Pakanon ", email("pakanon", "pantisawat"))
 ```
 
-Java version is in [introduction](/introduction/index)
