@@ -52,7 +52,7 @@ Scrum for managing development work and iterations.
 </td>
 <td markdown="span">
 Git commands and common tasks, structure of a git repo, branches, merging, and remote repos.    
-[Visualizing](git/index#git-visualizer) a git repo.    
+[Visualize][GitVisualizer] a repo as a graph.    
 [Use SSH Keys](https://help.github.com/articles/connecting-to-github-with-ssh/) for authentication instead of your Github password.
 </td>
 </tr>
@@ -486,3 +486,5 @@ A "*practical understanding of infrastructure architecture design patterns, DevO
 His view is biased since he is principle engineer at a startup specializing in data analytics.
 
 IEEE lists [free online resources](https://spectrum.ieee.org/the-institute/ieee-member-news/educational-resources-that-get-students-up-to-speed-on-advanced-manufacturing-and-programming-languages) students can use to supplement their education.
+
+[GitVisualizer]: http://git-school.github.io/visualizing-git/ "Interative tool draws a graph of commits in a repo"
