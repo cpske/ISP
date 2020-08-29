@@ -212,16 +212,15 @@ Visual software design, function, and deployment using UML.
 HTTP is the communication protocol used by web apps and web services.    
 [Introduction to HTTP](web/HTTP.pdf)    
 [HTTP in Action](web/HTTP-in-Action.pdf) class exercises using HTTP, requires ncat or netcat.    
-Useful [Http Tools](web/http#tools) for manually testing and debugging web interactions.
 </td>
 </tr>
 
 <tr valign="top">
 <td markdown="span">
-Web Apps and Frameworks
+[Web Servers and Frameworks](web/index#web-frameworks)
 </td>
 <td markdown="span">
-Intro to how a web server and web app typically handle requests and responses.  This helps make sense of the various components of a [web framework](web/web-frameworks).    
+[Introduction](web/Web-Apps-and-Web-Servers.pdf) to how a web server and web app typically handle requests and responses.  This helps make sense of the various components of a web framework.    
 [WSGI](web/wsgi-servers) standard for connecting Python web apps to web app servers.
 </td>
 </tr>
@@ -231,7 +230,7 @@ Intro to how a web server and web app typically handle requests and responses.  
 Django
 </td>
 <td markdown="span">
-[Introduction to Django](django/Intro-to-Django.pdf)
+[Introduction to Django](django/Intro-to-Django.pdf) and MVC design pattern.
 </td>
 </tr>
 

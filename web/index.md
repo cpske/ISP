@@ -2,7 +2,7 @@
 title: HTTP and Web Applications
 ---
 
-The web uses the HTTP protocol for messages, and TCP/IP for transport.
+The web uses the HTTP protocol for messages and TCP/IP for transport.
 So, it helps to have some understanding of IP, TCP, and HTTP. They are layered protocols - an IP packet contains a TCP packet (segment) which in turn contains an HTTP message.
 
 * Internet Protocol (IP) provides addresses and routing for all traffic on the Internet.
@@ -16,13 +16,13 @@ Presentation: [Introduction to HTTP](HTTP.pdf)
 The HTTP exercises require the use of netcat or ncat.
 
 * netcat (nc) is included with Linux and Mac OSX, or add it as a package.
-  - for Windows, download netcat from http://netcat.sourceforge.net/
+  - Windows users: use ncat instead.
 * ncat is a newer reimplementation of netcat that supports TLS/SSL.  It uses the same syntax as netcat, with a few newer options.
   - https://nmap.org/ncat/
   - written by the author of the well-known `nmap` port scanner
 * [netcat command summary](netcat_summary_sans.pdf) from SANS Institute
 
-Test that it is working.  In a terminal (shell) window enter:
+Test that netcat/ncat is working.  In a terminal (shell) window enter:
 ```
 netcat -v -l -p 8000
 
@@ -31,14 +31,15 @@ netcat -v -l -p 8000
 ncat -v -l -p 8000
 ```
 then in a web browser, open the URL `http://localhost:8000`.    
-You should see some text (HTTP request from web broswer) shown in the netcat window.  
+You should see some text (HTTP request from the web broswer) in the netcat window.  
 You can close the window or type CTRL-C to kill the netcat process.
 
 ## Web Frameworks
 
-A **framework** provides reusable, customizable software for creating a particular type of application.
-Modern web apps are primarily written using web frameworks; no one would try to
-write a web app "from scratch", except as a learning project.
+A **framework** provides reusable code for creating a particular type of application.
+Web frameworks provide both code and services, such as parsing HTTP requests, formatting HTTP responses, managing cookies and sessions, and much more.
+Modern web apps are primarily written using web frameworks; writing a
+web app "from scratch" is a huge project.
 
 **Back-end** frameworks run a a server, handle client requests, create responses (web pages), manage data, and contain application logic.  For many apps, a backend framework is all that is needed.
 
@@ -52,25 +53,117 @@ As of 2020, some of the most used frameworks for new applications are:
 * Express - Javascript
 * Lavarel - PHP
 
-There are (too) many good back-end frameworks to list, and search results are biased
-in favor of what is *cool* right now.
-
-A **front-end** framework runs on the client, meaning in the web browser, 
+A **front-end** framework runs in the web browser (on the client), 
 to provide a richer user experience and more client-side functionality.
-The most popular ones as of 2020, all in Javascript, are:
+They need a back-end to proide data and handle requests,
+usually via a web services interface.
+
+The most popular front-end frameworks in 2020, all in Javascript, are:
 * React
 * Angular and Angular.JS
 * Vue.js
-These frameworks all require JQuery, which is a library rather than a framework.
+These frameworks also require jQuery.
 
-The Mozilla Develper Network (MDN) has a good series of articles about the web.
-[Client-Server Overview](https://developer.mozilla.org/en-US/docs/Learn/Server-side/First_steps/Client-Server_overview) describes HTTP requests and responses, and difference between static and dynamic content.  It then describes what web frameworks do.  It mentions Django and Flask as web frameworks.
+To learn more about web development and web frameworks, try:
+
+* [Web Frameworks][fullstackpython-web-frameworks] - what a web framework does, and how to compare Python web frameworks, by [Full Stack Python](https://www.fullstackpython.com)
+* [Client-Server Overview](https://developer.mozilla.org/en-US/docs/Learn/Server-side/First_steps/Client-Server_overview) describes HTTP requests and responses, difference between static and dynamic content, and what web frameworks do.  They mention Django and Flask for Python. 
+The [Mozilla Develper Network][MDN] (MDN) has excellent, in depth tutorials on HTML, CSS, and Django (among others).
+
+Presentation: [Web Servers and Web Apps](Web-Apps-and-Web-Servers.pdf)
+
+## Learning Web Development
+
+This is a huge subject.  Web developers need some knowledge of:
+
+* HTML and CSS - for creating and styling web pages
+* Javascript - enough to use a Javascript library or framework
+* HTTP protocol - the semantics of HTTP requests and responses
+* Backend framework - how to create the back-end for your application
+* How to deploy your application in a web server or application server 
+
+Two recommended places to learn are:
+
+[Mozilla Developer Tutorials](https://developer.mozilla.org/en-US/docs/Web/Tutorials)  on HTML, CSS, and Javascript. There is also a great tutorial on Django.
+
+[W3Schools](https://www.w3schools.com) has tutorials and reference material for everything related to the web.  Good place to learn Javascript. The MDN tutorials have better explanation of underlying concepts and technology.
 
 ---
 ## Resources
 
-[HotFrameworks](https://hotframeworks.com) has a ranking of web frameworks based on number of uses in Github projects and Stack Overflow mentions.  The results are biased in favor of whatever frameworks are popular among newbie developers.
+[HotFrameworks][hotframeworks] has a ranking of web frameworks based on number of uses in Github projects and Stack Overflow mentions.  The results are biased in favor of whatever frameworks are popular among newbie developers.
 
 [Web Architecture 101](https://engineering.videoblocks.com/web-architecture-101-a3224e126947) introduces concepts and components in real-world web deployment.
 
 [The Web in Depth](https://www.hacker101.com/sessions/web_in_depth) from Hacker101.com. This video tutorial emphasizes web security. The first part is basics of HTTP.
+
+[MDN]: https://developer.mozilla.org
+[hotframeworks]: https://hotframeworks.com "Popularity of different web frameworks based on appearance on Github and Stackoverflow." 
+[calavijo]: http://blog.websitesframeworks.com "Comparison of Web Frameworks - Rails, Grails, Django, Code Igniter"
+[calavijo_pdf]: https://acceda.ulpgc.es:8443/bitstream/10553/11428/3/0695395_00000_0000.pdf "PDF of report comparing Rails, Grails, Django, Code Igniter"
+[fullstackpython-web-frameworks]: https://www.fullstackpython.com/web-frameworks.html
+
+---
+
+## Comparison of Web Frameworks
+ 
+[4 Python Web Frameworks Compared](https://talkpython.fm/episodes/show/149/4-python-web-frameworks-compared) episode of the "Talk Python" podcast.  
+He compares Django, Flask, Pyramid, and Tornado, and explains the
+important differences between them and which one may be best for
+which kind of project.  For getting a site up quickly, Django is preferred.
+
+[Empirical comparison of Rails, Grails, Django, Code Igniter][clavijo] compared time students needed to (a) complete some programming problems in each language, (b) develop a blogging web site in each one.  
+**Django** was the most productive of the 4 frameworks.
+
+For Java, the perennial top frameworks are:
+* Spring MVC
+* Struts
+* JavaServer Faces (JSF)
+* Wicket
+* Vaadin
+* Play
+I'd recommend using [Play](https://playframework.com) since it's easy to get started and doesn't require using JSP (Java Server Pages). Play apps can be written in either Java or Scala.
+
+If you only want to create a RESTful API, Spark is also worth considering. Spark is a micro-framework for both web apps and RESTful web services.
+
+[HotFrameworks][hotframeworks] charts the popularity of frameworks over time.
+But its not representative of what is used for *production* web sites.
+
+Top rankings in 2020 were:
+
+| Framework      |  Score | Description        |
+|:---------------|-------:|:-------------------|
+| React          |    99  | Front-end, Javascript |
+| ASP.Net MVC    |    95  | Front and back-end, ASP and .Net languages |
+| Angular        |    93  | Front-end MVC, Javascript |
+| Ruby on Rails  |    93  | Back-end, Ruby     |
+| Vue.js         |    93  | Front-end, Javascript |
+| Django         |    92  | Back-end, Python   |
+| Lavarel        |    91  | Back-end, PHP      |
+| Spring         |    90  | Back-end, Java     |
+| Express (Node) |    87  | Back-end, Javascript |
+| Flask          |    85  | Back-end, Python   |
+| Symfony        |    84  | Back-end, PHP      |
+| ...            |    ..  | ...                |
+| Play           |    75  | Back-end, Java or Scala |
+
+## Web Servers
+
+**Web Servers** provide access to web content, and provide services such as filtering, authentication, and URL rewriting.  Two types of content provided are:
+* **static content** - html pages in files, images, audio, and video
+* **dynamic content** - content generated on-the-fly in response to a request.
+
+[Netcraft Web Server Survey](https://news.netcraft.com/archives/category/web-server-survey/) monthly prevelance of different web server software.
+* [What's that Site Running?](https://sitereport.netcraft.com/) find out what is running www.ku.ac.th. 
+* [BuiltWith.com](https://builtwith.com) reports what software a web site appears to be using.
+
+Dynamic content is most created by web apps built on a web framework.
+A web server the hosts one or more web apps is often called a **web application server**.
+
+A web server like Apache httpd or nginx doesn't itself run a web application in Java, Python, or PHP.  Instead, it passes web requests to a module that provide an interface between the web server and a Java, Python, or PHP process running the app.
+
+Java has well developed standards and API for the services that a web app server should provide, which is one reason why Java is popular for large web apps. 
+The Java standards are called *Java EE* and a lighter-weight subset called the *Java Servlet API". A Java web application using these API should be runnable in any conformant application server.
+Well known Java app containers are Glassfish, IBM WebSphere, JBoss, Jetty, and Tomcat.
+
+
