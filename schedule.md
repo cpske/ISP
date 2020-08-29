@@ -33,9 +33,13 @@ navigation_order: 1
 ### Week 4 (31 Aug)
 
 * Web app and web framework overview - general structure and operation
-* Github Flow for managing work in git
 * Intro to Django
 * Homework: Polls App first iteration (Django Polls tutorial)
+  - Structure of Iteration Plan
+  - Use a task board on Github
+  - Design the UI pages
+  - Domain Model for Polls app - `Question` and `Choice` classes
+* Github Flow for managing work in git
 
 ### Week 5 (7 Sep)
 
@@ -44,9 +48,11 @@ navigation_order: 1
 
 ### Week 6 (14 Sep)
 
-* Agile
+* Unit testing
+* Separate configuration from code
+
 
 ### Unscheduled
 
-* Unit testing in Java and Python
+* Agile
 * Code coverage
