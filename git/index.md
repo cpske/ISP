@@ -205,10 +205,10 @@ A **tag** is a name assigned to a commit, like a bookmark, to make it easy to re
   - How to add, change, and view remotes.
   - revise a commit, such as adding files you forget
 
-## Github Flow - Managing Work on a Project
+## Github Flow
 
-Github Flow is a convention for using Git.
-Development work is always done on branches, and pull requests used for review before merging into master.  *Github Flow* is useful for both team and solo projects.
+Github Flow is a convention for using Git on a project.
+Development work is always done on branches, and pull requests used for reviews before merging anything into master.  *Github Flow* is useful for both team and solo projects.
 
 * [Github Flow Illustrated Guide](https://guides.github.com/introduction/flow/) and
 * [Description on Githubflow.io](https://githubflow.github.io/). Step #5 -merge only after pull request review is important! 
