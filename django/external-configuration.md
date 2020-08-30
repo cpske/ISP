@@ -33,31 +33,33 @@ STATIC_URL = 'https://storage.googleapis.com/ske-polls/static/'
 
 The problems with this are:
 
-1. sensitive information is included in code.  Anyone with access to the application code can steal it.
+1. Sensitive information is included in code.  Anyone with access to the application code can steal it.
 2. If committed to Github, anyone on the web can steal the sensitive data and abuse it.
-3. It's difficult to change. For Django, it may be fairly easy, but for other apps (configuration spread over many files) or Java (configuration buried in Java source code not distributed with the app) it's much harder and easy to miss something.
+3. It's difficult to change. For Django, it may be fairly easy, but for other apps (configuration spread over many files) or Java (configuration in Java source code not distributed with the app) it's much harder to change and easy to miss something.
 4. If you put your Google Cloud, AWS, or Azure credentials into a file committed to Github, you may face a large **credit card bill** when someone steals them and uses your account to do Bitcoin mining.
 
 ### The Solution
 
 A standard practice in programming is to separate configuration data from code.
 
-This is also one of the Heroku [12-Factor App][12-factor-app] characteristics.
+This is also a recommended characteristic of Heroku's [12-Factor App][12-factor-app].
 
-For security, it's also necessary to remove sensitive credentials and protect them.
+For security, it's also necessary to protect the data file containing sensitive information.
 
 ## Using Environment Variables
 
 In Python, one way to handle configuration values is to use **environment variables**.  The Python `os.getenv()` command returns the value of an environment variable:
 
-```
-print("Hello, ", os.getenv("USERNAME"));
+```python
+import os
+# Get the user's login name from the environment
+print("Hello, ", os.getenv("USERNAME"))
 # on Windows use HOMEPATH instead of HOME
-print("Your home directory is ", os.getenv("HOME"));
+print("Your home directory is ", os.getenv("HOME"))
 ```
 
 In a Django `settings.py` we can write:
-```
+```python
 SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = bool(os.getenv('DEBUG', 'False'))
 TIME_ZONE = os.getenv('TIME_ZONE', 'UTC')
@@ -67,7 +69,7 @@ STATIC_URL = os.getenv('STATIC_URL','/static/')
 
 and then set environment variables for each of these names.
 In Bash you can write:
-```
+```shell
 SECRET_KEY=AElek13407aseasej39
 DEBUG=True
 TIME_ZONE='Asia/Bangkok'
@@ -77,7 +79,7 @@ before starting the web app.
 
 For example, if we save them in a file named `config.sh`,
 then type:
-```
+```shell
 # read config values. In some shells, type "." instead of "source"
 cmd> source config.sh  
 # start the web app with configuration values now in the environment
@@ -114,7 +116,7 @@ Comparing these, `django-environ` has convenience methods for converting strings
 
 ## python-decouple for External Configuration Data
 
-`python-decouple` is a general purpose module for externalizing configuration data. Hence, it is worth knowing and you can use it in Django, too.
+`python-decouple` is a general purpose module for externalizing configuration data.
 
 * Module description: https://pypi.org/project/python-decouple/
 * Example: https://simpleisbetterthancomplex.com/2015/11/26/package-of-the-week-python-decouple.html 
@@ -147,7 +149,7 @@ DATABASE_URL=mysql://myuser:mypassword@myhost/mydatabase
 
 ### Using decouple in Django `settings.ini`
 
-```
+```python
 from decouple import config
 # optional: module to parse database engine config from a single variable
 from dj_database_url import parse as db_url
@@ -171,7 +173,7 @@ Decouple can read configuration file from a file other than `.env` or `settings.
 
 To read values from a file named `local.env` (instead of `.env`), 
 create a new `decouple.Config` object using `RepositoryEnv('/path/to/env-file')`.  Notice that you **don't** import `config` in this case.
-```
+```python
 from decouple import Config, RepositoryEnv
 
 ENV_FILE = '/opt/envs/my-project/local.env'
@@ -212,12 +214,12 @@ Source: https://github.com/joke2k/django-environ
 ## Java Properties
 
 In Java, a standard technique is to put configuration data in a Java Properties
-file. Java has a `java.util.Properties` class that can parse a properties file
+file. The `java.util.Properties` class that can parse a properties file
 and create a key-value map of the properties, that you can use in code.
 In OOP (Programming 2) we used a Properties file for the Coin Purse.
 
 A properties file is plain text like this:
-```
+```shell
 # the default currency
 purse.currency = Baht
 # name of default withdraw strategy
@@ -226,7 +228,9 @@ purse.strategy = purse.strategy.GreedyWithdraw
 # Example JDBC properties
 jdbc.url = jdbc:h2:file:/path/file.db
 ```
+
 As the example shows, property names (like `purse.capacity`) may include a period, and string values (like Baht) are **not** surrounded by quotes, even if they contain spaces.
+It's standard practice to use hierarchial names with "." in them (like "jdbc.url" instead of "url") to avoid name collisions.
 
 In code, you would load and use properties like this:
 ```java
@@ -239,14 +243,14 @@ String url = props.get("jdbc.url");
 // get a property. If it's not found, use a default value (Baht).
 String currency = props.get("purse.currency", "Baht");
 ```
-I usually create a `PropertyManager` or `ConfigManager` class to manage properties.
+I usually create a `PropertyManager` or `ConfigManager` class to manage properties.  And make it a Singleton.
 
 ## References 
 
 * python-decouple: https://pypi.org/project/python-decouple/
 * https://stackoverflow.com/questions/43570838/how-do-you-use-python-decouple-to-load-a-env-file-outside-the-expected-paths
 * django-environ: https://django-environ.readthedocs.io/en/latest/, Source: https://github.com/joke2k/django-environ 
-* Javadoc for `java.util.Properties` explains how to use Properties in Java
+* Java API doc for `java.util.Properties` explains how to use Properties in Java
 
 [12-factor-app]: https://12factor.net/
 
@@ -257,4 +261,4 @@ I usually create a `PropertyManager` or `ConfigManager` class to manage properti
 
 2. Suppose that you have a `.env` file **and** a `settings.ini` file,  which one will python-decouple use?  Will it look for a named variable in both files?
 
-3. How would you **test** decouple.config?
+3. How would you **test** your externalized configuration using either python-decouple or django-environ?
