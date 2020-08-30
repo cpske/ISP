@@ -19,7 +19,7 @@ Refactoring refers to modifying the design of existing code to improve it.
 
 [Intro to Refactoring](refactoring/Refactoring.pdf)    
 [Refactoring Patterns](refactoring/Refactoring-Patterns.pdf)        
-[Externalize Configuration](web/decouple-configuration) in Python, you already did    
+[Externalize Configuration](web/external-configuration) in Python, you already did    
 
 ### Exercises
 

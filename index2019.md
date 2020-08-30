@@ -199,7 +199,7 @@ Django
 a backup or "starter" data for others to easily use your polls application.    
 [Virtualenv Quickstart](django/virtualenv-quickstart) and [Using Virtualenv](django/virtualenv) how to run apps in a virtual environment (its easy).    
 [Messages Framework](django/messages-framework) how to pass messages from a view to a template    
-[Externalize Configuration](web/decouple-configuration)    
+[Externalize Configuration](web/external-configuration)    
 [Organize Your Django Tests](django/django-test-organization)       
 </td>
 <td markdown="span">
@@ -336,7 +336,7 @@ Refactoring
 <td markdown="span">
 [Intro to Refactoring](refactoring/Refactoring.pdf)    
 [Refactoring Patterns](refactoring/Refactoring-Patterns.pdf)    
-[Externalize Configuration](web/decouple-configuration) in Python, you already did    
+[Externalize Configuration](web/external-configuration) in Python, you already did    
 </td>
 <td markdown="span">
 [Pizzashop refactoring exercise](https://github.com/ISP19/pizzashop)     
