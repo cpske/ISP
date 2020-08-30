@@ -84,12 +84,12 @@ Question: *Where is HEAD?*
 
 You can view all branches of a repo using `gitk --all`.
 
-* [Dailigram](https://github.com/bankkeez/dailigram.git) ISP 2018 project.  It has many branches and tags.
+* [Dailigram](https://github.com/bankkeez/dailigram) ISP 2018 project.  It has many branches and tags.
 > The commit messages are not good; later those students asked me to
 > tell your class that commit messages are important!
 > *You should write descriptive commit messages.*
-* Koocock ISP 2019 project, by Mai and friends.
-* [VS Code](https://github.com/microsoft/vscode) by Microsoft has hundreds of branches, tags, and project docs.
+* [Koocook](https://github.com/KooCook/koocook-dj) ISP 2019 project, by Mai and friends.  Very good use of issues to describe work. They created an organization (KooCook) as umbrella for their work.
+* [VS Code](https://github.com/microsoft/vscode) by Microsoft has hundreds of branches, tags, and project docs in Wiki.
 
 **Demo:** 
   - Show the graph of Dailigram. It uses branches and tags.
@@ -210,12 +210,17 @@ A **tag** is a name assigned to a commit, like a bookmark, to make it easy to re
 Github Flow is a convention for using Git on a project.
 Development work is always done on branches, and pull requests used for reviews before merging anything into master.  *Github Flow* is useful for both team and solo projects.
 
-* [Github Flow Illustrated Guide](https://guides.github.com/introduction/flow/) and
-* [Description on Githubflow.io](https://githubflow.github.io/). Step #5 -merge only after pull request review is important! 
+You should know the content of these docs:
+
+* [Github Flow Illustrated Guide](https://guides.github.com/introduction/flow/)
+* [Description on Githubflow.io](https://githubflow.github.io/). Step #5 -merge only after pull request review is important. I don't agree with Step #6 -deploy immediately. 
+* [Commenting on Pull Requests](https://help.github.com/en/articles/commenting-on-a-pull-request) - providing useful feedback to a Pull Request.
+
+Optional and useful:
+
 * [Pull Request Tutorial](https://yangsu.github.io/pull-request-tutorial/) why and how to use pull requests.
-* [Github Branching Convention](https://gist.github.com/digitaljhelms/4287848) has nice graph of using branches as in Github flow.
-* [Commenting on Pull Requests](https://help.github.com/en/articles/commenting-on-a-pull-request) - examples of providing feedback to a Pull Request.
-* My [Slides on Pull Requests](Pull-Requests.pdf)
+* [Github Branching Convention](https://gist.github.com/digitaljhelms/4287848) has [nice workflow diagram](https://gist.github.com/digitaljhelms/4287848#workflow-diagram) of using branches in Github flow, but maybe too complex for simple projects.
+* My [Slides on Pull Requests](Pull-Requests.pdf) - somewhat out-dated
 
 ## Specialized Git Uses
 
