@@ -7,7 +7,7 @@ Question 5. **What are the steps to resolve the problem in the previous problem?
 There were many incorrect or incomplete answers to this.
 I deducted 1 or 2 points, depending on the answer.
 
-These answers are incorrect:
+This answer is incorrect:
 
 ```
 cmd> git pull
@@ -20,6 +20,8 @@ CONFLICT (content): Merge conflict in README.md
 cmd> git push
 Error: ... (haven't merged yet)
 ```
+---
+Also incorrect:
 
 ```
 cmd> git fetch
@@ -29,6 +31,9 @@ cmd> git push
 ```
 In actuality, `git push` fails because the branches are still diverged.
 
+---
+
+Also incorrect:
 
 ```
 cmd> git pull origin master

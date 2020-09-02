@@ -35,7 +35,7 @@ The code for this iteration matches what's in the Django tutorial.
 5. Add at least 2 interesting questions to your polls application, and delete boring "What's up?" question from the tutorial.
    - "Interesting" is subjective, but avoid stuff like "How are you?", "What's your favorite color?".
 
-You can add some embellishments, such as a graph of the results or styling with Bootstrap, etc.
+You can add embellishments, such as a graph of the results or styling with Bootstrap, etc.
 
 ## Optional: Improve Security
 
