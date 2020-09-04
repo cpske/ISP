@@ -30,7 +30,7 @@ The 5 key values of Scrum are
 * Respect
 
 What do these values mean?    
-Some good answers:
+Good answers here:
 
 * [Scrum Values](https://www.scrumalliance.org/about-scrum/values) from ScrumAlliance.org
 * [Scrum Tutorial: Values](https://www.knowledgehut.com/tutorials/scrum-tutorial/scrum-values)
@@ -49,7 +49,8 @@ Ref: *Scrum Guide*, *Scrum Primer*, and *Managing Projects with Scrum* (links be
 
 ## Resources to Learn More
 
-Everyone should read the *Scrum Guide*.  To learn more, then try *Scrum Primer* or *Managing Projects with Scrum*.   *Scrum and XP from the Trenches* is great, but a longer read.
+Everyone should read the *Scrum Guide*.  Then read either *Scrum Primer* or *Managing Projects with Scrum*.     
+*Scrum and XP from the Trenches* is great, but a longer read.
 
 * [Scrum Guide](https://www.scrumguides.org) by inventors of Scrum. Read online or download.  It is updated periodically.
    * [Online Scrum Guide](https://www.scrumguides.org/scrum-guide.html)
@@ -57,11 +58,11 @@ Everyone should read the *Scrum Guide*.  To learn more, then try *Scrum Primer* 
 
 * [Comprehensive Scrum Guide](https://www.visual-paradigm.com/scrum/what-is-scrum/) single page with lots of illustrations, by Visual Paradigm. Similar to *Scrum Guide*.
 
-* [Scrum and XP from the Trenches][Scrum-XP-Trenches] short e-book has practical info about doing Scrum based on experience.  Free from InfoQ.
-
 * [Scrum Primer](/ISP/resources/Scrum-Primer.pdf) 20-page detailed decription of how to do Scrum. Very good.
 
 * [Managing Projects with Scrum](/ISP/resources/Head-First-Scrum.pdf) chapter from *Head First Agile*. Very memorable with examples.
+
+* [Scrum and XP from the Trenches][Scrum-XP-Trenches] short e-book has practical info about doing Scrum based on experience.  Free from InfoQ.
 
 * [Scrum Questions and Answers](Scrum-Questions-and-Answers.pdf) (PDF) my questions about Scrum. Some of them refer to *Scrum and XP from the Trenches*.
 

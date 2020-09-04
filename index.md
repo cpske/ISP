@@ -301,7 +301,7 @@ Easily pass messages from a view to a template
 </td>
 <td markdown="span"> 
 [Separate configuration from code](refactoring/Separate-config-from-code.pdf) is a practice that applies to all software, not just web apps.
-For Django, use [decouple](django/external-configuration)  
+For Django, use [decouple](django/external-configuration) 
 </td>
 </tr>
 

@@ -6,34 +6,36 @@ title: KU Polls Iteration 1
 
 Perform iteration 1 of the KU Polls application.
 
-The code for this iteration matches what's in the Django tutorial.
+The code for this iteration matches what's in the [Django Tutorial][django-tutorial].
 
-1. Create an "Iteration 1 Plan" page in your `ku-polls` wiki. It should include:
+1. Create an "Iteration 1 Plan" page in your `ku-polls` wiki. Include:
    - **Goal** for the iteration
    - **Features** to implement (discussed in class)
    - Tasks; or write the tasks in your task board to avoid redundancy
    - **Acceptance Criteria** - when is the work done?
    - **Retrospective** - record useful lessons learned, observations, and plan for improving your process
 
-2. Create a **task board** using Github projects.
-   - Click the `Projects` tab in your `ku-polls` repo to create a project.
-   - Task board is for tasks in this iteration.
+2. Create a **task board** using a Github Project.
+   - Click the `Projects` tab in your `ku-polls` repo to create a Project.
+   - Read about "Projects" and project boards
+   - Use one "Project" for each iteration.  This is Iteration 1.
+   - Task board (Project board) should have at least 3 columns: To do (Backlog), In Progress, Done. Github will create these columns if you choose a Kanban project.
    - Record your tasks and their status. 
-   - Task board should have at least 3 columns: To do (Backlog), In Progress, Done.
-   - Each task should have short title and a description.
+   - Each task should have short title and a longer description.
    - It's up to you how to define tasks.  Looking at the work in the Django tutorial may give some ideas.
 
-3. Create a branch named `iteration1` and do your work on that branch.
-   - Push to Github after finishing each part of the Django tutorial. 
+3. Create a **branch** named `iteration1` and do your work on that branch.
+   - **Push to Github when you finish each part of the Django tutorial**. 
    - Don't wait until your done everything to push to Github!
-   - When everything is done and passes both unit tests and interactive tests, merge `iteration1` into `master` and push to Github.
 
 4. Implement all parts of the [Django Tutorial][django-tutorial]
-   - Don't use copy and paste when doing the tutorial. Type everything yourself. 
-   - In some parts of the tutorial they convert method-based views to class views.  It is OK to leave some views as method-based views, providing you have the same functionality.
+   - Don't use copy and paste when doing the tutorial. Type everything yourself.
+   - In some parts of the tutorial they convert method-based views to class views.  It is OK to leave some views as function-based views, provided that view provides the same functionality.
 
 5. Add at least 2 interesting questions to your polls application, and delete boring "What's up?" question from the tutorial.
    - "Interesting" is subjective, but avoid stuff like "How are you?", "What's your favorite color?".
+
+6. When you finish everything and the application passes both unit tests and interactive tests, merge `iteration1` into `master` and push to Github.
 
 You can add embellishments, such as a graph of the results or styling with Bootstrap, etc.
 

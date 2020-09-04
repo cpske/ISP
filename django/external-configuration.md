@@ -3,10 +3,9 @@ title: Separate Configuration Data from Code
 ---
 
 * [The Problem](#the-problem)
-* Basic Solution using Python built-in commands to access environment
+* Basic Solution using Python built-in commands to access the environment
 * General solution using `python-decouple`
 * Django-specific solution using `django-environ`
-* [Properties in Java](#java-properties)
  
 ## The Problem
 
@@ -210,40 +209,6 @@ DATABASES = {
 
 Docs: https://django-environ.readthedocs.io/en/latest/    
 Source: https://github.com/joke2k/django-environ 
-
-## Java Properties
-
-In Java, a standard technique is to put configuration data in a Java Properties
-file. The `java.util.Properties` class that can parse a properties file
-and create a key-value map of the properties, that you can use in code.
-In OOP (Programming 2) we used a Properties file for the Coin Purse.
-
-A properties file is plain text like this:
-```shell
-# the default currency
-purse.currency = Baht
-# name of default withdraw strategy
-purse.strategy = purse.strategy.GreedyWithdraw
-
-# Example JDBC properties
-jdbc.url = jdbc:h2:file:/path/file.db
-```
-
-As the example shows, property names (like `purse.capacity`) may include a period, and string values (like Baht) are **not** surrounded by quotes, even if they contain spaces.
-It's standard practice to use hierarchial names with "." in them (like "jdbc.url" instead of "url") to avoid name collisions.
-
-In code, you would load and use properties like this:
-```java
-InputStream in = new FileInputStream(PROPERTIES_FILENAME);
-Properties props = new Properties();
-props.load(in);
-
-// get a property
-String url = props.get("jdbc.url");
-// get a property. If it's not found, use a default value (Baht).
-String currency = props.get("purse.currency", "Baht");
-```
-I usually create a `PropertyManager` or `ConfigManager` class to manage properties.  And make it a Singleton.
 
 ## References 
 

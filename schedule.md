@@ -51,19 +51,22 @@ navigation_order: 1
 ### Week 6 (14 Sep)
 
 * Unit testing!
+* Unit testing in Django.
 * Improvements to KU Polls
 * Separate configuration from code
-* Database (maybe)
 
 ### Week 7 (21 Sep)
 
-* Topics to be added
+* Introduction to Database
+* Introduction to ORM
 
 ### Midterm 28 Sep - 4 Oct
 
-* Time to be announced
+* 27 Sep (Sunday) rooms 202 and 203. Times: 9:00-12:00 and 13:00-16:00.
+* We may not need both times.
 * Covers everything so far.
-* Coding part will emphasize unit testing and code quality.
+* Coding part will emphasize **unit testing** and **code quality**.
+
 ### Unscheduled
 
 * Agile
