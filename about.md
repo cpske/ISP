@@ -10,7 +10,7 @@ Monday 10-12, 13-16 starting 10 Aug 2020.
 Github Classroom Organization [ISP2020](https://github.com/org/ISP2020) for programming work.    
 [Sign-up form](https://forms.gle/fh9SqvmA9yPh1ur6A) - so we know your Github ID
 
-### [Introduction to Course](/introduction/index)
+### [Introduction to Course](../introduction/index)
 
 ### Teaching Assistants (TAs)
 

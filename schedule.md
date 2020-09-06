@@ -17,8 +17,9 @@ navigation_order: 1
 ### Week 2 (17 Aug)
 
 * Scrum
-* Version Control & Git - understanding git repos; common scenarios
-* Git branch & merge
+* Version Control & Git - understanding git repos
+* Common git use scenarios
+* Git branches
 * Git practice
 
 ### Week 3 (24 Aug)
@@ -34,11 +35,12 @@ navigation_order: 1
 
 * Web app and web framework overview - general structure and operation
 * Intro to Django
-* Homework: Polls App first iteration (Django Polls tutorial)
-  - Structure of Iteration Plan
+* Homework: KU Polls first iteration (Django Polls tutorial)
+  - Create an Iteration Plan
   - Use a task board on Github
   - Design the UI pages
   - Domain Model for Polls app - `Question` and `Choice` classes
+  - Development work on a git branch (iteration1)
 * Github Flow for managing work in git
   - if not enough time, this is for self-learning
   - online questions in Google Form
@@ -46,14 +48,15 @@ navigation_order: 1
 ### Week 5 (7 Sep)
 
 * No class meeting due to Songkran
-* Review progress on Polls App iteration 1 (meet online)
+* Review progress on KU Polls iteration 1 (online)
 
 ### Week 6 (14 Sep)
 
 * Unit testing!
-* Unit testing in Django.
+* Unit testing in Django - how to test models, views, and UI.
 * Improvements to KU Polls
 * Separate configuration from code
+* Assignment: KU Polls iteration 2
 
 ### Week 7 (21 Sep)
 
@@ -62,7 +65,7 @@ navigation_order: 1
 
 ### Midterm 28 Sep - 4 Oct
 
-* 27 Sep (Sunday) rooms 202 and 203. Times: 9:00-12:00 and 13:00-16:00.
+* Exam is 27 Sep (Sunday) rooms 202 and 203. Times: 9:00-12:00 and 13:00-16:00.
 * We may not need both times.
 * Covers everything so far.
 * Coding part will emphasize **unit testing** and **code quality**.
