@@ -2,9 +2,9 @@
 title: Software Testing
 ---
 
-Introduction to Testing: [PDF](Intro-to-Testing.pdf) [PPT](Intro-to-Testing.ppt)
+Presentation: [Introduction to Testing](Intro-to-Testing.pdf)
 
-There are many types of testing used in software projects
+There are many types of testing in software projects
 
 * Unit testing for testing individual components (classes and methods)
 * Integration testing to test that components and services interact correctly
@@ -28,7 +28,7 @@ Benefits:
 3. makes you think about what code *should* do, even in 'edge' cases
 4. avoid re-introducing previously fixed errors
 5. gives you confidence to change the code
-6. tests are **required** for refactoring
+6. tests are **required** before doing refactoring
 7. enables automation of tests for all work
 
 How to design test cases?
@@ -63,14 +63,14 @@ How to design test cases?
 ## Verification and Validation
 
 **Verification**
-: 1. Checking that a program performs according to the specifications (how it was specified & designed it to behave) [Kaner]
-: 2. Confirm that the software performs and conforms to its specification. [U.W.]
-: 3. "*Are we building it right?*" (informal interpretation)
+- Checking that a program performs according to the specifications (how it was specified & designed it to behave) [Kaner]
+- Confirm that the software performs and conforms to its specification. [U.W.]
+- "*Are we building it right?*" (informal interpretation)
 
 **Validation**
-: 1. Checking that a program beaves according the the user or system requirements (what the customer said the program should do) [Kaner]
-: 2. Confirm that the software performs to the user's satisfaction. Assure that the software meets the user's (specified) needs. [U.W.]
-: 3. "*Are we building the right thing?*" (informal interpretation)
+- Checking that a program beaves according the the user or system requirements (what the customer said the program should do) [Kaner]
+- Confirm that the software performs to the user's satisfaction. Assure that the software meets the user's (specified) needs. [U.W.]
+- "*Are we building the right thing?*" (informal interpretation)
 
 Note: definition 2 is the most descriptive. Definition 3 is not an acceptable answer on quiz or exam.
 
@@ -96,7 +96,8 @@ Security Testing Example:
 * Both Verification and Validation are important
 * Both static and dynamic methods are necessary
 * Verification is usually cheaper and easier than Validation
-## Testing (Incomplete) Software Under Development
+
+## Testing Incomplete Software Under Development
 
 Suppose you are writing `module1` and want to test it,
 but `module1` depends on `module2` that has not been written yet.
@@ -133,5 +134,5 @@ Tester
 
 ## Web Testing
 
-* Web Testing [PDF](WebTesting.pdf) [PPT](WebTesting.ppt)
+Presentation: [Web Testing](WebTesting.pdf)
 
