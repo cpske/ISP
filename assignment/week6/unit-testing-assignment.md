@@ -3,7 +3,7 @@ title: Unit Testing
 ---
 
 There are two parts to this assignment. 
-1. Write a single function and some tests for the function.
+1. Write a `unique` function and some tests for the function.
 2. Write unit tests for an Auction class.
 
 Starter code is provided in the Github Classroom assignment.
@@ -14,7 +14,7 @@ Commit your work to Github classroom. You should have these files:
 
 | File             | Description   |
 |:-----------------|:--------------|
-| README.md        | Describe your test cases for `unique` |
+| README.md        | Describes your test cases for `unique` |
 | listutil.py      | Code for `unique` including docstring and doctest |
 | listutil_test.py | Unit tests for `unique`, at least 3 tests |
 | auction.py       | Code for Auction class (provided) |
@@ -60,7 +60,7 @@ Markdown has syntax for creating tables.  For example:
 | argument not a list    |  throws exception     |
 
 
-## Example Python unittest for Unique
+## Example Python unittest for unique
 
 ```python
 import unittest

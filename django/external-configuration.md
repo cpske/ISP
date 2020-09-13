@@ -39,11 +39,11 @@ The problems with this are:
 
 ### The Solution
 
-A standard practice in programming is to separate configuration data from code.
+A standard practice in programming is to **separate configuration data from code**.
 
-This is also a recommended characteristic of Heroku's [12-Factor App][12-factor-app].
+This is also recommended in Heroku's [12-Factor App][12-factor-app] guide.
 
-For security, it's also necessary to protect the data file containing sensitive information.
+For security, it's necessary to protect the data file containing sensitive information.
 
 ## Using Environment Variables
 
@@ -85,7 +85,7 @@ cmd> source config.sh
 cmd> python manage.py runserver
 ```
 
-Most PaaS services, like Heroku, provide a way of setting env-variables
+PaaS services, like Heroku, provide a way to set env-variables
 before running your web application.
 
 You should provide **sensible defaults** in case an env-variable is not set.  
@@ -97,25 +97,23 @@ a bad guy may find a way to read environment variables.
 
 In Django, if DEBUG=True and an error occurs, Django prints debugging output in the browser window **including environment variables**.
 
-## Packages for externalizing Configuration Data
+## Packages for Externalizing Configuration Data
 
-There are some Python packages that provide a nice alternative to using environment variables for configuration data:
-
+These Python packages provide a nice alternative to using environment variables for configuration data:
 
 * **python-decouple** - package for reading configuration data from a file or environment variables.  It can return values other than Strings (such as boolean or a dictionary) by specifying a `cast` parameter.
 
-* **dj-database-url** - package to parse a Database URLs in standard notation (a string) and return a Django DATABASE_ENGINE dictionary.
+* **dj-database-url** - package to parse a Database URLs in standard notation (a string) and return a Django DATABASE_ENGINE dictionary. Use with `python-decouple`.
 
 * **django-environ** - similar to `python-decouple`, but specific to Django. 
-  - Can parse a database URL into the Django setting DATABASES dictionary format.
+  - Can parse a database URL into the Django DATABASES setting format.
   - Has convenience methods for converting other attributes to the data types used in Django's settings.py.
 
 Comparing these, `django-environ` has convenience methods for converting strings to Django setting data types. `python-decouple` is more general-purpose and has better documentation.
 
-
 ## python-decouple for External Configuration Data
 
-`python-decouple` is a general purpose module for externalizing configuration data.
+This is a general purpose module for externalizing configuration data.
 
 * Module description: https://pypi.org/project/python-decouple/
 * Example: https://simpleisbetterthancomplex.com/2015/11/26/package-of-the-week-python-decouple.html 
@@ -124,8 +122,9 @@ Comparing these, `django-environ` has convenience methods for converting strings
 pip install python-decouple
 ```
 
-**Usage:**
-`config(var, default=value, cast=type_or_function)` Reads data from first of: (1) an environment variable, (2) .ini or .env file, (3) default value. `cast=` specify the type of value returned (default is string) such as `cast=bool` or `cast=int`.
+**Usage:** `config(var, default=value, cast=type_or_function)`     
+Reads data from first of: (1) an environment variable, (2) .ini or .env file, (3) default value.     
+`cast=` specify the type of value returned (default is string) such as `cast=bool` or `cast=int`.
 
 Format of a `.env` file
 ```
@@ -136,7 +135,7 @@ SECRET_KEY=ARANDOMSECRETKEY
 DATABASE_URL=mysql://myuser:mypassword@myhost/mydatabase
 ```
 
-Configuration in a `settings.ini` file (alternative to .env file):
+Format of a `settings.ini` file (alternative to .env file):
 
 ```
 # this is a comment
