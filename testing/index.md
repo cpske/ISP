@@ -1,5 +1,4 @@
 ---
-layout: page
 title: Software Testing
 ---
 
@@ -11,6 +10,55 @@ There are many types of testing used in software projects
 * Integration testing to test that components and services interact correctly
 * Functional or end-to-end testing to test the entire application flow and behavior
 * Acceptance testing, often required when delivering a software product 
+
+## Unit Testing
+
+Unit testing tests individual classes, methods, or functions.
+
+It should be a part of your programming process.
+  - write some code
+  - write tests for what the code **should** do
+  - run the tests, correct code as needed
+  - and repeat
+
+Benefits:
+
+1. avoids errors
+2. helps you stay focused on current work
+3. makes you think about what code *should* do, even in 'edge' cases
+4. avoid re-introducing previously fixed errors
+5. gives you confidence to change the code
+6. tests are **required** for refactoring
+7. enables automation of tests for all work
+
+How to design test cases?
+
+- test *behavior* not just methods. One test may use several methods.
+- test for: edge cases, failure cases, typical cases, extreme cases
+- test for sqrt:
+  - edge case: sqrt(0), sqrt(0.000000001)
+  - failure case: sqrt(-0.1) 
+  - typical case: `sqrt(x) for x in [0.5, 1, 1.5, 4.0, 26, (10000+0.5)**2]`
+  - extreme case: sqrt(1.0E+308)
+- things likely to go wrong, or where programmer may make a mistake
+  - the "off by one" error
+  - empty input or empty lists
+
+**Python Unit Testing**
+
+* my slides: [Python Unit Testing](PythonUnitTesting.pdf)
+* [unittest](https://docs.python.org/3/library/unittest.html) in Python official docs
+* [PyTest](https://www.pytest.org) is another popular, light-weight testing framework
+* [Code Coverage](code-coverage.md) a tool to measure how much of your code is really being tested by unit tests!
+
+**Java Unit Testing**
+
+* my intro slides: [Unit Testing with JUnit](JUnit.pdf) may cover only JUnit 4.0
+
+* [JUnit Home](https://junit.org/junit5/) covers JUnit 4 & 5. Many examples.
+
+* [JUnit Parameterized Tests](JUnitParams-tutorial.pdf) parameterize unit tests instead of writing many test methods with nearly the same code
+
 
 ## Verification and Validation
 
@@ -48,19 +96,6 @@ Security Testing Example:
 * Both Verification and Validation are important
 * Both static and dynamic methods are necessary
 * Verification is usually cheaper and easier than Validation
-
-## Unit Testing
-
-* Why do unit testing?
-
-* How to design test cases?
-
-* Python Unit Testing: [PDF](PythonUnitTesting.pdf) [PPT](PythonUnitTesting.ppt)
-  - Python standard unittest (similar to JUnit) and doctest
-  - [PyTest](https://www.pytest.org) is another popular, light-weight testing framework
-
-* [Code Coverage](code-coverage.md) - using tools to assess how much of your code is really being tested by unit tests.
-
 ## Testing (Incomplete) Software Under Development
 
 Suppose you are writing `module1` and want to test it,
@@ -100,12 +135,3 @@ Tester
 
 * Web Testing [PDF](WebTesting.pdf) [PPT](WebTesting.ppt)
 
-## Java Testing
-
-* Intro to JUnit: [PDF](JUnit.pdf) [PPT](JUnit.ppt)
-
-* [JUnit Parameterized Tests](JUnitParams-tutorial.pdf)
-
-* New design of JUnit 5
-
-* Mock Objects in Java

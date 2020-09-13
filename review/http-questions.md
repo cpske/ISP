@@ -44,17 +44,16 @@ Which of the following is NOT a category of HTTP status codes?
 ---
 
 8. Much of the web is switching from HTTP to the HTTPS protocol.  If you enter "http://www.yahoo.com" in your browser, the Yahoo web server will tell your browser go to "https://www.yahoo.com" instead.  Using only the standard HTTP protocol (no recent extensions like HSTS), how does a web server do this?
-   _______________________________________________________________
+   ______________________________________________________________
 
 
-X. What is the purpose of Domain Name Service (DNS)?
+9. What is the purpose of Domain Name Service (DNS)?
    [ ] verify the identity of web servers
    [ ] translate host names to IP addresses
    [ ] translate IP addresses to host names
    [ ] verify the validity of IP addresses and host names
 
-X. Which of these are standard network services that use TCP/IP.
-   [ ] telnet
+10. Which of these are standard network services that use TCP/IP.
    [ ] ftp (file transfer protocol)
    [ ] ssh (secure shell)
    [ ] smtp (simple mail transport protocol)
@@ -62,4 +61,5 @@ X. Which of these are standard network services that use TCP/IP.
    [ ] html (hypertext markup language)
    [ ] http (hypertext transport protocol)
    [ ] ssl (secure socket layer) and tls (transport layer security)
+   [ ] Real Time Streaming Protocol (RTSP) for streaming video
  

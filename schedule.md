@@ -49,6 +49,7 @@ navigation_order: 1
 
 * No class meeting due to Songkran
 * Review progress on KU Polls iteration 1 (online)
+* Start background work and proposal for course team project.
 
 ### Week 6 (14 Sep)
 
