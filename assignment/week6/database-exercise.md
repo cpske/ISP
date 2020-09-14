@@ -1,4 +1,6 @@
-## Exercises
+---
+title: Database Practice
+---
 
 Use a database browser to browse
 the structure of your Django-polls database.
@@ -12,6 +14,7 @@ Tools you are use are:
   - https://dbeaver.io/
 
 The Django polls database file is `db.sqlite3` in your django-polls directory.
+
 
 ### Using `sqlite` or `sqlite3` command line tool
 
