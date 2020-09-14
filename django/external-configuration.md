@@ -135,7 +135,9 @@ SECRET_KEY=ARANDOMSECRETKEY
 DATABASE_URL=mysql://myuser:mypassword@myhost/mydatabase
 ```
 
-Format of a `settings.ini` file (alternative to .env file):
+Instead of `.env` you can use a `settings.ini` file.
+The main advantage of settings.ini is you can put different
+sets of values in different sections.
 
 ```
 # this is a comment
@@ -145,11 +147,12 @@ SECRET_KEY=ARANDOMSECRETKEY123
 DATABASE_URL=mysql://myuser:mypassword@myhost/mydatabase
 ```
 
-### Using decouple in Django `settings.ini`
+### Using decouple in Django's `settings.py`
 
+In your site's `settings.py` file:
 ```python
 from decouple import config
-# optional: module to parse database engine config from a single variable
+# optional module to parse database configuration from a single database URL
 from dj_database_url import parse as db_url
 
 DEBUG = config('DEBUG', default=False, cast=bool)
@@ -184,11 +187,13 @@ SECRET_KEY = myconfig.get('SECRET_KEY')
 
 ## `django-environ`
 
-This package is an alternative to `python-decouple`.  Use `pip` to install it.
+This package is an alternative to `python-decouple`.  
+Use `pip` to install it.
 
-Put your properties in a `.env` file, same format as with `python-decouple`; **however**, it seems that this file needs to be your config directory (same directory as `settings.py`) rather than the application's top-level directory.
+Put your properties in a `.env` file, same format as with `python-decouple`; 
+**but**, it seems that this file must be your config directory (same directory as `settings.py`) rather than the application's top-level directory.
 
-It can also get values from environment variables, just like `python-decouple`.
+`django-environ` can get values from environment variables, just like `python-decouple`.
 
 Example `settings.py`:
 ```python
@@ -201,7 +206,7 @@ SECRET_KEY = env('SECRET_KEY', default='dumb-secret-key')
 DEBUG = env.bool('DEBUG', default=False)
 
 DATABASES = {
-    # read 'DATABASE_URL' and raises ImproperlyConfigured exception if not found
+    # read 'DATABASE_URL' and raise ImproperlyConfigured exception if not found
     'default': env.db(),
     }
 ```
