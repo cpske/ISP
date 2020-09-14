@@ -1,3 +1,13 @@
+---
+title: Feedback on KU Polls Iteration 1
+---
+
+## Why are we doing this?
+
+The KU Polls project has 2 goals
+
+* practice an iterative development process
+* learn Django, which you will need for the team project
 
 ## Plan - Do - Evaluate
 
@@ -9,19 +19,19 @@
 
 Software engineers must manage their own time.
 
-There were 2 weeks to complete this iteration,
+You should perform this assignment the way you would 
+work on a real software project.
+
+There were 2 weeks for this iteration,
 so after 1 week you should have made some progress.
 
-You should perform assignment the way you would work
-on a real project.
+I checked your work twice:
 
-I checked work twice:
-
-* Wednesday, 9 Sep (day 9 of iteration)
+* Wednesday, 9 Sep (**day 9** of iteration), around noon
   - complete Vision, Iteration Plan, Project board, `iteration1` branch with some work
-* Sataurday, 12 Sep (last day of iterattion)
+* Sataurday, 12 Sep (**last day** of iteration), 10:00-noon
   - nearly finished work on `iteration1` branch
-  - most tasks on Project board In Progress or Done
+  - most tasks on Project board are "In Progress" or "Done"
 
 ## Work First, Plan Later
 
@@ -33,7 +43,7 @@ Some students wrote the iteration plan **after** doing all the work.
 1. Commiting `.DS_Store` files, SQLite database file, and IDE files (`.idea`, `.vscode`).
 2. Add extra layer of directories
 3. `.gitignore` in subdirectory - it is useless there
-4. README has bad or missing links to docs, formatting poor.
+4. README has bad or missing links to docs, or poor formatting.
 
 ## Repository has extra layer of directories
 
@@ -58,11 +68,11 @@ polls/
 manage.py
 ```
 
-On some projects, creating an extra layer of directories may be OK.
-The team would have to decide on that.  I don't see any
-advantage to that for Django projects.
+On some projects, this may be useful.    
+The team would have to decide on that. 
 
-Create Django project **in the current directory** instead of a new subdirectory:
+To create a Django project **in the current directory** 
+instead of a new subdirectory:
 ```
   django-admin startproject mysite .       <-- last argument is "." (period)
 ```
