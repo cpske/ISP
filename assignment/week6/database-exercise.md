@@ -1,31 +1,42 @@
 ## Exercises
 
-Answer these questions by using a database browser to browse
+Use a database browser to browse
 the structure of your Django-polls database.
+
+Tools you are use are:
+
+* sqlite3 - command line tool that is part of SQLite
+* [Sqlitebrowser](https://sqlitebrowser.org/) free GUI app to browse SQLite database. https://sqlitebrowser.org/
+* [DBeaver](https://dbeaver.io/) GUI app to interact with almost any database, including Sqlite. Written in Java (JRE included).
+  - Can draw ER diagrams.
+  - https://dbeaver.io/
 
 The Django polls database file is `db.sqlite3` in your django-polls directory.
 
-Some apps you can use to answer these questions:
+### Using `sqlite` or `sqlite3` command line tool
 
-* `sqlite` or `sqlite3` command line app included with Sqlite.  
-    - Commands beginning with "." are commands to Sqlite, e.g. `.help`
-    - Other commands are SQL
-    - Some examples:
-    ```
-    cmd> sqlite3  db.sqlite3
-    sqlite> .help                         (show help message)
-    sqlite> .tables                       (show tables)
-    sqlite> .schema --indent polls_choice (show structure of a table)
-    sqlite> .mode column                  (print query results in columns)
-    sqlite> SELECT * FROM polls_choice;   (SQL query, must end in ;)
-    sqlite> .exit
-    ```
-* [Sqlitebrowser](https://sqlitebrowser.org/) free GUI app to browse SQLite database.
-* [DBeaver](https://dbeaver.io/) GUI app to interact with almost any database, including Sqlite. Written in Java (JRE included) and uses JDBC.
+`sqlite` or `sqlite3` command line app is included with Sqlite package. 
+
+* Commands beginning with "." are commands to Sqlite, e.g. `.help`
+* Other commands are SQL
+* Some examples:
+  ```
+  cmd> sqlite3  db.sqlite3
+  sqlite> .help                         (show help message)
+  sqlite> .tables                       (show tables)
+  sqlite> .schema --indent polls_choice (show structure of a table)
+  sqlite> .mode column                  (print query results in columns)
+  sqlite> SELECT * FROM polls_choice;   (SQL query, must end in ;)
+  sqlite> .exit
+  ```
+
 
 ## Questions
 
 1. The Django Polls database contains many tables.  Which tables contain the data for your "polls" app?
+   ```
+   sqlite> .tables
+   ```
 
 2. What are the **fields** in the database table for "choice"?
 
