@@ -23,8 +23,8 @@ Some things we will cover:
 
 ### Lessons
 
-[Intro to Refactoring](refactoring/Refactoring.pdf)    
-[Refactoring Patterns](refactoring/Refactoring-Patterns.pdf)      
+[Intro to Refactoring](Refactoring.pdf)    
+[Refactoring Patterns](Refactoring-Patterns.pdf)      
 
 ### Refactoring Exercises
 
