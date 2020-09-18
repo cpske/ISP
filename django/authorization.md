@@ -1,4 +1,6 @@
-## Django Authorization model
+---
+title: Django Authorization 
+---
 
 Django uses **Permissions** assigned to each **User** to determine
 their access rights to model objects.

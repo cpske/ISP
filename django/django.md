@@ -1,3 +1,25 @@
+---
+title: Django
+---
+
+* Presentation: [Intro to Django](Intro-to-Django.pdf)
+* [Install Django](#install-django)
+* [Learn Django](#learning-django) two recommended tutorials and [videos](#videos)
+* [Authentication](authentication) how to use Django's authentication framework
+* [Authorization](authorization) how to use Django's permissions-based authorization
+* [Deployment](django-deployment) to the cloud or a virtual server
+* [Externalize Configuration](external-configuration) how to remove configuration data from your Django code.
+* [Forms](forms) notes on Django's Form classes that automate the handling of HTML forms
+* [Howto](django-howto) miscellaneous notes on problems I've encountered and their solution
+* [Import and Export Data](data-import-export) save database data to a file and import the data file into a new installation of the app
+* [Logging](logging) is an essential part of web apps
+* [Messages Framework](messages-framework) is a clean, easy way to transfer error messages from a view (controller) to a page template, without using the context
+* [Organize Unit Tests](test-organization) create a `tests/` directory containing multiple test files. More modular and scales better.
+* [Put Models in Separate Files](separate-model-classes) how to use a `models` folder and separate files for model classes.
+* [Virtualenv](virtualenv) and [Quickstart](virtualenv-quickstart) how to make you app more portable using a virtual environment. Many cloud services require this for Python apps.
+
+---
+
 ## Install Django
 
 1. Download using instructions on official download page at [www.djangoproject.com/download/](https://www.djangoproject.com/download).
@@ -27,7 +49,7 @@
 * [Django Tutorials and Courses](https://hackr.io/tutorials/learn-django) link collection on Hackr.io.
 
 
-## Videos
+### Videos
 
 * [Django Crash Course](https://www.youtube.com/watch?v=D6esTdOLXh4) on Youtube (1:08:00).
    - Django is MTV framework. "V" is "View controller" or "business logic layer" (I don't agree with "business logic" part). "T" is "template" or the presentation layer.

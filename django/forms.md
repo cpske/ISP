@@ -1,20 +1,32 @@
+---
+title: Forms in Django
+---
+
 Django has two kinds of Forms:
 
-* django.forms.Form - generic form. You define field in a Form subclass.
+* django.forms.Form - generic form. You create a subclass and define fields for the values you want in the form.
 * django.forms.models.ModelForm - form that wraps a Model.
 
 ## What can forms do?
 
-* Render as HTML containining input fields.
+* Render as an HTML form containining input fields.
 * Validate input values, both on client-side and server-side.
+  - avoids the need to write the code yourself
+  - but you should be careful that the server-side validations is thorough
 * On server, can extract data from form fields.
-* A ModelForm can directly save Model object to database (form.save())
+* A ModelForm can directly save form data to a Model object in the database, using `form.save()`.
 
+### Don't Rely on Client-side Form Validation
 
+A malicious user can send form data directly to the server,
+without going through your form.  Or, he can save the HTML source of form page and remove the validation checks.
 
-### Example of a ModelForm
+A general rule in web apps is never trust any data received
+from a client.  The server-side app should validate everything.  Client-side validation is for the benefit of the user, so he doesn't waste time submitting invalid data.
 
-For the Todo example,
+## Example of a ModelForm
+
+For the Todo example (`Todo` is a model with a date, text, and boolean done field),
 ```python
 from django import forms
 
@@ -55,7 +67,7 @@ class TodoForm(forms.models.ModelForm):
 A ModelForm will use any validation rules that are defined in the Model class,
 so you don't need to duplicate them.
 
-### Validating a ModelForm
+## Validating a ModelForm
 
 Call `form.is_valid()`.  Returns True or False and also sets the `errors` dict.
 

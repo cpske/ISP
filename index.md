@@ -227,7 +227,7 @@ HTTP is the communication protocol used by web apps and web services.
 
 <tr valign="top">
 <td markdown="span">
-Django
+[Django](django/django)
 </td>
 <td markdown="span">
 [Introduction to Django](django/Intro-to-Django.pdf) and MVC design pattern.
@@ -236,10 +236,10 @@ Django
 
 <tr valign="top">
 <td markdown="span">
-Django Polls Project
+[KU Polls Project](assignment/ku-polls/)
 </td>
 <td markdown="span">
-Everyone will implement the Django Polls tutorial project.  We'll structure it as an iterative software project. In each iteration you'll implement new features and learn new material.
+A polls application based on the Django Polls tutorial, done as an iterative and incremental project.  Each iteration involves planning, design, implementation, and testing.
 </td>
 </tr>
 
@@ -307,11 +307,10 @@ For Django, use [decouple](django/external-configuration)
 
 <tr valign="top">
 <td markdown="span"> 
-Organize Tests & Models
+[Organize Tests & Models](django/test-organization)
 </td>
 <td markdown="span">
-[Separate your tests](django/django-test-organization) and [models](django/separate-model-classes) into individual files. Improves team work
-by avoiding conflicts.
+[Separate your tests](django/test-organization) and [models](django/separate-model-classes) into individual files. Helps avoid conflicts on team projects.
 </td>
 </tr>
 

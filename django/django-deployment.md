@@ -29,8 +29,16 @@ For a production application you also need to understand and plan for the follow
 2. Backing up the database and other dynamic data (e.g. user uploads).
 3. Security, including monitoring and responding to attacks.
 
+## Learn about Deployment
 
-## Deploy Django App on Google Cloud using App Engine Standard
+* Chapter 11 of *Test-Driven Development in Python* has good links to where to learn about deploying a Django app. Also Appendix C (uses Ansible for Python).
+
+* [Solid Python Deployments for Everybody](https://hynek.me/talks/python-deployments/) opinionated and many comments w/o explanation.
+
+* Deployment chapter in *Two Scoops of Django*.
+
+
+## Deploy Django on Google Cloud using App Engine Standard
 
 See:    
 [Getting Started with Django](https://cloud.google.com/python/django/) describes 4 ways to deploy Django to Google Cloud.

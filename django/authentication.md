@@ -1,4 +1,6 @@
-# Authentication in Django
+---
+title: Authentication in Django
+---
 
 Django includes an authentication system, which can be combined with your own forms and authentication "backends".
 

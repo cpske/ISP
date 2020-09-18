@@ -54,15 +54,17 @@ navigation_order: 1
 ### Week 6 (14 Sep)
 
 * Unit testing!
-* Unit testing in Django - how to test models, views, and UI.
+* Introduction to Database
 * Improvements to KU Polls
 * Separate configuration from code
 * Assignment: KU Polls iteration 2
+* Assignment: Unit testing
 
 ### Week 7 (21 Sep)
 
-* Introduction to Database
+* Unit testing in Django - how to test models, views, and UI
 * Introduction to ORM
+* Review
 
 ### Midterm 28 Sep - 4 Oct
 

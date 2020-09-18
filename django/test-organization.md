@@ -1,14 +1,14 @@
-## Organize Unit Tests in Django
+---
+title: Organize Unit Tests in Django
+---
 
 When you create a new app, Django creates a `tests.py` file for the app.
-However, putting all your tests in one file is usually not a good idea.
+Putting all your tests in one file is usually not a good idea,
+especially on a team project with many people working on
+different parts of the code (and writing tests).
 
-Especially on a team project with development done in git branches,
-different developers will add tests to the same file.
-You will have conflicts every time you merge a branch into master.
-
-A better way is to divide your tests into multiple files.  
-For the Django Polls tutorial, the structure for tests would be:
+A better way is to **divide your tests** into multiple files.  
+For the Polls tutorial, the structure for tests would be:
 ```listing
 polls/
     __init__.py
@@ -32,7 +32,7 @@ In the tests folder create an empty `__init__.py` file so that folder is a packa
 
 ### 2. Move `tests.py` to the `tests` folder
 
-And then divide it into several test files...
+And then divide it into several test files, one for each test class.
 
 ### 3. Name your test files `test_*.py`
 

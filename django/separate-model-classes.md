@@ -1,4 +1,6 @@
-## Separate Model Classes into Individual Files
+---
+title: Separate Model Classes into Individual Files
+---
 
 The default organization of a Django "app" is for all model classes
 to be defined in a single file named `models.py`.

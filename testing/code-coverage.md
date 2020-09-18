@@ -1,7 +1,9 @@
-## Code Coverage
+---
+title: Test Code Coverage
+---
 
-How thorough are your tests?    
-Do your unit tests really test *all* the code?
+How thorough are your tests? Do they test all parts of the code?
+
 
 **Code Coverage** is a measure of how much of your source code
 is tested or "exercised" by unit tests. It measures how many
@@ -15,7 +17,7 @@ It analyzes how much of your code is executed when a program is run.
 
 [Coverage][coverage-docs] works with unit tests on any Python app, including Django.  To integrate code coverage with a CI server (like Travis-CI) use the online service [CodeCov](https://codecov.io).
 
-To runs tests on a project with code coverage, do the following.
+## Install Coverage
 
 1. [Install coverage package](https://coverage.readthedocs.io/en/coverage-4.5.x/install.html).  The instructions are different for each OS, so read the instructions.
 In some cases you just type
@@ -60,12 +62,12 @@ You can configure what files are analyzed by `coverage` using
 a `.coveragerc` file in your project directory, as described
 in the [Coverages Docs][coverage-docs].
 
-When using a library or framework, you usually want to **exclude** the library or framework from coverage analysis, to avoid distorting the results (and its not useful anyway).
+When using a library or framework, you want to **exclude** the library or framework from coverage analysis, to avoid distorting the results (and its not useful anyway).
 
 For Django projects you want to exclude migrations, settings.py, manage.py, static files, and anything else you don't write unit tests for.
 
 In the Django Polls tutorial, I used:
-```
+```bash
 [run]
 # measure branch coverage, too
 branch = True
