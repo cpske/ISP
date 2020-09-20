@@ -239,7 +239,7 @@ HTTP is the communication protocol used by web apps and web services.
 [KU Polls Project](assignment/ku-polls/)
 </td>
 <td markdown="span">
-A polls application based on the Django Polls tutorial, done as an iterative and incremental project.  Each iteration involves planning, design, implementation, and testing.
+A polls application based on the Django Polls tutorial, implemented as an iterative and incremental project.  Each iteration involves planning, design, implementation, testing, and review.
 </td>
 </tr>
 
@@ -255,12 +255,11 @@ Tables, field types, identity fields, relating tables, basic CRUD operations.
 
 <tr valign="top">
 <td markdown="span">
-Object-Relational Mapping
+[Object-Relational Mapping](database/orm)
 </td>
 <td markdown="span">
-ORM concepts and frameworks.  All web frameworks use ORM.
-Two common design patterns for ORM. 
-Table schema for different domain models.    
+ORM concepts and frameworks. Different domain models and their database table schema.
+All web frameworks use ORM.
 Understanding ORM concepts makes it easier to understand and work
 with Django models.
 </td>
@@ -319,7 +318,7 @@ For Django, use [decouple](django/external-configuration)
 [Logging](logging/Logging.pdf)
 </td>
 <td markdown="span">
-[Logging](logging/Logging.pdf)    
+[Logging](logging/Logging.pdf) is an essential part of a web application.   
 [Logging Practice](logging/logging-practice)
 </td>
 </tr>
@@ -330,7 +329,7 @@ Deployment
 </td>
 <td markdown="span">
 How to package and deploy a web application.
-Manage dependencies and isolate apps in containers.
+Manage dependencies and isolate applications in containers.
 </td>
 </tr>
 </table>

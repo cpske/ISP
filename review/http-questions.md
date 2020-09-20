@@ -44,7 +44,7 @@ Which of the following is NOT a category of HTTP status codes?
 ---
 
 8. Much of the web is switching from HTTP to the HTTPS protocol.  If you enter "http://www.yahoo.com" in your browser, the Yahoo web server will tell your browser go to "https://www.yahoo.com" instead.  Using only the standard HTTP protocol (no recent extensions like HSTS), how does a web server do this?
-   ______________________________________________________________
+   _____________________________ _____________________________
 
 
 9. What is the purpose of Domain Name Service (DNS)?

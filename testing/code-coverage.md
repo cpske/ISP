@@ -15,7 +15,9 @@ The [coverage][coverage-docs] package performs code coverage analysis
 for Python code.
 It analyzes how much of your code is executed when a program is run.
 
-[Coverage][coverage-docs] works with unit tests on any Python app, including Django.  To integrate code coverage with a CI server (like Travis-CI) use the online service [CodeCov](https://codecov.io).
+[Coverage][coverage-docs] works with unit tests on any Python app, including Django.  
+
+To perform code coverage with a CI server (like Travis-CI) you can use the online service [CodeCov](https://codecov.io) instead of Coverage (Coverage works, too).
 
 ## Install Coverage
 
@@ -36,14 +38,14 @@ In some cases you just type
     coverage html      # create html report
     coverage erase     # delete old data
     ```
-3. Use `coverage` to analyze your Python code.  To create coverage analysis data for your fraction testing assignment you need a test runner you can run.  Its easy to add a "main" block to `fraction_test.py` for this:
+3. Use `coverage` to analyze your Python code.  To create coverage analysis data for your code you need a test runner you can run.  Its easy to add a "main" block to test class file, something like for this:
     ```python
     if __name__ == '__main__':
-        unittest.main(verbosity=2)
+        unittest.main()
     ```
     Then run the tests with coverage:
     ```
-    coverage run fraction_test.py
+    coverage run listutil_test.py
     ```
     You will see the usual unittest output on the console.  
 4. View the coverage report as plain text:
@@ -54,7 +56,8 @@ In some cases you just type
    ```
    coverage html
    ```
-   and view the file `htmlcov/index.html` in a web browser. You can click on any file name to see what statements were "covered" during the run.
+   The output is put in subdirectory `htmlcov`.    
+   Open the file `htmlcov/index.html` in a web browser. You can click on any file name to see what statements were "covered" during the run.
 
 ## Configure Coverage
 
@@ -219,12 +222,15 @@ The most popular Java code coverage tools (still being maintained) are:
 * [JaCoCo](https://www.jacoco.org/jacoco/) - the web page mentions Eclipse but JaCoCo works with any Java project, not just Eclipse.  JaCoCo computes complexity and reports how much "complexity" was tested or missed.
 * IntelliJ IDEA has a built-in coverage tool for Java
 
+---
+
 ## Resources
 
 * Python [Coverage Documentation][coverage-docs]
 * [Introduction to Code Coverage][dzone-code-coverage] on DZone has example using Javascript and links to some popular code coverage tools.
 * [Comparison of Code Coverage Tools](https://confluence.atlassian.com/clover/comparison-of-code-coverage-tools-681706101.html) on Atlassian (owner of Clover code coverage tool) compares features of some Java tools, including the free open-source tools JaCoco, JCov, and PIT.
-* [JaCoCo][jacoco] is a code coverage tool for Java.
+* [JaCoCo][jacoco] a code coverage tool for Java.
+* [OpenClover](https://openclover.org) code coverage and source analysis for Java based on Clover.
 
 [coverage-docs]: https://coverage.readthedocs.io/ "coverage.py documentation"
 
