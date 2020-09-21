@@ -62,10 +62,10 @@ Git commands and common tasks, structure of a git repo, branches, merging, and r
 Git and Development
 </td>
 <td markdown="span">
-[Github Flow](git/index#github-flow), issues, branches, &amp;
+[Github Flow](git/index#github-flow), branches, issues, &amp;
 [pull requests](git/Pull-Requests.pdf).    
+Github Flow is a workflow for a team to effectively work together using git.    
 Importance of descriptive commit messages and Pull Requests.
-Using tags. Tags and Releases on Github.
 </td>
 </tr>
 
@@ -245,7 +245,7 @@ A polls application based on the Django Polls tutorial, implemented as an iterat
 
 <tr valign="top">
 <td markdown="span">
-Database Basics
+[Database Basics](database/Database-Basics.pdf)
 </td>
 <td markdown="span">
 Intro to database concepts and how to use a database in code.
@@ -300,7 +300,6 @@ Easily pass messages from a view to a template
 </td>
 <td markdown="span"> 
 [Separate configuration from code](refactoring/Separate-config-from-code.pdf) is a practice that applies to all software, not just web apps.
-For Django, use [decouple](django/external-configuration) 
 </td>
 </tr>
 

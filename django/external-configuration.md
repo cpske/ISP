@@ -9,12 +9,12 @@ title: Separate Configuration Data from Code
  
 ## The Problem
 
-A typical Django `settings.py` file contains confiuration data such as:
+A typical Django `settings.py` file contains configuration data such as:
 
 ```
 SECRET_KEY = 'AElek13407aseasej39'
 DEBUG = True
-TIME_ZONE = 'Asia/Bangkok'   # you didn't write 'UTC', or did you?
+TIME_ZONE = 'Asia/Bangkok'   # you didn't write 'UTC', did you?
 
 DATABASES = {
     'default': {
@@ -32,10 +32,10 @@ STATIC_URL = 'https://storage.googleapis.com/ske-polls/static/'
 
 The problems with this are:
 
-1. Sensitive information is included in code.  Anyone with access to the application code can steal it.
-2. If committed to Github, anyone on the web can steal the sensitive data and abuse it.
-3. It's difficult to change. For Django, it may be fairly easy, but for other apps (configuration spread over many files) or Java (configuration in Java source code not distributed with the app) it's much harder to change and easy to miss something.
-4. If you put your Google Cloud, AWS, or Azure credentials into a file committed to Github, you may face a large **credit card bill** when someone steals them and uses your account to do Bitcoin mining.
+1. Anyone with access to this code can **steal sensitive information**.
+2. If committed to Github, anyone on the web can steal the info and abuse it.
+3. It's difficult to change. In Django it may be fairly easy, but for other apps (configuration spread over many files) or Java (configuration in Java source code not distributed with the app) it's much harder to change and easy to miss something.
+4. If you put your Google Cloud, AWS, or Azure credentials into a file on Github, you may face a large **credit card bill** when someone steals them and uses your account for Bitcoin mining.
 
 ### The Solution
 
@@ -43,7 +43,7 @@ A standard practice in programming is to **separate configuration data from code
 
 This is also recommended in Heroku's [12-Factor App][12-factor-app] guide.
 
-For security, it's necessary to protect the data file containing sensitive information.
+Put sensitive data in a separate file that is *not* committed to Github.
 
 ## Using Environment Variables
 
@@ -74,14 +74,14 @@ DEBUG=True
 TIME_ZONE='Asia/Bangkok'
 ```
 Put these values into a file and then load them into your shell's environment
-before starting the web app.
+before running the web app.
 
-For example, if we save them in a file named `config.sh`,
+For example, if we save them in a file named `config.sh`
 then type:
 ```shell
 # read config values. In some shells, type "." instead of "source"
 cmd> source config.sh  
-# start the web app with configuration values now in the environment
+# start the app with configuration values now in the environment
 cmd> python manage.py runserver
 ```
 
@@ -90,7 +90,7 @@ before running your web application.
 
 You should provide **sensible defaults** in case an env-variable is not set.  
 In the above example, the default value for `DEBUG` is False,
-and the default value of static URL is '/static/'.
+and the default static URL is '/static/'.
 
 Environment variables can still pose a security risk: 
 a bad guy may find a way to read environment variables.
@@ -99,17 +99,17 @@ In Django, if DEBUG=True and an error occurs, Django prints debugging output in 
 
 ## Packages for Externalizing Configuration Data
 
-These Python packages provide a nice alternative to using environment variables for configuration data:
+These Python packages provide a nice solution for externalizing configuration data:
 
-* **python-decouple** - package for reading configuration data from a file or environment variables.  It can return values other than Strings (such as boolean or a dictionary) by specifying a `cast` parameter.
+* **python-decouple** - package for reading configuration data from a file or environment variables.  It can return values other than Strings (such as boolean or a dictionary) by specifying a `cast`.
 
 * **dj-database-url** - package to parse a Database URLs in standard notation (a string) and return a Django DATABASE_ENGINE dictionary. Use with `python-decouple`.
 
 * **django-environ** - similar to `python-decouple`, but specific to Django. 
-  - Can parse a database URL into the Django DATABASES setting format.
   - Has convenience methods for converting other attributes to the data types used in Django's settings.py.
+  - Can parse a database URL into the Django DATABASES setting format.
 
-Comparing these, `django-environ` has convenience methods for converting strings to Django setting data types. `python-decouple` is more general-purpose and has better documentation.
+Comparing these, `django-environ` has convenience methods for converting strings to Django settings types. `python-decouple` is more general-purpose and has better documentation.
 
 ## python-decouple for External Configuration Data
 
@@ -135,9 +135,7 @@ SECRET_KEY=ARANDOMSECRETKEY
 DATABASE_URL=mysql://myuser:mypassword@myhost/mydatabase
 ```
 
-Instead of `.env` you can use a `settings.ini` file.
-The main advantage of settings.ini is you can put different
-sets of values in different sections.
+Instead of `.env` you can use a `settings.ini` file, which contains named sections.
 
 ```
 # this is a comment
@@ -170,7 +168,7 @@ DATABASES = {
 
 ### How to Use Alternate Configuration Files with `python-decouple`
 
-Decouple can read configuration file from a file other than `.env` or `settings.ini`.  This is explained at the end of the python-decouple docs page.
+Decouple can read the configuration from a file other than `.env` or `settings.ini`.  This is explained at the end of the python-decouple docs page.
 
 To read values from a file named `local.env` (instead of `.env`), 
 create a new `decouple.Config` object using `RepositoryEnv('/path/to/env-file')`.  Notice that you **don't** import `config` in this case.
@@ -185,15 +183,19 @@ myconfig = Config(RepositoryEnv(ENV_FILE))
 SECRET_KEY = myconfig.get('SECRET_KEY')
 ```
 
-## `django-environ`
+But, changing `settings.py` partially negates the benefit of using decouple.
+I think a better way is to keep multiple something.env files and
+copy the one you want to `.env`.
+
+## Using django-environ
 
 This package is an alternative to `python-decouple`.  
 Use `pip` to install it.
 
-Put your properties in a `.env` file, same format as with `python-decouple`; 
+Put properties in a `.env` file in same format as used by `python-decouple`; 
 **but**, it seems that this file must be your config directory (same directory as `settings.py`) rather than the application's top-level directory.
 
-`django-environ` can get values from environment variables, just like `python-decouple`.
+`django-environ` can also get values from environment variables, just like `python-decouple`.
 
 Example `settings.py`:
 ```python

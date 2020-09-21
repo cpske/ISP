@@ -1,0 +1,14 @@
+[run]
+branch = True
+cover_pylib = False
+# omit uninteresting stuff
+omit =
+	/usr/*
+	manage.py
+	mysite/settings.py
+	mysite/asgi.py
+	mysite/wsgi.py
+	*/migrations/*
+	*/tests.py
+	*/tests/*
+	**/__init__.py

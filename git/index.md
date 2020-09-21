@@ -230,13 +230,20 @@ My [Slides on Pull Requests](Pull-Requests.pdf) - somewhat out-dated.
 Optional and useful:
 
 * [Github Branching Convention](https://gist.github.com/digitaljhelms/4287848) has [nice workflow diagram](https://gist.github.com/digitaljhelms/4287848#workflow-diagram) of using branches in Github flow, but maybe too complex for simple projects.
+* [Github Flow](http://scottchacon.com/2011/08/31/github-flow.html) by a git coach, who outlines 6 rules:
+  1. Anything on the master branch is deployable.
+  2. For new work, create a *descriptive* branch off of master, e.g. `payment-auth`.
+  3. Commit to that branch (locally) and regularly **push** to the same branch name on the shared repo (Github).
+  4. Open a Pull Request to get help, ask for review & feedback, or request to merge.
+  5. Merge only after a Pull Request review.
+  6. Deploy immediately after review. (*I disagree with this.*)
 
 ## Specialized Git Uses
 
 * [Git Aliases](aliases) how to create an alias for a git command, such as "git co" alias for "git checkout".
   - Aliases I use:
     ```
-    # co as alias for checkout
+    # co as alias for checkout (as in Subversion)
     git config --global alias.co=checkout  
     # "git amend" as alias for "git commit --amend"
     git config --global alias.amend=commit --amend --no-edit
