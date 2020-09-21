@@ -2,14 +2,17 @@
 title: Github Flow Practice
 ---
 
-The purpose is to practice project initialization, Github Flow, and merging with conflicts.  Try to do this without actually talking to each other.    
-Do all communication online, like remote programming.
+The purpose is to practice project initialization, Github Flow, and merging with conflicts.  
+* Do all communication online, like a remote programming team.
+* Do this without talking to each other face-to-face.    
+
+Time Limit: 30 minutes
 
 ### The Goal
 
-When your are done, "master" on your github repo will contain:
+When your are done, "master" on your `ku-cafe` repo will contain:
 
-* a `README.md` with **links** to the **5 sections** of the menu. At the bottom of the pages are the names of your team members, 1 name per line.
+* a `README.md` with **links** to the **5 sections** in the Menu. At the bottom of README are the names of your team members.
   - when someone clicks on a link it should go *exactly* to the correct section of the menu file.
 * a `Menu.md` file containing **these 5 sections**
   - Breakfast Menu
@@ -20,8 +23,9 @@ When your are done, "master" on your github repo will contain:
 
 ## Assignment
 
-1. Each team of 5 people will contribute to a project on Github.
-2. One person (the project lead) creates the project
+1. Each team of 5 people will contribute to a `ku-cafe` project on Github.
+   * Only **one repo per team**.
+2. One person (the project lead) creates the repository and task board.
    * Unzip the starter code into your repo and push it to Github
    * Create a Kanban-style project board
    * Invite team members to join the project (in Settings - Collaborators)
@@ -45,52 +49,12 @@ When your are done, "master" on your github repo will contain:
 10. Push your branch and master to Github.
 
 
+## Starter Code
 
-File:  **README.md**
+`ku-cafe.zip` contains starter code for these files:
 ```
-# KU Cafe
-
-Breakfast Menu
-Lunch Menu
-Dinner Menu
-Night Food Menu
-Beverages
-
-## About Us
-
-*Each person adds himself to this list*
-| Name   | Role  | Github   |
-|--------|-------|----------|
-| Your name | Your menu | \@your_github_id |
-| ...       | ...       | ...  |
+README.md
+Menu.md
 ```
-
-File:  **Menu.md**
-```
-
-## Breakfast Menu
-
-| Item                                   | Price |
-|:---------------------------------------|------:|
-| nothing yet                            |  0.0  |
-
-## Lunch Menu
-
-Coming soon.
-
-## Dinner Menu
-
-Coming soon.
-
-## Night Food Menu
-
-Coming soon.
-
-## Beverages
-
-Coming soon.
-
----
-
-We accept PromptPay, KUPay, Alipay, and cash. No credit cards.
-```
+The person who creates your team's ku-cafe repo should add this starter code.
+Everyone else should clone the repo.
