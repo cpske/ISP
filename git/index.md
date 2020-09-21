@@ -214,17 +214,35 @@ You should know the content of these docs:
 
 * [Github Flow Illustrated Guide](https://guides.github.com/introduction/flow/)
 * [Description on Githubflow.io](https://githubflow.github.io/). Step #5 -merge only after pull request review is important. I don't agree with Step #6 -deploy immediately. 
-* [Commenting on Pull Requests](https://help.github.com/en/articles/commenting-on-a-pull-request) - providing useful feedback to a Pull Request.
+
+### Pull Requests
+
+The Pull Request is an important part of Github Flow.  It's a request for help, feedback, or review on your work.
+
+In Github Flow, you should always open a Pull Request before merging work from a branch into master.  When other people on your team open a Pull Request, you should *seriously* examine their work and offer feedback, suggestions, and even ciriticisms ("*criticize code, not people*").
+
+[Pull Request Tutorial](https://yangsu.github.io/pull-request-tutorial/) shows how (and why) to use pull requests on Github.
+
+[Commenting on Pull Requests](https://help.github.com/en/articles/commenting-on-a-pull-request) by Github, how to provide useful feedback to a Pull Request.
+
+My [Slides on Pull Requests](Pull-Requests.pdf) - somewhat out-dated.
 
 Optional and useful:
 
-* [Pull Request Tutorial](https://yangsu.github.io/pull-request-tutorial/) why and how to use pull requests.
 * [Github Branching Convention](https://gist.github.com/digitaljhelms/4287848) has [nice workflow diagram](https://gist.github.com/digitaljhelms/4287848#workflow-diagram) of using branches in Github flow, but maybe too complex for simple projects.
-* My [Slides on Pull Requests](Pull-Requests.pdf) - somewhat out-dated
 
 ## Specialized Git Uses
 
 * [Git Aliases](aliases) how to create an alias for a git command, such as "git co" alias for "git checkout".
+  - Aliases I use:
+    ```
+    # co as alias for checkout
+    git config --global alias.co=checkout  
+    # "git amend" as alias for "git commit --amend"
+    git config --global alias.amend=commit --amend --no-edit
+    # unstage a file "git unstage filename"
+    git config --global alias.unstage=reset HEAD --
+    ```
 
 * [Submodules](submodule) to include another repository *inside* an existing Git repository tree.  Very useful for managing work, such as a separate repo for tests.
 

@@ -7,10 +7,10 @@ Don't spend time performing routine tasks that can be done automatically, or "se
 
 Routine, repeatable tasks you can automate are:
 
-* configuring and compiling source code
-* running unit tests
-* testing your code for coding style errors
-* look for potential problems in code, including semantic errors and unsafe usage; called *static analysis*
+* configure and compile source code
+* run unit tests and other tests
+* check code for coding style errors
+* examine code for potential problems, including semantic errors and unsafe usage; called *static analysis*
 * automatically deploy software to a server
 * Continous Integration: automatically perform all the above, usually triggered by some event such as a Github commit or a tag containing special text
 
@@ -44,8 +44,21 @@ C and Java programmers. Some build tools are:
 
 Continuous Integration tools 
 
-* Using automatic build and test with CircleCI or Travis on Github.
+* Using automatic build and test with Travis-CI on Github.
 * Github's C.I. features
+* Other Popular CI Platforms are:
+  - Jenkins
+  - Hudson (predecessor to Jenkins)
+  - TeamCity
+  - Cruise Control - one of the first, and still great, CI
+  - Buddy
+  - CircleCI
+* [20 Best CI Tools](https://www.guru99.com/top-20-continuous-integration-tools.html) on guru99 has nice summary
+* [Comparison of 15 CI Tools](https://www.softwaretestinghelp.com/tools/24-best-continuous-integration-tool/) on softwaretestinghelp.com compares features
+
+Some CI tools are hosted services, like Travis-CI and CircleCI.
+
+Others CI are self-hosted, meaning you download the code and run it on your own server (typically a virtual server), such as Jenkins and Cruise Control. Travis-CI is reportedly a customized version of Jenkins or Hudson.
 
 [Travis CI Demo Project](travis-demo-project)
 

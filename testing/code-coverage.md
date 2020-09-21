@@ -90,7 +90,7 @@ include =
 ## How Many Unit Tests Are Enough?
 
 Consider this example of computing the discount for a Sale:
-> If the sale total is at least 1,000 Baht, give customer a 50 Baht discount.
+> If the sale total is at least 1,000 Baht, give customer a 50 Baht discount.    
 > If the customer pays using cash, then give a 2% discount.
 
 ```python
