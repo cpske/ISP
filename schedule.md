@@ -64,6 +64,7 @@ navigation_order: 1
 
 * Unit testing in Django - how to test models, views, and UI
 * Introduction to ORM
+* Code Coverage tools for Python
 * Review
 
 ### Midterm 28 Sep - 4 Oct
@@ -76,4 +77,5 @@ navigation_order: 1
 ### Unscheduled
 
 * Agile
-* Code coverage
+* Writing Good Code
+* Refactoring

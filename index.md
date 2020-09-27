@@ -77,7 +77,7 @@ Importance of descriptive commit messages and Pull Requests.
 Testing "units" of code.  Testing behavior - not just methods.      
 [JUnit for Java](/testing/Intro-to-Unit-Testing.pdf) and 
 [unit test in Python](testing/PythonUnitTesting.pdf)    
-[Code Coverage](testing/code-coverage) 
+[Code Coverage](testing/code-coverage)    
 </td>
 </tr>
 
@@ -151,10 +151,11 @@ Example Review Checklists: [Java](code-review/Java-Code-Review-Checklist.pdf),
 
 <tr valign="top">
 <td markdown="span"> 
+Web App Testing    
 End-to-End Testing    
 </td>
 <td markdown="span">
-[Web App E2E Testing](testing/WebTesting.pdf) with Selenium.    
+[Web App Testing](testing/WebTesting.pdf) how to test web apps, includes E2E with Selenium.    
 [Intro to Selenium](testing/Selenium-intro)    
 1. Refactor your Django tests into separate files, based on what is being tested.    
 2. Perform code coverage on your Django tutorial code and your project code.    
