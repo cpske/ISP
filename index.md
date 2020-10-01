@@ -137,7 +137,7 @@ Common refactoring situations and how to do them using an IDE.
 
 <tr valign="top">
 <td markdown="span"> 
-Code Review
+[Code Review](code-review)
 </td>
 <td markdown="span">
 [Software Review](code-review/Reviews.pdf) slides and [Summary](code-review/code-review)       
