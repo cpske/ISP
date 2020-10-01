@@ -62,6 +62,8 @@ There are plugins to provide better analysis and checking of Django projects:
   - flake8 automatically uses the plugin. In my test, it needs some extra configuration to eliminate superfluous messages.
   - see Flake8 documentation for how to create a config file, either (Windows) `.flake8` or (Linux/MacOS) `.config/flake8`
 
+[Flake8](https://simpleisbetterthancomplex.com/packages/2016/08/05/flake8.html) on SimpleIsBetterThanComplex.com has good explanation of Flake8 outout, configuration, and example of testing a Django project with Flake8 and coverage on Travis-CI.
+
 ## Code Analysis in your IDE
 
 * VSCode - Control-Shift-P and enter "Python Select Linter", then Control-Shift-P and "Python Run Linter".
@@ -82,6 +84,8 @@ There are plugins to provide better analysis and checking of Django projects:
 [Python Code Quality: Tools & Best Practices][real-python-code-quality] article on Real Python with description of many tools, and code example.
 
 [Python Linters and Code Analysis Tools Curated List][github-code-analysis-tools] detailed list of tools with description and recommendations.
+
+[Flake8](https://simpleisbetterthancomplex.com/packages/2016/08/05/flake8.html) on SimpleIsBetterThanComplex.com has good explanation of Flake8 outout, configuration, and example of testing a Django project with Flake8 and coverage on Travis-CI.
 
 [real-python-code-quality]: https://realpython.com/python-code-quality/
 [github-code-analysis-tools]: https://github.com/vintasoftware/python-linters-and-code-analysis
