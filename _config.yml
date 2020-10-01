@@ -3,7 +3,8 @@ theme: minima
 title: Individual Software Process
 #description: Course material for Individual Software Process
 url: "https://cpske.github.io/ISP/"
-exclude: [bin, code, quiz, solution, misc, Gemfile, Gemfile.lock, Jittat, Paruj, TA]
+# if exclude 'code' then code-* is also excluding
+exclude: [bin, quiz, solution, misc, Gemfile, Gemfile.lock, Jittat, Paruj, TA]
 # github username shown in Minima theme
 github_username: cpske
 # Use Git's markdown syntax

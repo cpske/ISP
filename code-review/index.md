@@ -7,11 +7,10 @@ Presentation: [Code Reviews](Reviews.pdf)
 ## Benefits of Code Review
 
 * *Find defects* including coding and logic errors, performance problems, security vulnerabilities
-* *Better code quality* improve the implementation, readability, uniformity, and (as a consequence) maintainabiility
-* *Finding better solutions* by sharing new ideas
-* *Knowledge Transfer* - approach and technology used, and rationale for the implementation/solution.  Code reviews are a good way for more experienced developers to share knowledge with others.
+* *Better code quality* - improve the implementation, readability, uniformity, and (as a consequence) maintainabiility
+* *Find better solutions* by sharing ideas
+* *Knowledge Transfer* between team members - approach and technology used, rationale for the implementation/solution.  Code reviews are a good way for more experienced developers to share knowledge with others.
 * *Increase Collective Ownership* of code
-* [Improving Software Quality through Inspections](Improving Software Quality through Inspections.pdf) a classic paper
 
 ## Code Review versus Testing
 
@@ -94,12 +93,12 @@ For authors of code under review:
 
 ## Tools
 
-* Notebook (paper) - project notebook is probably the best tool to get started.
+* Notebook (paper) - is probably the best tool to get started.
 * Gerrit tool for online code review, integrates with git.
 * [Review Board][review-board] a web-based code review tool from MIT.
     - free if self-hosted, monthly fee if used as a hosted service
     - [reviewboard][review-board-github] on Github
-
+* Pull Requests on Github. Comment & respond online, reference lines of code in comments.
 
 ### Important Security Vulnerabilities
 
@@ -107,15 +106,17 @@ Code Reviews should look for security vulnerabilities including:
 
 - [ ] format string errors and exploits
 - [ ] using or displaying unsanitized user input
-- [ ] race conditions, where behavior may depend on timing of events.
+- [ ] race conditions, where behavior may depend on timing of events
 - [ ] memory leaks (probably not an issue in Python)
 - [ ] buffer overflows
 
 
 ## Resources
 
-* Overview of [Code Review on Wikipedia](https://en.wikipedia.org/wiki/Code_review)
+* [Improving Software Quality through Inspections](Improving Software Quality through Inspections.pdf) a classic paper
 * [Reviews](Reviews-Stellman-and-Greene.pdf), Chapter 5 in *Applied Software Project Management* by Stellman and Greene.
+
+* Overview of [Code Review on Wikipedia](https://en.wikipedia.org/wiki/Code_review)
 
 * [Best Kept Secrets of Peer Code Review](www.codereviewbook.com) free download at  www.CodeReviewBook.com.  Describes 5 types of peer code reviews and how to do them.
   - Mirror [Best Kept Secrets of Peer Code Review](https://static1.smartbear.co/smartbear/media/pdfs/best-kept-secrets-of-peer-code-review_redirected.pdf)
