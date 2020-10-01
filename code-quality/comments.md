@@ -1,4 +1,6 @@
-## Documentation in Comments
+---
+title: Documentation in Comments
+---
 
 Java, Python, Scala, and other languages have standards for documenting
 code in comments.  Java and Scala have tools to create nicely formatted
@@ -93,23 +95,22 @@ cmd> pydoc math.sqrt
 You should write docstring comments for:
 
 * classes
-    - describes purpose of the class
-    - parameters of the constructor
-    - public methods
-    - example of using the class
+  - describes purpose of the class
+  - parameters of the constructor
+  - public methods
+  - example of using the class
 * functions and methods
-    - describes purpose of the function or method
-    - parameters, and restrictions on their values
-    - meaning and type of the return value, if any
-    - exceptions that may be raised
+  - describes purpose of the function or method
+  - parameters, and restrictions on their values
+  - meaning and type of the return value, if any
+  - exceptions that may be raised
 * modules
-    - purpose of the module
-    - module docstrings go at top of the file, before imports
+  - describe purpose of the module
+  - module docstrings go at top of the file, before imports
 * packages
-    - purpose of the package
-    - list the modules and subpackages (though this can become out-of-date. Python should do this automatically)
-    - put package docstrings in the package's `___init__.py` file.
-
+  - purpose of the package
+  - list the modules and subpackages (though this can become out-of-date. Python should do this automatically)
+  - put package docstrings in the package's `___init__.py` file.
 
 ## Python Doctest Comments
 

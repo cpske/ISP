@@ -2,13 +2,14 @@
 
 ## Tools to Check Your Code
 
-Tools can check for coding style and possible code problems. They are called "linters","code analyzers", or "code auditors".  "Lint" comes from the `lint` tool for C-language programs.  Pycharm and Pydev provide *some* of this by default.
+Tools can check coding style and possible code problems, such as semantic errors or use of undefined variables. They are called "linters", "static analyzers", or "code auditors".  "Lint" comes from the `lint` tool for C-language programs. 
 
 Tools can find:
 
 1. Coding Problems
     - language violations
     - unused variables
+    - variables used before assignment
     - possible unintended behavior
     - dangerous code
 2. Style Problems
@@ -18,33 +19,47 @@ Tools can find:
 
 ## Coding Style and Code Analysis Tools
 
-An [article in Real Python][real-python-code-quality] discribes many code analyzers and what each one does.
+"[*Python Code Quality: Tools & Best Practices*][real-python-code-quality]"
+article in [Real Python][real-python-code-quality] discribes the benefits of code analysis and what teach tools does.
+
 This [Github repo][github-code-analysis-tools] has more details and even more tools.
 
-A few good ones are:
+The top tools for Python are:
 
 * [Pylint](https://www.pylint.org/) one of the most widely used tools.  Checks for style using PEP8 guidelines and looks for bad code signs.  
-    - Checks code style and possible problems
-    - Assigns **quality score** to your code
-    - Can configure to ignore some items or some parts of code (.pylintrc)
-    - Can create UML class diagrams
-    - Don't expect to eliminate all warnings
-    - Install: `pip install pylint`
-    - Usage: `pylint path_to_code`  (one or more file names or directory name)
+  - Checks code style and possible problems
+  - Assigns **quality score** to your code
+  - Can configure to ignore some items or some parts of code (.pylintrc)
+  - Can create UML class diagrams
+  - Don't expect to eliminate all warnings
+  - Install: `pip install pylint`
+  - Usage: `pylint path_to_code`  (one or more file names or directory name)
 
 * [Flake8](http://flake8.pycqa.org/en/latest/) combines 3 tools:
-    - PyFlakes - finds errors and potential code problems
-    - pycodestyle - checks coding style using a subset of PEP8
-    - Mccabe - checks McCabe complexity of code
+  - PyFlakes - finds errors and potential code problems
+  - pycodestyle - checks coding style using a subset of PEP8
+  - Mccabe - checks McCabe complexity of code
+  - Install: `pip install flake8`
+  - Flake8 has lots of plugins, including a [Django plugin](https://pypi.org/project/flake8-django/) for better analysis of Django projects
       
-* [Pylama](https://github.com/klen/pylama)
-    - A wrapper for 9 different tools, including the tools in Flake8
+* [Mypy](http://mypy-lang.org/) static type checking using type hints
+  - [Code examples](http://mypy-lang.org/examples.html) on Mypy home, side-by-side examples of using type hints
 
-For Pylint-ing Django projects:
+* [Pylama](https://github.com/klen/pylama) A wrapper for 9 different tools, including the tools in Flake8.
+  - not as popular as the above tools
 
-* [pylint-django](https://pypi.org/project/pylint-django/) a plugin for pylint to improve checking of Django projects.
-    - Installation: `pip install pylint-django`
-    - Usage:  `pylint --load-plugins pylint_django path_to_source_code`
+### Checking Django Projects
+
+There are plugins to provide better analysis and checking of Django projects:
+
+* [pylint-django](https://pypi.org/project/pylint-django/) 
+  - Installation: `pip install pylint-django`
+  - Usage:  `pylint --load-plugins pylint_django path_to_source_code`
+
+* [Flake8 Django plugin](https://pypi.org/project/flake8-django/) 
+  - Installation: `pip install flake8-django`
+  - Usage: `pytest`
+
 
 ## Use Code Analysis in your IDE
 
@@ -54,9 +69,9 @@ For Pylint-ing Django projects:
     - To run Code Analysis, from menu select Code->Inspect Code... and choose file(s) to inspect.
     - output is shown in "Inspection Results" panel at bottom.  Click on an item to go to source line.
     - offers suggested code change in another panel
-* Pydev has "Code Analysis" feature that uses Pylint.
+* Pydev (Eclipse) has "Code Analysis" feature that uses Pylint.
     - Configure it in Preferences -> Pydev -> Code Analysis    
-      I had to manually specify location of `pylint` for it to work.  
+      I had to manually specify the location of `pylint` for it to work.  
     - Right-click on a file and select Pydev -> Code Analysis.
     - Problems are shown as warning/error markers in left margin of
       editor window.  Will also show in Console if you check preference:    

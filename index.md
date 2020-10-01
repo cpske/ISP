@@ -107,11 +107,11 @@ Mai's [Type Hint Practice](type-hints/type-hint-practice.pdf).
 
 <tr valign="top">
 <td markdown="span">
-[Code Quality](code-quality/index)
+[Code Quality](code-quality)
 </td>
 <td markdown="span">
-Principles, guides, tips, and tools for writing good quality "clean" code.    
-Coding standard, comments as documentation, and code checkers.
+Principles, guides, tips, and [tools](code-quality/code-quality-tools) for writing good quality "clean" code.    
+Coding standard, [comments as documentation](code-quality/comments), and [code checkers](code-quality/code-quality-tools).
 Essential for all developers!
 </td>
 </tr>

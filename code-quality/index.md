@@ -2,8 +2,8 @@
 title: Code Quality
 ---
 
-Writing and maintaining high quality code is perhaps a developer's
-most important responsibility.
+Writing and maintaining high quality code is one of the developer's
+most important responsibilities.
 
 It is easy to neglect code quality when working under a deadline,
 fixing bugs, or adding a new feature. Over time the code becomes
@@ -15,8 +15,8 @@ Best Practices for Code Quality include:
 2. Write document comments (Javadoc or Python docstring) using a standard
 3. Use descriptive names
 4. Strive for short functions (methods) that do just one thing
-5. Use return values instead of side effects where possible.
-6. Avoid unexpected side effects.  This includes the "command query separation principle".
+5. Use return values instead of side effects where possible
+6. Avoid unexpected side effects. This includes the "command query separation principle".
 7. Review all your code.
 8. On a team project, ask others to review your code.
 9. Use tools to check your code.
@@ -34,18 +34,22 @@ Best Practices for Code Quality include:
 
 ### Documenting Your Code
 
-* Python Docstrings, Javadoc, or Scaladoc to create documentation for everyone to use.  
+See: [Comments](comments)
+
+* Python Docstrings, Javadoc, or Scaladoc to create documentation for everyone.
 * Syntax of Python Docstrings.
-    - 3 variations: Python official docstrings, Google style, Numpy style
-* Tools for formatting them:
-    - pydoc
-    - python interactive: help(something)
-    - Sphinx and the Napolean addon
-* Code comments to explain *why* and details not obvious from code
+  - 3 variations: Python official docstrings, Google style, Numpy style
+* Tools for formatting docstrings:
+  - pydoc
+  - python interactive: `help(something)` shows formatted docstrings
+  - Sphinx and the Napolean addon
+* Code comments should explain *why* and details not obvious from code. 
+* Don't explain "how" that is evident from the code itself.
 
 ## Style Guide and Coding Convention
 
-To make code *easy to read* it should have a consistent format.
+Code should have a consistent format to make it *easy to read*,
+especially for others to read.
 Team projects usually have a "coding standard" -- some companies
 have a single company coding standard.
 
@@ -60,14 +64,29 @@ For Python:
     - Part 4 "Parting Words" is *Be Consistent*
     - Google's guide is very prescriptive (do and don't) on how to write code.
 
-For Java:
+### Django's Coding Style Guide
+
+Django uses the Python PEP8 and PEP? (another PEP) with a few exceptions, described in the link below.
+
+The link is guidelines for anyone who contributes code to the Django project.
+The guide is also useful for developers writing Django apps.
+
+Django uses `flake8` to check coding style.
+
+https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/coding-style/
+
+### Coding Style For Java
 
 1. Programming 2 (Java) coding standard.
 2. Oracle's Java coding standard.
 
+## Code Quality and Style Checking Tools
+
+[Code Quality Tools](code-quality-tools) describes tools for Python.
+
 ## Tips from "*Practices of an Agile Developer*"
 
-Many of the tips relate to code quality -- they must think it's important!
+Many Tips in the book relate to code quality -- they must think it's important!
 
 Exercise: create a list of Tips related to code quality and give 
 an example of each one.
