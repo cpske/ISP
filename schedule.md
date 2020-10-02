@@ -70,12 +70,17 @@ navigation_order: 1
 ### Midterm 28 Sep - 4 Oct
 
 * Exam is 27 Sep (Sunday) rooms 202 and 203. Times: 9:00-12:00 and 13:00-16:00.
-* We may not need both times.
 * Covers everything so far.
 * Coding part will emphasize **unit testing** and **code quality**.
 
-### Unscheduled
+### Week 8 (5 Oct)
 
 * Agile
-* Writing Good Code
+* Code Quality: coding style
+* Continuous Integration
+* Guidelines for Team Projects
+
+### Unscheduled
+
+* Guidelines and Practices for Writing Better Code
 * Refactoring
