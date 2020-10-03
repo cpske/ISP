@@ -22,47 +22,68 @@ Best Practices for Code Quality include:
 9. Use tools to check your code.
 10. Refactor occasionally.  Many projects have a "refactoring day" when the only work done is review and refactoring.
 
+*Zen of Python* on Code Quality. Try this:
+
+```python
+>>> import this
+```
+
 ### Clean Code
+
+*Clean Code* refers to code that follows good design principles and is well-written. 
+Clean Code is easier to read, test, maintain, and evolve.    
+Just what *defines* Clean Code is a bit vague and subjective, 
+just as "good", "well", and "easy" are subjective.
 
 [Clean Code](http://www.jeremybytes.com/Downloads/CleanCode.pdf) PDF by JeremyBytes. His web page on [clean code](ww.jeremybytes.com/Demos.aspx#CC) has other useful material.
 
+To discuss:
+
 * Important lessons from *Clean Code* and *Code Complete*.
 
-* How to use Checkstyle. How to configure and safe a code style Eclipse or IntelliJ.
+* How to use Checkstyle for Java or Pylint and Flake8 for Python.
 
 * Look at coding guidelines from some real projects. Apache is good source.
 
-### Documenting Your Code
-
-See: [Comments](comments)
-
-* Python Docstrings, Javadoc, or Scaladoc to create documentation for everyone.
-* Syntax of Python Docstrings.
-  - 3 variations: Python official docstrings, Google style, Numpy style
-* Tools for formatting docstrings:
-  - pydoc
-  - python interactive: `help(something)` shows formatted docstrings
-  - Sphinx and the Napolean addon
-* Code comments should explain *why* and details not obvious from code. 
-* Don't explain "how" that is evident from the code itself.
-
-## Style Guide and Coding Convention
+## Coding Style and Coding Convention
 
 Code should have a consistent format to make it *easy to read*,
-especially for others to read.
+especially easy for others to read.    
 Team projects usually have a "coding standard" -- some companies
 have a single company coding standard.
 
-For Python:
+The Python standard coding style is defined in two Python docs: 
 
-1. [pep8.org](http://pep8.org/) is a single page easy-to-read summary of how to use [PEP 8](https://www.python.org/dev/peps/pep-0008/) the official Python Style Guide.
-2. Python Guide for Docstrings [PEP 257](https://www.python.org/dev/peps/pep-0257/)
-3. [Google Python Style Guide](https://google.github.io/styleguide/pyguide.html)
-    - Part 2 is guidelines for using the Python language 
-    - Rule #1 is "run `pylint` over your code"!
-    - Part 3 "Python Style Rules" are rules for coding style
-    - Part 4 "Parting Words" is *Be Consistent*
-    - Google's guide is very prescriptive (do and don't) on how to write code.
+* [pep8.org](http://pep8.org/) is a single page easy-to-read summary of how to use [PEP 8](https://www.python.org/dev/peps/pep-0008/) the official Python Style Guide.
+* Python Guide for Docstrings [PEP 257](https://www.python.org/dev/peps/pep-0257/)
+
+Useful article: [How to Write Beautiful Code with PEP8](https://realpython.com/python-pep8/) on RealPython.
+
+Google has their own detailed style guide, that includes "pros" and "cons" of style choices:
+
+[Google Python Style Guide](https://google.github.io/styleguide/pyguide.html)
+ - Rule #1 is "run `pylint` over your code"! (using Google's .pylintrc)
+ - Part 2 is guidelines for using the Python language 
+ - Part 3 "Python Style Rules" are rules for coding style
+ - Part 4 "Parting Words" is *Be Consistent*
+ - Google's guide is very prescriptive (do and don't) on how to write code.
+
+### Documenting Your Code
+
+See [Comments](comments) for how to write comments in Python.
+
+* Python Docstrings, Javadoc, or Scaladoc create documentation for a project. They can be shown as web pages or shown dynamically in an IDE.
+* Syntax of Python Docstrings.
+  - 3 variations: Python official docstrings, Google style, Numpy style
+
+In Python, there is not a universal agreement for how to document parameters, return values, and exceptions for a method or function. There are 3 styles:
+* Tools for creating documentation from docstrings:
+  - pydoc
+  - python interactive: `help(something)` shows formatted docstring
+  - `print(something.__doc__)`
+  - Sphinx and the Napolean addon. Used to create ReadTheDocs style web docs.
+* Code comments should explain *why* and details not obvious from code. 
+* Don't explain "how" that is evident from the code itself.
 
 ### Django's Coding Style Guide
 

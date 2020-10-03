@@ -4,7 +4,6 @@ title: Test Code Coverage
 
 How thorough are your tests? Do they test all parts of the code?
 
-
 **Code Coverage** is a measure of how much of your source code
 is tested or "exercised" by unit tests. It measures how many
 functions, methods, statements, and branches are tested.
@@ -228,15 +227,16 @@ The most popular Java code coverage tools (still being maintained) are:
 
 * Python [Coverage Documentation][coverage-docs]
 * [Introduction to Code Coverage][dzone-code-coverage] on DZone has example using Javascript and links to some popular code coverage tools.
-* [Comparison of Code Coverage Tools](https://confluence.atlassian.com/clover/comparison-of-code-coverage-tools-681706101.html) on Atlassian (owner of Clover code coverage tool) compares features of some Java tools, including the free open-source tools JaCoco, JCov, and PIT.
+* [Linting Python in VS Code][vscode-python-linting]: How to use Pylint, Flake8, etc. in VS Code
+
+For Java:
+
 * [JaCoCo][jacoco] a code coverage tool for Java.
 * [OpenClover](https://openclover.org) code coverage and source analysis for Java based on Clover.
+* [Comparison of Code Coverage Tools](https://confluence.atlassian.com/clover/comparison-of-code-coverage-tools-681706101.html) on Atlassian (owner of Clover code coverage tool) compares features of some Java tools, including the free open-source tools JaCoco, JCov, and PIT.
 
 [coverage-docs]: https://coverage.readthedocs.io/ "coverage.py documentation"
-
 [dzone-code-coverage]: https://dzone.com/articles/an-introduction-to-code-coverage "An Introduction to Code Coverage"
-
 [jacoco]: https://www.eclemma.org/jacoco/
-
 [wikipedia-cyclomatic]: https://en.wikipedia.org/wiki/Cyclomatic_complexity
-
+[vscode-python-linting]: https://code.visualstudio.com/docs/python/linting

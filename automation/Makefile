@@ -6,6 +6,7 @@
 # make clean - remove python cache files
 
 # Set PYTHON to the name of your python command (python or python3)
+# For coverage, change python to "coverage run"
 PYTHON=python3
 
 # Let Python unittest module find and run tests itself

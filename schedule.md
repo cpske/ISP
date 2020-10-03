@@ -76,9 +76,14 @@ navigation_order: 1
 ### Week 8 (5 Oct)
 
 * Agile
-* Code Quality: coding style
+* Code Quality: coding style and coding convention.
+* Comment style in Python
 * Continuous Integration
 * Guidelines for Team Projects
+
+Exercise: perform style check on some real code. Add CI to demo project.
+- bank\_account.py
+- some student KU polls code
 
 ### Unscheduled
 

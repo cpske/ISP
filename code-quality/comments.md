@@ -17,15 +17,18 @@ Python also has this capability, but the standard is less precise than Java.
 ## Python docstring Comments
 
 Documentation comments in Python are called **docstring** comments.
-Here's an example for a function:
+
+Here's an example for a function using Pyton's official PEP257 style:
 ```python
 def max(a, b):
     """Return the maximum of two values a and b.
 
     Parameters:
-        a, b - two numbers to find the maximum of
+    a (int): first number for max comparison
+    b (int): second number for max comparison
+
     Returns:
-        the max of a and b
+    int: the max of a and b
     """
     if a > b: return a
     return b
@@ -33,12 +36,62 @@ def max(a, b):
 
 1. The docstring for a function must be the first thing inside the function
 and use a multi-line comment (""").
-2. The first line of the comment should be a concise description of what it does.
-3. If the function is very simple, a one-line descriptoin is enough. Otherwise, leave a **blank line** and then write a more complete description.
-4. Document *parameters*, *return value* (if any), and any *Exceptions* raised.  The standard for how to format these is not very precise.  There are 3 styles (described below):
-    * Pydoc style, used in Python API
-    * Google style
-    * Numpy style, which uses restructured text mark-up
+2. The first line of the comment is a sentence describing what it does.
+3. Followed by a blank line.
+3. If the function is very simple, a one-line descriptoin is enough. Otherwise, leave a blank line and then write a more complete description.
+4. Document *parameters*, *return value* (if any), and any *Exceptions* raised.  
+
+The standard for how to format parameters, returns, and exceptions is not universal.
+There are 3 styles:
+
+* Pydoc style, used in Python API (PEP257)
+* Google style
+* Numpy style, which uses reStructured Text mark-up
+
+Here's an example using Google's convention:
+```python
+def max(a, b):
+    """Return the maximum of two values a and b.
+
+    Args:
+        a (int), b (int): two numbers to find the maximum of
+
+    Returns:
+        int: the max of a and b
+
+    Raises:
+        TypeError: if a or b is not a number
+    """
+    if a > b: return a
+    return b
+```
+
+## Use Type Hints instead of Types in Comments
+
+The above examples document data types in the comments. It is preferrable to write
+the types as *Type Hints* and omit the type from docstring comments.
+The `max` function works with either int or float, so instead of 'int' we can use Number
+for the type hints:
+
+```python
+from numbers import Number
+
+def max(a: Number, b: Number) -> Number:
+    """Return the maximum of two values a and b.
+
+    Args:
+        a, b: two numbers to find the maximum of
+
+    Returns:
+        the max of a and b
+
+    Raises:
+        TypeError: if a or b is not a Number
+    """
+    if a > b: return a
+    return b
+```
+Notice the docstring does not include data type of Args and Returns (*avoid redundancy*).
 
 ## Viewing Python docstrings
 
@@ -90,7 +143,7 @@ cmd> pydoc math.sqrt
    (shows doc for sqrt function)
 ```
 
-## Writing Docstrings
+## When to Write Docstrings
 
 You should write docstring comments for:
 
@@ -99,18 +152,21 @@ You should write docstring comments for:
   - parameters of the constructor
   - public methods
   - example of using the class
+
 * functions and methods
-  - describes purpose of the function or method
+  - describe purpose of the function or method
   - parameters, and restrictions on their values
-  - meaning and type of the return value, if any
+  - the return value, if any
   - exceptions that may be raised
+
 * modules
   - describe purpose of the module
   - module docstrings go at top of the file, before imports
-* packages
-  - purpose of the package
-  - list the modules and subpackages (though this can become out-of-date. Python should do this automatically)
+
+* packages (for this course, package docstrings are not required)
   - put package docstrings in the package's `___init__.py` file.
+  - purpose of the package
+  - list the modules and subpackages (this can become out-of-date! Python should do this automatically)
 
 ## Python Doctest Comments
 
@@ -119,14 +175,17 @@ They provide examples of how to invoke a method, class, or function,
 and also provide a quick test.  Here's an example
 
 ```python
-def average( values ):
+from typing import List
+
+def average(values: List[float]) -> float:
     """Return the average of a list of numbers.
+
     Parameters:
         values is a list or tuple of numbers
 
-    >>> average([2,3,4])
+    >>> average([2, 3, 4])
     3.0
-    >>> average([2,3,4,0])
+    >>> average([2, 3, 4, 0])
     2.25
     >>> average([2])
     2.0
@@ -164,15 +223,17 @@ to use the class.
 
 The expected output that you write for a doctest must **exactly**
 match the actual output. For the `average` function, if we wrote:
+
 ```python
-def average( values ):
+def average(values):
    """
-   >>> average([2,3,4])
+   >>> average([2, 3, 4])
    3
 ```
-The test would fail! Because the actual output is `3.0` not `3`.
-If the expected output is a string, then use single quotes (not double quotes)
-because that's the way the Python interpretter displays string results.
+The test will fail! Because the actual output is `3.0` not `3`.
+
+If the expected output is a string, then use **single quotes** not double quotes
+because that's the way the Python interpreter displays strings.
 
 
 ## Python Type Annotations
