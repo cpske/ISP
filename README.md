@@ -2,6 +2,5 @@
 
 View this repository on [cpske.github.io/ISP](https://cpske.github.io/ISP).
 
-It uses Jekyll for formatting.
-
+Course material for a course at [Kasetsart University](http://www.ku.th).
 
