@@ -14,7 +14,7 @@ API reference in this way.  Here are some examples:
 
 Python also has this capability, but the standard is less precise than Java.
 
-## Python docstring Comments
+## Python Docstring Comments
 
 Documentation comments in Python are called **docstring** comments.
 
@@ -66,10 +66,11 @@ def max(a, b):
     return b
 ```
 
-## Use Type Hints instead of Types in Comments
+## Use Type Hints instead of Data Types in Comments
 
-The above examples document data types in the comments. It is preferrable to write
+The above examples write data types in the comments. It is more useful to write
 the types as *Type Hints* and omit the type from docstring comments.
+
 The `max` function works with either int or float, so instead of 'int' we can use Number
 for the type hints:
 
@@ -91,7 +92,7 @@ def max(a: Number, b: Number) -> Number:
     if a > b: return a
     return b
 ```
-Notice the docstring does not include data type of Args and Returns (*avoid redundancy*).
+Notice the docstring does **not** include data type of Args and Returns (*avoid redundancy*).
 
 ## Viewing Python docstrings
 
@@ -147,26 +148,37 @@ cmd> pydoc math.sqrt
 
 You should write docstring comments for:
 
-* classes
+* **Classes**
   - describes purpose of the class
   - parameters of the constructor
   - public methods
   - example of using the class
 
-* functions and methods
+* **Functions and methods**
   - describe purpose of the function or method
   - parameters, and restrictions on their values
   - the return value, if any
   - exceptions that may be raised
 
-* modules
+* **Modules**
   - describe purpose of the module
   - module docstrings go at top of the file, before imports
 
-* packages (for this course, package docstrings are not required)
+* **Packages** (for this course, package docstrings are not required)
   - put package docstrings in the package's `___init__.py` file.
   - purpose of the package
   - list the modules and subpackages (this can become out-of-date! Python should do this automatically)
+
+### Redundant Info in Docstrings?
+
+The official guidelines for docstrings includes a lot of redundant information.
+For example, writing the names of all methods in a class's docstring comment.
+
+Personally, I think this is a bad idea.
+
+- it duplicates what is in code (waste of time to write)
+- the comments can become inconsistent with the code
+- documentation tools should be able to generate it automatically, the way `javadoc` does 
 
 ## Python Doctest Comments
 
@@ -181,7 +193,7 @@ def average(values: List[float]) -> float:
     """Return the average of a list of numbers.
 
     Parameters:
-        values is a list or tuple of numbers
+        values: a list or tuple of numbers to average
 
     >>> average([2, 3, 4])
     3.0
