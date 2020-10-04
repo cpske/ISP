@@ -115,6 +115,7 @@ Code Reviews should look for security vulnerabilities including:
 
 * [Improving Software Quality through Inspections](Improving Software Quality through Inspections.pdf) a classic paper
 * [Reviews](Reviews-Stellman-and-Greene.pdf), Chapter 5 in *Applied Software Project Management* by Stellman and Greene.
+* [Code Review Guidelines for Humans](https://phauer.com/2018/code-review-guidelines/) good article, concrete with illustrations, not too long.
 
 * Overview of [Code Review on Wikipedia](https://en.wikipedia.org/wiki/Code_review)
 

@@ -125,4 +125,8 @@ Purpose of retrospective is to improve the team's development process.
 
 ## Agile Book
 
-*Head First Agile* - very memorable explanation and examples of Agile practices and values; lots of review questions.  But (too) long.
+*Learning Agile* by Stellman & Greene (O'Reilly 2013). The authors have practiced, taught, and written about Agile for 20 years. Covers the same topics as *Head First Agile*.
+
+*Head First Agile* by Stellman & Greene (2017) - very memorable explanation and examples of Agile practices and values; lots of review questions.  Has lots of PMI Exam practice questions. 490 pg (too) long.
+
+*Agile Practice Guide* by AgileAlliance and PMI. Short, accurate guide to applying Agile. Appendix X3 is tool to assess how suitable Agile is to a project. (Similar to Barry Boehm's book *Balancing Agility and Discipline*.)
