@@ -94,6 +94,36 @@ def max(a: Number, b: Number) -> Number:
 ```
 Notice the docstring does **not** include data type of Args and Returns (*avoid redundancy*).
 
+## Module and Class Comments
+
+PEP257 recommends
+
+* File begins with a module comment
+* Classes have a comment describing the class and it's members.
+* OK to omit "protected" members from comments
+
+```python
+"""A bank account that performs deposits and withdrawals"""
+from re import split
+
+from money import Money
+
+
+class BankAccount:
+    """The first line is a sentence describing bank account.
+
+    Then a longer description of a bank account and its methods.
+    """
+
+    def __init__(self, name, min_balance=0):
+    """Create a new bank account with an owner and initial balance of zero.
+
+    Parameters:
+    name (str): name of the account
+    min_balance (float):  minimum required balance, default is 0.
+    """
+```
+
 ## Viewing Python docstrings
 
 The interactive Python interpreter will display the docstring comments
