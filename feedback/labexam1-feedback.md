@@ -37,19 +37,19 @@ The 6 errors are:
 
 | BUG  | Description                      |
 |------|:---------------------------------|
-|  1   | `available` is computed incorrectly when there are pending checks (the exam code has this bug) |
+|  1   | `available` is computed incorrectly when there are pending checks (the exam starter code has this bug) |
 |  2   | can't withdraw exactly the available balance |
 |  3   | `clear_check(check)` never throws exception (fails silently)  |
 |  4   | can deposit Money with a value of 0        |
-|  5   | can deposit the same check more than once  |
-|  6   | if try to withdraw too much, returns None w/o raising ValueError |
+|  5   | can deposit the same Check more than once  |
+|  6   | if try to withdraw too much, returns None without raising ValueError |
 |  0   | No active bugs. All methods work correctly. Used to verify the target code.  |
 
 I also ran code coverage, using a `.coveragerc` file to *exclude* methods you were not expected to test:
 ```
 # .coveragrc
 branch = True
-# omit uninteresting files. Only use bank_account.py
+# omit uninteresting files. Only analyze bank_account.py
 omit =
     *_test.py
     money.py
@@ -65,22 +65,21 @@ exclude_lines =
 
 ## Test Procedure
 
-1. Run the test code with code coverage using a correct BankAccount class -- no defects and no extra code for creating defects.    
+1. Run the test code with code coverage using a correct BankAccount class (class has no defects and no extra code for latent defects).    
    All tests should pass.
 
-2. Record code coverage and how many tests failed or had errors.
+2. Record code coverage result and how many tests failed or had errors.
 
 3. Correct or comment out all failed tests in student's `bank_account_test.py`.
    * I corrected the first error reported by unittest, except semantic errors. 
-   * For example, if a test asserts account.available is 400 and it should be 500, then I changed the test code to 500.
-   * All failed tests after the first one I commented out.
+   * For example, if a test asserts account.available is 400 and it should be 500, then I changed the assert value to 500.
+   * For failures after the first one, I commented out the failing asserts. Just enough to make the test pass.
    * Also commented out syntax and semantic errors that cause tests to fail.
    * Retest and correct until all tests pass.
 
 4. Record any semantic or syntax errors.
-   * No excuse for these -- Python shows the error, so anyone could have fixed them.
 
-5. Using the defective BankAccount code, run the tests 6 times using each of the bugs above.
+5. Run tests using the defective BankAccount code: run the tests 6 times using each of the bugs above.
    * Record which cases the defect was detected.
    * Student needs to detect 5 out of 6 defects for full credit.
 
@@ -88,11 +87,11 @@ exclude_lines =
 
 <table border="1">
 <tr>
-  <th align=left>Criterion</th>
-  <th align=center>Score</th>
+  <th align="left">Criterion</th>
+  <th align="center">Score</th>
 </tr>
-<tr valign="top" markdown="span">
-  <td markdown="span">
+<tr valign="top">
+  <td>
   Test using Correct BankAccount<br>
   (Test for False Positives)
   </td>
@@ -103,29 +102,29 @@ exclude_lines =
   0   more than two fail <br/>
   </td>
 </tr>
-<tr valign="top" markdown="span">
-  <td markdown="span">
+<tr valign="top">
+  <td>
   Code Coverage
   </td>
-  <td markdown="span">
+  <td>
   10  coverage &ge; 89% <br/>
   7   80% - 88% coverage <br/>
   5   70% - 79% coverage <br/>
   0   below 70%
   </td>
 </tr>
-<tr valign="top" markdown="span">
-  <td markdown="span">
+<tr valign="top">
+  <td>
   Test using Defective Code <br/>
   Number of Bugs Detected
   </td>
-  <td markdown="span">
+  <td>
   10 points per bug <br>
   Full score 50 points
   </td>
 </tr>
-<tr valign="top" markdown="span">
-  <td markdown="span">
+<tr valign="top">
+  <td>
   Coding Errors <br/>
   (Semantic and syntax errors)
   </td>
@@ -135,8 +134,8 @@ exclude_lines =
   -8 two or more errors
   </td>
 </tr>
-<tr valign="top" markdown="span">
-  <td markdown="span">
+<tr valign="top">
+  <td>
   <b>Total</b>
   </td>
   <td>
