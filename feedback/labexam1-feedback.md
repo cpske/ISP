@@ -39,10 +39,10 @@ The 6 errors are:
 |------|:---------------------------------|
 |  1   | `available` is computed incorrectly when there are pending checks (the exam starter code has this bug) |
 |  2   | can't withdraw exactly the available balance |
-|  3   | `clear_check(check)` never throws exception (fails silently)  |
+|  3   | `clear_check(check)` never raises exception (fails silently)  |
 |  4   | can deposit Money with a value of 0        |
 |  5   | can deposit the same Check more than once  |
-|  6   | if try to withdraw too much, returns None without raising ValueError |
+|  6   | if try to withdraw too much, withdraw returns None without raising ValueError |
 |  0   | No active bugs. All methods work correctly. Used to verify the target code.  |
 
 I also ran code coverage, using a `.coveragerc` file to *exclude* methods you were not expected to test:
