@@ -309,5 +309,5 @@ To learn more about Python docstrings:
 
 * [Documenting Python Code](https://realpython.com/documenting-python-code/) on realpython.com has examples of function and class docstrings, and advise on how to write.
 * Detailed [Google Docstrings example](https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html) at readthedocs.io.
-* Detailed [NumPy Docstrings example)[https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_numpy.html#example-numpy]
+* Detailed [NumPy Docstrings example](https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_numpy.html#example-numpy)
 * [NumPyDoc](https://numpydoc.readthedocs.io/en/latest/format.html) official documentation of NumPy/SciPy docstrings.

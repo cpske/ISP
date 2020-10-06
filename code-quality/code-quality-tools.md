@@ -48,6 +48,26 @@ The top tools for Python are:
 * [Pylama](https://github.com/klen/pylama) A wrapper for 9 different tools, including the tools in Flake8.
   - not as popular as the above tools
 
+When you run pylint or flake8 on a file or package (directory), it will show several messages with line numbers:
+```bash
+> pylint bank_account.py
+
+bank_account.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+bank_account.py:104:12: R1720: Unnecessary "else" after "raise" (no-else-raise)
+bank_account.py:139:29: W1309: f-string does not have ... (f-string-without-interpolation)
+```
+
+The line number is printed after the filename. C0114, R1720, etc. are message codes.    
+The first letter in the message code is a category:
+
+**C** convention. Violation of coding convention.    
+**D** documentation. Violation of documentation standard.    
+**R** refactor. Suggest refactor based on "good practice" metric violation.    
+**W** warning for stylistic problem or minor programming issue.
+**E** error.  Code that is probably an error.    
+**F** fatal. Error that prevents Pylint from continuing
+
+
 ### Configure Pylint 
 
 Pylint looks for a configuration file in your current directory and your home directory. Or, you can specify one using the `--rcfile filename` command line option.  In order of priority:
@@ -74,15 +94,6 @@ Run Pylint and also print a detailed report:
 pylint -ry filaname.py
 ```
 
-Pylint Message Categories.  The first letter in a Pylint message is:
-
-**C** convention. Violation of coding convention.    
-**R** refactor. Suggest refactor based on "good practice" metric violation.    
-**W** warning for stylistic problem or minor programming issue.
-**E** error.  Code that is probably an error.    
-**F** fatal. Error that prevents Pylint from continuing
-
-
 ### Configure Flake8
 
 Flake8 can have both a per-project config file and a global config file.
@@ -103,7 +114,7 @@ doctests = True
 
 # ignore some errors. Separate each with comma.
 ignore =
-    E0302    # expected 2 blank lines, found 1
+    D0105    # missing docstring on magic methods
 
 exclude =
     # excluded by default
@@ -121,7 +132,7 @@ See [Configuring Flake8](https://flake8.pycqa.org/en/latest/user/configuration.h
 
 ### Checking Django Projects
 
-There are plugins to provide better analysis and checking of Django projects:
+There are plugins for better analysis of Django projects:
 
 * [pylint-django](https://pypi.org/project/pylint-django/) 
   - Installation: `pip install pylint-django`
@@ -131,7 +142,6 @@ There are plugins to provide better analysis and checking of Django projects:
   - Installation: `pip install flake8-django`
   - Usage: `cd django-project; flake8`
   - flake8 automatically uses the plugin. In my test, it needs some extra configuration to eliminate superfluous messages.
-  - see Flake8 documentation for how to create a config file, either (Windows) `.flake8` or (Linux/MacOS) `.config/flake8`
 
 
 ## Code Analysis in your IDE
