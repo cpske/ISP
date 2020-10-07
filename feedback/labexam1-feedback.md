@@ -5,12 +5,13 @@ title: Feedback on Bank Account Test
 ## False Positives and False Negatives
 
 **False Positive**: a test fails even though the code under test is correct.
-- this erroneously implies the code is incorrect
+- this implies the code is incorrect but actually it is correct
 - usually correctable by comparing the test to the specification for how the code *should* behave
 
 **False Negative**: the code contains an error, but the tests all pass.
-- fail to detect errors in code
-- can result in releasing defective code to customers
+- fail to detect an error in code
+- may result in releasing defective code to customers
+- may cause other parts of code to fail, and waste time finding the cause of failure
 
 Both "False Positive" and "False Negative" are defects in testing.    
 
@@ -21,19 +22,31 @@ def test_balance(self):
     self.assertEqual(self.account.balance, 900)  # always fails
 ```
 
-So, you need to fix False Positives before you can **really** test the code.
+So, you need to identify and fix any False Positives.
+
+> False Positive and False Negative in medical tests.
+> 
+> A false positive means the test indicates you have a condition even though you do not.    
+> A false negative means the test "passes" (you don't have the condition) even though you do.
+>
+> Which is worse?    
+> Compare these, and consider the consequences of a false positive or false negative.
+>
+> * A test whether you have the Covid-19 virus.
+> * A test whether you have the Covid-19 antibodies to protect against the Covid-19 virus.
+
 
 ## How I Tested
 
 I used 2 BankAccount classes:
 
 1. A correct BankAccount class, according to the specification.
-2. A BankAccount containing 6 different errors which are activated using an environment variable. Only 1 error is active at a time.
+2. A BankAccount containing 7 different errors which are activated using an environment variable. Only 1 error is active at a time.
 
 I tested for errors that a competant programmer might realistically make.
 Many of these are "edge" cases or failure to match the specification.
 
-The 6 errors are:
+The defects are:
 
 | BUG  | Description                      |
 |------|:---------------------------------|
@@ -43,6 +56,7 @@ The 6 errors are:
 |  4   | can deposit Money with a value of 0        |
 |  5   | can deposit the same Check more than once  |
 |  6   | if try to withdraw too much, withdraw returns None without raising ValueError |
+|  7   | value of a deposited check is not included in balance until check clears |
 |  0   | No active bugs. All methods work correctly. Used to verify the target code.  |
 
 I also ran code coverage, using a `.coveragerc` file to *exclude* methods you were not expected to test:
@@ -75,20 +89,21 @@ exclude_lines =
    * For example, if a test asserts account.available is 400 and it should be 500, then I changed the assert value to 500.
    * For failures after the first one, I commented out the failing asserts. Just enough to make the test pass.
    * Also commented out syntax and semantic errors that cause tests to fail.
+   * Any tests that do not test BankAccount I marked as `\@skip`.
    * Retest and correct until all tests pass.
 
 4. Record any semantic or syntax errors.
 
-5. Run tests using the defective BankAccount code: run the tests 6 times using each of the bugs above.
+5. Run tests using the defective BankAccount code: run the tests multiple times using each of the bugs above.
    * Record which cases the defect was detected.
-   * Student needs to detect 5 out of 6 defects for full credit.
+   * Student needs to detect 6 out of 7 defects for full credit.
 
 ## Scoring
 
 <table border="1">
 <tr>
   <th align="left">Criterion</th>
-  <th align="center">Score</th>
+  <th align="left">Score</th>
 </tr>
 <tr valign="top">
   <td>
@@ -97,9 +112,9 @@ exclude_lines =
   </td>
   <td>
   20  all tests pass <br/>
-  15  one failure <br/>
-  5   two failures <br/>
-  0   more than two fail <br/>
+  14  one test fails <br/>
+  7   two tests fail <br/>
+  0   more than two tests fail <br/>
   </td>
 </tr>
 <tr valign="top">
@@ -108,30 +123,29 @@ exclude_lines =
   </td>
   <td>
   10  coverage &ge; 89% <br/>
-  7   80% - 88% coverage <br/>
-  5   70% - 79% coverage <br/>
-  0   below 70%
+  7   coverage 80% - 88% <br/>
+  4   coverage 70% - 79% <br/>
+  0   coverage below 70%
   </td>
 </tr>
 <tr valign="top">
   <td>
-  Test using Defective Code <br/>
-  Number of Bugs Detected
+  Test using Defective BankAccount <br/>
+  Six Different Defects Tested
   </td>
   <td>
-  10 points per bug <br>
-  Full score 50 points
+  10 points for each defect detected <br>
+  Full score 60 points
   </td>
 </tr>
 <tr valign="top">
   <td>
-  Coding Errors <br/>
-  (Semantic and syntax errors)
+  Semantic and Syntax Errors <br/>
   </td>
   <td>
-  &nbsp;0 no errors <br/>
-  -4 one error <br/>
-  -8 two or more errors
+  10 no errors <br/>
+  &nbsp;5 one error <br/>
+  &nbsp;0 two or more errors
   </td>
 </tr>
 <tr valign="top">
@@ -139,27 +153,62 @@ exclude_lines =
   <b>Total</b>
   </td>
   <td>
-  80
+  <b>100</b>
   </td>
 </tr>
 </table>
 
+## Not a Test of BankAccount
+
+Any test that does **not** test the BankAccount class was marked as `\@skip`:
+
+```python
+@unittest.skip("Not a test of BankAccount")
+def test_cannot_deposit_zero(self):
+    with self.assertThrows(ValueError):
+        Money(0.0)
+```
+
+1. This does not test BankAccount.deposit(). Test name is misleading.
+2. The spec doesn't say anything about the behavior of Money itself.
+3. Even if the test works, the BankAccount deposit() method must separately verify that `money.value > 0`.  Why?
+   - Because a **subclass** of Money **may** permit value = 0.
+   - The code for the Money class could change -- don't rely on it.
+
+## Test Always Fails Due to Logic Error
+
+This will *always* fail.
+
+```python
+def test_deposit_check(self):
+   acct = BankAccount("test account")
+   acct.deposit(Check(800))
+  
+   self.assertEqual(acct.available, 800)
+   self.assertEqual(acct.available, 700)
+```
+
+For a test that always fails I either comment out the failing assert or mark the entire test as `\@skip`.
+
 ## Syntax and Semantic Errors
 
-These are errors where either Python prints an error message when 
-it finds the error, or the error will cause the code to fail.
+These are errors where Python prints an error message when 
+it encounters the error, or the error will cause the code to fail at
+the particular statement.
 
-Either way, a programmer should be able to fix them him/herself,
-since a message is printed when the test is run.
+Therefore, any programmer should be able to fix these error him/herself.
 
-These are examples of actual errors in codes:
+Before evaluating student code using the buggy BankAccount class,
+I had to correct or remove all syntax and semantic errors.
+
+These are examples of actual errors in student code:
 
 ```python
 acct = BankAccount("test account")
 acct.deposit(1000)                      # param should be Money or subclass of Money
-self.assertEqual(acct, "test account")  # can't compare BankAccount & string
+self.assertEqual(acct, "test account")  # can't compare BankAccount and string
 
-self.assertIs(acct.balance, 1000.0)     # semantically incorrect (see below)
+self.assertIs(acct.balance, 1000.0)     # semantic error (see below)
 
 with AssertionError(ValueError,"Have to Clear check first"):  # semantic error
     money = Money(1000)
@@ -179,17 +228,4 @@ False
 >>> x == y
 True
 ```
-To compare values use `assertEqual(a, b)`.
-
-## Logic Error
-
-This will *always* fail.
-
-```python
-def test_deposit_check(self):
-   acct = BankAccount("test account")
-   acct.deposit(Check(800))
-  
-   self.assertEqual(acct.available, 800)
-   self.assertEqual(acct.available, 700)
-```
+To compare **values** use `assertEqual(a, b)`.
