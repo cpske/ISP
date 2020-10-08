@@ -175,20 +175,20 @@ exclude_lines =
 
 ### Student Code Accuracy & Sensitivity
 
-| Metric                 | Number |
-|:-----------------------|--------|
+| Metric                        | Number |
+|:------------------------------|--------|
 | Test Coverage &ge; 90% (good) |   19   |
-| Test Coverage 85%-89% (fair)|   12   |
-| No False Positive      |   17   |
-| One False Positive     |   19   |
-| Two False Positive     |    5   |
-| Detected Bug 1         |   29   |
-| Detected Bug 2         |   14   |
-| Detected Bug 3         |   15   |
-| Detected Bug 4         |    9   |
-| Detected Bug 5         |   13   |
-| Detected Bug 6         |   42   |
-| Detected Bug 7         |   41   |
+| Test Coverage 85%-89% (fair)  |   12   |
+| No False Positive             |   17   |
+| One False Positive            |   19   |
+| Two False Positive            |    5   |
+| Detected Bug 1                |   29   |
+| Detected Bug 2                |   14   |
+| Detected Bug 3                |   15   |
+| Detected Bug 4                |    9   |
+| Detected Bug 5                |   13   |
+| Detected Bug 6                |   42   |
+| Detected Bug 7                |   41   |
 
 ### Top Testers
 

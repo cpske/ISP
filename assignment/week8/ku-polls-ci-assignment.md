@@ -4,9 +4,11 @@ title: Code Coverage and C.I. Assignment
 
 ## Reading
 
-1. [Python Code Quality][real-python-code-quality] best practices & tools on RealPython.com.
+Please read these short articles:
+
+1. [Python Code Quality][real-python-code-quality] best practices & tools for code quality, on RealPython.com.
 2. [Travis-CI Getting Started Guide][travis-ci-tutorial] short instructions how to get started.
-3. [Core CI Concepts for Beginners][travis-ci-concepts] apply to any C.I. service
+3. [Core CI Concepts for Beginners][travis-ci-concepts] that apply to any C.I. service.
 4. (Optional) My [Test Code Coverage](/ISP/testing/code-coverage) write-up
 
 [travis-ci-tutorial]: https://docs.travis-ci.com/user/tutorial/
@@ -43,11 +45,14 @@ title: Code Coverage and C.I. Assignment
 
 4. Check docstring comments using pydocstyle (a Python extension).  You can combine this with flake8 by installing the package `flake8-docstrings`. Then use `flake8` to check everything.
 
-5. Add Continuous Integration to your KU Polls project.  You have 2 choices:
-   1. Use Travis-CI
-   2. Use Github Actions
+5. Add Continuous Integration to your KU Polls project.  You can use any CI server, including:
+   1. Travis-CI
+   2. Github Actions
+   3. Circle CI
    - The CI server should run tests and code coverage
    - Whichever CI server you choose, you must understand what is going on and how to do it. Do not just copy someone else's configuration file(s).
+   - You will need to create a `requirements.txt` file for required packages.  
+   - There will be some other initialization needed for your KU Polls to work on C.I., too.
 
 6. Add a "badge" to your KU Polls README.md to show the results of CI tests.
 
@@ -89,7 +94,7 @@ Use "pip" to install any of these packages.
 
 * Python [Coverage Documentation][coverage-docs] 
 * [CodeCov.io](https://codecov.io) online code coverage service.
-* [Using CodeCov with Python and Travis-CI](https://medium.com/datadriveninvestor/beginners-guide-to-using-codecov-with-python-and-travis-ci-c17659bb711) short guide for beginners.
+* [Using CodeCov with Python and Travis-CI](https://medium.com/datadriveninvestor/beginners-guide-to-using-codecov-with-python-and-travis-ci-c17659bb711) short guide for beginners. But the article omits some details.
 
 [coverage-docs]: https://coverage.readthedocs.io/ "coverage.py documentation"
 
