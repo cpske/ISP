@@ -130,8 +130,8 @@ Assertions are executable statements of what should be true at some point in cod
 [Refactoring](refactoring)
 </td>
 <td markdown="span">
-Improve existing code by restructiring it without changing external functionality.
-Common refactoring situations and how to do them using an IDE.
+Improve code by restructuring it without changing external functionality.    
+[Common refactoring situations](refactoring/Refactoring-Patterns.pdf) and how to do them using an IDE.
 </td>
 </tr>
 

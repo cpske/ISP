@@ -25,6 +25,7 @@ In some cases you just type
     ```
     pip install coverage 
     ```
+
 2. Check the installed version of coverage and read the list of command line uses:
     ```
     coverage --version
@@ -37,20 +38,29 @@ In some cases you just type
     coverage html      # create html report
     coverage erase     # delete old data
     ```
-3. Use `coverage` to analyze your Python code.  To create coverage analysis data for your code you need a test runner you can run.  Its easy to add a "main" block to test class file, something like for this:
+
+3. Use `coverage` to analyze how much of your Python code is being exercised when you run unit tests.  You can run:
+   ```python
+   coverage run -m unittest listutil_test.py
+
+   # or use auto discovery. -p is a pattern for unittest files
+   coverage run -m unittest discover -p "*_test.py"
+   ```
+   Another way to to create a "test runner" with a main block (this can be in your unit test file itself, such as:
     ```python
     if __name__ == '__main__':
         unittest.main()
     ```
-    Then run the tests with coverage:
+    Then run the test runner with coverage:
     ```
     coverage run listutil_test.py
     ```
-    You will see the usual unittest output on the console.  
+
 4. View the coverage report as plain text:
     ```
     coverage report
     ```
+
 5. Create HTML pages containing detailed information with links:
    ```
    coverage html
@@ -64,7 +74,7 @@ You can configure what files are analyzed by `coverage` using
 a `.coveragerc` file in your project directory, as described
 in the [Coverages Docs][coverage-docs].
 
-When using a library or framework, you want to **exclude** the library or framework from coverage analysis, to avoid distorting the results (and its not useful anyway).
+For code that uses a library or framework, you want to **exclude** the library or framework from coverage analysis, to avoid distorting the results (and its not useful anyway).
 
 For Django projects you want to exclude migrations, settings.py, manage.py, static files, and anything else you don't write unit tests for.
 
@@ -77,13 +87,20 @@ branch = True
 cover_pylib = False
 # omit uninteresting stuff
 omit =
+    __init__.py
     /usr/*
-    mysite/*   # the main application 
-    # TODO: omit unit test files and directories
-    # TODO: omit migrations
+    mysite/*       # the main application 
+    */migrations/* # omit migrations
+    # TODO           omit unit test files and directories
 # explicitly include the main app
 include =
     polls/*
+
+# exclude methods we don't test from the report and stats
+[report]
+exclude_lines =
+    def __str__    # example
+    def __repr__   # example
 ```
 
 ## How Many Unit Tests Are Enough?

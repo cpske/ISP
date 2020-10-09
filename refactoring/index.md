@@ -42,7 +42,10 @@ Some things we will cover:
 
 ## Separate Configuration from Code
 
-It's a good practice to remove configuration data, constants that may change (such as URLs), and sensitive values from code.
+It's a good practice to remove data from code. Such as:
+* configuration data, e.g. relative path to a directory for images
+* constants that may change (such as URLs)
+* sensitive values including logins, auth keys, and (of course) passwords
 
 These values can be read from a configuration file, a Properties file (Java), or environment variables.
 
@@ -76,7 +79,7 @@ from decouple import config, Csv
 
 SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', cast=bool, default=False)
-ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='localhost', cast=Csv())
 ```
 
 For Python, there are many packages that do this. Here are two:

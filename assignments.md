@@ -3,7 +3,7 @@ title: Assignments
 ---
 
 Google Classroom is the authoritative source for assignments.
-This file may be incomplete.
+This file is a summary, but may be incomplete.
 
 * [Write a Process Description for Everyday Project](https://cpske.github.io/ISP/assignment/week1/general-process-exercise/) and [Submissions](https://classroom.google.com/u/1/c/MTM4MDk3MDY1NjM4/a/MTIyOTI1NjczMTM0/submissions/by-status/and-sort-name/all)
 

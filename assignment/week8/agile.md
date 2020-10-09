@@ -1,5 +1,5 @@
 ---
-title: Agile Development
+title: Agile Development Questions
 ---
 
 There is a lot of incorrect information about "Agile" on the web.
@@ -9,8 +9,7 @@ junk on the web.  It includes junk from respected sites like Infoworld.
 You need to think critically to spot some errors.  A critical
 thinker could spot some of them without even knowing what Agile is!
 
-Read [What is Agile?](https://www.agilealliance.org/agile101/) on AgileAlliance.org, written by the inventors of Agile. Contrast that to these articles:
-
+For Questions 1-2, read [What is Agile?](https://www.agilealliance.org/agile101/) on AgileAlliance.org, written by the inventors of Agile. Contrast that to these articles:
 
 1. "What is Agile?" on Cprime: https://www.cprime.com/resources/what-is-agile-what-is-scrum/
    - The first paragraph contains contains 2 false statements.  
@@ -21,7 +20,7 @@ Read [What is Agile?](https://www.agilealliance.org/agile101/) on AgileAlliance.
    - How does his usage  of "Agile methodology" *contradict* what is on agilealliance.org?
    - What else in the article is incorrect or contradicts what is on AgileAlliance.org?
 
-3. From the book *Practices of an Agile Developer*, please read (each one is 2-3 pages):
+Please read these Tips from the book *Practices of an Agile Developer*. Each one is 3-4 pages:
    - Tip 2. Quick Fixes Become Quicksand
    - Tip 8. Question Until You Understand
    - Tip 25. Program Intently and Expressively
@@ -29,8 +28,5 @@ Read [What is Agile?](https://www.agilealliance.org/agile101/) on AgileAlliance.
    - Tip 28. Code in Increments
    - Tip 30. Write Cohesive Code
 
-No assignment for this yet, but one will be added.
+These Tips are used in the Google form for this week's assignment, and will be used next week in doing code improvement.
 
-*Practices of an Agile Developer* is highly praised by software developers.
-The "Tips" are excellent practices for any developer. 
-But a few may be outdated.
