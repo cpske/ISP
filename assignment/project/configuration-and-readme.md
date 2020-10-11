@@ -1,5 +1,5 @@
 ---
-title: Team Assignment for 22 Nov
+title: Project Configuration and README
 ---
 
 1. **Separate configuration data from code**.  Use a configuration file and/or the environment.

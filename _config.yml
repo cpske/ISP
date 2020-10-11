@@ -9,7 +9,7 @@ exclude: [bin, ISP, quiz, solution, misc, Gemfile, Gemfile.lock, Jittat, Paruj, 
 github_username: cpske
 # Use Git's markdown syntax
 markdown: kramdown
-permalink: pretty
+# permalink: pretty
 # Default layout for pages, so you don't need to set "layout: page" in each
 defaults:
   -

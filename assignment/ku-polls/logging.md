@@ -2,7 +2,7 @@
 title: Logging Assignment
 ---
 
-1. Add logging to your Django Polls project code.
+1. Add logging to your KU Polls project code.
 
    * Use a named logger.
    * Log an INFO message whenever someone votes on a poll.
