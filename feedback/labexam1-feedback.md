@@ -35,7 +35,7 @@ For a test that you have the Covid-19 antibodies to protect against the Covid-19
 - may result in releasing defective code to customers
 - when the appication fails or produces wrong results, may require a lot of time to identify and locate the cause
 
-Both "False Positive" and "False Negative" are defects in testing. 
+Both "False Positive" and "False Negative" are weaknesses in testing. 
 
 A test that produces a "False Positive" may be useless:
 ```
@@ -92,8 +92,7 @@ exclude_lines =
 
 ## Test Procedure
 
-1. Run the test code with code coverage using a correct BankAccount class (class has no defects and no extra code for latent defects).    
-   All tests should pass.
+1. Run the test code with coverage using the correct (no defects) BankAccount class. All tests should pass.
 
 2. Record code coverage result and how many tests failed or had errors.
 
@@ -101,14 +100,14 @@ exclude_lines =
    * I corrected the first error reported by unittest, except semantic errors. 
    * For example, if a test asserts account.available is 400 and it should be 500, then I changed the assert value to 500.
    * For failures after the first one, I commented out the failing asserts. Just enough to make the test pass.
-   * Commented out any syntax and semantic errors that cause tests to fail.
-   * Any tests that do not test BankAccount I marked as `\@skip`.
+   * Commented out any syntax or semantic errors that cause tests to fail.
+   * Any tests that do not test BankAccount I marked as `@skip`.
    * Retest and correct until all tests pass.
 
 4. Record any semantic or syntax errors.
 
 5. Run tests using the defective BankAccount code: run the tests multiple times using each of the defects listed above.
-   * Record which cases the defect was detected (a test fails or errors).
+   * Record which defects were detected (a test fails or errors).
    * Student needs to detect 6 out of 7 defects for full credit.
 
 ## Scoring
@@ -140,7 +139,7 @@ exclude_lines =
   18  coverage = 83% <br/>
   ... <br/>
   1   coverage = 66% <br/>
-  0   coverage &lt; 65%
+  0   coverage &lt; 66%
   </td>
 </tr>
 <tr valign="top">
@@ -150,7 +149,7 @@ exclude_lines =
   </td>
   <td>
   10 points for each defect detected <br>
-  Full score is 60 points (6 defects)
+  Full score is 60 points (6 defects detected)
   </td>
 </tr>
 <tr valign="top">
@@ -199,7 +198,7 @@ exclude_lines =
 
 ## Not a Test of BankAccount
 
-Any test that does **not** test the BankAccount class was marked as `\@skip`:
+Any test that does **not** test the BankAccount class was marked as `@skip`:
 
 ```python
 @unittest.skip("Not a test of BankAccount")
@@ -214,7 +213,7 @@ def test_cannot_deposit_zero(self):
    - Because a **subclass** of Money **may** permit value = 0.
    - In testing, I *did* allow Money(0) so tests of deposit(Money(0)) would work.
 
-## Test Always Fails Due to Logic Error
+## Skip Tests That Always Fails
 
 This will *always* fail.
 
@@ -227,15 +226,15 @@ def test_deposit_check(self):
    self.assertEqual(acct.available, 700)
 ```
 
-For a test that always fails I either comment out the failing assert or mark the entire test as `\@skip`.
+For a test that always fails I either comment out the failing assert or mark the entire test as `@skip`.
 
 ## Syntax and Semantic Errors
 
 These are errors where Python prints an error message when 
-it encounters the error; usually the error will cause the code to fail at
+it encounters the error; usually the error will cause the unittest to "error" at
 the erroneous statement.
 
-Therefore, any programmer should be able to fix these errors him/herself.
+Therefore, a programmer should be able to fix these errors him/herself.
 
 Before evaluating student code using the buggy BankAccount class,
 I had to correct or remove all syntax and semantic errors.

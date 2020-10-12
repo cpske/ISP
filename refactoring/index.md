@@ -71,15 +71,14 @@ So, what is good code?
 2. [Movie Rental refactoring problem](https://github.com/jbrucker/movierental) from Martin Fowler's presentation and article
 3. Read about refactoring (below) and create your own refactoring exercise for other students
 
-### More about Refactoring
+### Learn About Refactoring
 
 [JeremyBytes](http://www.jeremybytes.com/Demos.aspx) has material on refactoring as part of "Clean Code".
 
 [Introduction to Refactoring](http://www.math.uaa.alaska.edu/~afkjm/csce401/handouts/refactoring.pdf) PDF has many refactorings with short Java examples -- easy to read.
 
-[Refactoring Techniques](https://refactoring.guru/refactoring/techniques) lots of them
+[Refactoring Guru](https://refactoring.guru/refactoring) has collection of [Refactoring Techniques](https://refactoring.guru/refactoring/techniques) and [Code Smells](https://refactoring.guru/refactoring/smells)
 
-[Refactoring Guru](https://refactoring.guru/refactoring)
 
 [Refactoring in IntelliJ](https://www.jetbrains.com/help/idea/tutorial-introduction-to-refactoring.html#5db90) explains how to do it in IntelliJ, with examples of common refactorings.
  
