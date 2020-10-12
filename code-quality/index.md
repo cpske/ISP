@@ -22,7 +22,7 @@ Best Practices for Code Quality include:
 9. Use tools to check your code.
 10. Refactor occasionally.  Many projects have a "refactoring day" when the only work done is review and refactoring.
 
-*Zen of Python* on Code Quality. Try this:
+*Zen of Python* on Code Quality. At the Python interactive prompt, type:
 
 ```python
 >>> import this

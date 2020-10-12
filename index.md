@@ -118,20 +118,20 @@ Essential for all developers!
 
 <tr valign="top">
 <td markdown="span">
-Assertions
+[Refactoring](refactoring)
 </td>
 <td markdown="span">
-Assertions are executable statements of what should be true at some point in code.  Assertions reduce errors and document code-level assumptions.
+Improve code by restructuring it without changing the external functionality.    
+[Common refactoring situations](refactoring/Refactoring-Patterns.pdf) and how to do them using an IDE.
 </td>
 </tr>
 
 <tr valign="top">
 <td markdown="span">
-[Refactoring](refactoring)
+Assertions
 </td>
 <td markdown="span">
-Improve code by restructuring it without changing external functionality.    
-[Common refactoring situations](refactoring/Refactoring-Patterns.pdf) and how to do them using an IDE.
+Assertions are executable statements of what should be true at some point in code.  Assertions reduce errors and document code-level assumptions.
 </td>
 </tr>
 
@@ -297,10 +297,11 @@ Easily pass messages from a view to a template
    
 <tr valign="top">
 <td markdown="span">
-[Externalize Configuration](django/external-configuration)  
+[Separate Configuration from Code](refactoring/separate-configuration)
 </td>
 <td markdown="span"> 
-[Separate configuration from code](refactoring/Separate-config-from-code.pdf) is a practice that applies to all software, not just web apps.
+[Separate configuration from code](refactoring/Separate-config-from-code.pdf) is a practice that applies to all software, not just web apps.    
+Django [Externalize Configuration](django/external-configuration)  
 </td>
 </tr>
 

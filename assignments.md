@@ -5,31 +5,27 @@ title: Assignments
 Google Classroom is the authoritative source for assignments.
 This file is a summary, but may be incomplete.
 
-* [Write a Process Description for Everyday Project](https://cpske.github.io/ISP/assignment/week1/general-process-exercise/) and [Submissions](https://classroom.google.com/u/1/c/MTM4MDk3MDY1NjM4/a/MTIyOTI1NjczMTM0/submissions/by-status/and-sort-name/all)
-
-* [Software Process Questions](https://docs.google.com/forms/d/e/1FAIpQLSd3FtoUtetMjd47M5TY9FYgK2TJvWwog44PzuEki6gFd3zsyQ/closedform)
-
-* [Scrum Questions](https://docs.google.com/forms/d/e/1FAIpQLSccesC0cZCxaAmpOzgQ2EaOzYOZ9egDvrw54kUOwyFmqDJZeg/closedform)
-
-* Git Commands. Questions about git and git commands for common uses. Starter code on Github Classroom.
 
 
-project:
-code-review-script.md
-configuration-and-readme.md
-Iteration1.odp
-Iteration1.pdf
-project-artifacts.md
-Project-sheet-20201012.pdf
-week15.md
+Project
+* code-review-script.md
+* configuration-and-readme.md
+* Iteration1.odp
+* Iteration1.pdf
+* project-artifacts.md
+* Project-sheet-20201012.pdf
+* week15.md
+
 
 Week 1
 * Github Sign-up and Software to Install - signup-and-software.md
-* Write a Description of an Everyday Process - general-process-exercise.md
-* Software Process Homework - software-process-homework.md
+* [Write a Process Description for Everyday Project](https://cpske.github.io/ISP/assignment/week1/general-process-exercise/) and [Submissions](https://classroom.google.com/u/1/c/MTM4MDk3MDY1NjM4/a/MTIyOTI1NjczMTM0/submissions/by-status/and-sort-name/all) - general-process-exercise.md
+* [Software Process Questions](https://docs.google.com/forms/d/e/1FAIpQLSd3FtoUtetMjd47M5TY9FYgK2TJvWwog44PzuEki6gFd3zsyQ/closedform) - software-process-homework.md
 
 Week 2
-* Create a Github Repo of Git "how to" and examples
+* Create a Github Repo of Git uses, "how to", and examples
+  - starter files on Github Classroom
+* [Scrum Questions](https://docs.google.com/forms/d/e/1FAIpQLSccesC0cZCxaAmpOzgQ2EaOzYOZ9egDvrw54kUOwyFmqDJZeg/closedform)
 
 Week 3
 * Command Line Basics (nothing to submit) - Command-Line-Basics.odt
