@@ -175,10 +175,11 @@ End-to-End Testing
 
 <tr valign="top">
 <td markdown="span"> 
-[12-Factor App](web/12FactorApp.pdf)   
+[Authentication](authentication)  
 </td>
 <td markdown="span">
-Recommendations for maintainable cloud-based applications, by Heroku. 
+Techniques for authenticating users and software clients (apps), including OAuth.    
+Django's [authentication](django/authentication) and [authorization](django/authorize) modules.
 </td>
 </tr>
 
@@ -263,6 +264,15 @@ ORM concepts and frameworks. Different domain models and their database table sc
 All web frameworks use ORM.
 Understanding ORM concepts makes it easier to understand and work
 with Django models.
+</td>
+</tr>
+
+<tr valign="top">
+<td markdown="span"> 
+[12-Factor App](web/12FactorApp.pdf)   
+</td>
+<td markdown="span">
+Recommendations for maintainable cloud-based applications, by Heroku. 
 </td>
 </tr>
 
