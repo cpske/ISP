@@ -191,8 +191,7 @@ from django.contrib.auth.models import User
 
 # The username and email fields are required, others are optional.
 # Use named parameters to avoid errors.
-user = User.objects.create_user(
-          'username', 
+user = User.objects.create_user( 'username', 
           email='email@some.domain', 
           password='password')
 
