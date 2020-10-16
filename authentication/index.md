@@ -8,7 +8,7 @@ Presentation Slides:
 [Authentication in Django](/ISP/django/authentication)    
 [Authorization in Django](/ISP/django/authorization)
 
-## Authorization Methods
+## Authentication Methods
 
 1. Username and password 
    - passwords must be remembered and kept secret
@@ -29,7 +29,7 @@ Presentation Slides:
 4. Third-party Authentication - authenticate yourself using a trusted third party
    - OAuth
    - OpenId
-   - Many implementations to "Covert Redirect" bug (2014) using XSS attack. Mostly fixed since then. 
+   - Many implementations vulnerable to "Covert Redirect" bug (2014) using XSS attack. Mostly fixed since then. 
 
 5. Single Sign-on - used on comporate networks (like KU) so a user authenticates once (to auth server) and can access many servers.  Uses time-based token stored on user's device.
    - Kerberos
