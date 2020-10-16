@@ -7,6 +7,7 @@ Django includes an authentication system, which can be combined with your own fo
 Django's authentication "app" provides support for user login, logout, sign-up,
 and password reset.  
 It provides:
+
 * models for User and Group that store info about users
 * url handlers (views) and Forms for login, logout, changing password, and others
 * session middleware to associate users with sessions
@@ -14,7 +15,7 @@ It provides:
 * password validators for things like minimum password length
 
 The [MDN Django Tutorial][mdn-auth-tutorial] is a good introduction and 
-[Django Docs][django-user-auth] have details with examples.
+[Django Auth Docs][django-user-auth] have details with examples.
 
 ### Overview of using Authentication
 
@@ -34,8 +35,8 @@ The [MDN Django Tutorial][mdn-auth-tutorial] is a good introduction and
         ...
     ]
     ```
-    * After adding `django.contrib.auth` to a project, you need to make migrations and run migrations to create database tables for User and Group.
-2. Also in `settings.py` you need to enable two middleware applications
+    * If you add `django.contrib.auth` to a project, you need to make migrations and run migrations to create database tables for User and Group.
+2. Also in `settings.py` you need two middleware applications (usually these are included by default):
     ```python
     MIDDLEWARE = [
     ...
@@ -53,7 +54,7 @@ The [MDN Django Tutorial][mdn-auth-tutorial] is a good introduction and
        'django.contrib.auth.backends.ModelBackend',  
     )
     ```
-   You can add OAuth authentication by adding the social-auth package as another authentication backend. 
+   You can add OAuth authentication by (later) adding the social-auth package or allauth package as another authentication backend. 
 
 4. Include the Django auth views in your URLs. By convention, use `accounts/` as the prefix for these URLs:
     ```python
@@ -96,13 +97,13 @@ Django expects the templates to be in a `registration` folder, with the same nam
     <h2>Login</h2>
     <form method="post">
       {% csrf_token %}
-      <table border='0'>
-      {{ form.as_table }}
-      </table>
+      {{ form.as_p }}
+      <p>
       <button type="submit">Login</button>
+      </p>
       <input type="hidden" name="next" value="{{next}}"/>
     </form>
-    {# If you have written a password_reset template, then #}
+    {# If you have written a password_reset template, then add #}
     <p>
     <a href="{% url 'password_reset' %}">Forgot password?</a>
     </p>
@@ -110,14 +111,32 @@ Django expects the templates to be in a `registration` folder, with the same nam
     </html>
     ```
     {% endraw %}
-    Test this by starting the Django server and navigating to `localhost:8000/accounts/login`.
-    To create a user who can login see [Creating a User Interactively](#creating-a-user-interactively) below.
-7. After you login at `/accounts/login`, Django by default redirects you to `/accounts/profile`.  This is usually **not** what you want.    
-    To specify a default landing page after login, in `settings.py` set (this is for the polls app):
+7. Test this by starting the Django server and navigating to `localhost:8000/accounts/login/`.
+    To create a user who can login see [Create a User Interactively](#create-a-user-interactively) below.
+8. After you login at `/accounts/login/`, Django by default redirects you to `/accounts/profile`.  This is usually **not** what you want.    
+   To specify a default redirect page after login, in `settings.py` set (this is for the todo app):
     ```python
-    LOGIN_REDIRECT_URL = '/polls/'
+    LOGIN_REDIRECT_URL = '/todo/'
     ```
-    If your login request contains a field named `next`, the auth login view will redirect to the URL specified by `next` instead of the default.  That's why we have a hidden field named `next` in the form above (to preserve the value of next from previous redirect).
+    If your login request contains a field named `next`, the auth login view will redirect to the URL specified by `next` instead of the default.  That's why there is a hidden field named `next` in the form above (it preserves the value of next from the previous redirect).
+
+9. You can logout by navigating to `/accounts/logout/` but you need a page to redirect to *after* logout.  There are 2 solutions:
+   - create a logout page at `/templates/registration/logged_out.html`
+   - in `settings.py` set: `LOGOUT_REDIRECT_URL = 'some-existing-view`` (this is usually better)
+
+10. Create a logout template located in `/templates/registration/logged_out.html`:
+   {% raw %}
+   ```html
+   <html>
+   <body>
+   <h2>Logged out</h2>
+   <p>
+   Want something todo? 
+   <a href="{% url 'login'%}">Login again</a>
+   </body>
+   ```
+   {% endraw %}
+   
 
 ### Next Steps
 
@@ -149,13 +168,40 @@ so in your `login.html` template do something like this:
 ```
 <form method="POST">
   {% csrf_token %}
-  {{ form.as_p }}
+  <table style="padding: 2ex;">
+  {{ form.as_table }}
+  </table>
   <button type="submit">Login</button>
   <!-- if your app redirects user to login before accessing some pages, then next contains return url -->
-  <input type="hidden" name="next" value="{{ next }}" />
+  <input type="hidden" name="next" value="{{next}}" />
 </form>
 ```
 {% endraw %}
+
+
+### Create a User Interactively
+
+You can create a user in code or using the Django shell.
+Normally you would use a web Form to add users,
+but for prototyping you may want to create a demo user.
+In the Django shell (`python manage.py shell`) enter:
+
+```python
+from django.contrib.auth.models import User
+
+# The username and email fields are required, others are optional.
+# Use named parameters to avoid errors.
+user = User.objects.create_user(
+          'username', 
+          email='email@some.domain', 
+          password='password')
+
+# set other User attributes (optional)
+user.first_name = "Harry"
+user.last_name = "Hacker"
+user.save()
+```
+
 
 ## What is a User?
 
@@ -171,29 +217,6 @@ The model classes in `django.contrib.auth` are:
 | Permission | Permission with id, codename, and permission name. |
 
 
-### Creating a User Interactively
-
-You can create a user in code or using the Django shell.
-Normally you would use a web Form to add users,
-but for prototyping you may want to create a demo user.
-In the Django shell (`python manage.py shell`) enter:
-
-```python
-from django.contrib.auth.models import User
-
-# The username and email fields are required, others are optional.
-# To avoid errors, use named parameters.
-
-user = User.objects.create_user(
-          'username', 
-          email='email@some.domain', 
-          password='password')
-
-# set other User attributes (optional)
-user.first_name = "Harry"
-user.last_name = "Hacker"
-user.save()
-```
 
 ### Use a Decorator to Require Login to Access a View
 
@@ -279,8 +302,8 @@ def vote(request, question_id):
 The Django `auth` login and logout views will redirect the browser after login or logout.
 Specify where to redirect a user after login or logout in `settings.py`:
 ```python
-LOGIN_REDIRECT_URL = '/polls/'
-LOGOUT_REDIRECT_URL = '/polls/'
+LOGIN_REDIRECT_URL = '/todo/'
+LOGOUT_REDIRECT_URL = '/todo/'
 ```
 Instead of a hard-coded URL, you can use the name of a view.  If the URL does not contain a '/' then Django will look for a named view.  If you have a view named '`home`' then use:
 ```python
@@ -364,6 +387,44 @@ A simple user sign-up template is:
 
 The important parts of this template are a) render the form `{{form.as_table}}`
 and b) POSTing the form back to the correct URL.  Since the &lt;form method='POST'&gt; block doesn't specify an action, the default action is to send it back to the same URL the page came from.
+
+## Django's Annoying Password Validators
+
+Django provides a collection of *validators* for authentication data.   They are usually:
+```python
+# settings.py
+AUTH_PASSWORD_VALIDATORS = [
+    {
+        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+    },
+    {
+        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+    },
+    {
+        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+    },
+    {
+        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+    },
+]
+```
+The password requirements are good but sometimes annoying. You can customize them. Look at the constructors for the validator classes (above) in the file `django/contribe/auth/password_validation.py`.  Each constructor has some named parameters. You can specify a value for those named parameters
+
+| Validator                | Constructor Parameters     |
+|:-------------------------|:---------------------------|
+| MinimumLengthValidator   | `min_length=0`             |
+| UserAttributeSimilarityValidator | `user_attributes=[...],max_similarity=0.7` |
+| CommonPasswordValidator  | `password_list_path=path-to-file` |
+| NumericPasswordValidator | none |
+
+`NumericPasswordValidator` checks if a password is purely alphanumeric (disallowed).  If you want to allow alphanumeric passwords, comment out the validator.
+
+
+Don't copy this!  It's for example only.
+```python
+# if you copy this, you are an idiot
+
+```
 
 ---
 
