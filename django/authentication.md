@@ -47,14 +47,14 @@ The [MDN Django Tutorial][mdn-auth-tutorial] is a good introduction and
     ...
     ]
     ```
-3. Also in `settings.py`, you need at least one authentication "backend" to authenticate users.  The standard password-based backend included with Django is:
+3. (**This seems to be the default**) You need at least one authentication "backend" to authenticate users.  The standard password-based backend included with Django is:
     ```python
     AUTHENTICATION_BACKENDS = (
         # username/password authentication
        'django.contrib.auth.backends.ModelBackend',  
     )
     ```
-   You can add OAuth authentication by (later) adding the social-auth package or allauth package as another authentication backend. 
+   You can add OAuth authentication by adding the social-auth package or allauth package as another authentication backend. 
 
 4. Include the Django auth views in your URLs. By convention, use `accounts/` as the prefix for these URLs:
     ```python
@@ -70,23 +70,24 @@ The [MDN Django Tutorial][mdn-auth-tutorial] is a good introduction and
     accounts/logout/                 [name='logout']
     ```
 5. The `auth.urls` module maps each URL to a view provided by Django, and each view uses a form named `form`.  You need to provide a template for each view, to display the form and send results back to the view.
-Django expects the templates to be in a `registration` folder, with the same name as view, e.g. `login.html`, `logout.html`, `password_change.html`.    
+Django expects the templates to be in a `registration` folder, with the same name as view, e.g. `login.html`, `logged_out.html`, `password_change.html`.    
     Create a `templates` directory in your application top-level folder and enable it in `settings.py` as follows: 
     ```python
     TEMPLATES = [
-        ...
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
-        # each app can have its own templates directory
-        'APP_DIRS': True,
+        {
+            'DIRS': [os.path.join(BASE_DIR, 'templates')],
+            'APP_DIRS': True,
+            ...
+        }
     ]
     ```
-6. Create a `login.html` template.  Its location should be:
+6. Create a `login.html` template in the global template directory.  Its location should be:
     ```
     project_dir/
         templates/
             registration/
                 login.html
-                logout.html
+                logged_out.html
                 ...
     ```
     A basic login template is:

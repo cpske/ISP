@@ -19,36 +19,36 @@ title: Resources
 >
 >Every "top ten" list includes several of these:
 >
->* *The Pragmatic Programmer* by Hunt and Thomas
->* *Clean Code* by Robert Martin
->* *Code Complete*, 2E by Steve McConnell
->* *The Mythical Man-Month* by Fred Brooks
->* *Soft Skills* and/or *Peopleware*
->* *Refactoring* by Martin Fowler
->* *The Clean Coder* by Robert Martin
->* *Design Patterns* by Gamma, et al. The "*Gang of Four*" book.
->* *Head First Design Patterns* easier to read than Gamma, et al
+>- *The Pragmatic Programmer* by Hunt and Thomas
+>- *Clean Code* by Robert Martin
+>- *Code Complete*, 2E by Steve McConnell
+>- *The Mythical Man-Month* by Fred Brooks
+>- *Soft Skills* and/or *Peopleware*
+>- *Refactoring* by Martin Fowler
+>- *The Clean Coder* by Robert Martin
+>- *Design Patterns* by Gamma, et al. The "*Gang of Four*" book.
+>- *Head First Design Patterns* easier to read than Gamma, et al
 
 ### Online Courses
 
 [Software Development Processes and Methodologies](https://www.coursera.org/learn/software-processes/), U. of Minnesota on Coursera.  A good overview course for the activities in a software process. Some good advise on developer habits.
- * activities of a software process - requirements, specification, architecture design, software design, testing, deployment
- * SDLC models: waterfall, iterative, Unified Process, Agile
- * This course is part of a 4-course series that looks interesting.
+ - activities of a software process - requirements, specification, architecture design, software design, testing, deployment
+ - SDLC models: waterfall, iterative, Unified Process, Agile
+ - This course is part of a 4-course series that looks interesting.
 
 [Writing Professional Code](https://courses.edx.org/courses/course-v1:Microsoft+DEV275x+2T2017) Course DEV275x at edX.  A course by Microsoft. It uses dot-net for exercises and has some dot-net specific questions.  You should study the whole course, but OK to skip .Net problems.
-  * This course is part of [Microsoft Entry-Level Software Development Professional Program](https://www.edx.org/microsoft-professional-program-entry-level-software) on edX.  Looks interesting. Each "course" is short. Relevent to this course are:
-  * Course 5: Writing Professional Code
-  * Course 8: Building Prototypes with JavaScript
-  * Course 9: Building a Functional Prototype with Node.js
+  - This course is part of [Microsoft Entry-Level Software Development Professional Program](https://www.edx.org/microsoft-professional-program-entry-level-software) on edX.  Looks interesting. Each "course" is short. Relevent to this course are:
+  - Course 5: Writing Professional Code
+  - Course 8: Building Prototypes with JavaScript
+  - Course 9: Building a Functional Prototype with Node.js
 
 [Engineering Software as a Service](https://courses.edx.org/courses/BerkeleyX/CS_CS169.1x/1T2014/course/) Berkeley CS169.1x at edX.  A very popular course from UC Berkeley.  The courses uses Ruby on Rails (a web framework) but the content is very valuable.  
 
 [Software Processes and Agile Practices](https://www.coursera.org/learn/software-processes-and-agile-practices), U. of Alberta on Coursera. 
-  * The course title describes it.  Fairly short course (4 modules).
-  * Has a good 40-page PDF of course material you can download.
-  * Videos not very inspiring -- just a speaker talking.
-  * List of resources for each module contain useful links:
+  - The course title describes it.  Fairly short course (4 modules).
+  - Has a good 40-page PDF of course material you can download.
+  - Videos not very inspiring -- just a speaker talking.
+  - List of resources for each module contain useful links:
     - [Module 1](https://www.coursera.org/learn/software-processes-and-agile-practices/resources/bSF4Y) - processes and practices, software engineering activities
     - [Module 2](https://www.coursera.org/learn/software-processes-and-agile-practices/resources/oxN4J) - process models including UP and Continuous Delivery
     - [Module 3](https://www.coursera.org/learn/software-processes-and-agile-practices/resources/LeuQL) - Agile methods and practices
@@ -65,7 +65,7 @@ title: Resources
 
 ### Unified Process
 
-* [Overview of the Unified Process](http://www.informit.com/articles/article.aspx?p=24671) article by author of *The Unified Process Explained* on InformIT.
+- [Overview of the Unified Process](http://www.informit.com/articles/article.aspx?p=24671) article by author of *The Unified Process Explained* on InformIT.
 
 ### Agile 
 
@@ -86,6 +86,11 @@ survey results showing popularity of methods in software industry.  Should have 
 
 [The Agile Unified Process](http://www.ambysoft.com/unifiedprocess/agileUP.html) Scott Amber and AmberSoft. An Agile version of UP.  Kind of vague.
 
+### Requirements and Mockups
+
+[12 Software Prototyping and Mockup Tools](https://dzone.com/articles/12-kick-ass-software-prototyping-and-mockup-tools) on DZone. Pencil, MockFlow, and JustInMind have free version.
+
+[PowerMockup Blog](https://www.powermockup.com/blog/creating-user-interface-specifications) and tool (trial version available).
 
 ### Scrum
 

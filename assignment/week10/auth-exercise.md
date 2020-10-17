@@ -8,9 +8,13 @@ user to have his own todo list.
 The steps are:
 
 1. Remove the upstream URL from the Git repository.
-2. Add Django's built-in authentication. Create a login template.
-3. Modify todo index view to show the authenticated user. Add links to login and logout.
-4. Modify the domain model so a user owns a collection of "todo".
+2. Add "users" to the Todo application.
+   - 2.1 Add Django's built-in authentication. Create a login template.
+   - 2.2 Modify todo index view to show the authenticated user. Add links to login and logout.
+   - 2.3 For other views, require login to access
+3. Modify the domain model so a user owns a collection of "todo".
+   - 3.1 Modify models and run migrations.
+   - 3.2 Review the "todo" form. Modify it needed.
 5. Modify the code to use the domain model.
 
 ### 1. Remove the git upstream URL
@@ -20,23 +24,25 @@ So you don't accidentally "push" to the exam repository (penalty if you do).
 git remote remove origin
 ```
 
-### 2. Add Django's built-in authentication
+### 2.1 Add Django's built-in authentication
 
 This part is described step-by-step in either of these docs:
 
 * My [Django Authentication summary](https://cpske.github.io/ISP/django/authentication)
 * MDN's [Django Tutorial: User authentication](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Authentication) part 8 of their excellent Django tutorial!
 
-You should add one or two local users so you can test login and logout.    
+### Add one or two local users so you can test login and logout.
+
+Do this using the Django shell (`manage.py shell`):
 ```python
 from django.contrib.auth.models import User
-# choose your own username
+# choose your own username, email, and password
 user = User.objects.create_user(
           'username', 
           email='email@some.domain', 
           password='password')
 
-# set other User attributes (optional)
+# set other User attributes (at least first name)
 user.first_name = "Harry"
 user.last_name = "Hacker"
 user.save()
@@ -47,9 +53,12 @@ user.save()
 1. login at http://localhost:8000/accounts/login/  and be redirected to Todo index
 2. logout at http://localhost:8000/accounts/logout/ and be redirected to a logout page.
 
-### 3. Update Views and Templates to Use Authentication
+### 2.2 Update Views and Templates to Use Authentication
 
-In the todo index page, show the user name and only show a list of "todo" if user is authenticated.
+In the todo index page, 
+- if user is authenticated then show his name in the heading line, and show list of todo
+- also add a "Logout" link so user can logout
+- if not authenticated, don't show todo. 
 
 Template variables you can use are:
 {% raw %}
@@ -71,18 +80,7 @@ In a view, to get the URL for the login (or logout) page use
 ```
 {% endraw %}
 
-In your views, add some decorators or "if" tests so that:
-
-* must be authenticated to access the 'add' view
-* for the index view, your choice: either require login or render an empty todo_list when visitor is not authenticated.
-
-Recall from the slides that the way to use a decorator is:
-```python
-@login_required
-def someview(request, ...):
-```
-
-and to perform an authentication test inside a view:
+To perform an authentication test inside a view:
 ```python
 def someview(request, ...):
     user = request.user
@@ -92,13 +90,21 @@ def someview(request, ...):
         do something_else
 ```
 
-**Evaluation**:  As an unauthenticated visitor,
+### 2.3 Require login to access the 'add' and 'done' views
+
+A user must be authenticated to add a todo or change status of a todo.
+
+Use **decorators** on the view methods to require login.
+
+(Wasn't that *easy*?)
+
+**Evaluation**:  As an unauthenticated user
      
-1. If you navigate to /todo/ it either shows a message that you need to login (with hyperlink), or redirects to login page
+1. If you navigate to /todo/ it shows a message that you need to login (with hyperlink)
 2. If you navigate to /todo/add/ it redirects to the login page
 3. If you navigate to /todo/id/done/ it redirects to the login page
 
-### 4. Revise Domain Model & Views
+### 3. Revise Domain Model & Views
 
 We want each user to have his own list of Todo.  Draw a UML diagram for this.
 
@@ -110,22 +116,26 @@ We need to
 4. modify the index view so it only shows the todos for the logged in user
 5. modify the 'done' view so user can only mark his own Todo as 'done'
 
-4.1 Update the Todo model. This is just like Question - Choice in KU Polls.
+### 3.1 Update the Todo model. 
+
+This is just like Question - Choice in KU Polls.
 The User class is in `django.contrib.auth.models`.
 ```python
 class Todo(models.Model):
     description = models.CharField(...)
     done = models.BooleanField(...)
     user = models.ForeignKey(django.contrib.auth.models.User,
-                  null=True,
-                  blank=True,
-                  on_delete=models.CASCADE))
+        null=True,
+        blank=True,
+        on_delete=models.CASCADE)
+        )
 ```
 
 create and run a migration.
 
-4.2 Update `TodoForm` in `forms.py`.  This may not be needed, but you should check the
-form after modifying the model.
+### 3.2 Update `TodoForm` in `forms.py`.  
+
+You should check the form after modifying the related model class.
 In this form, the user can set only the todo `description`. The Todo app automatically
 sets `done=False` and sets the user.
 
@@ -143,8 +153,10 @@ class TodoForm(forms.ModelForm):
         }
 ```
 
-4.3 When the logged in user submits a todo, it invokes the `add_todo` method.
-This method sets the user attribute of the todo and the done flag.
+### 3.3 Modify `add_todo` so the current user owns the Todo
+
+This method is invoked when a user submits the TodoForm.
+The method sets the user attribute of the todo and the done flag.
 
 ```python
 @login_required
@@ -153,11 +165,11 @@ def add_todo(request):
     if request.method == 'POST':
         form = TodoForm(request.POST)
         if form.is_valid():
-            # create a todo from the form so we can set specific attributes
+            # create a todo from the form so we can set
+			# specific attributes
             todo = form.save(commit=False)
             todo.user = request.user
             todo.done = False
-            # should log this action
             todo.save()
             messages.success(request, 
                 f"Added \"{request.POST['description']}\"" )
@@ -166,10 +178,16 @@ def add_todo(request):
             ... # same as original code
 ```
 
-4.4 In the `todo_index`, you should filter the todos to that the `todo_list` only contains todo owned by the current user.  Try to do it yourself.
+### 3.4 In the `todo_index` view, display only todo owned by the current user
 
-4.5 Modify the "done" view.  
-The user must be authenticated and own the todo he is trying to modify.
+Filter the todos to that the `todo_list` only contains todo owned by the current user, using `request.user`.
+
+You only need a small change to the code. Try to do it yourself.
+
+### 3.5 Modify the "done" view tp verify user owns the todo
+
+In the `done_todo` view, the user must be authenticated and he must be the owner of the todo he is trying to modify.
+
 ```python
 #todo: require login to access this view
 def done_todo(request, todo_id: int):
@@ -188,9 +206,12 @@ def done_todo(request, todo_id: int):
         messages.error(request, f"Todo {todo.id} doesn't belong to you")
     ...
 ```
+This code uses the Django Messages framework to pass a message to a page template.  Messages is *much easier* than adding a message to the context.
 
 
-### Forms and Form Processing
+## Forms and Form Processing
+
+The Todo app uses a Form to handle HTML form input for a todo.
 
 The MDN Django Tutorial [Part 9: Working with Forms](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Forms) explains how to use forms.
 They have a diagram of the flow in processing a form:
