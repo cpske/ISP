@@ -113,6 +113,11 @@ Purpose of retrospective is to improve the team's development process.
 
 4. Decide what to do.  Create a plan for improvements or changes to make in the next sprint.
 
+## Agile Practice Exam
+
+[Sample Questions from agileexams.com](https://www.agileexams.com/sample/) many of them just about knowing the names of things.
+
+
 ## Learn More 
 
 * [Agile 101](https://www.agilealliance.org/agile101/) at Agile Alliance.    
