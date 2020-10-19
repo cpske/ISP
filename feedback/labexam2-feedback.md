@@ -16,11 +16,11 @@ title: Feedback on Django Tests
 
 - Create a Todo:
   ```python
-  todo = Todo(description="Just do it!")
+  todo = Todo(description="Just do it!", done=False)
   todo.save()
 
   # Django convenience method does both at once
-  todo = Todo.objects.create(description="Just do it!")
+  todo = Todo.objects.create(description="Just do it!", done=False)
   ```
 
 - Send a request using the `django.test.Client` class.
@@ -118,7 +118,7 @@ self.assertContains(resp, "Just do it")
 2. Too lazy to press ENTER one more time:
    ```
    def create_todo(text):
-       return Todo.objects.create(description=text)
+       return Todo.objects.create(description=text, done=False)
    class TodoTest(django.test.TestCase):
        ...
 	```
