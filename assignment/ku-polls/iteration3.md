@@ -38,7 +38,7 @@ of tests as recommended in the MDN Django Tutorial.
 You need to keep track of who has voted for which poll.
 This requires a change in the domain model.
 
-(UML to be added.)
+![user-vote-choice](user-vote-choice.png)
 
 After the change, there is no "votes" attribute in Choice,
 but to *hide* the impact of change you could rewrite "votes"
@@ -49,5 +49,6 @@ return the sum.  The view that show the vote counts won't see
 any difference in the code.
 
 Try to write efficent code for this.
+
 - *Inefficient*: get all the votes and sum the ones that match this choice.
 - *Effcient*: Create a query to select the votes you want and a function of queryset to count the items. Requires only one line of code.
