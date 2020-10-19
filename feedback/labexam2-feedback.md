@@ -2,12 +2,95 @@
 title: Feedback on Django Tests
 ---
 
+## Problem 1. If you create a new Todo and save it, the Todo appears on the todo index page.
 
-Test 3: Test that /todo/id/done/ redirects to index.
-   -5 points if only test the `status_code`.
+### What Do You Need to Know?
+
+- how to create a Todo and save to the database?
+
+- how to send a request to Django and get the response?
+
+- how to test if the Todo is shown on index page?
+
+### What you know from KU Polls
+
+- Create a Todo:
+  ```python
+  todo = Todo(description="Just do it!")
+  todo.save()
+
+  # Django convenience method does both at once
+  todo = Todo.objects.create(description="Just do it!")
+  ```
+
+- Send a request using the `django.test.Client` class.
+  ```python
+  client = Client()
+  response = client.get('/todo/')
+
+  # Better: TestCase object has a client attribute:
+  response = self.client.get('/todo/')
+  ```
+
+- How to test the response?    **Answer:** Read the django.test API.
+  > I recommended (many times) everyone **install the docs on their own computer** and **bookmark** important pages.  Same advise for Python library docs & Java API.
+  >      
+  > *If you want to be inefficient, don't complain that there isn't enough time.*
+  ```python
+  # From the Django docs "Testing Tools" page
+
+  self.assertContains(response, text)
+  self.assertNotContains(response, text)
+  self.assertRedirects(reponse, url)
+  # this is better than just comparing urls as strings:
+  self.assertURLEqual(url1, url2)
+  ```
+
+- For problem 1:
+  ```python
+  self.assertContains(response, todo.description)
+  ``` 
+
+## 2. If you create and save a new todo, then invoke the URL `/todo/id/done/` (using the todo's id), then verify that 2 things occur: 
+ - (a) todo.done is `True`
+ - (b) the todo is **not** on the index page
+
+### What Do You Need to Know?
+
+- How to get the id of a Todo object?
+- How to create a URL containing data value (todo id)?
+- How to ensure the todo's data is in sync with data in database?
+
+Item (b) has two solutions:
+```python
+# the basic way:
+url = f"/todo/{todo.id}/done/"
+# using django reverse:
+url = reverse("todo:done", args=(todo.id,))
+```
+
+**Common Mistake:** Forgetting parens: `reverse("todo:done",args=todo.id)` 
+
+```python
+todo_text = "Study refactoring"
+todo = Todo.objects.create(description=todo_text)
+# it should be shown on index
+response = self.client.get('/todo/') 
+self.assertContains(response, todo_text)
+# mark it as done
+self.client.get(reverse('todo:done', args=(todo.id,)))
+# did the todo status change?
+todo.refresh_from_db()  # or: todo = Todo.objects.get(id=todo.id)
+self.assertTrue(todo.done)
+# is it on the index page?
+response = self.client.get(reverse('todo:index'))
+self.assertNotContains(response, todo_text)
+```
 
 
-## Common Weaknesses in Code
+## Brittle Code
+
+"Brittle code" means code that it is easy to break by changing other parts of the code.
 
 ```python
 todo = Todo.objects.create(description="Just do it")
@@ -15,27 +98,78 @@ resp = self.client.get('/todo/')
 self.assertQuerySetEqual(resp.context['todo_list'],
                     ['<Todo: Just do it>'])
 ```
-1. Assumes context variable `todo_list`.
-2. Requires `todo__str__` return `<Todo: {description}>`.
+This test is brittle because:
 
-These are **brittle** (easy to break when software changes).
-Better
+1. Assumes the context variable name is named `todo_list`.
+2. Assumes `todo.__str__` returns only `self.description`.
+
+More robust (not brittle):
+
 ```python
 self.assertContains(resp, "Just do it")
 ```
 
-Not Using Python Naming Convention:
-```python
-def test_Save_Todo(self)
-```
+## Common Mistakes
 
-You should not set the Todo id. The ORM does that:
-```
+1. Not Using Python Naming Convention:
+   ```python
+   def test_Save_Todo(self)
+   ```
+2. Too lazy to press ENTER one more time:
+   ```
+   def create_todo(text):
+       return Todo.objects.create(description=text)
+   class TodoTest(django.test.TestCase):
+       ...
+	```
+3. Explicitly setting the Todo id. The ORM does this when you save a todo.
+   ```
+   todo = Todo(5, description="Just do it")
+   ```
+4. Not using named parameters. The first **positional parameter** is the `id`.    
+   This will **fail** when you save the Todo.
+   ```python
+   todo = Todo("Do something")
+   ```
+5. Ignoring result of an operation:
+   ```python
+   response = self.client.get('/todo/')
+   response.content.decode('utf-8')   # does NOT change content
+   self.assertContains(response.content, "something")
+   ```
+   Second statement does **not modify** `response.content`.  Just like:
+   ```python
+   s = "I AM IMMUTABLE"
+   s.to_lower()    # does not change the string
+   ```
+6. `reverse` does NOT send a request:
+   ```python
+   todo = Todo(...)
+   reverse('todo:done', args=(todo,id,))   # does NOTHING
+   self.assertTrue(todo.done)
+   ```
+7. Forgot to use a tuple for args in `reverse`. 
+   ```python
+   url = reverse('todo:done', args=todo.id)
+   ```
+   Django prints an error telling you what is wrong.
+
+## Rant About The Cost of Bugs in Software
+
+(In class)
+
+Do you know *exactly* the meaning of the code you are writing?
+
+That is, what is it telling the computer to do?
+
+Compare to:
+- Doctor sees you have an infection to he prescribes Amoxycillin
 
 
 ## How I Tested
 
-1. Run the tests. They should all pass. Definitely no Errors.
-2. Inspect the test code.
-
-
+1. Run the tests. They should all **pass**. Definitely no **Errors.**
+2. Inspect the test code for test correctness.:
+3. Almost no partial credit -- test is correct or not correct.
+   * Test 3: Test that /todo/id/done/ redirects to index.    
+    -2 points if only test the `status_code`.
