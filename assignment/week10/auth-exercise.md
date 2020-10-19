@@ -121,17 +121,20 @@ We need to
 This is just like Question - Choice in KU Polls.
 The User class is in `django.contrib.auth.models`.
 ```python
+from django.contrib.auth.models import User
+
 class Todo(models.Model):
     description = models.CharField(...)
     done = models.BooleanField(...)
-    user = models.ForeignKey(django.contrib.auth.models.User,
-        null=True,
-        blank=True,
-        on_delete=models.CASCADE)
-        )
+    user = models.ForeignKey(User, null=True, blank=True, 
+                  on_delete=models.CASCADE)
 ```
+The options `null=True` and `blank=True` allow Todo items in the database
+even if the user or empty or null.  This is in case there are some old
+todo in the database (before you added users), so those old todos won't
+violate the constraints on the database table.
 
-create and run a migration.
+Create a migration and perform the migration.
 
 ### 3.2 Update `TodoForm` in `forms.py`.  
 
@@ -158,6 +161,9 @@ class TodoForm(forms.ModelForm):
 This method is invoked when a user submits the TodoForm.
 The method sets the user attribute of the todo and the done flag.
 
+We need some code to insert the current user into the todo object's
+user attribute before saving it to the database.
+
 ```python
 @login_required
 def add_todo(request):
@@ -165,8 +171,8 @@ def add_todo(request):
     if request.method == 'POST':
         form = TodoForm(request.POST)
         if form.is_valid():
-            # create a todo from the form so we can set
-			# specific attributes
+            # create a todo from the form data so we can set
+			# the user who owns this todo and then save the todo
             todo = form.save(commit=False)
             todo.user = request.user
             todo.done = False
@@ -183,6 +189,35 @@ def add_todo(request):
 Filter the todos to that the `todo_list` only contains todo owned by the current user, using `request.user`.
 
 You only need a small change to the code. Try to do it yourself.
+
+In the `index` view in `views.py` you have:
+```python
+    todo_list = Todo.objects.filter(done=False)
+```
+
+you should also filter for todo.user is the current user.
+The current user is `request.user` so you can write:
+```python
+    todo_list = Todo.objects.filter(done=False).filter(user=request.user)
+```
+or add an explanatory variable if its not clear:
+```python
+    this_user = request.user
+    todo_list = Todo.objects.filter(done=False).filter(user=this_user)
+```
+
+There is another way to get the current user's Todo that may be
+more efficient.
+
+The relationship User-Todo is 1-to-many, just like Question-Choice 
+in the polls application.  In the polls application we saw that
+Django adds a `choice_set` attribute to Question.  So if you want
+all the choices for one question you can write:
+```
+    question.choice_set.all()
+```
+Can you apply that to User-Todo?  Instead of `all()` use a filter
+to select `done=False`.
 
 ### 3.5 Modify the "done" view tp verify user owns the todo
 
@@ -207,6 +242,9 @@ def done_todo(request, todo_id: int):
     ...
 ```
 This code uses the Django Messages framework to pass a message to a page template.  Messages is *much easier* than adding a message to the context.
+
+## User - Todo Model and ER Diagram
+
 
 
 ## Forms and Form Processing

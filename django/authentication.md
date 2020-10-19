@@ -60,7 +60,7 @@ The [MDN Django Tutorial][mdn-auth-tutorial] is a good introduction and
     ```python
     urlpatterns = [
         path('admin/', admin.site.urls),
-        path('accounts/', include('django.contrib.auth.urls'),
+        path('accounts/', include('django.contrib.auth.urls')),
         ...,
     ]
     ```
