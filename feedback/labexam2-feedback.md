@@ -33,15 +33,15 @@ title: Feedback on Django Tests
   ```
 
 - How to test the response?    **Answer:** Read the django.test API.
-  > I recommended (many times) everyone **install the docs on their own computer** and **bookmark** important pages.  Same advise for Python library docs & Java API.
-  >      
-  > *If you want to be inefficient, don't complain that there isn't enough time.*
+  > I recommended (many times) everyone **install the docs on their own computer** and **bookmark** important pages.   
+  > It will save you time.
+
   ```python
   # From the Django docs "Testing Tools" page
-
   self.assertContains(response, text)
   self.assertNotContains(response, text)
-  self.assertRedirects(reponse, url)
+  self.assertRedirects(response, url)
+
   # this is better than just comparing urls as strings:
   self.assertURLEqual(url1, url2)
   ```
@@ -51,7 +51,7 @@ title: Feedback on Django Tests
   self.assertContains(response, todo.description)
   ``` 
 
-## 2. If you create and save a new todo, then invoke the URL `/todo/id/done/` (using the todo's id), then verify that 2 things occur: 
+## Problem 2. If you create and save a new todo, then invoke the URL `/todo/id/done/` (using the todo's id), then verify that 2 things occur: 
  - (a) todo.done is `True`
  - (b) the todo is **not** on the index page
 
@@ -69,7 +69,14 @@ url = f"/todo/{todo.id}/done/"
 url = reverse("todo:done", args=(todo.id,))
 ```
 
-**Common Mistake:** Forgetting parens: `reverse("todo:done",args=todo.id)` 
+Ensure a todo object is in sync with the database:
+```python
+# the simple way - go get it again
+todo = Todo.objects.get(id=todo.id)
+
+# use built-in method:
+todo.refresh_from_db()
+```
 
 ```python
 todo_text = "Study refactoring"
@@ -80,13 +87,12 @@ self.assertContains(response, todo_text)
 # mark it as done
 self.client.get(reverse('todo:done', args=(todo.id,)))
 # did the todo status change?
-todo.refresh_from_db()  # or: todo = Todo.objects.get(id=todo.id)
+todo.refresh_from_db()  
 self.assertTrue(todo.done)
 # is it on the index page?
 response = self.client.get(reverse('todo:index'))
 self.assertNotContains(response, todo_text)
 ```
-
 
 ## Brittle Code
 
@@ -100,7 +106,7 @@ self.assertQuerySetEqual(resp.context['todo_list'],
 ```
 This test is brittle because:
 
-1. Assumes the context variable name is named `todo_list`.
+1. Assumes the context variable name is `todo_list`. 
 2. Assumes `todo.__str__` returns only `self.description`.
 
 More robust (not brittle):
@@ -115,7 +121,7 @@ self.assertContains(resp, "Just do it")
    ```python
    def test_Save_Todo(self)
    ```
-2. Too lazy to press ENTER one more time:
+2. Not leaving blank line(s) between methods:
    ```
    def create_todo(text):
        return Todo.objects.create(description=text, done=False)
@@ -126,10 +132,10 @@ self.assertContains(resp, "Just do it")
    ```
    todo = Todo(5, description="Just do it")
    ```
-4. Not using named parameters. The first **positional parameter** is the `id`.    
+4. Not using named parameter for description. The first **positional parameter** is the `id`.    
    This will **fail** when you save the Todo.
    ```python
-   todo = Todo("Do something")
+   todo = Todo("Do something")  # should be Todo(description="...")
    ```
 5. Ignoring result of an operation:
    ```python
@@ -153,17 +159,6 @@ self.assertContains(resp, "Just do it")
    url = reverse('todo:done', args=todo.id)
    ```
    Django prints an error telling you what is wrong.
-
-## Rant About The Cost of Bugs in Software
-
-(In class)
-
-Do you know *exactly* the meaning of the code you are writing?
-
-That is, what is it telling the computer to do?
-
-Compare to:
-- Doctor sees you have an infection to he prescribes Amoxycillin
 
 
 ## How I Tested
