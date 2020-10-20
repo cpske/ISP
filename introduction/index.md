@@ -39,8 +39,8 @@ learning skills for developers to "*build the product right*".
 ### Presentation
 
 [Introduction to Course](Introduction-to-Course.pdf)     
-[8 Recommendations to Developers (PDF)](Jomzap-Recommendations.pdf) ([ODP](Jomzap-Recommendations.odp) by Jomzaap Sittipithaya (จอมทรัพย์ สิทธิพิทยา), SKE graduate, entrepreneur, and co-founder of Exzy Corp, from his presentation at KU.    
-[Advise from TaskWorld](TaskWorld-Advise) by SKE grads working at TaskWorld (software firm in Bangkok)
+[8 Recommendations to Developers](Jomzap-Recommendations.pdf) by Jomzaap Sittipithaya (จอมทรัพย์ สิทธิพิทยา), SKE graduate, entrepreneur, and co-founder of Exzy Corp, from his presentation at KU.    
+[Advise from TaskWorld](TaskWorld-Advise) by SKE grads working at TaskWorld (international software firm in Bangkok).
 
 ## Course Organization
 
@@ -60,7 +60,7 @@ Platform we will use, at least to start:
 * [Google Classroom](https://classroom.google.com) for announcements, assignments, and discussion.  **Join** using course code **f2xplp**.
 * Github Classroom for some assignments and quizzes. 
 [Complete this form](https://forms.gle/9PW1L9Hsmx6ygHR9A) (https://forms.gle/9PW1L9Hsmx6ygHR9A) to tell us your Github ID.  You will be invited to join the Github "ISP2020" organization.
-* Course Material on [cpske.github.io/ISP/](https://cpske.github.io/ISP/). Material is organized by topic (not sequentially). Click on topic link for summary and learning path. Some material is optional.
+* Course Material on [cpske.github.io/ISP/](https://cpske.github.io/ISP/). Material is organized by topic, not sequentially. Click on topic link for a summary and learning path. Some material is optional.
 
 
 ### Effort and Commitment
@@ -76,11 +76,11 @@ Plan to spend about 12 hours per week on ISP.
   - asking for help on assignments often borders on cheating
 * Team Project: mostly in 2nd half of course. This may require extra time.
 
-**Online Education Requires Discipline & Commitment**    
+### Online Education Requires Discipline & Commitment
 
 Most learners don't complete online courses.  They fall behind 
 or drop out.  
-Successful online learners **commit time and effort** to continue the course.
+Successful online learners plan to **commit time and effort** to the course.
 
 Learning takes time and consistent effort. You need to plan
 your time, make a commitment, and have discipline.
@@ -91,7 +91,7 @@ your time, make a commitment, and have discipline.
 * Python 3.6 or newer, 3.7 preferred
 * Java JDK 8 or 11
 * Good text editor (something better than Notepad). IDE is OK, but slow for editing a single file.
-* Git command line client. Git GUI is also useful (most IDEs include it)
+* Git command line client. Git tool built into your IDE is also useful and requires less typing.
 
 
 ### Why a Team Software Project?
@@ -129,6 +129,7 @@ pass the course.
 * Ability to use Git and Github
 
 If you have not *at least* worked through Prog 2, then you should take Prog. 2 before enrolling in this course.    
+
 No one without Prog 2 background has *ever* passed this course (when I teach it).
 
 ## Grading

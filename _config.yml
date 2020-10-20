@@ -18,3 +18,5 @@ defaults:
       type: "pages"
     values:
       layout: "page"
+
+google_analytics: "UA-104768257-3"
