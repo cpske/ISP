@@ -387,11 +387,11 @@ Essential Project Documents
 Project Tools
 </td>
 <td markdown="span">
-Project board - whole project and each iteration   
+Project board - a board for whole project and task board for each iteration   
 Issue tracker - bugs, change requests, and more    
-Burn-down or Burn-up chart (optional)    
+Burn-down or Burn-up chart (optional) - track your rate of progress    
 Project wiki - good location for iteration plans, software design notebook, recording knowledge and solutions    
-**Information Radiators**:  project tools should quickly convey useful info & easily visible as part of your normal workflow
+**Information Radiator**:  project tools should quickly convey useful info & easily visible as part of your normal workflow
 </td>
 </tr>
 <tr valign="top">

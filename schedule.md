@@ -5,6 +5,13 @@ navigation_order: 1
 
 *This is an overview and may change. Details and weekly assignments will be posted on Google Classroom.*
 
+### Links
+
+* [http://bit.ly/isp2020-scores](http://bit.ly/isp2020-scores) scores for some assignments
+* Scores for Google Classroom assignments (forms) are posted individually on Google Classroom
+* [http://bit.ly/isp2020-ku-polls](http://bit.ly/isp2020-ku-polls) evaluations for KU Polls 
+* [http://bit.ly/isp2020-projects](http://bit.ly/isp2020-projects) list of team projects and feedback
+
 ### Week 1
 
 * Introduction to course
