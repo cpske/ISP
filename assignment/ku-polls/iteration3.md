@@ -12,6 +12,13 @@ Behavior to add or modify is:
 * only an authenticated user can submit a vote
 * a user can vote again on a poll, and it replaces his previous vote. He can only resubmit during a poll's voting period.
 * if a user selects a poll he already voted for, it's highly desirable that the list of choices show his previous selection
+* add logging of the following events:
+  - user login or logout. An "info" level log message, including username and IP address.
+  - unsuccessful login attempt (username or password incorrect). a "warning" log message, including username entered and IP address.
+  - user submits a vote for a poll. "info" log message including username and poll id voted on (but not choice id).
+  - all log messages should include the date and time (that's done  by the formatter).
+  - log to the console, like Django does.
+  - use loggers, not print statements!
 
 ## Requirements
 
@@ -52,3 +59,14 @@ Try to write efficent code for this.
 
 - *Inefficient*: get all the votes and sum the ones that match this choice.
 - *Effcient*: Create a query to select the votes you want and a function of queryset to count the items. Requires only one line of code.
+
+## Getting a Visitor's IP Address
+
+There are many posts on the Internet showing how to write
+a `get_client_ip` function using info in the `request` object.
+Getting the visitor's actual IP address can be harder than it looks,
+as some commenters mention here:
+https://stackoverflow.com/questions/4581789/how-do-i-get-user-ip-address-in-django
+
+Try to choose a good implementation, but it doesn't have to be perfect.
+
