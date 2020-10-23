@@ -330,7 +330,7 @@ Django [Externalize Configuration](django/external-configuration)
 </td>
 <td markdown="span">
 [Logging](logging/Logging.pdf) is an essential part of a web application.   
-[Logging Practice](logging/logging-practice)
+[Logging Practice](logging/logging-practice) and [demo_log.py](logging/demo_log.py) code
 </td>
 </tr>
 

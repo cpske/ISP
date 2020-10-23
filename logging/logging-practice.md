@@ -1,27 +1,95 @@
 ---
-layout: page
 title: Logging Practice
-description: Practice using Python logging
 ---
-This exercise shows how to configure loggers and log handlers.
-The goal is to understand how you can configure loggers so that 
-messages are recorded in different places (different handlers) 
-and configure how much detail gets logged (log level and formatter).
 
+Create a directory named `logging` and copy (or write yourself) `demo_log.py`.  
 
-Create a project named `logging` containing a file `example.py`.  
-In `example.py` do the following.
+Download URL:  https://cpske.github.io/ISP/logging/demo_log.py
+
+`demo_log.py` has these functions:
+
+```python
+def log_test(logger):
+    """ Log messages using each of the standard logging levels, plus 1 custom.
+
+    Which messages are actually printed on the console or to a file?
+    """    
+    logger.debug("This is a debug message for developers")
+    logger.info("This is an info message")
+    logger.warning("You have been warned")
+    level = logging.WARN + 5   # more severe than WARN, but less than ERROR
+    logger.log(level, "Custom message level = "+str(level))
+    logger.error("This is an error message")
+    logger.critical("A CRITICAL problem")
+```
+
+```python
+def simple_config():
+    """Configure logging using basicConfig for simple configuration.
+
+    Use this to set log format, threshold log level, and more.
+    You should call basicConfig only once.
+    See: help(logging.basicConfig)
+    """
+    # custom format of log messages
+    FORMAT = '%(asctime)s %(name)s %(levelname)s: %(message)s'
+    # use a FileHandler for log messages
+    logging.basicConfig(format=FORMAT)
+```
+
+Main shows 3 ways to initialize logging.  Uncomment **only 1** or **none** of them.
+```python
+if __name__ == "__main__":
+    # 1. call basicConfig first to set defaults
+    logging.basicConfig()
+
+    # 2. For more detailed configuration, call simple_config()
+    # simple_config()
+
+    # 3. More complex configuration, call configure()
+    # configure()
+
+    # Log some messages:
+    logger = logging.getLogger()
+    print("Logging to ", str(logger))
+    log_test(logger)
+```
+
+## Exercises
+
+1. Try logging using the default configuration (`basicConfig`). 
+   * Run the file using Python.
+   * Which messages are printed?
+   * Note the format
+
+2. Comment out the call to `basicConfig` and uncomment the line to call `simple_config()`.
+   * Run again
+   * Any differences?
+
+3. Edit simple_config() and specify a threshold (minimum) log severity:
+   ```python
+    logging.basicConfig(format=FORMAT, level=logging.DEBUG)
+   ```
+   * Run again and note the differences.
+
+4. In main, create a **named logger** instead of the root logger:
+   ```python
+   logger = logging.getLogger('mylogger')
+   ```
+   * Run again.
+   * Any differences.
+   * In actual code, use the package, module, or class name as logger name.
+   
+5. Log to a file. Again edit `simple_config` and set:
+    ```python
+    logging.basicConfig(format=FORMAT, level=logging.DEBUG, filename="demo.log")
+    ```
+    * Run again.
+    * Did it create a file `demo.log`?  What's in the file?
+    * If you run again, does it **overwrite** the file or **append** to the file?
+
 
 1. Try logging using default configuration.  Create a function named `log_test(logger)` that logs a message to each log level. Use any message you like, this is just an example:
-    ```python
-    def log_test(logger):
-        # Log some messages.  Which ones are printed?
-        logger.debug("This is a debug message")
-        logger.info("This is an info message")
-        logger.warning("You have been warned")
-        logger.error("This is an error")
-        logger.critical("Something TERRIBLE happened")
-    ```
     Write a `main` block to create a root logger and a named logger, and call log_test for each one:
     ```python
     # root logger
@@ -37,7 +105,7 @@ In `example.py` do the following.
     * which log messages are printed?
     * Looking only at the log messages, can you tell which log messages were created by which logger?
 
-2. Set the *threshold* logging level for the `root` logger to INFO and `foo` logger to DEBUG and run again:
+2. Change the *threshold* level for the root logger to INFO and foo logger to DEBUG and run again:
     ```python
     # root logger
     logger = logging.getLogger()
@@ -51,7 +119,7 @@ In `example.py` do the following.
     * Did the root logger print INFO messages?  Did foo print DEBUG messages?
     * Did *anything* change?
     * Hint: *If you don't configure any "handlers" for your loggers then Python
-       uses a default handler which always uses log threshold WARNING.*
+       uses a default handler which cannot be modified.*
 
 3. To explicitly add a "handler" to loggers, call the ugly, static `basicConfig` method
    before getting the loggers:
@@ -72,14 +140,13 @@ In `example.py` do the following.
         format='%(asctime)s %(name)s %(levelname)s: %(message)s'
     )   
     # root logger
-    logger = logging.getLogger()
-    logger.setLevel( logging.INFO )
-    log_test(logger)
-    etc.
-    ```
+   logger = logging.getLogger()
+   logger.setLevel( logging.INFO )
+   log_test(logger)
+   etc.
+   ```
    * Does it print the logging levels you'd expect?
-   * Is this log format easier to read?  
-   * Can you easily identify the source of messages?
+   * Is this log format easier to read?  Can you easily identify the source of messages?
 
 5. Comment out the static `basicConfig` and instead define 2 handlers for the root logger: (1) a handler that logs *everything* to a file with timestamp, (2) a handler that prints warnings and more serious messages to the console, without timestamp.  Since this is a lot of code, put it in a function named `configure()`:
     ```python
@@ -108,7 +175,7 @@ In `example.py` do the following.
     #logging.basicConfig( format='...' )
     configure()
     logger = logging.getLogger()
-    #logger.setLevel(logging.INFO)  -- Don't set logger threshold
+    #logger.setLevel(logging.INFO)  Don't set logging threshold
     print("Logging to ", logger)
     log_test(logger)
     etc.
@@ -128,7 +195,7 @@ In `example.py` do the following.
     ```
     * Rerun the file.  Are all messages recorded in the log file?
 
-7. If we call `foo_log.setLevel(logging.ERROR)` after configuring log handlers, what messages will be logged?  Which log level will be used?  In the main block, change the log level on `foo` to ERROR:
+7. What if we call `foo_log.setLevel(level)` after configuring log handlers?  Which log level will be used?  In the main block, change the log level on `foo` to ERROR:
     ```python
     foo_log = logging.getLogger('foo')
     foo_log.setLevel( logging.ERROR )
@@ -137,12 +204,5 @@ In `example.py` do the following.
     ```
     * Rerun the file.  Does `foo_log` now filter out messages from both logs?
 
-### Important Lessons
 
-* Python logging uses severity levels named debug, info, warning, error, and critical.
-* You can control what messages are logged and where the messages are output, such as file, syslog service, or console.
-* Loggers form a hierachy based on the dotted logger name, "", "a", "a.b", etc.
-* Configure loggers using a Handler and Formatter.  One logger may have several handlers.
-* Each logger and handler has its own log-severity threshold level (debug, info,...), which is a threshold to filter log messages.
-* Its usually enough to configure handlers on the root logger, since log messages from decendent logger propagate back to the handler of root log.
-* Add special loggers for special purposes.  For example, a logger for security.In this case, you might set `propagate=False` so security-related messages are not recorded in other logs.
+"""
