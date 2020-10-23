@@ -1,4 +1,6 @@
-# Type Hinting –– an Introduction
+---
+title: Type Hinting –– an Introduction
+---
 
 by Mai Norapong
 
