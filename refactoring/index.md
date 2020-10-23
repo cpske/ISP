@@ -2,7 +2,7 @@
 title: Refactoring
 ---
 
-Related topics: 
+Related topics
 
 * [Separate Configuration from Code](separate-configuration)
 * [Design Patterns](https://skeoop.github.io/patterns/) some refactorings use a design pattern to restructure the code
@@ -10,18 +10,18 @@ Related topics:
 **Refactoring** refers to modifying the structure of existing code to improve it,
 without changing the external functionality.
 
-Some things we will cover:
+Things we will cover:
 
-* signs that code needs refactoring -- sometimes called "code smells", a term I *dislike*
-* what does "improve code" mean?  Software principles provide objective guides.
-* guide lines for when and how to refactor
+* Signs that code needs refactoring -- sometimes called "code smells", a term I *dislike*
+* What does "improve code" mean?  Software principles provide objective guides.
+* Guide lines for when and how to refactor
   - code should be working before refactoring
   - you must have tests before refactoring
   - refactor is small steps and only one at a time 
   - don't add new functionality while you refactor
   - test the result of each refactoring and commit it before doing the next refactoring
-* common refactorings, with names
-* refactoring Python and Java using an IDE. 
+* Common refactorings, with names
+* Refactoring Python and Java using an IDE
   - Eclipse, IntelliJ (aka PyCharm), and Netbeans provide good refactoring tools 
   - VS Code can perform some refactoring, but not as good as the IDE above
 
@@ -67,7 +67,7 @@ So, then...
 
 [How do you define "good code"](https://developerzen.com/how-do-you-define-good-code-c8a383c207a4) article. 
 
-Readable - In *Code Complete*, this is emphasized throughout the book.  Reabability improves each of these aspects of a program:
+Readable - In *Code Complete*, **code readability** is emphasized throughout the book.  Reabability improves each of these aspects of a program:
 
 - Ease of comprehension
 - Reviewability
@@ -80,15 +80,17 @@ Characteristics of good code are (from Paul DiLascia of MSDN):
 
 - Easy to Read
 - Clarity - how easy can you understand the design, purpose, and function of the code?
-  - Code may be "easy to read" but still be hard to understand how it functions or its design.
-  - As example, functions without side effects whose results depend only on the parameters are easier to understand.
-- Simplicity - code is concise, but not to the point of obfuscation
+  - Code may be "easy to read" but still be hard to understand how it functions or its design
+  - As example, functions without side effects whose results depend only on the parameters are easier to understand
+- Simplicity - code is concise, but not to the point of making it hard to read
 - Modularity 
 - Layering - internally the program structure appears to have layers. Lower layers provide services but don't know about higher layers, so dependencies are one-way. 
   - Not all applications can be designed using layers.
 - Efficiency - your program is fast and economical in resource use. It doesn't hog files or connections, starts quickly, and doesn't try to do more than is required.
 
-> The fundamental challenge of programming is managing complexity.
+Another motivation for refactoring is:
+
+> The fundamental challenge of programming is managing complexity.    
 > Simplicity, readability, modularity, layering, design, efficiency, and elegance
 > are all time-honored ways to achieve clarity, which is the antidote to complexity.
 
@@ -102,16 +104,16 @@ Characteristics of good code are (from Paul DiLascia of MSDN):
 
 ### Refactoring and Design Patterns
 
-The "goals" behind refactoring are (mostly) the same as the goals that motivate design patterns.
+The "goals" behind refactoring are often the same as the goals that motivate Design Patterns.
 
 Many refactorings restructure code so that the code uses some design pattern.  
 
 > In the Movie Rental problem, does the refactoring of the movie Price Code look like the *Strategy Pattern*?
 
-So, it's also helpful to know some design patterns. Especially the *context* and *forces* that motivate the patterns.
+Hence, it is helpful to know some Design Patterns. Especially the *context*, *forces*, and *applicability* of each pattern.
 
 
-### Learn About Refactoring
+### Learn Refactoring
 
 [How Do You Define "Good Code"?](https://developerzen.com/how-do-you-define-good-code-c8a383c207a4) article summarizes some guidance from *Code Complete* (famous book) and MSDN. 
 
@@ -122,7 +124,6 @@ So, it's also helpful to know some design patterns. Especially the *context* and
 [Refactoring Guru](https://refactoring.guru/refactoring). In particular:
   - [Refactoring Techniques](https://refactoring.guru/refactoring/techniques) 
   - [Code Smells](https://refactoring.guru/refactoring/smells)
-
 
 [Refactoring in IntelliJ](https://www.jetbrains.com/help/idea/tutorial-introduction-to-refactoring.html#5db90) explains how to do it in IntelliJ, with examples of common refactorings.
  

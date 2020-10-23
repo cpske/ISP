@@ -1,34 +1,38 @@
 ---
-title: Refactoring Problem
+title: Refactoring 
 ---
 
-1. What is the **sign** or **symptom** that this class should be refactored?
+1. Study Refactoring techniques and signs (*aka* "Code Smells").  You should know the names of several common refactorings.
+   - See [Refactoring](/ISP/refactoring/) for some sites to read (listed at end of page)
+   - [Refactoring Techniques](https://refactoring.guru/techniques) on  [Refactoring Guru](https://refactoring.guru/) is good, but some examples are trivial.
+   - Or, find your own refactoring site. Please send me link(s) to any sites you recommend to others, or post links on Google Classroom.
 
-2. What refactoring would help?  Use the refactoring name if you know it.
+> Knowing the refactorings will help you write better code even **before** your refactor.   
+> These refactorings may be on a quiz or exam.
 
-```python
-class Person:
-    def __init__(self, firstName, lastName, 
-                 address_line1, address_line2, 
-                 subdistrict, district, province, postalCode):
-        self.first_name = firstName
-        self.last_name = lastName
-        self.address_line1 = address_line1
-        self.address_line2 = address_line2
-        self.subdistrict = subdistrict
-        self.district = district
-        self.province = province
-        self.postal_code = postalCode
+2. Find a good refactoring in your code or some student code on Github, preferrably:
+   - your own PA4 project from Programming2
+   - someone else's project from Programming2
+   - your current team project
+   - another team's project
+  Please don't use these refactoring we've already covered many times:
+   - rename variable or method
+   - extract method
+   - introduce explanatory variable
+   - replace magic number (or other literal) with named constant
+   - replace type code or "switch" with strategy
 
-    def get_address(self):
-        address = {'street1': self.address_line1,
-                   'street2': self.address_line2,
-                   'subdistrict': self.subdistrict,
-                   'district': self.district,
-                   'province': self.province,
-                   'postalcode': self.postal_code
-                  }
-        return address
+3. Write your refactoring in a personal Github repo named "refactoring"
+   - if you already have a "refactoring" repo than rename it to something else in Github repo Settings page
+   - in your repo provide:
+     1. README.md  describes the refactoring.
+     2. README should contain links to the repository you are referring to in your example
+     3. (optional) include source code files for the refactoring
 
-```
 
+List of Programming 2 Projects: [https://bit.ly/OOP2020-PA4](https://bit.ly/OOP2020-PA4)
+
+Example:  https://github.com/fatalaijon/refactoring.git
+
+
+   
