@@ -21,13 +21,14 @@ Other VCS are Mercurial and Subversion (a centralized VCS).
 
 Presentation: [Git Basics](Git-Basics.pdf)
 
-Each of these covers the basics (reading one is enough):
+Read one of these to learn the basics (or read them all!):
 
 [Git Basics](https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository) from the excellent, free [Pro Git Book](https://git-scm.com/book/en/v2). 
 
 [Learn Git Interactive](https://learngitbranching.js.org) interactive graphical tutorial, includes branch, merge, rebase, and more.
 
-My [Intro to Git](git-basics) - but *Pro Git* (above) is better.
+My [Intro to Git](git-basics) - but *Git Basics* from *Pro Git* is better.
+
 
 ### Three Areas: Repository, Staging Area (Index), Working Copy
 
@@ -92,6 +93,7 @@ You can view all branches of a repo using `gitk --all`.
 * [VS Code](https://github.com/microsoft/vscode) by Microsoft has hundreds of branches, tags, and project docs in Wiki.
 
 **Demo:** 
+
   - Show the graph of Dailigram. It uses branches and tags.
   - Look at all the files in the repo. 
   - Checkout the first commit using its hash: `git checkout xxxx` (*How can you find this?*)
