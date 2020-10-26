@@ -9,12 +9,19 @@ After refactoring your code should have:
    * WRONG: Customer class computes the charge for each rental itself.
    * In `Customer.statement()` the loop to print a list of rentals should look like:
    ```python
-   for rental in self.rentals:
-       statement += fmt.format(
+   def statement(self):
+       self.total_amount = 0.0
+       for rental in self.rentals:
+           statement += fmt.format(
                        rental.get_movie().get_title(), # See Note
                        rental.get_days_rented(),
                        rental.get_charge())
-       total_amount += rental.get_charge()
+           self.total_amount += rental.get_charge()
+   ```
+   and in `get_charge()` write:
+   ```python
+   def get_charge(self):
+       return self.total_amount
    ```
    * **Note**: writing `a.getB().getC()...` is called "*traversing the object graph*" and is considered something to avoid.  It is better to add a `get_title()` to Rental that returns `movie.get_title()` and then write:
    ```python

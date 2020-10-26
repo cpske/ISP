@@ -63,8 +63,8 @@ Some extra code is needed to address one or two issues:
 
 1. We want the other code to refer to models the same way as before.  That is, we want to be able to write:
    ```python
-   from lists.models import Todo
-   from lists.models import TodoList
+   from polls.models import Question
+   from lists.models import Choice
    ```
 
 2. This one may no longer be an issue. Django migrations needs to locate the models and associate them with the correct database table.  And we don't want to change the table names.
@@ -76,6 +76,7 @@ So that other code can still use "`from polls.models import Question`" we want t
 In  `models/__init__.py` write:
 
 ```python
+# in models/__init__.py
 from .question import *
 from .choice   import *
 ```
