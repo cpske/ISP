@@ -48,7 +48,7 @@ After refactoring your code should have:
    - This seems trivial, but what if you decided to rent things *other* than movies?  Like Chromecast devices?
    - It is OK to traverse the object graph for stable APIs like the Java SE API or PyGame API. For a List of Number objects in Java, it would be fine to write `list.get(k).doubleValue()`
 
-5. `Customer.get_total_charge()` asks Rental for the charge of a rental. Don't try to compute the charge by getting the price code.
+5. `Customer.get_total_charge()` asks Rental for the charge of a rental. Don't try to compute the charge in Customer by getting the price code.
    ```python
    def get_total_charge(self):
        """Get the total charge for all rentals."""
@@ -58,7 +58,8 @@ After refactoring your code should have:
 
 6. `Customer.get_rental_points()` asks Rental for the rental points, exactly as done with charge. 
 
-7. PriceCode is polymorphic.  In `Rental.get_price()` there is no "if ... else if ..." to compute the charge based on type of movie.  Rental simply gets the price code from Movie and uses it:
+7. PriceCode is polymorphic.  In `Rental.get_price()` there is no "if ... else if ..." to compute the charge based on type of movie.     
+   Rental simply gets the price code from Movie and uses it:
    ```python
    # In Rental class
 
@@ -75,7 +76,7 @@ Here's a test of how well-factored and extensible your code is.
 
 The movie rental store decides to rent Chromecast USB devices.
 
-The Chromecast rental charge is $5 + $1 per Gigabyte of content viewed (which we can get from Google).  Customer gets 1 rental point per 10 Gigabytes of content purchased.
+The Chromecast rental charge is $1 + $0.1 per Gigabyte of content viewed (which we can get from Google).  Customer gets 1 rental point per 10 Gigabytes of content purchased.
 
 So you write:
 ```python
@@ -83,13 +84,13 @@ import random
 
 class Chromecast:
     """
-    Represents a google Chromecast device.
+    Represents a Google Chromecast device.
     Each device has a unique device id that can be used to get usage data.
     """
     def __init__(self, device_id: str):
         self.device_id = device_id
         random.seed(device_id)
-        self.usage_data = random.randrange(2000, 100000)
+        self.usage_data = random.randrange(1000, 100000)
 
     def get_usage(self):
         """Return the number of megabytes of content consumed.
@@ -100,7 +101,7 @@ class Chromecast:
         return self.usage_data
 
     def __str__(self):
-        return f"Chomecast device id {self.device_id}"
+        return f"Chomecast device {self.device_id}"
 ```
 
 ```python
@@ -112,10 +113,9 @@ class ChromecastRental(Rental):
         return str(self.chromecast)
 
     def get_charge(self):
-        """Chromecast rental costs $1 per $1 per gigabyte"
+        """Chromecast rental costs $1 per $0.1 per gigabyte of content"
         megabytes = self.chromecast.get_usage()
-        # actually you should round charges to 2-decimal places
-        charge = 1.0 + 0.001 * megabytes
+        charge = 1.0 + 0.1 * math.ceil(megabytes/1000.0)
         return charge
 
     def get_rental_points(self):
@@ -124,7 +124,11 @@ class ChromecastRental(Rental):
         return math.floor(megabytes/10000.0)
 ```
 
+### The Test
+
 Can you add a `ChromecastRental` to a Customer's rentals, without making any changes to Customer, Movie, or Rental?
+
+Does your code print a correct statement?
 
 ```python
 customer = Customer("Movie Addict")
