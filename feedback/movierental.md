@@ -15,7 +15,7 @@ After refactoring your code should have:
    * `self.get_rental_points()` calls `rental.get_rental_points()` for each rental and returns the sum
    * WRONG: Customer class computes the rental points for each rental itself.
 
-3. `Customer.statement()` the loop to print a list of rentals should look like:
+3. `Customer.statement()` the loop to create a list of rentals should look like:
    ```python
    def statement(self):
        ...
@@ -28,7 +28,7 @@ After refactoring your code should have:
        statement += "\n"
        statement += "{:32s} {:6s} {:6.2f}\n".format(
                      "Total Charges", "", self.get_total_charge())
-       statement += "Frequent Renter Points earned: {}\n".format(self.get_rental_points())
+       statement += "Frequent Renter Points earned: "+str(self.get_rental_points())+"\n"
    ```
    **Wrong**: summing the rental charge or rental points in the "for" loop.    
    **Good**: f-strings are more concise than `string.format`.  OK to write:
@@ -45,7 +45,7 @@ After refactoring your code should have:
                        rental.get_days_rented(),
                        rental.get_charge())
    ```
-   - This seems trivial, but what if you decided to rent things *other* than movies?  Like Chromecast devices?
+   - Adding `rental.get_title()` seems pointless, but what if you decide to rent things *other* than movies?  Like Chromecast devices?
    - It is OK to traverse the object graph for stable APIs like the Java SE API or PyGame API. For a List of Number objects in Java, it would be fine to write `list.get(k).doubleValue()`
 
 5. `Customer.get_total_charge()` asks Rental for the charge of a rental. Don't try to compute the charge in Customer by getting the price code.
@@ -113,7 +113,7 @@ class ChromecastRental(Rental):
         return str(self.chromecast)
 
     def get_charge(self):
-        """Chromecast rental costs $1 per $0.1 per gigabyte of content"
+        """Chromecast rental costs $1 per $0.1 per gigabyte of content"""
         megabytes = self.chromecast.get_usage()
         charge = 1.0 + 0.1 * math.ceil(megabytes/1000.0)
         return charge
