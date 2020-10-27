@@ -26,7 +26,7 @@ title: Refactoring
 4. Describe the refactoring in a personal Github repo named "refactoring"
    - if you already have a "refactoring" repo, then rename it to something else using Github repo Settings page
    - in your repo provide:
-     1. README.md  describes the refactoring.
+     1. README.md  describe the refactoring.
      2. README should contain links to the repository and code you refer to in your example
      3. (optional) include source code files used in the refactoring repo. You might include the "after refactoring" version of a file.
      4. Use good Markdown formatting and good English.  Use literal formatting only for code or program output.

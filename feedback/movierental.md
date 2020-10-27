@@ -4,179 +4,137 @@ title: Feedback on Movie Rental refactoring problem
 
 After refactoring your code should have:
 
-1. `Customer.statement()` does not calculate price of a rental. It calls `rental.get_charge()` or `rental.getCharge()` (Java).
-   * OK to use a different method name like `get_price()`.
+1. `Customer.statement()` does not calculate price of a rental. 
+   * `statement` calls `self.get_total_charge()` to get total charge (OK to use a different method name).
+   * `self.get_total_charge()` calls `rental.get_charge()` for each rental and returns the sum.
    * WRONG: Customer class computes the charge for each rental itself.
-   * In `Customer.statement()` the loop to print a list of rentals should look like:
+
+2. `Customer.statement()` does not compute frequent rental points.
+   * structure is just like computing the rental charges.
+   * `statement` calls `self.get_rental_points()` (or similar method).
+   * `self.get_rental_points()` calls `rental.get_rental_points()` for each rental and returns the sum
+   * WRONG: Customer class computes the rental points for each rental itself.
+
+3. `Customer.statement()` the loop to print a list of rentals should look like:
    ```python
    def statement(self):
-       self.total_amount = 0.0
+       ...
        for rental in self.rentals:
            statement += fmt.format(
-                       rental.get_movie().get_title(), # See Note
+                       rental.get_movie().get_title(), # See Item 4
                        rental.get_days_rented(),
                        rental.get_charge())
-           self.total_amount += rental.get_charge()
+       # footer: total charges
+       statement += "\n"
+       statement += "{:32s} {:6s} {:6.2f}\n".format(
+                     "Total Charges", "", self.get_total_charge())
+       statement += "Frequent Renter Points earned: {}\n".format(self.get_rental_points())
    ```
-   and in `get_charge()` write:
+   **Wrong**: summing the rental charge or rental points in the "for" loop.    
+   **Good**: f-strings are more concise than `string.format`.  OK to write:
    ```python
-   def get_charge(self):
-       return self.total_amount
+       line_text = "Total Charges"
+       statement += f"{line_text:39s}  {self.get_rental_points():6.2f}\n"
    ```
-   * **Note**: writing `a.getB().getC()...` is called "*traversing the object graph*" and is considered something to avoid.  It is better to add a `get_title()` to Rental that returns `movie.get_title()` and then write:
+
+4.  Writing `a.getB().getC()...` is called "*traversing the object graph*" and is considered something to avoid.  It is better to add a `get_title()` to Rental that returns `movie.get_title()` and then write:
    ```python
    for rental in self.rentals:
        statement += fmt.format(
                        rental.get_title(),  
                        rental.get_days_rented(),
                        rental.get_charge())
-	```
-   - This seems trivial, but what if you decided to rent things *other* than movies?
-   * It is OK to traverse the object graph for stable APIs like the Java SE API or PyGame API. For a List of Number objects in Java, it would be fine to write `list.get(k).doubleValue()`
-
-2. `Customer.statement()` uses a query for charge (as shown above) instead of a temp variable.  According to the assignment, this is incorrect: 
-   ```python
-   for rental in self.rentals:
-       amount = rental.get_charge()  # Incorrect: using a temp variable
-       statement += fmt.format(
-                       rental.get_movie().get_title(),
-                       rental.get_days_rented(),
-                       amount)
-       total_amount += amount
    ```
- 
-3. Customer has a `get_frequent_rental_points` method to compute the frequent renter points.    
-   CORRECT:
+   - This seems trivial, but what if you decided to rent things *other* than movies?  Like Chromecast devices?
+   - It is OK to traverse the object graph for stable APIs like the Java SE API or PyGame API. For a List of Number objects in Java, it would be fine to write `list.get(k).doubleValue()`
+
+5. `Customer.get_total_charge()` asks Rental for the charge of a rental. Don't try to compute the charge by getting the price code.
    ```python
-   def get_frequent_renter_points(self):
-       """Compute frequent renter points for all rentals."""      
-       renter_points = sum([rental.get_rental_points() for rental in rentals])
-       return renter_points
+   def get_total_charge(self):
+       """Get the total charge for all rentals."""
+       total = sum(rental.get_charge() for rental in self.rentals)
+       return total
    ```
-   **WRONG**: Computing the frequent renter points in `statement()` and returning it in `get_renter_points`
+
+6. `Customer.get_rental_points()` asks Rental for the rental points, exactly as done with charge. 
+
+7. PriceCode is polymorphic.  In `Rental.get_price()` there is no "if ... else if ..." to compute the charge based on type of movie.  Rental simply gets the price code from Movie and uses it:
    ```python
-   def get_frequent_renter_points(self):
-       return self.renter_points
- 
-   def statement(self):
-       self.renter_points = 0
-       for rental in self.rentals:
-           self.renter_points += rental.get_rental_points()
-		   ...
+   # In Rental class
+
+   get get_charge(self):
+       return self.movie.get_price_code().price(self.days)
+
+   get get_rental_points(self):
+       return self.movie.get_price_code().rental_points(self.days)
    ```
-   **WHY THIS IS WRONG**: It *assumes* you always call `statement()` *before* calling `get_frequent_renter_points`. That is a form of coupling.   
-   This is similar to the CoinPurse or BankAccount where `getBalance()` computes the balance itself; it does not rely on `deposit` and `withdraw` to update a balance attribute (there is none).
-4. Rental computes rental points and charge itself, using the price code from Movie:
-   ```python
-   class Rental:
-       # RIGHT
-       def get_rental_points(self):
-           return self.movie.price_code.get_rental_points(self.days_rented)
-	   def get_charge(self):
-	       return self.movie.price_code.get_charge(self.days_rented)
-   ``` 
-   **WRONG**: Compute `charge` and `rental_points` in the `Movie` class:
-   ```python
-   class Movie:
-       # WRONG:
-       def get_charge(self, days_rented):
-	       return self.price_code.get_charge(days_rented)
-	   def get_rental_points(self, days_rented):
-	       ...
-   class Rental:
-       def get_charge(self):
-	       return self.movie.get_charge(self.days_rented)
-	   def get_rental_points(self):
-	       return self.movie.get_rental_points(self.days_rented)
-   ```
-   - "Rental charge" and "Rental points" are associated with renting something, so it should be the Rental class's responsibility to compute them.
-   - the Movie class focuses on characteristics of a movie.
-   
-5. PriceCode is polymorphic.  In `Rental.get_price()` there is no "if ... else if ..." to compute the charge based on type of movie.  Below are 2 ways to implement it.
-
-5.1 PriceCode Using Enum:
-- Code for `PriceCode` is in README.
-- In Rental you would have:
-  ```python
-  class Rental:
-      def get_rental_points(self):
-          return self.movie.price_code.get_rental_points(self.days_rented)
-
-      def get_price(self):
-          retrun self.movie.price_code.get_price(self.days_rented)
-    ```
-
-5.2 PriceCode Using Subclasses for the movie price codes:
- ```python
-class PriceCode:
-    def get_price(self, days_rented):
-        return 0.0
-    def get_rental_points(self, days_rented):
-        return 0
-
-class NewRelease(PriceCode):
-    def get_price(self, days_rented):
-        return 3.0*days
-    def get_rental_points(self, days_rented):
-        return days_rented
-```
-The code in `Rental` is the same for both Enum and subclass objects, but how you create PriceCode objects to set into a Movie instance is different:
-```python
-# Enum for PriceCode
-movie = Movie("Mulan", PriceCode.new_release)
-
-# Classes for price code
-movie = Movie("Mulan", NewRelease())
-```
-
-Even better: use a MovieFactory to encapsulate and hide this stuff.
-```python
-movie = MovieFactory.findByName("Mulan")
-```
 
 ## The Acid Test
 
 Here's a test of how well-factored and extensible your code is.
 
-The movie rental store decides to rent ChromeCast USB devices.
+The movie rental store decides to rent Chromecast USB devices.
 
-The ChromeCast rental charge is $5 + $1 per Gigabyte of content viewed (which we can get from Google).  Customer gets 1 rental point per 10 Gigabytes of content purchased.
+The Chromecast rental charge is $5 + $1 per Gigabyte of content viewed (which we can get from Google).  Customer gets 1 rental point per 10 Gigabytes of content purchased.
 
 So you write:
 ```python
-def ChromeCastRental(Rental):
-    def __init__(self, device_id):
+import random
+
+class Chromecast:
+    """
+    Represents a google Chromecast device.
+    Each device has a unique device id that can be used to get usage data.
+    """
+    def __init__(self, device_id: str):
         self.device_id = device_id
+        random.seed(device_id)
+        self.usage_data = random.randrange(2000, 100000)
 
-    def get_title(self):
-        return f"ChromeCast with id {self.device_id}"
+    def get_usage(self):
+        """Return the number of megabytes of content consumed.
 
-    def get_price(self):
-        mb = google.chromecast.get_usage(self.device_id, GOOGLE_API_KEY)
-        return 5.0 + 0.001*mb  # convert MB to GB
+        In reality we would use a Google API to get usage data from Google.
+        For testing, we just return some generated values.
+        """
+        return self.usage_data
 
-    def get_rental_points(self):
-        mb = google.chromecast.get_usage(self.device_id, GOOGLE_API_KEY)
-        return math.floor(mb/10000.0)
+    def __str__(self):
+        return f"Chomecast device id {self.device_id}"
 ```
 
-Can you add a `ChromeCastRental` to a Customer's rentals, without making any changes to Customer, Movie, or Rental?
+```python
+class ChromecastRental(Rental):
+    def __init__(self, chromecast):
+        self.chromecast = chromecast
+
+    def get_title(self):
+        return str(self.chromecast)
+
+    def get_charge(self):
+        """Chromecast rental costs $1 per $1 per gigabyte"
+        megabytes = self.chromecast.get_usage()
+        # actually you should round charges to 2-decimal places
+        charge = 1.0 + 0.001 * megabytes
+        return charge
+
+    def get_rental_points(self):
+        """Chromecast rental earns 1 point for each 10GB usage"""
+        megabytes = self.chromecast.get_usage()
+        return math.floor(megabytes/10000.0)
+```
+
+Can you add a `ChromecastRental` to a Customer's rentals, without making any changes to Customer, Movie, or Rental?
 
 ```python
 customer = Customer("Movie Addict")
 movie = Movie("Mulan", PriceCode.new_release)
 customer.add_rental(Rental(movie, 5))
 
-# Watch unlimited stuff on a ChromeCast
-chromecast = ChromeCastRental("a3:b0:00:13:4c:88")
-customer.add_rental(chromecast)
+# Watch unlimited stuff on a Chromecast
+device = Chromecast("a3:b0:00:13:4c:88")
+customer.add_rental(ChromecastRental(device))
 
 # the acid test
 print(customer.statement())
 ```
-
-## 6. The Missing Refactoring
-
-Something is still in the wrong class, in my opinion.
-
-What do you think?
