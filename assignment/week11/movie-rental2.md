@@ -109,7 +109,6 @@ From a modeling perspective, "price code" is not a characteristic of movies.
 
 > Not only that, the price code may change!    
 > "Mulan" is a "New Release" now, but in 2021 it won't be.    
-> We would have to update Movie objects each year on 1 January.
 
 So, `price_code` should be in Rental instead of Movie.
 
@@ -148,7 +147,7 @@ That's a lot of data.  Make it easier to create movies by adding a Factory.
 Name the factory `MovieCatalog`.
 
 * Create a MovieCatalog as described in class. It gets movie data from a CSV file (reference below).
-* It has a `get_movie(title)` method that returns a movie by title.  If more than one exact match, return the *most recent* movie.
+* It has a `get_movie(title)` method that returns a movie with matchin title.
 * Try to be reasonably efficient - don't read the file every time `get_movie` is called!
 
 For a programming challenge, try to use *lazy instantiation*.
@@ -159,18 +158,19 @@ For a programming challenge, try to use *lazy instantiation*.
 
 How does Rental assign a price code to a movie?
 
-> The rules for price code are:
-> * If the movie was released this year, it's a *New Release*
-> * Otherwise, if one of the movie's *genre* is "Children" it's price code is "childrens"
-> * Otherwise it's a Normal movie
+The rules for price code are:
+
+* If the movie was released this year, it's a *New Release*
+* Otherwise, if one of the movie's *genre* is "Children" it's price code is "childrens"
+* Otherwise it's a Normal movie
 
 Where to put this code?  
 
 For high cohesion and low coupling, it should be in `PriceCode`.
 
-In Python, define a class method named `for_movie(movie)` that returns a `PriceCode`.
+In Python, define a **class method** named `for_movie(movie)` that returns a `PriceCode`.
 
-In Java, define a static method named `forMovie(movie)`.
+In Java, define a **static method** named `forMovie(movie)`.
 
 ```python
 # Example of getting price code
@@ -189,3 +189,5 @@ The data is in the file `movies.csv` in repository:
 https://github.com/jbrucker/movierental
 
 Lines beginning with a '#' symbol are comments and should be ignored.
+
+I will add some more movies to the small file that is there now.
