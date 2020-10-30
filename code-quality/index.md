@@ -47,12 +47,20 @@ To discuss:
 
 ## Coding Style and Coding Convention
 
-You should apply a consistent coding style to make code
-*easier to read*, especially easy for others.    
+Code is *easier to read* if you consistently apply 
+some guidelines, and *easier for others to read* if everyone
+on the team appies the same coding style.
+
 Team projects usually have a "coding standard" -- some companies
 have a single company coding standard.
 
-The Python standard coding style is defined in two Python docs: 
+Over time, coding standards and guides have emerged.
+There is *some* variation in the details of a coding style guide,
+but they all agree on most (over 95%) of the details.
+
+## Coding Standard
+
+There docs show the Python "official" coding standard, called PEP8:
 
 * [pep8.org](http://pep8.org/) is a single page easy-to-read summary of how to use [PEP 8](https://www.python.org/dev/peps/pep-0008/) the official Python Style Guide.
 * Python Guide for Docstrings [PEP 257](https://www.python.org/dev/peps/pep-0257/)
@@ -61,14 +69,14 @@ This article is very helpful with good examples:
 
 * [How to Write Beautiful Code with PEP8](https://realpython.com/python-pep8/) on RealPython.
 
-Google has their own detailed style guide, that includes "pros" and "cons" of style choices:
+Google has a detailed style guide, that includes "pros" and "cons" of style choices. It explains **why** and can help you decide what's important.
 
 * [Google Python Style Guide](https://google.github.io/styleguide/pyguide.html)
   - Rule #1 is "run `pylint` over your code"! (using Google's .pylintrc)
   - Part 2 is guidelines for using the Python language 
   - Part 3 "Python Style Rules" are rules for coding style
   - Part 4 "Parting Words" is *Be Consistent*
-  - Google's guide is very prescriptive (do and don't) on how to write code.
+  - Google's guide is very prescriptive (do and don't) on how to write code
 
 ### Documenting Your Code
 

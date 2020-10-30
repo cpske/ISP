@@ -82,15 +82,52 @@ navigation_order: 1
 
 ### Week 8 (5 Oct)
 
-* Agile
+* Agile - Agile values, principles, and the practices.
+  - values and mindset, not a software process
 * Code Quality: coding style and coding convention.
-* Comment style in Python
+* Comment style in Python 
+  - there are 3 common standards for how to document parameters and returns
+  - you can use either the Python standard or Google's standard (more concise)
+  - use Type Hints in code to document data types instead of writing the data types in comments
+  - Read this:  https://realpython.com/documenting-python-code/
+* Style checking tools
+  - pylint
+  - flake8
+  - how to configure flake8. But its *better* to fix your code than configure special rules.
+  - pylint and/or flake8 can be used inside an IDE, including Eclipse, Pycharm, and VS Code
+  - the standard tool for Java is CheckStyle.  KU even has its own checkstyle rules (on the skeoop.github.io site).
+* Exericse: perform style checking on BankAccount code (`bank_account` and `money`) until pylint gives you a 10.0 score.
 * Continuous Integration
+* CI Exercise: 
+  - Python:  demo-pyci
+  - Java: demo-ci
 * Guidelines for Team Projects
 
-Exercise: perform style check on some real code. Add CI to demo project.
-- bank\_account.py
-- some student KU polls code
+Assignment:
+1. Apply flake8 to KU Polls and fix all problems
+   - use flake8 config to exclude code that is not yours (migrations, django packages, virtual envs)
+2. Add CI to KU Polls
+
+### Week 9
+
+* Review: CI assignment
+* Code Quality
+* What is "good code"?  What goals, problems, and forces motivate what is considered desirable (characteristics) in code?
+* Specific principles and practies for good code
+* Visible metrics or characteristics
+* Intro to Refactoring 
+  - https://cpske.github.io/ISP/refactoring/Refactoring.pdf
+  - Reading: 
+* Pizzashop refactoring exercise https://github.com/ISP19/pizzashop
+
+### Week 10
+
+* Refactoring
+
+
+### Week 11
+
+* More Refactoring - higher level refactorings involving structure of classes, and refactorings for creating objects
 
 ### Unscheduled
 

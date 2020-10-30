@@ -29,13 +29,22 @@ git remote remove origin
 This part is described step-by-step in either of these docs:
 
 * My [Django Authentication summary](https://cpske.github.io/ISP/django/authentication)
+
 * MDN's [Django Tutorial: User authentication](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Authentication) part 8 of their excellent Django tutorial!
 
 ### Add one or two local users so you can test login and logout.
 
-Do this using the Django shell (`manage.py shell`):
+Create one or two users.  Two users will be helpful so you can verify
+that each user has his own set of "todo" items.
+
+Create a user using the Django shell (`manage.py shell`).
+
+Note that the method to create a user is `create_user` not the
+usual `create` method.
+
 ```python
 from django.contrib.auth.models import User
+
 # choose your own username, email, and password
 user = User.objects.create_user(
           'username', 

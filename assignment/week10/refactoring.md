@@ -1,5 +1,5 @@
 ---
-title: Refactoring 
+title: Refactoring for Student Projects
 ---
 
 > Knowing the refactorings will help you write better code even **before** your refactor.   
@@ -16,6 +16,7 @@ title: Refactoring
    - someone else's project from Programming2
    - your current team project
    - another team's project
+
 3. Please **don't use** (only) these refactoring we've already covered many times:
    - rename variable or method
    - extract method
