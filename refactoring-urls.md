@@ -44,7 +44,7 @@ title: KU Polls Repositories
 | [Setthanat](https://github.com/Ing140943/) | [https://github.com/Ing140943/refactoring](https://github.com/Ing140943/refactoring) |
 | [Sirapop ](https://github.com/SIrapopKunjiak/) | [https://github.com/SIrapopKunjiak/refactoring](https://github.com/SIrapopKunjiak/refactoring) |
 | [Siravit](https://github.com/Kuea666/) | [https://github.com/Kuea666/refactoring](https://github.com/Kuea666/refactoring) |
-| [Sorawichaya](https://github.com/b6210545602/) | [https://github.com/b6210545602/refactoring](https://github.com/b6210545602/refactoring) |
+| [Sorawichaya](https://github.com/Firstyfirst/) | [https://github.com/Firstyfirst/refactoring](https://github.com/Firstyfirst/refactoring) |
 | [Suchon](https://github.com/toey10112/) | [https://github.com/toey10112/refactoring](https://github.com/toey10112/refactoring) |
 | [Tanapol](https://github.com/KOngTNP/) | [https://github.com/KOngTNP/refactoring](https://github.com/KOngTNP/refactoring) |
 | [Tatpol](https://github.com/nicenicegame/) | [https://github.com/nicenicegame/refactoring](https://github.com/nicenicegame/refactoring) |
