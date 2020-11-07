@@ -5,8 +5,6 @@ title: Assignments
 Google Classroom is the authoritative source for assignments.
 This file is a summary, but may be incomplete.
 
-
-
 Project
 * code-review-script.md
 * configuration-and-readme.md
@@ -34,9 +32,16 @@ Week 3
 
 Week 4
 * Reading about Github Flow - github-flow.md
-* Github flow questions in a Google Form - my copy: github-flow-questions.md
-* KU Polls Iteration 1 (Django tutorial) - ku-polls-iter1.md
+* Github flow 
+  - Read: https://cpske.github.io/ISP/git/index#github-flow
+  - Assignment: https://forms.gle/HWLQ5retVNoquSJ38
+  - Copy of questions: https://cpske.github.io/ISP/assignment/week4/github-flow-questions
 * (old, replaced by KU Polls Iteration 1) Learn Django - learn-django.md
+* Assignment: 
+  - Questions on Github Flow: https://forms.gle/HWLQ5retVNoquSJ38
+  - KU Polls Iteration 1 (Django tutorial) - https://cpske.github.io/ISP/assignment/week4/ku-polls-iter1
+  - 
+
 
 Week 5
 * No class due to holiday. Work on KU Polls.
@@ -81,7 +86,6 @@ Week 9
 ### These are old and will be changed
 
 Week 10
-* create-isp-problem.md
 * refactoring.md
 
 Week 12
