@@ -43,15 +43,16 @@ This is a team assignment, but **everyone** should do the reading and study.
 * Write what is actually useful to look for
 * Checklist should be updated as you use it -- remove items, add items, refine items
 
-## How and Where to Submit
+## Where to Submit
 
-Write the procedure (script) and checklist in your project wiki and provide a **link** in your project README in a section titled "Code Review". 
+Write the checklist and procedure (or script) in your project wiki and provide **link(s)** in your project README in a section titled "Project Documents". 
 
 ## Grading Criteria
 
 1. Use of good English.
 2. Clarity and consistency.
 3. Applies to your project and shows some thought. Not copied from examples.
+   - No nonsense or stuff you don't actually do.
 4. Uniqueness of items - two items don't cover the same thing.
 5. Make use of automation tools. If something can be checked using a tool then do that instead of doing it via manual review.
 
