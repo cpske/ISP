@@ -140,12 +140,11 @@ Assertions are executable statements of what should be true at some point in cod
 [Code Review](code-review)
 </td>
 <td markdown="span">
-[Software Review](code-review/Reviews.pdf) slides and [Summary](code-review/code-review)       
-[Code Review Best Practices](code-review/code-review-best-practices) from various sources    
+[Software Review](code-review/Reviews.pdf) slides and [Overview](code-review/code-review)      
+[Code Review Best Practices](code-review/code-review-best-practices) from experts    
 [Reviews chapter from Stellman &amp; Greene](code-review/Reviews-Stellman-and-Greene.pdf)    
-[Assignment: Code Review Checklist and Script](assignment/code-review)    
-Example Review Checklists: [Java](code-review/Java-Code-Review-Checklist.pdf), 
-[PSP](code-review/PSP-Review-Script-Checklist.pdf)
+[Review Checklists](code-review#checklists) examples and guidance    
+Assignment: Code Review Checklist and Procedure (script)
 </td>
 </tr>
 

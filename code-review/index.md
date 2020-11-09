@@ -14,7 +14,9 @@ Presentation: [Code Reviews](Reviews.pdf)
 
 ## Code Review versus Testing
 
-Studies have found that code reviews find 60-70% of *latent defects*, versus 30-40% discovery rate for testing.  There is some disagreement as to whether formal code inspection finds more defects than informal reviews.
+Studies show hat code reviews find 60-70% of *latent defects*, versus 30-40% discovery rate for testing.  A *Latent defect* is an error in the code that has not yet resulted in a mis-function of the program because the conditions (inputs, environment, state of the software, etc.) to activate the defect haven't occurred.  
+
+Imagine a car with self-driving software with this error: if the car comes to a red light and there is a truck with a big green ball painted on a yellow background, then the software thinks it's a green light and goes through the intersection.  This defect doesn't cause the car to misbehave until those conditions actually occur. So it's *latent*.
 
 Testing often discovers coding errors and deviations from the specification, whereas code review uncovers more problems related to maintainability or failure to meet requirements.  
 
@@ -65,10 +67,12 @@ Good example checklists:
 * DZone [Java Review Checklist](Java-Code-Review-Checklist.pdf) with 5 categories of items
 * [Stop More Bugs with our Code Review Checklist](https://blog.fogcreek.com/increase-defect-detection-with-our-code-review-checklist-example/) from Fog Creek Software.  Considered "pretty universal".
 * [Checklist for Effective Code Reviews](http://www.evoketechnologies.com/blog/code-review-checklist-perform-effective-code-reviews/) by Surrender Gutha has basic and detailed versions.
-* [Java Code Review Checklist](https://dzone.com/articles/java-code-review-checklist) nice -- divides review items into categories.
+* [Java Review Checklist on DZone](https://dzone.com/articles/java-code-review-checklist) nice -- divides review items into categories.
+* [Java Checklist Local Copy](Java-Code-Review-Checklist.pdf),
 * Concise, practical [Checklist PDF](https://courses.cs.washington.edu/courses/cse403/12wi/sections/12wi_code_review_checklist.pdf) from U. of Washington.
 * [Things to Include in your Checklist](https://www.codementor.io/blog/code-review-checklist-76q7ovkaqj) from codementor.io. High-level categories for reviews.
-* [PSP Review Script Checklist](PSP-Review-Script-Checklist.pdf)
+[PSP](code-review/PSP-Review-Script-Checklist.pdf)
+
 
 ## Advise for Reviewers and Reviewees
 
@@ -91,9 +95,20 @@ For authors of code under review:
 * Be humble.
 * Try to respond to every comment, and explain the code.
 
+## Best Practices
+
+Recommended practices from professionals:
+
+* [Code Review Best Practices from SmartBear](code-revew-best-practices#best-practices-from-smartbear)    
+* [Code Review Best Practices from Perforce](code-revew-best-practices#best-practices-from-perforce)    
+* [Code Review Best Practices from JetBrains](code-revew-best-practices#best-practices-from-jetbrains)    
+
+All links in the file [Code Review Best Practices](code-revew-best-practices).
+
 ## Tools
 
-* Notebook (paper) - is probably the best tool to get started.
+* Notebook (paper) - probably the best tool to get started.
+* Wiki page or Google Docs page - part of your project documentation.
 * Gerrit tool for online code review, integrates with git.
 * [Review Board][review-board] a web-based code review tool from MIT.
     - free if self-hosted, monthly fee if used as a hosted service

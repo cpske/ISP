@@ -1,14 +1,26 @@
-2. Remove As-to-Pa
+﻿1. Refactoring Review - Name these refactorings
 
-3. Ex Va, In Ex Va
+2. Remove Assign-to-Param
 
-4. Hi De
+3. Extract Var (or) Introduce Expl Var
 
-5. Rep Arr wi Ob
+4. Remove Ctl Flag
+ 
+5. Hide Delegate
 
-6. Pr Wh Ob
+6. Replace Array w/ Obj
 
-7. 
-8. Ex Su Cl
+7. Preserve Whole Obj
 
-9. Re In wi De
+8. Move Method (Information Expert)
+
+9. Extract Method
+
+10. Extract Super Class
+
+11. Replace Inheritance w/ Delegation
+
+13. Repl Type Code w/ State or Strategy
+    Repl Conditional w/ Polymorphism
+
+14. Repl Conditional w/ Polymorphism
