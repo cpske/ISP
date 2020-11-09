@@ -184,10 +184,10 @@ Django's [authentication](django/authentication) and [authorization](django/auth
 
 <tr valign="top">
 <td markdown="span"> 
-UML 
+[UML](uml)
 </td>
 <td markdown="span">
-Visual software design, function, and deployment using UML.
+A standard for visual software modeling, design, and deployment.
 </td>
 </tr>
 </table>
