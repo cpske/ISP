@@ -9,7 +9,9 @@ exclude: [bin, ISP, quiz, solution, misc, Gemfile, Gemfile.lock, Jittat, Paruj, 
 github_username: cpske
 # Use Git's markdown syntax
 markdown: kramdown
-# permalink: pretty
+# DON"T USE "permalink: pretty" it adds "/" after URLs of pages 
+# in a directory. As a result, relative URLS given in those files don't work.
+
 # Default layout for pages, so you don't need to set "layout: page" in each
 defaults:
   -

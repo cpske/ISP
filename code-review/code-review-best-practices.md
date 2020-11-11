@@ -2,9 +2,9 @@
 title: Code Review Best Practices
 ---
 
-[Code Review Best Practices from SmartBear](best-practices-from-smartbear)    
-[Code Review Best Practices from Perforce](best-practices-from-perforce)    
-[Code Review Best Practices from JetBrains](best-practices-from-jetbrains)    
+[Code Review Best Practices from SmartBear][best-practices-from-smartbear]    
+[Code Review Best Practices from Perforce][best-practices-from-perforce]    
+[Code Review Best Practices from JetBrains][best-practices-from-jetbrains]    
 
 
 ## Best Practices from SmartBear

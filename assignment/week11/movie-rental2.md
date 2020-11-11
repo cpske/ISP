@@ -88,8 +88,8 @@ rentals: List[Rental]
 <tr><td>
 add_rental(rental): <br/>
 get_name(): string <br/>
-get_rental_points(): int <br/>
-get_total_charge(): float <br/>
+compute_rental_points(): int <br/>
+compute_total_charge(): float <br/>
 statement(): string
 </td>
 </tr>
