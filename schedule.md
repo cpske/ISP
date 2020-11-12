@@ -7,10 +7,10 @@ navigation_order: 1
 
 ### Links
 
-* [http://bit.ly/isp2020-scores](http://bit.ly/isp2020-scores) scores for some assignments
+* <http://bit.ly/isp2020-scores> scores for some assignments
 * Scores for Google Classroom assignments (forms) are posted individually on Google Classroom
-* [http://bit.ly/isp2020-ku-polls](http://bit.ly/isp2020-ku-polls) evaluations for KU Polls 
-* [http://bit.ly/isp2020-projects](http://bit.ly/isp2020-projects) list of team projects and feedback
+* <http://bit.ly/isp2020-ku-polls> evaluations for KU Polls 
+* <http://bit.ly/isp2020-projects> list of team projects and feedback
 
 ### Week 1
 
@@ -27,14 +27,14 @@ Assignment
 * Complete [Sign-up form](https://forms.gle/fh9SqvmA9yPh1ur6A) for Github if you haven't done it yet
 * Install required software:  signup-and-software.md
 * [Software Process Questions](https://docs.google.com/forms/d/e/1FAIpQLSd3FtoUtetMjd47M5TY9FYgK2TJvWwog44PzuEki6gFd3zsyQ/closedform) 
-- [/ISP/assignment/week1/software-process-homework]()
+- /ISP/assignment/week1/software-process-homework
 
 ### Week 2 (17 Aug)
 
 * Scrum
-  - https://www.youtube.com/watch?v=XU0llRltyFM "Scrum in Under 10 Minutes" video
-  - https://cpske.github.io/ISP/agile/scrum introduction to Scrum and links you should read
-  - https://www.scrumguides.org/scrum-guide.html you should read and know
+  - Watch [Scrum in Under 10 Minutes](https://www.youtube.com/watch?v=XU0llRltyFM) on Youtube
+  - [Introduction to Scrum](/agile/scrum introduction) with links you should **read**
+  - Read [Scrum Guide](https://www.scrumguides.org/scrum-guide.html) you should know, may be on quiz
 * Version Control & Git - understanding git repos
 * Common git use scenarios
 * Git branches
@@ -42,15 +42,15 @@ Assignment
 
 Assignment
 * Answer [Scrum Questions](https://docs.google.com/forms/d/e/1FAIpQLSccesC0cZCxaAmpOzgQ2EaOzYOZ9egDvrw54kUOwyFmqDJZeg/closedform) a Google Form
-* Complete at least parts 1 & 2 of this tutorial: https://learngitbranching.js.org/
+* Complete at least parts 1 & 2 of this tutorial: <https://learngitbranching.js.org/>
 * Create a Github Repo of Git common usage with "how to" examples 
-  - Starter code in Github Assignment: https://classroom.github.com/a/q7wONzhR 
+  - Starter code in Github Assignment: <https://classroom.github.com/a/q7wONzhR>
 
 ### Week 3 (24 Aug)
 
 * **Preparation:** install netcat or ncat on your computer and TEST IT
-  - https://nmap.org/ncat/
-  - https://eternallybored.org/misc/netcat/
+  - <https://nmap.org/ncat/>
+  - <https://eternallybored.org/misc/netcat/>
 * Feedback on Week 1 assignments
 * Intro to HTTP Protocol
 * HTTP in Action: manually enter HTTP requests using netcat or ncat
@@ -58,14 +58,13 @@ Assignment
 * Git Merging and Conflict Resolution
 
 Assignment
-* Command Line Basics you should know (nothing to submit) 
-  - /ISP/assignment/week3/Command-Line-Basics.odt
-  - https://drive.google.com/open?id=1igAYSBGdshgz1ESZOjcFwP0x-vCT-02CatdWEcVV7aQ&authuser=1
+* [Command Line Basics](/ISP/assignment/week3/Command-Line-Basics.odt) you should know (nothing to submit) 
+  - <https://drive.google.com/open?id=1igAYSBGdshgz1ESZOjcFwP0x-vCT-02CatdWEcVV7aQ&authuser=1>
 * Add Git remote commands to your Git commands repo
-  - https://cpske.github.io/ISP/assignment/week3/git-remote-commands
+  - [git-remote-commands](/ISP/assignment/week3/git-remote-commands)
 * KU Polls write a vision and requirements 
-  - https://cpske.github.io/ISP/assignment/week3/ku-polls
-  - Background for Vision Statement: https://cpske.github.io/ISP/assignment/ku-polls/vision
+  - [Assignment](/ISP/assignment/week3/ku-polls)
+  - Background for Vision Statement: <https://cpske.github.io/ISP/assignment/ku-polls/vision>
 
 ### Week 4 (31 Aug)
 
@@ -85,7 +84,7 @@ Assignment
 Assignment
 * Github flow 
   - Read: https://cpske.github.io/ISP/git/index#github-flow
-  - Questions on Github Flow: https://forms.gle/HWLQ5retVNoquSJ38
+  - Questions on Github Flow: <https://forms.gle/HWLQ5retVNoquSJ38>
   - Copy of questions: https://cpske.github.io/ISP/assignment/week4/github-flow-questions
 * KU Polls Iteration 1 (Django tutorial) - https://cpske.github.io/ISP/assignment/week4/ku-polls-iter1
   - submit work in your own `ku-polls` repo on Github.
@@ -271,7 +270,7 @@ Assignment
 * Project Demos
 
 Assignment
-* Read Stellman and Greene chapter on Reviews
+* Read "Reviews" chapter from textbook by Stellman and Greene.
 * Readings on Code Review Best Practices (read the links, not just my summary)
   - https://cpske.github.io/ISP/code-review/code-review-best-practices
 * Create a Review Script and Checklist. Create in project wiki and add link from your project README.md
