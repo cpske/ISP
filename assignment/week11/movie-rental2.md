@@ -147,8 +147,12 @@ That's a lot of data.  Make it easier to create movies by adding a Factory.
 Name the factory `MovieCatalog`.
 
 * Create a MovieCatalog as described in class. It gets movie data from a CSV file (reference below).
-* It has a `get_movie(title)` method that returns a movie with matchin title.
-* Try to be reasonably efficient - don't read the file every time `get_movie` is called!
+* It has a `get_movie(title)` method that returns a movie with matching title.
+* Try to be reasonably **efficient** - don't read the file every time `get_movie` is called!
+```python
+catalog = MovieCatalog()
+movie = catalog.get_movie("The Joy of C++")
+```
 
 For a programming challenge, try to use *lazy instantiation*.
 - define a generator that reads one line of data from the CSV file and yields a movie
