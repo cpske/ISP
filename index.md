@@ -456,7 +456,7 @@ Anti-Patterns for Developers
 
 </table>
 
-[Old 2019 ISP index](index2019)
+[Old 2019 ISP index](2019/)
 
 ---
 Project & Task Boards

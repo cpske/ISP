@@ -50,3 +50,18 @@ is False on a deployed server, since `DEBUG=True` can be used to discover
 environment variables (your secrets). 
 
 Hence, the safe default is `False`.
+
+## 2. Better and More Tests Needed
+
+Projects I reviewed have very little unit testing.
+
+Unit tests generally contain **more lines of code** than your model and controller 
+classes combined, since unit tests have to test several cases.
+
+1. Write good unit tests for all methods that involve any non-trivial logic.
+   * Test important behavior, not just methods.
+   * Not necessary to test trivial methods or simple constructors. Carefully Inspect the code for these.
+2. Tests should have descriptive names for what they test (long names are good) **and** a docstring comment describing the test.
+
+
+

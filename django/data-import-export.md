@@ -21,10 +21,11 @@ The output is in JSON format. The `--indent=2` option requests formatted, easy-t
 
 `manage.py` also has a `loaddata` command to import data from a JSON file.
 
-For import, the Django convention is to look for data in a `fixtures` directory inside an "app" directory such as `polls/fixtures`.
+For import, Django (by convention) looks for data in a `fixtures` directory inside an "app" directory such as `polls/fixtures`.
 To dump data to a file named `seed.json` in our polls app, use:
+
 ```bash
-mkdir polls/fixtures          (if directory doesn't exist)
+mkdir polls/fixtures          # create directory if it does not exist
 python manage.py dumpdata --indent=2 -o polls/fixtures/seed.json polls
 ```
 The `-o outputfile` option specifies a file to receive dump data, the `polls` parameter means dump only data for the polls app.

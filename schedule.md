@@ -217,28 +217,27 @@ Assignment:
   - Reading: https://refactoring.guru/refactoring
 
 Exercise
-* Pizzashop refactoring exercise https://github.com/ISP19/pizzashop
+* Pizzashop refactoring exercise <https://github.com/ISP19/pizzashop>
 
 Assignment
-* Movie Rental Refactoring https://classroom.github.com/a/_qGEboUn
+* Movie Rental Refactoring <https://classroom.github.com/a/_qGEboUn>
 
 ### Week 10 (19 Oct)
 
-* Authentication https://cpske.github.io/ISP/authentication/
+* [Authentication](/authentication/)
 
 Exercise
 * Add authentication to the Todo app
   - https://cpske.github.io/ISP/assignment/week10/auth-exercise
 * Agile Practices Review
-  - Questions https://cpske.github.io/ISP/agile/agile-practice-questions.pdf
-  - Crossword https://cpske.github.io/ISP/agile/crossword-puzzle.pdf
+  - [Agile Practice Questions](/agile/agile-practice-questions.pdf)
+  - [Crossword Puzzle](/agile/crossword-puzzle.pdf) 
   - answers available online
 
 Assignment
 * Refactor one of your projects or someone else's
-  - https://cpske.github.io/ISP/assignment/week10/refactoring
-* KU Polls Iteration 3 https://cpske.github.io/ISP/assignment/ku-polls/iteration3
-
+  - <https://cpske.github.io/ISP/assignment/week10/refactoring>
+* KU Polls Iteration 3 <https://cpske.github.io/ISP/assignment/ku-polls/iteration3>
 
 ### Week 11 (26 Oct)
 
@@ -266,7 +265,6 @@ Assignment
 ### Week 13 (9 Nov)
 
 * Software Reviews https://cpske.github.io/ISP/code-review/
-
 * Project Demos
 
 Assignment
@@ -276,6 +274,20 @@ Assignment
 * Create a Review Script and Checklist. Create in project wiki and add link from your project README.md
 
 ### Week 14 (16 Nov)
+
+* Schedule dates for final exam and project presentations.
+* Review Movie Rental refactoring problems.
+* Static and Dynamic typing.
+* Type hints in Python, how it helps find bugs and improve refactoring.
+* Logging (briefly).
+* "Why" and benefits of refactoring.
+* Project demos.
+
+Exercise
+* Logging practice <ttps://cpske.github.io/ISP/logging/logging-practice>
+
+Assignment
+* 
 
 ### Week 15 (23 Nov)
 
