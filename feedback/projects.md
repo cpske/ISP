@@ -2,12 +2,12 @@
 title: Feedback on Projects
 ---
 
-## 1. Use What You Already Learned
+## 1. Use What You Learn
 
 In KU Polls iteration 2 you learned how to separate configuration data
 from code, which is a good practice for **any** software.
 
-Are you applying it in your projects?
+Are teams applying it to their projects?
 
 | Project            | External configuration? | Secret settings on Github?  |
 |:-------------------|------------------|:----------------------------|
@@ -31,11 +31,10 @@ The software industry unanimously recommends:
 
 > Security must be part of the development process, not added at the end.
 
-You should apply basic security practices from the start. 
+Apply basic security practices from the start. 
 Think about security during code reviews, too.
 
 If your `SECRET_KEY` has been exposed, you can generate a new one.
-
 
 **Note**: Kvent `settings.py` has: 
 
@@ -44,8 +43,9 @@ ALLOWED_HOSTS = ['*']
 DEBUG = config('DEBUG', default=True)
 ```
 
-You should add `ALLOWED_HOSTS` to the external config, and restrict it
-when in a development environment. You should be careful that `DEBUG`
+You should add `ALLOWED_HOSTS` to the external config so you can use
+different values for development and production. Restrict ALLOWED\_HOSTS 
+in a development environment. You should be careful that `DEBUG`
 is False on a deployed server, since `DEBUG=True` can be used to discover 
 environment variables (your secrets). 
 
