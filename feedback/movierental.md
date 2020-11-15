@@ -143,61 +143,79 @@ customer.add_rental(ChromecastRental(device))
 print(customer.statement())
 ```
 
-## Movie Rental Part 2
+## Movie Rental Refactoring Part 2
 
-### Code Not on master Branch
+1. Move the price code to the rental class.
+   ```python
+   class Rental:
+       def __init__(self, movie, days_rented, price_code):
+           ...
+   ```
+2. There are no price code variables in `movie.py`.    
+   WRONG:
+   ```python
+   class Movie:
+       NORMAL = 0
+       CHILDRENS = 1 
+       NEW_RELEASE = 2 
+   ```
+   Also wrong:
+   ```python
+   class Movie:
+       NORMAL = PriceCode.normal
+       etc.
+   ```
+
+3. Add Attributes to Movie. Use underscore to indicate the variables are private and provide "get" methods.  This is simple programming.
+   ```python
+   class Movie:
+       def __init__(self, title, year, genre: List):
+           self.__title = title
+           self.__year  = year 
+           self.__genre = genre
+
+       def get_title(self):
+           return self.__title
+
+       def get_year(self):
+           return self.__year
+
+       def get_genre(self):   # OK to name this get_genres
+           return self.__genre
+
+       def is_genre(self, genre: str) -> bool:
+           return genre in self.__genre
+   ```
+   Wrong: the `genre` should be a list, not a string with `|`.    
+   Wrong: "get" methods are not intended to be used like properties:
+   ```python
+       @property
+       get get_title(self):
+   ```
+
+4. Class method to determine the price code.  It makes sense that this should be part of the `PriceCode` class.  If we add a new `PriceCode` the changes affect only one class.
+   ```python
+   class PriceCode(Enum):
+
+       @class_method
+       def for_movie(cls, movie: Movie):
+           this_year = datetime.now().year
+           if movie.get_year == this_year:
+               return PriceCode.NEW_RELEASE
+           if movie.is_genre("Childrens"):
+               return PriceCode.CHILDRENS
+           # everything else is considered a normal rental
+           return PriceCode.NORMAL
+   ```
+
+5. Factory Method for movies.  This part had the most number of errors.
 
 
-### Wrong File Names
 
-Copying Anusid movie_catalog.py
-Copying Arisa movie_catalog.py
-Copying Auttakrit movie_catalog.py
-Copying Bhatara movie_catalog.py
-No movie_catalog in Bheem/movierental
-Copying Chananya movie_catalog.py
-Copying Chanathip movie_catalog.py
-Copying Chayapol movie_catalog.py
-Copying Jakkrathorn movie_catalog.py
-Copying Jirawadee movie_catalog.py
-Copying Kasidit movie_catalog.py
-Copying Kittitouch movieCatalog.py
-Copying Kongtapp moviecatalog.py
-Copying Metaras movie_catalog.py
-No movie_catalog in Nanthakarn/movierental
-Copying Narawish movie_catalog.py
-No movie_catalog in Nattapol/movierental
-No movie_catalog in Natthaphon/movierental
-No movie_catalog in Nutta/movierental
-Copying Nuttapol movie_catalog.py
-Copying Panida moviecatalog.py
-Copying Panitan movie_catalog.py
-No movie_catalog in Patiphan/movierental
-Copying Pattarin movie_catalog.py
-Copying Peerasu movie_catalog.py
-Copying Phakarat movie_catalog.py
-Copying Phumrapee movie_catalog.py
-Copying Phuwanut movie_catalog.py
-Copying Pitchapa movie_catalog.py
-Copying Pittayut movie_catalog.py
-Copying Potchara movieCatalog.py
-Copying Purich movie_catalog.py
-No movie_catalog in Puvana/movierental
-No movie_catalog in Sahadporn/movierental
-Copying Sahanon movie_catalog.py
-Copying Sahatsawat movie_catalog.py
-Copying Saruj movie_catalog.py
-No movie_catalog in Setthanat/movierental
-Copying Sirapop movie_catalog.py
-Copying Siravit movieCatalog.py
-Copying Sorawichaya movie_catalog.py
-No movie_catalog in Suchon/movierental
-No movie_catalog in Tanapol/movierental
-Copying Tatpol movie_catalog.py
-Copying Teeranut movie_catalog.py
-No movie_catalog in Tetach/movierental
-No movie_catalog in Theetouch/movierental
-Copying Thornthep movie_catalog.py
-Copying Vichisorn movie_catalog.py
+6. Wrong file name.  Some students used names like these. They do not use the Python naming convention:
+   ```
+   Movie.py
+   movieCatalog.py
+   MovieCatalog.py
+   ```
 
-Setthanat movieCatalog.py
