@@ -277,7 +277,7 @@ Why is the method "incomplete"?
         # better: read the movie data only one time
         self.movies = self.read_movies(MovieCatalog.DATA_FILE)
 
-    def get_movies(self,title: str):
+    def get_movie(self, title: str):
         for movie in self.movies:
             if movie.get_title() == title:
                return movie
@@ -288,7 +288,8 @@ Why is the method "incomplete"?
 
 ### Memory Hog
 
-This code uses lots of memory.  It's slow and totally unnecessary.
+This code may use lots of memory if the movies file is large.  
+It's slow and unnecessary.
 
 ```python
 # in MovieCatalog
@@ -305,36 +306,71 @@ def read_movies(self, filename):
 
     return movie_list
 ```
+1. `read().splitlines()` reads the entire file and returns a list of strings. It's not necessary.
+2. Forgot to close the file, which consumes resources.
+3. *Assumes* that the first line is a comment (skips it) instead of checking, and *assumes* no other lines in the data file are comments.
+4. Does not check for (and ignore) any blank lines.
 
-Also forgot to close the file, which consumes resources.
+### Test All Your Own Code
 
-### Didn't Test His/Her Own Code
+You should test all your code.  
 
-When someone submits code that doesn't run, it shows they didn't test
-their own code.
-
-That's the antithesis of a good Individual Software Process.
+Submitting code that doesn't run is the antithesis of a good Software Process.
 
 ```python
 if __name__ == '__main__':
-    mc = MovieCatalog
-    mc.get_movie("Mulan")
+    mc = MovieCatalog       # Syntax error
+    mc.get_movie("Mulan")   # discards return value
 ```
 
-The last statement is also **useless**.
 
 ### Using a CLASS variable as in INSTANCE variable
 
 A variable defined inside a class (not in a method) is a *class variable*.
-But, if you try to access it like an *instance variable* then Python
-automatically copies it to object's dictionary.
+If you try to access `self.x` (an *instance variable*) then Python will
+first look for `x` in the object's own namespace (dictionary),
+and next in the class's namespace. 
+
+```python
+class Pizza:
+    # this defines a class variable named topping
+    topping = 'Cheese'
+
+# access via the class's namespace
+Pizza.topping
+'Cheese'
+# access via an object's namespace
+p = Pizza()
+p.topping
+'Cheese'
+```
+
+This is similar to Java, where you can access static attributes using
+instance notation. In Java, however, you cannot have an instance variable
+(attribute) that has the same name as a class (static) variable.
+
+In Python, if you try to *assign* a value to a class variable using
+an instance, then Python creates a **new** variable with the same name
+as part of the object's own namespace.
+
+```python
+p = Pizza()
+p.topping
+'Cheese'
+# creates a new "topping" variable as part of p object's namespace
+p.topping = 'Seafood'
+p.topping
+'Seafood'
+# the class variable is not modified
+Pizza.topping
+'Cheese'
+```
 
 To understand this clearly, read about **namespaces** in Python.
 <https://docs.python.org/3/tutorial/classes.html>
 
-It's important to understand how Python manages namespaces, and the
-difference in syntax for class members and instance members.    
-"members" means attributes and methods.
+That page explains the difference between class variables 
+and instance variables (attributes).
 
 ```python
 class MovieCatalog:
@@ -344,7 +380,7 @@ class MovieCatalog:
        movies = read_movies(self.DATA_FILE)
 ```
 
-This works but it depends on Python copying a *class* variable to an *instance* variable.
+This works but it relies on Python accessing a *class* variable via an *instance* reference.  It would be clearer to write `MovieCatalog.DATA_FILE`.
 
 Experiment with this code:
 ```python
@@ -370,10 +406,11 @@ Cheese
 # another pizza
 cmd> q = Pizza()
 # change the class's topping
-cmd> Pizza.topping = "Tomato sauce"
-# did it change q?   change p?
+cmd> Pizza.topping = "Veggie"
+# does that change affect q?  Is q a Cheese pizza or Veggie pizza?
 cmd> print(q)
 ???
+# does it change p.topping?
 cmd> print(p)
 ???
 ```

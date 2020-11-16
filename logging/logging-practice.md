@@ -4,7 +4,7 @@ title: Logging Practice
 
 Create a directory named `logging` and copy (or write yourself) `demo_log.py`.  
 
-Download URL:  https://cpske.github.io/ISP/logging/demo_log.py
+Download URL:  <https://cpske.github.io/ISP/logging/demo_log.py>
 
 `demo_log.py` has these functions:
 
