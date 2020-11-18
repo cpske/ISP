@@ -206,3 +206,9 @@ if __name__ == "__main__":
 
 
 """
+
+### Logging and Log Formats
+
+[Python Logging](https://docs.python.org/3/library/logging) docs page for details on using loggers.  Has links to some tutorials.
+
+[Logging Formats](https://docs.python.org/3/library/logging.html#logrecord-attributes) section lists all the things you can include in the log message format.

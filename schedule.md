@@ -7,10 +7,10 @@ navigation_order: 1
 
 ### Links
 
-* <http://bit.ly/isp2020-scores> scores for some assignments
-* Scores for Google Classroom assignments (forms) are posted individually on Google Classroom
+* Scores for Google Classroom assignments (forms and docs uploaded to Classroom) are posted individually on Google Classroom
+* <http://bit.ly/isp2020-scores> scores for other assignments, mostly coding
 * <http://bit.ly/isp2020-ku-polls> evaluations for KU Polls 
-* <http://bit.ly/isp2020-projects> list of team projects and feedback
+* <http://bit.ly/isp2020-projects> list of team projects, scores, and feedback
 
 ### Week 1
 
@@ -18,16 +18,15 @@ navigation_order: 1
 * Introduction to software process
 * Exercise: process description of an everyday process
   - [Write a Process Description for Everyday Project](/ISP/assignment/week1/general-process-exercise) 
-  - URL: https://cpske.github.io/ISP/assignment/week1/general-process-exercise
   - [Submissions](https://classroom.google.com/u/1/c/MTM4MDk3MDY1NjM4/a/MTIyOTI1NjczMTM0/submissions/by-status/and-sort-name/all)
 * Github Classroom review and practice accepting and doing an assignment.
 * Skill assessment quiz - concepts and coding. Requires Github.
 
 Assignment
 * Complete [Sign-up form](https://forms.gle/fh9SqvmA9yPh1ur6A) for Github if you haven't done it yet
-* Install required software:  signup-and-software.md
+* [Install required software](/assignment/week1/signup-and-software)
 * [Software Process Questions](https://docs.google.com/forms/d/e/1FAIpQLSd3FtoUtetMjd47M5TY9FYgK2TJvWwog44PzuEki6gFd3zsyQ/closedform) 
-- /ISP/assignment/week1/software-process-homework
+- [Software Process Homework](/assignment/week1/software-process-homework)
 
 ### Week 2 (17 Aug)
 
@@ -58,12 +57,12 @@ Assignment
 * Git Merging and Conflict Resolution
 
 Assignment
-* [Command Line Basics](/ISP/assignment/week3/Command-Line-Basics.odt) you should know (nothing to submit) 
+* [Command Line Basics](/assignment/week3/Command-Line-Basics.odt) you should know (nothing to submit) 
   - <https://drive.google.com/open?id=1igAYSBGdshgz1ESZOjcFwP0x-vCT-02CatdWEcVV7aQ&authuser=1>
 * Add Git remote commands to your Git commands repo
-  - [git-remote-commands](/ISP/assignment/week3/git-remote-commands)
+  - [git-remote-commands](/assignment/week3/git-remote-commands)
 * KU Polls write a vision and requirements 
-  - [Assignment](/ISP/assignment/week3/ku-polls)
+  - [Assignment](/assignment/week3/ku-polls)
   - Background for Vision Statement: <https://cpske.github.io/ISP/assignment/ku-polls/vision>
 
 ### Week 4 (31 Aug)
@@ -118,10 +117,10 @@ Exercise
 
 Assignment
 * Unit testing assignment to submit on Github Classroom 
-  - https://cpske.github.io/ISP/assignment/week6/unit-testing-assignment
+  - <https://cpske.github.io/ISP/assignment/week6/unit-testing-assignment>
   - Auction class - AuctionTest.odt AuctionTest.pdf
-  - Github Classroom assignment: https://classroom.github.com/a/Tls2V5I9
-* KU Polls Iteration 2 - [/ISP/assignment/ku-polls/iteration2.md]()
+  - Github Classroom assignment: <https://classroom.github.com/a/Tls2V5I9>
+* [KU Polls Iteration 2](/assignment/ku-polls/iteration2.md)
   - add an `end_date` to polls, 
   - add methods `is_published`, `can_vote`
   - improve navigation by adding links to home page
@@ -131,9 +130,9 @@ Assignment
 
 ### Team Project
 
-* Project Guidelines: http://bit.ly/isp2020project-description
-* Proposal Template: http://bit.ly/ISP-project-template
-* Project Spreadsheet: http://bit.ly/ISP2020-projects to submit your team and proposal link
+* Project Guidelines: <http://bit.ly/isp2020project-description>
+* Proposal Template: <http://bit.ly/ISP-project-template>
+* Project Spreadsheet: <http://bit.ly/ISP2020-projects> to submit your team and proposal link
 
 ### Week 7 (21 Sep)
 
@@ -163,20 +162,20 @@ Assignment
 * Exam is 27 Sep (Sunday) rooms 202 and 203. Times: 9:00-12:00 and 13:00-16:00.
 * Covers everything so far.
 * Coding part will emphasize **unit testing** and **code quality**.
-* Recommended OBS Video Settings: https://drive.google.com/open?id=1xiDH6NImH0PAAZp5AUNWtJeLzlRSYoqiAOFE8wFS1vM&authuser=1
+* Recommended OBS Video Settings: <https://drive.google.com/open?id=1xiDH6NImH0PAAZp5AUNWtJeLzlRSYoqiAOFE8wFS1vM&authuser=1>
 
 ### Week 8 (5 Oct)
 
 * Code Quality, Coding Style, and Coding Standards
-  - https://cpske.github.io/ISP/code-quality
-  - coding style for Python (you should have learned this already)
+  - <https://cpske.github.io/ISP/code-quality>
+  - coding style for Python (you learned this in Programming 1, I think)
 * Comment style in Python 
   - there are 3 common standards for how to document parameters and returns
   - you can use either the Python standard or Google's standard (more concise)
   - use Type Hints in code to document data types instead of writing the data types in comments
-  - Read this:  https://realpython.com/documenting-python-code/
+  - Read this:  <https://realpython.com/documenting-python-code/>
 * Style checking tools, esp. pylint and flake8
-  - https://cpske.github.io/ISP/code-quality/code-quality-tools
+  - <https://cpske.github.io/ISP/code-quality/code-quality-tools>
   - how to configure flake8. But its *better* to fix your code than add special rules
   - pylint and/or flake8 can be used inside an IDE, including Eclipse, Pycharm, and VS Code
   - the standard tool for Java is Checkstyle.  CPSKE has its own checkstyle rules.
@@ -248,7 +247,6 @@ Assignment
 
 Assignment
 * Movie Rental 2 - https://cpske.github.io/ISP/assignment/week11/movie-rental2
-* Logging practice (optional) https://cpske.github.io/ISP/logging/logging-practice
 
 
 ### Week 12 (2 Nov)
@@ -284,7 +282,7 @@ Assignment
 * Project demos.
 
 Exercise
-* Logging practice <ttps://cpske.github.io/ISP/logging/logging-practice>
+* Logging practice <https://cpske.github.io/ISP/logging/logging-practice>
 
 Assignment
 * 
