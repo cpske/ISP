@@ -166,6 +166,29 @@ DATABASES = {
 }
 ```
 
+### Database URLs for dj-database-url
+
+The above example shows how to use a single environment variable (`DATABASE_URL`) and the dj-database-url function `parse` to create all the values in a Django dictionary.
+
+This is a lot simpler than using separate variables for database name, url, username, and password.  The format for the URLs in shown on <https://github.com/jacobian/dj-database-url>.
+
+Here are a few common ones by example
+
+| Database | URL                      |
+|:---------|:-------------------------|
+|SQLite    | sqlite:///db.sqlite3     |
+|Postresql | postgres://user:password@localhost/mydatabase |
+|MySql     | mysql://user:password@localhost/mydatabase |
+
+`user` and `password` are the database user (defined in the database manager) that has permission to read/write the database for your app.
+For migrations, this user needs permission to alter the schema and create tables, too.
+
+If the database is running on another host, use that instead of "localhost" (of course), and if the database manager is listening on a non-standard port then specify it after the hostname, such as:
+
+```
+postgres://appuser:secret@server.ku.th:12345/mydatabase
+```
+
 ### How to Use Alternate Configuration Files with `python-decouple`
 
 Decouple can read the configuration from a file other than `.env` or `settings.ini`.  This is explained at the end of the python-decouple docs page.

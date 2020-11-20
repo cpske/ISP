@@ -155,10 +155,7 @@ End-to-End Testing
 </td>
 <td markdown="span">
 [Web App Testing](testing/WebTesting.pdf) how to test web apps, includes E2E with Selenium.    
-[Intro to Selenium](testing/Selenium-intro)    
-1. Refactor your Django tests into separate files, based on what is being tested.    
-2. Perform code coverage on your Django tutorial code and your project code.    
-3. [Find Bad Links](assignment/selenium) using Selenium. 
+[Intro to Selenium](testing/Selenium-intro) and [Page Scraping](testing/Selenium-scraping).
 </td>
 </tr>
 

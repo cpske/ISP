@@ -1,114 +1,84 @@
 ---
-title: Selenium WebDriver in Python
+title:  Selenium Web Testing Assignment
 ---
 
-### Installation
+## 1. Function to Find and Return all `<a href=...>` Tags
 
-You need the selenium package and at least one browser driver.
-
-Installation instructions: https://pypi.org/project/selenium/
-
-This only installs Selenium, not the browser drivers:
-```shell
-pip install -U selenium
-```
-
-### 1. Function to Find all `<a href=...>` Tags
-
-Write a Python function named `get_links(url)`.
+Write a Python function named `get_links(url: str)`.
 The parameter is a String containing a URL.
-Use Selenium to find all the "a" tags on the page,
-and return a list of all the 'href' values on the page.
+Use Selenium to find all the "a" tags on the page.
+
+Return: a list of strings containing all the URLs
+for all hyperlinks on the page.  Each URL should
+appear only once in the list (no duplicates).
+
+Ignore page fragments -- the end of a URL starting with `#` sign,
+such as `#breakfast` in https://kucafe.com/menu#breakfast.
 
 ```python
-from selenium import webdriver
-
 def get_links(url):
     """Find all links on page at the given url.
-       Return a list of all link addresses, as strings.
+       Return:
+          a list of all unique hyperlinks on the page,
+          without "page fragments".
     """
-    browser = webdriver.Firefox()
-    browser.get(url)
-    #TODO get all 'a' tags on page
-    #TODO for each 'a' tag, get the href attribute value
-    browser.close()
+    # TODO your solution
     return links
 ```
-
-Ref: See [Locating Elements](https://selenium-python.readthedocs.io/locating-elements.html)
-in [Selenium Docs](https://selenium-python.readthedocs.io/locating-elements.html) (unofficial docs).
 
 To get an attribute of a page element use `element.get_attribute('name')`
 such as `link.get_attribute('href')`.
 
-### 2. Print all Links on the Course Homepage
 
-Write a `main` method to print all the links (href values)
-on the course homepage, one per line.
+### 2. Function to Test a Single URL 
 
-Homepage:  https://cpske.github.io/ISP/
+Write a function named `is_valid_url(url: str)` to test if
+a url is reachable (valid) or now.
+Return True if the URL is OK, False otherwise.
 
-### 3. Function to Test all Links
+There are several ways to do this. Top choices are:
 
-Write a `invalid_urls( urllist )` function
-to test a list of urls (as Strings).
-If the URL is OK, don't do anything.
-Return a new list containing all the invalid or unreachable URLs.
+1. Selenium WebDriver 
+2. Python httplib or urllib
 
-You can use Selenium WebDriver or Python httplib or urllib for this.
-Try sending just a HEAD request instead of GET request. 
+If you use Python httplib or urllib, you don't need to actually
+fetch the page -- that is slow and uses a lot of bandwidth.
+For `urllib`, simply open the the URL.  If the URL is bad it 
+will raise an HTTPError. Check the error code in the HTTPError.
+For any error code except 403, it's a bad link.
+Be sure to *close* the URL connection before returning.
+
+For `httplib`, send a HEAD request instead of GET request. 
 The HEAD request only returns the response header without the page content, 
 which is a lot *faster* and smaller.
 
-For urllib2, just open() the URL.  If the URL doesn't exist,
-opening it will raise an exception.
+### 3. Function to test a list of URLs
 
-### 4. Print all Invalid Links on the Course Homepage
+Write a function named `invalid_urls(urllist: List)`
+to test a list of urls (as Strings).
+It returns a new list containing the invalid URLs.
+If no invalid URLs, return an empty list.
 
-In the main method, also print all the bad (unreachable) URLs.
+Obviously, you should use your `is_valid_url` for this.
+
+### 4. Main Function: Print bad links on the course homepage
+
+Use your code to print all the bad links on https://cpske.github.io/ISP/
 
 
-### 5. E2E Test of Your Django Polls
+### Challenge Problem
 
-Write functional (E2E) tests of your Django Polls app using Selenium.
+For each link on the course home page, **if** the link refers
+to another page in the same domain as the origin,
+then scan that page for bad links, too.
 
-**What to Submit**
+Don't scan pages in other domains.
 
-Put all tests in file `polls/tests/functional_test.py` and commit it to
-your django-polls repository on Github, in the master branch.
 
-**What to Test**
+## What to Submit
 
-1. Go to `/polls/`.  Find an `H1` tag and verify that it contains "Current Polls" (or whatever text your heading is).
-2. Got to `/polls/` and find a poll question on the page.  The test passes if it is found.
-3. Click on a polls hyperlink.  Verify that it goes to a page with list of choices to vote on.
-4. Click on the first choice.  Verify that it goes to a page of voting results.
-
-That's it!  E2E testing (functional testing) tests that your app behaves correctly, but doesn't try to throughly test every detail.  Use unittests for details.
-
-You can use either `unittest` or `pytest` for these tests.
-
-**Suggestions**
-
-You will need to have some polls data in the test database for these
-tests to use.  You a `setUp` method or `setUpClass` (done only once).
-
-* Setup for `unittest`: https://docs.python.org/3/library/unittest.html
-    ```python
-    @classmethod
-    def setUpClass(cls):
-        """This method is run only once, before any tests are run."""
-        pass
-
-    def setUp(self):
-        """This method is called before every test."""
-        pass
-    ```
-* Setup for `pytest`: https://docs.pytest.org/en/latest/xunit_setup.html
-
-Write tests to do this.  You may want to modify your templates to make page elements easier to find.
-
-For example, in your `index.html` template, add an `id` or `class` attribute to your elements for polls questions.
+In the code you submit, use Chrome or Firefox as the browser.
+Don't use Safari or Microsoft Edge, because they don't work on Linux.
 
 ## More Info
 
@@ -120,3 +90,5 @@ For example, in your `index.html` template, add an `id` or `class` attribute to 
 
 [ReadTheDocs for Selenium](https://selenium-python.readthedocs.io/api.html) unofficial docs, has API and also info about installing and using Selenium.
 
+[Locating Elements](https://selenium-python.readthedocs.io/locating-elements.html) in the Selenium docs.
+in [Selenium Docs](https://selenium-python.readthedocs.io/locating-elements.html) (unofficial docs).
