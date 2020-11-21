@@ -285,9 +285,13 @@ Exercise
 * Logging practice <https://cpske.github.io/ISP/logging/logging-practice>
 
 Assignment
-* 
+* Team assignment - create installation instructions for your project
+* Individual assignment - install and run another team's project according to their instructions. Post issues for any problems in the instructions.
 
 ### Week 15 (23 Nov)
+
+* The Testing Pyramid and End-to-End Testing
+* Selenium for testing web applications
 
 ### Week 16 (30 Nov)
 

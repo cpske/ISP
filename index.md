@@ -140,7 +140,7 @@ Assertions are executable statements of what should be true at some point in cod
 [Code Review](code-review)
 </td>
 <td markdown="span">
-[Software Review](code-review/Reviews.pdf) slides and [Overview](code-review/code-review)      
+[Software Review](code-review/Reviews.pdf) slides and [Overview](code-review)      
 [Code Review Best Practices](code-review/code-review-best-practices) from experts    
 [Reviews chapter from Stellman &amp; Greene](code-review/Reviews-Stellman-and-Greene.pdf)    
 [Review Checklists](code-review#checklists) examples and guidance    
@@ -427,7 +427,7 @@ Self-improvement
 </td>
 <td markdown="span">
 - Importance of continual learning and reading<br/>
-- Advice from SKE @ TaskWorld in [introduction](introduction) folder<br/>
+- Advise from [SKE grad @ TaskWorld](introduction/taskworld-advise)<br/>
 - _Pragmatic Programmer_ Item 5: Your Knowledge Portfolio (p. 37) <br/>
 - Goal-directed learning instead of comprehensive learning or random videos<br/>
 - Track your own performance<br/>
@@ -471,24 +471,5 @@ Good places for project documentation:
 * Github Wiki - good for project docs, iteration plans, design and architecture notes and diagrams, retrospective reports
 
 Everyone should know how to use Markdown. It's the *lingua franca* of online project docs.
-
-----
-
-### Software Engineering and Skills that Startups Need
-
-In the [IEEE Spectrum](https://spectrum.ieee.org/the-institute/ieee-member-news/software-engineering-grads-lack-the-skills-startups-need), 
-software engineer Nitish Devadiga says that 
-startups need graduates who can build scalable systems for distributed, data-intensive apps using cloud computing.
-But, software engineering programs emphasize traditional skills like software processes, analysis, and project management. 
-
-At startups, engineers participate in a broad variety of work including market research, new product ideas, designing system architecture, and cost-effective development.
-Iterative development and rapid time to market are important to a startup's survival.  Startups also depend on cloud resources.
-
-"*When you join a startup, there's a lot of emphasis on design of the application, reusability and clean code, and the ability ot conduct and undergo code reviews, as well as the ability to think of and build systems that can scale...*", Devadiga says.
-A "*practical understanding of infrastructure architecture design patterns, DevOps, and cloud platform services like compute instances, object storage, and queueing services*" also helps, he says
-
-His view is biased since he is principle engineer at a startup specializing in data analytics.
-
-IEEE lists [free online resources](https://spectrum.ieee.org/the-institute/ieee-member-news/educational-resources-that-get-students-up-to-speed-on-advanced-manufacturing-and-programming-languages) students can use to supplement their education.
 
 [GitVisualizer]: http://git-school.github.io/visualizing-git/ "Interative tool draws a graph of commits in a repo"

@@ -91,6 +91,15 @@ browser = webdriver.Firefox(options=my_options)
 browser.get("https://duckduckgo.com")
 ```
 
+On my Linux system, the `set_headless()` option had no effect.
+What does work is to add a Firefox command line flag:
+
+```python
+my_options = Options()
+my_options.add_argument("--headless")
+...
+```
+
 ## Running Chromedriver as a Service
 
 If you use selenium in unit tests, the tests usually start a browser
@@ -98,6 +107,18 @@ before each test and stop it after each test, which uses a lot of time.
 You can run Chrome as a service to reduce start-up time.
 
 See [Chrome Driver Getting Started](https://sites.google.com/a/chromium.org/chromedriver/getting-started).
+
+## Using a Headless Browser
+
+Running a browser without the GUI interface makes it faster.
+This is useful for testing, esp. on a CI server where you *must* 
+run Selenium tests in headless mode.
+
+Firefox and Chrome can be used in headless mode.
+For Java, there is a HmtlUnitDriver that also runs in headless mode.
+
+[Selenium Headless Browser Testing](https://www.toolsqa.com/selenium-webdriver/selenium-headless-browser-testing/) has a good explanation of how to
+configure different browsers for headless mode. Examples use Java.
 
 [selenium.webdriver.remote.webdriver.WebDriver]: https://selenium.dev/selenium/docs/api/py/webdriver_remote/selenium.webdriver.remote.webdriver.html#module-selenium.webdriver.remote.webdriver
 [selenium.webdriver.remote.webelement.WebElement]: https://selenium.dev/selenium/docs/api/py/webdriver_remote/selenium.webdriver.remote.webelement.html#module-selenium.webdriver.remote.webelement
