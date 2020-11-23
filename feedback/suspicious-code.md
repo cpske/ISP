@@ -2,7 +2,7 @@
 
 Codes that are distinct enough or have unique logic (even if not good logic):
 
-Chanathip, Metaras, Pattarin, Nuttapol,
+Chanathip, Metaras, Pattarin, Nuttapol, Sahanon, others.
 
 ## Anusid
 
@@ -141,9 +141,6 @@ def vote(request, question_id):
             selected_vote.save()
         else:
             Vote.objects.update_or_create(question=question, choice=selected_choice, user=request.user)
-        # Always return an HttpResponseRedirect after successfully dealing
-        # with POST data. This prevents data from being posted twice if a
-        # user hits the Back button.
         return HttpResponseRedirect(reverse('polls:results', args=(question.id,)))
 ```
 
@@ -194,6 +191,8 @@ def vote(request, question_id):
 ```
 
 ## Narawish - same as Jakkrathorn except for unnecessary "for choice in ..." loop
+
+You should delete the `Choice.votes` attribute. Use a `votes` property that sums the votes for a choice when invoked.
 
 ```python
 @login_required()
@@ -303,7 +302,7 @@ def vote(request, question_id):
         return HttpResponseRedirect(reverse('polls:results', args=(question.id,)))
 ```
 
-## Peerasu - same grammar error and assignment to request.session as Kittitouch
+## Peerasu - same grammar error in warning message and same assignment to request.session as Kittitouch
 
 ```python
 @login_required
@@ -335,6 +334,8 @@ def vote(request, question_id):
 ```
 
 ## Panitan - same as Kittitouch (both have unnessary assignment to request.session)
+
+"Successfull" is misspelled. Punctuation error in another message.
 
 ```python
 @login_required
@@ -422,7 +423,7 @@ def vote(request, question_id):
 
 ## Nattapol - same as Jirawadee & Kasadit but added unnecessary code
 
-Nattapol seems to **not know** what the code does. Uselessly calls `get_client_ip` 4 times and ignores the return value each time.
+This code uselessly calls `get_client_ip` 4 times and ignores the return value each time.  Other parts same as Jirawadee and Kasadit.
 
 ```python
 @login_required
@@ -457,13 +458,16 @@ def vote(request, question_id):
         return HttpResponseRedirect(reverse('polls:results', args=(question_id,)))
 ```
 
-## Chananya - logic is poor and complex, multiple calls to configure() same as others
+## Chananya - multiple calls to configure() same as others
 
 
 
-## Similar views code in several students' files: Chananya, Jirawadee, Kasadit, 
+## Similar configure() code in Chananya, Jirawadee, Kasadit 
 
-Several students wrote this function nearly identically:
+Several students wrote this function nearly identically.
+
+It is better to configure logging in `settings.py` instead of
+in views.
 
 ```python
 def configure():
@@ -479,7 +483,6 @@ def configure():
     console_handler.setFormatter(formatter)
     root.addHandler(console_handler)
 ```
-
 
 
 ## Similar "vote_for_poll" method
@@ -561,10 +564,12 @@ def vote_for_poll(request, question_id):
 
 ```
 
-### Bad Code in views.py
+### Bad Logging Code in views.py
 
 At top level, several students wrote this.
+
 The code is executed when the file is imported and variables are global.
+Better to configure logging in the application `settings.py`.
 
 ```python
 
@@ -577,7 +582,4 @@ handler.setFormatter(formatter)
 logger.addHandler(handler)
 logger.setLevel(logging.INFO)
 ```
-
-
-
 
