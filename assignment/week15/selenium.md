@@ -4,7 +4,7 @@ title:  Selenium URL Testing
 
 1. Write a Python program in a file named `link_scan.py` that implements the functions described below.
 
-2. Submit your code to Github Classroom. The assignment URL is listed on Google Classroom for this assignment.
+2. Submit your code to Github Classroom. The assignment URL is listed on Google Classroom.
 
 3. In your code, use Firefox or Chrome as the browser invoked by Selenium.  Don't use Safari or Microsoft Edge.
 
@@ -24,9 +24,9 @@ return the URLs as a list, without page fragments or query params.
 Return: a list of strings containing the URLs
 for all hyperlinks ("a" tags) on the page.  
 Each URL should appear only once in the list (no duplicates).
-* Return urls without page fragments -- the end of a URL starting with `#` sign,
-such as `#breakfast` in https://kucafe.com/menu#breakfast
-* Also remove query parameters beginning with "?", as in https://kucafe.com/?q=breakfast.
+* Return urls without page fragments. A "fragment" is the end of a URL starting with `#` sign, such as `#breakfast` in https://kucafe.com/menu#breakfast
+* Also remove query parameters beginning with "?", as in https://kucafe.com/?q=coffee.
+* Be careful! Some "a" tags may not have an "href" attribute. Ignore them.
 
 ```python
 def get_links(url):
@@ -46,17 +46,17 @@ Write a function named `is_valid_url(url: str)` to test if
 a url is reachable (valid) or not.
 
 Return True if the URL is OK, False otherwise.
-Also return False is the URL has incorrect syntax -- *don't* try
+Also return False is the URL has invalid syntax. *Don't* try
 to validate the url syntax yourself! Let whatever Python library
 you use do that -- it will raise an exception of the URL is invalid.
 
-There are several ways to test a URL. Some choices are:
+There are several ways to test a URL, including:
 
 1. Python httplib, urllib, or requests package
 2. Selenium WebDriver 
 
 If you use Python httplib, requests, or urllib, you don't need to actually
-fetch the page -- that is slow and uses a lot of bandwidth.
+fetch the url's web page -- that is slow and uses a lot of bandwidth.
 For `urllib`, simply **open** a connection to the URL.  
 If the URL is bad or unreachable it will raise an HTTPError. Check the error 
 code in the HTTPError.  Any error code except 403 is a bad link.
@@ -67,15 +67,23 @@ HEAD requests only the response header without the page content,
 which is *much* faster and smaller. It may be faster even if you don't
 actually read the response.
 
+
 ### 3. Function to test a list of URLs
 
 Write a function named `invalid_urls(urllist: List)`
-to test a list of urls (as Strings).
+to test a list of URLs (given as strings).
 
-This function returns a new list containing only the invalid URLs.
+This function returns a new list containing only the invalid or unreachable URLs.
 If no invalid URLs, return an empty list. Don't modify the list parameter.
 
 Obviously, you should use your `is_valid_url` for this.
+
+```python
+def invalid_urls(urllist: List[str]) -> List:
+    """Validate the urls in urllist and return a new list containing
+    the invalid or unreachable urls.
+    """
+```
 
 ### 4. Main Function: Scan a web page, print links, and bad links
 
@@ -83,7 +91,7 @@ Write a `__main__` block that accepts a URL as a command line
 argument, gets the web page, and prints (a) all the links found
 on the page, and then (b) all the bad links.
 
-So, someone can type:
+So, someone can test all the links on the ISP home page by entering:
 
 ```
 cmd> python3 link_scan.py  https://cpske.github.io/ISP/
@@ -101,8 +109,6 @@ https://cpske.github.io/ISP/assignment/ku-polls/
 Bad Links:
 https://cpske.github.io/ISP/bad/index 
 ```
-
-to test all the links on the ISP home page and print the bad ones.
 
 If no command line argument is given, print a usage message:
 
@@ -126,8 +132,8 @@ line argument (the URL to check) is not an HTML page?
 Then it's useless to scan the page for hyperlinks using Selenium.
 
 You cannot determine the content type just by examining the URL as a string,
-but there any many other ways to determine the content type of a URL.
-A careful program would print a message if the URL is not an HTML page.
+but you can test the content-type after getting a URL.
+A careful program would print a message if the content is not HTML.
 
 
 ## More Info
@@ -136,9 +142,8 @@ A careful program would print a message if the URL is not an HTML page.
 
 [My Intro to Page Scraping](/ISP/testing/Selenium-scraping)
 
-[Selenium API Docs](https://selenium.dev/selenium/docs/api/py/), best for API reference
+[Selenium Official Docs](https://www.selenium.dev/documentation/) has lots of useful help for getting started and using Selenium.
 
-[ReadTheDocs for Selenium](https://selenium-python.readthedocs.io/api.html) unofficial docs, has API and also info about installing and using Selenium.
+[ReadTheDocs for Selenium](https://selenium-python.readthedocs.io/api.html) unofficial docs, has API and info on using Selenium.
 
-[Locating Elements](https://selenium-python.readthedocs.io/locating-elements.html) in the Selenium docs.
-in [Selenium Docs](https://selenium-python.readthedocs.io/locating-elements.html) (unofficial docs).
+[Locating Elements](https://selenium-python.readthedocs.io/locating-elements.html) in the unofficial Selenium docs.
