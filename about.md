@@ -14,9 +14,9 @@ Github Classroom Organization [ISP2020](https://github.com/org/ISP2020) for prog
 
 ### Teaching Assistants (TAs)
 
-[Mai Norapong](https://github.com/MaiNorapong)  `email("Mai","Norapong",2)`
+[Mai Norapong](https://github.com/MaiNorapong)  `email("Mai", "Norapong", 2)`
 
-[Pakanon Pantisawat](https://github.com/pknn) `email("Pakanon","Pantisawat")`
+[Pakanon Pantisawat](https://github.com/pknn) `email("Pakanon", "Pantisawat")`
 
 ```python
 DOMAIN = "ku.th"

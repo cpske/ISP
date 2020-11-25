@@ -10,8 +10,9 @@ The steps and artifacts for this assignment are:
 
 1. [Vision Statement](vision) every project should have this
 2. [Start the Project & Write Requirements](ku-polls-requirements) create your own Github project with a wiki. Write a Vision and Requirements.
-3. [Iteration 1](iteration1) starting with an Iteration Plan (in wiki), and a Github Project as task board, complete the Django tutorial. Commit work on a branch as described in the assignment. 
+3. [Iteration 1](iteration1) starting with an Iteration Plan (in wiki), and a Github Project as task board, complete the Django tutorial. Commit work on a branch as described in the assignment, then merge the branch into master.
 4. [Iteration 2](iteration2) improve the UI, externalize configuration, and add a poll closing date. Use a task board and git branch as described in assignment.
+4. [Iteration 3](iteration3) add authentication and require a visitor to login in order to vote. An authorized user gets only one vote per poll question, but he can modify and resubmit his vote.
 
 
 [django-tutorial]: https://docs.djangoproject.com/en/3.1/intro/tutorial01/

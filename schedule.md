@@ -172,23 +172,23 @@ Assignment
 * Comment style in Python 
   - there are 3 common standards for how to document parameters and returns
   - you can use either the Python standard or Google's standard (more concise)
-  - use Type Hints in code to document data types instead of writing the data types in comments
+  - use type hints to document data types instead of writing the data types in docstring comments on functions and methods
   - Read this:  <https://realpython.com/documenting-python-code/>
 * Style checking tools, esp. pylint and flake8
   - <https://cpske.github.io/ISP/code-quality/code-quality-tools>
-  - how to configure flake8. But its *better* to fix your code than add special rules
-  - pylint and/or flake8 can be used inside an IDE, including Eclipse, Pycharm, and VS Code
+  - how to configure flake8. But it is *better* to fix your code rather than add special expections!
+  - Pylint and/or Flake8 can be used inside an IDE, including Eclipse, Pycharm, and VS Code
   - the standard tool for Java is Checkstyle.  CPSKE has its own checkstyle rules.
 * Automation and Continuous Integration
-  - https://cpske.github.io/ISP/automation/
+  - <https://cpske.github.io/ISP/automation/>
 
 Exercise
 * Perform style checking on BankAccount code (`bank_account` and `money`) until pylint gives you a 10.0 score. 
   - Also run flake8.
   - Push to **your own github account** (change the upstream)
 * CI Practice - add Travis-CI and Codecov to demo-pyci
- - Instructions https://cpske.github.io/ISP/automation/travis-demo-project
- - https://cpske.github.io/ISP/automation/demo-pyci.zip (starter code)
+ - Instructions <https://cpske.github.io/ISP/automation/travis-demo-project>
+ - Starter code <https://cpske.github.io/ISP/automation/demo-pyci.zip> 
 * Guidelines for Team Projects
 
 Assignment:
@@ -241,16 +241,15 @@ Assignment
 ### Week 11 (26 Oct)
 
 * Quiz on Refactoring
-* Review common refactorings - https://cpske.github.io/ISP/refactoring/Refactoring-Review.pdf
+* Review common refactorings - <https://cpske.github.io/ISP/refactoring/Refactoring-Review.pdf>
 * More Refactoring - refactorings involving structure of classes, and refactorings for creating objects
-* Logging (done in KU Polls Iter 3) - https://cpske.github.io/ISP/logging/Logging.pdf
+* Logging (done in KU Polls Iter 3) - <https://cpske.github.io/ISP/logging/>
 
 Assignment
-* Movie Rental 2 - https://cpske.github.io/ISP/assignment/week11/movie-rental2
+* Movie Rental 2 - <https://cpske.github.io/ISP/assignment/week11/movie-rental2>
 
 
 ### Week 12 (2 Nov)
-
 
 * Agile - Agile values, principles, and the practices.
   - values and mindset, not a software process
@@ -259,16 +258,17 @@ Assignment
   - branches are not using Github Flow
   - prepare to demo your work so far
 * More Refactoring
+* "Why" refactoring and benefits, both in general and for specific refactorings.
 
 ### Week 13 (9 Nov)
 
-* Software Reviews https://cpske.github.io/ISP/code-review/
+* Software Reviews <https://cpske.github.io/ISP/code-review/>
 * Project Demos
 
 Assignment
 * Read "Reviews" chapter from textbook by Stellman and Greene.
 * Readings on Code Review Best Practices (read the links, not just my summary)
-  - https://cpske.github.io/ISP/code-review/code-review-best-practices
+  - <https://cpske.github.io/ISP/code-review/code-review-best-practices>
 * Create a Review Script and Checklist. Create in project wiki and add link from your project README.md
 
 ### Week 14 (16 Nov)
@@ -278,7 +278,6 @@ Assignment
 * Static and Dynamic typing.
 * Type hints in Python, how it helps find bugs and improve refactoring.
 * Logging (briefly).
-* "Why" and benefits of refactoring.
 * Project demos.
 
 Exercise
@@ -290,10 +289,22 @@ Assignment
 
 ### Week 15 (23 Nov)
 
+* The 12-Factor App, and 7 factors that app to projects
 * The Testing Pyramid and End-to-End Testing
-* Selenium for testing web applications
+* Selenium for testing web applications in [Web Testing](testing/WebTesting.pdf)
+  - [Intro to Selenium](testing/Selenium-into)
+
+Exercise
+* Scrape search results from DuckDuckGo using Selenium. Details in Web Testing presentation slides
+
+Assignment
+* Write an app to scan and test all links on a web page [Link Scanner](assignment/week15/selenium)
 
 ### Week 16 (30 Nov)
 
+* "Why" refactoring and benefits, both in general and for specific refactorings.
+* Review
 * Bug Hunting - find problems in other teams' software
 
+Assignment
+* Try to find bugs in the deployed version of other team's projects.
