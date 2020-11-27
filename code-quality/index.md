@@ -12,15 +12,15 @@ harder to understand and maintain, and harder to test.
 Best Practices for Code Quality include:
 
 1. Consistently use a **coding standard** (coding style)
-2. Write document comments (Javadoc or Python docstring) using a standard
-3. Use descriptive names
+2. Write document comments (Javadoc or Python docstring) using a standard format
+3. Use descriptive names for classes, functions, and variables
 4. Strive for short functions (methods) that do just one thing
 5. Use return values instead of side effects where possible
 6. Avoid unexpected side effects. This includes the "command query separation principle".
 7. Review all your code.
 8. On a team project, ask others to review your code.
 9. Use tools to check your code.
-10. Refactor occasionally.  Many projects have a "refactoring day" when the only work done is review and refactoring.
+10. Refactor to improve code.  Many projects have a "refactoring day" when the only work done is review and refactoring.
 
 *Zen of Python* on Code Quality. At the Python interactive prompt, type:
 
@@ -45,22 +45,25 @@ To discuss:
 
 * Look at coding guidelines from some real projects. Apache is good source.
 
+
 ## Coding Style and Coding Convention
 
 Code is *easier to read* if you consistently apply 
 some guidelines, and *easier for others to read* if everyone
-on the team appies the same coding style.
+on the team uses the same coding style.
 
 Team projects usually have a "coding standard" -- some companies
-have a single company coding standard.
+have a single company coding standard. 
+Google, Apache Foundation, and Microsoft have coding standards.
 
-Over time, coding standards and guides have emerged.
+Over time, common coding standards and guides have emerged.
 There is *some* variation in the details of a coding style guide,
-but they all agree on most (over 95%) of the details.
+but they all agree on most of the details.
+
 
 ## Coding Standard
 
-There docs show the Python "official" coding standard, called PEP8:
+These docs show the Python "official" coding standard, called PEP8:
 
 * [pep8.org](http://pep8.org/) is a single page easy-to-read summary of how to use [PEP 8](https://www.python.org/dev/peps/pep-0008/) the official Python Style Guide.
 * Python Guide for Docstrings [PEP 257](https://www.python.org/dev/peps/pep-0257/)
@@ -77,6 +80,7 @@ Google has a detailed style guide, that includes "pros" and "cons" of style choi
   - Part 3 "Python Style Rules" are rules for coding style
   - Part 4 "Parting Words" is *Be Consistent*
   - Google's guide is very prescriptive (do and don't) on how to write code
+
 
 ### Documenting Your Code
 
@@ -106,10 +110,12 @@ Django uses `flake8` to check coding style.
 
 https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/coding-style/
 
+
 ### Coding Style For Java
 
 1. Programming 2 (Java) coding standard.
 2. Oracle's Java coding standard.
+
 
 ## Code Quality and Style Checking Tools
 
@@ -117,7 +123,11 @@ https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/coding
 
 ## Tips from "*Practices of an Agile Developer*"
 
-Many Tips in the book relate to code quality -- they must think it's important!
+Many Tips in the book relate to code quality -- the authors must think it's important!
 
-Exercise: create a list of Tips related to code quality and give 
+## Exercise
+
+Create a list of the Tips from PAD related to code quality and give 
 an example of each one.
+
+[Quick References](../resources/PAD-quickref.pdf) from *Practices of an Agile Developer*

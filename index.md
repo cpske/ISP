@@ -128,10 +128,10 @@ Improve code by restructuring it without changing the external functionality.
 
 <tr valign="top">
 <td markdown="span">
-Assertions
+[Assertions](code-quality/assert-vs-raise)
 </td>
 <td markdown="span">
-Assertions are executable statements of what should be true at some point in code.  Assertions reduce errors and document code-level assumptions.
+"Asserts" are tests of what should be true at some point in code.  Assertions reduce errors and document code-level assumptions.
 </td>
 </tr>
 
