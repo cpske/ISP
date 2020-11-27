@@ -1,5 +1,5 @@
 ---
-title: Assertions and Exceptions
+title: Assertions, Exceptions, Special Conditions
 ---
 
 When something unexpected happens in the code for a function or method,
@@ -89,6 +89,63 @@ So, "raise an excepton" or "return a special value" are both acceptable solution
 - Java's `list.indexOf(value)` returns -1 if value is not in the list
 
 
+## Exercise
+
+This function computes the avarage of a list of numbers:
+
+```python
+def average(values) -> float:
+    """Return the average of a list of values. Must supply at least one value"""
+    return sum(values) / len(values)
+```
+
+1. If the `values` parameter is an empty list, what happens?
+
+2. Modify the code to raise ValueError if the list is empty.
+
+3. Add an `assert` to test that the list is not empty. Display a message if the assert fails.
+
+4. Creata a `zaverage` function the returns 0.0 if the list is empty. Can you do this without "if ... else"?
+
+5. Which solution do you think is best for average?  Why?
+
+
+## Exercise
+
+Read the first line from a file and return it:
+
+```python
+def head(filename) -> str:
+    """Return the first line from a file."""
+    file = open(filename, 'r')
+    first_line = file.readline()
+    file.close()
+    return first_line
+```
+
+1. What should `head` do if the requested filename does not exist or cannot be opened?
+
+2. What should `head` do if the file is empty?
+
+3. Are there any usage errors that you can use `assert` to check for?
+   - no need to check that filename is a string. `open` will catch that.
+
+4. Rewrite `head` to use your solution. If applicable to your code, also rewrite to use a "with" block to automatically close the file when execution leaves the block.
+
+## Syntax of Assert
+
+```python
+assert condition, expression
+```
+
+"Assert" a *condition* that should be True.
+If the *condition* is False, then an AssertionError is raised with the result of `expression` as the exception message text.  `expression` can be a string or anything the produces a string.
+
+```python
+assert math.sqrt(25)==5, "sqrt is broken"
+```
+
+
 ## Don't Raise the root `Exception` Type
 
 You should raise a specific exception type, such as ValueError or TypeError. 
@@ -115,63 +172,6 @@ print("Hello,", name)
 # Run it and press CTRL-C instead of typing a response
 What's your name?  <CTRL-C>
 Hello, anonymous
-```
-
-
-## Exercise
-
-This function computes the avarage of a list of numbers:
-
-```python
-def average(values) -> float:
-    """Return the average of a list of values. Must supply at least one value"""
-    return sum(values) / len(values)
-```
-
-1. If the `values` parameter is empty, what happens?
-
-2. Modify the code to raise ValueError if the list is empty.
-
-3. Add an `assert` to test for empty list. Display a message if the assert fails.
-
-4. Creata a `zaverage` function the returns 0.0 if the list is empty. You can do this without "if ... else".
-
-5. Which solution do you think is best for average?  Why?
-
-
-## Exercise
-
-Read the first line from a file and return it:
-
-```python
-def head(filename) -> str:
-    """Return the first line from a file."""
-    file = open(filename, 'r')
-    first_line = file.readline()
-    file.close()
-    return first_line
-```
-
-1. What should `head` do if the requested filename does not exist or the application cannot open the file?
-
-2. What should `head` do if the file is empty?
-
-3. Is there anything that we might use `assert` to check for?
-   - no need to check that filename is a string. `open` will catch that.
-
-4. Rewrite `head` to use your solution. If applicable to your code, also rewrite to use a "with" block to automatically close the file when execution leaves the block.
-
-## Syntax of Assert
-
-```python
-assert condition, expression
-```
-
-"Assert" a *condition* that should be True.
-If the *condition* is False, then an AssertionError is raised with the result of `expression` as the exception message text.  `expression` can be a string or anything the produces a string.
-
-```python
-assert math.sqrt(25)==5, "sqrt is broken"
 ```
 
 ## References
