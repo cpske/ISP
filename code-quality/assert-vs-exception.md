@@ -1,5 +1,5 @@
 ---
-title: Assertions, Exceptions, and Special Condtions
+title: Assertions and Exceptions
 ---
 
 When something unexpected happens in the code for a function or method,
