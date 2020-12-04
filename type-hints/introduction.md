@@ -16,18 +16,17 @@ Contents:
 
 ## Motivations for using type hints
 
-- Improved **readability** for humans and computers
-  * Improve code completion and refactoring in IDEs
+- Improve **readability** for humans and computers
+  * Better code completion and refactoring in IDEs
 - Acts as live **documentation**
   * Solves the problem of docstrings not being maintained
   * Docstrings don't allow complex types
 - Reduce errors
   * Helps a lot in large projects
 
-While Python is known for its _dynamic_ or "duck" typing (and some people will
+While Python is known for _dynamic_ or "duck" typing (and some people will
 argue against any form of enforced type checking), many (including the retired
-BDFL Guido van Rossum) agree that _static type checking_ is still welcome (in the form of 
-"gradual type hinting"). 
+BDFL Guido van Rossum) agree that _static type checking_ is still welcome in the form of "gradual type hinting". 
 
 ## Ways to type hint
 
@@ -79,11 +78,11 @@ def my_abs(x: int) -> int:
 {'x': <class 'int'>, 'return': <class 'int'>}
 ```
 
-With these, IDEs and static type checkers like `mypy` can help you check for 
-any type issues, before actual run-time.
+Using these, IDEs and static type checkers like `mypy` can help you check for 
+type issues before actual run-time.
 
-In comparison with these bare bones functions below that you're not really sure
-what it does, the above surely is an improvement without too much effort. 
+In comparison with the bare bones functions below, that you're not really sure
+what the function does, the above surely is an improvement without too much effort. 
 
 ```python
 def catch_all(*args, **kwargs):
@@ -98,9 +97,9 @@ def my_abs(x):
     return x
 ```
 
-(Many people agree that for small "obvious" functions, you don't really
+Many people agree that for small "obvious" functions, you don't really
 need a detailed docstring. Type hints add just that moderate amount of detail
-without needing too much description via docstrings)
+without needing too much description via docstrings.
 
 ### The typing module (PEP 484)
 

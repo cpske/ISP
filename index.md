@@ -3,6 +3,11 @@ title: Topics
 navigation_order: 2
 ---
 
+Some links to test link scanner:
+* <a> "a" tag without "href"</a>
+* <a href="#project-and-task-boards">project and task boards</a> "href" with page fragment only
+* <a href="https://www.does.not.exist">www.does.not.exist</a> unresolvable hostname
+
 <table border="0">
 <tr valign="top"> <th width="25%">Topic</th> <th width="75%">Description</th> </tr>
 <tr valign="top">
@@ -101,7 +106,7 @@ and [Python Type Hinting](type-hints/introduction) by Mai.
 Python docs [Typing support][python-typing] and
 [Collections base classes][python-abc-collections] are excellent.    
 Add type hints to detect errors: [scorecard.py](type-hints/scorecard.py)      
-Mai's [Type Hint Practice](type-hints/type-hint-practice.pdf).     
+Mai's [Type Hint Practice](type-hints/type-hints-practice.pdf).     
 </td>
 </tr>
 
@@ -456,7 +461,7 @@ Anti-Patterns for Developers
 [Old 2019 ISP index](2019/)
 
 ---
-Project & Task Boards
+## Project and Task Boards
 
 - [Trello](https://trello.com)
 - [Asana](https://asana.com) 
