@@ -7,9 +7,9 @@ How I graded:
 I ran the link scanner with a local version of the ISP github.io site as URL.
 The page includes a few special links including:
 * "a" tag without an "href" attribute
-* "a" tag where the "href" is only a page fragment (`href=#breakfast`), which is legal and common
+* "a" tag where the "href" is only a page fragment (`href="#breakfast"`), which is legal and common
 * "href" where the hostname cannot be resolved, e.g. misspelled hostname
-* "href" with an invalid path part, e.g. https://ku.ac.th/does/not/exist
+* "href" with an invalid path part, e.g. "https://ku.ac.th/does/not/exist"
 
 I deducted points for each the errors listed below and anything else that
 caused an exception to be raised. 
