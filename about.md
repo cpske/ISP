@@ -19,12 +19,10 @@ Github Classroom Organization [ISP2020](https://github.com/org/ISP2020) for prog
 [Pakanon Pantisawat](https://github.com/pknn) `email("Pakanon", "Pantisawat")`
 
 ```python
-import platform
 DOMAIN = "ku.th"
 
 def email(firstname: str, lastname: str, nlast: int = 1) -> str:
     """Return the email address for a KU person"""
-    assert platform.python_version() >= '3.6', "requires Python 3.6+ for f-strings"
     # \u0040 is Unicode for 'at' symbol
     return f"{firstname}.{lastname[0:nlast]}\u0040{DOMAIN}"
 ```
