@@ -3,7 +3,7 @@ title: Topics
 navigation_order: 2
 ---
 
-Some links to test link scanner:
+Some links to test your link scanner:
 * <a> "a" tag without "href"</a>
 * <a href="#project-and-task-boards">project and task boards</a> "href" with page fragment only
 * <a href="https://www.does.not.exist">www.does.not.exist</a> unresolvable hostname
@@ -385,6 +385,16 @@ Essential Project Documents
 </tr>
 <tr valign="top">
 <td markdown="span">
+[License](https://choosealicense.com)
+</td>
+<td markdown="span">
+Understand the different open source licenses like GNU, BSD, and MIT, 
+so you can choose one that matches what you want.    
+Don't just *blindly* write "GNU" which is incomplete (should be "GNU GPL v3" or similar) and inappropriate for many projects. 
+</td>
+</tr>
+<tr valign="top">
+<td markdown="span">
 Project Tools
 </td>
 <td markdown="span">
@@ -470,10 +480,13 @@ Anti-Patterns for Developers
 - Note: task board must to viewable by TAs and instructor!
 
 Good places for project documentation:
-* Github pages - can be created from files in a specified directory or branch of your project repository.
-* readthedocs.io
-* swagger.io - mainly for API and programmer docs
-* Github Wiki - good for project docs, iteration plans, design and architecture notes and diagrams, retrospective reports
+
+* [Github Wiki][github-wiki] - good for all kinds of project docs, plans, designs, reference material, and retrospective summaries
+* [Github pages](https://pages.github.com/) - create a static site from a specified directory or branch of your project repository
+* [readthedocs.io](https://readthedocs.io)
+* [swagger.io](https://swagger.io) - mainly for API and programmer docs
+
+[github-wiki]: https://guides.github.com/features/wikis/
 
 Everyone should know how to use Markdown. It's the *lingua franca* of online project docs.
 
