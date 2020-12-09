@@ -2,9 +2,9 @@
 title: Code Review Best Practices
 ---
 
-[Code Review Best Practices from SmartBear][best-practices-from-smartbear]    
-[Code Review Best Practices from Perforce][best-practices-from-perforce]    
-[Code Review Best Practices from JetBrains][best-practices-from-jetbrains]    
+[Code Review Best Practices from SmartBear](#best-practices-from-smartbear)    
+[Code Review Best Practices from Perforce](#best-practices-from-perforce)    
+[Code Review Best Practices from JetBrains](#best-practices-from-jetbrains)    
 
 
 ## Best Practices from SmartBear
@@ -18,7 +18,7 @@ Ref: [Best Practices for Peer Code Review](https://www.kessler.de/prd/smartbear/
 3. Use enough time for a proper review, but not longer than 60-90 minutes
     - reviewer effectiveness drops after 60 minutes
 
-4. Authors should annotate source code before the review begins.
+4. Author should annotate his source code before the review begins.
    By annotating his own code, 
    - author finds many bugs himself
    - helps reviewers understand the code or changes, hence saves time
@@ -75,7 +75,7 @@ Ref: [9 Code Review Best Practices](https://www.perforce.com/blog/qac/9-code-rev
    - give (sincere) praise along with constructive feedback
    - approach code review as a learning process
 
-> For Running Code Reivews
+> For Running Code Reviews
 
 6. Communicate Goals and Expectations
    - be clear what the goals are, and what you expect from reviewers

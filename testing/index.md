@@ -59,6 +59,17 @@ How to design test cases?
 
 * [JUnit Parameterized Tests](JUnitParams-tutorial.pdf) parameterize unit tests instead of writing many test methods with nearly the same code
 
+## End-to-End Testing
+
+Test the flow of the application "from start to finish".
+
+An E2E test typically covers one usage scenario, and you may want
+to test several scenarios.  However, the goal is not comprehensive
+testing of everything.
+
+[What is E2E Testing? E2E Testing Framework with Examples](https://www.softwaretestinghelp.com/what-is-end-to-end-testing/) is a short overview and describes some testing tools.
+
+[The Practical Testing Pyramid](https://martinfowler.com/articles/practical-test-pyramid.html) by Martin Fowler describes 3 levels of testing: unit test, integration test, and E2E test.
 
 ## Verification and Validation
 
@@ -72,7 +83,7 @@ How to design test cases?
 - Confirm that the software performs to the user's satisfaction. Assure that the software meets the user's (specified) needs. [U.W.]
 - "*Are we building the right thing?*" (informal interpretation)
 
-Note: definition 2 is the most descriptive. Definition 3 is not an acceptable answer on quiz or exam.
+Note: definition 2 is the most descriptive. Definition 3 (informal) is not an acceptable answer on quiz or exam.
 
 Two broad appoaches to perform V & V.
 
@@ -83,7 +94,7 @@ Two broad appoaches to perform V & V.
    - inspection and analysis of the software representation (e.g. code to discover problems
    - inspections, mathematical models and proofs
 
-Security Testing Example:
+## Security Testing
 
 1. Dynamic V & V
    - penetration testing
@@ -125,10 +136,15 @@ Tester
 ## Axioms and Guides for Testing
 
 1. The probability of more, undedecting defects increases with the number of detected defects
+
 2. Assign the best programmers to testing
+
 3. Exhaustive testing is impossible
+
 4. You will never know when you have found the last bug -- cannot guarantee software is defect=free
+
 5. It takes more time than you have to test less than you would like
+
 6. You will run out of time before you run out of test cases
    * If that's not true, you should be looking for more test cases
 

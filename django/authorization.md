@@ -10,14 +10,14 @@ and error-prone), Django uses **Groups**.
 A User belongs to one or more Groups.
 Each Group has Permissions associated with it.
 
-### Choices for Authorization
+### How to Perform Authorization
 
-Authorization are the privileges that a user has.
-In Django, there are 3 choices for enforcing authorization.
+Authorization refers to the privileges that a user has.
+In Django, there are 3 choices to enforce authorization.
 
-1. Logged in user: any logged in user is permitted
-2. Group membership: users who are members of some group are permitted
-3. Permissions: users assigned some permission are permitted
+1. Logged in user: any logged in user is permitted 
+2. Group membership: users who are members of a specific group are permitted
+3. Permissions: users assigned a specific permission are permitted
 
 For example, in the Django Polls tutorial we allowed any
 authenticated user to vote:
@@ -30,6 +30,18 @@ def vote(request, question_id):
 ## Checking Authentication in Code
 
 The `HttpRequest` object passed to each view contains a `user` field.
+
+To check if `user` is authenticated in a view: 
+```python
+def some_view(request, params):
+
+    if request.user.is_authenticated:
+        # logged in user
+    else:
+        # unauthenticated user
+        messages.info("Please login to do that.")
+        return redirect('login')
+```
 
 ## Checking Authorization in Code
 

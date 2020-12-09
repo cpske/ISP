@@ -180,7 +180,7 @@ End-to-End Testing
 </td>
 <td markdown="span">
 Techniques for authenticating users and software clients (apps), including OAuth.    
-Django's [authentication](django/authentication) and [authorization](django/authorize) modules.
+Django's [authentication](django/authentication) and [authorization](django/authorization) modules.
 </td>
 </tr>
 
@@ -279,17 +279,16 @@ Recommendations for maintainable cloud-based applications, by Heroku.
 
 <tr valign="top">
 <td markdown="span">
-Data Import
+[Import and Export Data](django/data-import-export) 
 </td>
 <td markdown="span">
-[Import and Export Data](django/data-import-export) how to create 
-"starter" data for others to easily install and use your polls application
+How to create "starter" data so that others can easily set-up and use your Django application.
 </td>
 </tr> 
 
 <tr valign="top">
 <td markdown="span">
-Virtual Environment
+[Virtual Environment](django/virtualenv)
 </td>
 <td markdown="span"> 
 [Virtualenv Quickstart](django/virtualenv-quickstart) and [Using Virtualenv](django/virtualenv) - how to run apps in a virtual environment
@@ -302,7 +301,7 @@ for portability, reliability, and security.
 [Messages Framework](django/messages-framework) 
 </td>
 <td markdown="span">
-Easily pass messages from a view to a template
+Easily pass messages from a view to a template.
 </td>
 </tr>
    
