@@ -47,7 +47,7 @@ How does this apply to my software process?
 2. *Accommodate change*
    * Welcome changing requirements, even late in development.
    * Change means you are getting closer to client's true needs.
-3. *Delivery frequently*
+3. *Deliver frequently*
    * Didn't they already write this in #1?
 4. *Collaborate between stakeholders and developers*
 5. *Support, trust, and motivate the people involved*
