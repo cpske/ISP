@@ -1,3 +1,6 @@
+---
+title: Refactoring Guide
+---
 
 ### Software Evolution
 

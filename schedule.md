@@ -3,7 +3,8 @@ title: Schedule
 navigation_order: 1
 ---
 
-*This is an overview and may change. Details and weekly assignments are posted on Google Classroom.  You should do what is assigned on Google Classroom.*
+*This is an overview and may change. Details and weekly assignments are posted on Google Classroom.     
+You should do what is assigned on Google Classroom.*
 
 ### Links
 
@@ -11,6 +12,7 @@ navigation_order: 1
 * <http://bit.ly/isp2020-scores> scores for other assignments, mostly coding
 * <http://bit.ly/isp2020-ku-polls> evaluations for KU Polls 
 * <http://bit.ly/isp2020-projects> list of team projects, scores, and feedback
+* Project Testing: <https://docs.google.com/spreadsheets/d/1_7m7NA22JpCtp8fJQsi_EgUX-lfKoldbjLyeFmZZ1bI/edit#gid=0>
 
 ### Week 1
 
