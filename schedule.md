@@ -63,7 +63,7 @@ Assignment
 Assignment
 
 * [Command Line Basics](assignment/week3/Command-Line-Basics.odt) you should know (nothing to submit) 
-  - <https://drive.google.com/open?id=1igAYSBGdshgz1ESZOjcFwP0x-vCT-02CatdWEcVV7aQ&authuser=1>
+  - <https://drive.google.com/open?id=1igAYSBGdshgz1ESZOjcFwP0x-vCT-02CatdWEcVV7aQ>
 * Add Git remote commands to your Git commands repo
   - [git-remote-commands](assignment/week3/git-remote-commands)
 * KU Polls write a vision and requirements 

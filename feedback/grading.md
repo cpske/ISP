@@ -7,7 +7,7 @@ of the following work:
 
 <table width="90%" border="1">
 <tr valign="top">
-<th>Work</th>   <th width="20%">Weight</th>
+<th>Work</th>   <th align="center" width="20%">Weight</th>
 </tr>
 <tr valign="top">
 <td>Midterm and Final Written Exams</td> 
