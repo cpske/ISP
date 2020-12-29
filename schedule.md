@@ -24,7 +24,7 @@ You should do what is assigned on Google Classroom.*
 * Github Classroom review and practice accepting and doing an assignment.
 * Skill assessment quiz - concepts and coding. Requires Github.
 
-Assignment
+#### Assignment
 
 - Complete [Sign-up form](https://forms.gle/fh9SqvmA9yPh1ur6A) for Github if you haven't done it yet
 - [Install required software](assignment/week1/signup-and-software)
@@ -42,7 +42,8 @@ Assignment
   - Git branches
   - Git practice: use the [Git Visualizer](http://git-school.github.io/visualizing-git/) and complete parts 1-2 of [Learn Git Interactive](https://learngitbranching.js.org/). Part on *Moving Work Around* is useful, too.
 
-Assignment
+#### Assignment
+
 * Answer [Scrum Questions](https://docs.google.com/forms/d/e/1FAIpQLSccesC0cZCxaAmpOzgQ2EaOzYOZ9egDvrw54kUOwyFmqDJZeg/closedform) a Google Form
 * Complete at least parts 1 & 2 of this tutorial: <https://learngitbranching.js.org/>
 * Create a Github Repo of Git common usage with "how to" examples 
@@ -60,7 +61,7 @@ Assignment
 * [Branch and Merge](git/branch-and-merge)
 * [Git Merging and Conflict Resolution](git/Merge-and-Conflict-Practice.pdf)
 
-Assignment
+#### Assignment
 
 * [Command Line Basics](assignment/week3/Command-Line-Basics.odt) you should know (nothing to submit) 
   - <https://drive.google.com/open?id=1igAYSBGdshgz1ESZOjcFwP0x-vCT-02CatdWEcVV7aQ>
@@ -85,7 +86,8 @@ Assignment
 * [Github Flow](git/index#github-flow) for managing work in git
   - if not enough time to cover in class then this is self-learning assignment
 
-Assignment
+#### Assignment
+
 * Github flow 
   - Read: <https://cpske.github.io/ISP/git/index#github-flow>
   - Questions on Github Flow: <https://forms.gle/HWLQ5retVNoquSJ38>
@@ -100,7 +102,8 @@ Assignment
 * Review progress on KU Polls iteration 1 (online)
 * Start background work and proposal for course team project.
 
-Assignment
+#### Assignment
+
 * Work on KU Polls. Don't wait until due date to push code!
 * (Not assigned in 2020) Questions about Agile coding based on PAD - agile-and-coding.md
 
@@ -116,13 +119,13 @@ Assignment
   - [slide presentation](refactoring/Separate-config-from-code.pdf)
   - also called "externalize configuration", a 12-Factor App recommended practice
 * Describe the Improvements to KU Polls for Iteration 2
-
-Exercise
-* Django Review Questions (answer online): <https://forms.gle/zPuPzzt76QWboFZXA>
-* Database practice in class: <https://cpske.github.io/ISP/assignment/week6/database-exercise>
+* Exercise
+  - Database practice in class: <https://cpske.github.io/ISP/assignment/week6/database-exercise>
   - view & describe schema and tables using sqlitebrowser or dBeaver
 
-Assignment
+#### Assignment
+
+* Django Review Questions (answer online): <https://forms.gle/zPuPzzt76QWboFZXA>
 * [Unit testing assignment](assignment/week6/unit-testing-assignment) to submit on Github Classroom 
   - Github Classroom assignment: <https://classroom.github.com/a/Tls2V5I9> contains starter code
   - Description of the [Auction class](assignment/week6/AuctionTest.pdf)
@@ -149,16 +152,15 @@ Submit a project proposal
 * [Introduction to Object-Relational Mapping](database/Persistence-and-ORM.pdf)
 (ORM)
 * Review some past material and assignments
-
-Exercise
-* In class team exercise using Github Flow 
+* Exercise: In class team exercise using Github Flow 
   - <https://cpske.github.io/ISP/assignment/week7/kucafe-github-flow>
-  - team assignments in Google Docs spreadsheet (shown in class)
-  - starter code (ku-cafe.zip) <https://cpske.github.io/ISP/assignment/week7/ku-cafe.zip>
+  - Team assignments in Google Docs spreadsheet (shown in class)
+  - Starter code (ku-cafe.zip) <https://cpske.github.io/ISP/assignment/week7/ku-cafe.zip>
 * ORM Practice - interactively use Django's ORM commands to hack the U.S. presidential election
   - <https://drive.google.com/open?id=10c6lLZwzyZU6UOKtw0zFUpIHLiWKPad2nOZpwarqHEE&authuser=1>
 
-Assignment
+#### Assignment
+
 * Add Code Coverage to KU Polls
 * ORM modeling practice (optional) write Django models for a sales application 
   - Github Classroom Assignment: <https://classroom.github.com/a/UOcT0BOr>
@@ -186,18 +188,18 @@ Assignment
   - Pylint and/or Flake8 can be used inside an IDE, including Eclipse, Pycharm, and VS Code
   - the standard tool for Java is Checkstyle.  CPSKE has its own checkstyle rules.
 * [Automation and Continuous Integration](automation/)
-
-Exercise
-* Use pylint and modify coding style in BankAccount code (`bank_account` and `money`) until pylint gives you a 10.0 score. 
+* Guidelines for Team Projects
+* Exercise
+  - Use pylint and modify coding style in BankAccount code (`bank_account` and `money`) until pylint gives you a 10.0 score. 
   - Also run flake8.
   - Push to **your own github account** (change the upstream)
-* CI Practice - add Travis-CI and Codecov to demo-pyci
- - Instructions <https://cpske.github.io/ISP/automation/travis-demo-project>
- - Starter code <https://cpske.github.io/ISP/automation/demo-pyci.zip> 
-* Guidelines for Team Projects
+* Exercise using CI - add Travis-CI and Codecov to demo-pyci
+  - Instructions <https://cpske.github.io/ISP/automation/travis-demo-project>
+  - Starter code <https://cpske.github.io/ISP/automation/demo-pyci.zip> 
 
-Assignment:
-* Apply flake8 to KU Polls and fix all problems
+#### Assignment
+
+* Apply flake8 to your KU Polls code and fix all problems
    - use flake8 config file to exclude code that is not yours (migrations, django packages, virtual envs)
 * [Agile Practices](assignment/week8/agile) (there will be quiz on this) 
   - Read tips from *Practices of an Agile Developer* ("Tips" sections in assignment)
@@ -218,26 +220,25 @@ Assignment:
   - [slides](refactoring/Refactoring.pdf)
   - Reading: <https://refactoring.guru/refactoring> 
 
-Exercise
-* Pizzashop refactoring exercise <https://github.com/ISP19/pizzashop>
+* Exercise
+  - Pizzashop refactoring exercise <https://github.com/ISP19/pizzashop>
 
-Assignment
+#### Assignment
+
 * Movie Rental Refactoring <https://classroom.github.com/a/_qGEboUn>
 
 ### Week 10 (19 Oct)
 
 * [Authentication](/authentication/)
-
-Exercise
-* [Add authentication to the Todo app](assignment/week10/auth-exercise)
+* Authentication Exercise: [Add authentication to the Todo app](assignment/week10/auth-exercise)
 * Agile Practices Review
   - [Agile Practice Questions](agile/agile-practice-questions.pdf)
   - [Crossword Puzzle](agile/crossword-puzzle.pdf) 
   - answers available online
 
-Assignment
+#### Assignment
 
-* Refactor one of your projects or someone else's
+* *Refactor* one of your projects or someone else's
   - <https://cpske.github.io/ISP/assignment/week10/refactoring>
 * [KU Polls Iteration 3](assignment/ku-polls/iteration3)
 
@@ -249,7 +250,8 @@ Assignment
 * [Logging](logging/) - you already did in KU Polls Iter 3
 * [Logging practice](logging/logging-practice)
 
-Assignment
+#### Assignment
+
 * [Movie Rental Part 2](assignment/week11/movie-rental2)
 
 
@@ -269,7 +271,7 @@ Assignment
 * [Software Reviews](code-review/)
 * Project Demos
 
-Assignment
+#### Assignment
 
 * Read "Reviews" chapter from textbook by Stellman and Greene.
 * Readings on Code Review Best Practices (read the links, not just my summary)
@@ -285,10 +287,12 @@ Assignment
 * Logging (briefly).
 * Project demos.
 
+#### Assignment
 
-Assignment
-* Team assignment - create installation instructions for your project
-* Individual assignment - install and run another team's project according to their instructions. Post issues for any problems in the instructions.
+* Team assignment: create installation instructions for your project
+* Individual assignment: [install and run another team's project](assignment/week15/installation-testing)
+  - Post issues for any problems in their installation instructions.
+  - Goal is to find problems with installation and setup, not in the application itself (that is next week's Bug Bounty assignment).
 
 ### Week 15 (23 Nov)
 
@@ -296,18 +300,21 @@ Assignment
 * The Testing Pyramid and End-to-End Testing
 * Selenium for testing web applications in [Web Testing](testing/WebTesting.pdf)
   - [Intro to Selenium](testing/Selenium-into)
+* Exercise
+  - Scrape search results from DuckDuckGo using Selenium. Details are in Web Testing presentation slides.
 
-Exercise
-* Scrape search results from DuckDuckGo using Selenium. Details in Web Testing presentation slides
+#### Assignment
 
-Assignment
 * Write an app to scan and test all links on a web page [Link Scanner](assignment/week15/selenium)
+* Team Assignment: deploy your application to a cloud service
 
 ### Week 16 (30 Nov)
 
-* "Why" refactoring and benefits, both in general and for specific refactorings.
+* "Why" refactoring and refactoring benefits, both in general and for specific refactorings.
 * Review
 * Bug Hunting - find problems in other teams' software
 
-Assignment
-* Try to find bugs in the deployed version of other team's projects.
+#### Assignment
+
+* Try to find bugs in the deployed version of other team's projects: [Bug Bounty](assignment/week15/bug-bounty)
+  - URLs of deployed projects are shown in Google Sheet for Project Testing
