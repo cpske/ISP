@@ -3,11 +3,6 @@ title: Topics
 navigation_order: 2
 ---
 
-Some links to test your link scanner:
-* <a> "a" tag without "href"</a>
-* <a href="#project-and-task-boards">project and task boards</a> "href" with page fragment only
-* <a href="https://www.does.not.exist">www.does.not.exist</a> unresolvable hostname
-
 <table border="0">
 <tr valign="top"> <th width="25%">Topic</th> <th width="75%">Description</th> </tr>
 <tr valign="top">
@@ -409,7 +404,7 @@ Project wiki - good location for iteration plans, software design notebook, reco
 Process Improvement
 </td>
 <td markdown="span">
-How discover and *implement* improvements to your development process
+How to discover and *implement* improvements to your development process
 </td>
 </tr>
 <tr valign="top">
@@ -427,10 +422,10 @@ Count and classify defects.  Design defects, coding defects, test defects, regre
 Estimation
 </td>
 <td markdown="span">
-Frequent question from managers and customers is "*how long will it take?*" or "*when will be ready?*"  Planning requires good estimates, but most developers are very poor at estimation.
+[Estimation slides](estimation/Estimation.pdf) and [Prof. Jittat's Slides](estimation/06a-estimation.pdf)<br/>
+Frequent question of managers and customers is "*how long will it take?*" or "*when will be ready?*"  Planning requires good estimates, but most developers are very poor at estimation.
 <br/>
 - How to estimate development time and code size <br/>
-- Jittat's Slides <br/>
 - Track your effort in order to improve ability to estimate <br/>
 - [Agile Estimation](http://www.construx.com/Resources/Presentation/Agile_Estimation__Key_Principlies_and_Practices_for_Successful_Agile_Practices/) talk by Construx (Steve McConnell's company)
 </td>
@@ -490,3 +485,11 @@ Good places for project documentation:
 Everyone should know how to use Markdown. It's the *lingua franca* of online project docs.
 
 [GitVisualizer]: http://git-school.github.io/visualizing-git/ "Interative tool draws a graph of commits in a repo"
+
+---
+
+Some links to test your link scanner (Week 15 assignment):
+
+- <a> "a" tag without "href"</a>
+- <a href="#project-and-task-boards">project and task boards</a> "href" with page fragment only
+- <a href="https://www.does.not.exist">www.does.not.exist</a> unresolvable hostname

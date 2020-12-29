@@ -6,6 +6,7 @@ misc/
 old/
 people/
 projects/
+__pycache__/
 _site/
 .*
 !.gitignore
