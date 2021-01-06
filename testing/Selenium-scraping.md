@@ -1,3 +1,7 @@
+---
+title: Page Scraping with Selenium
+---
+
 "Page scraping" means to extract content from web pages.
 Its often used when the information you want is only available
 on web pages.

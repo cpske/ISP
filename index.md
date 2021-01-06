@@ -302,11 +302,9 @@ Submit a project proposal
 ### Week 15 (23 Nov)
 
 * The [12-Factor App](web/12FactorApp.pdf) - 7 factors that apply to your projects
-* The Testing Pyramid and End-to-End Testing
-* Selenium for testing web applications in [Web Testing](testing/WebTesting.pdf)
-  - [Intro to Selenium](testing/Selenium-into)
-* Exercise
-  - Scrape search results from DuckDuckGo using Selenium. Details are in Web Testing presentation slides.
+* The Testing Pyramid and End-to-End Testing in [Web Testing](testing/WebTesting.pdf)
+* [Selenium](testing/Selenium-intro) for testing web applications in [Web Testing](testing/WebTesting.pdf)
+* [Selenium Exercise](testing/SeleniumExercise.pdf) scrape search results from DuckDuckGo
 
 #### Assignment
 
