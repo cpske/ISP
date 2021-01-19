@@ -25,6 +25,8 @@ A **remote** git hosting site let's you:
 * create a professional looking web site for your project (*Github pages* on github.io)
 * create an online copy (fork) of another repository
 
+Presentation Slides: [Using Github](Using-Github.pdf)
+
 ### Two Ways to Use Github
 
 There are 2 ways to start a project with Github.

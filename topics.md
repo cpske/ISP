@@ -344,7 +344,7 @@ Manage dependencies and isolate applications in containers.
 
 ## Other Topics
 
-Some of these may be *implicitly* covered as part of other topics.
+These may be *implicitly* covered as part of other topics.
 
 <table border="0">
 <tr valign="top"> <th width="25%">Topic</th> <th width="75%">Description</th> </tr>
@@ -382,9 +382,9 @@ Essential Project Documents
 [License](https://choosealicense.com)
 </td>
 <td markdown="span">
-Understand the different open source licenses like GNU, BSD, and MIT, 
+Understand the different open source licenses like GNU, BSD, MIT,  and Creative Commons
 so you can choose one that matches what you want.    
-Don't just *blindly* write "GNU" which is incomplete (should be "GNU GPL v3" or similar) and inappropriate for many projects. 
+Don't just *blindly* write "GNU" which is incomplete (should be "GNU GPL v3" or similar) and inappropriate for many projects.  The GPL can be quite restrictive!
 </td>
 </tr>
 <tr valign="top">
@@ -396,7 +396,38 @@ Project board - a board for whole project and task board for each iteration
 Issue tracker - bugs, change requests, and more    
 Burn-down or Burn-up chart (optional) - track your rate of progress    
 Project wiki - good location for iteration plans, software design notebook, recording knowledge and solutions    
-**Information Radiator**:  project tools should quickly convey useful info & easily visible as part of your normal workflow
+</td>
+</tr>
+<tr valign="top">
+<td markdown="span">
+Information Radiator
+</td>
+<td markdown="span">
+Create **one place** that quickly conveys useful info about project status, tasks, & project docs easily visible as part of your normal workflow.     
+The information radiator contains links to other project tools.   
+"Web hooks", "integrations", and "badges" can be used to connect tools and notifications.     
+If project docs/tools are spread across many web sites that people don't visit daily, they will be ignored and become irrelevant.
+</td>
+</tr>
+<tr valign="top">
+<td markdown="span">
+Task Boards
+</td>
+<td markdown="span">
+Task board should be part of your workflow -- part of an *information radiator*.  Good choices are:     
+[Trello](https://trello.com)    
+[Asana](https://asana.com)     
+Github "Project Boards"    
+[7 Scrum Software Tools สำหรับใช้บริหารจัดการโปรเจค](https://www.borntodev.com/2020/02/20/scrum-software-tools/) (Thai)    
+Note: task board must to viewable by TAs and instructor!
+</td>
+</tr>
+<tr valign="top">
+<td markdown="span">
+Markdown
+</td>
+<td markdown="span">
+Everyone should know how to use Markdown. It's the *lingua franca* of online project docs.
 </td>
 </tr>
 <tr valign="top">
@@ -465,13 +496,7 @@ Anti-Patterns for Developers
 [Old 2019 ISP index](2019/)
 
 ---
-## Project and Task Boards
-
-- [Trello](https://trello.com)
-- [Asana](https://asana.com) 
-- Github "Project Boards" (cards are a bit limited as to what you can record)
-- [7 Scrum Software Tools สำหรับใช้บริหารจัดการโปรเจค](https://www.borntodev.com/2020/02/20/scrum-software-tools/) (Thai)
-- Note: task board must to viewable by TAs and instructor!
+## Project Documentation 
 
 Good places for project documentation:
 
@@ -481,8 +506,6 @@ Good places for project documentation:
 * [swagger.io](https://swagger.io) - mainly for API and programmer docs
 
 [github-wiki]: https://guides.github.com/features/wikis/
-
-Everyone should know how to use Markdown. It's the *lingua franca* of online project docs.
 
 [GitVisualizer]: http://git-school.github.io/visualizing-git/ "Interative tool draws a graph of commits in a repo"
 

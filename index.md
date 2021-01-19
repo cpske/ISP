@@ -18,10 +18,9 @@ You should do what is assigned on Google Classroom.*
 
 * [Introduction to course](introduction/)
 * [Introduction to software process](software-process/)
-* Exercise: write a process description of an everyday process
-  - [Write a Process Description for Everyday Project](assignment/week1/general-process-exercise) 
+* Exercise: [Write a Process Description for Everyday Project](assignment/week1/general-process-exercise) 
   - [Submissions](https://classroom.google.com/u/1/c/MTM4MDk3MDY1NjM4/a/MTIyOTI1NjczMTM0/submissions/by-status/and-sort-name/all)
-* Github Classroom review and practice accepting and doing an assignment.
+* [Github](git/Using-Github) Classroom review and practice accepting and doing an assignment.
 * Skill assessment quiz - concepts and coding. Requires Github.
 
 #### Assignment
@@ -31,16 +30,17 @@ You should do what is assigned on Google Classroom.*
 - [Software Process Questions](https://docs.google.com/forms/d/e/1FAIpQLSd3FtoUtetMjd47M5TY9FYgK2TJvWwog44PzuEki6gFd3zsyQ/closedform) 
 - [Software Process Homework](assignment/week1/software-process-homework)
 
+
 ### Week 2 (17 Aug)
 
 * [Scrum](agile/scrum)
   - Watch [Scrum in Under 10 Minutes](https://www.youtube.com/watch?v=XU0llRltyFM) on Youtube
   - [Introduction to Scrum](agile/scrum introduction) with links you should **read**
-  - Read [Scrum Guide](https://www.scrumguides.org/scrum-guide.html). Anything in it may be on a quize
+  - Read [Scrum Guide](https://www.scrumguides.org/scrum-guide.html). Anything in the Scrum Guide may be on a quiz.
 * [Version Control & Git](git/) - understanding git repos
   - Common git use scenarios
-  - Git branches
-  - Git practice: use the [Git Visualizer](http://git-school.github.io/visualizing-git/) and complete parts 1-2 of [Learn Git Interactive](https://learngitbranching.js.org/). Part on *Moving Work Around* is useful, too.
+  - [Git branches](git/branch-and-merge)
+  - Exercise: use the [Git Visualizer](http://git-school.github.io/visualizing-git/) and complete parts 1-2 of [Learn Git Interactive](https://learngitbranching.js.org/). Section on *Moving Work Around* is recommended, too.
 
 #### Assignment
 
@@ -153,7 +153,7 @@ Submit a project proposal
 * [Code Coverage tools](testing/code-coverage) for Python 
 * [Introduction to Object-Relational Mapping](database/Persistence-and-ORM.pdf)
 (ORM)
-* Review some past material and assignments
+* Review some previous material and assignments
 * Exercise: In class team exercise using Github Flow 
   - <https://cpske.github.io/ISP/assignment/week7/kucafe-github-flow>
   - Team assignments in Google Docs spreadsheet (shown in class)
@@ -179,15 +179,15 @@ Submit a project proposal
 
 * [Code Quality, Coding Style, and Coding Standards](code-quality)
   - coding style for Python (you learned this in Programming 1, I think)
-* Comment style in Python 
+* [Comment style in Python](code-quality/comments)
   - there are 3 common standards for how to document parameters and returns
   - you can use either the Python standard or Google's standard (more concise)
-  - use type hints to document data types instead of writing the data types in docstring comments on functions and methods
-  - Read this:  <https://realpython.com/documenting-python-code/>
+  - use type hints to document data types of parameters and return values, instead of writing the data types in docstring comments
+  - Read this: <https://realpython.com/documenting-python-code/>
 * Style checking tools, esp. pylint and flake8
   - <https://cpske.github.io/ISP/code-quality/code-quality-tools>
   - how to configure flake8. But it is *better* to fix your code rather than add special expections!
-  - Pylint and/or Flake8 can be used inside an IDE, including Eclipse, Pycharm, and VS Code
+  - Pylint and Flake8 can be used inside an IDE, including Eclipse, Pycharm, and VS Code
   - the standard tool for Java is Checkstyle.  CPSKE has its own checkstyle rules.
 * [Automation and Continuous Integration](automation/)
 * Guidelines for Team Projects
@@ -230,7 +230,7 @@ Submit a project proposal
 
 #### Assignment
 
-* Movie Rental Refactoring <https://classroom.github.com/a/_qGEboUn> (part 1)
+* Movie Rental Refactoring <https://classroom.github.com/a/_qGEboUn>, Part 1
 
 ### Week 10 (19 Oct)
 
@@ -257,7 +257,7 @@ Submit a project proposal
 
 #### Assignment
 
-* [Movie Rental Refactoring Part 2](assignment/week11/movie-rental2)
+* [Movie Rental Refactoring, Part 2](assignment/week11/movie-rental2)
 
 
 ### Week 12 (2 Nov)
@@ -279,17 +279,18 @@ Submit a project proposal
 #### Assignment
 
 * Read "Reviews" chapter from textbook by Stellman and Greene.
-* Readings on Code Review Best Practices (read the links, not just my summary)
+* Read Code Review Best Practices (read the links, not just my summary)
   - <https://cpske.github.io/ISP/code-review/code-review-best-practices>
-* Create a Review Script and Checklist. Create in project wiki and add link from your project README.md
+* [Create a Code Review Script and Checklist](assignment/week13/code-review). 
+  - Write them in your project wiki and add links from your project README.md
 
 ### Week 14 (16 Nov)
 
 * Schedule dates for final exam and project presentations.
 * Review Movie Rental refactoring problems.
 * Static and Dynamic typing.
-* Type hints in Python, how it helps find bugs and improve refactoring.
-* Logging (briefly).
+* [Type hints](type-hints/) in Python to find bugs and improve refactoring.
+* [Logging](logging/) (briefly).
 * Project demos.
 
 #### Assignment
@@ -308,8 +309,9 @@ Submit a project proposal
 
 #### Assignment
 
-* Write an app to scan and test all links on a web page [Link Scanner](assignment/week15/selenium)
+* [Link Scanner](assignment/week15/selenium) write an app to scan and test all links on a web page 
 * Team Assignment: deploy your application to a cloud service
+
 
 ### Week 16 (30 Nov)
 
