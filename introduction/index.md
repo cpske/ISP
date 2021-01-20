@@ -7,15 +7,16 @@ Monday 10:00-12:00 and 13:00-16:00
 Individual Software Process (ISP) covers the fundamentals of software process,
 focusing on the knowledge and skills to be an effective software developer -- either solo or on a team.
 
-The goals are:
+### Goals
 
 1. Gain knowledge, skills, and habits to be an effective developer -- either solo or on a team
 2. Ability to write good quality, correct, maintainable code
 3. Understand software process fundamentals and their purpose.
 
 
+### Topics
+
 Topics are listed on the [course index page](/ISP/) on github.io.
-Topics include
 
 * Introduction to Software Process Models and the purpose of a defined process
 * Iterative and incremental development
@@ -51,27 +52,27 @@ Monday 10:00-12:00 and 13:00-16:00.
 * Occasional Live Class in E204.  Announced in advance.
 * Weekly Lab 13:00-16:00. This is online, for now.
 * Quiz some weeks
-* Weekly Assigned Reading and Problems. You must do the reading.
+* Weekly Reading and Problems. Please do the readings and learn from them.
 * Small Team Software Project
-* All material will be online
 
 Platform we will use, at least to start:
 
 * [Google Classroom](https://classroom.google.com) for announcements, assignments, and discussion.  **Join** using course code **f2xplp**.
 * Github Classroom for some assignments and quizzes. 
-[Complete this form](https://forms.gle/9PW1L9Hsmx6ygHR9A) (https://forms.gle/9PW1L9Hsmx6ygHR9A) to tell us your Github ID.  You will be invited to join the Github "ISP2020" organization.
-* Course Material on [cpske.github.io/ISP/](https://cpske.github.io/ISP/). Material is organized by topic, not sequentially. Click on topic link for a summary and learning path. Some material is optional.
+  - [Complete this form](https://forms.gle/9PW1L9Hsmx6ygHR9A) (https://forms.gle/9PW1L9Hsmx6ygHR9A) to tell us your Github ID.  
+  - You will then be invited to join the Github "ISP2020" organization.
+* Course Material on [cpske.github.io/ISP/](https://cpske.github.io/ISP/). 
 
 
 ### Effort and Commitment
 
-Plan to spend about 12 hours per week on ISP.
+Plan to spend **about 12 hours per week** on ISP.
 
-* 4-5 hours on Monday, another 6-8 hours at other times.
-* read assigned material each week
-* do exercises and assignments yourself, submit on-time
-* write and review code regularly
-* ask TAs and instructors for help, instead of other students.
+* 3-5 hours on Monday, another 6-8 hours at other times.
+* Read assigned material each week
+* Do exercises and assignments yourself, submit on-time
+* Write and review code regularly
+* Ask TAs and instructors for help, instead of other students.
   - other students don't know any more than you do
   - asking for help on assignments often borders on cheating
 * Team Project: mostly in 2nd half of course. This may require extra time.
@@ -80,15 +81,15 @@ Plan to spend about 12 hours per week on ISP.
 
 Most learners don't complete online courses.  They fall behind 
 or drop out.  
-Successful online learners plan to **commit time and effort** to the course.
+Successful online learners **plan** to **commit time and effort** to the course.
 
-Learning takes time and consistent effort. You need to plan
-your time, make a commitment, and have discipline.
+Learning takes time and consistent effort.   
+Plan your time, make a commitment, and have discipline.
 
 ### Software You Need
 
-* IDE such as Eclipse, IntelliJ IDEA, NetBeans, or VS Code
-* Python 3.6 or newer, 3.7 preferred
+* IDE such as Eclipse, IntelliJ IDEA (PyCharm), NetBeans, or VS Code
+* Python 3.7 or newer
 * Java JDK 8 or 11
 * Good text editor (something better than Notepad). IDE is OK, but slow for editing a single file.
 * Git command line client. Git tool built into your IDE is also useful and requires less typing.
@@ -100,8 +101,8 @@ In this course you will design, implement, and deploy a web application
 in a team of approx. 4 people.  You can choose the project topic, 
 subject to approval by instructor.
 
-Part of the challenge of creating software is working effectively
-as a team.  Many of the skills we study involve other people, 
+A big challenge in creating software is working effectively as a team.  
+Many of the skills we study involve other people, 
 and are intended to improve team work.
 
 Hence, we need a *team* project to practice both individual and project-related skills.

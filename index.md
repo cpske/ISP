@@ -3,16 +3,22 @@ title: Schedule
 navigation_order: 1
 ---
 
-*This is an overview and may change. Details and weekly assignments are posted on Google Classroom.     
-You should do what is assigned on Google Classroom.*
+> This is an overview of the schedule and may change. 
+> Details and weekly assignments are posted on Google Classroom.     
+> You should do the assignments posted on Google Classroom.
 
-### Links
+#### Links
 
+* [About the course](about) has links to Google Classroom & Github Classroom
 * Scores for Google Classroom assignments (forms and docs uploaded to Classroom) are posted individually on Google Classroom
 * <http://bit.ly/isp2020-scores> scores for other assignments, mostly coding
-* <http://bit.ly/isp2020-ku-polls> evaluations for KU Polls 
+* <http://bit.ly/isp2020-ku-polls> KU Polls evaluations and feedback
 * <http://bit.ly/isp2020-projects> list of team projects, scores, and feedback
 * Project Testing: <https://docs.google.com/spreadsheets/d/1_7m7NA22JpCtp8fJQsi_EgUX-lfKoldbjLyeFmZZ1bI/edit#gid=0>
+
+---
+
+### Schedule
 
 ### Week 1
 
@@ -122,7 +128,10 @@ You should do what is assigned on Google Classroom.*
 * Describe the Improvements to KU Polls for Iteration 2
 * Exercise
   - Database practice in class: <https://cpske.github.io/ISP/assignment/week6/database-exercise>
-  - View & describe schema and tables using sqlitebrowser or dBeaver
+  - View & describe database schema and tables using [sqlitebrowser][] or [dBeaver][]
+
+[sqlitebrowser]: https://sqlitebrowser.org/
+[dBeaver]: https://dbeaver.io/
 
 #### Assignment
 
@@ -186,15 +195,17 @@ Submit a project proposal
   - Read this: <https://realpython.com/documenting-python-code/>
 * Style checking tools, esp. pylint and flake8
   - <https://cpske.github.io/ISP/code-quality/code-quality-tools>
-  - how to configure flake8. But it is *better* to fix your code rather than add special expections!
+  - How to configure flake8 -- but it is *better* to fix your code rather than add special exceptions!
   - Pylint and Flake8 can be used inside an IDE, including Eclipse, Pycharm, and VS Code
   - the standard tool for Java is Checkstyle.  CPSKE has its own checkstyle rules.
 * [Automation and Continuous Integration](automation/)
 * Guidelines for Team Projects
 * Exercise
-  - Use pylint and modify coding style in BankAccount code (`bank_account` and `money`) until pylint gives you a 10.0 score. 
+  - Use pylint and modify coding style in BankAccount code (`bank_account` and `money`) until pylint gives you a score 10.0. 
   - Also run flake8.
-  - Push to **your own github account** (change the upstream)
+  - Push code to **your own github account** (change the upstream URL first)
+    1. create an empty `banking` repo on Github
+    2. in your local repo: `git remote set-url origin https://github.com/your_account/banking.git`
 * Exercise using CI - add Travis-CI and Codecov to demo-pyci
   - Instructions <https://cpske.github.io/ISP/automation/travis-demo-project>
   - Starter code <https://cpske.github.io/ISP/automation/demo-pyci.zip> 
@@ -224,6 +235,7 @@ Submit a project proposal
 * [Intro to Refactoring](refactoring/)
   - [slides](refactoring/Refactoring.pdf)
   - Reading: <https://refactoring.guru/refactoring> 
+* Anything on <https://refactoring.guru/refactoring> may be on a quiz!
 
 * Exercise
   - Pizzashop refactoring exercise <https://github.com/ISP19/pizzashop>
