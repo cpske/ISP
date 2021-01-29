@@ -62,6 +62,7 @@ Git commands and common tasks, structure of a git repo, branches, merging, and r
 Git and Development
 </td>
 <td markdown="span">
+[Using Github](git/Using-Github) and [slides](git/Using-Github.pdf).    
 [Github Flow](git/index#github-flow), branches, issues, &amp;
 [pull requests](git/Pull-Requests.pdf).    
 Github Flow is a workflow for a team to effectively work together using git.    

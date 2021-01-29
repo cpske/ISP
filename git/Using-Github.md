@@ -5,18 +5,23 @@ title: Why Use Github?
 Using Git on your local computer is a good habit, but...
 
 * what if your hard disk fails?
-* how can your share a project with someone else?
+* how can you **share a project** with someone else?
 * how can you work on a project from 2 computers (home computer and laptop at KU)?
 
-Using an up-to-date copy of your project on Github, you and others
-can access it anywhere.
+Github let's you keep an up-to-date copy of your local repository that you and others can access from anywhere.
 
-Git supports **remote** repositories. Popular git hosting sites are:
+Presentation Slides: [Using Github](Using-Github.pdf)
+
+---
+
+Git supports **remote** repositories that can be synchronized and cloned.   
+Popular git hosting sites are:
+
 * [Github](https://github.com) owned by Microsoft
 * [Gitlab](https://gitlab.com)
 * [Bitbucket](https://bitbucket.org) owned by Atlassian
 
-A **remote** git hosting site let's you:
+A **remote** Git hosting site let's you:
 
 * synchronize your local repository with the remote. Only changes are updated, so its efficient and fast.
 * create a new local copy (clone) from the remote
@@ -25,9 +30,7 @@ A **remote** git hosting site let's you:
 * create a professional looking web site for your project (*Github pages* on github.io)
 * create an online copy (fork) of another repository
 
-Presentation Slides: [Using Github](Using-Github.pdf)
-
-### Two Ways to Use Github
+### Two Ways to Start a Project on Github
 
 There are 2 ways to start a project with Github.
 The choice depends on these cases: 
