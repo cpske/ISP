@@ -60,7 +60,6 @@ Platform we will use, at least to start:
 * [Google Classroom](https://classroom.google.com) for announcements, assignments, and discussion.  **Join** using course code **f2xplp**.
 * Github Classroom for some assignments and quizzes. 
   - [Complete this form](https://forms.gle/9PW1L9Hsmx6ygHR9A) (https://forms.gle/9PW1L9Hsmx6ygHR9A) to tell us your Github ID.  
-  - You will then be invited to join the Github "ISP2020" organization.
 * Course Material on [cpske.github.io/ISP/](https://cpske.github.io/ISP/). 
 
 
@@ -92,7 +91,7 @@ Plan your time, make a commitment, and have discipline.
 * Python 3.7 or newer
 * Java JDK 8 or 11
 * Good text editor (something better than Notepad). IDE is OK, but slow for editing a single file.
-* Git command line client. Git tool built into your IDE is also useful and requires less typing.
+* Git command line client. Git tool built into your IDE is also useful and requires less typing, but you still need the command line `git`.
 
 
 ### Why a Team Software Project?
@@ -192,7 +191,7 @@ public static String email(String firstname, String lastname, int nlast) {
     sb.append(firstname)
       .append(".")
       .append(lastname.substring(0,nlast))
-      .append("\u0040")    // Unicode for 'at' symbol
+      .append("\u0040")    // Unicode 'at' symbol
       .append(DOMAIN);
     return sb.toString();
 }
@@ -202,4 +201,5 @@ public static String email(String firstname, String lastname, int nlast) {
 *Why obfuscate email addresses?* 
 
 Bots scan web pages for email addresses and login credentials
-to gather data for spam and phishing.
+to gather data for spam and phishing. Simply writing the word "at"
+instead of "\@" sign is not sufficient obfuscation.
