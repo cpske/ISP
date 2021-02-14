@@ -55,11 +55,11 @@ Monday 10:00-12:00 and 13:00-16:00.
 * Weekly Reading and Problems. Please do the readings and learn from them.
 * Small Team Software Project
 
-Platform we will use, at least to start:
+Platform we will use:
 
 * [Google Classroom](https://classroom.google.com) for announcements, assignments, and discussion.  **Join** using course code **f2xplp**.
 * Github Classroom for some assignments and quizzes. 
-  - [Complete this form](https://forms.gle/9PW1L9Hsmx6ygHR9A) (https://forms.gle/9PW1L9Hsmx6ygHR9A) to tell us your Github ID.  
+  - [Complete this form](https://forms.gle/9PW1L9Hsmx6ygHR9A) <https://forms.gle/9PW1L9Hsmx6ygHR9A> to tell us your Github ID.  
 * Course Material on [cpske.github.io/ISP/](https://cpske.github.io/ISP/). 
 
 
@@ -87,10 +87,10 @@ Plan your time, make a commitment, and have discipline.
 
 ### Software You Need
 
-* IDE such as Eclipse, IntelliJ IDEA (PyCharm), NetBeans, or VS Code
+* IDE such as Eclipse (Pydev), IntelliJ (PyCharm), VS Code, NetBeans
 * Python 3.7 or newer
 * Java JDK 8 or 11
-* Good text editor (something better than Notepad). IDE is OK, but slow for editing a single file.
+* Good text editor (something better than Notepad). IDE is OK, but slow for editing a single file. For Windows, Notepad++ is a good, free programming editor.
 * Git command line client. Git tool built into your IDE is also useful and requires less typing, but you still need the command line `git`.
 
 

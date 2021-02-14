@@ -73,8 +73,8 @@ navigation_order: 1
   - <https://drive.google.com/open?id=1igAYSBGdshgz1ESZOjcFwP0x-vCT-02CatdWEcVV7aQ>
 * Add Git remote commands to your Git commands repo
   - [git-remote-commands](assignment/week3/git-remote-commands)
-* KU Polls write a vision and requirements 
-  - [Assignment](assignment/week3/ku-polls)
+* KU Polls project inception
+  - [Assignment](assignment/week3/ku-polls) write a vision statement and requirements
   - Background for Vision Statement: <https://cpske.github.io/ISP/assignment/ku-polls/vision>
 
 ### Week 4 (31 Aug)
@@ -124,7 +124,8 @@ navigation_order: 1
 * [Brief Introduction to Database](database/Database-Basics.pdf)
 * [Separate configuration from code](refactoring/separate-configuration) - why and how
   - [slide presentation](refactoring/Separate-config-from-code.pdf)
-  - also called "externalize configuration", a 12-Factor App recommended practice
+  - also called "externalize configuration" 
+  - a [12-Factor App](https://12factor.net/config) recommended practice
 * Describe the Improvements to KU Polls for Iteration 2
 * Exercise
   - Database practice in class: <https://cpske.github.io/ISP/assignment/week6/database-exercise>
@@ -195,9 +196,9 @@ Submit a project proposal
   - Read this: <https://realpython.com/documenting-python-code/>
 * Style checking tools, esp. pylint and flake8
   - <https://cpske.github.io/ISP/code-quality/code-quality-tools>
-  - How to configure flake8 -- but it is *better* to fix your code rather than add special exceptions!
+  - How to configure flake8 -- but it is *better* to fix your code rather than add exceptions to flake8!
   - Pylint and Flake8 can be used inside an IDE, including Eclipse, Pycharm, and VS Code
-  - the standard tool for Java is Checkstyle.  CPSKE has its own checkstyle rules.
+  - The style-checking tool for Java is [Checkstyle][].  CPSKE has its own checkstyle rules.
 * [Automation and Continuous Integration](automation/)
 * Guidelines for Team Projects
 * Exercise
@@ -210,6 +211,8 @@ Submit a project proposal
   - Instructions <https://cpske.github.io/ISP/automation/travis-demo-project>
   - Starter code <https://cpske.github.io/ISP/automation/demo-pyci.zip> 
 
+[Checkstyle]: https://checkstyle.org/index.html
+
 #### Assignment
 
 * Apply flake8 to your KU Polls code and fix all problems
@@ -220,6 +223,7 @@ Submit a project proposal
 * [Add CI to KU Polls](assignment/week8/ku-polls-ci-assignment)
   - Use CI to run unit tests and run code coverage
   - Add "badges" to your KU Polls README.md for Travis and CodeCov status
+  - Sites with *insane* number of badges: [Checkstyle](https://github.com/checkstyle/checkstyle)
 
 ### Week 9 (12 Oct)
 
@@ -236,7 +240,6 @@ Submit a project proposal
   - [slides](refactoring/Refactoring.pdf)
   - Reading: <https://refactoring.guru/refactoring> 
 * Anything on <https://refactoring.guru/refactoring> may be on a quiz!
-
 * Exercise
   - Pizzashop refactoring exercise <https://github.com/ISP19/pizzashop>
 

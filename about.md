@@ -5,10 +5,10 @@ navigation_order: 4
 
 Monday 10-12, 13-16 starting 10 Aug 2020.   
 **Location:** class is online. Some meetings and live lectures in room E204.     
-**Online Meeting Location:** Google Meet using the link shown on Google Classroom for this course. Just click on the Meet link or icon.    
+**Online Meeting Location:** Google Meet using the link shown on Google Classroom for this course. To join a meeting, click on the "Meet" link or icon.    
 [Google Classroom](https://classroom.google.com) for assignments and announcements. Join using class code **3blhnrs**    
-Github Classroom Organization [ISP2020](https://github.com/org/ISP2020) for programming work.    
-[Sign-up form](https://forms.gle/fh9SqvmA9yPh1ur6A) - so we know your Github ID
+Github Classroom for programming work. A URL will be given for each assignment.    
+[Sign-up form](https://forms.gle/fh9SqvmA9yPh1ur6A) so we know your Github ID.
 
 ### [Introduction to Course](introduction/index)
 
