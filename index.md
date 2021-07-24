@@ -10,11 +10,6 @@ navigation_order: 1
 #### Links
 
 * [About the course](about) has links to Google Classroom & Github Classroom
-* Scores for Google Classroom assignments (forms and docs uploaded to Classroom) are posted individually on Google Classroom
-* <http://bit.ly/isp2020-scores> scores for other assignments, mostly coding
-* <http://bit.ly/isp2020-ku-polls> KU Polls evaluations and feedback
-* <http://bit.ly/isp2020-projects> list of team projects, scores, and feedback
-* Project Testing: <https://docs.google.com/spreadsheets/d/1_7m7NA22JpCtp8fJQsi_EgUX-lfKoldbjLyeFmZZ1bI/edit#gid=0>
 
 ---
 
@@ -25,14 +20,13 @@ navigation_order: 1
 * [Introduction to course](introduction/)
 * [Introduction to software process](software-process/)
 * Exercise: [Write a Process Description for Everyday Project](assignment/week1/general-process-exercise) 
-  - [Submissions](https://classroom.google.com/u/1/c/MTM4MDk3MDY1NjM4/a/MTIyOTI1NjczMTM0/submissions/by-status/and-sort-name/all)
-* [Github](git/Using-Github) Classroom review and practice accepting and doing an assignment.
-* Skill assessment quiz - concepts and coding. Requires Github.
+* [Using Github](git/Using-Github) & Github Classroom - review and practice 
+* Programming 2 Review & Skill Assessment
 
 #### Assignment
 
-- Complete [Sign-up form](https://forms.gle/fh9SqvmA9yPh1ur6A) for Github if you haven't done it yet
-- [Install required software](assignment/week1/signup-and-software)
+- [Sign-up and Required Software](assignment/week1/signup-and-software)
+  - Complete [Sign-up form](https://forms.gle/fh9SqvmA9yPh1ur6A) for Github so we know your Github ID
 - [Software Process Questions](https://docs.google.com/forms/d/e/1FAIpQLSd3FtoUtetMjd47M5TY9FYgK2TJvWwog44PzuEki6gFd3zsyQ/closedform) 
 - [Software Process Homework](assignment/week1/software-process-homework)
 

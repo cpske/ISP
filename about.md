@@ -3,27 +3,63 @@ title: About
 navigation_order: 4
 ---
 
-Monday 10-12, 13-16 starting 10 Aug 2020.   
-**Location:** class is online. Some meetings and live lectures in room E204.     
-**Online Meeting Location:** Google Meet using the link shown on Google Classroom for this course. To join a meeting, click on the "Meet" link or icon.    
-[Google Classroom](https://classroom.google.com) for assignments and announcements. Join using class code **3blhnrs**    
-Github Classroom for programming work. A URL will be given for each assignment.    
+## About the Course
+
+Monday 10-12, 13-16 starting 9 Aug 2020.   
+
+**Location:** class is online (for now). Meet using 
+[Google Classroom](https://classroom.google.com/c/MzczOTE1MjA0NDE4?cjc=ka25cph)
+
+1. Join the Google Classroom.  Use the class code **ka25cph**.
+2. To join a meeting, click on the "Meet" link or icon on the classroom page.
+
+**Github & Github Classroom** - we use Github for programming work, and Github Classroom for some exerices and quizzes.
+
 [Sign-up form](https://forms.gle/fh9SqvmA9yPh1ur6A) so we know your Github ID.
 
 ### [Introduction to Course](introduction/index)
 
 ### Teaching Assistants (TAs)
 
-[Mai Norapong](https://github.com/MaiNorapong)  `email("Mai", "Norapong", 2)`
+[Anusid](https://github.com/ttxking)  `email("Anusid", "Wachiroachoroenwong")`
 
-[Pakanon Pantisawat](https://github.com/pknn) `email("Pakanon", "Pantisawat")`
+[Sahanon](https://github.com/Sahanon-P) `email("Sahanon", "Phisetpakasit")`
+
+[Chanathip](https://github.com/kaesrel) `email("Chanathip", "Thumkanon", 3)` 
+
+[Sahadporn](https://github.com/Sahadporn) `email("Sahadporn", "Charnlertlakha")` // unconfirmed
+
 
 ```python
 DOMAIN = "ku.th"
 
 def email(firstname: str, lastname: str, nlast: int = 1) -> str:
-    """Return the email address for a KU person"""
+    """Return the email address for a KU person."""
     # \u0040 is Unicode for 'at' symbol
     return f"{firstname}.{lastname[0:nlast]}\u0040{DOMAIN}"
 ```
 
+```java
+// Java - in Java version the 3rd parameter is required,
+//        e.g. email("Santa", "Claus", 1)
+/**
+ * Return the Email address for a KU person. Works only for Thai names.
+ * @param firstname person's first name
+ * @param lastname  person's last name
+ * @param nlast number of chars from last name to use
+ * @return email address, of course
+ */
+public static String email(String firstname, String lastname, int nlast) {
+    final String DOMAIN = "ku.th";
+    return String.format("%s.%s\u0040%s",
+           firstname,
+           lastname.substring(0, nlast),
+           DOMAIN);
+}
+```
+*Why obfuscate email addresses?*    
+
+Software "bots" constantly scan the web for email addresses 
+and use them to send spam and phishing attacks.
+Some people disguise their email as "santaclaus at christmas dot com",
+but that is easily recognized using pattern matching.

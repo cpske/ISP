@@ -2,15 +2,15 @@
 title: Why Use Github?
 ---
 
-Using Git on your local computer is a good habit, but...
+Presentation: [Using Github](Using-Github.pdf)
+
+Using Git on your local computer is good, but...
 
 * what if your hard disk fails?
-* how can you **share a project** with someone else?
-* how can you work on a project from 2 computers (home computer and laptop at KU)?
+* how do you **share a project** with someone else?
+* how do you work on a project from 2 computers (home computer and laptop at KU)?
 
-Github let's you keep an up-to-date copy of your local repository that you and others can access from anywhere.
-
-Presentation Slides: [Using Github](Using-Github.pdf)
+Github let's you keep an up-to-date copy of your local repository that you and others can access from anywhere.  It also provides many services to help your project.
 
 ---
 
@@ -23,22 +23,23 @@ Popular git hosting sites are:
 
 A **remote** Git hosting site let's you:
 
-* synchronize your local repository with the remote. Only changes are updated, so its efficient and fast.
+* synchronize your local repository with the remote. It's efficient and fast.
 * create a new local copy (clone) from the remote
-* view project activity, updates, and compare changes to files in a browser
+* view project activity, updates, and compare changes between versions
 * share access (read-only or read-write) with other people 
 * create a professional looking web site for your project (*Github pages* on github.io)
-* create an online copy (fork) of another repository
+* automatically run tests using Github Actions
 
-### Two Ways to Start a Project on Github
+### How to Start a Project on Github
 
 There are 2 ways to start a project with Github.
 The choice depends on these cases: 
 
 **Case 1**: You already have code on your computer; you want to copy it to Github.    
 **Case 2**: A project already exists on Github; you want to copy it to your computer.    
+**Case 3**: You don't have anything yet.
 
-The only thing that differs is how you create your local project repository and connect it with Github.  After that, the normal workflow is the same in all cases.
+The only difference is how you create your local project repository and connect it with Github.  After that, the normal workflow is the same in all cases.
 
 ### Case 1: You already have code on your computer. Copy it to Github.
 
@@ -52,10 +53,11 @@ In this case, there are 3 steps
     cmd> git add src                   (add your source code)
     cmd> git commit -m "initial code checkin"
     ```
+   A `.gitignore` file (optional) prevents you from accidentally committing the wrong files to git.  Once you have a good `.gitignore` file, you can copy it from one project to another. 
 2. On [Github](https://github.com) create an **empty** repository for the project.
     a. on Github click on the "+" icon at upper-right of your home page and choose "create new repository".
     b. give the repository a name. It does **not** need to be the same as your local project name.
-    c. don't put any files in the Github repo -- it must be EMPTY
+    c. don't put any files in the Github repo -- the repo must be **EMPTY**
     d. copy the URL that Github shows you, for example `https://github.com/billgates/assignment1.git`. 
 3. On your local computer, add Github as "remote" repository.  Suppose the repo you created in Step 2 has URL "https://github.com/billgates/assignment1.git". Then you'd enter:
    ```shell
@@ -70,6 +72,8 @@ You only need to type `git push -u origin master` the **first time** you connect
 ```
 
 ### Case 2: A project already exists on Github, but not on your computer
+
+This is easy.
 
 If the project already exists on Github then do:
 
@@ -116,7 +120,7 @@ local changes using `git push`.
 
 In this case you can start from either local project or Github.  
 But Case 2 (clone from Github) requires less typing. 
-Just create a new repo on Github, let Github add a README.md and .gitignore file for you, and then clone it.
+Just create a new repo on Github, let Github add a README.md and .gitignore file for you, and then clone it. (Customize README.md and .gitignore later.)
 
 ### Pushing Local Changes to a Remote (Github)
 

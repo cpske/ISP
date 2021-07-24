@@ -13,7 +13,6 @@ navigation_order: 2
 [Introduction to course and goals](introduction/index), 
 prerequisites, required work, project, and grading.    
 [Advice from an SKE scholar & entrepeneur](introduction/Jomzap-Recommendations.pdf).    
-[Assignment](assignment/week1/signup-and-software) to do by first week.    
 </td>
 </tr>
 
@@ -404,10 +403,11 @@ Project wiki - good location for iteration plans, software design notebook, reco
 Information Radiator
 </td>
 <td markdown="span">
-Create **one place** that quickly conveys useful info about project status, tasks, & project docs easily visible as part of your normal workflow.     
-The information radiator contains links to other project tools.   
-"Web hooks", "integrations", and "badges" can be used to connect tools and notifications.     
-If project docs/tools are spread across many web sites that people don't visit daily, they will be ignored and become irrelevant.
+Create **one place** that quickly conveys all useful info about your project.    
+When project info (tasks, communication, docs, tools) are spread across many different places, people don't use them!    
+The information radiator is **one place** that links to everything you need.
+Some teams use Slack, Discord, or the Project Board as info radiator.   
+*Web hooks*, *integrations*, and *badges* can be used to connect tools and notifications.     
 </td>
 </tr>
 <tr valign="top">
@@ -418,7 +418,7 @@ Task Boards
 Task board should be part of your workflow -- part of an *information radiator*.  Good choices are:     
 [Trello](https://trello.com)    
 [Asana](https://asana.com)     
-Github "Project Boards"    
+[Github Project Boards](https://docs.github.com/en/github/managing-your-work-on-github/about-project-boards)        
 [7 Scrum Software Tools สำหรับใช้บริหารจัดการโปรเจค](https://www.borntodev.com/2020/02/20/scrum-software-tools/) (Thai)    
 Note: task board must to viewable by TAs and instructor!
 </td>

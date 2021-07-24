@@ -4,7 +4,6 @@ title: Software Process
 
 Presentation: 
 [Introduction to Software Process (PDF)](Introduction-software-process.pdf) 
-[(Google Doc)](https://docs.google.com/presentation/d/1IfBcNJ5Pnuiji7cqcFctj_N9SEhx4KwJnJn_vUe3GLI/edit?usp=sharing)
 
 ## What is a software process?
 
@@ -15,8 +14,8 @@ Here are definitions of "software process" from some well-known textbooks on sof
 From *Software Engineering*, 9E by Ian Summerville:
 
 > A *software process* is a sequence of activities that leads to the
-> production of a software product.  There are four fundamental activities that
-> are common to all software processes. They are:
+> production of a software product.    
+> There are four fundamental activities that are common to all software processes. They are:
 >
 > 1. Software specification
 > 2. Software development
@@ -49,8 +48,8 @@ From *Software Engineering, A Practioner's Approach*, 7E by Roger Pressman:
 > A *task* focuses on a small, but well-defined objective (e.g. conducting a 
 > unit test) that has a tangible outcome.
 
-He also writes that:
-> ... a process is not a rigid prescription for how to build software
+and:
+> ... a process is not a rigid prescription for how to build software.    
 > Rather, it is an adaptable approach that enables the software team
 > to pick and choose the appropriate set of actions and tasks.
 
@@ -71,21 +70,41 @@ According to Pressman, the "framework activities" are:
 > A *software process model* is a sequence of activities, objects, transformations,
 > and events [for] software evolution. 
 
-Activities consist of a sequence of actions, which can be broken down into
+An Activity consist of a sequence of actions, which can be broken down into
 "task chains".
 
+### What Do These Definitions Have in Common?
+
+A **software process** is a method of developing software.
+
+A *process model* describing a process consists of:
+
+- Activities (many things does to achieve some purpose)
+- Actions done as part of an Activity
+- Tasks specific work items does as part of an Action 
+
+Activities, actions, and tasks all involve people and produce some tangible output, called "work products".
+
+Example
+
+- Activity: *Testing* (a big thing that involves several activities)
+- Action: *Construct and Run Unit Tests for Iteration 2 features*
+- Task: *Write Unit Tests for the BankAccount class*
 
 ## Do You Have a Software Process? 
 
-describe your own software process (if you have one :-)
+Yes or No?
+
+If you have a process, describe it.  
+- What activities make up your process?
 
 
-## 
+## Reality
 
-
- and what are its components?
 * All devs have a software process, whether they realize it or not.
-* If you never thought about your process, then it is *implicit*.  If it changes on each project, then its *ad hoc*.  Both *implicit* and *ad hoc* processes tend to be inefficient and hard to predict the outcomes. 
+* If you never thought about your process, then it is *implicit*.  
+* If your process changes on each project, then it's *ad hoc*.  
+* Both *implicit* and *ad hoc* processes tend to be inefficient and hard to predict the outcomes. Do you see *why* they may be inefficient or hard to predict?
 
 ## The Value of a Defined Process
 
@@ -114,9 +133,12 @@ You can "trade off" one dimension to meet requirements of another.  For example,
 
 Example:
 
-* Time
-    - constraint: For a game, the deadline might be Nov 1 for the Christmas shopping season.  For a NASA space mission, time is dictated by the entire project -- they can't wait for software to be ready.
-    - negiotiable: 
+* Time as constraint: For a game, the deadline might be Nov 1 for the Christmas shopping season.  For a NASA space mission, time is dictated by the entire project -- they can't wait for software to be ready.
+  - negiotiable: for a game, some features can be omitted (reduce scope)
+  - Some bugs may be permitted (reduce quality)
+
+* Quality as constraint: an operating system must be reliable to be usable. Some bugs are allowed, but it should be able to recover from failure, not "brick the system".
+  - negotiable: Microsoft can delay launch of a new OS (time) to achieve Quality requirement
 
 ## Fifth Dimension of a Software Project: Process
 
@@ -132,31 +154,34 @@ One factor that *can* have a big effect is **software process**.
 
 A good process helps to:
 
-   - structure development so you get the most done while maintaining quality
-       - use iterative development with short iterations and specific milestones
-       - have defined roles and responsibilities
-   - incorporate practices to make development more efficient or to produce good quality software
-       - make "pull requests", code review, and unit testing a part of the workflow
-       - "retrospective" meeting after each iteration to improve process
-       - use continuous integration (CI) to automatically build and test your software
-       - tracking of issues and defects
-   - make routine decisions automatic so you don't waste time deciding them
-       - a defined set of process steps, 
-       - defined workflow for version control (Github Flow)
-       - checklist of things to do for a code review
-   - provide data and guidance for improving the process
-       - keep a record of defects and their causes
+- structure development so you get the most done while maintaining quality
+
+  - use iterative development with short iterations and specific milestones
+  - have defined roles and responsibilities
+  - use "pull requests", code review, and unit testing in your workflow
+  - "retrospective" meeting after each iteration to improve your process
+  - continuous integration (CI) to automatically test your software
+  - track issues and defects
+
+- make routine decisions automatic so you don't waste time deciding them
+
+- define the steps to perform an action or task (don't reinvent the wheel) 
+  - checklist of things to do 
+  - "script" of steps for a task or meeting
+
+- provide data and guidance for improving the process
+
 
 ### Summary of Software Process
 
 Software process models view a process as **activities** broken down into smaller, more specific and tangible **actions** and/or **tasks**.
 
-Activities, actions, and tasks depend on some inputs including work products, guidance, standards, checklists, and more, collectively called **artifacts**.  There is also some output, also a work product.
+Activities, actions, and tasks use some inputs including work products, guidance, standards, checklists, and more, collectively called **artifacts**.  The output of the activity, action, or task is a **work product**.
 
 For any activity, action, or task you need a clear *goal* and a way to know when the task is "done".  That is, an *evaluation criteria*.
 
-In the Waterfall Model, activities match phases of the project life cycle. 
-Ideally, a project would progress linearly from the Requirements phase through Maintenance.  In practice, its often necessary to backtrack to previous phases to correct errors or deficiencies.  This often leads to schedule and cost overrun.
+In the Waterfall Model, activities are the phases of the project life cycle. 
+Ideally, a project would progress linearly from the Requirements phase through Maintenance.  In practice, it is often necessary to **backtrack** to previous phases to correct errors or deficiencies.  This leads to schedule and cost overrun.
 
 In Waterfall or any linear process, engineers feel compelled to "get it right"
 the first time,
@@ -164,34 +189,36 @@ leading to [Analysis Paralysis](https://en.wikipedia.org/wiki/Analysis_paralysis
 They prolong work to ensure that nothing is overlooked.
 This, too, causes schedule overrun and often fails anyway.
 
-Iterative and Increment Processes, develop a product iteratively.
-In each iteration some feature(s) of the product are chosen to implement (the increment) and all activities (requirements, analysis, design, coding, verification) are performed.  When an increment is done, there should be a working, "potentially shippable" product, even though it has limited functionality.
+Iterative and Increment Processes develop a product iteratively.
+In each iteration some feature(s) of the product are chosen to implement (the *increment*) and all activities (requirements, analysis, design, coding, verification) are performed for those features.  When an increment is done, there should be a working, "potentially shippable" product, even though it has limited functionality.
 
 The motivation behind iterative and incremental is provide frequent
 opportunities for customer feedback, and opportunity for developers to learn
 and improve the product during development.  This reduces risk and
 uncetainly, but creates extra develepment work.
 
-The U.P. is a popular software process framework.  It claims to be 
-"architecture centric" and emphasizes early risk (of failure) reduction.
+The **Unified Process** (UP) is a popular software process framework. 
+It claims to be "architecture centric" and emphasizes early risk (of failure) 
+reduction.
 The project life cycle consists of of 4 major phases which can be
 further subdivided.  Each phase has one or more iterations with defined
 goals.
-Activities are categorized into *workflows* or *disciplines* and
+Activities are categorized as *workflows* or *disciplines* and
 provide a second dimension to the process (the first dimension being
 time or phases).
 
 The UP is often criticized as "document heavy" and overly plan-based.
-This criticism isn't really justified.  
-Craig Larman's *Applying UML and Patterns* (textbook on software design,
-used in Software Spec &amp; Design) explains
-that you can tailor the UP to be as light-weight as you want.
+This criticism is not really justified.  
+Craig Larman's *Applying UML and Patterns* (textbook on software design)
+explains that you can tailor the UP to be light-weight.
 
 
-## Software Development Life Cycle Models
+## Software Development Life Cycle (SDLC) Models
 
 To plan a project you need some idea of what you're going
 to do, and in what order.  That info comes from a SDLC.
+
+It's a model, so you can customize it to fit a particular project.
 
 Common SDLC's are:
 
@@ -206,7 +233,8 @@ Less common but often mentioned in textbooks are:
 * Reuse-Oriented Engineering - this isn't a process, it's a strategy for implementing the requirements. Almost all projects reuse software at different levels; for example, using a *framework* for a web application.
 
 You should be familiar with the details of Waterfall, iterative and incremental, and the UP.
-Its not sufficient just to know their names and vaguely what they are.
+
+[Agile](../agile/agile) is not a software process. It is a set of values, principles, and practices for sofware development.
 
 
 ## Online Courses
