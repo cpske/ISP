@@ -75,7 +75,7 @@ Plan your time, make a schedule, have discipline.
 * IDE such as Eclipse (Pydev), IntelliJ (PyCharm), or VS Code
 * Python 3.8 or newer
 * Good text editor (something better than Notepad). IDE is OK, but slow for editing a single file. 
-  - Examples: Notepad++, Sublime, VS Code (a bit slow), Atom
+  - Examples: Atom, Notepad++, Sublime, VS Code (a bit slow), TextMate (for Mac)
 * Git command line client. 
   - The Git tool included in IDEs is useful and requires less typing, but you still need the command line `git` and know how to use it!
 
