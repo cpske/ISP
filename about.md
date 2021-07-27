@@ -10,12 +10,14 @@ Monday 10-12, 13-16 starting 9 Aug 2020.
 **Location:** class is online (for now). Meet using 
 [Google Classroom](https://classroom.google.com/c/MzczOTE1MjA0NDE4?cjc=ka25cph)
 
-1. Join the Google Classroom.  Use the class code **ka25cph**.
-2. To join a meeting, click on the "Meet" link or icon on the classroom page.
+1. Join the Google Classroom.  Use the class code **ka25cph** or this [invitation link][google-classroom-link].
+2. To join a meeting, click on the "Meet" link or video icon on the Google Classroom page.
+3. Complete the [Student Info From](https://forms.gle/WE3jN4miDKabFBje8) so we know your Github ID.
+4. What online platform do you prefer? Please complete [Online Platform Preferences](https://forms.gle/VkG5MBPjgmxRX1xi7).
 
 **Github & Github Classroom** - we use Github for programming work, and Github Classroom for some exerices and quizzes.
 
-[Sign-up form](https://forms.gle/fh9SqvmA9yPh1ur6A) so we know your Github ID.
+[google-classroom-link]: https://classroom.github.com/classrooms/86591180-isp-2021 
 
 ### [Introduction to Course](introduction/index)
 

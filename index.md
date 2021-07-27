@@ -19,14 +19,18 @@ navigation_order: 1
 
 * [Introduction to course](introduction/)
 * [Introduction to software process](software-process/)
-* Exercise: [Write a Process Description for Everyday Project](assignment/week1/general-process-exercise) 
-* [Using Github](git/Using-Github) & Github Classroom - review and practice 
-* Programming 2 Review & Skill Assessment
+* Exercise: [Write a Process Description for an Everyday Project](assignment/week1/general-process-exercise) 
+* [Using Github](git/Using-Github) & Github Classroom.
+* Exercise: Github Classroom practice
+* Python Coding Style: [How to Write Beautful Python Code with PEP8](https://realpython.com/python-pep8/) on [Real Python](https://realpython.com/)
+  - Example given in class
+* Exercise: apply the coding standard
+* Programming 2 Review, basic Python and O-O concepts.
+* Exercise: Programming Skill Assessment
 
 #### Assignment
 
 - [Sign-up and Required Software](assignment/week1/signup-and-software)
-  - Complete [Sign-up form](https://forms.gle/fh9SqvmA9yPh1ur6A) for Github so we know your Github ID
 - [Software Process Questions](https://docs.google.com/forms/d/e/1FAIpQLSd3FtoUtetMjd47M5TY9FYgK2TJvWwog44PzuEki6gFd3zsyQ/closedform) 
 - [Software Process Homework](assignment/week1/software-process-homework)
 

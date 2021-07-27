@@ -8,7 +8,7 @@ Create a Google Doc describing the process you use
 for some non-software project.  
 Submit the Google Doc to the assignment item on Google Classroom.
 
-It should be some process you actually do to achieve a specific result.
+It should be a process you actually do to achieve a specific result.
 
 Write the following:
 
@@ -25,25 +25,26 @@ Optional:
 Evaluation:
 * Your process description should be well-formatted, clear, complete, and fit on 1 page.
 
-**Name of File Submitted**:
-* Use a name of the form: "Firstname - Process Name" (without quotes)
-* Example: `Fatalai - Wash a Car` (if your name is Fatalai)
-
-### Example Processes
-
+Examples:
 * Wash a Car
-* Service a Bicycle
-  - Honda, Toyota, and other car shops have a very well defined process for what to do when they service a car
+* Service a Bicycle (if you actually do this)
+  - Honda & Toyota have a **very well defined** process for what to do when they service a car
 * Paint a Room
-* Make a [something you create]
-
-You should choose a topic you have actual experience at doing.
+* Make a [*something you create*]
 
 Bad Examples:
 * Practice Piano (no specific work product)
 * Build a Car (too complex, probably not something any of you do)
 
+### What to Submit
+
+* Submit a link to your Google Doc to the assignmant on Google Classroom.
+* **File Name**: name of the file should be the name of your process
+  - Example: `Wash a Car` (for the example process given below)
+
+
 ---
+Example:
 
 ## Wash a Car
 
@@ -51,16 +52,18 @@ Bad Examples:
 
 1. Preparation
    - park the car in the shade
-   - prepare bucket, car wash, sponge, clean rags
-   - put 1 cap car wash in bucket, add about 3-4 L water
+   - prepare bucket, car wash, sponge, clean rags, optional squeegie
+   - put 1 cap of car wash in bucket, add about 3-4 L water allowing suds to form
 2. Wash the Car
    - start from the top, spray water to remove dirt and thoroughly wet surface
    - apply soapy water with sponge to remove all dirt from one area
    - spray water to remove soap and dirt
-   - repeat til whole car is washed
+   - repeat 'til whole car is clean
 3. Dry the Car
-   - task 1
+   - wait until the car s partially dry, but still has water drops
+   - use clean rags or squeegie to dry the windows and top of car
+   - dry other parts of car, working from top to bottom
 
 **Product**: a clean, dry car
 
-**Evaluation Criteria**: car should be clean with no visible streaks or water marks (minor defects on bumpers is OK)
+**Evaluation Criteria**: car should be clean with no streaks or water marks

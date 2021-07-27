@@ -22,10 +22,17 @@ covers software process in more depth.
 2. Ability to write good quality, correct, maintainable code
 3. Understand software process fundamentals and their purpose
 
-
 ### Topics
 
 Topics are listed on the [course index page](../topics) on github.io.
+
+
+### How to Join Google Classroom?  How to Contact TAs & Instructor?
+
+Please see [About](../about) page.
+
+After you join the Google Classroom, there is a video link on classroom
+page to join the class Google Meet.  Click on that link to join lectures.
 
 
 ### Advise from SKE Graduates
