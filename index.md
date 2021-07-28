@@ -15,6 +15,12 @@ navigation_order: 1
 
 ### Schedule
 
+### Preparation
+
+Please do this before the course starts. Otherwise, do it in Week 1.
+
+* [Sign-up, Survey, and Required Software](assignment/week1/signup-and-software)
+
 ### Week 1
 
 * [Introduction to course](introduction/)
@@ -23,16 +29,17 @@ navigation_order: 1
 * [Using Github](git/Using-Github) & Github Classroom.
 * Exercise: Github Classroom practice
 * Python Coding Style: [How to Write Beautful Python Code with PEP8](https://realpython.com/python-pep8/) on [Real Python](https://realpython.com/)
+  - [How to Write Docstring Comments](code-quality/docstrings)
   - Example given in class
 * Exercise: apply the coding standard
 * Programming 2 Review, basic Python and O-O concepts.
 * Exercise: Programming Skill Assessment
 
+
 #### Assignment
 
-- [Sign-up and Required Software](assignment/week1/signup-and-software)
-- [Software Process Questions](https://docs.google.com/forms/d/e/1FAIpQLSd3FtoUtetMjd47M5TY9FYgK2TJvWwog44PzuEki6gFd3zsyQ/closedform) 
 - [Software Process Homework](assignment/week1/software-process-homework)
+- [Software Process Questions](https://docs.google.com/forms/d/e/1FAIpQLSd3FtoUtetMjd47M5TY9FYgK2TJvWwog44PzuEki6gFd3zsyQ/closedform) based on the homework reading
 
 
 ### Week 2 (17 Aug)

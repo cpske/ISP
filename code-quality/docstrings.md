@@ -12,7 +12,13 @@ API reference in this way.  Here are some examples:
 * Java API 
 * JUnit API
 
-Python also has this capability, but the standard is less precise than Java.
+Python has a standand format for writing documentation in comments
+called "docstrings".  You should use it.
+
+Java has a standard called "Javadoc" which is *much better* than Python
+and can generate beautiful, cross-referenced HTML pages.  
+The entire Java API docs are created using Javadoc.
+
 
 ## Python Docstring Comments
 
@@ -30,23 +36,26 @@ def max(a, b):
     Returns:
     int: the max of a and b
     """
-    if a > b: return a
+    if a > b: 
+       return a
     return b
 ```
 
-1. The docstring for a function must be the first thing inside the function
-and use a multi-line comment (""").
-2. The first line of the comment is a sentence describing what it does.
+1. The docstring for a function must be the **first thing** inside the function
+and use a multi-line comment (""").  Same rule for class docstrings.
+2. The first line of the docstring is a **complete sentence** describing what it does, ending with a period.
 3. Followed by a blank line.
-3. If the function is very simple, a one-line descriptoin is enough. Otherwise, leave a blank line and then write a more complete description.
-4. Document *parameters*, *return value* (if any), and any *Exceptions* raised.  
+4. (Optional) Additional text describing what the function or class does.  You can omit this if the function is simple (like min or max).
+5. Document *parameters*, their names, what the mean, any conditions on their values, e.g. "must be positive", "may not be empty").
+   - ISP Style: Don't document the data type!  Use **type hints** instead. E.g. write `a` instead of `a (int)`.
+6. Document what the function returns (*return value*), and any *Exceptions* raised.
 
-The standard for how to format parameters, returns, and exceptions is not universal.
+The standard for documenting parameters, returns, and exceptions is not universal.    
 There are 3 styles:
 
 * Pydoc style, used in Python API (PEP257)
 * Google style
-* Numpy style, which uses reStructured Text mark-up
+* Numpy style, which uses reStructured Text (reST) mark-up
 
 Here's an example using Google's convention:
 ```python
@@ -62,14 +71,17 @@ def max(a, b):
     Raises:
         TypeError: if a or b is not a number
     """
-    if a > b: return a
+    if not isinstance(a, Number): raise TypeError()
+    if not isinstance(b, Number): raise TypeError()
+    if a > b: 
+        return a
     return b
 ```
 
 ## Use Type Hints instead of Data Types in Comments
 
-The above examples write data types in the comments. It is more useful to write
-the types as *Type Hints* and omit the type from docstring comments.
+The Google and PEP257 standards document the *data type* of parameters in the comment.
+It is more useful to write the types as **Type Hints** and omit the type from docstring comments.  Avoid redundancy and inconsistency!
 
 The `max` function works with either int or float, so instead of 'int' we can use Number
 for the type hints:
@@ -84,15 +96,14 @@ def max(a: Number, b: Number) -> Number:
         a, b: two numbers to find the maximum of
 
     Returns:
-        the max of a and b
-
-    Raises:
-        TypeError: if a or b is not a Number
+        the maximum of a and b
     """
-    if a > b: return a
+    if a > b: 
+       return a
     return b
 ```
 Notice the docstring does **not** include data type of Args and Returns (*avoid redundancy*).
+
 
 ## Module and Class Comments
 
@@ -103,7 +114,7 @@ PEP257 recommends
 * OK to omit "protected" members from comments
 
 ```python
-"""A bank account that performs deposits and withdrawals"""
+"""A bank account that performs deposits and withdrawals."""
 from re import split
 
 from money import Money
@@ -124,10 +135,18 @@ class BankAccount:
     """
 ```
 
+### My Recommendation for Class Docstrings
+
+1. Document what the class does, not *how* it does it. Describe any special dependencies or preconditions on using the class.
+2. Give an example of how to create objects of the class.
+3. Document attributes of the class.
+4. **Don't** write a summary of all the methods in th class. That's redundant!  Each method should have it's own docstring.
+
+
 ## Viewing Python docstrings
 
-The interactive Python interpreter will display the docstring comments
-of a function, class, or method when you use the `help` command:
+You can view the docstring comment in the Python interpreter.
+This works for functions, classes, modules, and packages (if they have a docstring): 
 ```python
 >>> help(print)
 print(...)
@@ -138,7 +157,10 @@ print(...)
     file:  a file-like object (stream); defaults to the current sys.stdout.
     sep:   string inserted between values, default a space.
     ...
+>>> import re    # 're' is the incredibly useful regular expression module
+>>> help(re)
 ```
+
 Here's an example class docstring from the popular `requests` library,
 an add-on package for performing HTTP requests.
 
@@ -160,8 +182,10 @@ class Request(RequestHooksMixin)
     >>> req = requests.Request('GET', 'https://httpbin.org/get')
 ```
 
-This docstring formats parameters and special keywords using colons (:).
-For example, `:param method:` means that constructor has a parameter for the HTTP method to use ('GET', 'POST') and a parameter named `url` for the URL to connect to.
+This docstring uses colons (:) for parameters and keywords used in formatting.
+This is the numpy style docstring.
+Please don't use this format in ISP -- it's harder to read.
+
 
 ## Use pydoc to view docstrings
 
@@ -199,16 +223,6 @@ You should write docstring comments for:
   - purpose of the package
   - list the modules and subpackages (this can become out-of-date! Python should do this automatically)
 
-### Redundant Info in Docstrings?
-
-The official guidelines for docstrings includes a lot of redundant information.
-For example, writing the names of all methods in a class's docstring comment.
-
-Personally, I think this is a bad idea.
-
-- it duplicates what is in code (waste of time to write)
-- the comments can become inconsistent with the code
-- documentation tools should be able to generate it automatically, the way `javadoc` does 
 
 ## Python Doctest Comments
 
@@ -278,7 +292,7 @@ If the expected output is a string, then use **single quotes** not double quotes
 because that's the way the Python interpreter displays strings.
 
 
-## Python Type Annotations
+## Using Type Hints (Annotations)
 
 To call a function of object constructor, a programmer needs to know
 what **type** of value(s) to pass as parameters. 
@@ -307,7 +321,7 @@ The syntax for type hints is:
 
 To learn more about Python docstrings:
 
-* [Documenting Python Code](https://realpython.com/documenting-python-code/) on realpython.com has examples of function and class docstrings, and advise on how to write.
+* [Documenting Python Code](https://realpython.com/documenting-python-code/) on realpython.com has examples of function and class docstrings, and advise on how to write.  They have some videos, too.
 * Detailed [Google Docstrings example](https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html) at readthedocs.io.
 * Detailed [NumPy Docstrings example](https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_numpy.html#example-numpy)
 * [NumPyDoc](https://numpydoc.readthedocs.io/en/latest/format.html) official documentation of NumPy/SciPy docstrings.

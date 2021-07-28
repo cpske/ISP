@@ -12,7 +12,7 @@ harder to understand and maintain, and harder to test.
 Best Practices for Code Quality include:
 
 1. Consistently use a **coding standard** (coding style)
-2. Write document comments (Javadoc or Python docstring) using a standard format
+2. Write [document comments](docstrings) (Javadoc or Python docstring) using a standard format
 3. Use descriptive names for classes, functions, and variables
 4. Strive for short functions (methods) that do just one thing
 5. Use return values instead of side effects where possible
@@ -84,9 +84,9 @@ Google has a detailed style guide, that includes "pros" and "cons" of style choi
 
 ### Documenting Your Code
 
-See [Comments](comments) for how to write comments in Python.
+See [Docstrings](docstrings) for how to write documentation comments in Python.
 
-* Python Docstrings, Javadoc, or Scaladoc create documentation for a project. They can be shown as web pages or shown dynamically in an IDE.
+* Python Docstrings, Javadoc, or Scaladoc are documentation for a project. They can be shown as web pages or shown dynamically in an IDE.
 * Syntax of Python Docstrings.
   - 3 variations: Python official docstrings, Google style, Numpy style
 
