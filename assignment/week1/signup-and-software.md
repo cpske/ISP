@@ -9,8 +9,8 @@ title: Course Preparation
 5. Install the required software, if you don't have them:
    1. Git including the `git` command. Download from <https://git-scm.com>
    2. Python 3.8 or newer.
-   3. IDE for coding in Python. Pycharm, PyDev (Eclipse), and VS Code are popular.
-   4. A good text editor. Good text editors perform syntax highlighting and formatting. This improves your productivity. 
+   3. IDE for coding in Python. Pycharm, PyDev (Eclipse), and VS Code are good.
+   4. A good text editor. Good text editors do syntax highlighting and formatting. This improves your productivity. 
       - popular editors: Atom, Notepad++, Sublime, VS Code (a bit slow), TextMate (Mac only).  Terminal (shell) based editors: nano and vim (hard to learn).
       - Windows Notepad is NOT a good editor.
       - An IDE can edit text files, but IDE is slow to start.

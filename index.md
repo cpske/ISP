@@ -3,8 +3,8 @@ title: Schedule
 navigation_order: 1
 ---
 
-> This is an overview of the schedule and may change. 
-> Details and weekly assignments are posted on Google Classroom.     
+> This schedule may change! 
+> See **Google Classroom** for weekly material and assignments.
 > You should do the assignments posted on Google Classroom.
 
 #### Links
