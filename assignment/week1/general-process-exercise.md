@@ -1,29 +1,30 @@
 ---
-title: Process Description for a Non-software Project
+title: Write a Process Description of a Non-Software Project
 ---
 
-### Assignment Description
+### Description
 
 Create a Google Doc describing the process you use
 for some non-software project.  
-Submit the Google Doc to the assignment item on Google Classroom.
-
 It should be a process you actually do to achieve a specific result.
+
+Submit the Google Doc to the assignment item on Google Classroom.
 
 Write the following:
 
 * Name of the process
 * Preconditions, if any
 * Activities - brief descriptive names OK
-* Tasks within each activity - with description what to do
+* Tasks that are done in each activity - with description what to do
 * Work product - what is the result of the process?
 * Evaluation criteria - how is the result evaluated? Be honest, if you have an evaluation criteria it should be something that might cause you to reject the result and do it again.
 
 Optional:
-* If the process has distinct phases, identify them
+* If the process has distinct phases, identify the phases
 
 Evaluation:
 * Your process description should be well-formatted, clear, complete, and fit on 1 page.
+* Correct English usage and punctuation.
 
 Examples:
 * Wash a Car

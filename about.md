@@ -5,12 +5,13 @@ navigation_order: 4
 
 ## About the Course
 
-Monday 10-12, 13-16 starting 9 Aug 2020.   
+Monday 10-12:00 and 13-16:00 starting 9 Aug 2021.   
 
-**Location:** class is online (for now). Meet using 
-[Google Classroom](https://classroom.google.com/c/MzczOTE1MjA0NDE4?cjc=ka25cph)
+**Location:** class is **online** (for now). Regular room is E204.
 
-1. Join the Google Classroom.  Use the class code **ka25cph** or this [invitation link][google-classroom-link].
+**Online Meeting:** Meet using [Google Classroom](https://classroom.google.com/c/MzczOTE1MjA0NDE4?cjc=ka25cph). Starts at 10:00 AM.
+
+1. Join the Google Classroom.  Use class code **ka25cph** or this [invitation link][google-classroom-link].
 2. To join a meeting, click on the "Meet" link or video icon on the Google Classroom page.
 3. Complete the [Student Info From](https://forms.gle/WE3jN4miDKabFBje8) so we know your Github ID.
 4. What online platform do you prefer? Please complete [Online Platform Preferences](https://forms.gle/VkG5MBPjgmxRX1xi7).
@@ -28,8 +29,6 @@ Monday 10-12, 13-16 starting 9 Aug 2020.
 [Sahanon](https://github.com/Sahanon-P) `email("Sahanon", "Phisetpakasit")`
 
 [Chanathip](https://github.com/kaesrel) `email("Chanathip", "Thumkanon", 3)` 
-
-[Sahadporn](https://github.com/Sahadporn) `email("Sahadporn", "Charnlertlakha")` // unconfirmed
 
 
 ```python

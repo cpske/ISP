@@ -3,9 +3,11 @@ title: Schedule
 navigation_order: 1
 ---
 
-> This schedule may change! 
-> See **Google Classroom** for weekly material and assignments.
+> This schedule may change!    
+> See **[Google Classroom][google-classroom]** for weekly material and assignments.
 > You should do the assignments posted on Google Classroom.
+
+[google-classroom]: https://classroom.google.com/c/MzczOTE1MjA0NDE4?cjc=ka25cph
 
 #### Links
 
@@ -27,22 +29,22 @@ Please do this before the course starts. Otherwise, do it in Week 1.
 * [Introduction to software process](software-process/)
 * Exercise: [Write a Process Description for an Everyday Project](assignment/week1/general-process-exercise) 
 * [Using Github](git/Using-Github) & Github Classroom.
-* Exercise: Github Classroom practice
+* Exercise: practice using Github Classroom
 * Python Coding Style: [How to Write Beautful Python Code with PEP8](https://realpython.com/python-pep8/) on [Real Python](https://realpython.com/)
   - [How to Write Docstring Comments](code-quality/docstrings)
   - Example given in class
-* Exercise: apply the coding standard
+* Exercise: apply the Python coding standard
 * Programming 2 Review, basic Python and O-O concepts.
 * Exercise: Programming Skill Assessment
 
 
 #### Assignment
 
-- [Software Process Homework](assignment/week1/software-process-homework)
-- [Software Process Questions](https://docs.google.com/forms/d/e/1FAIpQLSd3FtoUtetMjd47M5TY9FYgK2TJvWwog44PzuEki6gFd3zsyQ/closedform) based on the homework reading
+- [Software Process Homework](assignment/week1/software-process-homework) assigned reading
+- [Software Process Questions](https://forms.gle/M5RcqiDUh4NkFviW9) based on the reading
 
 
-### Week 2 (17 Aug)
+### Week 2
 
 * [Scrum](agile/scrum)
   - Watch [Scrum in Under 10 Minutes](https://www.youtube.com/watch?v=XU0llRltyFM) on Youtube
@@ -60,7 +62,7 @@ Please do this before the course starts. Otherwise, do it in Week 1.
 * Create a Github Repo of Git common usage with "how to" examples 
   - Assignment with starter docs on Github Classroom: <https://classroom.github.com/a/q7wONzhR>
 
-### Week 3 (24 Aug)
+### Week 3
 
 * **Preparation:** install ncat on your computer and TEST IT
   - ncat: <https://nmap.org/ncat/> a newer version of "netcat"
@@ -82,7 +84,7 @@ Please do this before the course starts. Otherwise, do it in Week 1.
   - [Assignment](assignment/week3/ku-polls) write a vision statement and requirements
   - Background for Vision Statement: <https://cpske.github.io/ISP/assignment/ku-polls/vision>
 
-### Week 4 (31 Aug)
+### Week 4
 
 * Quiz 1 (paper) and Quiz 2 (coding)
 * [Web app and web framework overview](web/index#web-frameworks) and [presentation](web/Web-Apps-and-Web-Servers.pdf)
@@ -107,7 +109,7 @@ Please do this before the course starts. Otherwise, do it in Week 1.
   - submit work in your own `ku-polls` repo on Github.
   - use correct repo structure! No extra layer of directories.
 
-### Week 5 (7 Sep)
+### Week 5
 
 * No class meeting due to Songkran
 * Review progress on KU Polls iteration 1 (online)
@@ -119,7 +121,7 @@ Please do this before the course starts. Otherwise, do it in Week 1.
   - Don't wait until the due date to push code! That's a **poor development process**.
 * (Not assigned in 2020) Questions about Agile coding based on PAD - agile-and-coding.md
 
-### Week 6 (14 Sep)
+### Week 6
 
 * [Django Review](django/Django-review-1.pdf)
 * [Unit Testing](testing/)
@@ -162,7 +164,7 @@ Submit a project proposal
 * Proposal Template: <http://bit.ly/ISP-project-template>
 * Project Spreadsheet: <http://bit.ly/ISP2020-projects> to submit your team and proposal link
 
-### Week 7 (21 Sep)
+### Week 7
 
 * [Testing in Django](testing/WebTesting.pdf) - how to test models, views, url dispatcher, and templates
 * [Code Coverage tools](testing/code-coverage) for Python 
@@ -183,14 +185,14 @@ Submit a project proposal
   - Github Classroom Assignment: <https://classroom.github.com/a/UOcT0BOr>
   - Instructions: <https://cpske.github.io/ISP/assignment/orm/Modeling-Practice.pdf>
 
-### Midterm 28 Sep - 4 Oct
+### Midterm 
 
-* Exam is 27 Sep (Sunday) rooms 202 and 203. Times: 9:00-12:00 and 13:00-16:00.
+* Exam is XX Septemer rooms 202 and 203. Times: TBA
 * Covers everything so far.
 * Coding part will emphasize **unit testing** and **code quality**.
 * Recommended OBS Video Settings: <https://drive.google.com/open?id=1xiDH6NImH0PAAZp5AUNWtJeLzlRSYoqiAOFE8wFS1vM&authuser=1>
 
-### Week 8 (5 Oct)
+### Week 8
 
 * [Code Quality, Coding Style, and Coding Standards](code-quality)
   - coding style for Python (you learned this in Programming 1, I think)
@@ -230,7 +232,7 @@ Submit a project proposal
   - Add "badges" to your KU Polls README.md for Travis and CodeCov status
   - Sites with *insane* number of badges: [Checkstyle](https://github.com/checkstyle/checkstyle)
 
-### Week 9 (12 Oct)
+### Week 9
 
 * Individual Selection: *Project or No Project?*
   - in view of the apathetic response to project work, each person can elect whether or not to do a project as part of graded work
@@ -252,7 +254,7 @@ Submit a project proposal
 
 * Movie Rental Refactoring <https://classroom.github.com/a/_qGEboUn>, Part 1
 
-### Week 10 (19 Oct)
+### Week 10
 
 * [Authentication](/authentication/)
 * Authentication Exercise: [Add authentication to the Todo app](assignment/week10/auth-exercise)
@@ -267,7 +269,7 @@ Submit a project proposal
   - <https://cpske.github.io/ISP/assignment/week10/refactoring>
 * [KU Polls Iteration 3](assignment/ku-polls/iteration3)
 
-### Week 11 (26 Oct)
+### Week 11
 
 * Quiz on Refactoring
 * [Review common refactorings](refactoring/Refactoring-Review.pdf)
@@ -280,7 +282,7 @@ Submit a project proposal
 * [Movie Rental Refactoring, Part 2](assignment/week11/movie-rental2)
 
 
-### Week 12 (2 Nov)
+### Week 12
 
 * Agile - Agile values, principles, and the practices.
   - values and mindset, not a software process
@@ -291,7 +293,7 @@ Submit a project proposal
 * More Refactoring
 * "Why" refactoring and benefits, both in general and for specific refactorings.
 
-### Week 13 (9 Nov)
+### Week 13
 
 * [Software Reviews](code-review/)
 * Project Demos
@@ -304,7 +306,7 @@ Submit a project proposal
 * [Create a Code Review Script and Checklist](assignment/week13/code-review). 
   - Write them in your project wiki and add links from your project README.md
 
-### Week 14 (16 Nov)
+### Week 14
 
 * Schedule dates for final exam and project presentations.
 * Review Movie Rental refactoring problems.
@@ -320,7 +322,7 @@ Submit a project proposal
   - Post issues for any problems in their installation instructions.
   - Goal is to find problems with installation and setup, not in the application itself (that is next week's Bug Bounty assignment).
 
-### Week 15 (23 Nov)
+### Week 15
 
 * The [12-Factor App](web/12FactorApp.pdf) - 7 factors that apply to your projects
 * The Testing Pyramid and End-to-End Testing in [Web Testing](testing/WebTesting.pdf)
@@ -333,7 +335,7 @@ Submit a project proposal
 * Team Assignment: deploy your application to a cloud service
 
 
-### Week 16 (30 Nov)
+### Week 16
 
 * "Why" refactoring and refactoring benefits, both in general and for specific refactorings.
 * Review

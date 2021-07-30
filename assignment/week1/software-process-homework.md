@@ -3,19 +3,19 @@ title: Software Process Homework
 ---
 ### Description
 
-Read one of the book chapters below,
+**Read** one of the book chapters below (your choice),
 then answer the online questions about software process.
-Both of them contain a good general description of software process.
+Both of these contain a good general description of software process.
 
 * [Software Processes - Summerville, Chapter 2][summerville] from *Software Engineering*, 9E, by Ian Summerville.
   - short, concise description of software process models and activities
 
-For more detail than Summerville's chapter, please have a look at this:
+or this (has more detail than the above):
+
 * [Software Life-Cycle Models (ch. 2) and Software Processes (ch. 3)][schach] from *Object-Oriented and Classical Software Engeering*, 8E, by William Schach.
   - chapter 2 contains most of what you need to know
   - chapter 3 describes "workflows" in a software process, using the Unified Process (UP) as a model
-
-I prefer Schach's chapters.  Which do you prefer (email me)?
+  - **more detail** than Summerville's chapter
 
 
 ### Assignment
