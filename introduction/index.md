@@ -90,18 +90,17 @@ Plan your time, make a schedule, have discipline.
 
 ### Why a Team Software Project?
 
-In this course you will design, implement, and deploy a web application
-in a team of approx. 4 people.  You can choose the project topic, 
-subject to approval by instructor.
-
-A big challenge in creating software is working effectively as a team.  
-Many of the skills we study involve other people, 
+A big challenge in creating software is working effectively as a team. 
+Many of the skills we study in ISP involve other people, 
 and are intended to improve team work.
 
 Hence, we need a *team* project to practice both individual and project-related skills.
-The project is also an opportunity to learn the basics of HTTP, web frameworks, and web application development.
 
-Last year's students report that the project is the most valuable part of the course.
+In the course you will design, implement, and deploy a web application
+in a team of approx. 4 people.  The project is also an opportunity to learn 
+the basics of HTTP, web frameworks, and web application development.
+
+Prior years' students report that the project is the most valuable part of the course.
 
 ### This is Not a Powerpoint Course
 
