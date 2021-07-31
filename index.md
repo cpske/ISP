@@ -9,9 +9,6 @@ navigation_order: 1
 
 [google-classroom]: https://classroom.google.com/c/MzczOTE1MjA0NDE4?cjc=ka25cph
 
-#### Links
-
-* [About the course](about) has links to Google Classroom & Github Classroom
 
 ---
 
@@ -22,6 +19,7 @@ navigation_order: 1
 Please do this before the course starts. Otherwise, do it in Week 1.
 
 * [Sign-up, Survey, and Required Software](assignment/week1/signup-and-software)
+* [About the course](about) for essential class resources & how to contact TAs.
 
 ### Week 1
 

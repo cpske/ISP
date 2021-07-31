@@ -9,18 +9,19 @@ Monday 10-12:00 and 13-16:00 starting 9 Aug 2021.
 
 **Location:** class is **online** (for now). Regular room is E204.
 
-**Online Meeting:** Meet using [Google Classroom](https://classroom.google.com/c/MzczOTE1MjA0NDE4?cjc=ka25cph). Starts at 10:00 AM.
+**Online Meeting:** Meet using [Google Classroom][google-classroom-link]. Starts at 10:00 AM.
 
-1. Join the Google Classroom.  Use class code **ka25cph** or this [invitation link][google-classroom-link].
-2. To join a meeting, click on the "Meet" link or video icon on the Google Classroom page.
+1. Join the [Google Classroom](https://classroom.google.com).  Use class code **[ka25cph][google-classroom-link]** or this [invitation link][google-classroom-link].
+2. To join a meeting, click on the "Meet" link (video icon) on the Google Classroom page.
+![classroom meet icon](images/classroom-meet-icon.png)
 3. Complete the [Student Info From](https://forms.gle/WE3jN4miDKabFBje8) so we know your Github ID.
 4. What online platform do you prefer? Please complete [Online Platform Preferences](https://forms.gle/VkG5MBPjgmxRX1xi7).
 
-**Github & Github Classroom** - we use Github for programming work, and Github Classroom for some exerices and quizzes.
+**Github & Github Classroom**: we use Github for programming work, and Github Classroom for some exerices and quizzes.
 
-[google-classroom-link]: https://classroom.github.com/classrooms/86591180-isp-2021 
+[google-classroom-link]: https://classroom.google.com/c/MzczOTE1MjA0NDE4?cjc=ka25cph
 
-### [Introduction to Course](introduction/index)
+### [Introduction to the Course](introduction/index)
 
 ### Teaching Assistants (TAs)
 
