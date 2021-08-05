@@ -5,7 +5,7 @@ title: Course Preparation
 1. Join [Google Classroom](https://classroom.google.com) for "219245 ISP (2021)". Use class code [ka25cph][classroom-invite] (or just click [this link][classroom-invite])
 2. Tell us your Github login on this form: <https://forms.gle/UP9owsjtYNZtZ1wN6>
 3. Tell us your Online Learning preferences: <https://forms.gle/VkG5MBPjgmxRX1xi7>
-4. Update your Github profile, include (a) **photo** that clearly shows your face (at least 50% of vertical space), (b) your **real name** correctly capitalized -- either first name only or first and last name.  Not a nickname, Not your github login unless it's your real name.
+4. Update your Github profile, include (a) **photo** that clearly shows your face (at least 50% of vertical space), (b) your **real name** correctly capitalized -- either first name only or first and last name.  Not a nickname; Not your github login unless it's your real name.
 5. Install the **required software**, if you don't have them:
    1. Git including the `git` command. Download from <https://git-scm.com>
    2. Python 3.8 or newer.
@@ -19,7 +19,7 @@ title: Course Preparation
 
 ---
 
-### Examples of Github Profile
+### Examples of Good Github Profiles
 
 Your Github account is part of your resume.  Make it look professional!
 

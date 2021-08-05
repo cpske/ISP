@@ -184,7 +184,8 @@ Django's [authentication](django/authentication) and [authorization](django/auth
 [UML](uml)
 </td>
 <td markdown="span">
-A standard for visual software modeling, design, and deployment.
+The standard for visual software modeling and design.    
+You should be able to understand common UML diagrams.
 </td>
 </tr>
 </table>
@@ -512,8 +513,9 @@ Good places for project documentation:
 
 ---
 
-Some links to test your link scanner (Week 15 assignment):
+Links to test your link scanner (Week 15 assignment):
 
 - <a> "a" tag without "href"</a>
-- <a href="#project-and-task-boards">project and task boards</a> "href" with page fragment only
-- <a href="https://www.does.not.exist">www.does.not.exist</a> unresolvable hostname
+- <a href="#project-documentation">project documentation</a> "href" with page fragment only (valid reference)
+- <a href="#project-and-foo-boards">project and task boards</a> "href" with page fragment only (invalid ref)
+- <a href="https://www.does.not.exist">www.does.not.exist</a> href with unresolvable hostname

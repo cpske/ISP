@@ -4,8 +4,8 @@ navigation_order: 1
 ---
 
 > This schedule may change!    
-> See **[Google Classroom][google-classroom]** for weekly material and assignments.
-> You should do the assignments posted on Google Classroom.
+> See **[Google Classroom][google-classroom]** for weekly material and assignments.    
+> You should do the assignments posted on [Google Classroom][google-classroom].
 
 [google-classroom]: https://classroom.google.com/c/MzczOTE1MjA0NDE4?cjc=ka25cph
 

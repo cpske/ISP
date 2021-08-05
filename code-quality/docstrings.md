@@ -3,59 +3,56 @@ title: Documentation in Comments
 ---
 
 Java, Python, Scala, and other languages have standards for documenting
-code in comments.  Java and Scala have tools to create nicely formatted
-API documentation can from these comments, called "Javadoc" or "Scaladoc".
+code in comments.  They also have tools to create professional looking
+API documentation can from these comments, as web pages or PDF.
+IDEs use documentation comments to provide context-sensitive help
+as you write code -- even help on your own project code (if you write 
+the comments in a recognizable format).
 
-Almost all reusable code for Java and Scala provide a complete 
-API reference in this way.  Here are some examples:
-
-* Java API 
-* JUnit API
-
-Python has a standand format for writing documentation in comments
-called "docstrings".  You should use it.
-
-Java has a standard called "Javadoc" which is *much better* than Python
-and can generate beautiful, cross-referenced HTML pages.  
-The entire Java API docs are created using Javadoc.
+The Python convention for writing documentation in comments is
+called **docstrings**.  You should use it.
 
 
 ## Python Docstring Comments
 
-Documentation comments in Python are called **docstring** comments.
+Documentation comments in Python are called **docstring**.
 
-Here's an example for a function using Pyton's official PEP257 style:
+Here's an example using a common format based PEP257
 ```python
 def max(a, b):
     """Return the maximum of two values a and b.
 
     Parameters:
-    a (int): first number for max comparison
-    b (int): second number for max comparison
+        a (float): first number for max comparison
+        b (float): second number for max comparison
 
     Returns:
-    int: the max of a and b
+        float: the maximum of a and b
     """
     if a > b: 
        return a
     return b
 ```
 
+Many examples draw a row of `--------` under the words "Parameters", "Returns", "Raises" instead of using a colon (:).  I find this a waste of effort and space.
+
+Some rules are:
+
 1. The docstring for a function must be the **first thing** inside the function
 and use a multi-line comment (""").  Same rule for class docstrings.
-2. The first line of the docstring is a **complete sentence** describing what it does, ending with a period.
+2. The **first line** of the docstring is a **complete sentence** describing what it does, ending with a period.
 3. Followed by a blank line.
 4. (Optional) Additional text describing what the function or class does.  You can omit this if the function is simple (like min or max).
-5. Document *parameters*, their names, what the mean, any conditions on their values, e.g. "must be positive", "may not be empty").
+5. Document *parameters*, their names, what the mean, any conditions on their values, e.g. "must be positive", "may not be empty".
    - ISP Style: Don't document the data type!  Use **type hints** instead. E.g. write `a` instead of `a (int)`.
 6. Document what the function returns (*return value*), and any *Exceptions* raised.
 
 The standard for documenting parameters, returns, and exceptions is not universal.    
 There are 3 styles:
 
-* Pydoc style, used in Python API (PEP257)
 * Google style
-* Numpy style, which uses reStructured Text (reST) mark-up
+* Official Python style in the Python API, using reStructured Text
+* Numpy style, which also uses reStructured Text (reST) mark-up
 
 Here's an example using Google's convention:
 ```python
@@ -63,10 +60,11 @@ def max(a, b):
     """Return the maximum of two values a and b.
 
     Args:
-        a (int), b (int): two numbers to find the maximum of
+        a (float): the first number to compare
+        b (float): another number to compare to a
 
     Returns:
-        int: the max of a and b
+        float: the max of a and b
 
     Raises:
         TypeError: if a or b is not a number
@@ -77,6 +75,32 @@ def max(a, b):
         return a
     return b
 ```
+
+Same thing using the official Python style with reStructured Text. 
+This format is used in many Python library modules and packages, such as the Requests package (for HTTP requests).
+```python
+def max(a, b):
+    """Return the maximum of two values a and b.
+
+    :param a:  the first number to compare
+    :param b:  another number to compare to a
+    :return:   the max of a and b
+    :rtype:    float 
+    :raises TypeError: if a or b is not a number
+
+    Usage::
+    >>> max(2, 3)
+    3
+    >>> max(0.1, -2.5)
+    0.1
+    """
+    if not isinstance(a, Number): raise TypeError()
+    if not isinstance(b, Number): raise TypeError()
+    if a > b: 
+        return a
+    return b
+```
+
 
 ## Use Type Hints instead of Data Types in Comments
 
@@ -137,15 +161,16 @@ class BankAccount:
 
 ### My Recommendation for Class Docstrings
 
-1. Document what the class does, not *how* it does it. Describe any special dependencies or preconditions on using the class.
+1. Document what the class does, not *how* it does it. 
+2. Document any special dependencies or preconditions required by the class.
 2. Give an example of how to create objects of the class.
 3. Document attributes of the class.
-4. **Don't** write a summary of all the methods in th class. That's redundant!  Each method should have it's own docstring.
+4. **Don't** write a summary of all the methods in th class. That's redundant!  Each method has it's own docstring that describes it.
 
 
 ## Viewing Python docstrings
 
-You can view the docstring comment in the Python interpreter.
+You can view the docstring comments in the Python interpreter.
 This works for functions, classes, modules, and packages (if they have a docstring): 
 ```python
 >>> help(print)
@@ -183,8 +208,7 @@ class Request(RequestHooksMixin)
 ```
 
 This docstring uses colons (:) for parameters and keywords used in formatting.
-This is the numpy style docstring.
-Please don't use this format in ISP -- it's harder to read.
+That's the style used in official Python documentation, but a bit hard to read.
 
 
 ## Use pydoc to view docstrings
@@ -193,9 +217,11 @@ Use `pydoc` from the command line to view documentation for packages, classes, m
 
 ```shell
 cmd> pydoc os
-   (shows docs for os module)
+   (shows docstring for os module)
 cmd> pydoc math.sqrt
-   (shows doc for sqrt function)
+   (shows docstring for sqrt function)
+cmd> pydoc requests.Request
+   (Request class in requests module)
 ```
 
 ## When to Write Docstrings
@@ -325,3 +351,5 @@ To learn more about Python docstrings:
 * Detailed [Google Docstrings example](https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html) at readthedocs.io.
 * Detailed [NumPy Docstrings example](https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_numpy.html#example-numpy)
 * [NumPyDoc](https://numpydoc.readthedocs.io/en/latest/format.html) official documentation of NumPy/SciPy docstrings.
+
+* The Java documentation standard is called "Javadoc" which is *much better* than Python and can generate beautiful, cross-referenced HTML pages.  The entire Java API docs are created using Javadoc.
