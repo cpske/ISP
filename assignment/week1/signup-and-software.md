@@ -9,10 +9,21 @@ title: Course Preparation
 5. Install the **required software**, if you don't have them:
    1. Git including the `git` command. Download from <https://git-scm.com>
    2. Python 3.8 or newer.
-   3. IDE for Python:  PyCharm, PyDev (Eclipse), and VS Code are good.
-   4. A good text editor. Good text editors do syntax highlighting and formatting to improve your productivity. 
-      - popular editors: Atom, Notepad++, Sublime, VS Code (a bit slow), TextMate (Mac only).  Terminal (shell) based editors: nano and vim (hard to learn).
+   3. IDE for Python:  [PyCharm][], [PyDev][] (Eclipse), and [VS Code][vscode] are good.
+   4. A good text editor that does syntax highlighting and formatting to improve your productivity. 
+      - Popular editors: [Atom][], [Notepad++][], [Sublime][], [VS Code][vscode] (a bit slow), [TextMate][] (Mac only)
+      - Terminal (shell) based editors: [nano][] and [vim][] (hard to learn)
       - Windows Notepad is NOT a good editor.
+
+[Atom]: https://atom.io
+[Notepad++]: https://notepad-plus-plus.org
+[PyCharm]: https://www.jetbrains.com/pycharm/
+[PyDev]: https://www.pydev.org/
+[Sublime]: https://www.sublimetext.com/
+[vscode]: https://code.visualstudio.com/
+[TextMate]: https://macromates.com/
+[nano]: https://www.nano-editor.org/
+[vim]: https://www.vim.org/
 
 
 [classroom-invite]: https://classroom.google.com/c/MzczOTE1MjA0NDE4?cjc=ka25cph
