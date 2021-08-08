@@ -20,6 +20,10 @@ See below for how to join.
 
 **Preparation**: Please do this [Sign-up and Preparation](assignment/week1/signup-and-software) before the first class.
 
+[google-classroom-link]: https://classroom.google.com/c/MzczOTE1MjA0NDE4?cjc=ka25cph
+[classroom-classwork]: https://classroom.google.com/u/0/w/MzczOTE1MjA0NDE4/t/all
+[google-meet-link]: https://meet.google.com/lookup/gufu6342m5
+
 
 ### How to Join [Google Classroom][google-classroom-link] and Join a Meeting
 
@@ -29,10 +33,6 @@ See below for how to join.
    - You can also click this [Google Meet Link][google-meet-link] but it may change in the future.
 3. Complete this [Student Info Form](https://forms.gle/WE3jN4miDKabFBje8) so we know your Github ID.
 4. What online platform do you prefer? Please complete [Online Platform Preferences](https://forms.gle/VkG5MBPjgmxRX1xi7).
-
-[google-classroom-link]: https://classroom.google.com/c/MzczOTE1MjA0NDE4?cjc=ka25cph
-[classroom-classwork]: https://classroom.google.com/u/1/w/MzczOTE1MjA0NDE4/t/all
-[google-meet-link]: https://meet.google.com/lookup/gufu6342m5
 
 
 ### [Introduction to the Course](introduction/index)
