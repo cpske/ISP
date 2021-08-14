@@ -1,35 +1,31 @@
 ---
-title: Introduction to Git
+title: Git Basics
 ---
 
 ## About Git
-
-Git is a version control system.  It keeps a repository of files and a history of all changes ("commits") to the repository.  You can go back in time and recover any prior version of files in the repository.
-
-Git records every change to a collection of files, along with who made the change and why. Git lets you view changes and recover any previous version of any file (even deleted files!).  This is similar to the way Google Docs keeps a history of changes to a Google Doc,
-except git operates on a collection of files rather than just individual files.
 
 Some things you can do with Git are:
 
 * easily make a copy of a project's source code on another machine
 * view a history of all changes to project files, and compare revisions
-* checkout any past revision of a project, even files that have been deleted!
-* control who has read and write access to the project
-* quickly update the repository when you make changes to your "working copy" of the files.
+* checkout any past revision to a project, even files that have been deleted!
+* control who can read and write to the repository
+* quickly switch your "working copy" between different versions of repository files
 
-This introduction describes how to create and use a local git repository, using the `git` command line program.  
+This file describes how to create and use a local git repository, using the `git` command line program.  
 How to use Github is introduced in a separate document.
 
 See [Why Use Git?](#why-use-git) (below) for how Git can save you from disaster.
 
 ## Git Software
 
-There are many tools for using git, including:
+Tools for using git incliude:
 
 1. **Git command line tool** - the basic "git" we will use. This is the best way to learn git. 
 2. **Git GUI client** such as [Github Desktop](https://desktop.github.com/) for Windows and OSX, [SourceTree](https://www.sourcetreeapp.com/), or
 [SmartGit](https://www.syntevo.com/smartgit/).
-3. **IDE builtin Git feature** Eclipse, Netbeans, IntelliJ, and BlueJ all include git tools. After you understand git, these tools are an easy way to use git while programming; but if you *don't* know git well it is easy to make mistakes or be confused.
+3. **IDE built-in Git feature** Eclipse, Netbeans, IntelliJ, PyCharm, VS Code, and even BlueJ all include git tools. After you understand git, these tools are a fast and easy way to use git while programming.
+   - but if you *don't* know git first it is easy to make mistakes or be confused.
 
 For this introduction, we will use the Git command line.
 
@@ -41,7 +37,7 @@ For this introduction, we will use the Git command line.
 **Ubuntu or Debian**:  in a terminal window, enter `sudo apt-get install git`.    
 **Other OS**: see [install commands for Linux](https://git-scm.com/download/linux)
 
-## Personalize Your Git Config
+## Personalize Your Git Configuration
 
 Before you can use Git to "push" commits to a remote repository
 you must set configuration values containing **your name** and **email**.
@@ -54,6 +50,9 @@ git config --global user.email "bill@msft.com"
 
 # The editor git should open to edit a commit message or conflict.
 # Instead of this, you can set a shell environment variable named EDITOR
+# Suppose you want to use 'nano' as the editor for git commits. Enter:
+git config --global core.editor nano
+# for Mate on Mac OSx (needs -W option):
 git config --global core.editor "mate -w"
 ```
 

@@ -6,39 +6,50 @@ A **Version Control System** (VCS) manages versions of source code and other doc
 
 * authenticate users
 * control who can view, copy, or change files (access control)
-* keep a history of all changes to every file, with attribution (who changed it) and reason (commit message)
-* users can view or checkout any previous version of files -- so you never lose work
-* "check in" many items at once as a single transaction (git *commit*). A transaction can include renaming, moving, or deleting items as well as updates.
-* maintains integrity of files -- does not allow corruption of files or loss of work 
-  - VCS does not allow people to accidentally overwrite each other's work
+* maintain integrity of work 
+  - you cannot overwrite a newer version of files with some work based on a much older version
   - git requires a new commit always be based on the current version of what is in the repository
+* keep a history of all changes to every file, so you can view or checkout any version of any file(s)
+* attribution of who changed what files, and reason for the change (commit message)
+* items are "checked in" (committed) as a single transaction (*atomic*). A transaction can include renaming, moving, or deleting items as well as updates.
+  - if the transaction fails in the middle of processing, nothing is changed in the repo.
 * manage multiple variations (branches) of the same project, so that teams can work on different features without affecting other's work
 
 **Git** is the dominant VCS in the world today, so we will focus on using Git. 
-Other VCS are Mercurial and Subversion (a centralized VCS).
+Other VCS are Subversion (a centralized VCS), and Mercurial.
 
 ## Git Basics
 
 Presentation: [Git Basics](Git-Basics.pdf)
 
-Read one of these to learn the basics (or read them all!):
+Know **at least** this:
 
-[Git Basics](https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository) from the excellent, free [Pro Git Book](https://git-scm.com/book/en/v2). 
+[Git Basics][ProGitBasics], Chapter 2 of the excellent, free [Pro Git Book][ProGit].
 
-[Learn Git Interactive](https://learngitbranching.js.org) interactive graphical tutorial, includes branch, merge, rebase, and more.
 
-My [Intro to Git](git-basics) - but *Git Basics* from *Pro Git* is better.
+**Visual** Guides to Git:
+
+- [Learn Git Interactive](https://learngitbranching.js.org) interactive graphical tutorial, includes branch, merge, rebase, and more.
+- [Visual Git Reference](https://marklodato.github.io/visual-git-guide) web page with illustrations of git commands.
+
+If you are lazy, read my [Git Basics](git-basics), but [Git Basics][ProGitBasics] from *Pro Git* is better.
 
 
 ### Three Areas: Repository, Staging Area (Index), Working Copy
 
-Git uses 3 special areas, and one special reference.
-This is covered in the Git Basics.  
+Video: [Git Workflow on YouTube](https://youtu.be/3a2x1iJFJWc) explains the 3 areas. Part of a course at Georgia Tech.
 
-* local repository
-* staging area (index)
-* working copy
-* HEAD
+Git uses 3 special areas, and one special reference.
+
+| Area             | Meaning |
+|:-----------------|:--------|
+| local repository | Git repository on your computer |
+| staging area (index) | files and changes marked for commit, but not yet committed |
+| working copy     | the copy of files you see and can edit. The working copy may include files 'tracked' by git and untracked files. |
+| HEAD             | a label that refers to the commit your working copy is based on |
+
+
+## Git Q&A 
 
 Can you answer these?
 
@@ -46,6 +57,11 @@ Can you answer these?
 2. How to show what has been staged for commit?
 3. How to remove "main.py" from the staging area?
 4. What happens if you add "main.py" to the staging area, then edit it again? Do you need re re-stage the file?
+
+Fixing Mistakes
+
+1. You add `main.py` to the staging area (not committed yet). What command removes if from the staging area?
+2. You make some changes in your working copy of `main.py`, but realize your work is wrong. How can you reset your working copy of `main.py` to the most recent committed to the repo?
 
 ## Understanding Git as a Graph
 
@@ -270,6 +286,7 @@ Optional and useful:
 * [Anatomy of a Git Commit](https://blog.thoughtram.io/git/2014/11/18/the-anatomy-of-a-git-commit.html) explains *what* is in a Git "commit". 
 
 [ProGit]: https://www.git-scm.com/book/en/v2 "Pro Git online book on Git-scm.com"
+[ProGitBasics]: https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository
 [ProGitPdf]: https://github.com/progit/progit2/releases/download/2.1.245/progit.pdf
 [ProGitAws]: https://progit2.s3.amazonaws.com/en/2016-03-22-f3531/progit-en.1084.pdf "Pro Git book v.2 PDF on AWS."
 [ThinkLikeaGit]: http://think-like-a-git.net/ "Understand visually how git works"

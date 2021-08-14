@@ -1,4 +1,6 @@
-## Project Documentation
+---
+title: Project Documentation
+---
 
 You need documentation for users of your application, including: 
 

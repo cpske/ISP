@@ -426,10 +426,10 @@ Note: task board must to viewable by TAs and instructor!
 </tr>
 <tr valign="top">
 <td markdown="span">
-Markdown
+[Markdown](documentation/markdown)
 </td>
 <td markdown="span">
-Everyone should know how to use Markdown. It's the *lingua franca* of online project docs.
+Everyone should know how to use Markdown. It's the *lingua franca* of online project docs. Much easier and cleaner to write than HTML.
 </td>
 </tr>
 <tr valign="top">
