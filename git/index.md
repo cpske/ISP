@@ -24,16 +24,14 @@ Presentation: [Git Basics](Git-Basics.pdf)
 
 Know **at least** this:
 
-[Git Basics][ProGitBasics], Chapter 2 of the excellent, free [Pro Git Book][ProGit].
-
+[Git Basics][ProGitBasics], Chapter 2 of the excellent, online [Pro Git Book][ProGit].
 
 **Visual** Guides to Git:
 
 - [Learn Git Interactive](https://learngitbranching.js.org) interactive graphical tutorial, includes branch, merge, rebase, and more.
 - [Visual Git Reference](https://marklodato.github.io/visual-git-guide) web page with illustrations of git commands.
 
-If you are lazy, read my [Git Basics](git-basics), but [Git Basics][ProGitBasics] from *Pro Git* is better.
-
+For the lazy: my [Git Basics](git-basics), but [Git Basics][ProGitBasics] from *Pro Git* Ch. 2 is better.
 
 ### Three Areas: Repository, Staging Area (Index), Working Copy
 
@@ -170,7 +168,7 @@ but they are only available for the remote on Github -- not your local repo.
 
 ## Git Branches
 
-* [Branching and Merging](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging) from the online [Pro Git Book][Git Book]
+* [Branching and Merging](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging), Ch. 3 of the online [Pro Git Book][Git Book]
 * My [branch and merge](branch-and-merge) notes
 * [Merge Practice](Merge-Practice.pdf) in class exercise
 
@@ -278,11 +276,19 @@ Optional and useful:
 
 ## Resources
 
-* [Pro Git Book][ProGit] and downloadable book [PDF][ProGitPdf]
-  - online version has good navigation aids, but is *much shorter* than the book
+Learn Git:
+
+* [Pro Git Book][ProGit] online, Ch. 2 & 3 contain the git essentials.
+  - Downloadable ProGit book [PDF][ProGitPdf] has *more material* than online book
+* [Visual Git Reference](https://marklodato.github.io/visual-git-guide) one page with illustrations of git commands.
+* [Think Like a Git][ThinkLikeaGit] visually understand how Git works.
+
+Try Git:
+
 * [Learn Git Interactive](https://learngitbranching.js.org) interactive graphical tutorial, includes branch, merge, rebase, and more.
 * [Visualizing Git][GitVisualizer] interactive tool is view graph of a repository.
-* [Think Like a Git][ThinkLikeaGit] visually understand how Git works.
+
+Git Details:
 * [Anatomy of a Git Commit](https://blog.thoughtram.io/git/2014/11/18/the-anatomy-of-a-git-commit.html) explains *what* is in a Git "commit". 
 
 [ProGit]: https://www.git-scm.com/book/en/v2 "Pro Git online book on Git-scm.com"

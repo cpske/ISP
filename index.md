@@ -46,7 +46,7 @@ Please do this before the course starts. Otherwise, do it in Week 1.
 
 * [Scrum](agile/scrum)
   - Watch [Scrum in Under 10 Minutes](https://www.youtube.com/watch?v=XU0llRltyFM) on Youtube
-  - [Introduction to Scrum](agile/scrum introduction) with links you should **read**
+  - [Introduction to Scrum](agile/scrum) with links you should **read**
   - Read [Scrum Guide](https://www.scrumguides.org/scrum-guide.html). Anything in the Scrum Guide may be on a quiz.
 * [Version Control & Git](git/) - understanding git repos
   - Common git use scenarios
