@@ -20,6 +20,9 @@ See below for how to join.
 
 **Preparation**: Please do this [Sign-up and Preparation](assignment/week1/signup-and-software) before the first class.
 
+**Scores**: <https://bit.ly/ISP2021-scores> for classwork and homework 
+
+
 [google-classroom-link]: https://classroom.google.com/c/MzczOTE1MjA0NDE4?cjc=ka25cph
 [classroom-classwork]: https://classroom.google.com/u/0/w/MzczOTE1MjA0NDE4/t/all
 [google-meet-link]: https://meet.google.com/lookup/gufu6342m5
