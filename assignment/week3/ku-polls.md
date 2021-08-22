@@ -20,15 +20,16 @@ and not too hard.
 ## This week's assignment
 
 1. Create a public repository named `ku-polls` in **your own** Github account.
-2. Add a README.md that briefly describes that the repository is for and contains links to your product docs. 
+2. Add a **README.md** that briefly describes that the project and contains links to your product docs. 
 3. Add a `.gitignore`. During repo creation you can select Github's `.gitignore` for Python projects, then customize it such as ignoring IDE files and (later) virtual environments.
-4. Add a Wiki to your repository.  The Wiki should contain these 3 files:
+4. Add a **Wiki** to your repository.  The wiki is for your project documents.  The Wiki should contain these 3 files:
    * Home - default landing page. It contains a description and links to other pages.
    * Vision Statement - vision of the product (be realistic). You can borrow material from the class Vision Statement. A rare instance where copying is allowed.
    * Requirements - a specification of the initial requirements.
 5. When you are done, schedule an online review with a TA or instructor.
-   * TA is not your personal editor. You should check your files for correctness first.
    * Use Google sheet to schedule a time, or contact the TA by other means.
+
+**TA is not your personal editor**. You should check your files for correctness first.
 
 ### Details
 

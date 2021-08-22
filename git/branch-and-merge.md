@@ -6,36 +6,45 @@ A git repository can contain multiple branches.
 The files on each branch can be checked in/out and updated separately,
 without affecting other branches.
 
-Each branch has a name, like "master".  The name is just a ***movable label** that points to the head of the branch.
+Each branch has a name, like "master".  The name is just a **movable label** that points to the head of the branch.
+
+## Understanding Branches
+
+A git repository is a **graph**, with commits as nodes.
+Each git branch is a branch on the graph.  The branch name is a **label** that points to the head of the branch.    
+
+Try the online [Git Visualizer](http://git-school.github.io/visualizing-git) - type git commands like "git commit", "git branch", "git checkout", "git reset" and see results on the graph. 
 
 ### Commands for Branches
 
 * Create a new branch named foo:
-   ```
-   cmd> git branch foo
-   ```
+  ```
+  cmd> git branch foo
+  ```
 * Checkout this branch so it is your current branch:
-   ```
-   cmd> git checkout foo
-   ```
-* Create branch and checkout in one command: `git checkout -b foo`.
-
+  ```
+  cmd> git checkout foo
+  ```
+* Create a branch and checkout in one command:
+  ```
+  cmd> git checkout -b foo
+  ```
   Now, any commits will be added to the `foo` branch.
 
 * Switch back to the master branch:
-   ```
-   cmd> git checkout master
-   ```
-* List branches (the "*" indicates current branch):
-   ```
-   cmd> git branch
-   * master
-   foo
-   ```
+  ```
+  cmd> git checkout master
+  ```
+* Show your branches (the "\*" indicates current branch):
+  ```
+  cmd> git branch
+  * master
+  foo
+  ```
 * List all branches including remote branches:
-   ```
-   cmd> git branch -a
-   ```
+  ```
+  cmd> git branch -a
+  ```
 * Display branch history as a tree: `gitk --all`.
 
 * Display history on command line (there are many variations):
@@ -45,25 +54,21 @@ Each branch has a name, like "master".  The name is just a ***movable label** th
 
 ### Example Repositories with Many Branches
 
-ISP 2018 "Dailigram" project. "gitk --all" shows branches and tags.
+ISP 2018 [Dailigram][] project. "gitk --all" shows branches and tags.
 
-ISP 2019 "Koocook" project (Mai and friends).
+ISP 2019 [Koocook][] project (Mai, Thanathorn, Chayathon) separate branch for major features.  A professional, shippable product.
 
-VS Code https://github.com/microsoft/vscode
+VS Code <https://github.com/microsoft/vscode>. How many branches? How many commits?
 
-## Understanding Branches
-
-A git repository is a **graph**, with commits as nodes.
-Each git branch is a branch on the graph.  The branch name is a **label** that points to the head of the branch.    
-
-Try the online [Git Visualizer](http://git-school.github.io/visualizing-git) - type git commands like "git commit", "git branch", "git checkout", "git reset" and see results on the graph. 
-
+[Koocook]: https://github.com/KooCook/koocook-dj/tree/dev
+[Dailigram]: https://github.com/LilBank/dailigram
 
 ## Merging
 
-* Merging is combining files from different branches.  
-* Merging may also involve same branch from different repositories.
-    - `git pull` first fetches changes from a remote (`git fetch`) and then merges them.
+Merging means combining files from different branches.  
+
+- Merging may also involve the same branch from different repositories.
+- `git pull` first fetches changes from a remote (`git fetch`) and then merges them (`git merge`).
 
 What can happen?
 
@@ -79,33 +84,33 @@ What can happen?
 
 ## Tracking Branches
 
-A "tracking branch" is a local branch with a corresponding remote.
-It tracks changes to the remote branch (use `fetch` or `pull` to copy), 
+A **tracking branch** is a local branch with a corresponding remote branch.
+It tracks (follows) changes to the remote branch (use `fetch` or `pull` to copy), 
 and can push changes to the remote branch.
 
 When you clone a remote repository, your local "master" branch is
-set to track "origin/master", meaning "master" on the remote repo named "origin".  Other branches are not cloned, by default.
+set to track "origin/master", meaning "master" on the remote repo named "origin".  Other branches are **not cloned** by default.
 
-To create a local "tracking branch" for some branch that already
-exists on a remote repository, use:
-```
-git checkout  -b branch_name  origin/remote_branch_name
-```
-If the local and remote branch have the same name, you can write:
-```
-git checkout --track origin/branch_name
-```
-and abbreviate `--track` to `-t`.
+* Create a local "tracking branch" for some branch that already exists on a remote repository:
+   ```
+   git checkout  -b branch_name  origin/remote_branch_name
+   ```
+
+* If the local and remote branch have the same name, you can write:
+   ```
+   git checkout --track origin/branch_name
+   ```
+   you can abbreviate `--track` to `-t`.
 
 ### Create a New Remote Branch for a Local Branch
 
 You have a branch in your local repo named `dev-food`,
 but no remote branch (on origin) for it.
 
-To create a remote `dev-food` branch and track it:
+To create a **remote** `dev-food` branch and track it:
 ```
 git checkout dev-food
-# "dev-food" is the name of the REMOTE branch
+# in the "push" commend, "dev-food" is the name for the REMOTE branch
 git push -u origin dev-food
 ```
 The flag `-u` is short for `--set-upstream`.
@@ -143,25 +148,25 @@ This means we have references ("refs") to remote branches on "origin", but no lo
 
 Suppose we want to look at the branch code.  There are 2 cases:
 
-1. We just want to look at the branch code:
-```
-git checkout origin/add_to_table
-```
-this creates a **detached branch**.  
+1. We just want to **look** at the branch code but not make changes:
+   ```
+   git checkout origin/add_to_table
+   ```
+   this creates a **detached branch**.  
 
-2. We want to be able to make changes to the remote branch:
-```
-git checkout -b add_to_table origin/add_to_table
-```
-creates a local "tracking branch".  
+2. We want to **make changes** and push to the remote branch:
+   ```
+   git checkout -b add_to_table origin/add_to_table
+   ```
+   creates a local "tracking branch".  
 
 3. Somehow you screw up and you have a local copy of existing branch,
-but its not tracking a remote.  You can specify the remote tracking branch:
-```
-git checkout some_branch
-git branch --set-upstream-to  origin/some_branch
-```
-This doesn't seem to be needed in practice.
+but its not tracking a remote.  You can add the remote tracking branch:
+   ```
+   git checkout some_branch
+   git branch --set-upstream-to  origin/some_branch
+   ```
+   This doesn't seem to be needed in practice.
 
 4. Fetch a Remote Branch and Track It
 
@@ -186,13 +191,13 @@ https://www.freecodecamp.org/forum/t/push-a-new-local-branch-to-a-remote-git-rep
 * Force delete a branch with unmerged commits: `git branch -d --force branch-name` (`-D` is same as `-d --force`)
 
 
-## Why Branches and How to Use in Your Project?
+## Why & How to Use Branches in Your Project?
 
-Branches let you create separate variation of a repository that can be modified without affecting other branches.  Common uses are:
+A branch lets you create a separate variation of a repository that can be modified without affecting other branches.  Common uses are:
 
-1. Use a branch to develop a new feature, so new work doesn't mess up the tested and runnable "master" branch code.  Errors on the branch won't affect other branches.
-2. Enable several people to work on different features or parts of program -- each uses his own branch. 
-3. Use a branch to work on bug fixes.  Once the fix is tested and verified it can be "merged" into production code.
+1. Use a branch to **work on a new feature**, so new work doesn't mess up the tested and runnable "master" branch code.  Errors on the branch won't affect other branches.
+2. Enable several people to work on different features at the same time, without conflicts.
+3. Use a branch to **fix bugs**.  Once the fix is tested and verified it can be "merged" into production code.
 4. You can release code (from master) while work is going on (in branches).
 
 ## Resources to Learn More

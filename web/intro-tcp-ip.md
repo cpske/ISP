@@ -1,16 +1,14 @@
 ---
-title: TCP/IP and HTTP
+title: Introduction to IP and TCP
 ---
-
-Presentation: 
 
 The World Wide Web primarily uses the HTTP protocol for communication.
 HTTP is an "application level" protocol that is transmitted inside of
 TCP/IP packets.
 
-This page provides a brief overview of IP, TCP, and HTTP.
-More details of HTTP are in the presentation slides.
+This page provides a brief overview of IP and TCP.
 
+A separate page (and presentation) cover HTTP.
 
 ## Internet Communication and IP
 
@@ -28,7 +26,7 @@ An IP packet looks like this:
 <tr valign="top">
 <td markdown="span" width="10%">Preamble</td>
 <td markdown="span" width="20%">**Sender IP Address**</td>
-<td markdown="span" width="20%">**Dest'n IP Address**</td>
+<td markdown="span" width="20%">**Destination IP Address**</td>
 <td markdown="span" width="50%" align="center">**PAYLOAD (Data)**</td>
 </tr>
 </table>
@@ -39,11 +37,11 @@ An IP packet looks like this:
 
 **IP Addresses** can be either IP version 4 (4-byte) or version 6 (16-byte):
 
-IP version 4: a 32-bit number. 
+**IP version 4**: a 32-bit number. 
    - Human readable form: 158.108.216.5  (www.ku.ac.th)
    - Computer form: 0x9e6cd805 (hexadecimal) or 10011110 01101100 11011000 00000011 (binary).
 
-IP version 6: a 128-bit number.
+**IP version 6**: a 128-bit number.
    - Human readable form: 2406:3100:1010:100:0:0:0:5 abbreviated as 2406:3100:1010:100::5 (still hard to read)
    - Computer form: 128 binary bits
 
@@ -63,7 +61,7 @@ A TCP Packet looks like this:
 <table border="1" width="100%">
 <tr valign="top">
 <td markdown="span" width="15%">**Sender Port Number**</td>
-<td markdown="span" width="15%">**Dest'n Port Number**</td>
+<td markdown="span" width="15%">**Destination Port Number**</td>
 <td markdown="span" width="10%">**Sequence Number**</td>
 <td markdown="span" width="10%">**Other fields**</td>
 <td markdown="span" width="50%" align="center">**DATA** (an HTTP packet)</td>
@@ -75,9 +73,9 @@ For example, a packet sent to KU's web server use port 443, the standard https p
 
 Port numbers are **essential** because:
 
-- a **Server** may have MANY different services accepting TCP connections, such as email (SMTP), secure shell (SSH), HTTP and HTTPS, and MySQL.  The port number identifies which service should handle the packet.
+- a **server** may have MANY different services accepting TCP connections, such as email (SMTP), HTTP and HTTPS, and MySQL.  Each service uses a different port, so the operating system can direct packets to the correct service.
 
-- a **client** may connect to many different servers and have many connections to the **same** server.  Using a browser, you can open many tabs that connect to the same web server -- each tab is a separate connection, using a separate sender port number.
+- a **client** may connect to many different servers or have many connections to the **same** server.  In a browser, you can open many tabs that connect to the same web server -- each tab is a separate connection, using a separate sender port number.
 
 **4 Numbers Uniquely Identify Each TCP Connection**:    
 
@@ -97,7 +95,7 @@ this means a sender at 182.232.33.42 on port 12345, and desination 158.108.216.5
 
 [Transmission Control Protocol]:https://www.khanacademy.org/computing/computers-and-internet/xcae6f4a7ff015e7d:the-internet/xcae6f4a7ff015e7d:transporting-packets/a/transmission-control-protocol--tcp
 
-## Exercise 1: What's My IP Address?
+### Exercise 1: What's My IP Address?
 
 1. Find your *real* IP address -- the address your own computer tells you.
 
@@ -105,25 +103,43 @@ this means a sender at 182.232.33.42 on port 12345, and desination 158.108.216.5
    - In a web browser, enter: `myipaddress` Click on a service, e.g. www.whatismyip.com
    - In Chrome url bar: enter *my ip address* (with spaces).
 
+### Exercise 2: What is Google's IP Address?
 
-## Exercise 2: TCP
+1. What is (are) the IP address of `www.google.com`?
 
-to be added
+2. What is (are) the IP address of `www.microsoft.com`?
 
-## Hypertext Transport Protocol (HTTP)
-
-
-
-## The Protcol Stack
+Hint: use "nslookup" or "host".  For nerds: "dig".
 
 
-From [Chapter 10. Networks](https://tldp.org/LDP/tlk/net/net.html) of
-[The Linux Kernel](https://tldp.org/LDP/tlk/tlk-title.html)
+### Exercise 3: TCP
+
+TCP associates **services** with **well-known port numbers**.  They are assigned by IANA (Internet Assigned Numbers Authority, which used to be a *single person*).  
+
+Q1. What are the port numbers of these services?
+
+| Service                                        | Port  |
+|:-----------------------------------------------|-------|
+| Hypertext Transport Protocol (HTTP)            |       |
+| Secure Hypertext Transport Protocol (HTTPS)    |       |
+| Simple Mail Transport (SMTP)                   |       |
+| Secure Simple Mail Transport (SMTPS)           |       |
+| Secure Internet Mail Access Protocol (IMAPS)   |       |
+| MySQL                                          |       |
+
+SMTPS is how mail servers talk to each other. IMAPS is how mail clients download a user's messages from a server.
+
+Q2. **Be Stealthy** - A personal computer should not expose "services" or "listening ports" to the Internet (unless you *really* want to).  There is a tool to check this, but it won't be accurate at KU because KU's gateway blocks inbound traffic to non-authorized hosts.
+   - At home, try this: [Shields Up!][shields-up]. Click the "Proceed" button to use the service. If you have running services, see if you can safely stop them or apply a firewall rule.
+
+Q3. Why is it important for personal computers to be stealthy?
+
+[shields-up]: https://www.grc.com/shieldsup
 
 
 ## Complete IP Packet Format
 
-You will study this in your computer networks class, but, for completeness
-here's the details of the IP packet format:
+For completeness, here are the details of the IP packet format.
+You will study this in your computer networks class. 
 
 ![IP packet format](ip-packet-header.webp)

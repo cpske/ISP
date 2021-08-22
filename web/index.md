@@ -9,29 +9,30 @@ So, it helps to have some understanding of IP, TCP, and HTTP. These are layered 
 * Transmission Control Protocol (TCP) defines how to maintain a virtual connection or conversation between applications, and adds reliability to IP. A TCP segment is carried *inside* an IP packet.
 * HyperText Transport Protocol (HTTP) defines the format and protocol for communication by web applications and web services. HTTP is the *payload* inside TCP (in version 3, HTTP will switch to using UDP).
 
-My Presentation: [Introduction to HTTP](HTTP.pdf)     
-[HTTP Exercise](HTTP-in-Action.pdf) send and receive HTTP yourself!   
-[UC Berkeley Presentation](Intro-web-and-tcp-UCB.pdf) from Edx course on *Engineering Software as a Service*.
+Presentation: [Introduction to HTTP](HTTP.pdf)     
+Practice: [HTTP Exercise](HTTP-in-Action.pdf) send and receive HTTP yourself!     
+[UC Berkeley Intro to Web & HTTP](Intro-web-and-tcp-UCB.pdf) from Edx course on *Engineering Software as a Service* (very good).    
+[My Intro to TCP/IP](intro-tcp-ip) one page.
 
-The HTTP exercises require netcat or ncat.
+### HTTP Exercises Require netcat or ncat
 
-* netcat (nc) is included with Linux and Mac OSX, or add it as a package.
+* **netcat** (nc) is included with Linux and Mac OSX, or add it as a package.
   - Windows users: use ncat instead.
-* ncat is a newer reimplementation of netcat that supports TLS/SSL.  It uses the same syntax as netcat, with a few newer options.
+* **ncat** is a newer implementation of netcat that supports TLS/SSL.  It uses the same syntax as netcat, with added options.
   - https://nmap.org/ncat/
   - written by the author of the well-known `nmap` port scanner
 * [netcat command summary](netcat_summary_sans.pdf) from SANS Institute
 
 Test that netcat/ncat is working.  In a terminal (shell) window enter:
 ```
-netcat -v -l -p 8000
-
-#  or, if you have ncat installed
-
 ncat -v -l -p 8000
+
+#  or, if you are using netcat (nc)
+
+netcat -v -l -p 8000
 ```
 then in a web browser, open the URL `http://localhost:8000`.    
-You should see the HTTP request (as text) in the netcat window.  
+You should see the HTTP request (as text) in the ncat window.  
 You can close the terminal window or type CTRL-C to kill the netcat process.
 
 ## Web Frameworks
