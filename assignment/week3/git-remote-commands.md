@@ -2,48 +2,27 @@
 title: Git Remote Commands Assignment
 ---
 
+## Instructions
+
 In the `git-commands` repository you created last week, add this work.
 
-1. Create a local branch named `remote-commands`.
+1. In your local `git-commands` repository create a new branch named `remote-commands`.  Switch to that branch.
 
-2. In the `remote-commands` branch, add a file named `remote-commands.md`.
+2. Copy the file named `remote-commands.md` from this repository: <https://github.com/ISP21/git-commands/>. Hint: the file is **not** on the master branch.
 
-3. Write the questions below and their answers in that file. Use good Markdown formatting.
+3. Answer the questions in `remote-commands.md` and test your answers.  Use good Markdown formatting.
 
-4. In README.md, add a hyperlink to the new file, near the top.  Your README might look like this (its up to you whether the first 4 sections are in README or in separate files):
-   ```
-   EXAMPLE ONLY - DON'T COPY THIS
-   <!-- example: hyperlinks to sections in this file -->
-   [Git Basics](#1.-basics)
-   [Adding and Changing Stuff)(#2.-adding-and-changing-stuff)
-   <!-- example: links to separate files -->
-   [Undoing Changes](undoing-changes.md)
-   [Branch and Merge](branch-and-merge.md)
-   [Remote Commands](remote-commands.md)         <-- new section
+4. In your README.md, add a hyperlink to the "7. Commands for Remotes" section of `remote-commands.md`, in your table of contents (links near top of README).
+   - Now you should have links to each section and references near the top of README.md
 
-   ### 1. Basics
-   ...
-   ```
+5. Commit your work (still on the `remote-commands` branch).
 
-5. Commit your remote commands and updated README to the `remote-commands` branch. Verify the formatting is correct.
+6. Switch back to "master" and merge the "remote-commands" branch into "master".
+   - Since you added work only to "remote-commands" branch, this should be an easy "fast forward" merge -- no conflicts.
 
-6. Merge this branch into `master`.
-
-7. Push **both branches** to Github (master and remote-commands).  This requires 2 push commands.
+7. Push **both** "master" and "remote-commands" branches to Github.
 
 
-### Commands for Remotes
-
-Write the answers to these usage situations.
-
-1. The command to list all your remote repositories, with their URL.
-
-2. The command to view details about a rempote repo named `origin`, including all the remote banches, and local tracking branches.
-
-3. (Question 7 from Part 4 belongs in this section, so move it here.) 
-
-4. (Question 8 from Part 4 belongs in this section, so move it here.)
-
-5. What are the steps to resolve the problem in the previous problem?
-
-6. Suppose you want to move `origin` to a different URL.  This can happen if you change the name of a repo on Github, or transfer ownership from one person to another.  What is the command to change the URL for `origin` to `https://github.com/your_name/newrepo`.
+> This is the way developers work on software. You add new work on a branch and test it. 
+> For a team project, also ask the team to approve the work ("Pull Request"). 
+> Finally, merge your branch into master.

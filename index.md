@@ -57,20 +57,18 @@ Please do this before the course starts. Otherwise, do it in Week 1.
 
 * Answer [Scrum Questions](https://docs.google.com/forms/d/e/1FAIpQLSccesC0cZCxaAmpOzgQ2EaOzYOZ9egDvrw54kUOwyFmqDJZeg/closedform) a Google Form
 * Complete at least parts 1 & 2 of this tutorial: <https://learngitbranching.js.org/>
-* Create a Github Repo of Git common usage with "how to" examples 
-  - Assignment with starter docs on Github Classroom: <https://classroom.github.com/a/q7wONzhR>
+* Create a Github Repo of Git "how to" answers.  Assignment on Github Classroom: <https://classroom.github.com/a/q7wONzhR>
+* Create a Burn-down chart for a Sprint. Details on Google Classroom.
 
 ### Week 3
 
-* **Preparation:** install ncat on your computer and TEST IT
-  - ncat: <https://nmap.org/ncat/> a newer version of "netcat"
-  - if you computer already has netcat then you can use that. In a command line shell try `netcat` or `nc` to see if its installed.
+* **Preparation:** install ncat on your computer and TEST IT: <https://nmap.org/ncat/>.
 * Feedback on Week 1 assignments
-* [Intro to HTTP Protocol](web/HTTP.pdf)
-* [HTTP in Action](web/HTTP-in-Action.pdf): manually enter HTTP requests using netcat or ncat
 * [Git Remotes](git/Git-Remotes.pdf)
 * [Branch and Merge](git/branch-and-merge)
 * [Git Merging and Conflict Resolution](git/Merge-and-Conflict-Practice.pdf)
+* [Intro to TCP/IP and HTTP Protocol](web/index), [presentation](web/HTTP.pdf)
+* Exercise: [HTTP in Action](web/HTTP-in-Action.pdf). Manually enter HTTP requests and responses using ncat.
 
 #### Assignment
 
@@ -78,8 +76,7 @@ Please do this before the course starts. Otherwise, do it in Week 1.
   - <https://drive.google.com/open?id=1igAYSBGdshgz1ESZOjcFwP0x-vCT-02CatdWEcVV7aQ>
 * Add Git remote commands to your Git commands repo
   - [git-remote-commands](assignment/week3/git-remote-commands)
-* KU Polls project inception
-  - [Assignment](assignment/week3/ku-polls) write a vision statement and requirements
+* [KU Polls Project Inception](assignment/week3/ku-polls) write a vision statement and requirements, initialize `ku-polls` repo
   - Background for Vision Statement: <https://cpske.github.io/ISP/assignment/ku-polls/vision>
 
 ### Week 4
@@ -101,7 +98,7 @@ Please do this before the course starts. Otherwise, do it in Week 1.
 
 * Github Flow 
   - Read: <https://cpske.github.io/ISP/git/index#github-flow> (read the files refered to in this page)
-  - Answer questions online: <https://forms.gle/HWLQ5retVNoquSJ38>
+  - Answer questions: <https://forms.gle/HWLQ5retVNoquSJ38>
   - Copy of questions: <https://cpske.github.io/ISP/assignment/week4/github-flow-questions>
 * [KU Polls Iteration 1](assignment/week4/ku-polls-iter1) (Django Tutorial)
   - submit work in your own `ku-polls` repo on Github.
@@ -109,7 +106,6 @@ Please do this before the course starts. Otherwise, do it in Week 1.
 
 ### Week 5
 
-* No class meeting due to Songkran
 * Review progress on KU Polls iteration 1 (online)
 * Start background work and proposal for course team project.
 
