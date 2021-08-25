@@ -76,8 +76,8 @@ Please do this before the course starts. Otherwise, do it in Week 1.
   - <https://drive.google.com/open?id=1igAYSBGdshgz1ESZOjcFwP0x-vCT-02CatdWEcVV7aQ>
 * Add Git remote commands to your Git commands repo
   - [git-remote-commands](assignment/week3/git-remote-commands)
-* [KU Polls Project Inception](assignment/week3/ku-polls) write a vision statement and requirements, initialize `ku-polls` repo
-  - Background for Vision Statement: <https://cpske.github.io/ISP/assignment/ku-polls/vision>
+* [KU Polls Project Inception](assignment/week3/ku-polls), initialize `ku-polls` repo, write a vision statement and requirements
+  - Background for Vision Statement: [vision](assignment/ku-polls/vision)
 
 ### Week 4
 
