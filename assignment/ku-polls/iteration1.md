@@ -6,38 +6,39 @@ title: KU Polls Iteration 1
 
 Perform iteration 1 of the KU Polls application.
 
-The code for this iteration matches what's in the [Django Tutorial][django-tutorial].
+The requirements and code for this iteration match the [Django Tutorial][django-tutorial].
 
 1. Create an "Iteration 1 Plan" page in your `ku-polls` wiki. Include:
    - **Goal** for the iteration
    - **Features** to implement (discussed in class)
-   - Tasks; or write the tasks in your task board to avoid redundancy
-   - **Acceptance Criteria** - when is the work done?
-   - **Retrospective** - record useful lessons learned, observations, and plan for improving your process
+   - **Acceptance Criteria** - when is the work done? how will you test the code?
 
 2. Create a **task board** using a Github Project.
    - Click the `Projects` tab in your `ku-polls` repo to create a Project.
-   - Read about "Projects" and project boards
-   - Use one "Project" for each iteration.  This is Iteration 1.
+   - Read about "Projects" and project boards on Github
+   - Create an "Iteration 1" project for this iteration.
    - Task board (Project board) should have at least 3 columns: To do (Backlog), In Progress, Done. Github will create these columns if you choose a Kanban project.
    - Record your tasks and their status. 
    - Each task should have short title and a longer description.
-   - It's up to you how to define tasks.  Looking at the work in the Django tutorial may give some ideas.
+   - You define your own tasks based on the Iteration Plan.  
+     - Look at the work in the Django tutorial to get ideas what you need to do.
 
-3. Create a **branch** named `iteration1` and do your work on that branch.
-   - **Push to Github when you finish each part of the Django tutorial**. 
-   - Don't wait until your done everything to push to Github!
+3. Create a **git branch** named `iteration1` and do your work on this branch.
+   - **Push to Github** when you finish **each part of the Django tutorial**. 
+   - Pushing work to Github regularly is a good habit and avoids losing work.
 
-4. Implement all parts of the [Django Tutorial][django-tutorial]
-   - Don't use copy and paste when doing the tutorial. Type everything yourself.
-   - In some parts of the tutorial they convert method-based views to class views.  It is OK to leave some views as function-based views, provided that view provides the same functionality.
+4. Implement at least part 1 - 6 of the [Django Tutorial][django-tutorial]
+   - Do **not use copy and paste** when doing the tutorial. You will learn **much better** by typing everything yourself.  See how much you can enter without looking back at the tutorial text.
+   - In the tutorial they convert function-based views to class views.  It is OK to leave some views as function-based views, provided that view provides the same functionality.
+   - Read part 7 of the tutorial (customizing the admin interface); implementing this is recommended but not required.
 
-5. Add at least 2 interesting questions to your polls application, and delete boring "What's up?" question from the tutorial.
-   - "Interesting" is subjective, but avoid stuff like "How are you?", "What's your favorite color?".
+5. Add at least **2 interesting poll questions** to your application, and **delete** the boring "What's up?" question from your polls.
+   - please avoid uninteresting things like "How are you?", "What's your favorite color?".
 
-6. When you finish everything and the application passes both unit tests and interactive tests, merge `iteration1` into `master` and push to Github.
+6. Optional: add embellishments, such as a graph of poll results, a custom background, or CSS with Bootstrap.
 
-You can add embellishments, such as a graph of the results or styling with Bootstrap, etc.
+7. After you finish and test everything, **merge** branch `iteration1` into `master` and push to Github.
+
 
 ## Optional: Improve Security
 
@@ -50,10 +51,13 @@ SECRET_KEY = 'some-random-secret-key'
 ```
 
 In Iteration 2 we'll implement *Externalizing Configuration Data*,
-but for **good security**, you may want to do it now.  It's easy.
+but for **good security**, you may want to do this now.  
 
-On the ISP github.io site, the topic "Externalize Configuration" describes how
-to put configuration data in a separate file and *easily* use the data in `settings.py`.  With either package, your settings.py would look like this:
+It's easy.
+
+On the ISP github.io site, the topic [Externalize Configuration][] explains how
+to put configuration data in a separate file and *easily* use the data 
+in `settings.py`.  After that, your settings.py would look like this:
 
 ```python
 SECRET_KEY = env('SECRET_KEY') 
@@ -63,7 +67,9 @@ You can also specify a default value, in case the data file (`.env`) is missing:
 SECRET_KEY = env('SECRET_KEY', default='missing-secret-key') 
 ```
 
-The data file (`.env`) is not committed to git.
+The data file (`.env`) should not be committed to git.
+
+[Externalize Configuration]: https://cpske.github.io/ISP/django/external-configuration
 
 
 ## What You Should Have

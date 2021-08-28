@@ -84,33 +84,33 @@ Please do this before the course starts. Otherwise, do it in Week 1.
 * [Web app and web framework overview](web/index#web-frameworks) and [presentation](web/Web-Apps-and-Web-Servers.pdf)
 * [Intro to Django](django/Intro-to-Django.pdf)
 * How to do KU Polls first iteration (Django Polls tutorial)
-  - Create a wiki and how to refer to it in project README
-  - Create a Project board (task board) and how to add issues as tasks
-  - Using a task board on Github
-  - Design the UI pages
   - Domain Model for Polls app - `Question` and `Choice` classes
-  - Development work on a git branch (iteration1)
+  - Create a Project board (task board) and how to add issues as tasks
+  - Creating tasks from issues
+  - Design the UI pages
+  - Development work on a git branch named `iteration1`
 * [Github Flow](git/index#github-flow) for managing work in git
   - if not enough time to cover in class then this is self-learning assignment
 
 #### Assignment
 
+* [KU Polls Iteration 1](assignment/ku-polls/iteration1) (Django Tutorial)
+  - submit work in your own `ku-polls` repo on Github.
+  - use correct repo structure! No extra layer of directories.
+
 * Github Flow 
   - Read: <https://cpske.github.io/ISP/git/index#github-flow> (read the files refered to in this page)
   - Answer questions: <https://forms.gle/HWLQ5retVNoquSJ38>
   - Copy of questions: <https://cpske.github.io/ISP/assignment/week4/github-flow-questions>
-* [KU Polls Iteration 1](assignment/week4/ku-polls-iter1) (Django Tutorial)
-  - submit work in your own `ku-polls` repo on Github.
-  - use correct repo structure! No extra layer of directories.
 
 ### Week 5
 
-* Review progress on KU Polls iteration 1 (online)
+* Review progress on KU Polls iteration 1.
 * Start background work and proposal for course team project.
 
 #### Assignment
 
-* Work on [KU Polls Iteration 1](https://cpske.github.io/ISP/assignment/week4/ku-polls-iter1). 
+* Work on [KU Polls Iteration 1](https://cpske.github.io/ISP/assignment/ku-polls/iteration1). 
   - Don't wait until the due date to push code! That's a **poor development process**.
 * (Not assigned in 2020) Questions about Agile coding based on PAD - agile-and-coding.md
 
