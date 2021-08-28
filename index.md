@@ -81,7 +81,6 @@ Please do this before the course starts. Otherwise, do it in Week 1.
 
 ### Week 4
 
-* Quiz 1 (paper) and Quiz 2 (coding)
 * [Web app and web framework overview](web/index#web-frameworks) and [presentation](web/Web-Apps-and-Web-Servers.pdf)
 * [Intro to Django](django/Intro-to-Django.pdf)
 * How to do KU Polls first iteration (Django Polls tutorial)

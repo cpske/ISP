@@ -120,7 +120,7 @@ For getting a site up quickly, he prefers Django.
 [Empirical comparison of Rails, Grails, Django, Code Igniter][clavijo] compared time students needed to (a) complete some programming problems in each language, (b) develop a blogging web site in each one.  
 **Django** was the most productive of the 4 frameworks.
 
-For Java, the perennial top frameworks are:
+For Java, the long-standing top frameworks are:
 
 * Spring MVC
 * Struts
@@ -129,6 +129,7 @@ For Java, the perennial top frameworks are:
 * Vaadin
 * Play
 
+Wicket and Vaadin are declining in popularity, though.
 I'd recommend using [Play](https://playframework.com) since it's easy to get started, has a modern architecture, and doesn't use JavaEE or JSP (Java Server Pages). Play's application structure is similar to Django or Rails, and apps can be written in either Java or Scala.
 
 If you only want to create a RESTful API, Spark is worth considering. Spark is a micro-framework for both web apps and RESTful web services.
@@ -153,7 +154,6 @@ Top rankings in 2020 were:
 | Symfony        |    84  | Back-end, PHP      |
 | ...            |    ..  | ...                |
 | Play           |    75  | Back-end, Java or Scala |
-| Vaadin         |    61  | Back-end, Java |
 | Struts         |    58  | Back-end, Java |
 
 
@@ -178,13 +178,9 @@ A web server that hosts one or more web apps is often called a **web application
 
 A web server like Apache httpd or nginx doesn't run web applications itself.  Instead, it passes web requests to a module that provides an interface between the web server and a web app container that runs Java, Python, or PHP to execute the web app.
 
-Below, an Nginx server uses the uWSGI module to run a web app written with Django.
+Below, an Nginx server uses the uWSGI container to run a web app written with Django.
 
 ![web application server](dynamic-web-content.png)
 
-WSGI (web server gateway interface) is a standard for communication between a web server (nginx or Apache) and web app container. uWSGI and Gunicorn implement this standard, so either can be use to run Python web apps.
-
-Java has well developed standards and API for the services that a web app server should provide, which is one reason why Java is popular for large web apps. 
-The Java standards are called *Java EE* and a lighter-weight subset called the *Java Servlet API*. A Java web application using these API can be run in any conformant application server (portability).
-Well known Java app containers are Glassfish, IBM WebSphere, JBoss, Jetty, and Tomcat.
+WSGI (web server gateway interface) is a standard for communication between a web server (nginx or Apache) and a "container" that runs the app. uWSGI and Gunicorn implement this standard, so either can be use to run Python web apps.
 
