@@ -11,7 +11,7 @@ Unified Modeling Language (UML) is a standard set of diagrams for describing sof
 
 In UML 2.2 there are 14 types of diagrams. 
 
-The most common ones, which you should know how to read and draw, are:
+You should know how to read and draw the 3 most common diagrams:
 
 * Class Diagram
 * Sequence Diagram
@@ -61,6 +61,17 @@ interactions.
 
 ## State Machine Diagram
 
+to be added
 
+## UML Drawing Software
+
+[Visual Paradigm](https://visualparadigm.com) online diagram editor with UML. Save work to Google Drive.    
+[GitMind](https://gitmind.com) - online or run on desktop. UML and many other kinds of diagrams, such as *mind maps*.    
+[Violet UML Editor](https://sourceforge.net/projects/violet/) desktop UML editor, written in Java.  I use version 2.0.1 of Violet. Sequence and State diagrams have limited formatting.      
+[UMLet](https://www.umlet.com/) desktop UML app. I sometimes use this. Requires some learning, but can draw exactly what you want.   
+
+Not free:
+
+[Moqups](https://moqups.com) create mock-ups of software, has UML class and sequence diagrams. Must upgrade to paid plan in order to export or print.
 
 
