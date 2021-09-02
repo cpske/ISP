@@ -3,6 +3,10 @@ title: Projects
 navigation_order: 3
 ---
 
+[KU Polls Student Repositories](ku-polls-urls)
+
+## ISP 2020 Team Projects
+
 URLs of Deployed Projects: <https://bit.ly/ISP2020-projects>
 
 | Project Home | Team Members   | 

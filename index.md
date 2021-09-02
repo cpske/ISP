@@ -9,6 +9,7 @@ navigation_order: 1
 
 [google-classroom]: https://classroom.google.com/c/MzczOTE1MjA0NDE4?cjc=ka25cph
 
+[KU Polls Student Repos](ku-polls-urls)
 
 ---
 
