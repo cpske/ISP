@@ -99,25 +99,30 @@ Please do this before the course starts. Otherwise, do it in Week 1.
   - submit work in your own `ku-polls` repo on Github.
   - use correct repo structure! No extra layer of directories.
 
-* Github Flow 
-  - Read: <https://cpske.github.io/ISP/git/index#github-flow> (read the files refered to in this page)
-  - Answer questions: <https://forms.gle/HWLQ5retVNoquSJ38>
-  - Copy of questions: <https://cpske.github.io/ISP/assignment/week4/github-flow-questions>
+* Read about Github Flow 
+  - [Github Flow Illustrated Guide](https://guides.github.com/introduction/flow/)
+  - [Detailed Description of Github Flow](http://scottchacon.com/2011/08/31/github-flow.html) Step #5: merge only after pull request review is important. I don't agree with Step #6: deploy immediately.
+* Read about Pull Requests
+  - [Pull Request Tutorial](https://yangsu.github.io/pull-request-tutorial/) and why to use pull requests on Github.  The section "Squash, Rebase, and Cherry Pick" is optional.
+  - [Commenting on Pull Requests](https://help.github.com/en/articles/commenting-on-a-pull-request) how to provide useful feedback to a Pull Request. Shows how to add comments that refer to code.
+* Answer Questions about Github Flow and Pull Requests
+  - Google Form: <https://forms.gle/HWLQ5retVNoquSJ38> (old version)
+  - Copy of questions: <https://cpske.github.io/ISP/assignment/week4/github-flow-questions> (not all questions included)
 
 ### Week 5
 
 * Review progress on KU Polls iteration 1.
-* Start background work and proposal for course team project.
+* [Django Review](django/Django-review-1.pdf)
+* Intro to Team Projects. 
+
 
 #### Assignment
 
-* Work on [KU Polls Iteration 1](https://cpske.github.io/ISP/assignment/ku-polls/iteration1). 
-  - Don't wait until the due date to push code! That's a **poor development process**.
 * (Not assigned in 2020) Questions about Agile coding based on PAD - agile-and-coding.md
+* Start background work and proposal for course team project.
 
 ### Week 6
 
-* [Django Review](django/Django-review-1.pdf)
 * [Unit Testing](testing/)
   - [Intro to testing](testing/Intro-to-Testing.pdf)
   - [Python Unit Testing](testing/PythonUnitTesting.pdf) my slides

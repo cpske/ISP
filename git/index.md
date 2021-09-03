@@ -229,30 +229,31 @@ Development work is always done on branches, and pull requests used for reviews 
 You should know the content of these docs:
 
 * [Github Flow Illustrated Guide](https://guides.github.com/introduction/flow/)
-* [Description on Githubflow.io](https://githubflow.github.io/). Step #5 -merge only after pull request review is important. I don't agree with Step #6 -deploy immediately. 
-
-### Pull Requests
-
-The Pull Request is an important part of Github Flow.  It's a request for help, feedback, or review on your work.
-
-In Github Flow, you should always open a Pull Request before merging work from a branch into master.  When other people on your team open a Pull Request, you should *seriously* examine their work and offer feedback, suggestions, and even ciriticisms ("*criticize code, not people*").
-
-[Pull Request Tutorial](https://yangsu.github.io/pull-request-tutorial/) shows how (and why) to use pull requests on Github.
-
-[Commenting on Pull Requests](https://help.github.com/en/articles/commenting-on-a-pull-request) by Github, how to provide useful feedback to a Pull Request.
-
-My [Slides on Pull Requests](Pull-Requests.pdf) - somewhat out-dated.
-
-Optional and useful:
-
-* [Github Branching Convention](https://gist.github.com/digitaljhelms/4287848) has [nice workflow diagram](https://gist.github.com/digitaljhelms/4287848#workflow-diagram) of using branches in Github flow, but maybe too complex for simple projects.
-* [Github Flow](http://scottchacon.com/2011/08/31/github-flow.html) by a git coach, who outlines 6 rules:
+* [How we Use Github Flow](http://scottchacon.com/2011/08/31/github-flow.html) more detailed description by Scott Chacon.
+* Scott Chacon describes the rules and steps as:
   1. Anything on the master branch is deployable.
   2. For new work, create a *descriptive* branch off of master, e.g. `payment-auth`.
   3. Commit to that branch (locally) and regularly **push** to the same branch name on the shared repo (Github).
   4. Open a Pull Request to get help, ask for review & feedback, or request to merge.
   5. Merge only after a Pull Request review.
   6. Deploy immediately after review. (*I disagree with this.*)
+
+### Pull Requests
+
+A **Pull Request** is a request for help, feedback, or review of your work.
+
+In Github Flow, you should always open a Pull Request before merging work from a branch into master.  When other people on your team open a Pull Request, you should *seriously* examine their work and offer feedback, suggestions, and even ciriticisms ("*criticize code, not people*").
+
+- [Pull Request Tutorial](https://yangsu.github.io/pull-request-tutorial/) shows how (and why) to use pull requests on Github.  The section "Squash, Rebase, and Cherry Pick" is optional.
+
+- [Commenting on Pull Requests](https://help.github.com/en/articles/commenting-on-a-pull-request) by Github, how to provide useful feedback to a Pull Request.
+
+- My [Slides on Pull Requests](Pull-Requests.pdf) - somewhat out-dated.
+
+Optional and useful:
+
+0 [Github Branching Convention](https://gist.github.com/digitaljhelms/4287848) has [nice workflow diagram](https://gist.github.com/digitaljhelms/4287848#workflow-diagram) of using branches in Github flow, but maybe too complex for simple projects.
+
 
 ## Specialized Git Uses
 
