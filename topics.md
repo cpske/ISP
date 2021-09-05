@@ -76,7 +76,7 @@ Importance of descriptive commit messages and Pull Requests.
 <td markdown="span">
 Testing "units" of code.  Testing behavior - not just methods.      
 [JUnit for Java](/testing/Intro-to-Unit-Testing.pdf) and 
-[unit test in Python](testing/PythonUnitTesting.pdf)    
+[Unit test in Python](testing/PythonUnitTesting.pdf)    
 [Code Coverage](testing/code-coverage)    
 </td>
 </tr>
