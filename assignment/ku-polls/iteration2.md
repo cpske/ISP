@@ -14,7 +14,8 @@ Another objective is to externalize configuration data for security and portabil
 2. Create an "Iteration 2" project board and define tasks.
 
 3. Create an `iteration2` branch for your work.  
-   - Before that, be sure you have merged `iteration1` into `master` and pushed both to Github.
+
+   - First, be sure you have merged `iteration1` into `master` and pushed both to Github.
    - Create `iteration2` as a branch from `master` (not from iteration1).
 
 ## Features and Enhancements
@@ -43,7 +44,7 @@ Another objective is to externalize configuration data for security and portabil
 7. Externalize configuration data. 
    * See [Externalize Configuration](/ISP/django/external-configuration/) for how to do this.  You can use either the `python-decouple` or `django-environ` package. 
    * Remove the value of `SECRET_KEY` and DEBUG from `settings.py` and put their values in a `.env` file.  
-   * In `settings.py` use `SECRET_KEY = env("SECRET_KEY")`.
+   * In `settings.py` use `SECRET_KEY = config("SECRET_KEY")`.
    * Similarly for "DEBUG", but add a default value of False.
    * Don't commit `.env` to Git.
 
