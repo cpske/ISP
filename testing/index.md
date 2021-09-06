@@ -48,6 +48,7 @@ How to design test cases?
   - "off by one" errors - requires some knowledge of the implementation
   - empty input or empty lists
   - using a file that doesn't exist, is empty, or cannot be opened
+
 ---
 
 ## Python Unit Testing
@@ -70,11 +71,16 @@ Resources to learn unittest:
 * [Python Unittest Tutorial](https://youtu.be/6tNS--WetLI) video on Youtube, 39 minutes.
   
 
-### Code Coverage
+### [Code Coverage](code-coverage)
 
-* [Code Coverage](code-coverage.md) a tool to measure how much of your code is really being tested by unit tests!
-  - It is easy to run while running your tests. 
-  - Helps you find sections of code that you need to write tests for.
+[Code Coverage](code-coverage) uses a tool to measure how much of your code is really being tested by unit tests.
+- It is easy to use while running your tests. 
+- Helps you find sections of code that you need to write better tests for.
+
+To use code coverage on your own computer, use the [coverage](https://coverage.readthedocs.io/) Python package.
+
+To run code coverage as part of automatic testing (C.I. or Github Actions) try CodeCov or Coveralls.
+
 
 ## Java Unit Testing
 

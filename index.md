@@ -104,12 +104,18 @@ Please do this before the course starts. Otherwise, do it in Week 1.
 ### Week 5
 
 * Review progress on KU Polls iteration 1.
-* [Django Review](django/Django-review-1.pdf)
-* Intro to Team Projects. 
-* [Unit Testing](testing/)
-  - [Intro to testing](testing/Intro-to-Testing.pdf)
+* [Intro to Testing](testing/)
   - [Python Unit Testing](testing/PythonUnitTesting.pdf) my slides
   - [unittest](https://docs.python.org/3/library/unittest.html) in the official Python docs
+* Exercise: unit testing (unittest-start)
+* Intro to Team Projects. 
+* [Django Review](django/Django-review-1.pdf)
+* Describe the Improvements to KU Polls for Iteration 2
+  - add an `end_date` to polls, 
+  - add methods `is_published`, `can_vote`
+  - improve navigation by adding links to home page
+  - add default landing page (redirect)
+  - externalize configuration data and secrets
 
 
 #### Assignment
@@ -125,6 +131,7 @@ Please do this before the course starts. Otherwise, do it in Week 1.
 * Answer Questions about Github Flow and Pull Requests
   - Google Form: <https://forms.gle/HWLQ5retVNoquSJ38> (old version)
   - Copy of questions: <https://cpske.github.io/ISP/assignment/week4/github-flow-questions> (not all questions included)
+* [KU Polls Iteration 2](assignment/ku-polls/iteration2.md)
 
 ### Week 6
 
@@ -133,7 +140,6 @@ Please do this before the course starts. Otherwise, do it in Week 1.
   - [slide presentation](refactoring/Separate-config-from-code.pdf)
   - also called "externalize configuration" 
   - a [12-Factor App](https://12factor.net/config) recommended practice
-* Describe the Improvements to KU Polls for Iteration 2
 * Exercise
   - Database practice in class: <https://cpske.github.io/ISP/assignment/week6/database-exercise>
   - View & describe database schema and tables using [sqlitebrowser][] or [dBeaver][]
@@ -147,13 +153,6 @@ Please do this before the course starts. Otherwise, do it in Week 1.
 * [Unit testing assignment](assignment/week6/unit-testing-assignment) to submit on Github Classroom 
   - Github Classroom assignment: <https://classroom.github.com/a/Tls2V5I9> contains starter code
   - Description of the [Auction class](assignment/week6/AuctionTest.pdf)
-* [KU Polls Iteration 2](assignment/ku-polls/iteration2.md)
-  - add an `end_date` to polls, 
-  - add methods `is_published`, `can_vote`
-  - improve navigation by adding links to home page
-  - add default landing page (redirect)
-  - show all poll questions (not just 5)
-  - externalize configuration data and secrets
 * (Not assigned in 2020) [Test another student's KU Polls](assignment/week6/ku-polls-peer-testing)
 
 ### Team Project
