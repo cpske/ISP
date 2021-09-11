@@ -140,6 +140,10 @@ Please do this before the course starts. Otherwise, do it in Week 1.
   - [slide presentation](refactoring/Separate-config-from-code.pdf)
   - also called "externalize configuration" 
   - a [12-Factor App](https://12factor.net/config) recommended practice
+* Exercise: In class team exercise using Github Flow 
+  - <https://cpske.github.io/ISP/assignment/week5/kucafe-instructions>
+  - Team assignments in Google Docs spreadsheet (shown in class)
+  - Starter code: tba
 * Exercise
   - Database practice in class: <https://cpske.github.io/ISP/assignment/week6/database-exercise>
   - View & describe database schema and tables using [sqlitebrowser][] or [dBeaver][]
@@ -170,10 +174,6 @@ Submit a project proposal
 * [Introduction to Object-Relational Mapping](database/Persistence-and-ORM.pdf)
 (ORM)
 * Review some previous material and assignments
-* Exercise: In class team exercise using Github Flow 
-  - <https://cpske.github.io/ISP/assignment/week7/kucafe-github-flow>
-  - Team assignments in Google Docs spreadsheet (shown in class)
-  - Starter code (ku-cafe.zip) <https://cpske.github.io/ISP/assignment/week7/ku-cafe.zip>
 * ORM Practice - interactively use Django's ORM commands to hack the U.S. presidential election
   - <https://drive.google.com/open?id=10c6lLZwzyZU6UOKtw0zFUpIHLiWKPad2nOZpwarqHEE&authuser=1>
 
