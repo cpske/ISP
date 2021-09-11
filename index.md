@@ -140,8 +140,8 @@ Please do this before the course starts. Otherwise, do it in Week 1.
   - [slide presentation](refactoring/Separate-config-from-code.pdf)
   - also called "externalize configuration" 
   - a [12-Factor App](https://12factor.net/config) recommended practice
-* Exercise: In class team exercise using Github Flow 
-  - <https://cpske.github.io/ISP/assignment/week5/kucafe-instructions>
+* Exercise: team practice using Github Flow 
+  - <https://cpske.github.io/ISP/assignment/week6/kucafe-instructions>
   - Team assignments in Google Docs spreadsheet (shown in class)
   - Starter code: tba
 * Exercise
