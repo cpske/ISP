@@ -1,86 +1,70 @@
 ---
-title: Unit Testing
+title: Auction Test 
 ---
 
-There are two parts to this assignment. 
-1. Write a `unique` function and some tests for the function.
-2. Write unit tests for an Auction class.
+This is a Github Classroom assignment.  The assignment includes starter code for Auction, `auction_test.py`, and a README with details of the assignment.
 
-Starter code is provided in the Github Classroom assignment.
+Create an `auction_test.py` containing tests for an Auction class.
+The Auction class is in `auction.py`, but this code may **contain bugs**.
+
+You should write tests for how the code **should** behave based on the **specification**. Do not test for how the sample Auction code **actually** hehaves.
+
+The sample code may contain errors! 
+
+Documentation for the Auction class is in 2 places:
+
+1. docstring comments in the Auction class
+2. online PDF file
+
+If there are any inconsistencies between the PDF and the docstrings, 
+use the docstring comments as authoritative.
+
+
+## Github Runs Your Tests
+
+You should first run your tests locally (of course).
+
+When you push code to Github, it will automatically run your tests
+using a Github Action.  Click the **Action** tab to view the results.
+
+The build should **fail**. Here's why...
+
+The Action will test your code using **7 different versions** of Auction.
+
+Version 1: Auction is correct. Your tests should **all pass**.
+
+Version 2-7: At least 1 error in Auction. Some test should **fail** or **error**.
+
+because all 7 versions are tested in one build and some tests will fail, the entire build fails.  The build output contains lots of messages.  When it is testing version 1 (good code) the build output will show:
+```
+----------------------------------------------------------------------
+AUCTION CODE 1: All methods work according to specification. Tests should PASS.
+----------------------------------------------------------------------
+test_best_bid (auction_test.AuctionTest) ... ok
+test_bid_active (auction_test.AuctionTest) ... ok
+.
+.
+.
+test_winning_bid (auction_test.AuctionTest) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.002s
+```
+
+Similar output for "AUCTION CODE 2", etc.
+
+## Assignment
+
+1. Write tests for all the Auction requirements.
+2. Try to make your tests PASS for Auction code 1 and at least one test FAIL/ERROR for the others.
+3. Analyze the output on Github Actions and try to identify the errors. Complete the table below.
 
 ## What to Submit
 
-Commit your work to Github classroom. You should have these files:
+Push to Github:
+1. your `auction_test.py`
+2. your README.md containing a completed table containing your analysis of any errors you find in the code.  A template for the table is in README.
 
-| File             | Description   |
-|:-----------------|:--------------|
-| README.md        | Describes your test cases for `unique` |
-| listutil.py      | Code for `unique` including docstring and doctest |
-| listutil_test.py | Unit tests for `unique`, at least 3 tests |
-| auction.py       | Code for Auction class (provided) |
-| auction_test.py  | Your unit tests for Auction |
-
-## Problem 1. listutil
-
-The starter code for `listutil.py` describes the `unique` function.
-
-1. Write the code for `unique(list)`.  
-   - unique returns a new list containing the first occurence of each distinct element from the parameter list.
-   - unique does not modify the parameter list.
-2. In README.md write a table of test cases to thoroughly test the code. You should test:
-   * **borderline cases**, such as a list with 0 or 1 elements
-   * **typical cases**, such as a list with a few duplicates or **no** duplicates
-   * **extreme case**, such as a very large list
-3. Write the tests using Python unittest.  The test file should be `listutil_test.py`.  Each test case is a separate method.
-4. Run the tests until your code passes them all.
-
-Examples: `unique(list)` returns a list containing unique elements `list`, in the same order as their first occurence in `list`.  That is, `unique` removes duplicate elements. 
-```python
->>> lst = ['b', 'a', 'a', 'c', 'b', 'a']
->>> unique(lst)
-['b', 'a', 'c']
->>> lst = [5,5,5,5,5,5,5]
->>> unique(lst)
-[5]
->>> unique([ ])    # empty list
-[ ]
-# unique does not do a recursive scan of embedded lists
->>> lst = [1,2,2,4,[1,2,3],1]
->>> unique(lst)
-[1, 2, 4, [1,2,3]] 
-```
-### Describing your test cases in README.md
-
-Markdown has syntax for creating tables.  For example:
-
-| Test case              |  Expected Result      |
-|------------------------|-----------------------|
-| empty list             |  empty list           |
-| one item list          |  list with same item  |
-| argument not a list    |  throws exception     |
-
-
-## Example Python unittest for unique
-
-```python
-import unittest
-from listutil import unique
- 
-class ListUtilTest(unittest.TestCase):
- 
-    def test_single_item_list(self):
-        self.assertListEqual( ['hi'], unique(['hi']) )
- 
-if __name__ == '__main__':
-    unittest.main()
-```
-
-## Problem 2. Auction
-
-The Auction class is given in the starter code.
-
-Write unit tests to verify that it confirms to the specification.
-Try to identify any errors *specifically*, so someone running the
-tests would know the probable cause of the error.
 
 [Specification for Auction Class](AuctionTest.pdf)
+

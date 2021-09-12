@@ -143,22 +143,20 @@ Please do this before the course starts. Otherwise, do it in Week 1.
 * Review Github Flow
 * Exercise: team practice using Github Flow 
   - <https://cpske.github.io/ISP/assignment/week6/kucafe-instructions>
-  - Team assignments in Google Spreadsheet (URL will be given in class)
-* *Database may be moved to week 7 if not enough time.*
-* [Brief Introduction to Database](database/Database-Basics.pdf)
-* Exercise
+  - Team assignments in Google Spreadsheet (*URL will be given in class*)
+* In-class Assigmemt: [Auction Test Assignment](assignment/week6/unit-testing-assignment) on Github Classroom (**URL given in class**)
+  - Requirements for the [Auction class](assignment/week6/AuctionTest.pdf)
+
+* Introduction to Database - *Database may be moved to week 7 if not enough time*
+  - [Brief Introduction to Database](database/Database-Basics.pdf)
+* Database Exercise
   - Database practice in class: <https://cpske.github.io/ISP/assignment/week6/database-exercise>
   - View & describe the KU Polls database schema using a database browser.
 
-[sqlitebrowser]: https://sqlitebrowser.org/
-[dBeaver]: https://dbeaver.io/
 
 #### Assignment
 
 * Django Review Questions (answer online): <https://forms.gle/zPuPzzt76QWboFZXA>
-* [Unit testing assignment](assignment/week6/unit-testing-assignment) to submit on Github Classroom 
-  - Github Classroom assignment: <https://classroom.github.com/a/Tls2V5I9> contains starter code
-  - Description of the [Auction class](assignment/week6/AuctionTest.pdf)
 * (Not assigned in 2021, but a good thing to do) [Test another student's KU Polls](assignment/week6/ku-polls-peer-testing)
 
 
