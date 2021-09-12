@@ -135,18 +135,20 @@ Please do this before the course starts. Otherwise, do it in Week 1.
 
 ### Week 6
 
-* [Brief Introduction to Database](database/Database-Basics.pdf)
+* Some Django review. Using the Django interactive console.
 * [Separate configuration from code](refactoring/separate-configuration) - why and how
-  - [slide presentation](refactoring/Separate-config-from-code.pdf)
+  - [Presentation](refactoring/Separate-config-from-code.pdf)
+  - this is a [12-Factor App](https://12factor.net/config) recommended practice
   - also called "externalize configuration" 
-  - a [12-Factor App](https://12factor.net/config) recommended practice
+* Review Github Flow
 * Exercise: team practice using Github Flow 
   - <https://cpske.github.io/ISP/assignment/week6/kucafe-instructions>
-  - Team assignments in Google Docs spreadsheet (shown in class)
-  - Starter code: tba
+  - Team assignments in Google Spreadsheet (URL will be given in class)
+* *Database may be moved to week 7 if not enough time.*
+* [Brief Introduction to Database](database/Database-Basics.pdf)
 * Exercise
   - Database practice in class: <https://cpske.github.io/ISP/assignment/week6/database-exercise>
-  - View & describe database schema and tables using [sqlitebrowser][] or [dBeaver][]
+  - View & describe the KU Polls database schema using a database browser.
 
 [sqlitebrowser]: https://sqlitebrowser.org/
 [dBeaver]: https://dbeaver.io/
@@ -157,7 +159,8 @@ Please do this before the course starts. Otherwise, do it in Week 1.
 * [Unit testing assignment](assignment/week6/unit-testing-assignment) to submit on Github Classroom 
   - Github Classroom assignment: <https://classroom.github.com/a/Tls2V5I9> contains starter code
   - Description of the [Auction class](assignment/week6/AuctionTest.pdf)
-* (Not assigned in 2020) [Test another student's KU Polls](assignment/week6/ku-polls-peer-testing)
+* (Not assigned in 2021, but a good thing to do) [Test another student's KU Polls](assignment/week6/ku-polls-peer-testing)
+
 
 ### Team Project
 

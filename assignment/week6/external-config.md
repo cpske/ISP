@@ -2,35 +2,44 @@
 title: Improvements to your Django Project
 ---
 
-You can do items 1 and 2 on the master branch.
+
 Item 3 should be on a separate branch, test it,
 and when you're sure its working then merge into master.
 
-1. Structure your README.md file so it contains the following.  You can have other information, but include at least this:
+1. Structure your README.md file so it contains the following sections and information.  You can have other information in addition to this.
     ```
     ## Django Polls Application
-    (describe the application.  Try to use good English.)
+    (describe the application in good English.)
 
     ## Requirements
 
     This application requires
     * Python 3.6 or newer
-    * Python add-on packages as in [requirements.txt](requirements.txt), including Django
+    * Python packages as in [requirements.txt](requirements.txt), including Django
 
-    This app was developed and tested using Python 3.6.6 and Django 2.2.5 running on Windows XP, but any operating system with the required software installed should work.
+    ## Installation
+
+    1. Clone the repository from Github.
+    2. Enter the following commands to initialize database tables:
+       ```
+       write the command(s) here
+       ```
+    3. Import sample polls questions and choices:
+       ```
+       python3 manage.py loaddata polls.json 
+       ```
 
     ## How to Run
 
-    (how to run the application, briefly)
-    1.
-    2.
-    3.
-    ```
+    write brief instructions for how to run the application
+    you should tell the reader what URL he should enter in his browser, too
 
-2. Create a `requirements.txt` file listing the Python packages your project depends on, including Django.  This file is used by many services to create a virtual environment for your application.
+
+2. Create a `requirements.txt` file listing the Python packages your project depends on, including Django.  This file is used by many services to create a virtual environment for your application. **Do not** include unnecessary packages.
     ```
-    # this is a comment line
-    Django >= 2.1.2
+    # packages needed by this application
+    Django >= 3.1.0
+    python-decouple 
     ```
 
 3. Add the `python-decouple` package to your system and use it to **externalize configuration values** in `settings.py` to an external file.
