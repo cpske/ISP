@@ -138,16 +138,17 @@ Please do this before the course starts. Otherwise, do it in Week 1.
 * Some Django review. Using the Django interactive console.
 * [Separate configuration from code](refactoring/separate-configuration) - why and how
   - [Presentation](refactoring/Separate-config-from-code.pdf)
-  - this is a [12-Factor App](https://12factor.net/config) recommended practice
-  - also called "externalize configuration" 
+  - a [12-Factor App](https://12factor.net/config) recommended practice, also called "externalize configuration" 
+  - Simple example: <https://github.com/ISP21/decouple-example>
 * Review Github Flow
 * Exercise: team practice using Github Flow 
   - <https://cpske.github.io/ISP/assignment/week6/kucafe-instructions>
-  - Team assignments in Google Spreadsheet (*URL will be given in class*)
-* In-class Assigmemt: [Auction Test Assignment](assignment/week6/unit-testing-assignment) on Github Classroom (**URL given in class**)
+  - Team assignments: **URL will be given in class**
+* Testing Assignmemt: [Auction Test Assignment](assignment/week6/unit-testing-assignment) on Github Classroom (**URL given in class**)
   - Requirements for the [Auction class](assignment/week6/AuctionTest.pdf)
+  - Should be completed during lab this afternoon.
 
-* Introduction to Database - *Database may be moved to week 7 if not enough time*
+* Introduction to Database - *this may be moved to week 7 if not enough time*
   - [Brief Introduction to Database](database/Database-Basics.pdf)
 * Database Exercise
   - Database practice in class: <https://cpske.github.io/ISP/assignment/week6/database-exercise>
@@ -162,11 +163,13 @@ Please do this before the course starts. Otherwise, do it in Week 1.
 
 ### Team Project
 
-Submit a project proposal
+Submit a project proposal using the Project Spreadsheet
 
-* Project Guidelines: <http://bit.ly/isp2020project-description>
+* Project Guidelines: <http://bit.ly/ISP-project-description>
 * Proposal Template: <http://bit.ly/ISP-project-template>
-* Project Spreadsheet: <http://bit.ly/ISP2020-projects> to submit your team and proposal link
+* Project Proposals: 
+  * <http://bit.ly/ISP2021-projects> to submit your team and proposal
+  * <http://bit.ly/ISP2020-projects> last year's proposals
 
 ### Week 7
 
@@ -187,10 +190,11 @@ Submit a project proposal
 
 ### Midterm 
 
-* Exam is XX Septemer rooms 202 and 203. Times: TBA
+* Exam is 27 September. Time and Location TBA.
 * Covers everything so far.
 * Coding part will emphasize **unit testing** and **code quality**.
 * Recommended OBS Video Settings: <https://drive.google.com/open?id=1xiDH6NImH0PAAZp5AUNWtJeLzlRSYoqiAOFE8wFS1vM&authuser=1>
+  - We may not need this is 2021 if we can use KU's Exam application.
 
 ### Week 8
 

@@ -88,7 +88,7 @@ How does this apply to my software process?
 A **Task Board** shows tasks for the current iteration and their status.
 A task board can also be used for a release (shows release backlog).
 
-A **Story Map** shows relationship between stories.
+A **Story Map** shows relationships between stories.
 
 * stories that are "core" or "foundation" of the product.
 * stories that build on other stories.
@@ -99,7 +99,7 @@ A **Story Map** shows relationship between stories.
 A **burn down** chart shows the remaining work versus time.
 The y-axis (remaining work) is measured in hours or story points.
 
-In a burn up chart, there is a top line for the total number of points (scope) of the iteration.  The line may change as: (a) work is added or removed (unplanned tasks), (b) tasks are re-estimated.
+In a **burn up** chart, there is a top line for the total number of points (scope) of the iteration.  The top line may change as: (a) work is added or removed (unplanned tasks), (b) tasks are re-estimated.  The graph shows the tasks done, measured in hours or story points.
 
 ## Retrospectives
 
@@ -128,10 +128,10 @@ Purpose of retrospective is to improve the team's development process.
 * Video: [Agile at Microsoft](https://www.youtube.com/watch?v=-LvCJpnNljU) about the Visual Studio Team Services transition to agile. Interesting, but some fuzzy use of buzzwords like "team owns X", "team is empowered to ...". 41 minutes.
 
 
-## Agile Book
+## Agile Books
 
 *Learning Agile* by Stellman & Greene (O'Reilly 2013). The authors have practiced, taught, and written about Agile for 20 years. Covers the same topics as *Head First Agile*.
 
-*Head First Agile* by Stellman & Greene (2017) - very memorable explanation and examples of Agile practices and values; lots of review questions.  Has lots of PMI Exam practice questions. 490 pg (too) long.
+*Head First Agile* by Stellman & Greene (2017) - very memorable explanation and examples of Agile practices and values; many review questions and sample questions from PMI Exam practice questions. But a bit long. *Learning Agile* has the same content in fewer pages, without the cute examples and review questions.
 
-*Agile Practice Guide* by AgileAlliance and PMI. Short, accurate guide to applying Agile. Appendix X3 is tool to assess how suitable Agile is to a project. (Similar to Barry Boehm's book *Balancing Agility and Discipline*.)
+*Agile Practice Guide* by AgileAlliance and PMI. Short, accurate guide to applying Agile. Appendix X3 is a tool to assess how suitable Agile is to a project. (Similar to Barry Boehm's book *Balancing Agility and Discipline*.)
