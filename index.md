@@ -175,11 +175,12 @@ Submit a project proposal using the Project Spreadsheet
 
 * [Testing in Django](testing/WebTesting.pdf) - how to test models, views, url dispatcher, and templates
 * [Code Coverage tools](testing/code-coverage) for Python 
-* [Introduction to Object-Relational Mapping](database/Persistence-and-ORM.pdf)
-(ORM)
-* Review some previous material and assignments
+* Exercise: apply code coverage
+* [Introduction to Object-Relational Mapping](database/Persistence-and-ORM.pdf) - how Django provides the CRUD operatons
 * ORM Practice - interactively use Django's ORM commands to hack the U.S. presidential election
   - <https://drive.google.com/open?id=10c6lLZwzyZU6UOKtw0zFUpIHLiWKPad2nOZpwarqHEE&authuser=1>
+* Review some previous material and assignments
+
 
 #### Assignment
 

@@ -42,3 +42,25 @@ There are other questions in the Google form.
    - [ ] Open a Pull Request to request others review and approve the final code
    - [ ] Something else
 
+8. You want to implement a feature that's in the backlog for this iteration. Put the steps in the order you would typically do them using Github Flow.
+   - [ ] Open an issue on Github with title "Pull Request".
+   - [ ] Push your branch to Github.
+   - [ ] Create a local branch for your work.
+   - [ ] Merge your branch into master.
+   - [ ] Merge master into your branch then rebase.
+   - [ ] Wait for the team to review and approve your work. 
+   - [ ] Implement and test your feature.
+   - [ ] Open a Pull Request.
+   - [ ] Pull updates on master to your local machine in prep for merge.
+
+   Correct order:
+   - [ ] Create a local branch for your work.
+   - [ ] Implement and test your feature.
+   - [ ] Push your branch to Github.
+   - [ ] Open a Pull Request.
+   - [ ] Wait for the team to review and approve your work. 
+   - [ ] Pull master to your local machine in prep for merge.
+   - [ ] Merge your branch into master.
+   Not part of flow:
+   - [ ] Open an issue on Github with title "Pull Request".
+   - [ ] Merge master into your branch then rebase.

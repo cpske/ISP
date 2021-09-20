@@ -8,53 +8,47 @@ How thorough are your tests? Do they test all parts of the code?
 is tested or "exercised" by unit tests. It measures how many
 functions, methods, statements, and branches are tested.
 
+There are "coverage" tools for almost any programming language that
+will gather statistics on what lines of program were executed, which
+branches were taken, and which functions called.
+
 ## Python Code Coverage
 
-The [coverage][coverage-docs] package performs code coverage analysis 
-for Python code.
+The [coverage][coverage-docs] package performs code coverage analysis for Python.
 It analyzes how much of your code is executed when a program is run.
 
 [Coverage][coverage-docs] works with unit tests on any Python app, including Django.  
 
-To perform code coverage with a CI server (like Travis-CI) you can use the online service [CodeCov](https://codecov.io) instead of Coverage (Coverage works, too).
-
 ## Install Coverage
 
 1. [Install coverage package](https://coverage.readthedocs.io/en/coverage-4.5.x/install.html).  The instructions are different for each OS, so read the instructions.
-In some cases you just type
+In many cases you just type
     ```
     pip install coverage 
     ```
 
 2. Check the installed version of coverage and read the list of command line uses:
-    ```
+    ```bash
     coverage --version
     coverage help
     ```
     The commands you'll probably use most are:
-    ```
-    coverage run some_program.py
-    coverage report    # view results as text
-    coverage html      # create html report
-    coverage erase     # delete old data
+    ```bash
+    coverage run some_program.py    # run a program with code coverage reporting
+    coverage report                 # view coverage report as text
+    coverage html                   # create an html report
+    coverage erase                  # delete data and report from previous run
     ```
 
-3. Use `coverage` to analyze how much of your Python code is being exercised when you run unit tests.  You can run:
-   ```python
-   coverage run -m unittest listutil_test.py
-
-   # or use auto discovery. -p is a pattern for unittest files
+3. Use `coverage run` instead of `python3` to run a program and gather data on what statements in the program are executed.    
+   Do this for unit tests to see how much of the target code (code being tested) is actually executed using your tests.  Enter:
+   ```bash
+   coverage run -m unittest auction_test.py
+   ```
+   or use auto-discovery to run all files named something\_test.py:
+   ```bash
    coverage run -m unittest discover -p "*_test.py"
    ```
-   Another way to to create a "test runner" with a main block (this can be in your unit test file itself, such as:
-    ```python
-    if __name__ == '__main__':
-        unittest.main()
-    ```
-    Then run the test runner with coverage:
-    ```
-    coverage run listutil_test.py
-    ```
 
 4. View the coverage report as plain text:
     ```
@@ -68,20 +62,30 @@ In some cases you just type
    The output is put in subdirectory `htmlcov`.    
    Open the file `htmlcov/index.html` in a web browser. You can click on any file name to see what statements were "covered" during the run.
 
-## Configure Coverage
+6. By default, `coverage` performs statement coverage.  To request that it also verify that all *branches* in the code are executed add the `--branch` option:
+   ```
+   coverage run --branch  -m unittest auction_test.py
+   # the reports will include branch coverage information
+   coverage report
+   coverage html
+   ```
+
+## Configure Coverage Using .coveragerc
 
 You can configure what files are analyzed by `coverage` using
 a `.coveragerc` file in your project directory, as described
 in the [Coverages Docs][coverage-docs].
 
-For code that uses a library or framework, you want to **exclude** the library or framework from coverage analysis, to avoid distorting the results (and its not useful anyway).
+One useful option is to request "branch coverage", to count how completely "if - else ..." branches are executed.
+
+For code that uses a library or framework, you want to **exclude** the library or framework from coverage analysis, since it's not useful and distorts the results.
 
 For Django projects you want to exclude migrations, settings.py, manage.py, static files, and anything else you don't write unit tests for.
 
 In the Django Polls tutorial, I used:
 ```bash
 [run]
-# measure branch coverage, too
+# measure branch coverage
 branch = True
 # don't measure python standard library (this is the default)
 cover_pylib = False
@@ -91,12 +95,12 @@ omit =
     /usr/*
     mysite/*       # the main application 
     */migrations/* # omit migrations
-    # TODO           omit unit test files and directories
+    */tests.py     # omit unit test files and directories
 # explicitly include the main app
 include =
     polls/*
 
-# exclude methods we don't test from the report and stats
+# exclude some methods we don't test from the report and stats
 [report]
 exclude_lines =
     def __str__    # example
@@ -129,6 +133,7 @@ A simple formula for computing it is:
    complexity = #branches - #decision_points + 2
 ```
 The complexity score is usually a bound for the number of tests needed to cover every path.  [Wikipedia][wikipedia-cyclomatic] has more details and examples.
+
 
 ### 100% Code Coverage Does Not Mean Tests are Perfect
 
@@ -164,19 +169,24 @@ class Register {
     }
 }
 ```
-* We might have unit tests that test for "Platinum" customer discounts and the 50 Baht discount, but not both.  We might miss the cases where both discounts apply.
-* We might also miss an unclear requirement: *what if a platinum customer buys 1,020 Baht?*  
-    - Should he get both discounts?  
-    - Which discount should be applied first? (the discount will be different!)
+
+1. We might have unit tests that test for "Platinum" customer discounts and the 50 Baht discount, but not both.  We might miss the cases where both discounts apply.
+2. We might miss an unclear requirement: *what if a platinum customer buys 1,020 Baht?*  
+  - Should he get both discounts?  
+  - Which discount should be applied first? (the total discount will be different!)
 
 
 ## CodeCov for Automated Coverage Analysis
+
+You can perform automatic code coverage with a CI server (like Travis-CI).
+For this, you can use an online service like [CodeCov](https://codecov.io).
 
 [Codecov.io](https://codecov.io) is an online code coverage service
 that integrates with CI pipelines, including Travis-CI and Circle-CI.
 
 For Python projects, Codecov.io uses the Python "coverage" package
-to perform the actual coverage analysis.
+to perform the actual coverage analysis. Codecov.io manages generation
+and display of reports, and keeps a history of coverage results.
 
 To get started, go to [codecov.io](https://codecov.io) and register using your Github ID.  Give Codecov access to the project(s) you want it to pull and analyze.  It is similar to the way you give Travis permission to pull and build a project.
 Then modify your `.travis.yml` file to perform coverage analysis and send the data to codecov.io.

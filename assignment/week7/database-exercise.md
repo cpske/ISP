@@ -2,36 +2,17 @@
 title: Database Practice
 ---
 
-Use a database browser to browse
-the structure of your Django-polls database.
+Use a database browser to browse the structure of your Django-polls database.
 
-Tools you can use are:
+Preferred: use [DBeaver](https://dbeaver.io/) GUI app to interact with almost any database, including Sqlite. Can draw ER diagrams. Home: <https://dbeaver.io/>
 
-- [DBeaver](https://dbeaver.io/) GUI app to interact with almost any database, including Sqlite. Can draw ER diagrams. Home: <https://dbeaver.io/>
+If you have a problem with DBeaver, other tools that work are:
+
 - [Sqlitebrowser](https://sqlitebrowser.org/) free GUI app to browse SQLite database. https://sqlitebrowser.org/
 - **sqlite3** - command line tool included with SQLite. Don't need to install anything, but has only command line interface. You use SQL commands to view or modify the database.
+  - See below for how to use sqlite3 to view a database.
 
 The Django polls database file is `db.sqlite3` in your django-polls directory.
-
----
-
-### Using `sqlite` or `sqlite3` command line tool
-
-`sqlite` or `sqlite3` command line app is part of the SQLite package. 
-
-* Commands beginning with "." are commands to sqlite, e.g. `.help`
-* Other commands are SQL
-* Examples:
-  ```
-  cmd> sqlite3  db.sqlite3
-  sqlite> .help                         (show help message)
-  sqlite> .tables                       (show tables)
-  sqlite> .schema --indent polls_choice (show structure of a table)
-  sqlite> .mode column                  (print query results in columns)
-  sqlite> SELECT * FROM polls_choice;   (SQL query, must end in ;)
-  sqlite> .exit
-  ```
-
 ---
 
 ## Questions
@@ -80,6 +61,27 @@ What would be the names of the tables in the database?
        # and use the relations question_text__contains or __icontains 
 
    ```
+
+---
+
+### Using `sqlite` or `sqlite3` Command Line Tool
+
+`sqlite` or `sqlite3` command line app is part of the SQLite package. 
+You can use it to view or change a database, and issue SQL commands.
+
+* Commands beginning with "." are commands to sqlite, e.g. `.help`
+* Other commands are SQL
+* Examples:
+  ```
+  cmd> sqlite3  db.sqlite3
+  sqlite> .help                         (show help message)
+  sqlite> .tables                       (show tables)
+  sqlite> .schema --indent polls_choice (show structure of a table)
+  sqlite> .mode column                  (print query results in columns)
+  sqlite> SELECT * FROM polls_choice;   (SQL query, must end in semi-colon)
+  sqlite> .exit
+  ```
+
 
 ---
 ### Reference
