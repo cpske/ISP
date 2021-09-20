@@ -201,7 +201,7 @@ Submit a project proposal using the Project Spreadsheet
 
 * [Code Quality, Coding Style, and Coding Standards](code-quality)
   - coding style for Python (you learned this in Programming 1, I think)
-* [Comment style in Python](code-quality/comments)
+* [Comment style in Python](code-quality/index)
   - there are 3 common standards for how to document parameters and returns
   - you can use either the Python standard or Google's standard (more concise)
   - use type hints to document data types of parameters and return values, instead of writing the data types in docstring comments

@@ -111,7 +111,7 @@ Mai's [Type Hint Practice](type-hints/type-hints-practice.pdf).
 </td>
 <td markdown="span">
 Principles, guides, tips, and [tools](code-quality/code-quality-tools) for writing good quality "clean" code.    
-Coding standard, [comments as documentation](code-quality/comments), and [code checkers](code-quality/code-quality-tools).
+Coding standard, [docstring comments](code-quality/docstrings) and [code checkers](code-quality/code-quality-tools).
 Essential for all developers!
 </td>
 </tr>

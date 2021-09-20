@@ -18,6 +18,8 @@ See below for how to join.
 
 **Course Material:** All material is on <https://cpske.github.io/ISP>, with links on [Google Classroom][classroom-classwork].    
 
+**Discord:** For Q&A, discussions, meetings <https://discord.gg/9FrRt4q>
+
 **Preparation**: Please do this [Sign-up and Preparation](assignment/week1/signup-and-software) before the first class.
 
 **Scores**: <https://bit.ly/ISP2021-scores> for classwork and homework 
