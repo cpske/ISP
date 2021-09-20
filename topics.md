@@ -128,7 +128,7 @@ Improve code by restructuring it without changing the external functionality.
 
 <tr valign="top">
 <td markdown="span">
-[Assertions](code-quality/assert-vs-exception)
+[Assertions](code-quality/assertion)
 </td>
 <td markdown="span">
 "Asserts" are tests of what should be true at some point in code.  Assertions reduce errors and document code-level assumptions.
