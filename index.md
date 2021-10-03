@@ -197,31 +197,31 @@ Submit a project proposal using the Project Spreadsheet
 * Recommended OBS Video Settings: <https://drive.google.com/open?id=1xiDH6NImH0PAAZp5AUNWtJeLzlRSYoqiAOFE8wFS1vM&authuser=1>
   - We may not need this is 2021 if we can use KU's Exam application.
 
+
 ### Week 8
 
 * [Code Quality, Coding Style, and Coding Standards](code-quality)
-  - coding style for Python (you learned this in Programming 1, I think)
+  - coding style for Python. Already covered in week 1.
 * [Comment style in Python](code-quality/index)
   - there are 3 common standards for how to document parameters and returns
-  - you can use either the Python standard or Google's standard (more concise)
-  - use type hints to document data types of parameters and return values, instead of writing the data types in docstring comments
-  - Read this: <https://realpython.com/documenting-python-code/>
-* Style checking tools, esp. pylint and flake8
+  - for graded work, please use the Python standard style or Google's standard, which is more concise
+  - for data type of parameters and return values: use [type hints](type-hints/) instead of writing the data type in comments!
+* Read: "Documenting Python Code" <https://realpython.com/documenting-python-code/>
+* Style checking tools. We will use pylint and flake8.
   - <https://cpske.github.io/ISP/code-quality/code-quality-tools>
   - How to configure flake8 -- but it is *better* to fix your code rather than add exceptions to flake8!
-  - Pylint and Flake8 can be used inside an IDE, including Eclipse, Pycharm, and VS Code
-  - The style-checking tool for Java is [Checkstyle][].  CPSKE has its own checkstyle rules.
-* [Automation and Continuous Integration](automation/)
+  - For graded assignments you cannot customize flake8, unless the explicitly allowed.
+* Style Checking Exercise:
+  1. How do you view or change the style rules in your IDE?
+  2. Use pylint to correct some code (may use banking app or person). Modify code until you get a score of 10.
+  3. Use flake8 to correct some code. Modify code until no messages from flake8.
+* For Java, the standard tool is [Checkstyle][Checkstyle].  CPSKE has its own checkstyle rules.
 * Guidelines for Team Projects
-* Exercise
-  - Use pylint and modify coding style in BankAccount code (`bank_account` and `money`) until pylint gives you a score 10.0. 
-  - Also run flake8.
-  - Push code to **your own github account** (change the upstream URL first)
-    1. create an empty `banking` repo on Github
-    2. in your local repo: `git remote set-url origin https://github.com/your_account/banking.git`
-* Exercise using CI - add Travis-CI and Codecov to demo-pyci
+* [Automation and Continuous Integration](automation/)
+* Exercise using CI - add Travis-CI and Codecov to demo-pyci project
   - Instructions <https://cpske.github.io/ISP/automation/travis-demo-project>
-  - Starter code <https://cpske.github.io/ISP/automation/demo-pyci.zip> 
+  - Starter code (to be added) 
+[CI starter code]: <https://cpske.github.io/ISP/automation/demo-pyci.zip> 
 
 [Checkstyle]: https://checkstyle.org/index.html
 
@@ -239,11 +239,7 @@ Submit a project proposal using the Project Spreadsheet
 
 ### Week 9
 
-* Individual Selection: *Project or No Project?*
-  - in view of the apathetic response to project work, each person can elect whether or not to do a project as part of graded work
-* Review Bank testing problem from midterm
 * Review CI assignment
-* Code Quality
 * What is "good code"?  
   - What goals, problems, and forces motivate what is considered "good" in code?
   - Visible metrics or characteristics

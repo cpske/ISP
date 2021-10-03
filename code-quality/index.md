@@ -9,7 +9,7 @@ It is easy to neglect code quality when working under a deadline,
 fixing bugs, or adding a new feature. Over time the code becomes
 harder to understand and maintain, and harder to test.
 
-Best Practices for Code Quality include:
+## Best Practices for Code Quality
 
 1. Consistently use a **coding standard** (coding style)
 2. Write [document comments](docstrings) (Javadoc or Python docstring) using a standard format
@@ -20,7 +20,9 @@ Best Practices for Code Quality include:
 7. Review all your code.
 8. On a team project, ask others to review your code.
 9. Use tools to check your code.
-10. Refactor to improve code.  Many projects have a "refactoring day" when the only work done is review and refactoring.
+10. Refactor to improve code.  
+
+Many projects have a "refactoring day" when the only work done is code review and refactoring.
 
 *Zen of Python* on Code Quality. At the Python interactive prompt, type:
 
@@ -43,7 +45,7 @@ To discuss:
 
 * How to use Checkstyle for Java or Pylint and Flake8 for Python.
 
-* Look at coding guidelines from some real projects. Apache is good source.
+* Look at coding guidelines from some real projects. [Apache](https://apache.org) is a good source.
 
 
 ## Coding Style and Coding Convention
