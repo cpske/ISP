@@ -28,11 +28,7 @@ Please read these short articles:
    # run doctests using PyFlakes
    doctests = True
 
-   # ignore some errors. Separate codes with comma.
-   # See Flake8 Configuration page for list of all errors & warnings.
-   ignore =
-       E302    # expected 2 blank lines, found 1
-
+   # some things that flake8 should not check
    exclude =
        # ignore virtual environments (not our code)
        env,
@@ -45,13 +41,10 @@ Please read these short articles:
 
 4. Check docstring comments using pydocstyle (a Python extension).  You can combine this with flake8 by installing the package `flake8-docstrings`. Then use `flake8` to check everything.
 
-5. Add Continuous Integration to your KU Polls project.  You can use any CI server, including:
-   1. Travis-CI
-   2. Github Actions
-   3. Circle CI
+5. Add Continuous Integration to your KU Polls project using Travis-CI or Github Actions.
    - The CI server should run tests and code coverage
-   - Whichever CI server you choose, you must understand what is going on and how to do it. Do not just copy someone else's configuration file(s).
-   - You will need to create a `requirements.txt` file for required packages.  
+   - Whichever CI server you choose, you must understand what is going on and how to do it. Do not simply copy someone else's configuration file(s).
+   - You will need to create a `requirements.txt` file for required packages. 
    - There will be some other initialization needed for your KU Polls to work on C.I., too.
 
 6. Add a "badge" to your KU Polls README.md to show the results of CI tests.

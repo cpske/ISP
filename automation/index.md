@@ -83,7 +83,7 @@ For Python the top tools are:
 
 See [Code Quality Tools](../code-quality/code-quality-tools) for details of how to use them.
 
-## Continuous Integration and Project Automation
+## Continuous Integration
 
 Continuous Integration (CI) is a general term for platforms that automatically build, test, and even deploy applications.
 
@@ -92,8 +92,8 @@ CI automates a lot of repetitive work and improves quality by repeatedly checkin
 Continuous Integration tools 
 
 * Travis-CI (integrates well with Github)
-* Github C.I. features, called Actions and Workflows
-* Other Popular CI Platforms are:
+* Github Actions and Workflows - CI integrated into a Github repository
+* Popular CI Platforms are:
   - Jenkins
   - Hudson (predecessor to Jenkins)
   - TeamCity
@@ -104,7 +104,7 @@ Continuous Integration tools
 
 Some CI tools are hosted services, like Travis-CI and CircleCI.
 
-Others CI are self-hosted, meaning you download the code and run it on your own server (typically a virtual server), such as Jenkins and Cruise Control. Travis-CI is reportedly a customized version of Jenkins or Hudson.
+Others CI are self-hosted, meaning you download the code and run it on your own server (typically a virtual server). Examples are Jenkins, Hudson, and Cruise Control. Travis-CI is reportedly a customized version of Jenkins or Hudson.
 
 Class Exercise: [Travis CI Demo Project](travis-demo-project)
 
@@ -143,7 +143,7 @@ Demo CI projects: [Java sample][demo-ci]
 [demo-ci]: https://github.com/jbrucker/demo-ci
 [demo-ci-python]: https://github.com/jbrucker/demo-pyci
 [PEP8]: http://www.python.org/dev/peps/pep-0008/
-
+[flake8]: https://flake8.pycpq.org
 [gradle]: https://gradle.org
 [make]: https://en.wikipedia.org/wiki/Make_(software)
 [maven]: https://maven.apache.org
