@@ -101,6 +101,12 @@ In Python, there is not a universal agreement for how to document parameters, re
 * Code comments should explain *why* and details not obvious from code. 
 * Don't explain "how" that is evident from the code itself.
 
+
+### Code Quality and Code Checking Tools for Python
+
+[Python Code Quality][real-python-code-quality] best practices & tools, on RealPython.com.
+
+
 ### Django's Coding Style Guide
 
 Django uses the Python PEP8 and PEP? (another PEP) with a few exceptions, described in the link below.

@@ -31,16 +31,24 @@ Travis is a *Continuous Integration* service that *automatically* builds and tes
         stats.py
         stats_test.py
     ```
-
+    **INCORRECT:** Your repo should **not** have an extra layer of directories.    
+    This is wrong:
+    ```
+    demo-pyci/
+        demo-pyci/
+            README.md
+            ...
+    ```
+  
 3. Change directory to `demo-pyci` and do this:
    - create a git repository
    - add a .gitignore file for Python projects.  By now, you should have your own .gitignore for Python projects. Your .gitignore should include `__pycache__` dirs.
    - add all files to the git repository, including .gitignore
    - commit everything to your git repo
 
-4. Create a public `demo-pyci` repository on Github and
-   - add it as remote for your local demo-pyci repo (`git remote add ...`)
-   - push everything to Github
+4. Create a public `demo-pyci` repository on Github. Then
+   - add it as remote for your local demo-pyci repo (`git remote add origin https://...`)
+   - push everything to Github (`git push -u origin master`)
 
 ## Run the Tests Locally - One test should FAIL
 
@@ -66,16 +74,22 @@ Runs 3 tests and one test fails.
    - When you connect your Travis account to Github, a dialog will ask which Github projects you want to allow Travis to access.
    - You can grant access to specific projects or all projects. The next step shows how to grant access to a project at any time.
 
-2. On Github, open your Account **Settings** page, then:
-    - select **Applications** 
+2. On Github, open your **Account Settings** page, then:
+    - select **Applications** from left (near bottom)
     - Next to "Travis CI" click **Configure** 
-    - Under `( ) Only select repositories` Select `demo-pyci`
+    - Under `(x) Only select repositories` Select `demo-pyci`
     - Click "Save"
 
-Now Travis has permission to "pull" your `demo-pyci` project, but you must create
-a configuration file to tell Travis what to do.
+3. (Alternate Way) On Travis-CI open "Setting".  In setting it shows your repositories.  There is a link "Manage repositories on Github".  This link takes you to the Github Account Settings -> Applications -> Travis CI dialog.  
+   - choose which projects to grant Travis access, as in step 2.
+
+
+Now Travis has permission to "pull" your `demo-pyci` project, but you must create a configuration file to tell Travis what to do!
+
 
 ## Create a Travis Configuration File (.travis.yml)
+
+Many applications use YAML file format for configuration, including Travis and Github Actions. The Travis CI web site has many example config files you can use to get started, and detailed explanation of what the settings mean.
 
 In your local repository, create a file named `.travis.yml` that describes your 
 project.  Here is a simple `.travis.yml` for this project:
@@ -83,14 +97,14 @@ project.  Here is a simple `.travis.yml` for this project:
 ```yml
 language: python
 
-# you can use Python 3.7 instead
+# you can use a different version of Python 
 python: "3.6"
 
 # don't clone more than necessary
 git:
   depth: 1
 
-# Install any dependencies
+# Install dependencies
 install:
   - pip install -r requirements.txt
     
@@ -99,15 +113,14 @@ script:
   - python -m unittest discover -p "*_test.py"
 ```
 
-This syntax of this file is YAML, a common format for configuration files (most CI tools use this format).    
-The indentation must be spaces, not tab. You should (consistently) use at least 2 spaces per indent level.
+In this file, the indentation must be **spaces**, not tab. You should consistently use at least 2 spaces per indent level.  Just like Python, yaml requires consistent indentation.
 
 1. Add the `.travis.yml` file to your local git repo and push to Github.
 
-2. Go to https://travis-ci.com/your_githubid/demo-pyci  
+2. Go to <https://travis-ci.com/your_githubid/demo-pyci>  
 
 3. Travis should automatically pull your code and start "building" your project
-   - If Travis doesn't do it automatically, click a button at right to force a new build.
+   - If Travis doesn't do this automatically, click a button at right to force a new build.
 
 
 ## Become Familiar with the Travis Web Interface

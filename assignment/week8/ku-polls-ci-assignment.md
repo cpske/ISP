@@ -75,12 +75,12 @@ omit =
 Use "pip" to install any of these packages.
 
 * flake8 - a code checking tool, descrited in the RealPython article
+* flake8-docstrings - add docstring checking to Flake8 using the `pydocstyle` package.
 * pydocstyle - a stand-alone tool to check comments for compliance with PEP 257.
-  - Has a command line option to select the Docstring style you want. Choices are "pep257", "google", and "numpy".
-  - Usage:  pydocstyle --convention=google somefile.py
-  - You can specify configuration options in a `setup.cfg` file (same as flake8) in section `[pydocstyle]`
+  - this may be automatically installed when you install flake8-docstrings
+  - You can select the Docstring style you want using either command line option or `setup.cfg` file (same file as used by flake8). The choices are "pep257", "google", and "numpy".
+  - Command Line Usage:  pydocstyle --convention=google  somefile.py
 * flake8-django - add Django specific checks to flake8
-* flake8-docstrings - add docstring checking to Flake8. It uses `pydocstyle` for actual checking.
 
 
 ## Resources
