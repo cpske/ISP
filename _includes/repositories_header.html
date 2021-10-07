@@ -1,0 +1,66 @@
+<script>
+// replace oldtext with nextext in a node and subnodes
+function replaceAll(node, oldtext, newtext) {
+  if (node.nodeType == 3) {
+    node.data = node.data.replace(oldtext, newtext);
+  }
+  if (node.nodeType == 1 && node.nodeName != "SCRIPT") {
+    for (var i = 0; i < node.childNodes.length; i++) {
+      replaceAll(node.childNodes[i], oldtext, newtext);
+    }
+  }
+}
+// replace urls and text in "a" tags
+function replaceUrls(oldtext, newtext) {
+	var atags = document.getElementsByTagName("a");
+    for(var k=0; k<atags.length; k++) {
+        if (atags[k].getAttribute("href").indexOf(oldtext) >= 0) {
+            var newurl = atags[k].getAttribute("href").replace(oldtext, newtext);
+            atags[k].setAttribute("href", newurl);
+            atags[k].innerHTML = newurl;
+        }
+    }
+    return atags.length;
+}
+
+function formChanged() {
+    // the replacement text
+	var reponame = document.getElementsByName("repo_name")[0].value;
+
+    var counter = replaceUrls("repositoryname", reponame);
+    document.getElementById("counter").innerHTML = repositories.length;
+    //for(var x in document.getElementsByClassName("repository")) {
+    //   text = text + " " + x.innerText;
+    //   x.innerHTML = reponame;
+    //}
+    //for(var k=0; k < repositories,length; k++) {
+    //   repositories[k].innerHTML = reponame;
+    //}
+}
+
+</script>
+
+<p>
+Enter the basename of the repository without a path, such as <code>movierental</code>.
+<br/>
+Press <kbd>[Update URLs]</kbd> to substitute this basename for the generic text
+in the table of student Github URL.
+<br/>
+Press <kbd>[Reset Page]</kbd> to restore generic text before next substitution.
+</p>
+
+<form>
+  <table style="padding: 10px" width="50%">
+  <tr>
+     <td>
+     <label for="repo_name">Repository name:</label>&nbsp;&nbsp;
+     <input type="text" name="repo_name"/>&nbsp;&nbsp;
+     <!-- type="button" overrides default type="submit" so page does not refresh-->
+     <button type="button" onclick="formChanged()">Update URLs</button>&nbsp;&nbsp;
+     <button type="submit">Reset Page</button>
+     </td>
+   </tr>
+   </table>
+</form>
+
+

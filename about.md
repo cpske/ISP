@@ -24,6 +24,8 @@ See below for how to join.
 
 **Scores**: <https://bit.ly/ISP2021-scores> for classwork and homework 
 
+**Student Github URLs**: [Repository URL Generator](repositories)
+
 
 [google-classroom-link]: https://classroom.google.com/c/MzczOTE1MjA0NDE4?cjc=ka25cph
 [classroom-classwork]: https://classroom.google.com/u/0/w/MzczOTE1MjA0NDE4/t/all
