@@ -9,7 +9,37 @@ It is easy to neglect code quality when working under a deadline,
 fixing bugs, or adding a new feature. Over time the code becomes
 harder to understand and maintain, and harder to test.
 
+## What is Code Quality?
+
+*Code Quality* is subjective, but accepted characteristics of quality code are:
+
+- does what it should
+- can be tested
+- uses a consistent style
+- easy to understand
+- is well-documented
+- can be maintained (the above factors greatly influence this)
+
+References:
+
+- [What is Code Quality?][perforce-code-quality] on Perforce.com
+- [Code Quality Metrics][dzone-code-quality-metrics] on DZone.com
+
+[perforce-code-quality]: https://www.perforce.com/blog/sca/what-code-quality-and-how-improve-code-quality
+[dzone-code-quality-metrics]: https://dzone.com/articles/code-quality-metrics
+
+## How to Improve Code Quality
+
+Both the articles above recommend these four:
+
+1. Use a Coding Standard
+2. Analyze Code Before Code Reviews - both manually and using tools
+3. Follow Code Review Best Practices
+4. Refactor Code
+
 ## Best Practices for Code Quality
+
+In more detail:
 
 1. Consistently use a **coding standard** (coding style)
 2. Write [document comments](docstrings) (Javadoc or Python docstring) using a standard format
@@ -19,7 +49,7 @@ harder to understand and maintain, and harder to test.
 6. Avoid unexpected side effects. This includes the "command query separation principle".
 7. Review all your code.
 8. On a team project, ask others to review your code.
-9. Use tools to check your code.
+9. Use tools to check your code. This includes static analysis, linters, and style checking.
 10. Refactor to improve code.  
 
 Many projects have a "refactoring day" when the only work done is code review and refactoring.
@@ -106,6 +136,8 @@ In Python, there is not a universal agreement for how to document parameters, re
 
 [Python Code Quality][real-python-code-quality] best practices & tools, on RealPython.com.
 
+My [Code Quality Tools](code-quality-tools) page describes some tools for Python.
+
 
 ### Django's Coding Style Guide
 
@@ -125,13 +157,17 @@ https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/coding
 2. Oracle's Java coding standard.
 
 
-## Code Quality and Style Checking Tools
+## "*Practices of an Agile Developer*"
 
-[Code Quality Tools](code-quality-tools) describes tools for Python.
+Many Tips in the book *Practices of an Agile Developer* concern code quality. The authors must think it's important!
 
-## Tips from "*Practices of an Agile Developer*"
+Some examples:
 
-Many Tips in the book relate to code quality -- the authors must think it's important!
+Tip 2. *Quick Fixes Become Quicksand*    
+Tip 25. *Program Intently and Expressively*    
+Tip 26. *Communicate in Code*    
+Tip 30. *Write Cohesive Code*    
+
 
 ## Exercise
 

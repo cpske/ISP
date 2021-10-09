@@ -3,7 +3,7 @@ title: Projects
 navigation_order: 3
 ---
 
-[KU Polls Student Repositories](ku-polls-urls)
+[KU Polls Student Repositories](ku-polls-urls) \| [Repository Link Generator](repositories)
 
 ## ISP 2020 Team Projects
 

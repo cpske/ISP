@@ -9,13 +9,11 @@ navigation_order: 1
 
 [google-classroom]: https://classroom.google.com/c/MzczOTE1MjA0NDE4?cjc=ka25cph
 
-[KU Polls Student Repos](ku-polls-urls)
-
 ---
 
 ### Schedule
 
-### Preparation
+#### Preparation
 
 Please do this before the course starts. Otherwise, do it in Week 1.
 
@@ -229,31 +227,33 @@ Submit a project proposal using the Project Spreadsheet
 
 * Apply flake8 to your KU Polls code and fix all problems
    - use flake8 config file to exclude code that is not yours (migrations, django packages, virtual envs)
-* [Agile Practices](assignment/week8/agile) (there will be quiz on this) 
-  - Read tips from *Practices of an Agile Developer* ("Tips" sections in assignment)
-  - Online Questions: <https://docs.google.com/forms/d/e/1FAIpQLSc5VqEqJIPk22gW_hL63ZvSxcdo0UgGt_d-vbxv9xAeumVNUg/viewform?authuser=1>
 * [Add CI to KU Polls](assignment/week8/ku-polls-ci-assignment)
   - Use CI to run unit tests and run code coverage
   - Add "badges" to your KU Polls README.md for Travis and CodeCov status
-  - Sites with *insane* number of badges: [Checkstyle](https://github.com/checkstyle/checkstyle)
+  - Site has **lots** of badges: [Checkstyle](https://github.com/checkstyle/checkstyle)
 
 ### Week 9
 
 * Review CI assignment
 * What is "good code"?  
-  - What goals, problems, and forces motivate what is considered "good" in code?
+  - The goal of refactoring is "good code". So, what is good code?
+  - Goals, problems, and forces motivate characteristics of "good" code
   - Visible metrics or characteristics
-  - Specific principles and practies for good code
-* [Intro to Refactoring](refactoring/)
-  - [slides](refactoring/Refactoring.pdf)
-  - Reading: <https://refactoring.guru/refactoring> 
+  - Principles and practies for good code
+* [Introduction to Refactoring](refactoring/) and [slides](refactoring/Refactoring.pdf)
 * Anything on <https://refactoring.guru/refactoring> may be on a quiz!
-* Exercise
-  - Pizzashop refactoring exercise <https://github.com/ISP19/pizzashop>
+* Exercise: Pizzashop refactoring exercise <https://github.com/ISP19/pizzashop>
+* Intro to [Agile](agile/agile)
+
 
 #### Assignment
 
+* Read <https://refactoring.guru/refactoring> 
 * Movie Rental Refactoring <https://classroom.github.com/a/_qGEboUn>, Part 1
+* [Agile Practices](assignment/week8/agile) (there will be quiz on this) 
+  - Read tips from *Practices of an Agile Developer* ("Tips" sections in assignment)
+  - Online Questions: <https://docs.google.com/forms/d/e/1FAIpQLSc5VqEqJIPk22gW_hL63ZvSxcdo0UgGt_d-vbxv9xAeumVNUg/viewform?authuser=1>
+
 
 ### Week 10
 
