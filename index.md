@@ -241,18 +241,20 @@ Submit a project proposal using the Project Spreadsheet
   - Visible metrics or characteristics
   - Principles and practies for good code
 * [Introduction to Refactoring](refactoring/) and [slides](refactoring/Refactoring.pdf)
+* Refactoring Exercise: Pizzashop refactoring <https://github.com/ISP19/pizzashop>
 * Anything on <https://refactoring.guru/refactoring> may be on a quiz!
-* Exercise: Pizzashop refactoring exercise <https://github.com/ISP19/pizzashop>
-* Intro to [Agile](agile/agile)
+* Introduction to [Agile](agile/agile)
+* Agile Questions
+  - Online Questions:
+* 
 
 
 #### Assignment
 
 * Read <https://refactoring.guru/refactoring> 
 * Movie Rental Refactoring <https://classroom.github.com/a/_qGEboUn>, Part 1
-* [Agile Practices](assignment/week8/agile) (there will be quiz on this) 
-  - Read tips from *Practices of an Agile Developer* ("Tips" sections in assignment)
-  - Online Questions: <https://docs.google.com/forms/d/e/1FAIpQLSc5VqEqJIPk22gW_hL63ZvSxcdo0UgGt_d-vbxv9xAeumVNUg/viewform?authuser=1>
+* Read the articles in [Agile Practices](assignment/week8/agile) (there will be quiz on this) 
+* Read tips from *Practices of an Agile Developer* ("Tips" sections in assignment)
 
 
 ### Week 10

@@ -2,11 +2,6 @@
 title: Refactoring
 ---
 
-Related topics
-
-* [Separate Configuration from Code](separate-configuration)
-* [Design Patterns](https://skeoop.github.io/patterns/) some refactorings use a design pattern to restructure the code
-
 **Refactoring** refers to modifying the structure of existing code to improve it,
 without changing the external functionality.
 
@@ -14,16 +9,16 @@ Things we will cover:
 
 * Signs that code needs refactoring -- sometimes called "code smells", a term I *dislike*
 * What does "improve code" mean?  Software principles provide objective guides.
-* Guide lines for when and how to refactor
-  - code should be working before refactoring
-  - you must have tests before refactoring
-  - refactor is small steps and only one at a time 
-  - don't add new functionality while you refactor
-  - test the result of each refactoring and commit it before doing the next refactoring
+* Guide lines for when and how to refactor:
+  1. code should be working before refactoring
+  2. you must have tests before refactoring
+  3. refactor is small steps and only one at a time 
+  4. don't add new functionality while you refactor
+  5. test the result of each refactoring and commit it before doing the next refactoring
 * Common refactorings, with names
-* Refactoring Python and Java using an IDE
+* Refactoring Python or Java using an IDE
   - Eclipse, IntelliJ (aka PyCharm), and Netbeans provide good refactoring tools 
-  - VS Code can perform some refactoring, but not as good as the IDE above
+  - VS Code can perform some refactoring, but not as good as Eclipse & IntelliJ/PyCharm
 
 ### Presentation Slides
 
@@ -127,3 +122,8 @@ Hence, it is helpful to know some Design Patterns. Especially the *context*, *fo
 
 [Refactoring in IntelliJ](https://www.jetbrains.com/help/idea/tutorial-introduction-to-refactoring.html#5db90) explains how to do it in IntelliJ, with examples of common refactorings.
  
+
+## Related Topics
+
+* [Separate Configuration from Code](separate-configuration)
+* [Design Patterns](https://skeoop.github.io/patterns/) some refactorings use a design pattern to restructure the code
