@@ -9,17 +9,17 @@ There are many practices and methodologies to help you apply Agile, but the mind
 Agile is *not* a software process -- Agile values and practices are part of many software processes.
 
 
-The "*Agile Manifesto*" laid down the core values for agile software development.
+The "*Agile Manifesto*" states the core values for agile software development.
 
-These **values** motivate the practices and development process.
+These **values** are the reason "why" agile uses specific practices and development process.
 
 1. **Individuals and Interactions** over *Processes and Tools*
-     * People respond to business needs and direct the development process
+   - People respond to business needs and direct the development process
 
 2. **Working Software** over *Comprehensive Documentation*
-     * "Just enough" documentation - the customer wants software, not lots of software docs.
-     * If requirements are likely to change, writing up-front docs can be a waste.
-     * This is not an excuse to _not_ write documentation.
+   - "Just enough" documentation - the customer wants software, not lots of software docs.
+   - If requirements are likely to change, writing up-front docs can be a waste.
+   - This is not an excuse to _not_ write documentation.
 
 3. **Customer Collaboration** over *Contract Negotiation*
 
@@ -28,7 +28,8 @@ These **values** motivate the practices and development process.
 Ref: [Agile Alliance](https://www.agilealliance.org/agile101/the-agile-manifesto/)
 
 Agile encourages frequent delivery of running software, customer collaboration,
-face-to-face meetins, and self-managing teams.
+face-to-face meetings, and self-organizing teams.
+
 
 ## Why Emphasize "Values"?
 
@@ -39,18 +40,21 @@ When the team encounters a problem, if they have "practices" without the "values
 
 This is explained in the video by James Newkirk, starting at 40:00 minutes.
 
-| Newkirk's Agile Values    | Extreme Programming Values      |
-|---------------------------|---------------------------------|
-| Minimalism                | Simplicity                      |
-| Feedback                  | Feedback                        |
-| Tranparency               | Communication                   |
-| Sustainability            | Courage                         |
+Each organization has its own set of values.
+Newkirk summarized *his* values and XP values as:
+
+| Newkirk's Agile Values    | Extreme Programming Values  |
+|---------------------------|-----------------------------|
+| Minimalism                | Simplicity                  |
+| Feedback                  | Feedback                    |
+| Tranparency               | Communication               |
+| Sustainability            | Courage                     |
 
 ## Agile Values & Practices
 
 From the video [Introduction to Agile](https://www.agilealliance.org/agile101/agile-basics/introduction-to-agile/) by James Newkirk, starting at 40:00.
 
-Value: Feedback
+Value: **Feedback**
 
 Practices:
 - Test-first programming
@@ -58,11 +62,10 @@ Practices:
 - Ten minute build
 - Continuous Integration/Continuous Delivery
 - Short development cycle (iteration)
-- Frequent demos
 
 *James Newkirk strongly recommends Continuous Integration*.
 
-Value: Transparancy
+Value: **Transparancy**
 
 Practices:
 - Collective ownership
@@ -70,7 +73,7 @@ Practices:
 - Whole team - devs, testers, project managers all work together
 - Informative workspace - Task board with photos so everyone knows what others are doing; burndown chart, cumulative flow chart to show progress
 
-Value: Sustainability
+Value: **Sustainability**
 
 Practices:
 - Weekly Cycle - avoid overtime, overwork
@@ -83,7 +86,7 @@ Your productivity and skill goes down if you overwork. Error rates increase afte
 
 Balance "*Productivity - Productive Capacity*" (P/PC), described by Stephen Covey in *The 7 Habits*.
 
-Value: Minimalism
+Value: **Minimalism**
 
 Practices:
 - Incremental Design
@@ -110,16 +113,16 @@ Source: [12 Principles](https://www.agilealliance.org/agile101/12-principles-beh
 
 1. *Satisfy the Customer* through early and frequent release of software. Collaboration and communication with Customer.
 2. *Accommodate change*
-   * Welcome changing requirements, even late in development.
-   * Change means you are getting closer to client's true needs.
+   - Welcome changing requirements, even late in development.
+   - Change means you are getting closer to client's true needs.
 3. *Deliver frequently*  (Didn't they already write this in #1?)
 4. *Collaborate between stakeholders and developers*
 5. *Support, trust, and motivate the people involved*
 6. *Enable face-to-face interactions* within team and between team-customer.
 7. *Working software is the primary measure of progress*
 8. *Maintain a Sustainable Pace* - be able to deliver quality iteration-after-iteration, project after project; maintain work/life balance.
-   * P-PC Balance (Stephen Covey's Principle of Effectiveness).
-   * Avoid overtime.
+   - P-PC Balance (Stephen Covey's Principle of Effectiveness).
+   - Avoid overtime.
 9. *Continuous Attention to Excellence* - attention to technical detail and design enhances agility, improves the product, enables change.
 10. *Keep it Simple* – develop just enough for current goal.
     - "Maximizing the amount of work not done"
@@ -129,7 +132,7 @@ Source: [12 Principles](https://www.agilealliance.org/agile101/12-principles-beh
 12. *Regular Reflection* on how to become more effective.
     - (What are some *actions* that might result from reflection?)
 
-## Methods based on Agile Practices
+## Methods based on Agile Values
 
 * Scrum and XP are development-focused methods based on Agile values.
 * "Plan Based" or "Plan Driven" processes are considered non-agile, but this is not really true -- Plan based projects can incorporate agile values.
@@ -139,14 +142,14 @@ Source: [12 Principles](https://www.agilealliance.org/agile101/12-principles-beh
 ## Agile Practices You Can Use
 
 * User Stories - requirements from the user's perspective
-* Test-Driven Development - write unit tests before writing the code
-* Code Review - ask others to review and comment on your code.
-* Pair Programming - one person codes while another navigates and interprets.
+* Test-Driven Development - write tests before writing the code
+* Code Review - review all your code and ask others to review it, too.
+* Pair Programming - one person codes while another navigates and interprets
 * Time-boxed iterations 
 * Maintain a Sustainable Pace - do work early and regularly, not at the deadline. Avoid overwork.
 * [Retrospectives](#retrospectives) - reflect on how to do better, and take action
 * Continuous Integration - automate build and testing of your product, so you have constant feedback.
-* Task Board so everyone is aware of what others are working on.
+* Task Board - so everyone is aware of what others are working on.
 * Burndown chart - monitor your progress daily.
 
 
@@ -161,7 +164,7 @@ A **Story Map** shows relationships between stories. It shows:
 * stories that build on other stories
 * stories ordered by release
 
-![example story map](../images/story-map-example.png)
+![example story map](/ISP/images/story-map-example.png)
 ## Burn down and Burn up charts
 
 A **burn down** chart shows the remaining work versus time.
