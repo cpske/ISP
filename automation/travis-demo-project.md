@@ -161,13 +161,16 @@ virtual machine with common packages installed.
 Add a Travis status notification at the top of your README.md file, called a "badge".  It looks like this:    
 [![Build Status](https://travis-ci.com/jbrucker/demo-pyci.svg?branch=master)](https://travis-ci.com/jbrucker/demo-pyci)
 
-**Note:** Get the **actual URL** for your badge by clicking on the badge shown on Travis CI. The URL is shown under "Result".
+**Note:** Get the **actual URL** for your badge by clicking on the badge shown on **Travis CI**. The URL is shown under "Result".
 
-The Markdown for this is:
+
+Example: The Markdown for this is:
 ```markdown
-[![Build Status](https://travis-ci.com/your_acctid/demo-pyci.svg?branch=master)](https://travis-ci.com/your_acctid/demo-pyci)
+[![Build Status](https://app.travis-ci.com/your_acctid/demo-pyci.svg?branch=master)](https://app.travis-ci.com/your_acctid/demo-pyci)
+[![Build Status](https://app.travis-ci.com/borrabeam/demo-pyci.svg?branch=main)](https://app.travis-ci.com/borrabeam/demo-pyci)
 ```
-In markdown `![text msg](/url/to/imagename)` includes an image in a page. That is wrapped inside another `[text](url)` markup to put the image in a clickable link that refers to the Travis build page.
+> Don't rely on this example! Get the actual URL by clicking on the badge shown on the Travis build page for your repo.
+
 
 ## Fix the Bug and Watch Travis Rebuild your Project
 

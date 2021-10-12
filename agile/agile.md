@@ -144,7 +144,7 @@ Source: [12 Principles](https://www.agilealliance.org/agile101/12-principles-beh
 * User Stories - requirements from the user's perspective
 * Test-Driven Development - write tests before writing the code
 * Code Review - review all your code and ask others to review it, too.
-* Pair Programming - one person codes while another navigates and interprets
+* Pair Programming - one person codes (focus on the code) while another thinks and reviews (how code fits the overall design)
 * Time-boxed iterations 
 * Maintain a Sustainable Pace - do work early and regularly, not at the deadline. Avoid overwork.
 * [Retrospectives](#retrospectives) - reflect on how to do better, and take action

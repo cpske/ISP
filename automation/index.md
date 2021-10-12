@@ -2,7 +2,8 @@
 title: Automation, Build Tools, and Continuous Integration
 ---
 
-**Automation** is an ongoing goal in software development.
+**Automation** is a constant theme in software development.
+
 Don't spend time performing routine tasks that can be done automatically -- or "semi-automatically" by typing a single command.
 
 Routine tasks you can automate are:
@@ -30,7 +31,7 @@ C and Java programmers. Some of the most widely used tools are:
   - an Ant build file is written in XML. Ant has lots of pre-defined "actions" or "tasks" that you can use to define a build file to do just about anything.
   - [Ivy](https://ant.apache.org/ivy/) is a companion project for dependency management. It automatically downloads (as needed) packages that your application depends on.
 
-* [Maven][maven] and [Gradle][gradle] for both dependency management and project automation.
+* [Maven][maven] and [Gradle][gradle] for dependency management and project automation.
   - A build file defines other packages the a project depends on, as well as instructions to build, test, and generate documentation
   - Maven or Gradle automatically download any required packages (as needed) before building the application
   - Android Studio uses Gradle to build an Android application
@@ -93,12 +94,12 @@ Continuous Integration tools
 
 * Travis-CI (integrates well with Github)
 * Github Actions and Workflows - CI integrated into a Github repository
-* Popular CI Platforms are:
+* CircleCI
+* CI tools that you host on your own server (self-hosted):
   - Jenkins
   - Hudson (predecessor to Jenkins)
-  - TeamCity
+  - TeamCity (cloud-based or self-hosted)
   - Cruise Control - one of the first CI, still great
-  - CircleCI
 * [20 Best CI Tools](https://www.guru99.com/top-20-continuous-integration-tools.html) on guru99 has nice summary
 * [Comparison of 15 CI Tools](https://www.softwaretestinghelp.com/tools/24-best-continuous-integration-tool/) on softwaretestinghelp.com compares features
 
