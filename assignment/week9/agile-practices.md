@@ -72,12 +72,13 @@ You can change your answers after submission and resubmit up until the deadline.
   - [] Single Responsibility
   - [] Testability
 
-8. The 6 (or 7) Tips assigned this week primarily relate to what? Choose one best answer.
-  - [] Adopt Agile development processes
-  - [] Code quality and maintainability
-  - [] Team work and/or iterative development
-  - [] Testing and Verification
-  - [] Incremental Development
+
+8. The Tips assigned this week primarily relate to what? Choose one best answer.
+  - Adopt Agile development processes
+  - Code quality and maintainability
+  - Team work and/or iterative development
+  - Testing and Verification
+  - Incremental Development
 
 
 ## Part 2: Find the Tip
