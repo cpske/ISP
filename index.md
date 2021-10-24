@@ -241,12 +241,10 @@ Submit a project proposal using the Project Spreadsheet
   - Visible metrics or characteristics
   - Principles and practies for good code
 * [Introduction to Refactoring](refactoring/) and [slides](refactoring/Refactoring.pdf)
+  - "Why" refactoring and the benefits, both in general and for specific refactorings
 * Refactoring Exercise: Pizzashop refactoring <https://github.com/ISP19/pizzashop>
 * Anything on <https://refactoring.guru/refactoring> may be on a quiz!
-* Introduction to [Agile](agile/agile)
-* Agile Questions
-  - Online Questions:
-* 
+* User Stories - write stories for team projects
 
 
 #### Assignment
@@ -259,42 +257,44 @@ Submit a project proposal using the Project Spreadsheet
 
 ### Week 10
 
-* [Authentication](/authentication/)
-* Authentication Exercise: [Add authentication to the Todo app](assignment/week10/auth-exercise)
-* Agile Practices Review
-  - [Agile Practice Questions](agile/agile-practice-questions.pdf)
-  - [Crossword Puzzle](agile/crossword-puzzle.pdf) 
+* Discussion on Team Projects 
+  - how to get started, prioritizing work, meetings with TAs
+* Refactoring Practice - refactor some code on Github (link on Google Classroom)
+* [Agile](agile/agile) - Agile values, principles, and the practices.
+  - conists of values and mindset, not a software process
+* Exercise: [Agile Practice Review Questions](agile/agile-practice-questions.pdf)
+* Optional: [Agile Crossword Puzzle](agile/crossword-puzzle.pdf) 
   - answers available online
+* Homework: essential reading on Agile
+  - read "Learn More" articles in [Agile](agile/agile#learn-more)
 
 #### Assignment
 
-* *Refactor* one of your projects or someone else's
+* (Not in 2021) *Refactor* one of your projects or someone else's
   - <https://cpske.github.io/ISP/assignment/week10/refactoring>
-* [KU Polls Iteration 3](assignment/ku-polls/iteration3)
 
 ### Week 11
 
-* Quiz on Refactoring
+* [Authentication](authentication)
+* Authentication Exercise: [Add authentication to the Todo app](assignment/week10/auth-exercise)
 * [Review common refactorings](refactoring/Refactoring-Review.pdf)
-* More Refactoring - refactorings involving structure of classes, and refactorings for creating objects
 * [Logging](logging/) - you already did in KU Polls Iter 3
 * [Logging practice](logging/logging-practice)
 
 #### Assignment
 
-* [Movie Rental Refactoring, Part 2](assignment/week11/movie-rental2)
+* [KU Polls Iteration 3](assignment/ku-polls/iteration3)
 
 
 ### Week 12
 
-* Agile - Agile values, principles, and the practices.
-  - values and mindset, not a software process
+* More Refactoring - refactorings involving structure of classes, and refactorings for creating objects
+* Quiz on Refactoring
 
 * Feedback on Team Projects
   - branches are not using Github Flow
   - prepare to demo your work so far
-* More Refactoring
-* "Why" refactoring and benefits, both in general and for specific refactorings.
+* [Movie Rental Refactoring, Part 2](assignment/week11/movie-rental2)
 
 ### Week 13
 
