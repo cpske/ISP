@@ -8,16 +8,16 @@ Django's authentication "app" provides support for user login, logout, sign-up,
 and password reset.  
 It provides:
 
-* models for User and Group that store info about users
-* url handlers (views) and Forms for login, logout, changing password, and others
-* session middleware to associate users with sessions
-* decorators to require login or validate authorization before accessing views
-* password validators for things like minimum password length
+* **User** and **Group** models that store user info
+* **views** (url handlers) and Forms for login, logout, changing password, and others
+* **session middleware** to associate users with sessions
+* **decorators** to require login or validate authorization before accessing views
+* **password validators** for things like minimum password length
 
 The [MDN Django Tutorial][mdn-auth-tutorial] is a good introduction and 
 [Django Auth Docs][django-user-auth] have details with examples.
 
-### Overview of using Authentication
+### Steps to Use Authentication in Django
 
 1. Enable the `auth` app, middleware, and authentication backends in `settings.py`.
 2. Run migrations if necessary (usually it is not).
@@ -25,63 +25,72 @@ The [MDN Django Tutorial][mdn-auth-tutorial] is a good introduction and
 4. Add templates for login and logout.  You don't have to do much because Django provides forms.
 5. Add authentication checks in your views, such as checking that a visitor is logged in or has permission to perform an action (based on group membership).
 
-## How to Enable and Use Authentication
+## Enable and Use Authentication
 
-1. In your site's `settings.py` file check that INSTALLED_APPS includes `django.contrib.auth`
-    ```python
-    INSTALLED_APPS = [
-        'django.contrib.admin',
-        'django.contrib.auth',
-        ...
-    ]
-    ```
-    * If you add `django.contrib.auth` to a project, you need to make migrations and run migrations to create database tables for User and Group.
-2. Also in `settings.py` you need two middleware applications (usually these are included by default):
-    ```python
-    MIDDLEWARE = [
-    ...
-    # SessionMiddleware manages sessions spanning multiple requests
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    # Associates users with sessions and requests
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    ...
-    ]
-    ```
-3. (**This seems to be the default**) You need at least one authentication "backend" to authenticate users.  The standard password-based backend included with Django is:
-    ```python
-    AUTHENTICATION_BACKENDS = (
-        # username/password authentication
-       'django.contrib.auth.backends.ModelBackend',  
-    )
-    ```
+1. In your site's `settings.py` file check that `INSTALLED_APPS` includes `django.contrib.auth`
+   ```python
+   INSTALLED_APPS = [
+       'django.contrib.admin',
+       'django.contrib.auth',
+       ...
+   ]
+   ```
+   - When you add `django.contrib.auth` to a project, you need to **makemigrations** and run **migrations** to create database tables for User and Group.
+
+2. In `settings.py` you need two middleware applications. Usually these are included by default:
+   ```python
+   MIDDLEWARE = [
+   ...
+   # SessionMiddleware manages sessions spanning multiple requests
+   'django.contrib.sessions.middleware.SessionMiddleware',
+   # Associates users with sessions and requests
+   'django.contrib.auth.middleware.AuthenticationMiddleware',
+   ...
+   ]
+   ```
+
+3. (**This seems to be the default**) You need at least one **authentication backend** to authenticate users.  The standard password-based backend included with Django is:
+   ```python
+   AUTHENTICATION_BACKENDS = (
+       # username/password authentication
+      'django.contrib.auth.backends.ModelBackend',  
+   )
+   ```
    You can add OAuth authentication by adding the social-auth package or allauth package as another authentication backend. 
 
 4. Include the Django auth views in your URLs. By convention, use `accounts/` as the prefix for these URLs:
-    ```python
-    urlpatterns = [
-        path('admin/', admin.site.urls),
-        path('accounts/', include('django.contrib.auth.urls')),
-        ...,
-    ]
-    ```
-    A section below lists the URLS added by `auth.urls`. To get started, the most important ones are:
-    ```python
-    accounts/login/                  [name='login']
-    accounts/logout/                 [name='logout']
-    ```
-5. The `auth.urls` module maps each URL to a view provided by Django, and each view uses a form named `form`.  You need to provide a template for each view, to display the form and send results back to the view.
-Django expects the templates to be in a `registration` folder, with the same name as view, e.g. `login.html`, `logged_out.html`, `password_change.html`.    
-    Create a `templates` directory in your application top-level folder and enable it in `settings.py` as follows: 
-    ```python
-    TEMPLATES = [
-        {
-            'DIRS': [os.path.join(BASE_DIR, 'templates')],
-            'APP_DIRS': True,
-            ...
-        }
-    ]
-    ```
-6. Create a `login.html` template in the global template directory.  Its location should be:
+   ```python
+   urlpatterns = [
+       path('admin/', admin.site.urls),
+       path('accounts/', include('django.contrib.auth.urls')),
+       ...,
+   ]
+   ```
+   `auth.urls` adds several URLs (see below). The most important ones to get started are:
+   ```python
+   accounts/login/                  [name='login']
+   accounts/logout/                 [name='logout']
+   ```
+
+5. The `auth.urls` module maps each URL to a view provided by Django. Each view uses a form named `form`.  You need to provide a **template** for each view, to display the form and send results back to the view.
+   - Django expects the templates to be in a `registration` folder, and each template has the same name as the view:
+     | view  | template (you provide)  |
+     |-------|-------------------------|
+     | login | login.html              |
+     | logout | logged_out.html (called after logout) |
+6. Create a `templates` directory in your application top-level folder (`ku-polls/templates`) and enable it in `settings.py` as follows: 
+   ```python
+   TEMPLATES = [
+       {
+           'DIRS': [os.path.join(BASE_DIR, 'templates')],
+           'APP_DIRS': True,
+           ...
+       }
+   ]
+   ```
+  - Also create a `templates/registration` directory.
+
+7. Create a `login.html` template.  Its location should be:
     ```
     project_dir/
         templates/
@@ -112,31 +121,34 @@ Django expects the templates to be in a `registration` folder, with the same nam
     </html>
     ```
     {% endraw %}
-7. Test this by starting the Django server and navigating to `localhost:8000/accounts/login/`.
-    To create a user who can login see [Create a User Interactively](#create-a-user-interactively) below.
-8. After you login at `/accounts/login/`, Django by default redirects you to `/accounts/profile`.  This is usually **not** what you want.    
+
+8. Test this by starting the Django server and navigating to `localhost:8000/accounts/login/`.
+   - To create a user who can login see [Create a User Interactively](#create-a-user-interactively) below.
+
+9. After you login at `/accounts/login/`, Django by default redirects you to `/accounts/profile`.  This is usually **not** what you want.    
    To specify a default redirect page after login, in `settings.py` set (this is for the todo app):
     ```python
-    LOGIN_REDIRECT_URL = '/todo/'
+    LOGIN_REDIRECT_URL = '/todo/'    # KU-Polls: use '/polls/'
     ```
-    If your login request contains a field named `next`, the auth login view will redirect to the URL specified by `next` instead of the default.  That's why there is a hidden field named `next` in the form above (it preserves the value of next from the previous redirect).
+   - If the login request contains a field named `next`, the auth login view will redirect to the URL specified by `next` instead of the default.  That's why there is a hidden field named `next` in the form above (it preserves the value of next from the previous redirect).
 
-9. You can logout by navigating to `/accounts/logout/` but you need a page to redirect to *after* logout.  There are 2 solutions:
-   - create a logout page at `/templates/registration/logged_out.html`
-   - in `settings.py` set: `LOGOUT_REDIRECT_URL = 'some-existing-view`` (this is usually better)
+10. You can logout by navigating to `/accounts/logout/` but you need a page to redirect to *after* logout.  There are 2 solutions:
+    - create a logout page at `/templates/registration/logged_out.html`
+    - in `settings.py` set: `LOGOUT_REDIRECT_URL = 'some-existing-view`` (this is usually better)
 
-10. Create a logout template located in `/templates/registration/logged_out.html`:
-   {% raw %}
-   ```html
-   <html>
-   <body>
-   <h2>Logged out</h2>
-   <p>
-   Want something todo? 
-   <a href="{% url 'login'%}">Login again</a>
-   </body>
-   ```
-   {% endraw %}
+11. For the **todo** app: Create a logout template located in `/templates/registration/logged_out.html`:
+    {% raw %}
+    ```html
+    <html>
+    <body>
+    <h2>Logged out</h2>
+    <p>
+    Want something todo? 
+    <a href="{% url 'login'%}">Login again</a>
+    </body>
+    ```
+    {% endraw %}
+    - For **KU Polls**: redirect to the polls index page (or page of your choice)
    
 
 ### Next Steps
