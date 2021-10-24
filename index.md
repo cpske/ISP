@@ -276,7 +276,18 @@ Submit a project proposal using the Project Spreadsheet
 ### Week 11
 
 * [Authentication](authentication)
-* Authentication Exercise: [Add authentication to the Todo app](assignment/week10/auth-exercise)
+* Authentication Exercise: 
+  - 2021: Add authentication to KU Polls
+    1. Discuss and plan the feature
+    2. Create a new branch for your work
+    3. Add authentication. See [Django Authentication](django/authentication)
+    4. Create one or two users
+    5. Write tests
+    6. Add authorization to KU Polls. See [Django Authorization](django/authorization)
+    7. Test it
+    8. Revise the KU Polls domain model
+    9. Implement the changes to the domain model
+  - 2020: [Add authentication to the Todo app](assignment/week11/auth-exercise-todo)
 * [Review common refactorings](refactoring/Refactoring-Review.pdf)
 * [Logging](logging/) - you already did in KU Polls Iter 3
 * [Logging practice](logging/logging-practice)

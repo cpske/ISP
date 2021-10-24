@@ -2,22 +2,14 @@
 title: Django Authorization 
 ---
 
-Django uses **Permissions** assigned to each **User** to determine
-their access rights to model objects.
-
-Instead of assigning permissions directly to each user (time-consuming
-and error-prone), Django uses **Groups**.
-A User belongs to one or more Groups.
-Each Group has Permissions associated with it.
-
-### How to Perform Authorization
-
-Authorization refers to the privileges that a user has.
+**Authorization** refers to the privileges that give a user (or subject)
+the ability to perform some action.
 In Django, there are 3 choices to enforce authorization.
 
 1. Logged in user: any logged in user is permitted 
-2. Group membership: users who are members of a specific group are permitted
-3. Permissions: users assigned a specific permission are permitted
+2. Permissions: user is assigned specific permissions, assigned individually
+   - Assigning permissions to each user is time-consuming and error-prone.
+3. Group membership: users who are members of a specific group have all the permissions of that group
 
 For example, in the Django Polls tutorial we allowed any
 authenticated user to vote:
@@ -26,6 +18,11 @@ authenticated user to vote:
 def vote(request, question_id):
     """user casts a vote for a choice in question_id"""
 ```
+
+Django has **Groups** that you define in your app.
+A User belongs to one or more Groups, and each group has Permissions 
+associated with it.
+
 
 ## Checking Authentication in Code
 
@@ -53,8 +50,8 @@ class Question(Model):
         permissions = (('can_vote', 'can submit a vote'),
                        ('can_view_result', 'can review poll results'))
 ```
-This defines two permissions.  After defining permissions in a model
-you must create a migration and apply it.
+This defines two permissions `can_vote` and `can_view_result`.  
+After defining permissions in a model you must create a migration and apply it.
 
 To check permissions in a view function, use a decorator:
 ```python
@@ -63,6 +60,8 @@ def vote(request, question_id):
     """Vote for a poll question"""
     ...
 ```
+
+You can also check permissions inside a view method or function.
 
 ## Checking Authentication in Templates
 

@@ -57,7 +57,7 @@ user.last_name = "Hacker"
 user.save()
 ```
 
-**Evaluation**: when you finish this you should be able to 
+**Test**: when you finish this you should be able to 
 
 1. login at http://localhost:8000/accounts/login/  and be redirected to Todo index
 2. logout at http://localhost:8000/accounts/logout/ and be redirected to a logout page.
