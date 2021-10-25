@@ -9,15 +9,21 @@ authorization, which Django calls "ModelBackend".
 
 Behavior to add or modify is:
 
-* Only an authenticated user can submit a vote
-* Anyone can view the list of polls or poll results (same as before)
-* A user can change his vote on a poll, and his new vote replaces his old vote. He can only change his vote during a poll's voting period.
-* If a user selects a poll he already voted for, the of choices shows his previous vote 
-* Add logging of the following events:
-  - user login or logout. An "info" level log message, including username and IP address.
-  - unsuccessful login attempt (username or password incorrect). a "warning" log message, including username entered and IP address.
-  - user submits a vote for a poll. "info" log message including username and poll id voted on (but not choice id).
+- Only an authenticated user can submit a vote
+- Anyone can view the list of polls or poll results (same as before)
+- A user can change his vote on a poll, and his new vote replaces his old vote. He can only change his vote during a poll's voting period.
+- If a user selects a poll he already voted for, the of choices shows his previous vote 
+
+- (Optional) Add logging of these events:
+
+| Event                      | Log Level |
+|----------------------------|-----------|
+| user login or logout    -  | info      |
+| unsuccessful login attempt (username or password incorrect) | warning |
+| user submits a vote        | info      |
+
   - all log messages should include the date and time (that's done by the formatter, don't put it in your log message).
+  - login/logout messages should include the user's IP address
   - log to the console, like Django does.
   - use `loggers`, not print statements!
 
@@ -28,7 +34,7 @@ Create an "Iteration 3" task board with your tasks.
 
 Implement the features and write unit tests for them.
 
-Your project now has many unit tests, so consider refactoring the 
+The project now has many unit tests, so consider refactoring the 
 tests as recommended in the MDN Django Tutorial.
 - Create a `polls/tests` directory with an `__init__.py` file.
 - Divide your tests into separate files, grouped however makes sense, such as:
@@ -50,34 +56,83 @@ This requires a change in the domain model.
 
 ![user-vote-choice](user-vote-choice.png)
 
-After this change, there is no "votes" attribute in Choice.
-To **hide the impact of change** you could redefine `votes`
-as a read-only property that computes and returns the votes for a choice.
+`Vote` needs a reference to `user` and `choice`. These should be ForeignKey attributes in the Vote model class.
 
-The votes property would sum the votes for a choice and
-return the sum.  The view that show the vote counts won't see
-any difference in the code.
+After this change, there is no "votes" attribute in Choice.
+But our code uses `choice.votes` to display the votes, and we would like to
+avoid making a lot of changes to code.
+
+To **hide the change** we can redefine `votes` as a read-only property.
+The property computes and returns the votes for a choice each time it's called.
+
+The `votes` property would "look" like the `votes` attribute in the old
+code.
 
 ### Use the Database Capabilities instead of Fetching All Votes!
 
-Try to write efficent code for this.
+Try to write efficent code for summing the votes for a choice.
 
-- *Inefficient*: get all the votes and sum the ones that match a choice.
-
-- *Effcient*: Create a query to select the votes you want and a function of queryset to count the items. Requires only one line of code.
+- *Inefficient*: get all the votes and sum the ones that match a choice. This requires getting all the data from the Vote table and creating Vote objects.
    ```python
-   votes = Vote.objects.all().filter(some-criteria).count()
+   # count the votes for some_choice
+   count = 0
+   for vote in Vote.objects.all():
+       if vote.choice == some_choice:
+           count += 1
    ```
+
+- *Effcient*: Create a query to select the votes you want, and count them!  The query (filter) will be done by the database without creating a lot of Vote objects. 
+   ```python
+   # count the votes for some_choice
+   count = Vote.objects.filter(choice=some_choice).count()
+   ```
+
+## Logging
+
+Django uses Python's logging library. 
+You configure the logger behavior, including message format, in `settings.py`.
+
+An example of using logging is:
+
+```python
+import logging
+logger = logging.getLogger("polls") 
+
+logger.info(f"{user} logged in from {ip_addr}")
+logger.warn(f"Invalid login attempt for {username} from {ip_addr}")
+logger.error("Caught unexpected exception: " + str(exception))
+```
 
 ## Getting a Visitor's IP Address
 
-When someone logs in you should record their IP address as part of the log message.
+When someone logs in you should include their IP address in the log message.
 
 There are many posts showing how to write a `get_client_ip` function using 
 info in the Django `request` object.
-Getting the visitor's **actual** IP address can be harder than it looks,
+Getting the visitor's **actual** IP address is harder than it looks,
 as some commenters mention here:
 https://stackoverflow.com/questions/4581789/how-do-i-get-user-ip-address-in-django
 
 Try to choose a good implementation, but it doesn't have to be perfect.
 
+One implementation (copied from the Internet)
+uses HttpRequest headers sent by the client, `HTTP_X_FORWARDED_FOR` and `REMOTE_ADDR`
+
+```python
+def get_client_ip(request):
+    """Get the visitor’s IP address using request headers."""
+    x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+    if x_forwarded_for:
+        ip = x_forwarded_for.split(',')[0]
+    else:
+        ip = request.META.get('REMOTE_ADDR')
+    return ip
+```
+
+## Documents that may help
+
+- My page on Django Authentication: <https://cpske.github.io/ISP/django/authentication>
+- MDN page on Django Authentication: <https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Authentication>
+- My page on Django Authorization: <https://cpske.github.io/ISP/django/authorization>
+- Sample Unit Tests (may need editing): <https://cpske.github.io/ISP/assignment/ku-polls/user-auth-tests.py>
+- Logging in Django: <https://docs.djangoproject.com/en/dev/howto/logging/>
