@@ -52,10 +52,10 @@ The [MDN Django Tutorial][mdn-auth-tutorial] is a good introduction and
 
 3. (**This seems to be the default**) You must have at least one **authentication backend** to authenticate users.  The standard password-based backend included with Django is:
    ```python
-   AUTHENTICATION_BACKENDS = (
+   AUTHENTICATION_BACKENDS = [
        # username/password authentication
       'django.contrib.auth.backends.ModelBackend',  
-   )
+   ]
    ```
    You can add OAuth authentication by adding the social-auth package or allauth package as another authentication backend. 
 
