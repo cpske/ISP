@@ -1,0 +1,30 @@
+---
+
+## Resources
+
+- [Agile101][] and <https://agilealliance.org> 
+-
+---
+
+### Articles with Some Good, Some Misinformation
+
+There is a lot of incorrect information about "Agile" on the web.
+The two articles below are examples. They are written by knowledgable people
+and published on good developer sites, but both contain trite definitions
+of "Agile" that are partially incorrect.
+
+You need to think critically to spot some errors.
+
+1. "What is Agile?" on Cprime: https://www.cprime.com/resources/what-is-agile-what-is-scrum/
+   - Beginning of article has 2 false statements:  
+     > Agile software development refers to a group of software development methodologies based on iterative development, where requirements and solutions evolve through collaboration between self-organizing cross-functional teams.
+   - **False:** Agile refers to a set of values and principles.  The software development methodologies are based on those values and principles.
+   > Another false statement:
+     > Agile methods or Agile processes generally promote a disciplined project management process...
+   - **False:** Not necessarily so.  Agile relies on dedicated people committed to delivering useful software; it doesn't say much about "disciplined project management".
+   - Article is biased toward Agile; doesn't mention the weaknesses
+
+2. "What is agile methodology?" on Infoworld: https://www.infoworld.com/article/3237508/what-is-agile-methodology-modern-software-development-explained.html
+   - Some historical context and a "business case" for why Agile is better, in the author's opinion.
+   - His usage of "Agile methodology" *contradicts* what is on agilealliance.org.
+
