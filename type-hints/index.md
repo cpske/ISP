@@ -2,20 +2,28 @@
 title: Type Hints
 ---
 
+[Example](#example)    
+[Type Hints](#type-hints)    
+[Learn Type Hints](#learn-type-hints)    
+[Type Checking Tools](#type-checking-tools)
+
 Python is a dynamically typed language.  This makes it easy to write code,
-but harder to verify that the code is being used correctly.
+but harder to verify that the code is correct.
+
 Programming tools (and programmers!) have difficulty checking that
 methods are being called with the correct type of values,
 and that the returned values are used correctly.
-Mistakes are often discovered only when the code is executed, 
+Mistakes are discovered only when the code is executed, 
 and sometimes not discovered at all -- but the results are wrong.
 
 ### Example
 
 [scorecard.py](scorecard.py) contains 3 syntax or semantic errors.
 If you open this file in an IDE does it detect all three errors?
-Probably not.  If this code was written a statically typed language
-like Java, *any* IDE would immediately detect all the errors.
+Probably not.  In a statically typed language like Java, 
+*any* IDE would immediately detect all the errors.
+
+We can find the errors in Python by adding *type hints*.
 
 ## Type Hints
 
@@ -23,7 +31,7 @@ Python allows you to write **type hints** in code to indicate data types.
 The type hints are optional and ignored by the Python interpretter,
 but IDEs and tools like `mypy` use type hints to detect errors.
 
-In the [scorecard](scorecard.py) example, you can add a hint to
+Hint 1: In [scorecard.py](scorecard.py), you can add a hint to
 the `add_score` method to indicate that the `score` parameter 
 must be a `float` (or int) and the method does not return anything:
 
@@ -34,10 +42,26 @@ def add_score(self, score: float) -> None:
 After you add this type hint, your IDE may detect that the "main" block
 is calling `add_score` incorrectly.
 
+Hint 2: Add a hint to the `average(self)` method to indicate that it
+returns a float:
+```python
+def average(self) -> float:
+```
+Your IDE should then detect another error in main.
+
+Hint 3: Add a hint that the `scores` attribute is a list of float:
+```python
+from typing import List
+
+    def __init__(self):
+        self.scores: List[float] = []
+```
+Your IDE should then detect another error in main.
+
 
 ## Learn Type Hints
 
-[Mai's Introduction to Type Hints](introduction)
+[Mai Norapong's Introduction to Type Hints](introduction)
 
 [Python Type Checking Guide](https://realpython.com/python-type-checking/) on RealPython
 
@@ -45,7 +69,7 @@ is calling `add_score` incorrectly.
 
 To understand the type hints for collections and "interface" behavior on classes, you should read the [collections.abc doc page](https://docs.python.org/3/library/collections.abc.html). Each of the types in collections.abc has a corresponding type with the same name in the `typing` package -- use `typing` in your type hints, not `collections.abc`.
 
-For example, if the Scorecard class is a collection of scores with a length and you can iterate over the scores, you can write:
+For example, if the Scorecard class is a collection of scores with a **length** and you can **iterate** over the scores, then you would write:
 
 ```python
 from typing import Iterable, Sized
@@ -53,11 +77,13 @@ from typing import Iterable, Sized
 class Scorecard(Iterable[float], Sized):
 
     def __len__(self):   # method required by Sized type
+        return len(self.scores)
 
     def __iter__(self):  # method required by Iterable type
+        return iter(self.scores)
 ```
 
-### Type Checking Tools
+## Type Checking Tools
 
 [mypy](http://mypy-lang.org/) is the most popular type checking tool for Python.  It can be used by itself or integrated into some IDE.
 - [Getting Started](https://mypy.readthedocs.io/en/stable/getting_started.html) page contains many simple examples you can learn from.  
@@ -67,7 +93,11 @@ class Scorecard(Iterable[float], Sized):
 
 [Pydev](https://www.pydev.org/) uses type hints to warn of type misuse.
 
-The VS Code [Pyright](https://github.com/microsoft/pyright) extension provides static type checking for VS Code.  Pyright checks usage across all files in a project, which *should* provide better type checking than mypy. So, you shouldn't need mypy. 
+The VS Code [Pyright](https://github.com/microsoft/pyright)
+and [Pylance](https://github.com/microsoft/pyright) extensions 
+perform static type checking for VS Code.  
+Pyright checks usage across all files in a project, which *should* provide better type checking than mypy. So, you shouldn't need mypy with VS Code. 
+Pylance is a *proprietary, closed source* extension (Pyright is open source).
 
 
 ### Pylint

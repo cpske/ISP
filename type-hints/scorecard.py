@@ -1,36 +1,41 @@
 """
 Example code containing common errors that can 
 be detected by static type checking.  
-Please don't fix this code by inspection -- use
-it to see what a static type checker can do.
+Please don't fix this code by inspection.
 
-When you add typing hints to this code, 
-then your IDE *should* detect the errors.
-This works in PyDev (Eclipse), PyCharm (based on IntelliJ IDEA),
-and VS Code with IntelliCode.
+Instead, add type hints and watch your IDE tell
+you what the errors are.
 
-Useful tools:
-- install mypy for static code analysis (mypy works with almost any IDE)
-- for VS Code users, recommend installing the Pyright extension,
-  a Microsoft project. It performs very good type checking 
-  and type inference, and enables better command-completion
-  in VS Code.
+Please add these hints ONE AT A TIME and SAVE the file.
+Look for errors detected in the main block.
 
-For more info on type hints, see Mai's problem in the ISP Github repo.
+1) add type to parameter:      add_score(self, score: float)
+2) add type to return value:   average(self) -> float
+3) add type to list attribute: self.scores: List[float] = []
+
+For more info on type hints, see Mai's write-up in the ISP Github repo.
 """
+from typing import List
+
 
 class Scorecard:
     """Accumulate scores and compute their average."""
 
     def __init__(self):
+        """Iniiialize a new Scorecard."""
         self.scores = []
     
     def add_score(self, score):
+        """Add a score to the Scorecard."""
         self.scores.append(score)
 
     def average(self):
-        """return average of all scores"""
-        return sum(self.scores)/len(self.scores)
+        """Return the average of all scores, 0 if no scores."""
+        return sum(self.scores)/max(1,len(self.scores))
+
+    def max_score(self):
+        """Return the maximum of the scores."""
+        return max(self.scores)
 
 
 if __name__ == "__main__":
@@ -41,4 +46,6 @@ if __name__ == "__main__":
     n = input("input 2nd score: ")
     scores.add_score(n)
 
-    print("The average is "+scores.average())
+    print("The average is " + scores.average())
+
+    print("Max score is " + scores.max_score())

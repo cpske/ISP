@@ -1,5 +1,5 @@
 ---
-title: Type Hinting –– an Introduction
+title: Type Hinting –– An Introduction
 ---
 
 by Mai Norapong
@@ -103,9 +103,10 @@ without needing too much description via docstrings.
 
 ### The typing module (PEP 484)
 
-[**PEP 484**](https://www.python.org/dev/peps/pep-0484/) introduced the 
-[`typing`](https://docs.python.org/3/library/typing.html) module, in Python 3.5
-which allows for more complex types.
+The [`typing`](https://docs.python.org/3/library/typing.html) module
+introduced by [**PEP 484**](https://www.python.org/dev/peps/pep-0484/) 
+(added in Python 3.5)
+provides "hints" for more complex types.
 
 Let's see it in action.
 
@@ -124,16 +125,20 @@ def my_abs(x: Number) -> Number: ...
 With `Union`, you can now call `my_abs()` with any numbers and the IDE or `mypy`
 won't yell at you.
 
-Some more examples:
+Types for collections such as List, Set, Dict:
 
 ```python
-from typing import Optional, List
+from typing import List
 
-def get_even(list_: List[int]) -> Optional[List[int]]: ...
+def get_even(list_: List[int]) -> List[int]:
+    ...
 ```
 
-You and the IDE both know that `get_even()` can return both a `list`a
+this means that `get_even()` accepts a list of `int` values and returns such
+a list, too.
 of `int` or a `None` (probably if there aren't any even numbers).
+
+A dictionary where keys are strings, and values can be any type:
 
 ```python
 from typing import Dict, Any
@@ -141,7 +146,16 @@ from typing import Dict, Any
 def parse_request_data(data: Dict[str, Any]) -> None: ...
 ```
 
-This function only accepts data in the form of a `dict` with a `str` as the key.
+A function that may return an int or may not return anything!
+
+```python
+from typing import Optional, List
+
+def index_of(value: str, lst: List[str]) -> Optional[int]:
+    ...
+```
+
+You can use application classes as type hints, too:
 
 ```python
 class Question:
@@ -153,9 +167,9 @@ class Question:
         """
 ```
 
-Any kind of `class` can be used.
 
 Some other useful ones I've used:
+
 - All the standard type extensions: `List`, `Tuple`, `Set`, etc.
 - `Iterable` when I only require a function / method's input to be an iterable
   (that is, I can use a for loop with it at least once)
@@ -203,6 +217,7 @@ IDE regains knowledge of what type each variable in the call chain is, so it can
 now do code completion for you again, and whoever reads your code can now be a 
 little bit happier.
 
+
 ### Type hints for Classes
 
 You can use type hints to convey the meaning "*this class provides a behavior*".
@@ -224,14 +239,14 @@ class Scoreboard(Iterable):
       pass
 ```
 
-* If `Scoreboard` returns an `Iterator` whose values are (say) `int`, you can improve type checking by specifying this using the notation `Iteratable[type]`:
+* If `Scoreboard` returns an `Iterator` whose values are always `int`, you can improve type checking by specifying this using the notation `Iteratable[type]`:
 
 ```python
-from typing import Iterable, Iterator
+from typing import Iterable, Iterator, List
 
 class Scoreboard(Iterable[int]):
    def __init__(self):
-       self.data = range(0,10)
+       self.data: List[int] = []
 
    def __iter__(self) -> Iterator[int]:
       """This method should return an Iterator.
@@ -297,196 +312,4 @@ A good place to start is the first reference.
 [PEP 484](https://www.python.org/dev/peps/pep-0484/) the Typing module    
 [PEP 526](https://www.python.org/dev/peps/pep-0526/) annotations for variables    
 [PEP 3107](https://www.python.org/dev/peps/pep-3107/)    
-
-
----
-## Problems
-
-To do these problems you need `mypy`. Install it using:
-```bash
-$ pip install mypy
-```
-then run it on your Python code:
-```bash
-$ mypy path/to/yourfile.py
-```
-
-### 1. Fill in the blanks with type annotations that would make objects on the right pass `mypy` type check
-That is, `mypy` should not complain about anything.
-```
-x: <your answer> = <an object on the right>
-```
-no points for being too broad (if it's too broad, it doesn't help you with anything)
-
-**Example:**
-
-______int\_\_\_\_\_\_   0. `(3,)` or `(4,)`  ❌ # fails type check, no points  
-_____object\_\_\_\_   0. `(3,)` or `(4,)`  ❌ # passes type check, but too broad, no points  
-_____tuple\_\_\_\_\_   0. `(3,)` or `(4,)`  ⭕ # passes type check, but could be better, partial credits  
-___Tuple\[int]\_\_\_ 0. `(3,)` or `(4,)`  ⭕ # passes type check, full points  
-
-__________________   1. `'\u005e\u005e'` or `'just a string'`  
-__________________   2. `[<__main__.A object at 0x000001A6C4F18610>, <__main__.A object at 0x000001A6C4F18C40>]`  
-__________________   3. `[1, 2, 3, 4, 5]` or `[2.75, 5.5, 8.25]` or `[1, 2.]`  
-__________________   4. `{'one': 1, 'two': 2, 'three': 3}` but not `{'one': '1', 'two': '2'}`  
-__________________   5. `<QuerySet []>` or `range()`  
-__________________   6. `[(0, 5), (5, 0), (5, 5)]`    
-__________________   7. `lambda x: None`  
-__________________   8. `lambda: 'some string'`
-
-### 2. For each type annotation, give an example object that would pass `mypy` type check
-
-**Example:**
-
-&nbsp; 0. `Dict[str, Dict[str, Any]]`
-```pythonstub
-{'data': {'question_id': 34, 'choice_id': 132, 'error_msg': None}}
-```
-
-&nbsp; 1. `Iterable[Union[int, float]]`  
-
-&nbsp; 2. `Sequence[Dict[str, float]]`
-
-&nbsp; 3.  `Any`
-
-&nbsp; 4.  `None`
-
-&nbsp; 5.  `Dict[str, Optional[str]]`
-
-&nbsp; 6.  `Literal['r', 'rt', 'w', 'wt']`
-
-&nbsp; 7.  `N = TypeVar('Number', int, float); Tuple[N, N]`
-
-&nbsp; 8.  `Mapping[float, int]`
-
-
-### 3. Add appropriate type hints to these code snippets
-
-There should be type hints for all function/method's parameters and return value.
-Try to be forgiving for parameter types and specific for return type.
-
-**Example:**
-```python
-from typing import Callable, Iterable, Iterator
-
-# No.0
-def my_map(a: Callable, b: Iterable) -> Iterator:
-    return map(a, b)
-```
-
-**Problems:**
-```python
-from typing import *
-
-# No.1
-def swap_keys_and_values(dict_):
-    """Returns a dict with swapped keys and values."""
-    if not isinstance(dict_, dict):
-        raise TypeError("'self' must be a dict")
-    if len(set(dict_.values())) != len(dict_):
-        raise ValueError("values aren't unique, can't swap keys and values")
-    return {v: k for k, v in dict_.items()}
-
-# No.2
-def remove_duplicate(iterable):
-    """Returns a list with no duplicates."""
-    return list(set(iterable))
-
-# No.3
-def normalized(s):
-    """Returns a NFKC normalized str."""
-    import unicodedata
-    return unicodedata.normalize('NFKC', s)
-
-# No.4
-def count_chars(s, normalize=False):
-    """Returns a dict mapping from characters in ``s`` to their frequency."""
-    d = dict()
-    for c in s:
-        if normalized:
-            c = normalized(c)
-        if c not in d:
-            d[c] = 1
-        else:
-            d[c] += 1
-    return d
-```
-
-### 4. Fill in the blanks in the code so that the `mypy` type check passes
-
-**Example:**
-
-```python
-from typing import Any, Iterable, List, Tuple, TypeVar
-
-# No.0
-T = TypeVar('T')
-
-def group_up(iterable: Iterable[T], n: int) -> List[Tuple[Any, ...]]:
-    """Group up each consecutive element of the iterable given.
-
-    Args:
-        iterable (Iterable): The iterable to make pairs with
-        n (int): The length of each group to make
-
-    Returns:
-        A new list of grouped up elements.
-
-    Raises:
-        ValueError: When ``iterable`` is not of length c x n, where c
-            is an integer. (i.e. when there are left-over elements)
-    """
-    ##### code begins #####
-    lst = []
-    group = []
-    for elem in iterable:
-        group.append(elem)
-        if len(group) == n:
-            lst.append(tuple(group))
-            group.clear()
-    assert len(group) != n, "somehow group wasn't cleared"
-    if len(group) != 0:
-        raise ValueError("iterable has left-over elements '{}'"
-                         .format(group))
-    return lst
-    #####  code ends  #####
-```
-
-```python
-from typing import *
-
-# No. 1
-T = TypeVar('T')
-
-def pair_up(iterable: Iterable[T]) -> List[Tuple[T, T]]:
-    """Pairs up each consecutive element of the iterable given.
-
-    Args:
-        iterable (Iterable): The iterable to make pairs with
-
-    Returns:
-        A new list of paired up elements.
-
-    Raises:
-        ValueError: When ``iterable`` is not of length 2n, where n
-            is an integer. (i.e. when there is a left-over element)
-    """
-    ##### code begins #####
-    #####  code ends  #####
-
-# No.2
-def bar():
-    ##### code begins #####
-    #####  code ends  #####
-
-# No.3
-def bazz():
-    ##### code begins #####
-    #####  code ends  #####
-
-# No.4
-def buzz():
-    ##### code begins #####
-    #####  code ends  #####
-```
 

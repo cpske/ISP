@@ -288,9 +288,6 @@ Submit a project proposal using the Project Spreadsheet
     8. Revise the KU Polls domain model
     9. Implement the changes to the domain model
   - 2020: [Add authentication to the Todo app](assignment/week11/auth-exercise-todo)
-* [Review common refactorings](refactoring/Refactoring-Review.pdf)
-* [Logging](logging/) - you already did in KU Polls Iter 3
-* [Logging practice](logging/logging-practice)
 
 #### Assignment
 
@@ -299,16 +296,28 @@ Submit a project proposal using the Project Spreadsheet
 
 ### Week 12
 
-* More Refactoring - refactorings involving structure of classes, and refactorings for creating objects
-* Quiz on Refactoring
+* [Review common refactorings](refactoring/Refactoring-Review.pdf)
+* More Refactoring - involving structure of classes, or for creating objects
+  - [Refactoring Patterns](refactoring/Refactoring-Patterns.pdf)
+* [Type Checking](code-quality/Type-Checking.pdf)
+* Type Checking Exercise: [scorecard.py](type-hints/scorecard.py)
+* [Type Hints](type-hints)
+  - Another [Type Hints Intro](https://fastapi.tiangolo.com/python-types/) on FastAPI; really good, simple examples.
+* [Type Hints Practice](type-hints/type-hints-practice.doc)
+* [Logging](logging/) - you already did in KU Polls Iteration 3
+* [Logging practice](logging/logging-practice)
 
-* Feedback on Team Projects
-  - branches are not using Github Flow
-  - prepare to demo your work so far
-* [Movie Rental Refactoring, Part 2](assignment/week11/movie-rental2)
+
+Assignment:
+
+- [Movie Rental Refactoring, Part 2](assignment/week11/movie-rental2)
+- Team Projects: prepare to demo your work next week
+
 
 ### Week 13
 
+* OAuth 
+* Quiz on Refactoring
 * [Software Reviews](code-review/)
 * Project Demos
 
