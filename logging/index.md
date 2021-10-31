@@ -14,7 +14,7 @@ Presentation [Introduction to Logging](Logging.pdf)
 ## Practice
 
 Please do this [Logging Practice](logging-practice)
-with starter code in [demo_log.py](demo_log.py).
+with starter code in [logging_demo.py](logging_demo.py).
 
 ## Logging in Django
 
@@ -77,13 +77,13 @@ Exercise 1: Replace the "print" statements with log statements using level DEBUG
 
 ## Creating a "Decorator" for Logging
 
-What if you want to log each time a function is invoked and each time the function returns? That can be useful when debugging a function, such as the factorial function.
+What if you want to log each time a function is invoked and each time the function returns? That can be useful when debugging a function or understanding how recursion works.
 
 In Python, you can dynamically define new functions in code.
 A function can return a function, too (called "*higher level functions*").
 
-You can use this to write a "decorator" that wraps calls to another function.
-The wrapper is called a *Decorator* since it is used to "decorate" (add some extra behavior) to an existing function.
+Use this to write a "decorator" that wraps calls to another function.
+The wrapper is called a *Decorator* since it is used to "decorate" (add extra behavior) to an existing function.
 
 Here's a decorator that prints each time a function is called and prints the return value:
 
@@ -128,8 +128,40 @@ There are 2 ways to use this decorator.
 
 In both cases, when the function is called it will print both the call and returned value.
 
-Exercise 2: Define a `log_decorator` and use it to decorate the `factor` function instead of the log (or print) statements inside the function. 
+Exercise: Define a `log_decorator` and use it to decorate the `factor` function instead of the log (or print) statements inside the function. 
 Does it make the code cleaner and easier to read?
+
+
+## Configure Python Logging in Code
+
+This function contains examples of configuring Python logging in code,
+using a FileHandler, Formatter, and StreamHandler.
+
+For simple logging configuration, it much easier to use `basicConfig`
+instead of this.
+
+```python
+def configure():
+    """Configure loggers and log handlers."""
+    # write all messages to a file.
+    # For a real app, use a configurable absolute path to log file.
+    filehandler = logging.FileHandler("demo.log")
+    filehandler.setLevel(logging.DEBUG)
+    formatter = logging.Formatter('%(asctime)s %(name)s %(levelname)s: %(message)s')
+    filehandler.setFormatter(formatter)
+    # add the handler to the root logger, it will handle all log msgs
+    root = logging.getLogger()
+    root.setLevel(logging.NOTSET)
+    root.addHandler(filehandler)
+
+    # Define a console handler for messages of level WARNING or higher
+    console_handler = logging.StreamHandler()
+    console_handler.setLevel(logging.WARNING)
+    formatter = logging.Formatter(fmt="%(levelname)-8s %(name)s: %(message)s")
+    console_handler.setFormatter(formatter)
+    root.addHandler(console_handler)
+```
+
 
 ## Logging Services
 
@@ -143,3 +175,4 @@ Some logging services are:
 
 * [Loggly](https://loggly.com) log analysis and monitoring. Log monitoring service used by Pizza Hut :-).
 * [Sentry](https://sentry.io) has a free "developer" tier and toolkits to make it easy to send you app logs to Sentry.
+

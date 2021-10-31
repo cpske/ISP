@@ -1,33 +1,44 @@
-# Python decorators.
-# See: https://python-textbok.readthedocs.io/en/1.0/Functions.html#decorators
+"""
+A function decorator to perform logging.
 
-# Default log file for messages
-import sys
-logfile = sys.stdout
+See: https://python-textbok.readthedocs.io/en/1.0/Functions.html#decorators
+"""
 
 
 def log_decorator(fun):
-    """
-    Add logging to each function call.
-    Parameters:
-        :fun: a function to decorate
-    Returns:
-        the original function wrapped in a logging decorator
-    """
-    def new_fun(*args, **kwargs):
-        logfile.write("calling %s%s, kwargs=%s\n" % (fun.__name__, args, kwargs))
-        return fun(*args, **kwargs)
+    """A decorator for a function that logs each function call
+       and the return value.
 
-    return new_fun
+       The simplest way to use this decorator is as
+       an annotation in front of the function to decorate:
+       @log_decorator
+       def your_function(...)
 
-# You can apply a decorator just by annotating a function definition:
+       Arguments:
+           fun - a function to wrap.
+       Returns:
+           a decorated function that invokes fun
+    """
+    def wrapped_fun(*args, **kwargs):
+        # log the function call in format fun_name(arg1,...)
+        #print("%s%s, kwargs=%s\n" % (fun.__name__, args, kwargs))
+        argstring = ','.join(str(arg) for arg in args)
+        print(f"{fun.__name__}({argstring})")
+        ret = fun(*args, **kwargs)
+        if ret != None:
+            print(f"return {ret}")
+        else:
+           print("return")
+        return ret
+    return wrapped_fun
+
+
 @log_decorator
-def greet(name: str):
+def greet(name):
     print("Hello,", name)
 
-
 if __name__ == '__main__':
-    greet("SKE Nerds")
+    greet("Nerd")
 
     import math
 
@@ -40,4 +51,3 @@ if __name__ == '__main__':
     logmax = log_decorator(max)
     z = logmax(5, 99, -1000)
     print("max(5,99,-1000) is ", z)
-
