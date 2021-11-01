@@ -120,11 +120,11 @@ Refactoring Signs and Design Principles that support this change:
 
 ### 2. Add Attributes to Movie
 
-The revised Movie class has only a title. That's an anemic class. Add some useful features of real movies.
+The revised Movie class has only a title. That's an **Anemic Class**. Add some useful features of real movies.
 
 Add:
 * `year` - the year the movie was released
-* `genre` - list, tuple, or set of Strings representing *genre*.
+* `genre` - list, tuple, or set of Strings representing *genre* for a movie.
 * `is_genre(string)` - returns true if the string parameter matches one of the movie's *genre*.  
 
 Make Movie **immutable**. There is no reason for other classes to modify a Movie.
@@ -148,15 +148,16 @@ Name the factory `MovieCatalog`.
 
 * Create a MovieCatalog as described in class. It gets movie data from a CSV file (reference below).
 * It has a `get_movie(title)` method that returns a movie with matching title.
-* Try to be reasonably **efficient** - don't read the file every time `get_movie` is called!
+* Try to be reasonably **efficient** - **don't** read the file every time `get_movie` is called!
 ```python
 catalog = MovieCatalog()
-movie = catalog.get_movie("The Joy of C++")
+movie = catalog.get_movie("Mulan")
 ```
 
-For a programming challenge, try to use *lazy instantiation*.
+**Programming Challenge**: try to use *lazy instantiation*. 
+
 - define a generator that reads one line of data from the CSV file and yields a movie
-- get_movie(title) first checks if the `title` matches the title of movies already in the catalog. If not, it calls the generator to read more data (and create movies) until a matching title is found or end of data.
+- get_movie(title) first checks if the `title` matches the title of movies already in the catalog (a dict object). If not, it calls the generator to read more data (and adds more movies to the catalog) until a matching title is found or end of data.
 
 ### 4. Define a Factory Method for Price Codes
 
@@ -195,3 +196,7 @@ https://github.com/jbrucker/movierental
 Lines beginning with a '#' symbol are comments and should be ignored.
 
 I will add some more movies to the small file that is there now.
+
+## What to Submit
+
+Commit your work to your existing `movierental` repository on Github.
