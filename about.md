@@ -24,7 +24,7 @@ See below for how to join.
 
 **Scores**: <https://bit.ly/ISP2021-scores> for classwork and homework 
 
-**Student Github URLs**: [Repository URL Generator](repositories)
+**Student Github URLs**: [Repository URL Generator](repositories) | [KU Polls URLs](ku-polls-urls)
 
 
 [google-classroom-link]: https://classroom.google.com/c/MzczOTE1MjA0NDE4?cjc=ka25cph
