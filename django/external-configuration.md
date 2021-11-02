@@ -14,6 +14,7 @@ A typical Django `settings.py` file contains configuration data such as:
 ```
 SECRET_KEY = 'AElek13407aseasej39'
 DEBUG = True
+ALLOWED_HOSTS = ['localhost', '158.108.0.0']
 TIME_ZONE = 'Asia/Bangkok'   # you didn't write 'UTC', did you?
 
 DATABASES = {
@@ -52,12 +53,19 @@ In Python, one way to handle configuration values is to use **environment variab
 ```python
 import os
 # Get the user's login name from the environment
-print("Hello, ", os.getenv("USERNAME"))
+>>> os.getenv("USERNAME")
+'user'                # if you are logged in as "user"
 # on Windows use HOMEPATH instead of HOME
-print("Your home directory is ", os.getenv("HOME"))
+>>> os.getenv("HOME")
+'/home/user'          # typical home directory on Linux
+>>> os.getenv("foo")
+                      # returns nothing for undefined envvar
+>>> os.getenv("foo", "default")
+'default'             # returns a default value for undefined envvar
 ```
 
-In a Django `settings.py` we can write:
+In a Django `settings.py` we can use the environment to get
+sensitive variables (and include default values):
 ```python
 SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = bool(os.getenv('DEBUG', 'False'))
@@ -66,12 +74,18 @@ TIME_ZONE = os.getenv('TIME_ZONE', 'UTC')
 STATIC_URL = os.getenv('STATIC_URL','/static/')
 ```
 
-and then set environment variables for each of these names.
+and set environment variables for each of these:
 In Bash you can write:
 ```shell
 SECRET_KEY=AElek13407aseasej39
 DEBUG=True
 TIME_ZONE='Asia/Bangkok'
+```
+in MS Windows use:
+```shell
+SET SECRET_KEY=AElek13407aseasej39
+SET DEBUG=True
+SET TIME_ZONE='Asia/Bangkok'
 ```
 Put these values into a file and then load them into your shell's environment
 before running the web app.
@@ -99,19 +113,20 @@ In Django, if DEBUG=True and an error occurs, Django prints debugging output in 
 
 ## Packages for Externalizing Configuration Data
 
-These Python packages provide a nice solution for externalizing configuration data:
+Two Python packages provide nice solutions for externalizing 
+configuration data (you only need one of python-decouple or django-environ):
 
 * **python-decouple** - package for reading configuration data from a file or environment variables.  It can return values other than Strings (such as boolean or a dictionary) by specifying a `cast`.
-
-* **dj-database-url** - package to parse a Database URLs in standard notation (a string) and return a Django DATABASE_ENGINE dictionary. Use with `python-decouple`.
 
 * **django-environ** - similar to `python-decouple`, but specific to Django. 
   - Has convenience methods for converting other attributes to the data types used in Django's settings.py.
   - Can parse a database URL into the Django DATABASES setting format.
 
+* **dj-database-url** - package to parse a Database URLs in standard notation (a string) and return a Django DATABASE_ENGINE dictionary. Use this with `python-decouple`.
+
 Comparing these, `django-environ` has convenience methods for converting strings to Django settings types. `python-decouple` is more general-purpose and has better documentation.
 
-## python-decouple for External Configuration Data
+## python-decouple
 
 This is a general purpose module for externalizing configuration data.
 
@@ -133,6 +148,7 @@ DEBUG=True
 TEMPLATE_DEBUG=True
 SECRET_KEY=ARANDOMSECRETKEY
 DATABASE_URL=mysql://myuser:mypassword@myhost/mydatabase
+ALLOWED_HOSTS='localhost,.herokuapp.com'
 ```
 
 Instead of `.env` you can use a `settings.ini` file, which contains named sections.
@@ -143,18 +159,21 @@ Instead of `.env` you can use a `settings.ini` file, which contains named sectio
 DEBUG=True
 SECRET_KEY=ARANDOMSECRETKEY123
 DATABASE_URL=mysql://myuser:mypassword@myhost/mydatabase
+ALLOWED_HOSTS='localhost,.herokuapp.com'
 ```
 
 ### Using decouple in Django's `settings.py`
 
 In your site's `settings.py` file:
 ```python
-from decouple import config
+from decouple import config, Csv
+
 # optional module to parse database configuration from a single database URL
 from dj_database_url import parse as db_url
 
 DEBUG = config('DEBUG', default=False, cast=bool)
 SECRET_KEY = config('SECRET_KEY')
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='localhost', cast=Csv())
 
 DATABASES = {
      # use cast=db_url requires package dj-database-url
@@ -236,14 +255,11 @@ DATABASES = {
     }
 ```
 
-Docs: https://django-environ.readthedocs.io/en/latest/    
-Source: https://github.com/joke2k/django-environ 
-
 ## References 
 
-* python-decouple: https://pypi.org/project/python-decouple/
-* https://stackoverflow.com/questions/43570838/how-do-you-use-python-decouple-to-load-a-env-file-outside-the-expected-paths
-* django-environ: https://django-environ.readthedocs.io/en/latest/, Source: https://github.com/joke2k/django-environ 
+* python-decouple: <https://pypi.org/project/python-decouple/>
+* <https://stackoverflow.com/questions/43570838/how-do-you-use-python-decouple-to-load-a-env-file-outside-the-expected-paths>
+* django-environ: <https://django-environ.readthedocs.io/en/latest/>, Source Code: <https://github.com/joke2k/django-environ>
 * Java API doc for `java.util.Properties` explains how to use Properties in Java
 
 [12-factor-app]: https://12factor.net/
