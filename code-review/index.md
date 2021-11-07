@@ -108,9 +108,9 @@ For authors of code under review:
 
 Recommended practices from professionals:
 
-* [Code Review Best Practices from SmartBear](code-revew-best-practices#best-practices-from-smartbear)    
-* [Code Review Best Practices from Perforce](code-revew-best-practices#best-practices-from-perforce)    
-* [Code Review Best Practices from JetBrains](code-revew-best-practices#best-practices-from-jetbrains)    
+* SmartBear: <https://www.kessler.de/prd/smartbear/BestPracticesForPeerCodeReview.pdf>
+* Perforce: <https://www.perforce.com/blog/qac/9-code-review-best-practices>
+* JetBrains: <https://blog.jetbrains.com/upsource/2018/08/30/code-review-best-practices/>
 
 All links in the file [Code Review Best Practices](code-revew-best-practices).
 
