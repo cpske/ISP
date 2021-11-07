@@ -5,26 +5,17 @@ navigation_order: 4
 
 ## About the Course
 
-Monday 10-12:00 and 13-16:00 starting 9 Aug 2021. 
 
-**Location:** course meets **online** using [Google Classroom][google-classroom-link] and [Google Meet][google-meet-link]. See below for how to join. (Normal classroom is E204.)
-
-**Online Meetings:** Meet using Google Meet at 10:00 AM every Monday. 
-See below for how to join. 
-
-**Github**: we use [Github](https://github.com) for programming work, so you must have a Github account. Using Github is described in class.
-
-**Course Schedule**: Weekly Schedule and Assignments are on [Google Classroom/Classwork][classroom-classwork].
-
-**Course Material:** All material is on <https://cpske.github.io/ISP>, with links on [Google Classroom][classroom-classwork].    
-
-**Discord:** For Q&A, discussions, meetings <https://discord.gg/9FrRt4q>
-
-**Preparation**: Please do this [Sign-up and Preparation](assignment/week1/signup-and-software) before the first class.
-
-**Scores**: <https://bit.ly/ISP2021-scores> for classwork and homework 
-
-**Student Github URLs**: [Repository URL Generator](repositories) | [KU Polls URLs](ku-polls-urls)
+| **Time** | Monday 10:00-12:00, 13:00-16:00 starting 9 Aug 2021. 
+| -------------|--------------------------------------------------------
+| **Location** | Meet **online** using [Google Classroom][google-classroom-link] and [Google Meet][google-meet-link]. See below for how to join. 
+| **Github** | we use [Github](https://github.com) for programming work, so you must have a Github account. Using Github is described in class.
+| **Schedule & Assignments** | Weekly Schedule is on [Google Classroom/Classwork][classroom-classwork].
+| **Course Material** | All material is on <https://cpske.github.io/ISP>, with links on [Google Classroom][classroom-classwork].    
+| **Discord** | For Q&A, discussions, TA meetings <https://discord.gg/9FrRt4q>
+| **Sign-up & Preparation** | Please do this [Sign-up and Preparation](assignment/week1/signup-and-software) before the first class.
+| **Scores** | <https://bit.ly/ISP2021-scores> for classwork and homework 
+| **Student Repos** | [KU Polls Repositories](ku-polls-urls) \| [Repository Link Generator](repositories)
 
 
 [google-classroom-link]: https://classroom.google.com/c/MzczOTE1MjA0NDE4?cjc=ka25cph

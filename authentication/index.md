@@ -69,7 +69,9 @@ Use at least 2 of these:
 * something you have
 * something you are
 
-Class Exercise: Which of the above auth methods are "something you know", "something you have", and "something you are"?
+Class Exercise: 
+
+* Give examples of each of the above
 
 ## Third-party Authentication 
 

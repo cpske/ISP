@@ -2,7 +2,8 @@
 title: Code Review
 ---
 
-Presentation: [Code Reviews](Reviews.pdf)
+Presentation: [Software Reviews](Reviews.pdf)
+
 
 ## Benefits of Code Review
 
@@ -34,7 +35,7 @@ Code review is also more effective at finding security vulnerabilities, provided
 
 2. **Desk Check** ask another developer to review your code (at his desk).  Informal and useful to find defects and get ideas for improvement.
 
-3. **Walkthrough** code review meeting with a small number of people, where one person presents or "walks through" the code line by line, while others look for defects, ask questions to improve their understanding, and share ideas for alternate implementations.
+3. **Walk Through** code review meeting with a small number of people, where one person presents or "walks through" the code line by line, while others look for defects, ask questions to improve their understanding, and share ideas for alternate implementations.
 
 4. **Pair Programming** one person writes code while the other reviews and "navigates". Maybe not a "review" since it occurs at time of creation.
 
@@ -61,7 +62,7 @@ If you review too fast then you will overlook defects or lose opportunity to sha
 
 A checklist will make your code reviews more consistent.
 
-Good example checklists:
+Good checklists:
 
 * [DZone Code Review Checklist](https://dzone.com/articles/sample-code-review-checklist) with 14 items.
 * DZone [Java Review Checklist](Java-Code-Review-Checklist.pdf) with 5 categories of items
@@ -72,6 +73,14 @@ Good example checklists:
 * Concise, practical [Checklist PDF](https://courses.cs.washington.edu/courses/cse403/12wi/sections/12wi_code_review_checklist.pdf) from U. of Washington.
 * [Things to Include in your Checklist](https://www.codementor.io/blog/code-review-checklist-76q7ovkaqj) from codementor.io. High-level categories for reviews.
 [PSP](code-review/PSP-Review-Script-Checklist.pdf)
+
+Good Checklists From ISP Students:
+
+- [Vacseen Project Checklist](https://docs.google.com/document/d/1sJqZ3WlXeycAEXh6zB1JEkJHjNAY0ihp8oIT0eFlDfk/edit) (2019)
+- [KooCook Project Script & Checklist](https://docs.google.com/document/d/1GSI0FGx4NZyqwAVUOYt641X0tsdqfeRz3O-R3XnfGFE/edit) (2019), very detailed
+- [KU Event Regis](https://docs.google.com/document/d/1pRlqTeCQEq9T0g3NPf8yt26aUKCSKC3rqEyI3L4xy_I/edit#heading=h.imm89g97i44a) (2019)
+- [Real Estate Rental](https://docs.google.com/document/d/1plSBYDK-mYTJ-u1JY7BV-esmCcP8XGtpmY4gUwgzB0g/edit) (2020)
+
 
 
 ## Advise for Reviewers and Reviewees
@@ -126,9 +135,14 @@ Code Reviews should look for security vulnerabilities including:
 - [ ] buffer overflows
 
 
+## Videos
+
+- [How to review someone else's code](https://www.youtube.com/watch?v=TlXy_i27N3w) 8 minutes, Codecademy
+- [How to Do Code Reviews Like a Human](https://www.youtube.com/watch?v=0t4_MfHgb_A) by developer who worked at Microsoft & Google. 10 concrete suggestions.
+
+
 ## Resources
 
-* [Improving Software Quality through Inspections](Improving Software Quality through Inspections.pdf) a classic paper
 * [Reviews](Reviews-Stellman-and-Greene.pdf), Chapter 5 in *Applied Software Project Management* by Stellman and Greene.
 * [Code Review Guidelines for Humans](https://phauer.com/2018/code-review-guidelines/) good article, concrete with illustrations, not too long.
 
@@ -137,7 +151,9 @@ Code Reviews should look for security vulnerabilities including:
 * [Best Kept Secrets of Peer Code Review](www.codereviewbook.com) free download at  www.CodeReviewBook.com.  Describes 5 types of peer code reviews and how to do them.
   - Mirror [Best Kept Secrets of Peer Code Review](https://static1.smartbear.co/smartbear/media/pdfs/best-kept-secrets-of-peer-code-review_redirected.pdf)
 * Summary of [Best Practices For Peer Code Review](https://www.kessler.de/prd/smartbear/BestPracticesForPeerCodeReview.pdf) from SmartBear.com
-  - Their results seems biased.  They sell a tool for remote code review.
+  - Their results seem biased.  They sell a tool for remote code review.
+
+* [Improving Software Quality through Inspections](Improving Software Quality through Inspections.pdf) a classic paper
 
 [review-board]: https://www.reviewboard.org/
 [review-board-github]: https://github.com/reviewboard/reviewboard

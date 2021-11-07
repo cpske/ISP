@@ -3,15 +3,33 @@ title: Projects
 navigation_order: 3
 ---
 
-[KU Polls Student Repositories](ku-polls-urls) \| [Repository Link Generator](repositories)
-
 ## ISP 2021 Team Projects
 
 
+| Project Home   |  Team Members   |
+|:---------------|:----------------|
+| [AniCheck](https://github.com/Ing140943/anicheck) | Bannakorn	Chonchanok	Phinyaphak	Setthanat	|
+| [Beattosetto](https://github.com/beattosetto/beattosetto) | Panuwat	Phawit 	Pontakorn	Siraphop 	Sittipat|
+| [GarnBarn](https://github.com/GarnBarn) | Pakapop	Panu	Poomtum	Siratee	|
+| [KiwiMusic](https://github.com/SoravitPete/KiwiMusic) | Krittamate	Raweerot	Soravit	Taweesap	|
+| [KU Lend](https://github.com/ChanunyaO/KU-Lend.git) | Chanunya	Kul	Pattanan	Sujinunt	Thakonwan|
+| [KUIZ](https://github.com/ParnThanatibordee/KUIZ) | Noppharut	Sirawich	Thanatibordee	Thanathip	|
+| [Skdue](https://github.com/patkamon/skdue) | Ditthapong	Kittison	Natchanon	Patkamon	Thanabardi|
+| [ThaiMoung](https://github.com/Jakarin-Jojo/ThaiMoung) | Bhokin	Chatchawarin	Jakarin	Smith	|
+| [ThaiRepose](https://github.com/ThaiRepose/thairepose) | Nabhan	Tanin	Tawan	Vitvara	|
+| [WongNork](https://github.com/WongNork/wongnork) | Chayayot	Krasin	Panitan	Sarocha	|
 
-| Project Home   | Team Members   |
-|:---------------|:---------------|
-|                |                |
+Documents & Info
+- [Anicheck wiki](https://github.com/Ing140943/anicheck/wiki)
+- [Beattoseto wiki](https://github.com/beattosetto/beattosetto/wiki)
+- [Garnbarn Frontend](https://garnbarn.github.io/garnbarn-frontend/)
+- [KiwiMusic wiki](https://github.com/SoravitPete/KiwiMusic/wiki)
+- [KU-Lend wiki](https://github.com/ChanunyaO/KU-Lend/wiki)
+- [KUIZ wiki](https://github.com/ParnThanatibordee/KUIZ/wiki)
+- [SKdue wiki](https://github.com/patkamon/skdue/wiki)
+- [ThaiMoung wiki](https://github.com/Jakarin-Jojo/ThaiMoung/wiki)
+- [ThaiRepose wiki](https://github.com/ThaiRepose/thairepose/wiki)
+- [Wongnork wiki](https://github.com/WongNork/wongnork/wiki)
 
 
 ## ISP 2020 Team Projects
@@ -32,3 +50,5 @@ URLs of Deployed Projects: <https://bit.ly/ISP2020-projects>
 | [JIX Webboard for friends with mutual interests](https://github.com/jix-666/jix) | Anusid, Tatpol, Sirapop, Siravit |
 | [KU-Hub Webboard](https://github.com/NarawishS/ku-hub) | Bheem, Narawish, Teeranut, Sahatsawat |
 | [Your Fitness Pal](https://github.com/kinkinkinxd/YourFitnessPal) | Panitan, Kittitouch, Peerasu, Purich |
+
+
