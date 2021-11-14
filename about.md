@@ -58,6 +58,7 @@ def email(firstname: str, lastname: str, nlast: int = 1) -> str:
 
 ```java
 // Java - in Java the 3rd parameter is required, e.g. email("Santa", "Claus", 1)
+static final String DOMAIN = "ku.th";
 /**
  * Return the Email address for a KU person. Works only for Thai names.
  * @param firstname person's first name
@@ -66,7 +67,6 @@ def email(firstname: str, lastname: str, nlast: int = 1) -> str:
  * @return email address, of course
  */
 public static String email(String firstname, String lastname, int nlast) {
-    final String DOMAIN = "ku.th";
     return String.format("%s.%s\u0040%s",
            firstname,
            lastname.substring(0, nlast),

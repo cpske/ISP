@@ -316,8 +316,6 @@ Assignment:
 
 ### Week 13
 
-* OAuth 
-* Quiz on Refactoring
 * [Software Reviews](code-review/)
 * Project Demos
 
@@ -331,26 +329,27 @@ Assignment:
 
 ### Week 14
 
-* Schedule dates for final exam and project presentations.
+* Final exam date. Schedule date(s) for project presentations.
+* The [12-Factor App](web/12FactorApp.pdf) - 7 factors that apply to your projects
+* Review some Agile Practices (week 10 assignment), including comments in code.
 * Review Movie Rental refactoring problems.
-* Static and Dynamic typing.
-* [Type hints](type-hints/) in Python to find bugs and improve refactoring.
-* [Logging](logging/) (briefly).
-* Project demos.
+* Remaining project demos.
+* Testing Pyramid and End-to-End Testing in [Web Testing](testing/WebTesting.pdf)
+* [Selenium](testing/Selenium-intro) for testing web applications. Some slides in [Web Testing](testing/WebTesting.pdf)
+* [Selenium Exercise](testing/SeleniumExercise.pdf) scrape search results from DuckDuckGo
 
 #### Assignment
 
-* Team assignment: create installation instructions for your project
+* Team assignment: 
+  1. create installation instructions for your project
+  2. use a virtualenv for local installation
 * Individual assignment: [install and run another team's project](assignment/week15/installation-testing)
   - Post issues for any problems in their installation instructions.
   - Goal is to find problems with installation and setup, not in the application itself (that is next week's Bug Bounty assignment).
 
+
 ### Week 15
 
-* The [12-Factor App](web/12FactorApp.pdf) - 7 factors that apply to your projects
-* The Testing Pyramid and End-to-End Testing in [Web Testing](testing/WebTesting.pdf)
-* [Selenium](testing/Selenium-intro) for testing web applications in [Web Testing](testing/WebTesting.pdf)
-* [Selenium Exercise](testing/SeleniumExercise.pdf) scrape search results from DuckDuckGo
 
 #### Assignment
 
@@ -360,7 +359,6 @@ Assignment:
 
 ### Week 16
 
-* "Why" refactoring and refactoring benefits, both in general and for specific refactorings.
 * Review
 * Bug Hunting - find problems in other teams' software
 
