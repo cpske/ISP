@@ -327,6 +327,7 @@ Assignment:
 * [Create a Code Review Script and Checklist](assignment/week13/code-review). 
   - Write them in your project wiki and add links from your project README.md
 
+
 ### Week 14
 
 * Final exam date. Schedule date(s) for project presentations.
@@ -340,29 +341,23 @@ Assignment:
 
 #### Assignment
 
+* [Link Scanner](assignment/week15/selenium) write an app to scan and test all links on a web page 
 * Team assignment: 
   1. create installation instructions for your project
   2. use a virtualenv for local installation
-* Individual assignment: [install and run another team's project](assignment/week15/installation-testing)
-  - Post issues for any problems in their installation instructions.
-  - Goal is to find problems with installation and setup, not in the application itself (that is next week's Bug Bounty assignment).
-
-
-### Week 15
-
-
-#### Assignment
-
-* [Link Scanner](assignment/week15/selenium) write an app to scan and test all links on a web page 
 * Team Assignment: deploy your application to a cloud service
 
 
-### Week 16
+### Week 15
 
 * Review
 * Bug Hunting - find problems in other teams' software
 
 #### Assignment
+
+* Individual assignment: [install and run another team's project](assignment/week15/installation-testing)
+  - Post issues for any problems in their installation instructions.
+  - Goal is to find problems with installation and setup, not in the application itself (that is next week's Bug Bounty assignment).
 
 * [Bug Bounty](assignment/week15/bug-bounty) - try to find bugs in deployed projects of other teams 
   - URLs of deployed projects are shown in Google Sheet for Project Testing
