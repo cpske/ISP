@@ -1,0 +1,66 @@
+SKDue
+=====
+- djangorestframework
+- nginx
+- digital ocean
+
+Front:
+- Vue.js
+- Bulma
+- FullCalendar - calendar template
+
+Good presentation using Google Slides.
+
+Good English speaking.
+
+Process: 2 iterations -> 1 deployment
+
+* token-based authenticatoin
+* event tags
+
+GarnBaan
+--------
+Firebase - use for OAuth, get id-token (JWT)
+Let's Encrypt
+Apache httpd - mod_uwsgi
+Line
+DjangoRestFramework 
+Google Cloud - VM (compute engine)
+
+Front-end
+Vue.js
+Vue Material
+
+Siratee - good English presentation
+Poomtum - present demo portion
+Pakapop - back-end documentation
+
+KUIZ
+-------
+Format of questions?
+ - multiple choice
+ - fill in blank
+ 
+Thai Repose
+-----------
+Search has auto-complete
+implemented OAuth
+Use Google to get places and images
+
+KiwiMusic
+----------
+login
+blog
+have not implemented any music features
+
+ThaiMoung
+----------
+Web Forum for trend and drama.
+Have OAuth using social-auth-app-django
+
+WongNork
+---------
+Basic authentication, will add OAuth this week.
+Expense: low, medium, high
+Logout - on main screen
+Restaurants from TripAdvisor API

@@ -36,7 +36,7 @@ and one more:
 Many companies have an "OAuth Playground" where you try their OAuth services using a dummy account.
 
 - [OAuth Playground](https://www.oauth.com/playground/) on oauth.com
-- [Google OAuth Playground](https://developers.google.com/oauthplayground/)
+- [Google OAuth Playground](https://developers.google.com/oauthplayground/) for experimenting with different Google APIs
 
 ## OAuth Flows and Grant Types
 
@@ -47,8 +47,9 @@ to access the user's resources.
 | Flow           | Application Type                  |
 |----------------|-----------------------------------|
 | Authorization Code | Web apps where logic is on backend and private, so it can hold a secret key used to get an access token. |
+| Implicit Grant | Single page web apps (logic runs in web browser) or native/mobile app. 
 | Resource Owner Password Credential  | Application that cannot launch a web browser. The user gives his password to the app, which uses it to access user's Resources. Requires high trust between user and app. |
-| Implicit       | Single page web apps (logic runs in web browser) or native/mobile app. 
+| PKCE           | Extension to implicit flow that adds a random secret to prevent CSRF and other attacks. |
 
 ## Who Can Access Your Data?
 
@@ -66,3 +67,10 @@ to access the user's resources.
    - Choose "Settings & Privacy"
    - Choose "Settings" (*why is Facebook making this info so hard to access?*)
    - Select "Apps & Websites" (?) from left side 
+
+## Using Google OAuth
+
+- [OAuth 2.0 for Web Server Applications](https://developers.google.com/identity/protocols/oauth2/web-server) for apps where authentication and logic runs on server side
+- [Oauth 2.0 for Client-side Web Apps](https://developers.google.com/identity/protocols/oauth2/javascript-implicit-flow) for apps where logic and resource access are done in user's browser (using Javascript)
+
+both pages have good explanation of the steps involved.
