@@ -22,6 +22,7 @@ Try to find defects (bugs) in other teams' apps, using the cloud-deployed versio
 - Navigation errors: Links that don't work or go to the wrong page.  Inability to navigate, such as cannot get back to main page without using browser Back button). Any valid request that returns a 404 Not Found response.
 - Anything that causes the app to become unresponsive, return an exception page, or a 5xx status code page.
 - Anything that fails to work.
+- Installation instructions don't work. You tried to install and run it locally using installation instructions in project's Github repository, but they don't work. This includes missing steps.
 - Other perceived problems
 
 ## Testing and Reporting
@@ -66,6 +67,7 @@ Use these labels:
 * **bug** - if you confirm its a bug that hasn't been reported before.
 * **duplicate** - the issue duplicates another issue. Add a comment like "Duplicates #18" to the issue, and close it.
 * **question** - request for more information is needed, because the problem isn't clear or you can't reproduce it.  Add **bug**, **duplicate**, or **not a bug** label when you understand the issue.
+* **cannot reproduce**
 * **not a bug** - if you can't reproduce it, or conclude that its not a bug. You should explain *why* its not a bug in your comment closing the issue.
 
 

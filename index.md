@@ -20,6 +20,7 @@ Please do this before the course starts. Otherwise, do it in Week 1.
 * [Sign-up, Survey, and Required Software](assignment/week1/signup-and-software)
 * Read [About the course](about) for essential class resources & how to contact TAs.
 
+
 ### Week 1
 
 * [Introduction to course](introduction/)
@@ -33,7 +34,6 @@ Please do this before the course starts. Otherwise, do it in Week 1.
 * Exercise: apply the Python coding standard
 * Programming 2 Review, basic Python and O-O concepts.
 * Exercise: Programming Skill Assessment
-
 
 #### Assignment
 
@@ -59,6 +59,7 @@ Please do this before the course starts. Otherwise, do it in Week 1.
 * Create a Github Repo of Git "how to" answers.  Assignment on Github Classroom: <https://classroom.github.com/a/q7wONzhR>
 * Create a Burn-down chart for a Sprint. Details on Google Classroom.
 
+
 ### Week 3
 
 * **Preparation:** install ncat on your computer and TEST IT: <https://nmap.org/ncat/>.
@@ -77,6 +78,7 @@ Please do this before the course starts. Otherwise, do it in Week 1.
   - [git-remote-commands](assignment/week3/git-remote-commands)
 * [KU Polls Project Inception](assignment/week3/ku-polls), initialize `ku-polls` repo, write a vision statement and requirements
   - Background for Vision Statement: [vision](assignment/ku-polls/vision)
+
 
 ### Week 4
 
@@ -98,7 +100,6 @@ Please do this before the course starts. Otherwise, do it in Week 1.
   - use correct repo structure! No extra layer of directories.
 
 
-
 ### Week 5
 
 * Review progress on KU Polls iteration 1.
@@ -115,7 +116,6 @@ Please do this before the course starts. Otherwise, do it in Week 1.
   - add default landing page (redirect)
   - externalize configuration data and secrets
 
-
 #### Assignment
 
 * (Not assigned in 2020) Questions about Agile coding based on PAD - agile-and-coding.md
@@ -130,6 +130,7 @@ Please do this before the course starts. Otherwise, do it in Week 1.
   - Google Form: <https://forms.gle/HWLQ5retVNoquSJ38> (old version)
   - Copy of questions: <https://cpske.github.io/ISP/assignment/week4/github-flow-questions> (not all questions included)
 * [KU Polls Iteration 2](assignment/ku-polls/iteration2.md)
+
 
 ### Week 6
 
@@ -149,9 +150,8 @@ Please do this before the course starts. Otherwise, do it in Week 1.
 * Introduction to Database - *this may be moved to week 7 if not enough time*
   - [Brief Introduction to Database](database/Database-Basics.pdf)
 * Database Exercise
-  - Database practice in class: <https://cpske.github.io/ISP/assignment/week6/database-exercise>
+  - Database practice in class: <https://cpske.github.io/ISP/assignment/week6/database-exercise> <!-- should be week7 -->
   - View & describe the KU Polls database schema using a database browser.
-
 
 #### Assignment
 
@@ -169,6 +169,7 @@ Submit a project proposal using the Project Spreadsheet
   * <http://bit.ly/ISP2021-projects> to submit your team and proposal
   * <http://bit.ly/ISP2020-projects> last year's proposals
 
+
 ### Week 7
 
 * [Testing in Django](testing/WebTesting.pdf) - how to test models, views, url dispatcher, and templates
@@ -178,7 +179,6 @@ Submit a project proposal using the Project Spreadsheet
 * ORM Practice - interactively use Django's ORM commands to hack the U.S. presidential election
   - <https://drive.google.com/open?id=10c6lLZwzyZU6UOKtw0zFUpIHLiWKPad2nOZpwarqHEE&authuser=1>
 * Review some previous material and assignments
-
 
 #### Assignment
 
@@ -232,6 +232,7 @@ Submit a project proposal using the Project Spreadsheet
   - Add "badges" to your KU Polls README.md for Travis and CodeCov status
   - Site has **lots** of badges: [Checkstyle](https://github.com/checkstyle/checkstyle)
 
+
 ### Week 9
 
 * Review CI assignment
@@ -246,12 +247,11 @@ Submit a project proposal using the Project Spreadsheet
 * Anything on <https://refactoring.guru/refactoring> may be on a quiz!
 * User Stories - write stories for team projects
 
-
 #### Assignment
 
 * Read <https://refactoring.guru/refactoring> 
 * Movie Rental Refactoring <https://classroom.github.com/a/_qGEboUn>, Part 1
-* Read the articles in [Agile Practices](assignment/week8/agile) (there will be quiz on this) 
+* Read the articles in [Agile Practices](assignment/week9/agile-practices) (there will be quiz on this) 
 * Read tips from *Practices of an Agile Developer* ("Tips" sections in assignment)
 
 
@@ -272,6 +272,7 @@ Submit a project proposal using the Project Spreadsheet
 
 * (Not in 2021) *Refactor* one of your projects or someone else's
   - <https://cpske.github.io/ISP/assignment/week10/refactoring>
+
 
 ### Week 11
 
@@ -310,7 +311,7 @@ Submit a project proposal using the Project Spreadsheet
 
 Assignment:
 
-- [Movie Rental Refactoring, Part 2](assignment/week11/movie-rental2)
+- [Movie Rental Refactoring, Part 2](assignment/week12/movie-rental2)
 - Team Projects: prepare to demo your work next week
 
 
@@ -362,3 +363,8 @@ Assignment:
 * [Bug Bounty](assignment/week15/bug-bounty) - try to find bugs in deployed projects of other teams 
   - URLs of deployed projects are shown in Google Sheet for Project Testing
   - Top bug hunters will earn extra assignment points
+
+<a></a>
+<a href="#week-1"></a>
+<a href="#week-8"></a>
+<a href="#schedule"></a>

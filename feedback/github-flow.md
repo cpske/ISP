@@ -16,18 +16,20 @@ Two actions don't occur in the flow. Write "N/A" for those actions.
 
 
 | Action                              | Sequence |
-|-------------------------------------|----------|
+|-------------------------------------|:--------:|
+| Pull master to your local machine   |     0     |
 | Create a local branch for your work |     1    |
-| Push your branch to Github          |          |
-| Implement and **test** your feature |          |
-| Open a Pull Request                 |          |
-| Open an issue with tag "Pull Request" |        |
-| Implement team suggestions and rerun tests  |          |
-| Wait for the team to comment on your work |      |
-| Merge your branch into master       |          |
-| Merge master into your branch, then rebase master |    |
-| Push your copy of master to Github  |          |
-| Pull master to your local machine   |          |
-| Push your branch to Github          |          |
-| Close the Pull Request or Issue     |          |
+| Push your branch to Github          |     3     |
+| Implement and **test** your feature |     2     |
+| Open a Pull Request                 |     4     |
+| Open an issue with tag "Pull Request" |    X   |
+| Implement team suggestions and rerun tests  |   6   |
+| Wait for the team to comment on your work |   5   |
+| Merge your branch into master (on your machine)    |   10     |
+| Merge master into your branch, then rebase master |   X  |
+| Push your copy of master to Github  |     11   |
+| Pull master to your local machine   |     9    |
+| Push your branch to Github          |    7      |
+| Team agrees the code should be merged | 8 |
+| Close the Pull Request or Issue     |    `12    |
 
