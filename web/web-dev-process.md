@@ -10,7 +10,7 @@ in the project, but don't become *paralyzed* trying to get everything.
    * Identifying users also helps in design.
    * Write this down.
 
-1. Identify functional and non-functional requirements.
+2. Identify functional and non-functional requirements.
    * Focus on the more important ones. What should this app do?
    * Write them down. Divide into functional and non-functional.
    * Not necessary to be thorough or complete.

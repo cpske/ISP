@@ -1,3 +1,7 @@
+---
+Title: Review Questions on Logging, 
+---
+
 1. Where should a 12-factor web application record log messages?
 
    - Write log message to standard output (stdout).  
@@ -37,7 +41,7 @@
    - Include the web server as part of your application.
 
    In the old days, developers packaged web apps in a standard format such as WAR (Java)
-   or WSGI, and deployed them in a web app server such as Tomcat, Glassfish, or Apache Httpd.
+   or WSGI, and deployed the package to a web app server such as Tomcat, Glassfish, or Apache Httpd.
    The web server is a separate application, and usually runs as a daemon (background process).
    Many apps can run in the same server (also called a 'container'), and the 
    containers provide a lot of functionality, such as maintaining access logs,
@@ -47,13 +51,13 @@
    And running multiple apps in one container means that one app can suffer 
    if another app is using all the compute resources.
 
-   To simplify deployment and make web apps more portable, the current approach 
-   is for web apps to be (almost) completely self-contained.
+   To make deployment more reliable and make web apps more portable, 
+   the current approach is for web apps to be mostly self-contained.
    The web server is included as part of the application.
-   For Python apps, include Gunicorn with your app.
-   For Java, use the Jetty embeddable web server.
+   For Python apps, include Gunicorn or uWSGI with your app.
+   For Java, include Jetty embedded web server.
 
-   I wrote "almost self-contained", because apps do depend on some external services,
+   I wrote "mostly self-contained", because apps do depend on some external services,
    such as those in the next question.
 
 4. For "backing services" such as a database or e-mail service, how should an application handle these services?

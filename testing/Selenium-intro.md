@@ -145,6 +145,22 @@ if len(elements) > 0:
     browser.get(url)
 ```
 
+## Selenium `find_element` Method and `By` Class
+
+Selenium WebDriver has a general `find_element` method that can handle
+all the above cases:
+```python
+from selenium.webdriver.common.by import By
+
+# find a Login link
+element = driver.find_element(By.LINK_TEXT, "Login")
+
+# find an element with id 'login'
+element = driver.find_element(By.ID, 'login')
+```
+
+[Locating Elements](https://selenium-python.readthedocs.io/locating-elements.html) in the Selenium docs has explanation and examples of using "By".
+
 
 ## Use Type Hints to Improve Coding with Selenium
 

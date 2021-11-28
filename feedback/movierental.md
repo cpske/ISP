@@ -265,9 +265,9 @@ def get_movie(self, title: str) -> Movie:
 
 ### Incomplete Method
 
-This code works in Python, but it produce an error in other languages (won't even compile in Java), and is generally not good programming.
+This code works in Python, but it is not good programming style. In a language like Java or Kotlin, it won't even compile!
 
-Why is the method "incomplete"?
+Why is the `get_movie` method "incomplete"?
 
 ```python
 # in MovieCatalog
@@ -306,6 +306,7 @@ def read_movies(self, filename):
 
     return movie_list
 ```
+
 1. `read().splitlines()` reads the entire file and returns a list of strings. It's not necessary.
 2. Forgot to close the file, which consumes resources.
 3. *Assumes* that the first line is a comment (skips it) instead of checking, and *assumes* no other lines in the data file are comments.
