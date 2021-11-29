@@ -3,13 +3,9 @@ Title: Review Questions on Logging,
 ---
 
 1. Where should a 12-factor web application record log messages?
+   ```
 
-   - Write log message to standard output (stdout).  
-   Let the deployment service (Heroku, GAE, etc) or container
-   decide where to send log messages, which makes the app more portable.
-   But *do* use a logging library, like Python's builtin logger,
-   or SLF4J or Log4J for Java.
-   
+   ```
 
 2. What should be logged at which log level?
 

@@ -31,34 +31,41 @@ title: Questions about TCP/IP and HTTP
    - [ ] GET /news/  HTTP/1.1
    - [ ] GET http://www.yahoo.com/news HTTP/1.1
 
-5. The HTTP protocol has several request *methods*.  Which method would you (or your browser) use to upload a photo to a server?
+5. The HTTP protocol has several request *methods*.  Which method would a web app use to upload a photo to a server?
    - [ ] GET
    - [ ] PUT
    - [ ] POST
    - [ ] UPLOAD
    - [ ] SEND
 
-6. An HTTP Response includes a status code.  The codes are divided into 6 categories based on the first digit.  For example 2xx codes mean Success.
+6. An HTTP Response includes a status code.  The codes are divided into 5 categories based on the first digit (1xx, 2xx, etc).
 Which of the following is **NOT** a type of HTTP status codes?
    - [ ] Redirect, resource moved
    - [ ] Network Error
    - [ ] Informational
-   - [ ] Client Error, Page Not Found, or Access Denied
+   - [ ] Client Error (Page Not Found, Access Denied)
    - [ ] Server Error
 
-7. Much of the web has switched from HTTP to the HTTPS protocol.  If you enter "http://www.yahoo.com" in your browser, the Yahoo web server will tell your browser go to "https://www.yahoo.com" instead.     
+7. What are the names of each of the HTTP status code categories:
+   - 1xx `_____________________________________`
+   - 2xx `_____________________________________`
+   - 3xx `_____________________________________`
+   - 4xx `_____________________________________`
+   - 5xx `_____________________________________`
+
+8. Much of the web has switched from HTTP to the HTTPS protocol.  If you enter "http://www.yahoo.com" in your browser, the Yahoo web server will tell your browser go to "https://www.yahoo.com" instead.     
    Using only the standard HTTP protocol (no recent extensions like HSTS), how can a web server do this?
    `_____________________________ _____________________________`
 
 
-8. What is the purpose of Domain Name Service (DNS)?
+10. What is the purpose of Domain Name Service (DNS)?
    - [ ] verify the identity of web servers
    - [ ] translate host names to IP addresses
    - [ ] translate IP addresses to host names
    - [ ] verify the validity of IP addresses and host names
 
 
-9. Which of these are standard network services that use TCP/IP.
+11. Which of these are standard network services that use TCP/IP.
    - [ ] ftp (file transfer protocol)
    - [ ] ssh (secure shell)
    - [ ] smtp (simple mail transport protocol)
@@ -68,3 +75,12 @@ Which of the following is **NOT** a type of HTTP status codes?
    - [ ] ssl (secure socket layer) and tls (transport layer security)
    - [ ] Real Time Streaming Protocol (RTSP) for streaming video
  
+12. Which of the following can be specified using HTTP **header lines**:
+    - [ ] Content Length
+    - [ ] Content Type (html, text, json, jpeg, etc.)
+    - [ ] Destination host name
+    - [ ] Sender host name
+    - [ ] Acceptable types for the response
+    - [ ] Cookies
+    - [ ] Priority
+    - [ ] Redirect URL

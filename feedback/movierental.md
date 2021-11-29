@@ -261,6 +261,21 @@ def get_movie(self, title: str) -> Movie:
                 break
         return movie
 ```
+another example:
+```python
+    def get_movie(self, title: str) -> Movie:
+        file = open("movies.csv")
+        csv_reader = csv.reader(file)
+        for row in csv_reader:
+            if row[1] == title:
+                movie = row
+                name = movie[1]
+                year = movie[2]
+                genre = movie[3].split('|')
+                file.close()
+                return Movie(name, year, genre)
+```
+
 
 
 ### Incomplete Method
