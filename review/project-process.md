@@ -14,7 +14,7 @@ What do you do?
   *embrace change* (but manage it, or suffer)       
   *involve the whole team*
 
-- Plan before you do    
+- Plan before Do    
   > "In preparing for battle I have found that plans are useless,    
   > but planning is indespenable."    
   > - General D. Eisenhower (WWII General, later U.S. President)
@@ -47,7 +47,7 @@ What do you do?
   *Code Checking Tools* flake8, pylint, pypy    
   *Use C.I.*
 
-- Review Everything, including plans & designs    
+- Review Everything
   *Pull Requests*    
   *Walk-throughs*
 
@@ -55,9 +55,13 @@ What do you do?
 
 ### Personal & Process Improvement
 
-- Retrospectives
+- *Have a Career Goal*   
+  "*If you don't know where you want to go,    
+  any road will take you there.*"
 
-- Allow slack time & learning time:    
+- Retrospective    
+
+- Allow slack time & learning time    
   *Production* vs  *Productive Capacity*
 
 - Learn from Others    
