@@ -90,7 +90,7 @@ profile = webdriver.FirefoxProfile()
 profile.set_preference('permissions.default.image', 2)
 profile.set_preference('dom.ipc.plugins.enabled.libflashplayer.so', 'false')
 
-driver = webdriver.Firefox(firefox_profile=firefox_profile)
+driver = webdriver.Firefox(firefox_profile=profile)
 ```
 
 ## Reference

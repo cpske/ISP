@@ -1,5 +1,5 @@
 ---
-title: Feedback on Movie Rental refactoring problem
+title: Feedback on Movie Rental Refactoring Problem
 ---
 
 [Movie Rental Part 1](#movie-rental-refactoring-part-1)    
@@ -9,71 +9,204 @@ title: Feedback on Movie Rental refactoring problem
 
 After refactoring your code should have:
 
-1. `Customer.statement()` does not calculate price of a rental. 
-   * `statement` calls `self.get_total_charge()` to get total charge (OK to use a different method name).
-   * `self.get_total_charge()` calls `rental.get_charge()` for each rental and returns the sum.
-   * WRONG: Customer class computes the charge for each rental itself.
+1. In Customer there is a method to compute the **total charge**
+   * OK: Method name may be different
+   * **Wrong** if the method just computes the charge for a single movie.
+   * **Wrong** `get_total_charge()` tries to compute the charge for each movie itself, instead of calling `rental.get_charge()`.
+   * **Wrong** `get_total_charge()` is using the price code. Only Rental needs to use the price code.
+   * **Wrong** saving the result (total charge) as an attribute.  The method should **return** the result.
+     ```python
+     def get_total_charge(self):
+         """Compute the total charge for all rentals."""
+         return sum(rental.get_charge() for rental in self.rentals)
+         #          ^^^^^^^^^^^^^^^^^^^ rental computes the charge itself
+     ```
+   * OK: pass the `rentals` as a parameter. It's at attribute of "self", but no harm in using a parameter instead.
 
-2. `Customer.statement()` does not compute frequent rental points.
-   * structure is just like computing the rental charges.
-   * `statement` calls `self.get_rental_points()` (or similar method).
-   * `self.get_rental_points()` calls `rental.get_rental_points()` for each rental and returns the sum
-   * WRONG: Customer class computes the rental points for each rental itself.
+2. Customer `get_rental_points()` computes and returns the total rental points.
+   - It calls `rental` to get rental points for one rental
+   - OK: Method name may be different
+   - **Wrong** just computes rental points for one movie
+   - **Wrong** using pricecode to compute the rental points for each rental in this method. Only Rental needs the price code.
+   - **Wrong** saving the result (total rental points) as an attribute.  It should **return** the result.
+     ```python
+     def get_rental_points(self):
+          """Compute the total rental points for all rentals"""
+          return sum(rental.get_rental_points() for rental in self.rentals)
+          #          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+     ```
+   
+3. `Customer.statement()` does not calculate price of a rental or sum the charges itself.
+   * `statement` calls `self.get_total_charge()` to get total charge
+   * `statement` calls `self.get_rental_points()` to get total rental points
+   * **WRONG**: Customer class computes the charge or rental points as part of the loop that prints the rental details.
+     ```python
+     def statement(self):
+         # many ways to do this -- student code may not look like this
+         statement = f"Rental Report for {self.name}\n\n"
+         fmt1 = "{:32s}    {:4s} {:6s}\n"
+         statement += fmt1.format("Movie Title", "Days", "Price")
+         fmt2 = "{:32s}    {:4d} {:6.2f}\n"
+        
+         # add rental detail to statement
+         for rental in self.rentals:
+             statement += fmt2.format(rental.get_movie().get_title(), 
+                                      rental.get_days_rented(),
+                                      rental.get_charge())
+             # Should not sum rental points or charges here
 
-3. `Customer.statement()` the loop to create a list of rentals should look like:
-   ```python
-   def statement(self):
-       ...
-       for rental in self.rentals:
-           statement += fmt.format(
-                       rental.get_movie().get_title(), # See Item 4
-                       rental.get_days_rented(),
-                       rental.get_charge())
-       # footer: total charges
-       statement += "\n"
-       statement += "{:32s} {:6s} {:6.2f}\n".format(
-                     "Total Charges", "", self.get_total_charge())
-       statement += "Frequent Renter Points earned: "+str(self.get_rental_points())+"\n"
-   ```
-   **Wrong**: summing the rental charge or rental points in the "for" loop.    
-   **Good**: f-strings are more concise than `string.format`.  OK to write:
-   ```python
-       line_text = "Total Charges"
-       statement += f"{line_text:39s}  {self.get_rental_points():6.2f}\n"
-   ```
+         # footer: summary of charges
+         statement += "\n"
+         statement += fmt1.format("Total Charges", "", self.get_total_charge())
+         statement += f"FRP earned: {self.get_rental_points()}\n"
+         return statement
+      ```
 
-4.  Writing `a.getB().getC()...` is called "*traversing the object graph*" and is considered something to avoid.  It is better to add a `get_title()` to Rental that returns `movie.get_title()` and then write:
+4.  Writing `a.getB().getC()...` is called "*traversing the object graph*" and is considered something to avoid.  
+   - add a `get_title()` to Rental that returns `movie.get_title()`. 
+   - **OK:** instead of `get_title()`, Rental can use `__str__()` for this.
+   - Then in `Customer.statement()` write:
    ```python
    for rental in self.rentals:
-       statement += fmt.format(
-                       rental.get_title(),  
+       statement += fmt2.format(
+                       rental.get_title(),       # <---- no call chain
                        rental.get_days_rented(),
                        rental.get_charge())
    ```
-   - Adding `rental.get_title()` seems pointless, but what if you decide to rent things *other* than movies?  Like Chromecast devices?
-   - It is OK to traverse the object graph for stable APIs like the Java SE API or PyGame API. For a List of Number objects in Java, it would be fine to write `list.get(k).doubleValue()`
+   - Adding `rental.get_title()` seems pointless, but what if you decide to rent things *other* than movies?  Like Chromecast devices or DVD players?
 
-5. `Customer.get_total_charge()` asks Rental for the charge of a rental. Don't try to compute the charge in Customer by getting the price code.
+5. Remove the static constants `REGULAR`, `NEW_RELEASE`, and `CHILDRENS` from `Movie`.  
+   - Replace with price codes that encapsulate behavior for computing price and rental points.
+
+6. PriceCodes know how to compute their own rental price and rental points. 
+   - PriceCode (may have a different name) is polymorphic.  
+   - In `Rental.get_price()` there is no "if ... else if ..." to test the type of movie.
+   - Refactoring 1: Rental gets the price code from Movie and uses it:
+     ```python
+     class Rental:
+
+         get get_charge(self):
+             return self.movie.get_price_code().price(self.days)
+
+         get get_rental_points(self):
+             return self.movie.get_price_code().rental_points(self.days)
+     ```
+   - Refactoring 2: the price codes are moved to the Rental class. Code may be:
+     ```python
+     class Rental:
+
+         get get_charge(self):
+             return self.price_code.price(self.days)
+
+         get get_rental_points(self):
+             return self.price_code.rental_points(self.days)
+     ```
+
+
+## Movie Rental Refactoring Part 2
+
+After this refactoring, you should have:
+
+1. The price code is part of the Rental class. 
    ```python
-   def get_total_charge(self):
-       """Get the total charge for all rentals."""
-       total = sum(rental.get_charge() for rental in self.rentals)
-       return total
+   class Rental:
+       def __init__(self, movie, days_rented, price_code):
+           self.movie = movie
+           self.days_rented = days_rented
+           self.price_code = price_code
+   ```
+   - Better: **no** `price_code` parameter. Compute by call to a staticmethod (see item 5 below).
+
+2. There are no price code variables in `movie.py`.
+   Wrong:
+   ```python
+   class Movie:
+       NORMAL = 0
+       CHILDRENS = 1 
+       NEW_RELEASE = 2 
+   ```
+   Also wrong:
+   ```python
+   class Movie:
+       NORMAL = PriceCode.normal
+       CHILDRENS = PriceCode.childrens
+       etc.
    ```
 
-6. `Customer.get_rental_points()` asks Rental for the rental points, exactly as done with charge. 
-
-7. PriceCode is polymorphic.  In `Rental.get_price()` there is no "if ... else if ..." to compute the charge based on type of movie.     
-   Rental simply gets the price code from Movie and uses it:
+3. Add `year` and `genre` attributes to Movie.
    ```python
-   # In Rental class
+   class Movie:
+       def __init__(self, title, year, genre: List[str]):
+           self._title = title
+           self._year  = year 
+           self._genres = genre
 
-   get get_charge(self):
-       return self.movie.get_price_code().price(self.days)
+       def get_title(self):
+           return self._title
 
-   get get_rental_points(self):
-       return self.movie.get_price_code().rental_points(self.days)
+       def get_year(self):
+           return self._year
+
+       def get_genres(self):   # OK to name this get_genre or genre()
+           return self._genres
    ```
+   - **Wrong**: the `genres` should be a list, not a string with `|`.    
+   - **Wrong**: "get" methods are not intended to be used as properties:
+     ```python
+     @property
+     get get_title(self):
+     ```
+     If you want to use properties, omit the `get_` prefix.
+
+4. Add `is_genre` to Movie:
+   ```python
+       def is_genre(self, genre: str) -> bool:
+           return genre in self._genres
+   ```
+
+5. Class method to determine the price code in the PriceCode class or Enum.
+   - PriceCode class or Enum should compute the price code itself.
+   - It must be a class method
+   ```python
+   class PriceCode(Enum):
+
+       @classmethod
+       def for_movie(cls, movie: Movie):
+           this_year = datetime.now().year
+           if movie.get_year == this_year:
+               return PriceCode.NEW_RELEASE
+           if movie.is_genre("Childrens"):
+               return PriceCode.CHILDRENS
+           # everything else is considered a normal rental
+           return PriceCode.NORMAL
+   ```
+
+6. Rental gets the price code itself, using the class method:
+   ```
+   class Rental:
+       def __init__(self, movie, days_rented):
+           self.movie = movie
+           self.days_rented = days_rented
+           self.price_code = PriceCode.for_movie(movie)
+   ```
+
+7. MovieCatalog and a Factory Method for Movies.
+   - See [MovieCatalog](#movie-catalog) below.
+
+## MovieCatalog
+
+The Movie Catalog reads movie data from a CSV file. 
+
+It should have:
+
+- `get_movie(title: str)` method to find and return a movie with matching title.
+
+I'm disappointed by the poor logic and poor code, but that is
+an issue beyond this assignment.
+
+Please just check that it does what it's supposed to do (even if badly).
+
+----
 
 ## The Acid Test
 
@@ -129,114 +262,16 @@ class ChromecastRental(Rental):
         return math.floor(megabytes/10000.0)
 ```
 
-### The Test
+-----
 
-Can you add a `ChromecastRental` to a Customer's rentals, without making any changes to Customer, Movie, or Rental?
+## Code Problems and Their Solutions
 
-Does your code print a correct statement?
+Some really bad code in MovieCatalog:
 
-```python
-customer = Customer("Movie Addict")
-movie = Movie("Mulan", PriceCode.new_release)
-customer.add_rental(Rental(movie, 5))
+1. Reads the CSV file every time `get_movie` is called.
+2. Saves the CSV file as a bunch of string, and repeatedly creates new movies from the strings in `get_movie`.  Better to create each Movie once and return the same thing (Movie is immutable).
+3. Fail to handle the case where a movie title is not found.
 
-# Watch unlimited stuff on a Chromecast
-device = Chromecast("a3:b0:00:13:4c:88")
-customer.add_rental(ChromecastRental(device))
-
-# the acid test
-print(customer.statement())
-```
-
-## Movie Rental Refactoring Part 2
-
-1. Move the price code to the Rental class. You will eliminate price\_code parameter later.
-   ```python
-   class Rental:
-       def __init__(self, movie, days_rented, price_code):
-           self.movie = movie
-           self.days_rented = days_rented
-           self.price_code = price_code
-   ```
-2. There are no price code variables in `movie.py`.    
-   Wrong:
-   ```python
-   class Movie:
-       NORMAL = 0
-       CHILDRENS = 1 
-       NEW_RELEASE = 2 
-   ```
-   Also wrong:
-   ```python
-   class Movie:
-       NORMAL = PriceCode.normal
-       etc.
-   ```
-
-3. Add Attributes to Movie. Use underscore to indicate the variables are private and provide "get" methods.  This is simple programming.
-   ```python
-   class Movie:
-       def __init__(self, title, year, genre: List[str]):
-           self._title = title
-           self._year  = year 
-           self._genres = genre
-
-       def get_title(self):
-           return self._title
-
-       def get_year(self):
-           return self._year
-
-       def get_genres(self):   # OK to name this get_genre
-           return self._genres
-
-       def is_genre(self, genre: str) -> bool:
-           return genre in self._genres
-   ```
-   - Wrong: the `genres` should be a list, not a string with `|`.    
-   - Wrong: "get" methods are not intended to be used like properties:
-     ```python
-     @property
-     get get_title(self):
-     ```
-
-4. Class method to determine the price code.  It makes sense that this should be part of the `PriceCode` class.  If we add a new `PriceCode` the changes affect only one class.
-   ```python
-   class PriceCode(Enum):
-
-       @classmethod
-       def for_movie(cls, movie: Movie):
-           this_year = datetime.now().year
-           if movie.get_year == this_year:
-               return PriceCode.NEW_RELEASE
-           if movie.is_genre("Childrens"):
-               return PriceCode.CHILDRENS
-           # everything else is considered a normal rental
-           return PriceCode.NORMAL
-   ```
-   Now, Rental can get the price code itself:
-   ```
-   class Rental:
-       def __init__(self, movie, days_rented):
-           self.movie = movie
-           self.days_rented = days_rented
-           self.price_code = PriceCode.for_movie(movie)
-   ```
-
-5. Factory Method for movies.  See next section.
-
-6. Wrong file names.  You should know better than this by now.
-   ```
-   Movie.py
-   movieCatalog.py
-   MovieCatalog.py
-   ```
-
-### MovieCatalog
-
-The Movie Catalog reads movie data from a CSV file. It provides a `get_movie` method to find and return a movie with matching title.
-
-This class has the most errors.
 
 ### What is Wrong with This Code?
 
@@ -275,8 +310,6 @@ another example:
                 file.close()
                 return Movie(name, year, genre)
 ```
-
-
 
 ### Incomplete Method
 
@@ -339,6 +372,24 @@ if __name__ == '__main__':
     mc.get_movie("Mulan")   # discards return value
 ```
 
+### The Test
+
+Can you add a `ChromecastRental` to a Customer's rentals, without making any changes to Customer, Movie, or Rental?
+
+Does your code print a correct statement?
+
+```python
+customer = Customer("Movie Addict")
+movie = Movie("Mulan", PriceCode.new_release)
+customer.add_rental(Rental(movie, 5))
+
+# Watch unlimited stuff on a Chromecast
+device = Chromecast("a3:b0:00:13:4c:88")
+customer.add_rental(ChromecastRental(device))
+
+# the acid test
+print(customer.statement())
+```
 
 ### Using a CLASS variable as in INSTANCE variable
 
