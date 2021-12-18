@@ -11,7 +11,7 @@ After refactoring your code should have:
 
 1. In Customer there is a method to compute the **total charge**
    * OK: Method name may be different
-   * **Wrong** if the method just computes the charge for a single movie.
+   * **Wrong** if the method just computes the charge for *only one* movie.
    * **Wrong** `get_total_charge()` tries to compute the charge for each movie itself, instead of calling `rental.get_charge()`.
    * **Wrong** `get_total_charge()` is using the price code. Only Rental needs to use the price code.
    * **Wrong** saving the result (total charge) as an attribute.  The method should **return** the result.
@@ -26,7 +26,7 @@ After refactoring your code should have:
 2. Customer `get_rental_points()` computes and returns the total rental points.
    - It calls `rental` to get rental points for one rental
    - OK: Method name may be different
-   - **Wrong** just computes rental points for one movie
+   - **Wrong** computes rental points for only one movie (should be all movies in the rental)
    - **Wrong** using pricecode to compute the rental points for each rental in this method. Only Rental needs the price code.
    - **Wrong** saving the result (total rental points) as an attribute.  It should **return** the result.
      ```python
@@ -44,9 +44,9 @@ After refactoring your code should have:
      def statement(self):
          # many ways to do this -- student code may not look like this
          statement = f"Rental Report for {self.name}\n\n"
-         fmt1 = "{ :32s}    { :4s} { :6s}\n"
+         fmt1 = "{:32s}    {:4s} {:6s}\n"
          statement += fmt1.format("Movie Title", "Days", "Price")
-         fmt2 = "{ :32s}    { :4d} { :6.2f}\n"
+         fmt2 = "{:32s}    {:4d} {:6.2f}\n"
         
          # add rental detail to statement
          for rental in self.rentals:
