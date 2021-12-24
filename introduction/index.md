@@ -41,12 +41,12 @@ You should have a microphone so you can participate in class meetings.
 ## Coursework
 
 * Weekly Class Meeting, Monday 10:00-12:00, online via Google Meet
-* We may have Live Class in E204 if the epidemic subsides.  Announced in advance.
 * Weekly Lab 13:00-16:00. This is also online.
 * Quiz some weeks.
-* Weekly Reading and Problems. Please do the readings and learn from them.
+* Weekly Reading and Problems. Please do before next class.
 * Team Software Project
 * Regular virtual/live meetings with TAs
+* Effort: plan to spend **10-12 hours per week** on ISP.
 
 Platform we will use:
 
@@ -54,21 +54,6 @@ Platform we will use:
 * Github Classroom for some assignments and quizzes. 
 * Course Material on <https://cpske.github.io/ISP/>. 
 * Discord for discussion?  *If the students want it.*
-
-## Instructor and TAs
-
-The TA names and contact info are in [About](../about). Instructor is James Brucker.
-
-
-### Effort and Commitment
-
-Plan to spend **10-12 hours per week** on ISP.
-
-* Read assigned material each week
-* Do exercises and assignments yourself, submit work on-time
-* Write and review code regularly
-* Ask TAs and instructors for help, instead of asking other students
-* Team Project: mostly in 2nd half of course. This may require extra time.
 
 ### Online Education Requires Commitment and Discipline
 
@@ -84,14 +69,14 @@ Plan your time, make a schedule, have discipline.
 * Python 3.8 or newer
 * Good text editor (something better than Notepad). IDE is OK, but slow for editing a single file. 
   - Good editors: Atom, Notepad++, Sublime, VS Code (a bit slow), TextMate (for Mac)
-* Git command line client. 
+* Git command line client
   - The Git tool included in IDEs is useful, but you still need the command line `git` and know how to use it!
 
 
 ### Why a Team Software Project?
 
-A big challenge in creating software is working effectively as a team. 
-Many of the skills we study in ISP involve other people, 
+A challenge in creating software is working effectively as a team. 
+Many skills we study in ISP involve other people, 
 and are intended to improve team work.
 
 Hence, we need a *team* project to practice both individual and project-related skills.
@@ -100,18 +85,14 @@ In the course you will design, implement, and deploy a web application
 in a team of approx. 4 people.  The project is also an opportunity to learn 
 the basics of HTTP, web frameworks, and web application development.
 
-Prior years' students report that the project is the most valuable part of the course.
+Prior years' students say that the project is the most valuable part of the course.
 
-### This is Not a Powerpoint Course
+### Not a Powerpoint Course
 
-"Powerpoint" slides are an aid to presentation.
-They don't contain much depth and not all the material. 
+"Powerpoint" slides aid presentations, but don't contain much depth.
 
-You must read the assigned material and learn from hands-on work 
+You need to read the assigned material and learn from hands-on work 
 for a real understanding.
-
-If you only study "slides", you won't learn much and probably won't
-pass the course.
 
 ### Not a Video Course, Either
 
@@ -138,9 +119,9 @@ Your grade is based on
 The project score is based on how well you apply a process and your consistent contribution.  The final product is only a small part of the project score.
 
 **Minimum Exam Average**: 
-You must achieve an *average* exam score of at least 50% to pass.
+You must achieve an *average* exam score of **at least 50%** to pass.
 
-The approximate grading scale is:
+If you achieve the minimum exam average, then the approximate grading scale is:
 
 <table align="center" border="1" width="40%">
 <tr> <th width="20%">Overall Score</th> <th width="20%"> Grade </th> </tr>
