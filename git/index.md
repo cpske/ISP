@@ -2,8 +2,8 @@
 title: Git, Version Control, and Github
 ---
 
-Git is the most popular [Version Control System](https://en.wikipedia.org/wiki/Version_control). 
-Other VCS are Subversion (a centralized VCS) and Mercurial.
+Git is a popular [Version Control System](https://en.wikipedia.org/wiki/Version_control). 
+Other VCS are Subversion and Mercurial.
 
 A VCS manages versions of code and other documents, and provides services such as:
 
@@ -12,23 +12,32 @@ A VCS manages versions of code and other documents, and provides services such a
 * maintain integrity of work 
   - you cannot overwrite a newer version of a file with work based on an older version
   - a new commit must always be based on the current version of what is in the repository
-* keep a history of all changes to every file, so you can view or checkout any version of any file(s)
-* provides tools for merging differences in versions and retrieving older versions of a file
-* attribution of who changed what files, and reason for the change (commit message)
-* manage multiple variations (branches) of the same project, so that teams can work on different features without affecting other's work. Branches can be merged together.
+* keep a history of all changes to every file, so you can view or checkout any version of any file(s). Even deleted files can be recovered.
+* provides tools for merging differences in versions and retrieving older versions of files
+* attribution of who changed what, and a reason for the change (commit message)
+* manage multiple variations (branches) of the same project, so that teams can work on different features or different versions without affecting other's work. Branches can be merged together.
 
 
 ## Git Basics
 
 Presentation: [Git Basics](Git-Basics.pdf)
 
-You should know **at least** these git commands:
-- how to create a new repository ("repo")
-- how to view files and changes (status)
-- how to commit files or changes to a repo
-- how to delete a file from a repo
-- how to clone a remote repo
-- how to push/pull work to/from a remote repo
+You should know how to use **at least** these git commands:
+
+| Command      | Purpose                   |
+|--------------|---------------------------|
+| `git init`   | create a new repository ("repo") |
+| `git status` | check status and changes |
+| `git ls-files` | list files in your local repo |
+| `git add`    | stage files for update to repo |
+| `git commit` | commit files to a local repo | 
+| `git rm`     | delete a file from a repo (be careful) |
+| `git clone`  | clone (copy) a remote repo |
+| `git pull`   | push new work from a remote repo |
+| `git push`   | push updates from a local repo to a remote repo |
+
+You can perform these commands in an IDE, but it is still essential to
+know how to use the "git" from the command line.
 
 Read: [Git Basics][ProGitBasics], Chapter 2 of the excellent [Pro Git Book][ProGit]. (You can download this, too.)
 
@@ -141,10 +150,10 @@ How to refer to a node (commit):
 * `af840b` the first part of commit hash, any number of chars is OK
 * `HEAD`  refers to the commit that your working copy is based on
 * `HEAD~` (HEAD tilde) means "the predecessor of HEAD" 
-* `HEAD~3` (HEAD tilde 3) means 3 commits before current HEAD
+* `HEAD~2` (HEAD tilde 2) means 2 commits before current HEAD
 * `HEAD^` means a parent of HEAD, by default the first parent
 * `foo^1` and `foo^2` are parents of a commit `foo` created by a merge (commit with 2 parents)
-* `v0.1`  using the label on a node
+* `v0.1`  refer to a commit using a label on the commit
 * `bugfix~` the node **before** "bugfix"
 
 1. what was changed in the most recent commit?
@@ -153,15 +162,19 @@ How to refer to a node (commit):
  # to see just the names of changed files:
  git diff HEAD^ HEAD --name-only
 ```
-3. checkout everything from a named commit (this also moves HEAD to that commit)
+2. checkout everything from a named commit (this also moves HEAD to that commit)
 ```
 git checkout 3fa94b
 ```
-3. checkout `main.py` from the commit before this one (does not change HEAD)
+3. checkout `foo.py` from the most recent version in the repo. Useful if you accidentally screw-up or delete a file in your working copy:
+```
+git checkout -- foo.py
+```
+4. checkout `main.py` from the commit *before* this one (does not change HEAD)
 ```
 git checkout HEAD~ -- main.py
 ```
-4. reset "master" to an older commit.  For example, reset to previous commit:
+5. reset "master" to an older commit.  For example, reset to previous commit:
 ```
 git checkout master
 git branch -f master HEAD^
