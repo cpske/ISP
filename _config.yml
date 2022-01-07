@@ -1,17 +1,17 @@
 # default theme is jekyll-theme-primer (https://github.com/pages-themes/primer)
 theme: minima
 title: Individual Software Process
-#description: Course material for Individual Software Process
+#description Course Material for ISP
 url: "https://cpske.github.io/ISP/"
 include: [code-quality, code-review]
 # if exclude 'code' then code-* is also excluded
-exclude: [bin, ISP, quiz, solution, misc, Gemfile, Gemfile.lock, Jittat, Paruj, TA]
+exclude: [bin, ISP, quiz, solution, misc, old, Gemfile, Gemfile.lock, Jittat, Paruj]
 # github username shown in Minima theme
 github_username: cpske
 # Use Git's markdown syntax
 markdown: kramdown
 # DON"T USE "permalink: pretty" it adds "/" after URLs of pages 
-# in a directory. As a result, relative URLS given in those files don't work.
+
 
 # Default layout for pages, so you don't need to set "layout: page" in each
 defaults:
@@ -22,4 +22,5 @@ defaults:
     values:
       layout: "page"
 
+# 10/20/2020 I hardcoded this into google_analytics.html
 google_analytics: "UA-104768257-3"

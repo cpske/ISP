@@ -2,36 +2,43 @@
 title: Git, Version Control, and Github
 ---
 
-A **Version Control System** (VCS) manages versions of source code and other documents [Wikipedia](https://en.wikipedia.org/wiki/Version_control).  A VCS performs:
+Git is the most popular [Version Control System](https://en.wikipedia.org/wiki/Version_control). 
+Other VCS are Subversion (a centralized VCS) and Mercurial.
+
+A VCS manages versions of code and other documents, and provides services such as:
 
 * authenticate users
 * control who can view, copy, or change files (access control)
 * maintain integrity of work 
-  - you cannot overwrite a newer version of files with some work based on a much older version
-  - git requires a new commit always be based on the current version of what is in the repository
+  - you cannot overwrite a newer version of a file with work based on an older version
+  - a new commit must always be based on the current version of what is in the repository
 * keep a history of all changes to every file, so you can view or checkout any version of any file(s)
+* provides tools for merging differences in versions and retrieving older versions of a file
 * attribution of who changed what files, and reason for the change (commit message)
-* items are "checked in" (committed) as a single transaction (*atomic*). A transaction can include renaming, moving, or deleting items as well as updates.
-  - if the transaction fails in the middle of processing, nothing is changed in the repo.
-* manage multiple variations (branches) of the same project, so that teams can work on different features without affecting other's work
+* manage multiple variations (branches) of the same project, so that teams can work on different features without affecting other's work. Branches can be merged together.
 
-**Git** is the dominant VCS in the world today, so we will focus on using Git. 
-Other VCS are Subversion (a centralized VCS), and Mercurial.
 
 ## Git Basics
 
 Presentation: [Git Basics](Git-Basics.pdf)
 
-Know **at least** this:
+You should know **at least** these git commands:
+- how to create a new repository ("repo")
+- how to view files and changes (status)
+- how to commit files or changes to a repo
+- how to delete a file from a repo
+- how to clone a remote repo
+- how to push/pull work to/from a remote repo
 
-[Git Basics][ProGitBasics], Chapter 2 of the excellent, online [Pro Git Book][ProGit].
+Read: [Git Basics][ProGitBasics], Chapter 2 of the excellent [Pro Git Book][ProGit]. (You can download this, too.)
 
-**Visual** Guides to Git:
+For the lazy: my [Git Basics](git-basics), but [Pro Git][ProGitBasics] is better.
+
+**Visual** Guide to Git:
 
 - [Learn Git Interactive](https://learngitbranching.js.org) interactive graphical tutorial, includes branch, merge, rebase, and more.
 - [Visual Git Reference](https://marklodato.github.io/visual-git-guide) web page with illustrations of git commands.
 
-For the lazy: my [Git Basics](git-basics), but [Git Basics][ProGitBasics] from *Pro Git* Ch. 2 is better.
 
 ### Three Areas: Repository, Staging Area (Index), Working Copy
 
@@ -42,9 +49,9 @@ Git uses 3 special areas, and one special reference.
 | Area             | Meaning |
 |:-----------------|:--------|
 | local repository | Git repository on your computer |
-| staging area (index) | files and changes marked for commit, but not yet committed |
-| working copy     | the copy of files you see and can edit. The working copy may include files 'tracked' by git and untracked files. |
-| HEAD             | a label that refers to the commit your working copy is based on |
+| staging area     | files and changes marked for commit, but not yet committed. Also called the "index". |
+| working copy     | the copy of files you work on. The working copy may include files 'tracked' by git and untracked files. |
+| HEAD             | a label that refers to the "commit" your working copy is based on |
 
 
 ## Git Q&A 

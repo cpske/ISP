@@ -50,6 +50,15 @@ Good answers here:
 
 Read about these in: [Scrum Guide][], [Scrum Primer][], and [Managing Projects with Scrum][Head First Scrum].
 
+## Using Scrum
+
+To use Scrum you should *clearly* know & apply these:
+
+1. Backlog planning
+2. Iteration planning
+3. Backlog grooming
+4. Sprint Review
+5. Sprint Retrospective
 
 ## Resources to Learn More
 
