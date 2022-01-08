@@ -84,7 +84,7 @@ def max(a, b):
 
     :param a:  the first number to compare
     :param b:  another number to compare to a
-    :return:   the max of a and b
+    :returns:  the max of a and b
     :rtype:    float 
     :raises TypeError: if a or b is not a number
 
@@ -187,7 +187,8 @@ print(...)
 ```
 
 Here's an example class docstring from the popular `requests` library,
-an add-on package for performing HTTP requests.
+an add-on package for performing HTTP requests. 
+It uses the PEP-267 standard (reST).
 
 ```python
 >>> import requests

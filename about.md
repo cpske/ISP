@@ -25,10 +25,9 @@ navigation_order: 4
 
 ### How to Join [Google Classroom][google-classroom-link] and Join a Meeting
 
-1. Join the [Google Classroom](https://classroom.google.com).  Use class code **[ka25cph][google-classroom-link]** or click this **[invitation link][google-classroom-link]**.
+1. Join the [Google Classroom](https://classroom.google.com).  Use class code in the table above or or click this **[invitation link][google-classroom-link]**.
 2. To join a meeting, click on the "Meet" link (video icon) on the Google Classroom page:
-[![classroom meet icon](images/classroom-meet-icon.png)][google-meet-link]
-   - You can also click this [Google Meet Link][google-meet-link] but it may change in the future.
+[![classroom meet icon](images/google-meet-icon.png)][google-meet-link]
 3. Complete this [Student Info Form](https://forms.gle/WE3jN4miDKabFBje8) so we know your Github ID.
 4. What online platform do you prefer? Please complete [Online Platform Preferences](https://forms.gle/VkG5MBPjgmxRX1xi7).
 
