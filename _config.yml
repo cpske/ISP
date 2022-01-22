@@ -23,4 +23,6 @@ defaults:
       layout: "page"
 
 # 10/20/2020 I hardcoded this into google_analytics.html
+plugins:
+  - jekyll-seo-tag
 google_analytics: "UA-104768257-3"
