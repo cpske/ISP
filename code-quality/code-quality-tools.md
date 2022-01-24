@@ -2,27 +2,28 @@
 title: Tools to Check Code Quality
 ---
 
-Tools can check coding style and possible code problems, such as semantic errors or use of undefined variables. They are called "linters", "static analyzers", or "code auditors".  "Lint" comes from the `lint` tool for C-language programs. 
+Tools can check coding style and possible code problems, such as semantic errors or use of undefined variables. They are called "linters", "static analyzers", or "code auditors".  
+
+The name "lint" comes from the classic `lint` tool for C-language programs. 
 
 Tools can find:
 
 1. Coding Problems
    - language violations
-   - unused variables
+   - unused variables and unused imports
    - variables used before assignment
    - possible unintended behavior
    - dangerous code
 2. Style Problems
-   - violations of coding style convention
-   - violations of commenting convention
+   - violation of coding style convention
+   - violation of commenting convention
    - inconsistent coding style
 
-## Coding Style and Code Analysis Tools
+
+## Coding Quality Tools
 
 "[*Python Code Quality: Tools & Best Practices*][real-python-code-quality]"
 article in [Real Python][real-python-code-quality] discribes the benefits of code analysis and what teach tools does.
-
-This [Github repo][github-code-analysis-tools] has more details and even more tools.
 
 The top tools for Python are:
 
@@ -48,7 +49,11 @@ The top tools for Python are:
 * [Pylama](https://github.com/klen/pylama) A wrapper for 9 different tools, including the tools in Flake8.
   - not as popular as the above tools
 
-When you run pylint or flake8 on a file or package (directory), it will show several messages with line numbers:
+* This [Github repo][github-code-analysis-tools] has more details and even more tools.
+
+## Running pylint or flake8
+
+You run pylint or flake8 on a file(s) or package (directory). It will show several messages with line numbers:
 ```bash
 > pylint bank_account.py
 
@@ -68,7 +73,49 @@ The first letter in the message code is a category:
 **F** fatal. Error that prevents Pylint from continuing
 
 
-### Configure Pylint 
+When you run flake8 the output will look like:
+```bash
+> flake8 bank_account.py
+
+bank_account.py:17:1: W293 blank line contains whitespace
+bank_account.py:20:28: E999 SyntaxError: invalid syntax
+bank_account.py:23:69: E226 missing whitespace around arithmetic operator
+bank_account.py:26:1: W293 blank line contains whitespace
+bank_account.py:28:43: W292 no newline at end of file
+```
+
+You can customize what pylint and flake8 report. (See sections below.)
+But don't overdo it and don't be lazy!  Better to fix your code than 
+customize the tool to ignore some problems.
+
+## Code Analysis in your IDE
+
+All IDE do some code quality checking automatically.  You can also add
+more checking as described here:
+
+**VS Code** 
+- The VS Code "Language Server" performs style and code checking, but you can add an external linter.
+- Press Control+Shift+P and enter "Python Select Linter" to choose a "Lint" tool.  
+- After you enable linting, it is run automatically whenever you save a file or when you enter Control+Shift+P and type/choose "Python: Run Linting"
+- How to: <https://code.visualstudio.com/docs/python/linting>
+
+**Pycharm**
+- Has an extensive builtin code checker. In the "Problems" window (lower part of default IDE layout) it includes style and code problems, as well as errors.
+- How to Configure Code Style: <https://www.jetbrains.com/help/pycharm/configuring-code-style.html#configure-code-style-schemes>
+- You can add **flake8** or **pylint** as "External Tools". 
+- See: <https://www.jetbrains.com/help/pycharm/configuring-third-party-tools.html>
+
+**Pydev** (Eclipse Plugin)
+- Includes "Code Analysis" feature that uses Pylint.
+- Configure it in Preferences -> Pydev -> Code Analysis    
+  - I had to manually specify the location of `pylint` for it to work.  
+- Run it: Right-click on a file and select Pydev -> Code Analysis.
+- Problems are shown as warning/error markers in left margin of
+  editor window.  Will also show in Console if you check this preference:    
+  [x] Redirect Pylink output to console?
+
+
+### Customize Pylint 
 
 Pylint looks for a configuration file in your current directory and your home directory. Or, you can specify one using the `--rcfile filename` command line option.  In order of priority:
 
@@ -94,7 +141,7 @@ Run Pylint and also print a detailed report:
 pylint -ry filaname.py
 ```
 
-### Configure Flake8
+### Customize Flake8
 
 Flake8 can have both a per-project config file and a global config file.
 
@@ -153,22 +200,6 @@ There are plugins for better analysis of Django projects:
   - Installation: `pip install flake8-django`
   - Usage: `cd django-project; flake8`
   - flake8 automatically uses the plugin. In my test, it needs some extra configuration to eliminate superfluous messages.
-
-
-## Code Analysis in your IDE
-
-* VSCode - Control-Shift-P and enter "Python Select Linter", then Control-Shift-P and "Python Run Linter".
-* Pycharm has its own build-in code checker which constantly suggests improvements. 
-  - To run Code Analysis, from menu select Code-&gt;Inspect Code... and choose file(s) to inspect.
-  - output is shown in "Inspection Results" panel at bottom.  Click on an item to go to source line.
-  - offers suggested code change in another panel
-* Pydev (Eclipse) has "Code Analysis" feature that uses Pylint.
-  - Configure it in Preferences -> Pydev -> Code Analysis    
-    I had to manually specify the location of `pylint` for it to work.  
-  - Right-click on a file and select Pydev -> Code Analysis.
-  - Problems are shown as warning/error markers in left margin of
-    editor window.  Will also show in Console if you check preference:    
-    [x] Redirect Pylink output to console?
 
 ## Check Style for Java
 
