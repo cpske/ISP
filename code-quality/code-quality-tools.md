@@ -46,6 +46,10 @@ The top tools for Python are:
 * [MyPy](http://mypy-lang.org/) static type checking using type hints
   - [Code examples](http://mypy-lang.org/examples.html) on Mypy home, side-by-side examples of using type hints
 
+* [Pydocstyle](http://www.pydocstyle.org/en/stable/) tool to check that docstring comments match the PEP257 standard.  Very useful!
+  - if you use flake8, add this to flake8: `pip3 install flake8-pydocstrings`
+  - otherwise, install it as stand-alone tool: `pip3 install pydocstyle`
+
 * [Pylama](https://github.com/klen/pylama) A wrapper for 9 different tools, including the tools in Flake8.
   - not as popular as the above tools
 
