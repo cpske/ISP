@@ -40,8 +40,8 @@ You should have a microphone so you can participate in class meetings.
 
 ## Coursework
 
-* Weekly Class Meeting, Monday 10:00-12:00, online via Google Meet
-* Weekly Lab 13:00-16:00. This is also online.
+* Weekly Class Meeting, Wednesday 10:00-12:00.
+* Weekly Lab Thursday 13:00-16:00.
 * Quiz some weeks.
 * Weekly Reading and Problems. Please do before next class.
 * Team Software Project
@@ -53,15 +53,8 @@ Platform we will use:
 * [Google Classroom](https://classroom.google.com) for announcements, assignments, and discussion.
 * Github Classroom for some assignments and quizzes. 
 * Course Material on <https://cpske.github.io/ISP/>. 
-* Discord for discussion?  *If the students want it.*
+* Discord for discussion and quiz/exam monitoring.
 
-### Online Education Requires Commitment and Discipline
-
-It's easy to fall behind or drop out of an online course.
-
-Successful online learners **plan** to **commit time and effort** to the course.
-
-Plan your time, make a schedule, have discipline.
 
 ### Software You Need
 
@@ -100,38 +93,46 @@ Some videos are provided, but much learning requires reading and doing.
 
 ## Prerequisites
 
-* Programming ability at level of **Programming 2**, including object-oriented programming
+* Programming ability at level of **Programming 2**, including OOP
 * Ability to use Git and Github
-* Know how to use command line interface to view and modify files, navigate the file system.  Bash shell, Z-shell, PowerShell, or Windows CMD prompt are OK.
+* Know how to use command line interface to:
+  - view and modify files
+  - navigate the file system
+  - run programs
+  - OK shells: Bash, Z-shell, PowerShell, or Windows CMD (deprecated)
 
-Programming 2 is essential. If you have not taken it yet, please don't enroll in this course.
+## Programming 2 is Essential!
+
+If you have not taken Prog 2 yet, please don't enroll in this course.
 
 
 ## Grading
 
-Your grade is based on    
+Your grade is based on your understanding and ability to apply the 
+material in this course.
 
-- *quizzes and exams*
-- *assignments*
+Grade is about knowledge and ability to apply it -- not about *points*.
+
+Nonetheless, we *assess* your understanding using:
+
+- *exams*
+- *quizzes*
 - *participation in class*
+- *assignments*
 - *project work and use of good software process*
 
-The project score is based on how well you apply a process and your consistent contribution.  The final product is only a small part of the project score.
+The project score is based on how well you apply a process and your individual contribution to the project.  The final product is only a part of the project score.
 
-**Minimum Exam Average**: 
-You must achieve an *average* exam score of **at least 50%** to pass.
+**Minimum Exam Average to Pass**: *average* exam score of **at least 50%** to pass.
 
-If you achieve the minimum exam average, then the approximate grading scale is:
+If you achieve the minimum exam average, then the approximate grading scale based on all your work is:
 
 <table align="center" border="1" width="40%">
 <tr> <th width="20%">Overall Score</th> <th width="20%"> Grade </th> </tr>
 <tr> <td> 85 - 100</td> <td>  A  </td></tr>
-<tr> <td> 80 - 85 </td> <td>  B+ </td></tr>
-<tr> <td> 75 - 80 </td> <td>  B  </td></tr>
-<tr> <td> 70 - 75 </td> <td>  C+ </td></tr>
-<tr> <td> 65 - 70 </td> <td>  C  </td></tr>
-<tr> <td> 60 - 65 </td> <td>  D+ </td></tr>
-<tr> <td> 55 - 60 </td> <td>  D  </td></tr>
+<tr> <td> 75 - 85 </td> <td>  B  </td></tr>
+<tr> <td> 65 - 75 </td> <td>  C  </td></tr>
+<tr> <td> 55 - 65 </td> <td>  D  </td></tr>
 <tr> <td> &nbsp;0 - 55 </td> <td>  F  </td></tr>
 </table>
 

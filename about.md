@@ -6,44 +6,41 @@ navigation_order: 4
 ## About the Course
 
 
-| **Time** | Monday 10:00-12:00, 13:00-16:00 starting 9 Aug 2021. 
+| **Time**     | Wed 9:00-11:00, Thurs 13:00-16:00 starting 10 Aug 2022. 
 | -------------|--------------------------------------------------------
-| **Location** | Meet **online** using [Google Classroom][google-classroom-link] and [Google Meet][google-meet-link]. See below for how to join. 
-| **Github** | we use [Github](https://github.com) for programming work, so you must have a Github account. Using Github is described in class.
-| **Schedule & Assignments** | Weekly Schedule is on [Google Classroom/Classwork][classroom-classwork].
+| **Location** | CPE Room 204.  Some lectures **online** using Google Meet.
+| **Github**   | We use [Github](https://github.com) for assignments. You must have a Github account. 
+| **Schedule & Assignments** | [Google Classroom/Classwork][classroom-classwork].
+| Google Classroom           | Class Code **r3466kb** [Classroom Link][google-classroom].
 | **Course Material** | All material is on <https://cpske.github.io/ISP>, with links on [Google Classroom][classroom-classwork].    
-| **Discord** | For Q&A, discussions, TA meetings <https://discord.gg/9FrRt4q>
+| **Discord** | For Q&A, discussions, TA meetings 
 | **Sign-up & Preparation** | Please do this [Sign-up and Preparation](assignment/week1/signup-and-software) before the first class.
 | **Scores** | <https://bit.ly/ISP2021-scores> for classwork and homework 
-| **Student Repos** | [KU Polls Repositories](ku-polls-urls) \| [Repository Link Generator](repositories)
 
 
-[google-classroom-link]: https://classroom.google.com/c/MzczOTE1MjA0NDE4?cjc=ka25cph
-[classroom-classwork]: https://classroom.google.com/u/0/w/MzczOTE1MjA0NDE4/t/all
-[google-meet-link]: https://meet.google.com/lookup/gufu6342m5
+[google-classroom]: https://classroom.google.com/c/NDk2ODk1MDE0NTgy
+[google-classroom-invite]: https://classroom.google.com/c/NDk2ODk1MDE0NTgy?cjc=r3466kb
+[classroom-classwork]: https://classroom.google.com/c/NDk2ODk1MDE0NTgy/t/all
+[google-meet-link]: https://meet.google.com/ung-krcz-ojs
 
 
-### How to Join [Google Classroom][google-classroom-link] and Join a Meeting
+### How to Join [Google Classroom][google-classroom] and Join a Meeting
 
-1. Join the [Google Classroom](https://classroom.google.com).  Use class code in the table above or or click this **[invitation link][google-classroom-link]**.
-2. To join a meeting, click on the "Meet" link (video icon) on the Google Classroom page:
-[![classroom meet icon](images/google-meet-icon.png)][google-meet-link]
+1. Join the [Google Classroom](https://classroom.google.com).  Use the Class Code in the table above or click this [Classroom invitation link][google-classroom-invite].
+2. To join a meeting, click on the "Meet" link (video icon) on the Google Classroom page: [classroom meet icon](images/google-meet-icon.png)
 3. Complete this [Student Info Form](https://forms.gle/WE3jN4miDKabFBje8) so we know your Github ID.
-4. What online platform do you prefer? Please complete [Online Platform Preferences](https://forms.gle/VkG5MBPjgmxRX1xi7).
 
 
 ### [Introduction to the Course](introduction/index)
+
 (click the above link for Intro)
 
 ### Teaching Assistants (TAs)
 
-[Anusid](https://github.com/ttxking)  `email("Anusid", "Wachiroachoroenwong")`
-
-[Chanathip](https://github.com/kaesrel) `email("Chanathip", "Thumkanon", 3)` 
-
-[Pattarin](https://github.com/pattarinn) `email("Pattarin", "Wongwaipanich", 3)` 
+<!--
 
 [Sahanon](https://github.com/Sahanon-P) `email("Sahanon", "Phisetpakasit")`
+ -->
 
 
 ```python

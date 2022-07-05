@@ -104,7 +104,9 @@ If you have a process, describe it.
 * All devs have a software process, whether they realize it or not.
 * If you never thought about your process, then it is *implicit*.  
 * If your process changes on each project, then it's *ad hoc*.  
-* Both *implicit* and *ad hoc* processes tend to be inefficient and hard to predict the outcomes. Do you see *why* they may be inefficient or hard to predict?
+* *Implicit* and *Ad Hoc* processes tend to be inefficient and hard to predict the outcomes. 
+  - Since the process is different for each project, there is no basis for making good estimates
+  - Waste time "reinventing the wheel" and may forget some things
 
 ## The Value of a Defined Process
 
