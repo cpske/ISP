@@ -7,7 +7,7 @@ navigation_order: 1
 > See **[Google Classroom][google-classroom]** for weekly material and assignments.    
 > You should do the assignments posted on [Google Classroom][google-classroom].
 
-[google-classroom]: https://classroom.google.com/c/MzczOTE1MjA0NDE4?cjc=ka25cph
+[google-classroom]: https://classroom.google.com/c/NDk2ODk1MDE0NTgy?cjc=r3466kb
 
 ---
 
@@ -17,7 +17,7 @@ navigation_order: 1
 
 Please do this before the course starts. Otherwise, do it in Week 1.
 
-* [Sign-up, Survey, and Required Software](assignment/week1/signup-and-software)
+* [Sign-up and Install Required Software](assignment/week1/signup-and-software)
 * Read [About the course](about) for essential class resources & how to contact TAs.
 
 
