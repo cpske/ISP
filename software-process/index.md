@@ -101,26 +101,28 @@ If you have a process, describe it.
 
 ## Reality
 
-* All devs have a software process, whether they realize it or not.
+* All developers have a software process, whether they realize it or not.
 * If you never thought about your process, then it is *implicit*.  
 * If your process changes on each project, then it's *ad hoc*.  
 * *Implicit* and *Ad Hoc* processes tend to be inefficient and hard to predict the outcomes. 
   - Since the process is different for each project, there is no basis for making good estimates
-  - Waste time "reinventing the wheel" and may forget some things
+  - Waste time "reinventing the wheel" deciding what you need to do, and may forget some things
 
 ## The Value of a Defined Process
 
 The problems of software development that drive the need for a good software process are
 
-- complexity
-- change
-- (high) defects and errors
-- need to estimate time and cost
-- lack of predictability or consistency
-- (un)maintainability
+| Problem     | How a Process Can Help                    |
+|-------------|:------------------------------------------|
+| complexity  | Divide & prioritize features for development, divide work into smaller tasks, enforce testing and reviews |
+| change      | Have a well-defined procedure for assessing changes. This avoid time overrun, excessive change, and failing to meet iteration goals. |
+| (high) defects and errors | Enforce testing & reviews. Record & analyze errors. Use retrospective to improve development process. |
+| need to estimate time and cost | Data from previous projects using the same process provide a basis for estimates. |
+| lack of predictability or consistency | Reusing a defined process makes development effort more predictable. |
+| (un)maintainability | Incorporate a coding standard, thorough test suite, and review of work products |
 
-Along with software process you need to know the software development lifecycle, since the process and SDLC influence each other.
 
+Along with software process you need to know the software development lifecycle; a process and SDLC influence each other.
 
 ## Key Dimensions in a Software Project
 

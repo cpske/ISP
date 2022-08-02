@@ -4,38 +4,36 @@ title: Write a Process Description of a Non-Software Project
 
 ### Description
 
-Create a Google Doc describing the process you use
-for some non-software project.  
-It should be a process you actually do to achieve a specific result.
+Create a Google Doc describing the process you use a project you perform at least occasionally.
+It should be a process you do to achieve a specific result.
 
-Submit the Google Doc to the assignment item on Google Classroom.
+Submit the Google Doc for this assignment item on Google Classroom.
 
 Write the following:
 
 * Name of the process
 * Preconditions, if any
-* Activities - brief descriptive names OK
-* Tasks that are done in each activity - with description what to do
+* Activities - brief descriptive name as a noun phrase. You can omit this for a simple process with only 1 activity.
+* Tasks done in each activity - with description what to do.  These are small, specific steps.
 * Work product - what is the result of the process?
-* Evaluation criteria - how is the result evaluated? Be honest, if you have an evaluation criteria it should be something that might cause you to reject the result and do it again.
-
-Optional:
-* If the process has distinct phases, identify the phases
+* Evaluation criteria - how is the result evaluated? 
+  - Be honest, if you have an evaluation criteria it should be something that might cause you to reject the result and do it again.
 
 Evaluation:
+
 * Your process description should be well-formatted, clear, complete, and fit on 1 page.
 * Correct English usage and punctuation.
+  - Never leave a space before comma, colon, or period.  Always leave a space after punctuation symbols unless they are followed by closing parenthesis.
 
 Examples:
 * Wash a Car
 * Service a Bicycle (if you actually do this)
-  - Honda & Toyota have a **very well defined** process for what to do when they service a car
 * Paint a Room
 * Make a [*something you create*]
 
 Bad Examples:
-* Practice Piano (no specific work product)
-* Build a Car (too complex, probably not something any of you do)
+* Practice Piano (no specific end product)
+* Build a Car (too complex, not something you do repeatedly)
 
 ### What to Submit
 
@@ -49,22 +47,24 @@ Example:
 
 ## Wash a Car
 
+Author: James Brucker
+
 **Preconditions**: a car, water supply, and a warm dry day
 
 1. Preparation
-   - park the car in the shade
-   - prepare bucket, car wash, sponge, clean rags, optional squeegie
-   - put 1 cap of car wash in bucket, add about 3-4 L water allowing suds to form
+   a. park the car in the shade
+   b. prepare bucket, car wash, sponge, clean rags, optional squeegie
+   c. put 1 cap of car wash in bucket, add about 3-4 L water allowing foam to form
 2. Wash the Car
-   - start from the top, spray water to remove dirt and thoroughly wet surface
-   - apply soapy water with sponge to remove all dirt from one area
-   - spray water to remove soap and dirt
-   - repeat 'til whole car is clean
+   a. start from the top, spray water to remove dirt and thoroughly wet surface
+   b. apply soapy water with sponge to remove all dirt from one area
+   c. spray water to remove soap and dirt
+   d. repeat 'til whole car is clean
 3. Dry the Car
-   - wait until the car s partially dry, but still has water drops
-   - use clean rags or squeegie to dry the windows and top of car
-   - dry other parts of car, working from top to bottom
+   a. wait until the car is partially dry, but still has water drops
+   b. use clean rags or squeegie to dry the windows and top of car
+   c. dry other parts of car, working from top to bottom
 
 **Product**: a clean, dry car
 
-**Evaluation Criteria**: car should be clean with no streaks or water marks
+**Evaluation Criteria**: car should be clean with no dirt or water marks

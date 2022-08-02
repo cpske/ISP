@@ -9,28 +9,40 @@ Useful for:
 * transferring data to a different database, such as when switching to a different server or different database.
 * creating initial data for others who install and use your app
 
-## Using Django dumpdata and loaddata
+## Using Django dumpdata
 
 The `manage.py` interface to [django-admin][django-admin] has a `dumpdata` command to export part or all of your application database data to a file.  There are many useful options described in the [django-admin dumpdata][django-admin] documentation.
 
-Create a dump of the "polls" models in JSON format, and output to the console:
+Create a dump of the "polls" models in JSON format and output it to the console:
 ```bash
 python manage.py dumpdata --indent=2 polls
 ```
-The output is in JSON format. The `--indent=2` option requests formatted, easy-to-read output.
+The `--indent=2` option requests formatted, easy-to-read output, indented 2 spaces per level of nesting.
 
-`manage.py` also has a `loaddata` command to import data from a JSON file.
+By default, when you "load" data from a file, Django looks in a `fixtures` directory inside your "app" directory.  
 
-For import, Django (by convention) looks for data in a `fixtures` directory inside an "app" directory such as `polls/fixtures`.
-To dump data to a file named `seed.json` in our polls app, use:
+For the polls application, first create a `polls/fixtures` directory:
+```bash
+mkdir polls/fixtures
+```
+
+Then dump polls data to a file named `seed.json` in our polls/fixtures directory using the `-o` (output file) option:
 
 ```bash
-mkdir polls/fixtures          # create directory if it does not exist
 python manage.py dumpdata --indent=2 -o polls/fixtures/seed.json polls
 ```
+
 The `-o outputfile` option specifies a file to receive dump data, the `polls` parameter means dump only data for the polls app.
 
+Don't forget the `polls` argument!  If you omit it, then manage.py will dump all tables (including Django's own tables) which is not portable.
+
 Edit `polls/fixtures/seed.json` to remove any unwanted data.
+
+## Using Django loaddata
+
+`manage.py` has a `loaddata` command to import data from a JSON file.
+
+For import, Django (by convention) looks for data in a `fixtures` directory inside an "app" directory such as `polls/fixtures`.
 
 To load the data into a fresh, empty database use:
 ```bash
