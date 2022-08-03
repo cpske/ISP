@@ -11,7 +11,7 @@ Here are definitions of "software process" from some well-known textbooks on sof
 
 ---
 
-From *Software Engineering*, 9E by Ian Summerville:
+From *Software Engineering*, by Ian Summerville:
 
 > A *software process* is a sequence of activities that leads to the
 > production of a software product.    
@@ -27,7 +27,7 @@ process models and activities. It includes common processes, such as Waterfall a
 
 ---
 
-From *Object-Oriented and Classical Software Engineering*, 8E, by William Schach:
+From *Object-Oriented and Classical Software Engineering*, by William Schach:
 
 > The *software process* is the way we produce software. In incorporates
 > the methodology with its underlying software life-cycle model, techniques,
@@ -37,7 +37,7 @@ This is a round-about definition referring to other terms defined elsewhere.
 
 ---
 
-From *Software Engineering, A Practioner's Approach*, 7E by Roger Pressman:
+From *Software Engineering, A Practioner's Approach*, by Roger Pressman:
 
 > A *process* is a collection of *activities*, *actions*, and *tasks* that are
 > performed to create some work product. 
@@ -180,26 +180,27 @@ A good process helps to:
 
 Software process models view a process as **activities** broken down into smaller, more specific and tangible **actions** and/or **tasks**.
 
-Activities, actions, and tasks use some inputs including work products, guidance, standards, checklists, and more, collectively called **artifacts**.  The output of the activity, action, or task is a **work product**.
+Activities, actions, and tasks use inputs including work products (created by previous work), guidance, standards, checklists, and more, collectively called **artifacts**.  A **work product** is the output of the activity, action, or task.
 
-For any activity, action, or task you need a clear *goal* and a way to know when the task is "done".  That is, an *evaluation criteria*.
+For any activity or task you need a clear *goal* and a way to know when the task is "done".  That is an **acceptance criteria**.
 
 In the Waterfall Model, activities are the phases of the project life cycle. 
-Ideally, a project would progress linearly from the Requirements phase through Maintenance.  In practice, it is often necessary to **backtrack** to previous phases to correct errors or deficiencies.  This leads to schedule and cost overrun.
+Ideally, a project would progress linearly from the Requirements phase through Maintenance.  In practice, it is necessary to **backtrack** to previous phases to correct errors or deficiencies.  This leads to schedule and cost overrun.
 
 In Waterfall or any linear process, engineers feel compelled to "get it right"
 the first time,
 leading to [Analysis Paralysis](https://en.wikipedia.org/wiki/Analysis_paralysis) -- which aflicts decision-making of all forms.
-They prolong work to ensure that nothing is overlooked.
+As a result, engineers prolong work to ensure that nothing is overlooked.
 This, too, causes schedule overrun and often fails anyway.
 
 Iterative and Increment Processes develop a product iteratively.
 In each iteration some feature(s) of the product are chosen to implement (the *increment*) and all activities (requirements, analysis, design, coding, verification) are performed for those features.  When an increment is done, there should be a working, "potentially shippable" product, even though it has limited functionality.
 
 The motivation behind iterative and incremental is provide frequent
-opportunities for customer feedback, and opportunity for developers to learn
+opportunities for customer feedback, and
+opportunity for developers to learn
 and improve the product during development.  This reduces risk and
-uncetainly, but creates extra develepment work.
+uncertainly, eliminates "analysis paralysis", but creates extra work.
 
 The **Unified Process** (UP) is a popular software process framework. 
 It claims to be "architecture centric" and emphasizes early risk (of failure) 
@@ -258,19 +259,19 @@ A popular course pair on edX is "Agile Development using Ruby on Rails" by David
 
 ### Reading
 
-* [Software Processes - Summerville, Chapter 2][summerville] from *Software Engineering*, 9E, by Ian Summerville.
+* [Software Processes - Summerville, Chapter 2][summerville] from *Software Engineering*, 10E, by Ian Summerville.
   - short, concise description of software process models and activities
 
 * [Software Life-Cycle Models (ch. 2) and Software Processes (ch. 3)][schach] from *Object-Oriented and Classical Software Engeering*, 8E, by William Schach.
-  - more detail than Summerville's explanation, emphasis on the U.P. as model
+  - more detail than Summerville's explanation, emphasis on the U.P.
   - chapter 2 contains describes different life cycles
   - chapter 3 describes the "workflows" in a software process, using the UP as a model
 
 * Pressman, Chapter 2 [Process Models][pressman] is a slightly more abstract introduction to software processes, from Pressman *Software Engineering: A Practioner's Approach*, 7E, another highly-regarded textbook.
 
-* Winston Royce, [Managing the Development of Large Software Systems][royce], the original article describing the waterfall model (Royce didn't call it waterfall). This classic paper is very short.
+* Winston Royce, [Managing the Development of Large Software Systems][royce], the original article describing the waterfall model (Royce did not call it waterfall). This **classic paper** is very short.
 
-[summerville]: https://cpske.github.io/ISP/resources/Software-Process-Summerville-ch2.pdf
-[schach]: https://cpske.github.io/ISP/resources/Software-Process-Schach-ch2-3.pdf
-[pressman]: https://cpske.github.io/ISP/resources/Software-Process-Pressman-ch2.pdf
+[summerville]: https://cpske.github.io/ISP/resources/Software-Process-Summerville.pdf
+[schach]: https://cpske.github.io/ISP/resources/Software-Process-Schach.pdf
+[pressman]: https://cpske.github.io/ISP/resources/Software-Process-Pressman.pdf
 [royce]: https://cpske.github.io/ISP/resources/Royce1970-Managing-the-Development-of-Large-Software-Systems.pdf
