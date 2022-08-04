@@ -1,6 +1,5 @@
 ---
 title: Schedule
-navigation_order: 1
 ---
 
 > This schedule may change!    

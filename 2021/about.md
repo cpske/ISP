@@ -1,6 +1,5 @@
 ---
 title: About
-navigation_order: 4
 ---
 
 ## About the Course

@@ -1,6 +1,5 @@
 ---
 title: Projects
-navigation_order: 3
 ---
 
 ## ISP 2021 Team Projects

@@ -26,14 +26,12 @@ Online questions are posted on Google Classroom.
 
 ### Resources to Learn More
 
-A good, free online course about Software Process fundamentals is
+* [Process Models][pressman], chapter 2 from Pressman *Software Engineering: A Practioner's Approach*, 7E, a slightly more abstract introduction to software processes than Schach or Summerville's books. Pressman's book is very highly rated.
 
-* [Software Development Processes and Methodologies](https://www.coursera.org/learn/software-processes/), U. of Minnesota on Coursera.  A good overview course for the activities in a software process. Good advise on developer habits.
- * This course is part of a 4-course series by U.M. that looks interesting.
+* [Software Development Processes and Methodologies](https://www.coursera.org/learn/software-processes/), free online course on Coursera.  A good overview of the activities in a software process, by the University of Minnesota. Good advise on developer habits, too.
+ * This course is part of a 4-course series by U.M. that looks quite interesting.
 
-[Process Models][pressman], chapter 2 from Pressman *Software Engineering: A Practioner's Approach*, 7E, is a slightly more abstract introduction to software processes, but worth reading.
-
-[Managing the Development of Large Software Systems][royce] by Winston Royce, the original, **classic** article describing the waterfall model. Royce didn't call it "waterfall"! This classic paper is very short.  When you read it, you'll see that most people *don't* understand Royce's model.
+* [Managing the Development of Large Software Systems][royce] by Winston Royce (1970).  The original, **classic** article describing the waterfall model -- and very short. Royce didn't call it "waterfall"! When you read it, you'll see that most people *don't* understand Royce's model.
 
 [summerville]: https://cpske.github.io/ISP/resources/Software-Process-Summerville.pdf
 [schach]: https://cpske.github.io/ISP/resources/Software-Process-Schach.pdf

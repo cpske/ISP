@@ -4,9 +4,8 @@ title: Write a Description of Your Software Development Process
 
 ### Description
 
-Create a Markdown file describing the process you used for your Programming 2 final project.
+Create a Google Doc describing the process you used for your Programming 2 final project.
 
-jjjjj
 Submit the Google Doc for this assignment item on Google Classroom.
 
 Write the following:
@@ -51,20 +50,23 @@ Author: James Brucker
 
 **Preconditions**: a car, water supply, and a warm dry day
 
-1. Preparation
-   a. park the car in the shade
-   b. prepare bucket, car wash, sponge, clean rags, optional squeegie
-   c. put 1 cap of car wash in bucket, add about 3-4 L water allowing foam to form
-2. Wash the Car
-   a. start from the top, spray water to remove dirt and thoroughly wet surface
-   b. apply soapy water with sponge to remove all dirt from one area
-   c. spray water to remove soap and dirt
-   d. repeat 'til whole car is clean
-3. Dry the Car
-   a. wait until the car is partially dry, but still has water drops
-   b. use clean rags or squeegie to dry the windows and top of car
-   c. dry other parts of car, working from top to bottom
+1. Preparation    
+   a. park the car in the shade    
+   b. prepare bucket, car wash, sponge, clean rags, optional squeegie    
+   c. put 1 cap of car wash in bucket, add about 3-4 L water allowing foam to form    
+2. Wash the Car    
+   a. start from the top, spray water to remove dirt and thoroughly wet surface    
+   b. apply soapy water with sponge to remove all dirt from one area    
+   c. spray water to remove soap and dirt    
+   d. repeat 'til whole car is clean    
+3. Dry the Car    
+   a. wait until the car is partially dry, but still has water drops    
+   b. use clean rags or squeegie to dry the windows and top of car    
+   c. dry other parts of car, working from top to bottom    
 
 **Product**: a clean, dry car
 
-**Evaluation Criteria**: car should be clean with no dirt or water marks
+**Evaluation Criterion**: car should be clean with no dirt or water marks
+
+---
+If you have more than one evaluation criterion then write "Evaluation Criteria" (plural form).

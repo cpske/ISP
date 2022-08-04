@@ -32,7 +32,7 @@ title: Course Preparation
 
 ### Examples of Good Github Profiles
 
-Your Github account is part of your resume.  Make it look professional!
+Your Github account is part of **your resume**.  Make it look professional!
 
 Include at least
 
@@ -40,7 +40,7 @@ Include at least
 2. Photo that clearly shows your face (at least 50% of vertical space)
 3. Brief description of you. What are your software-related interests?
 
+![Kongpon Github Profile](../../images/Kongpon-profile.png)&emsp; 
 ![Siratee Github Profile](../../images/Siratee-profile.png)
-![Kongpon Github Profile](../../images/kongpon-profile.png) 
 
 Note: you do not need to include your email in your profile, for privacy.
