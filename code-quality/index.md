@@ -11,9 +11,9 @@ harder to understand and maintain, and harder to test.
 
 ## What is Code Quality?
 
-*Code Quality* is subjective, but accepted characteristics of quality code are:
+*Code Quality* is subjective, but accepted **characteristics** of good quality code are:
 
-- does what it should
+- code does what it should
 - can be tested
 - uses a consistent style
 - easy to understand
@@ -30,10 +30,10 @@ References:
 
 ## How to Improve Code Quality
 
-Both the articles above recommend these four:
+Both the above articles recommend these best practices:
 
 1. Use a Coding Standard
-2. Analyze Code Before Code Reviews - both manually and using tools
+2. Analyze Code Before Code Reviews - both manually and using [tools](code-quality-tools)
 3. Follow Code Review Best Practices
 4. Refactor Code
 
@@ -132,7 +132,7 @@ In Python, there is not a universal agreement for how to document parameters, re
 * Don't explain "how" that is evident from the code itself.
 
 
-### Code Quality and Code Checking Tools for Python
+### Code Quality and Code Checking Tools
 
 [Python Code Quality][real-python-code-quality] best practices & tools, on RealPython.com.
 
