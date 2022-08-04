@@ -40,7 +40,7 @@ Include at least
 2. Photo that clearly shows your face (at least 50% of vertical space)
 3. Brief description of you. What are your software-related interests?
 
-![Jirayu Github Profile](../../images/jirayu-profile.png)
-![Kongpon Github Profile](../../images/kongpon-profile.png)
+![Siratee Github Profile](../../images/Siratee-profile.png)
+![Kongpon Github Profile](../../images/kongpon-profile.png) 
 
 Note: you do not need to include your email in your profile, for privacy.
