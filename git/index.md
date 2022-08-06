@@ -3,22 +3,24 @@ title: Git, Version Control, and Github
 ---
 
 Git is a popular [Version Control System](https://en.wikipedia.org/wiki/Version_control). 
-Other VCS are Subversion and Mercurial.
 
 A VCS manages versions of code and other documents, and provides services such as:
 
-* authenticate users
-* control who can view, copy, or change files (access control)
-* maintain integrity of work 
+- authenticate users
+- keep a history of all changes to every file, so you can view or checkout any revision of any file(s). Even deleted files can be recovered.
+- control who can view, copy, or change files (access control)
+- maintain integrity of work (files)
   - you cannot overwrite a newer version of a file with work based on an older version
   - a new commit must always be based on the current version of what is in the repository
-* keep a history of all changes to every file, so you can view or checkout any version of any file(s). Even deleted files can be recovered.
-* provides tools for merging differences in versions and retrieving older versions of files
-* attribution of who changed what, and a reason for the change (commit message)
-* manage multiple variations (branches) of the same project, so that teams can work on different features or different versions without affecting other's work. Branches can be merged together.
+- provides tools for viewing differences between revisions of a file, and see who made the changes
+- attribution of who changed what, and a reason for the change (commit message)
+- manage multiple versions (branches) of the same collection of files (same project) in parallel, so that teams can work on different features or versions without affecting each other's work. 
+  - Branches can be merged into a single branch.
 
 
 ## Git Basics
+
+Really Good [Intro to Git](intro-to-git-cs.uw.edu.pdf) from U. of Washington (PDF)
 
 Presentation: [Git Basics](Git-Basics.pdf)
 
@@ -28,13 +30,15 @@ You should know how to use **at least** these git commands:
 |--------------|---------------------------|
 | `git init`   | create a new repository ("repo") |
 | `git status` | check status and changes |
-| `git ls-files` | list files in your local repo |
-| `git add`    | stage files for update to repo |
+| `git add`    | stage files for addition or update to repo |
 | `git commit` | commit files to a local repo | 
+| `git checkout` | copy one or more files from repo to your working copy |
 | `git rm`     | delete a file from a repo (be careful) |
 | `git clone`  | clone (copy) a remote repo |
-| `git pull`   | push new work from a remote repo |
+| `git fetch`  | pull new work from a remote repo to a local repo |
+| `git pull`   | perform `git fetch` and then `git checkout` |
 | `git push`   | push updates from a local repo to a remote repo |
+| `git ls-files` | list files in your local repo |
 
 You can perform these commands in an IDE, but it is still essential to
 know how to use the "git" from the command line.
@@ -46,12 +50,13 @@ For the lazy: my [Git Basics](git-basics), but [Pro Git][ProGitBasics] is better
 **Visual** Guide to Git:
 
 - [Learn Git Interactive](https://learngitbranching.js.org) interactive graphical tutorial, includes branch, merge, rebase, and more.
+
 - [Visual Git Reference](https://marklodato.github.io/visual-git-guide) web page with illustrations of git commands.
 
 
 ### Three Areas: Repository, Staging Area (Index), Working Copy
 
-Video: [Git Workflow on YouTube](https://youtu.be/3a2x1iJFJWc) explains the 3 areas. Part of a course at Georgia Tech.
+Video: [Git Workflow on YouTube](https://youtu.be/3a2x1iJFJWc) explains the 3 areas. Video is from a course at Georgia Tech.
 
 Git uses 3 special areas, and one special reference.
 
@@ -67,15 +72,26 @@ Git uses 3 special areas, and one special reference.
 
 Can you answer these?
 
-1. How do you add file "main.py" to the staging area?
-2. How to show what has been staged for commit?
-3. How to remove "main.py" from the staging area?
-4. What happens if you add "main.py" to the staging area, then edit it again? Do you need re re-stage the file?
+1. How do you create a local git repository?
+2. How do you add file "main.py" to the staging area?
+3. How to show what has been staged for commit?
+4. How to remove "main.py" from the staging area?
+5. What happens if you add "main.py" to the staging area, then edit it again? Do you need re re-stage the file?
 
 Fixing Mistakes
 
 1. You add `main.py` to the staging area (not committed yet). What command removes if from the staging area?
 2. You make some changes in your working copy of `main.py`, but realize your work is wrong. How can you reset your working copy of `main.py` to the most recent committed to the repo?
+
+Git Best Practices
+
+1. Are there any project files you should *not* commit to a repository?
+2. How can you avoid accidentally committing some unwanted files to a repo?
+3. How often should you commit? How to structure commits?
+   - [ ] commit each file whenever you make a change
+   - [ ] commit each file after you change and test it
+   - [ ] files that make up a unit of work should be commited together
+4. Write *descriptive* commit comments. The comments should explain what was done and help someone understand the flow of work.
 
 ## Understanding Git as a Graph
 

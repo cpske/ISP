@@ -37,10 +37,15 @@ navigation_order: 4
 
 ### Teaching Assistants (TAs)
 
-<!--
+[Anusid](https://github.com/ttxking)  `email("Anusid", "Wachiroachoroenwong")`
+
+[Chanathip](https://github.com/kaesrel) `email("Chanathip", "Thumkanon", 3)` 
+
+Volunteer TAs:
 
 [Sahanon](https://github.com/Sahanon-P) `email("Sahanon", "Phisetpakasit")`
- -->
+
+[Siratee](https://github.com/sirateek) `email("Siratee", "Kittiwitchawoakul")` Line: (on request)
 
 
 ```python

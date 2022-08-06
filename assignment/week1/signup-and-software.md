@@ -7,13 +7,14 @@ title: Course Preparation
 3. Update your Github Profile, include 
    - **photo** that clearly shows your face (at least 50% of vertical space)
    - your **real name** correctly **capitalized** ("Steve Jobs") -- first name only or first and last name are OK.  Not a nickname; Not your Github login.
-4. Install the **required software**, if you don't have them:
+4. Install this **required software**, if you don't have them:
    1. Git including the `git` command. Download from <https://git-scm.com>
    2. Python 3.8 or newer.
    3. IDE for Python.  [PyCharm][], [PyDev][] (Eclipse), and [VS Code][vscode] are good.
-   4. A good text editor that does syntax highlighting, for situations where you need to edit a single file.
+   4. Pytest. Type `pytest` in a terminal window to see if it is installed. Ifnot, install it using `pip install pytest`. On some machines, it is "pip3" instead of "pip".
+   5. A good text editor that does syntax highlighting, for situations where you need to edit a single file.
       - Popular editors: [Atom][], [Notepad++][] (Windows), [Sublime][], [VS Code][vscode] (a bit slow), [TextMate][] (Mac)
-      - Terminal-based editor: [vim][] (hard to learn)
+      - Terminal-based editor: [vim][] (hard to learn), many others
       - Windows Notepad is NOT a good editor.
 
 [Atom]: https://atom.io
