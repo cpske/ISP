@@ -2,12 +2,12 @@
 title: Course Preparation
 ---
 
-1. Join [Google Classroom](https://classroom.google.com) for "219245 ISP (2022)". Use class code [r3466kb][classroom-invite].
+1. Join [Google Classroom](https://classroom.google.com) for "219245 ISP (2022)". Use [this link][classroom-invite] or enter class code [r3466kb][classroom-invite].
 2. Tell us your Github login on this form: <https://forms.gle/UP9owsjtYNZtZ1wN6>
 3. Update your Github Profile, include 
    - **photo** that clearly shows your face (at least 50% of vertical space)
    - your **real name** correctly **capitalized** ("Steve Jobs") -- first name only or first and last name are OK.  Not a nickname; Not your Github login.
-4. Install this **required software**, if you don't have them:
+4. Install **required software**, if you don't have them:
    1. Git including the `git` command. Download from <https://git-scm.com>
    2. Python 3.8 or newer.
    3. IDE for Python.  [PyCharm][], [PyDev][] (Eclipse), and [VS Code][vscode] are good.

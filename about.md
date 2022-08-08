@@ -6,13 +6,13 @@ navigation_order: 4
 ## About the Course
 
 
-| **Time**     | Wed 9:00-11:00, Thurs 13:00-16:00 starting 10 Aug 2022. 
+| **Time**     | Wed 9:00-11:00++, Thurs 13:00-16:00 starting 10 Aug 2022. 
 | -------------|--------------------------------------------------------
 | Location     | CPE Room 204.  Some lectures **online** using Google Meet.
 | Github       | We use [Github](https://github.com) for assignments. You need a Github account. 
 | Schedule & Assignments | [Google Classroom/Classwork][classroom-classwork].
-| Google Classroom       | Class Code **r3466kb** [Classroom Link][google-classroom].
-| Course Material        | Collection of material is at <https://cpske.github.io/ISP>, with links on [Google Classroom][classroom-classwork].    
+| Google Classroom       | [Classroom Link][google-classroom]. Class code **r3466kb** 
+| Course Material        | Collection of material is at <https://cpske.github.io/ISP>, but not in chronological order.
 | Discord                | For Q&A, discussions, meeting with TAs 
 | Sign-up & Preparation  | Please do this [Sign-up and Preparation](assignment/week1/signup-and-software) before the first class.
 | Scores       | <https://bit.ly/ISP2022-scores> for classwork and homework 
@@ -78,5 +78,8 @@ public static String email(String firstname, String lastname, int nlast) {
 
 Software "bots" constantly scan the web for email addresses 
 and use them to send spam and phishing attacks.
+
 Some people disguise their email as "santaclaus at christmas dot com",
 but that is easily recognized using pattern matching.
+
+To see if your email or phone number has appeared in a data breach, visit [haveibeenpwned.com](https://haveibeenpwned.com). You can (securely) check if your password has been exposed, too.
