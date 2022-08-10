@@ -35,7 +35,7 @@ navigation_order: 4
 
 (click the above link for Intro)
 
-### Teaching Assistants (TAs)
+### Teaching Assistants
 
 [Anusid](https://github.com/ttxking)  `email("Anusid", "Wachiroachoroenwong")`
 

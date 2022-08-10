@@ -52,18 +52,18 @@ Author: James Brucker
 **Preconditions**: a car, water supply, and a warm dry day
 
 1. Preparation
-   a. park the car in the shade
-   b. prepare bucket, car wash, sponge, clean rags, optional squeegie
-   c. put 1 cap of car wash in bucket, add about 3-4 L water allowing foam to form
+   - park the car in the shade
+   - prepare bucket, car wash, sponge, clean rags, optional squeegie
+   - put 1 cap of car wash in bucket, add about 3-4 L water allowing foam to form
 2. Wash the Car
-   a. start from the top, spray water to remove dirt and thoroughly wet surface
-   b. apply soapy water with sponge to remove all dirt from one area
-   c. spray water to remove soap and dirt
-   d. repeat 'til whole car is clean
+   - start from the top, spray water to remove dirt and thoroughly wet surface
+   - apply soapy water with sponge to remove all dirt from one area
+   - spray water to remove soap and dirt
+   - repeat 'til whole car is clean
 3. Dry the Car
-   a. wait until the car is partially dry, but still has water drops
-   b. use clean rags or squeegie to dry the windows and top of car
-   c. dry other parts of car, working from top to bottom
+   - wait until the car is partially dry, but still has water drops
+   - use clean rags or squeegie to dry the windows and top of car
+   - dry other parts of car, working from top to bottom
 
 **Product**: a clean, dry car
 
