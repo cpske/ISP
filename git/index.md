@@ -29,12 +29,13 @@ You should know how to use **at least** these git commands:
 | Command      | Purpose                   |
 |--------------|---------------------------|
 | `git init`   | create a new repository ("repo") |
+| `git clone`  | clone (copy) a remote repo |
 | `git status` | check status and changes |
 | `git add`    | stage files for addition or update to repo |
 | `git commit` | commit files to a local repo | 
 | `git checkout` | copy one or more files from repo to your working copy |
-| `git rm`     | delete a file from a repo (be careful) |
-| `git clone`  | clone (copy) a remote repo |
+| `git mv`     | move or rename a file |
+| `git rm`     | delete a file from a repo (be careful). `-r` for recursive. |
 | `git fetch`  | pull new work from a remote repo to a local repo |
 | `git pull`   | perform `git fetch` and then `git checkout` |
 | `git push`   | push updates from a local repo to a remote repo |
