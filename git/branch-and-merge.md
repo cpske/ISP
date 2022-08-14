@@ -184,7 +184,7 @@ cmd>  git checkout --track origin/dev-auth
 
 This page has some useful Git commands for working with branches and remotes:
 
-https://www.freecodecamp.org/forum/t/push-a-new-local-branch-to-a-remote-git-repository-and-track-it-too/13222
+<https://www.freecodecamp.org/forum/t/push-a-new-local-branch-to-a-remote-git-repository-and-track-it-too/13222>
 
 * Rename a branch: `git branch -m old_name new_name`  (or use `--move`)
 * Delete a branch: `git branch -d branch_name  (or use `--delete`)
@@ -204,10 +204,10 @@ A branch lets you create a separate variation of a repository that can be modifi
 
 Basics of Branch and Merge
 
-* [Branching and Merging](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging) from the online [Git Book](https://git-scm.com/book/) (download available).
+* [Branching and Merging](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging) from the online [Git Book](https://git-scm.com/book/).
 * [Git Branch Command Examples](ttps://www.thegeekstuff.com/2017/06/git-branch/) shows commands for 15 common tasks
 * [Git Visualizer](http://git-school.github.io/visualizing-git) type git commands and see a graph of the result! *This really helps understand git*. 
-* [How to Clone all Branches?](https://stackoverflow.com/questions/67699/how-to-clone-all-remote-branches-in-git) Stackover question with extensive explanation. Cloning and tracking remotes branches is a common problem.
+* [How to Clone all Branches?](https://stackoverflow.com/questions/67699/how-to-clone-all-remote-branches-in-git) Stackover question with extensive explanation.
 
 Extra:
 
