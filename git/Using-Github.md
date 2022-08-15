@@ -132,7 +132,7 @@ is saved in the local git configuration.  You can "push" (send) your changes to 
 cmd> git push
 ```
 
-### What is My Remote?
+### Where Is My Remote?
 
 To view the "remote" for a local git repository, open a terminal window and change directory to the repository. Then type:
 ```
@@ -198,13 +198,18 @@ Here are the usual steps for an **individual project** (you are the only one com
    cmd> git push
    ```
 
-### Using Github on a Team Project
+### Using Github Flow on a Team Project
 
 For a team project, you should follow [Github Flow][understanding-github-flow].
 
 *Github Flow* is also useful on an individual project.
 
+Please also read [How We Use Github][how-we-use-github-flow] by Scott Chacon.
+
+![Github Flow Diagram](github-flow.png)
+
 [understanding-github-flow]: https://guides.github.com/introduction/flow/
+[how-we-use-github-flow]: http://scottchacon.com/2011/08/31/github-flow.html
 
 ### Learn Github
 
@@ -212,20 +217,23 @@ For a team project, you should follow [Github Flow][understanding-github-flow].
 
 ### Authentication
 
-There are 2 protocols you can use to access a remote git repository, like Github:
+There are 2 protocols you can use to authenticate to Github (or other git service):
 
-1. HTTPS - the Github URL looks like `https://github.com/your_github_id/reponame.git`
-   * You enter your username and password to authenticate
-2. SSH - the Github URL looks like `git@github.com:your_github_id/reponame.git`
-   * Uses an "ssh key" to respond to a challenge from Github. 
-   * Generally more secure since password is **not** sent over the Internet
+1. HTTPS - Github URL looks like `https://github.com/your_github_id/reponame.git`
+   - You enter your username and password to authenticate
+   - Git "remembers" the authentication for duration of current shell window
+
+2. SSH - Github URL looks like `git@github.com:your_github_id/reponame.git`
+   - You create a public/private ssh key pair and save the public key on Github.
+   - Uses challenge-response to authenticate, so you never send your password over the net.
+   - Generally more secure than HTTPS
 
 Which ever protocol you use, you can instruct Git to save your password during a session so you don't need to type it each time you push or fetch:
 ```
 cmd> git config --global credential.helper cache
 ```
 
-### Use SSH Keys instead of your Github password
+### Use SSH Keys For Github Authentication
 
 The steps are described in [Connecting to Github with ssh](https://help.github.com/articles/connecting-to-github-with-ssh/).
 

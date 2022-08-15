@@ -10,8 +10,7 @@ so you need to understand branches and pull requests, too.
 Please read and know the following material.  It is all short:
 
 1. Github Flow
-   * Github Flow Illustrated Guide: [https://guides.github.com/introduction/flow/](https://guides.github.com/introduction/flow/)
-   * Description on githubflow.io:  [https://githubflow.github.io/](https://githubflow.github.io/). Step *#5 -merge only after pull request review* is important!  But I disagree with step #6.
+   * Github Flow Introduction: [https://guides.github.com/introduction/flow/](https://guides.github.com/introduction/flow/)
 2. Git branches (already covered) needed for Github Flow
    * Basic Branching and Merging [https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging)
 3. Creating a Pull Request on Github 

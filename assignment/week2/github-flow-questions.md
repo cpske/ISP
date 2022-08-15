@@ -7,12 +7,12 @@ There are other questions in the Google form.
 1. What is the One Rule of Github Flow? 
 
 2. You want to implement this new feature in your web app:
-   "*Users can login to the app using OAuth*"    
-   [when you go to a web site and it has "Login with Google" or "Login with Facebook" buttons, it uses a protocol called OAuth to do that]
+   "*Users can login using OAuth*"     
+   [when you go to a web site and it has "Login with Google" or "Login with Facebook" buttons, it uses the OAuth protocol to do that]
 
-   What would be a good name for this branch (according to the advice in the Github Flow readings)?
+   What is a good name for this branch (according to the advice in the Github Flow readings)?
 
-3. When you want to request feedback from other on your work, what should you do?
+3. When you want to request feedback from others on your work, what should you do?
 
 4. You should open a Pull Request when?
    - [ ] you start work on a new feature
