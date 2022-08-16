@@ -4,34 +4,33 @@ title: Github Flow Practice
 
 ### Purpose
 
-Practice project initialization, Github Flow, Pull Requests, merging conflicts, and using a task board.
+1. Practice project initialization, Github Flow, creating and responding to Pull Requests, and using a task board.
 
-Practice online communication, like a remote programming team.
-
-> For this exercise, students who took ISP last year cannot be team leader:
+2. Practice resolving merge conflicts.
 
 
 ### The Goal
 
 When your are done, "master" on your `ku-cafe` repo will contain:
 
-* `README.md` with **links** to the **5 sections** in the Menu. At the bottom of README are the names of your team members and their menu section. (see example)
+* `README.md` with **links** to the **5 sections** in the Menu. 
   - when someone clicks on a link it should go *exactly* to the correct section of the menu file.
+* At the bottom of README are the names of your team members and their menu section. (see example)
 
-* `Menu.md` file containing **these 5 sections**
+* `Menu.md` file containing **these 5 sections** written on **one line**
   - Breakfast
   - Lunch
   - Dinner
   - Night Food
   - Beverages
-  - All sections must be **formatted consistently** with a) correct spelling, b) items in alphabetical order in each section, c) consistent pricing.
-
-* `Menu.md` contains hyperlinks to the 5 sections written as a single line, directly under the title line:
+  It should look like this:
   ```
-  KU Cafe Menu
+  KU Cafe Menu                                         <-- format as a heading
   
   Breakfast | Lunch | Dinner | Night Food | Beverages  <-- links to sections
   ```
+* All sections must be **formatted consistently** with a) correct spelling, b) items in alphabetical order in each section, c) consistent pricing.
+
 
 ## Evaluation Criteria
 
@@ -42,6 +41,14 @@ When your are done, "master" on your `ku-cafe` repo will contain:
 5. PR descriptions and comments are meaningful and helpful.
 
 ## Assignment
+
+> Github Project Boards have changed a lot in the past year.
+> - A Project Board can be viewed as a task board or as a spreadsheet.
+> - Items can have a template with predefined fields (do this in the spreadsheet view).
+> - Items can be converted to "issues" in a Github repo, so it helps to **create a repo first** and add collaborators to it.
+> 
+> Suggest you browse the documentation for Projects on Github.
+> 
 
 1. Team of 5 people will jointly contribute to one `ku-cafe` project on Github.
    - Teams are shown on shared Google Sheet.  Add your Github ID to sheet.
@@ -59,7 +66,7 @@ When your are done, "master" on your `ku-cafe` repo will contain:
      - Beverages
 
 3. **Each Team Member** does this:
-
+   
    - Take one task on the project board, move it to "In progress", and **add your name** to the task.
    - Add a meaningful description to the task. One sentence is enough.
    - Clone the repo from your Project Leader on Github
