@@ -104,3 +104,18 @@ After you successfully merge your work into 'master', push your changes.
 It is possible that another team member pushed new changes while you were resolving conflicts,
 so you *might* need to repeat the process!
 
+## Github Projects (Task Board & Project Tracking)
+
+Github Projects used to a simple task board, but it now quite powerful and complex.   (*Typical* Microsoft -- adding too much complexity.)
+
+To discover what you can do with Projects, browse the docuentation:
+
+- [Github Projects](https://docs.github.com/en/issues/planning-and-tracking-with-projects)
+
+- [Best Practices for Projects](https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/best-practices-for-projects)
+
+Useful things you can do:
+
+- create custom fields for tasks. Try: "Estimate" (time), "Iteration" (number), "Priority" (choose from a list), "Assignee" (who is doing it)
+
+- convert tasks into issues! Make a task be an issue. When you close the issue the task is marked "Done" (you may need to configure this).
