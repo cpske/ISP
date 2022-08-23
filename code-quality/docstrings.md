@@ -78,16 +78,19 @@ def gcd(a, b) -> int:
     a/n and b/n is an integer value.  If both a and b are zero, 
     the gcd is 1, unlike the Python math.gcd which returns 0.
 
-    :param a: first value for greatest common divisor
-    :type a:  int
-    :param b: second value for greatest common divisor
-    :type b:  int
+    :param int a: first value for greatest common divisor
+    :param int b: second value for greatest common divisor
     :returns: the greatest common divisor of `a` and `b`.
     :rtype:   int
     :raises TypeError: if a or b arg not int type.
 
-
     """
+```
+
+You can also specify parameter type on a separate line:
+```
+    :param a: first value for greatest common divisor
+    :type a:  int
 ```
 
 - Sphinx Docstring Tutorial <https://sphinx-rtd-tutorial.readthedocs.io/en/latest/docstrings.html>

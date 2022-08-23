@@ -2,12 +2,14 @@
 title: Software Testing
 ---
 
-Several types of testing are used in software projects
+
+Software projects perform several types of testing:
 
 * *Unit Testing* tests individual components, such as classes and and functions.
 * *Integration Testing* tests that components and services interact correctly.
 * *Functional* or *End-to-End Testing* tests the entire application flow and behavior.
 * *Security Testing* tests for secure flaws or vulnerabilities.
+* *Usability Testing* to determine how well and easily users can use the software to perform what they want to do
 * *Acceptance Testing* tests that application conforms to requirements and meets the users' needs. Often required before delivering a software product.
 
 ---
@@ -17,6 +19,7 @@ Several types of testing are used in software projects
 Unit testing tests individual classes, methods, and functions.
 
 Your development workflow should usually be:
+
 - write some code
 - write tests for what the code **should** do, based on the spec (not what you actually coded)
 - run the tests
@@ -164,7 +167,7 @@ Tester
   * **+** tries to break the system
   * **-** must learn the software
   * **+** driven by quality goal
-  * **+** not biased by development perspective
+  * **+** not biased by developer's perspective
 
 ## Axioms and Guides for Testing
 
