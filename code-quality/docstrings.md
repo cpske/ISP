@@ -201,10 +201,11 @@ First, which docstring style do you prefer?
 Next, we will agree on a style in class.
 
 
-## Use Type Hints instead of Data Types in Comments
+## Use Type Hints instead of Comments for Data Types
 
-The Google and PEP257 standards document the *data type* of parameters in the comment.
-It is more useful to write the types as **Type Hints** and omit the type from docstring comments.  Avoid redundancy and inconsistency!
+Instead of defining data types in Docstring comments, define them as type hints.  The type hints can be used by static analysis tools like `flake8` and `mypy`.
+
+Avoid writing data types *both places* to avoid redundancy & possible inconsistency. 
 
 The `max` function works with either int or float, so instead of 'int' we can use Number
 for the type hints:
@@ -213,13 +214,12 @@ for the type hints:
 from numbers import Number
 
 def max(a: Number, b: Number) -> Number:
-    """Return the maximum of two values a and b.
+    """Return the maximum of two numeric values.
 
-    Args:
-        a, b: two numbers to find the maximum of
+    :param a: first value to compare
+    :param b: second value to compare
 
-    Returns:
-        the maximum of a and b
+    :returns: the maximum of a and b
     """
     if a > b: 
        return a
@@ -261,16 +261,21 @@ class BankAccount:
 ### My Recommendation for Class Docstrings
 
 1. Document what the class does, not *how* it does it. 
+
 2. Document any special dependencies or preconditions required by the class.
-2. Give an example of how to create objects of the class.
-3. Document attributes of the class.
-4. **Don't** write a summary of all the methods in th class. That's redundant!  Each method has it's own docstring that describes it.
+
+3. Give an example of how to create objects of the class.
+
+4. Document attributes of the class.
+
+5. **Don't** write a summary of all the methods (as the PEP does). That's redundant!  Each method has it's own docstring that describes it.
 
 
 ## Viewing Python docstrings
 
 You can view the docstring comments in the Python interpreter.
 This works for functions, classes, modules, and packages (if they have a docstring): 
+
 ```python
 >>> help(print)
 print(...)
@@ -283,6 +288,11 @@ print(...)
     ...
 >>> import re    # 're' is the incredibly useful regular expression module
 >>> help(re)
+```
+
+Another way is simply print the `__doc__` "magic" attribute:
+```
+>>> print(max.__doc__)
 ```
 
 Here's an example class docstring from the popular `requests` library,
@@ -306,9 +316,6 @@ class Request(RequestHooksMixin)
     >>> import requests
     >>> req = requests.Request('GET', 'https://httpbin.org/get')
 ```
-
-This docstring uses colons (:) for parameters and keywords used in formatting.
-That's the style used in official Python documentation, but a bit hard to read.
 
 
 ## Use pydoc to view docstrings
@@ -438,15 +445,11 @@ def hypot(x: float, y: float) -> float:
     return math.sqrt(x*x + y*y)
 ```
 
-The syntax for type hints is:
-
-* parameters:  'param: data_type` as in `x: float`.
-* return value:  `fun() -> type` as in `rand() -> int`
 
 ## Meandering PEPs
 
 Many PEPs address docstrings, but the proposals are not consistent and some have either been replaced or rejects (PEP 257 was rejected).
-- PEP8
+- [PEP8][]
 - [PEP256][] *Road Map to the for Docstring PEPs*
 - [PEP287][] *reStructured Text Docstring Format*
 
@@ -455,9 +458,13 @@ Many PEPs address docstrings, but the proposals are not consistent and some have
 To learn more about Python docstrings:
 
 * [Documenting Python Code](https://realpython.com/documenting-python-code/) on realpython.com has examples of function and class docstrings, and advise on how to write.  They have some videos, too.
-* Detailed [Google Docstrings example](https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html) at readthedocs.io.
-* Detailed [NumPy Docstrings example](https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_numpy.html#example-numpy)
+* Sphinx Docstring Tutorial <https://sphinx-rtd-tutorial.readthedocs.io/en/latest/docstrings.html>.
+* [Google Docstrings example](https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html) at readthedocs.io.
+* [Google Python Style Guide](https://google.github.io/styleguide/pyguide.html) covers coding style in great detail.
+* [NumPy Docstrings example](https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_numpy.html#example-numpy) also on readthedocs.io.
 * [NumPyDoc](https://numpydoc.readthedocs.io/en/latest/format.html) official documentation of NumPy/SciPy docstrings.
+
+Java:
 
 * The Java documentation standard is called "Javadoc" which is *much better* than Python and can generate beautiful, cross-referenced HTML pages.  The entire Java API docs are created using Javadoc.
 

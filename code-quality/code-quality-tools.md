@@ -14,6 +14,7 @@ Tools can find:
    - variables used before assignment
    - possible unintended behavior
    - dangerous code
+
 2. Style Problems
    - violation of coding style convention
    - violation of commenting convention
@@ -51,7 +52,6 @@ The top tools for Python are:
   - otherwise, install it as stand-alone tool: `pip3 install pydocstyle`
 
 * [Pylama](https://github.com/klen/pylama) A wrapper for 9 different tools, including the tools in Flake8.
-  - not as popular as the above tools
 
 * This [Github repo][github-code-analysis-tools] has more details and even more tools.
 

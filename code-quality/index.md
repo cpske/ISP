@@ -3,11 +3,13 @@ title: Code Quality
 ---
 
 Writing and maintaining high quality code is one of the developer's
-most important responsibilities.
+responsibilities.
 
 It is easy to neglect code quality when working under a deadline,
 fixing bugs, or adding a new feature. Over time the code becomes
 harder to understand and maintain, and harder to test.
+
+Eventually, such code is discarded and rewritten -- a waste of money.
 
 ## What is Code Quality?
 
@@ -30,7 +32,7 @@ References:
 
 ## How to Improve Code Quality
 
-Both the above articles recommend these best practices:
+The above articles recommend these best practices:
 
 1. Use a Coding Standard
 2. Analyze Code Before Code Reviews - both manually and using [tools](code-quality-tools)
@@ -99,14 +101,11 @@ These docs show the Python "official" coding standard, called PEP8:
 
 * [pep8.org](http://pep8.org/) is a single page easy-to-read summary of how to use [PEP 8](https://www.python.org/dev/peps/pep-0008/) the official Python Style Guide.
 * Python Guide for Docstrings [PEP 257](https://www.python.org/dev/peps/pep-0257/)
-
-This article is very helpful with good examples:
-
-* [How to Write Beautiful Code with PEP8](https://realpython.com/python-pep8/) on RealPython.
-
-Google has a detailed style guide, that includes "pros" and "cons" of style choices. It explains **why** and can help you decide what's important.
+* [How to Write Beautiful Code with PEP8](https://realpython.com/python-pep8/) on RealPython. Lot's of helpful examples.
 
 * [Google Python Style Guide](https://google.github.io/styleguide/pyguide.html)
+  - Style Guide lists "pros" and "cons" of style choices & explains **why** to help you decide what's important.
+
   - Rule #1 is "run `pylint` over your code"! (using Google's .pylintrc)
   - Part 2 is guidelines for using the Python language 
   - Part 3 "Python Style Rules" are rules for coding style
@@ -118,18 +117,17 @@ Google has a detailed style guide, that includes "pros" and "cons" of style choi
 
 See [Docstrings](docstrings) for how to write documentation comments in Python.
 
-* Python Docstrings, Javadoc, or Scaladoc are documentation for a project. They can be shown as web pages or shown dynamically in an IDE.
-* Syntax of Python Docstrings.
-  - 3 variations: Python official docstrings, Google style, Numpy style
-
 In Python, there is not a universal agreement for how to document parameters, return values, and exceptions for a method or function. There are 3 styles:
 * Tools for creating documentation from docstrings:
   - pydoc
   - python interactive: `help(something)` shows formatted docstring
   - `print(something.__doc__)`
   - Sphinx and the Napolean addon. Used to create ReadTheDocs style web docs.
-* Code comments should explain *why* and details not obvious from code. 
-* Don't explain "how" that is evident from the code itself.
+
+Comments in code
+
+- comments should explain *why* and details not obvious from code. 
+- Don't explain "how" that is evident from the code itself.
 
 
 ### Code Quality and Code Checking Tools
@@ -138,6 +136,12 @@ In Python, there is not a universal agreement for how to document parameters, re
 
 My [Code Quality Tools](code-quality-tools) page describes some tools for Python.
 
+Recommended: 
+- `flake8` with `flake8-docstrings` extension; `mypy` for static checking using type hints.
+- PyCharm has a builtin code checking tool, and be configured to use an extneral tool
+- VS Code: choose an external tool in settings
+
+[real-python-code-quality]: https://realpython.com/python-code-quality/
 
 ### Django's Coding Style Guide
 
@@ -168,10 +172,5 @@ Tip 25. *Program Intently and Expressively*
 Tip 26. *Communicate in Code*    
 Tip 30. *Write Cohesive Code*    
 
-
-## Exercise
-
-Create a list of the Tips from PAD related to code quality and give 
-an example of each one.
 
 [Quick References](../resources/PAD-quickref.pdf) from *Practices of an Agile Developer*
