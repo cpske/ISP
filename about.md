@@ -15,7 +15,7 @@ navigation_order: 4
 | Course Material        | Collection of material is at <https://cpske.github.io/ISP>, but not in chronological order.
 | Discord                | For Q&A, discussions, meeting with TAs 
 | Sign-up & Preparation  | Please do this [Sign-up and Preparation](assignment/week1/signup-and-software) before the first class.
-| Scores       | <https://bit.ly/ISP2022-scores> for classwork and homework 
+| Scores       | <https://bit.ly/isp2022-scores> for classwork and homework 
 
 
 [google-classroom]: https://classroom.google.com/c/NDk2ODk1MDE0NTgy
