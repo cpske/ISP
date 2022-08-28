@@ -1,26 +1,43 @@
 ---
-title: Assignment - Vision and Requirements for KU Polls
+title: KU Polls Project Inception
 ---
 
-Everyone will implement a Django application for conducting a poll or survey.  
+Everyone will implement a Django application for conducting a poll or survey. 
+You will use iterative development. The first two iterations will look like
+the Django tutorial project, so you can do this assignment as you study the tutorial. 
 
-This week, get started creating a repository, a wiki,
-writing a *Vision Statement*, an initial set of *Requirements*
-based on the class vision (online).
+In this assignment, you will create a *Vision Statement* for the product,
+an initial set of *Requirements*, and a *Development Plan*.
 
-In the first two iterations, the application will look 
-like the Django tutorial project.
-Then we will add additional features and improve the design.
+Then you'll create some of the "infrastructure" you will use during development:
+- Project Board with Backlog
+- Github Repository
+- Wiki containing *Vision Statement* and *Development Plan*
+- Initial files in repo: `README.md`, `.gitignore`, `requirements.txt`
+
 Even if you don't have experience writing web apps,
 by doing this *incrementally* you'll find the work is managable
 and not too hard.
 
 
-## This week's assignment
+## Project Inception and Initialization
 
-1. Create a public repository named `ku-polls` in **your own** Github account.
+1. Create a **public** repository named `ku-polls` in **your own** Github account.
+
 2. Add a **README.md** that briefly describes that the project and has links to your product docs. 
-   - README.md should contain links to the Wiki pages for Home, Vision Statement, and Requirements.
+   - README.md should contain links to the **Wiki** pages for Home, Vision Statement, Requirements, and Plans.
+
+3. In with Wiki, create a Home page (this is the conventional name) that is the default landing page and contains links to other Wiki pages.  This is how people find things in your Wiki.  The Wiki formatting is a bit different than Markdown. 
+   - Add a title
+   - Add a link named "Vision Statement" (even though the page doesn't exist yet)
+   - Add a link named "Requirements" (even though the page doesn't exist yet)
+   - Add a link named "Development Plan" (even though the page doesn't exist yet)
+   - Save the page
+   - You will see RED text for links to undefined pages. When you click one, the Wiki will offer to create the page.
+
+4
+### Initialization
+
 3. Add a `.gitignore` to the repository. 
    - During repo creation you can select Github's `.gitignore` for Python projects, then customize it to ignore IDE files and (later) virtual environments.
    - Look at the .gitignore from classroom assignments for examples.

@@ -64,3 +64,17 @@ There are other questions in the Google form.
    Not part of flow:
    - [ ] Open an issue on Github with title "Pull Request".
    - [ ] Merge master into your branch then rebase.
+
+
+## 2022 Version of Last Question
+
+[1] Update "master" on your local machine before creating a branch.	
+[3] Implement and test the feature.	
+[2] Create a new local branch for your work.	
+[6] Wait for team to review and approve your work.	
+[4] Push your work (on a branch) to Github.	
+[5] Open a Pull Request to request review.	
+[8] Merge your branch into master.	
+[10] Close the Pull Request with a descriptive message.	
+[7] Pull updates on master to your local machine (again).	
+[9] Push the master branch to Github.
