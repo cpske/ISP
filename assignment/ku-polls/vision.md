@@ -9,9 +9,11 @@ title: Vision of KU Polls Application
 > Many software projects favor a short vision statement based
 > on a template such as [this one](https://www.atlascode.com/blog/creating-a-software-product-vision-statement/).   
 >
-> Other projects write a much longer, more detailed vision that
-> includes more background, a business case, and more details of
-> the envisioned product.    
+> Other projects write a longer, more detailed vision 
+> including background, a business case, and details of
+> the envisioned product.
+> [Advantis](https://www.edvantis.com/blog/project-vision-in-software-development/) 
+> has good suggestions on creating a vision.
 
 ## Background
 

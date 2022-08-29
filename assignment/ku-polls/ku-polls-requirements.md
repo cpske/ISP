@@ -113,23 +113,11 @@ To understand this, it helps to know a few things about URLs and Github repo:
   notice that there is no `.md` in the filename. A wiki filename is the page title.
    
 
-## Looking Ahead
-
-The first iteration of this project is based on the Django Polls tutorial application. 
-Development work will be done in a branch (not master).
-
-If you want to preview and perhaps get started, see:
-
- * [Django Home](https://www.djangoproject.com/) and [Django Getting Started](https://www.djangoproject.com/start/)
- * [Django Polls App, part 1](https://docs.djangoproject.com/en/3.1/intro/tutorial01/)
+## Resources
 
 [Documenting your projects on Github](https://guides.github.com/features/wikis/) advise for 
   * what should be in your README file, and in what order?
   * using a Wiki
-  * glaring omission: the guides **does not** tell you how to create links from README to a wiki doc, or from a wiki doc to a project file in the repo.
-
-
-## Resources
-
+  * the guides **do not** tell you how to create links from README to a wiki page, or from a wiki doc to a project file in the repo.
 [Relative Links in READMEs](https://help.github.com/articles/adding-images-to-wikis/)    
 [Adding Images to Wikis](https://help.github.com/articles/adding-images-to-wikis/)

@@ -46,9 +46,11 @@ This is also recommended in Heroku's [12-Factor App][12-factor-app] guide.
 
 Put sensitive data in a separate file that is *not* committed to Github.
 
-## Using Environment Variables
+## Basic Way: Using Environment Variables
 
-In Python, one way to handle configuration values is to use **environment variables**.  The Python `os.getenv()` command returns the value of an environment variable:
+*This section shows the basic idea and works, but I recommend using [Decouple](#python-decouple) instead.*
+
+In Python, you can store configuration values as **environment variables**.  The Python `os.getenv()` command returns the value of an environment variable:
 
 ```python
 import os
@@ -64,18 +66,19 @@ import os
 'default'             # returns a default value for undefined envvar
 ```
 
-In a Django `settings.py` we can use the environment to get
-sensitive variables (and include default values):
+In Django's `settings.py` we can use the environment to get
+sensitive variables and include default values:
+
 ```python
-SECRET_KEY = os.getenv('SECRET_KEY')
+SECRET_KEY = os.getenv('SECRET_KEY', 'default-secret-key')
 DEBUG = bool(os.getenv('DEBUG', 'False'))
 TIME_ZONE = os.getenv('TIME_ZONE', 'UTC')
-
-STATIC_URL = os.getenv('STATIC_URL','/static/')
 ```
 
-and set environment variables for each of these:
-In Bash you can write:
+Create a shell script (Bash, Zshell, or Windows batch file) to set these environment variables.
+This script *should not* be part of your Git repository.
+
+For bash you can write:
 ```shell
 SECRET_KEY=AElek13407aseasej39
 DEBUG=True
@@ -87,44 +90,39 @@ SET SECRET_KEY=AElek13407aseasej39
 SET DEBUG=True
 SET TIME_ZONE='Asia/Bangkok'
 ```
-Put these values into a file and then load them into your shell's environment
-before running the web app.
+Save these lines in a file ("shell script") such as `config.sh`.
 
-For example, if we save them in a file named `config.sh`
-then type:
+Before starting the web app, you load their values into the environment:
 ```shell
 # read config values. In some shells, type "." instead of "source"
 cmd> source config.sh  
-# start the app with configuration values now in the environment
+# now start the Django app 
 cmd> python manage.py runserver
 ```
 
-PaaS services, like Heroku, provide a way to set env-variables
-before running your web application.
+PaaS services like Heroku provide a way to specify environment variables like this.
 
 You should provide **sensible defaults** in case an env-variable is not set.  
-In the above example, the default value for `DEBUG` is False,
-and the default static URL is '/static/'.
+In the above example, the default value for `DEBUG` is False.
 
 Environment variables can still pose a security risk: 
 a bad guy may find a way to read environment variables.
 
 In Django, if DEBUG=True and an error occurs, Django prints debugging output in the browser window **including environment variables**.
 
-## Packages for Externalizing Configuration Data
+## Packages to Externalize Configuration
 
-Two Python packages provide nice solutions for externalizing 
-configuration data (you only need one of python-decouple or django-environ):
+Two Python packages provide nice solutions to externalize
+configuration data (you only need one of them!)
 
-* **python-decouple** - package for reading configuration data from a file or environment variables.  It can return values other than Strings (such as boolean or a dictionary) by specifying a `cast`.
+* **python-decouple** - reads configuration data from a file or environment variables.  It can return values as any data type (not just Strings) by specifying a `cast`.
+  - General purpose module (can use on any project)
 
 * **django-environ** - similar to `python-decouple`, but specific to Django. 
   - Has convenience methods for converting other attributes to the data types used in Django's settings.py.
   - Can parse a database URL into the Django DATABASES setting format.
 
 * **dj-database-url** - package to parse a Database URLs in standard notation (a string) and return a Django DATABASE_ENGINE dictionary. Use this with `python-decouple`.
-
-Comparing these, `django-environ` has convenience methods for converting strings to Django settings types. `python-decouple` is more general-purpose and has better documentation.
 
 ## python-decouple
 
