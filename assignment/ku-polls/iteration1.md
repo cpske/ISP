@@ -9,6 +9,13 @@ The assignments for the next 3 weeks will add to this code, so don't fall behind
 
 The code you will produce for this iteration match the [Django Tutorial][django-tutorial].
 
+The Requirement are as in the example project:
+1. Display a list of poll questions
+2. Visiter can select a poll question and vote for a choice. His vote is added to the total.
+3. Visitor can see total votes for each choice in a poll.
+4. Each poll has a publication date (start date) & is visible only on or after this date.
+5. Administrator can add or modify poll questions and choices.
+
 1. Create a wiki page named "Iteration 1 Plan" page in your `ku-polls` wiki. Include:
    - **Goal** for the iteration
    - **Features** to implement
