@@ -26,9 +26,6 @@ and not too hard.
    * Home - default landing page. It contains a description and links to other pages.
    * Vision Statement - vision of the product (be realistic). You can borrow material from the class Vision Statement. A rare instance where copying is allowed.
    * Requirements - a specification of the initial requirements.
-5. When you are done, schedule an online review with a TA or instructor.
-   * TA is not your personal editor. You should check your files for correctness first.
-   * Use Google sheet to schedule a time, or contact the TA by other means.
 
 ### Details
 
