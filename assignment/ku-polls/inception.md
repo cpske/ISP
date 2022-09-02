@@ -109,13 +109,13 @@ A Vision is indented to unify everyone's understanding of the purpose, who is af
 Vision should be short and realistic.
 
 A Vision includes:
+
 - Background information
 - Description of the problem and who is affected
 - Vision of the solution
 - How stakeholders will benefit from the solution
 - Business case or value proposition of the project
-
-A good Vision is ***visual***.  It's good to include images or mock-ups of what you intend to produce.
+- A good Vision is ***visual***.  Desirable to include images or mock-ups of what you intend to produce.
 
 A popular template for a short Vision statement
 is [this one](https://www.atlascode.com/blog/creating-a-software-product-vision-statement/).
@@ -141,6 +141,29 @@ Characteristics of good requirements are:
 * Written as complete sentences with clear, correct English.
 
 Avoid writing implementation details as requirements.
+
+### Software Development Plan
+
+*See the example project -- don't copy text of items 1-4 as header names!*
+
+SDP *aka* "Development Plan" or "Project Plan" should include:
+
+1. Brief description of what will be produced. Refer to Requirements & Vision instead of duplicating details.
+2. Timeline or Schedule 
+   - how long is project? how long are iterations? 
+   - table: your initial plan for when to implement the major features
+   - this can change over time, but you need to make an estimate so people can see if your plan is at all reasonable
+   - goal or milestone for each iteration (can change over time).
+3. Software Process you will use
+   - briefly describe process (Iteration & Incremental)
+   - How to manage work products (use Github Flow). Important!
+   - Quality assurance plan - what testing and review will you do?
+4. Technology and Tools
+   - Significant technologies you will use. Include frameworks.
+5. Resources needed (OK to omit for this project)
+   - How many people? (for this assignment -- just you)
+   - Computing resources required: cloud service? CI server? database?
+
 
 ### How To Use a Github Wiki
 
