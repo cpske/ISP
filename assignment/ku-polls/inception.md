@@ -119,7 +119,9 @@ A Vision includes:
 
 A popular template for a short Vision statement
 is [this one](https://www.atlascode.com/blog/creating-a-software-product-vision-statement/).
-Other projects write a detailed Vision that is several pages long. [Advantis](https://www.edvantis.com/blog/project-vision-in-software-development/) has good suggestions on how to create a software project vision.
+Other projects write a detailed Vision that is several pages long. 
+
+[Advantis](https://www.edvantis.com/blog/project-vision-in-software-development/) has good suggestions on how to create a software project vision.
 
 ### Requirements 
 
@@ -144,7 +146,7 @@ Avoid writing implementation details as requirements.
 
 ### Software Development Plan
 
-*See the example project -- don't copy text of items 1-4 as header names!*
+*See the example project -- don't copy the text items below as header names!*
 
 SDP *aka* "Development Plan" or "Project Plan" should include:
 
