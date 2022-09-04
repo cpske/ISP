@@ -76,10 +76,12 @@ public static String email(String firstname, String lastname, int nlast) {
 ```
 *Why obfuscate email addresses?*    
 
-Software "bots" constantly scan the web for email addresses 
-and use them to send spam and phishing attacks.
+Software "bots" scan the web for email addresses 
+and use them to send spam and phishing attacks. So, obfuscate.
 
-Some people disguise their email as "santaclaus at christmas dot com",
-but that is easily recognized using pattern matching.
+[Have I Been Pwned?](https://haveibeenpwned.com)
 
-To see if your email or phone number has appeared in a data breach, visit [haveibeenpwned.com](https://haveibeenpwned.com). You can (securely) check if your password has been exposed, too.
+To see if your email address or a password you use has been exposed 
+in a data breach, visit [haveibeenpwned.com](https://haveibeenpwned.com).
+
+Passwords are *not* sent over the Internet. Local comparison using hashes.
