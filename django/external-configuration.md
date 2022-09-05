@@ -1,11 +1,15 @@
 ---
-title: Separate Configuration Data from Code
+title: Externalize Configuration Data in Python
 ---
 
 * [The Problem](#the-problem)
-* Basic Solution using Python built-in commands to access the environment
-* General solution using `python-decouple`
-* Django-specific solution using `django-environ`
+* [The Solution](#the-solution)
+* [Using Environment Variables](#using-environment-variables) is a basic solution and used by Heroku cloud services
+* [Packages to Externalize Configuration](#packages-to-externalize-configuration), the best ones are:
+  - [python-decouple](#python-decouple) a general purpose package 
+  - [django-environ](#django-environ) specifically for Django
+  - [dj-database-url](#database-urls-and-dj-database-url) for parsing database URL strings
+
  
 ## The Problem
 
@@ -22,7 +26,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'polls',
         'USER': 'admin',
-        'PASSWORD': 'mint2840',
+        'PASSWORD': 'iamanidiot',
         'HOST': '127.0.0.1',
         'PORT': '5432'
      }
@@ -34,78 +38,77 @@ STATIC_URL = 'https://storage.googleapis.com/ske-polls/static/'
 The problems with this are:
 
 1. Anyone with access to this code can **steal sensitive information**.
-2. If committed to Github, anyone on the web can steal the info and abuse it.
-3. It's difficult to change. In Django it may be fairly easy, but for other apps (configuration spread over many files) or Java (configuration in Java source code not distributed with the app) it's much harder to change and easy to miss something.
-4. If you put your Google Cloud, AWS, or Azure credentials into a file on Github, you may face a large **credit card bill** when someone steals them and uses your account for Bitcoin mining.
+2. If committed to Github, anyone on the web can **steal the info**.
+3. **Difficult to change** - an installer has to search for the data. In Django it may be fairly easy, but for other apps the configuration data may be spread over many files or may require recompiling the code (Java, C++, etc).
+4. If you put your Google Cloud, AWS, or Azure credentials into a file on Github, you may get a **large credit card bill** when someone steals your credentials and uses your account (for crypto-mining).
 
-### The Solution
+## The Solution
 
-A standard practice in programming is to **separate configuration data from code**.
+A standard practice is to **separate configuration data from code**.
 
-This is also recommended in Heroku's [12-Factor App][12-factor-app] guide.
+This is recommended in Heroku's [12-Factor App][12-factor-app] guide.
 
-Put sensitive data in a separate file that is *not* committed to Github.
+Put sensitive data in a separate file that is *not* committed to Github, or use environment variables.
 
-## Basic Way: Using Environment Variables
+## Using Environment Variables
 
-*This section shows the basic idea and works, but I recommend using [Decouple](#python-decouple) instead.*
+*This is the basic idea and it works, but I recommend using [python-decouple](#python-decouple) instead.*
 
-In Python, you can store configuration values as **environment variables**.  The Python `os.getenv()` command returns the value of an environment variable:
+In Python, you can access values as **environment variables**.  The Python `os.getenv()` command returns the value of an environment variable:
 
 ```python
 import os
-# Get the user's login name from the environment
->>> os.getenv("USERNAME")
-'user'                # if you are logged in as "user"
+# Get the user's login name from the environment. May be 'USERNAME' on Windows.
+>>> os.getenv("USER")
+'hacker'
 # on Windows use HOMEPATH instead of HOME
 >>> os.getenv("HOME")
-'/home/user'          # typical home directory on Linux
+'/home/hacker'
 >>> os.getenv("foo")
-                      # returns nothing for undefined envvar
+                        # returns nothing for undefined env var
 >>> os.getenv("foo", "default")
-'default'             # returns a default value for undefined envvar
+'default'               # returns a default value for undefined env var
 ```
 
-In Django's `settings.py` we can use the environment to get
-sensitive variables and include default values:
+We can use the environment to store sensitive data for a Django app.
 
-```python
-SECRET_KEY = os.getenv('SECRET_KEY', 'default-secret-key')
-DEBUG = bool(os.getenv('DEBUG', 'False'))
-TIME_ZONE = os.getenv('TIME_ZONE', 'UTC')
-```
+1. Define variables and values in a bash or zshell script named `config.sh` (*not checked in* to Git):
+   ```shell
+   SECRET_KEY=AElek13407aseasej39
+   DEBUG=True
+   TIME_ZONE='Asia/Bangkok'
+   ```
 
-Create a shell script (Bash, Zshell, or Windows batch file) to set these environment variables.
-This script *should not* be part of your Git repository.
+2. If using MS Windows use a ".bat" or Powershell script:
+   ```shell
+   SET SECRET_KEY=AElek13407aseasej39
+   SET DEBUG=True
+   SET TIME_ZONE='Asia/Bangkok'
+   ```
 
-For bash you can write:
-```shell
-SECRET_KEY=AElek13407aseasej39
-DEBUG=True
-TIME_ZONE='Asia/Bangkok'
-```
-in MS Windows use:
-```shell
-SET SECRET_KEY=AElek13407aseasej39
-SET DEBUG=True
-SET TIME_ZONE='Asia/Bangkok'
-```
-Save these lines in a file ("shell script") such as `config.sh`.
+3. In Django `settings.py` use `os.getenv()` to get the values:
+   ```python
+   import os
+   SECRET_KEY = os.getenv('SECRET_KEY')
+   DEBUG = bool(os.getenv('DEBUG', 'False'))
+   TIME_ZONE = os.getenv('TIME_ZONE', 'UTC')
+   ```
 
-Before starting the web app, you load their values into the environment:
-```shell
-# read config values. In some shells, type "." instead of "source"
-cmd> source config.sh  
-# now start the Django app 
-cmd> python manage.py runserver
-```
+4. Before starting Django, load these values into your shell's environment:
+   ```shell
+   cmd> source config.sh  
+   ```
+   In some shells, type ". config.sh" instead of "source"
 
-PaaS services like Heroku provide a way to specify environment variables like this.
+5. Start Django.  It should use values from the environment variables!
 
-You should provide **sensible defaults** in case an env-variable is not set.  
-In the above example, the default value for `DEBUG` is False.
 
-Environment variables can still pose a security risk: 
+Cloud services like Heroku let you specify environment variables as part of your app configuration.
+
+You should provide **safe defaults** in case an env-variable is not set.  
+In the above example, the default value for `DEBUG` is `False`.
+
+Environment variables can still pose a security risk:
 a bad guy may find a way to read environment variables.
 
 In Django, if DEBUG=True and an error occurs, Django prints debugging output in the browser window **including environment variables**.
@@ -126,30 +129,31 @@ configuration data (you only need one of them!)
 
 ## python-decouple
 
-This is a general purpose module for externalizing configuration data.
+This is a general purpose module to externalize configuration data.
 
-* Module description: https://pypi.org/project/python-decouple/
-* Example: https://simpleisbetterthancomplex.com/2015/11/26/package-of-the-week-python-decouple.html 
+- Module description: <https://pypi.org/project/python-decouple/>
+- Example: <https://simpleisbetterthancomplex.com/2015/11/26/package-of-the-week-python-decouple.html>
 
 ```
 pip install python-decouple
 ```
 
-**Usage:** `config(var, default=value, cast=type_or_function)`     
-Reads data from first of: (1) an environment variable, (2) .ini or .env file, (3) default value.     
+**Usage:** `config(var, default=value, cast=type_or_function)`
+
+Reads data from either: (1) an environment variable, (2) .ini or .env file, (3) default value, in that order.    
 `cast=` specify the type of value returned (default is string) such as `cast=bool` or `cast=int`.
 
 Format of a `.env` file
 ```
-# variables and their values -- you can add comment lines like this one
+# variables and their values -- add comment lines like this one
 DEBUG=True
 TEMPLATE_DEBUG=True
 SECRET_KEY=ARANDOMSECRETKEY
 DATABASE_URL=mysql://myuser:mypassword@myhost/mydatabase
-ALLOWED_HOSTS='localhost,.herokuapp.com'
+ALLOWED_HOSTS=localhost,127.0.0.1,.herokuapp.com
 ```
 
-Instead of `.env` you can use a `settings.ini` file, which contains named sections.
+Instead of `.env` you can use a `settings.ini` file, using a *section* named "settings". This is convenient if you have *other* packages that use the settings file format for configuration.
 
 ```
 # this is a comment
@@ -160,18 +164,20 @@ DATABASE_URL=mysql://myuser:mypassword@myhost/mydatabase
 ALLOWED_HOSTS='localhost,.herokuapp.com'
 ```
 
-### Using decouple in Django's `settings.py`
+### Using decouple in Django `settings.py`
 
-In your site's `settings.py` file:
+In your `settings.py` file use:
 ```python
 from decouple import config, Csv
 
-# optional module to parse database configuration from a single database URL
+# (optional) module to parse database configuration from a single database URL
 from dj_database_url import parse as db_url
 
 DEBUG = config('DEBUG', default=False, cast=bool)
 SECRET_KEY = config('SECRET_KEY')
-ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='localhost', cast=Csv())
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', 
+                       default='localhost,127.0.0.1', 
+                       cast=Csv())
 
 DATABASES = {
      # use cast=db_url requires package dj-database-url
@@ -183,30 +189,31 @@ DATABASES = {
 }
 ```
 
-### Database URLs for dj-database-url
+### Database URLs and dj-database-url
 
-The above example shows how to use a single environment variable (`DATABASE_URL`) and the dj-database-url function `parse` to create all the values in a Django dictionary.
+It is common to specify a database location as a URL, such as `sqlite:///db.sqlite3`.
+The above example uses `DATABASE_URL` to store this URL, and the dj-database-url function `parse` to "parse" the URL into the dict format Django expects.
 
-This is a lot simpler than using separate variables for database name, url, username, and password.  The format for the URLs in shown on <https://github.com/jacobian/dj-database-url>.
+This is much nicer than using separate variables for database name, path, username, and password.  
 
-Here are a few common ones by example
+The format for database URLs in shown on <https://github.com/jacobian/dj-database-url>. Here are a few examples
 
 | Database | URL                      |
 |:---------|:-------------------------|
 |SQLite    | sqlite:///db.sqlite3     |
-|Postresql | postgres://user:password@localhost/mydatabase |
 |MySql     | mysql://user:password@localhost/mydatabase |
+|Postresql | postgres://user:password@ec2-99a.com1.amazonaws.com:5432/d4ce432 |
 
 `user` and `password` are the database user (defined in the database manager) that has permission to read/write the database for your app.
-For migrations, this user needs permission to alter the schema and create tables, too.
+For migrations, this user needs permission to alter schema and create tables, too.
 
-If the database is running on another host, use that instead of "localhost" (of course), and if the database manager is listening on a non-standard port then specify it after the hostname, such as:
+If the database is running on another host, use that hostname instead of "localhost" (of course), and if the database manager is listening on a non-standard port then specify it after the hostname, such as:
 
 ```
 postgres://appuser:secret@server.ku.th:12345/mydatabase
 ```
 
-### How to Use Alternate Configuration Files with `python-decouple`
+### How to Use Alternate Configuration File with `python-decouple`
 
 Decouple can read the configuration from a file other than `.env` or `settings.ini`.  This is explained at the end of the python-decouple docs page.
 
@@ -223,21 +230,23 @@ myconfig = Config(RepositoryEnv(ENV_FILE))
 SECRET_KEY = myconfig.get('SECRET_KEY')
 ```
 
-But, changing `settings.py` partially negates the benefit of using decouple.
+Specifying the env filename in `settings.py` goes against the goal of externalizing configuration.
 I think a better way is to keep multiple something.env files and
-copy the one you want to `.env`.
+copy the one you want to `.env`. 
+*Or*, use an environment variable to specify the filename.
 
-## Using django-environ
+## django-environ
 
-This package is an alternative to `python-decouple`.  
-Use `pip` to install it.
+`django-environ` is similar to [python-decouplse](#python-decouple) 
+but provides convenience methods for Django,
+such as parsing a database URL, so you don't need [dj-database-url](#dj-database-url).
 
-Put properties in a `.env` file in same format as used by `python-decouple`; 
-**but**, it seems that this file must be your config directory (same directory as `settings.py`) rather than the application's top-level directory.
+Put data in a `.env` file in the same format as used by `python-decouple`; 
+**however**, it seems that this file must be your config directory (same directory as `settings.py`) rather than the application's top-level directory.
 
 `django-environ` can also get values from environment variables, just like `python-decouple`.
 
-Example `settings.py`:
+Example `settings.py` using `django-environ`:
 ```python
 import environ
 

@@ -272,6 +272,16 @@ with Django models.
 Recommendations for maintainable cloud-based applications, by Heroku. 
 </td>
 </tr>
+ 
+<tr valign="top">
+<td markdown="span">
+[Separate Configuration from Code](refactoring/separate-configuration)
+</td>
+<td markdown="span"> 
+[Separate configuration from code](refactoring/Separate-config-from-code.pdf) is a good practice for all software, not just web apps.    
+How to [Externalize Configuration](django/external-configuration) in Django.
+</td>
+</tr>
 
 <tr valign="top">
 <td markdown="span">
@@ -298,16 +308,6 @@ for portability, reliability, and security.
 </td>
 <td markdown="span">
 Easily pass messages from a view to a template.
-</td>
-</tr>
-   
-<tr valign="top">
-<td markdown="span">
-[Separate Configuration from Code](refactoring/separate-configuration)
-</td>
-<td markdown="span"> 
-[Separate configuration from code](refactoring/Separate-config-from-code.pdf) is a practice that applies to all software, not just web apps.    
-Django [Externalize Configuration](django/external-configuration)  
 </td>
 </tr>
 

@@ -4,20 +4,20 @@ title: Separate Configuration from Code
 
 It's a good practice to separate data from code, such as:
 
-* configuration data, e.g. relative path to a directory for images
+* path to a directory for images
 * constants that may change, such as URLs you use
-* sensitive values including logins, auth tokens, and (of course) passwords
+* sensitive data including logins, auth tokens, and (of course) passwords
 
-This makes code easier to modify, maintain, and makes it more secure.
+This makes code easier to modify, maintain, and more secure.
 
-These values can be read from a configuration file, a Properties file (Java), or environment variables.
+Put data in a configuration file, a Properties file (Java), or environment variables.
 
 Class presentation: [Separate Configuration from Code](Separate-config-from-code.pdf)    
 My write-up for Django: [Externalize Configuration](../django/external-configuration)
 
 ### Django Example
 
-A Django project has many configuration values in a file named `settings.py`,
+A Django project has many configuration values in the file `settings.py`,
 which includes:
 ```python
 SECRET_KEY = '1234abhc@#9848'
@@ -29,6 +29,7 @@ These values really should not be stored in code and you may want to change
 them depending on how you deploy your Django project.
 
 We can create a file named `.env` (not committed to git) that contains:
+
 ```shell
 # configuration values - don't commit this to git
 SECRET_KEY = 1234abhc@#9848
@@ -36,7 +37,7 @@ DEBUG = False
 ALLOWED_HOSTS = localhost, .ku.ac.th
 ```
 
-Then use python-decouple to read these values in `settings.py`:
+Then use python-decouple (a package) to read these values in `settings.py`:
 ```python
 from decouple import config, Csv
 
@@ -44,6 +45,13 @@ SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', cast=bool, default=False)
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='localhost', cast=Csv())
 ```
+
+Some details to notice:
+
+- In the configuration, you do not put quotes around strings or brackets arounds a list (`ALLOWED_HOSTS`).
+- Values in the config file are (by default) treated as *strings*, but in code you can *cast* them to the datatype you need.
+- You can **and should** specify a safe default value, in case the config file is not found.  
+- Occasionally, you *want* the app to fail if there is no value in the config file; for example, a required URL or login/password. In that case, its OK not to specify a default value.
 
 For Python, there are many packages that do this. Here are two:
 
