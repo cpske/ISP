@@ -14,26 +14,16 @@ Behavior to add or modify is:
 - A user can change his vote on a poll during the voting period, and his new vote replaces his old vote. 
 - A user can change his vote only during a poll's voting period.
 - If a user selects a poll he already voted for, the list of choices shows which choice he/she previously selected. For example, a radio button is pre-selected for his previous vote.
-
-- (Optional) Add logging of these events:
-
-| Event                      | Log Level |
-|----------------------------|-----------|
-| user login or logout    -  | info      |
-| unsuccessful login attempt (username or password incorrect) | warning |
-| user submits a vote        | info      |
-
-  - all log messages should include the date and time (that's done by the formatter, don't put it in your log message).
-  - login/logout messages should include the user's IP address
-  - log to the console, like Django does.
-  - use `loggers`, not print statements!
+- (Optional) Add logging of important events.
 
 ## Requirements
 
 1. Create an Iteration 3 Plan in your wiki.
 2. Add Iteration 3 tasks to your Project. Create an "Iteration 3" task board with these tasks.
-3. Write unit tests to verify this behavior.
-4. Add at least 2 demo users to your database.  Document the login/password for these uses in README.md so we can run your app and submit votes.
+   - Also convert task to "Issues" so they appear in your repo on Github.
+3. Do work on an `iteration3` branch and push it to Github regularly.
+4. Write unit tests to verify the new requirements.
+5. Add at least 2 demo users to your database.  Document the login/password for these uses in README.md so we can run your app and submit votes.
 
 The project now has many unit tests, so consider refactoring the 
 tests as recommended in the MDN Django Tutorial.
@@ -54,25 +44,28 @@ tests as recommended in the MDN Django Tutorial.
 ## Design Hints
 
 You need to keep track of who has voted for which poll.
-This requires a change in the domain model.
+This requires a change in the domain model, as discussed in the lab.
 
 ![user-vote-choice](user-vote-choice.png)
 
-`Vote` needs a reference to `user` and `choice`. These should be ForeignKey attributes in the Vote model class.
+`Vote` needs a reference to `user` and `choice`. These are ForeignKey attributes in the Vote model class.
 
 After this change, there is no "votes" attribute in Choice.
-But our code uses `choice.votes` to display the votes, and we would like to
-avoid making a lot of changes to code.
+But, our templates use `choice.votes` to display the votes, 
+and we would like to avoid making a lot of changes to code.
+Your unit tests may also use `choice.votes`.
 
-To **hide the change** we can redefine `votes` as a read-only property.
-The property computes and returns the votes for a choice each time it's called.
+To **hide the change** we can redefine `votes` as a read-only property
+that computes the votes for a choice each time it is called.
+The `votes` property "looks" like the `votes` attribute in the old
+code, so your templates will still work.
 
-The `votes` property would "look" like the `votes` attribute in the old
-code.
 
-### Use the Database Capabilities instead of Fetching All Votes!
+### Use Query Methods instead of Fetching All Votes!
 
 Try to write efficent code for summing the votes for a choice.
+
+The Django query methods like `filter`, `count`, and `sum` generate code that uses database operations without creating lots of objects.  In effect, it asks the database to do the computation.
 
 - *Inefficient*: get all the votes and sum the ones that match a choice. This requires getting all the data from the Vote table and creating Vote objects.
    ```python
@@ -89,7 +82,20 @@ Try to write efficent code for summing the votes for a choice.
    count = Vote.objects.filter(choice=some_choice).count()
    ```
 
-## Logging
+## Logging (Optional)
+
+(Optional) Add logging of some important events:
+
+| Event                      | Log Level |
+|----------------------------|-----------|
+| user login or logout       | info      |
+| unsuccessful login attempt (username or password incorrect) | warning |
+| user submits a vote        | info      |
+
+- all log messages should include the date and time (that's done by the formatter, don't put it in your log message).
+- login/logout messages should include the user's IP address
+- log to the console, like Django does.
+- use `loggers`, not print statements!
 
 Django uses Python's logging library. 
 
