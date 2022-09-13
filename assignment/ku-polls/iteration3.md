@@ -4,15 +4,16 @@ title: KU Polls Iteration 3
 
 Add user authentication and allow each user only 1 vote per poll.
 
-User authentication will be done using boring old username-password 
+User authentication is done using boring old username-password 
 authorization, which Django calls "ModelBackend".
 
 Behavior to add or modify is:
 
 - Only an authenticated user can submit a vote
 - Anyone can view the list of polls or poll results (same as before)
-- A user can change his vote on a poll, and his new vote replaces his old vote. He can only change his vote during a poll's voting period.
-- If a user selects a poll he already voted for, the of choices shows his previous vote 
+- A user can change his vote on a poll during the voting period, and his new vote replaces his old vote. 
+- A user can change his vote only during a poll's voting period.
+- If a user selects a poll he already voted for, the list of choices shows which choice he/she previously selected. For example, a radio button is pre-selected for his previous vote.
 
 - (Optional) Add logging of these events:
 
@@ -29,13 +30,14 @@ Behavior to add or modify is:
 
 ## Requirements
 
-Write your own Iteration Plan without copying text from this assignment.
-Create an "Iteration 3" task board with your tasks.
-
-Implement the features and write unit tests for them.
+1. Create an Iteration 3 Plan in your wiki.
+2. Add Iteration 3 tasks to your Project. Create an "Iteration 3" task board with these tasks.
+3. Write unit tests to verify this behavior.
+4. Add at least 2 demo users to your database.  Document the login/password for these uses in README.md so we can run your app and submit votes.
 
 The project now has many unit tests, so consider refactoring the 
 tests as recommended in the MDN Django Tutorial.
+
 - Create a `polls/tests` directory with an `__init__.py` file.
 - Divide your tests into separate files, grouped however makes sense, such as:
   ```
@@ -74,14 +76,14 @@ Try to write efficent code for summing the votes for a choice.
 
 - *Inefficient*: get all the votes and sum the ones that match a choice. This requires getting all the data from the Vote table and creating Vote objects.
    ```python
-   # count the votes for some_choice
+   # INEFFICIENT: requires getting all the data and creating many objects
    count = 0
    for vote in Vote.objects.all():
        if vote.choice == some_choice:
            count += 1
    ```
 
-- *Effcient*: Create a query to select the votes you want, and count them!  The query (filter) will be done by the database without creating a lot of Vote objects. 
+- *Effcient*: Create a query to select the votes you want, and count them!  The work will be done by the database without creating a lot of Vote objects. 
    ```python
    # count the votes for some_choice
    count = Vote.objects.filter(choice=some_choice).count()
@@ -90,6 +92,7 @@ Try to write efficent code for summing the votes for a choice.
 ## Logging
 
 Django uses Python's logging library. 
+
 You configure the logger behavior, including message format, in `settings.py`.
 
 An example of using logging is:

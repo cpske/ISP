@@ -162,12 +162,14 @@ Not assigned this year:
 
 ### Week 6
 
-- Some Django review. Using the Django interactive console.
-- Introduction to Database - *this may be moved to week 7 if not enough time*
-  - [Brief Introduction to Database](database/Database-Basics.pdf)
+- Introduce the Team Projects.
+- [Brief Introduction to Databases](database/Database-Basics.pdf)
 - Database Exercise
-  - Database practice in class: <https://cpske.github.io/ISP/assignment/week6/database-exercise> <!-- should be week7 -->
+  - in class: <https://cpske.github.io/ISP/assignment/week6/database-exercise> 
   - View & describe the KU Polls database schema using a database browser.
+- Converting a software model to database model
+- Overview of KU Polls Iteration 3
+- Lab: Refactor KU Polls for Iteration 3 (1-user-1-vote)
 
 #### Assignment
 

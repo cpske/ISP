@@ -146,3 +146,53 @@ Your Github repository should also contain:
 [Documenting your Projects on Github](https://guides.github.com/features/wikis/). 
 
 [django-tutorial]: https://docs.djangoproject.com/en/4.1/intro/tutorial01/
+
+### Evaluation
+
+1. Github Flow (3). 1 point for each of these:
+   - has `iteration1` branch with work. From code view click "2 branches" link to quickly view this.
+   - `iteration1` has been merged into `main` (`master`).
+   - has a Pull Request to merge iteration1 into main and PR is **closed**.
+
+2. Project and Tasks: (3)
+   Project is shown on repo "Projects" tab **or** there is a link to Project in README.      If not, no credit (don't search for their Project -- it should be referred to in repo)
+   1 point each:
+   - Has a Project with tasks.
+   - Project has an "Iteration 1" task board with several tasks. (Tasks might be named "Implement tutorial part n" n=1..6)
+   - The tasks are (almost) all "Done".
+
+3. Running App with 2 Good Questions
+   - Clone either "main" or "iteration1"
+   - Code should include a `db.sqlite3` file
+   - Should run and show 2 good questions. Not trivial questions like "What is your favorite color?".
+   - Penalty for NOT removing the dumb "What's Up?" question. (This was in assignment.)
+   ```
+   python manage.py runserver
+   ```
+
+4. Tests (2)
+   - Has at least 5 tests.     
+     2 points = tests all pass    
+     1 point = some tests fail or fewer than 5 tests
+     0 point = no tests or they all fail
+   ```
+   python manage.py test polls
+   ```
+
+5. Code Quality (2) - Examine `polls/models.py`
+   - 1 point: `polls/models.py` contains descriptive docstring comment.
+      - No credit for: `"""The Question class.""" or similar trivial comment.
+   - 1 point: blank line between **every** method and between classes 
+     - No point if even one case where  methods/classes not separated by blank line:
+```python
+# No credit - missing docstring and missing blank line before first method
+class Question(models.Model):
+    question_text = CharField(max_length=200)
+    pub_date = DateTimeField(...)
+    def was_published_recently(self):
+        ...
+
+    def __str__(self):
+        return str(self.question_text)
+```
+

@@ -4,11 +4,14 @@ title: Django Authorization
 
 **Authorization** refers to the privileges that give a user (or subject)
 the ability to perform some action.
-In Django, there are 3 choices to enforce authorization.
+
+In Django, you can authorize a request using any of there 3 criteria:
 
 1. Logged in user: any logged in user is permitted 
+
 2. Permissions: user is assigned specific permissions, assigned individually
-   - Assigning permissions to each user is time-consuming and error-prone.
+   - Drawback: assigning permissions to each user is time-consuming and error-prone.
+
 3. Group membership: users who are members of a specific group have all the permissions of that group
 
 For example, in the Django Polls tutorial we allowed any
