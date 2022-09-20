@@ -1,19 +1,18 @@
 ## UML Exercises
 
-Draw a UML class diagram, including
-
-- attributes, methods, and data types
-- use standard UML notation
-- relationships using the correct arrow type
-- **multiplicity** on associations
-- *don't* show visibility (+, -, ~)
+1. Draw a UML class diagram of the code below, including
+   - attributes, methods, and data types
+   - relationships using the correct arrow type
+   - **multiplicity** on associations
+   - use standard UML notation
+   - *don't* show visibility (+, -, ~)
 
 ```python
 class Person:
 
     @classmethod
     def validate_citizen_id(cls, citizen_id: str) -> bool:
-        """Check if a citizen id is valid. Uses a checksum."""
+        """True if a citizen id is valid. Uses a checksum formula."""
         # code omitted
         pass
 
@@ -50,7 +49,8 @@ class CourseList:
 
 # Course & Enrollment contain only attributes and standard
 # methods for __eq__, __repr__, and __str__.
-# Instead of a lot of boring code, use a dataclass.
+# Instead of writing boring code, use a dataclass.
+# It automatically generates constructor, __str__, __eq__, __repr__
 from dataclasses import dataclass, field
 
 @dataclass
@@ -61,32 +61,69 @@ class Enrollment:
     # field() is how to specify a default value & behavior
     grade: str = field(compare=False, default=' ')
 
-    # auto-generated: constructor, __eq__, __repr__,
     def __str__(self):
         """Override the default string of dataclass."""
-        return f"{self.course.id} grade: {self.grade}"
+        return f"{self.course.id} grade {self.grade}"
 
 
-@dataclass(frozen=true)  # make a course immutable
+@dataclass(frozen=true)  # make Course objects immutable
 class Course:
     id: str        # course id
     description: str
     credits: int
 ```
 
-2. Next we add an `__iter__` method to `CourseList`.  This makes a CourseList be *Iterable*.  Add this to the UML diagram
-   - show Iterable as an *interface*. It's only method is `__iter__`.
-   - CourseList implements Iterable
-   - include a type parameter (Enrollment)
-   - Iterable and Iterator are *types* in the Python `typing` package, which we will cover after the midterm
-   - we will also review the *Iterator* design pattern after the midterm
+2. Suppose we make `CourseList` *Iterable* as shown below.  Add this to the class diagram.
+   - Show *Iterable* as an interface with an `__iter__` method
+   - CourseList *implements* Iterable
+   - Types like Iterable satisfy the intention of an interface, which is to *separate the specification of a behavior from it's implementation*, even though they aren't called "interfaces" in Python.
+ 
 
 ```python
 from typing import Iterable, Iterator
 
-class CourseList:
+class CourseList(Iterable[Enrollment]):
 
-    def __iter__(self) -> Iterator[Enrollment]
+    def __iter__(self) -> Iterator[Enrollment]:
+        """Return an iterator for enrollments in this courselist."""
         return iter(self.courses)
 ```
-2. Draw a Sequence Diagram
+
+> **Iterable:** A class is *Iterable* if it's instances create an Iterator (for some sequence) when you invoke `iter(object)`.
+> `CourseList(Iterable)` means CourseList implements Iterable.
+> `Iterable[X]` means the iterators created by this Iterable returns objects of type X.
+> An **Iterator** is a type that *iterates* over a sequence of values each time next() is called.
+> list, set, dict, and strings are all Iterable.
+> ```python
+> s = "Strings are iterable"
+> it = iter(s)
+> next(it)
+> 'S'
+> next(it)
+> 't'
+> next(it)
+> 'r'
+
+---
+3. Draw a Sequence Diagram of what happens when `Main.run` is invoked.
+   - Use the "found" notation to show `run` is invoked. 
+   - "found" is drawn as an arrow from the left side that points to the activation box for "run", with the word `run` on the arrow.
+
+```python
+class Money:
+    def __init__(self, value: float, currency: str):
+        self.value = value
+        self.currency = currency
+
+    def __add__(self, other: Money):
+        if other.currency != self.currency:
+            raise ValueError("Can't add different currencies")
+        sum_value = self.value + other.value
+        return Money(sum_value, self.currency)
+
+class Main:
+    def run(self):
+        m1 = Money(50, "RMB")
+        m2 = Money(20, "RMB")
+        sum = m1 + m2
+```
