@@ -47,7 +47,7 @@ each containing a mistake that a programmer might reasonably make.
    This sort of error is an example of misunderstanding Python semantics.
 
 
-## Use Utility Methods for More Concise, Readable Tests
+## Use a Utility Method for Shorter, More Readable Tests
 
 Consider this test:
 ```python
@@ -55,7 +55,7 @@ Consider this test:
        self.phonelog.record_call("1111")
        self.phonelog.record_call("1112")
        self.phonelog.record_call("1111")
-       # 1111 should be first with no duplicate
+       # 1111 should be first phone number, and no duplicate
        self.assertListEqual(["1111", "1112"], self.phonelog.get_calls())
        # consecutive duplicates are not recorded
        self.phonelog.record_call("1111")
@@ -67,40 +67,42 @@ Consider this test:
        self.assertListEqual(["3333", "4444", "1111", "1112"], 
                             self.phonelog.get_calls())
 ```
-a lot of verbose and duplicate code here -- and this is only **one** test. 
-Is this more readable? 
+Lot of verbose, duplicate code -- and this is only **one** test. 
+
+Compare it to this (which does the same thing):
 
 ```python
    def test_duplicate_call(self):
-       receive_calls(self.phonelog, "1111", "1112")
+       self.record_calls("1111", "1112")
        self.assert_phonelog_is(["1112", "1111"])
-       receive_calls(self.phonelog, "1111")
+       self.record_calls("1111")
        self.assert_phonelog_is(["1111", "1112"])
 
        # consecutive duplicates are not recorded
-       receive_calls(self.phonelog, "1111")
+       self.record_calls("1111")
        self.assert_phonelog_is(["1111", "1112"])
 
        # duplicate a call in the middle
-       receive_calls(self.phonelog, "3333", "4444", "3333")
+       self.record_calls("3333", "4444", "3333")
        self.assert_phonelog_is(["3333", "4444", "1111", "1112"]) 
 ```
 
-In writing tests, when you see a lot of verbose, boilerplate code, consider
-some utility methods or functions:
+When you see a lot of duplicate or verbose code,
+consider writing a *utility function or method* to reduce duplication.
+
 ```python
 class TestPhoneLog(unittest.TestCase):
     def setUp(self):
         self.phonelog = PhoneLog(5)
 
     def assert_phonelog_is(self, call_list):
+        """Calls in the test fixture should exactly match the call_list."""
         self.assertListEqual(call_list, self.phonelog.get_calls())
 
-
-# function to receive calls
-def receive_calls(phonelog, *phone_numbers):
-    for num in phone_numbers:
-        phonelog.record_call(num)
+    def record_calls(self, *phone_numbers):
+        """Record one or more calls."""
+        for num in phone_numbers:
+            phonelog.record_call(num)
 ```
 
 

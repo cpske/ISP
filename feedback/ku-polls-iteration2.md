@@ -4,20 +4,38 @@ title: Feedback on KU Polls Iteration 2
 
 Most projects look good.
 
-*Copying without thinking* in `config.cfg`:
-```
-[flake8]
-ignore =
-    E302         # expect 2 blank lines, found 1
-```
-It would be better **not** to ignore this. Really.
+## Unwanted Files Still in Repo
+
+1. Still have `.DS_Store` files in repo on `iteration2` branch:
+   - Jitpanu
+   - Sittanat
+   - Kollawat
+   - Thanida
+   - Woraphan
+   - Setthanan
+
+2. Committed `.idea` to `iteration2`:
+   - Kulisara
+   - Ratthicha
+   - Pakorn
+
+3. No work on KU Polls.  Did they drop ISP?
+   - Jiratchaya T.
+   - Tanakorn
+   - Vorakorn
 
 
-This code for the default value doesn't work if the application runs continuously:
+## Specifying Default Dates for Polls
+
+This code for the default value doesn't work.
+All the questions with have the same default date.
 
 ```python
-end_date = models.DateTimeField('date end', 
-               default=timezone.now() + datetime.timedelta(days=1))
+Question class:
+    pub_date = models.DateTimeField('Publication Date',
+                      default=timezone.now())
+    end_date = models.DateTimeField('Voting End Date',
+                      default=timezone.now() + datetime.timedelta(days=7))
 ```
 
 Django prints a warning when you run this.  Why?
