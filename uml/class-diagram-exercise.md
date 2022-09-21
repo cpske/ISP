@@ -1,4 +1,7 @@
-## UML Exercises
+---
+title: UML Class Diagram Exercise
+---
+Exercise: Create a UML Class Diagram
 
 1. Draw a UML class diagram of the code below, including
    - attributes, methods, and data types
@@ -89,10 +92,49 @@ class CourseList(Iterable[Enrollment]):
         return iter(self.courses)
 ```
 
-> **Iterable:** A class is *Iterable* if it's instances create an Iterator (for some sequence) when you invoke `iter(object)`.
-> `CourseList(Iterable)` means CourseList implements Iterable.
-> `Iterable[X]` means the iterators created by this Iterable returns objects of type X.
-> An **Iterator** is a type that *iterates* over a sequence of values each time next() is called.
+Submit your diagram to the assignment on Google Classroom. If you embed your diagram in a Google doc it is easier for instructor to give comments.
+
+---
+
+## Iterable & Iterator
+
+In Python, [Iterable][Iterable-refs] and [Iterator][Iterator-refs] are **types** (in the `typing` package) with
+implementations as *abstract base classes* in the `collections.abc` package.
+
+In Java, C#, and other languages, *Iterable* and *Iterator* are *interfaces*.
+Since an **interface** is a specification for some behavior without an implementation,
+Python *types* are conceptually like *interfaces*.
+
+[Iterable-refs]: https://docs.python.org/3/search.html?q=Iterable
+[Iterator-refs]: https://docs.python.org/3/search.html?q=Iterator
+[iterable]: https://docs.python.org/3/library/typing.html?highlight=iterable#typing.Iterable
+[iterator]: https://docs.python.org/3/library/typing.html?highlight=iterator#typing.Iterator
+
+[Iterable][iterable] is used extensively in Python, even though you may rarely
+call it explicitly.   
+
+What kind of object can you use in each of these statements?
+```python
+for x in ___?what?___:
+    do something with x
+```
+or 
+```python
+[foo(x) for x in ___?what?____ if predicate(x)]
+```
+or
+```python
+sorted_values = sorted(?what?)
+```
+In all three cases, you can use anything that is *Iterable*.
+
+
+[Iterable][iterable] A class is *Iterable* if it's instances create an Iterator (for some sequence) when you invoke `iter(object)`.
+- `CourseList(Iterable)` means CourseList implements Iterable.
+- `Iterable[X]` means the iterators created by this Iterable returns objects of type X.
+- `CourseList(Iterable[Enrollment])` means CourseList is Iterable and the Iterator returns Enrollment objects.
+
+[Iterator][iterator] is a type that *iterates* over a sequence of values each time `next()` is called.
 > list, set, dict, and strings are all Iterable.
 > ```python
 > s = "Strings are iterable"
@@ -104,26 +146,14 @@ class CourseList(Iterable[Enrollment]):
 > next(it)
 > 'r'
 
----
-3. Draw a Sequence Diagram of what happens when `Main.run` is invoked.
-   - Use the "found" notation to show `run` is invoked. 
-   - "found" is drawn as an arrow from the left side that points to the activation box for "run", with the word `run` on the arrow.
+### Python Syntax for Subclass, Implements, & Mixin
 
+In Python, the same notation is used for inheritance, typing, and mixins:
 ```python
-class Money:
-    def __init__(self, value: float, currency: str):
-        self.value = value
-        self.currency = currency
+from collections.abc import Sized, Callable
 
-    def __add__(self, other: Money):
-        if other.currency != self.currency:
-            raise ValueError("Can't add different currencies")
-        sum_value = self.value + other.value
-        return Money(sum_value, self.currency)
-
-class Main:
-    def run(self):
-        m1 = Money(50, "RMB")
-        m2 = Money(20, "RMB")
-        sum = m1 + m2
+class Subclass(Parent, Sized, Callable):
+    """A class that is a subclass of Parent,
+    and also has the Sized and Callable behavior.
+    """
 ```
