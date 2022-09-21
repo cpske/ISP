@@ -36,19 +36,20 @@ class Student(Person):
 
 
 class CourseList:
-    """Courses a student is enrolled in."""
+    """Courses that a student is enrolled in."""
 
-    def __init__(self):
-        # store enrollments, not courses
+    def __init__(self, student: Student):
+        self.student = student
+        # courselist consists of enrollments, not courses
         self.courses: List[Enrollment] = []
 
     def add_course(self, course: Course):
-        enroll = Enrollment(self, course)
+        enroll = Enrollment(self.student, course)
         self.courses.add(enroll)
 
     def credits(self) -> int:
         """compute and return the total credits enrolled."""
-        return sum(e.course.credits for e in self.enrollments)
+        return sum(e.course.credits for e in self.courses)
 
 # Course & Enrollment contain only attributes and standard
 # methods for __eq__, __repr__, and __str__.
@@ -63,6 +64,9 @@ class Enrollment:
     course: Course
     # field() is how to specify a default value & behavior
     grade: str = field(compare=False, default=' ')
+
+    # Auto-generated constructor:
+    #def __init__(self, student, course, grade=' '):
 
     def __str__(self):
         """Override the default string of dataclass."""
