@@ -137,18 +137,26 @@ In all three cases, you can use anything that is *Iterable*.
 - `CourseList(Iterable)` means CourseList implements Iterable.
 - `Iterable[X]` means the iterators created by this Iterable returns objects of type X.
 - `CourseList(Iterable[Enrollment])` means CourseList is Iterable and the Iterator returns Enrollment objects.
+- list, set, dict, and strings are all Iterable.
 
-[Iterator][iterator] is a type that *iterates* over a sequence of values each time `next()` is called.
-> list, set, dict, and strings are all Iterable.
-> ```python
-> s = "Strings are iterable"
-> it = iter(s)
-> next(it)
-> 'S'
-> next(it)
-> 't'
-> next(it)
-> 'r'
+[Iterator][iterator] is a type that *iterates* over a sequence of values each time `next()` is called.  Iterator specifies a single method `__next__` that is invoked by calling `next(iterator)`.
+
+```python
+s = "Strings are Iterable"
+# get an iterator for this string
+it = iter(s)
+# iterate over the elements 
+next(it)
+'S'
+next(it)
+'t'
+next(it)
+'r'
+next(it)
+'i'
+```
+You usually don't use an iterator explicitly. Iterator is used by `for` loops, list comprehensions, and other constructs.
+
 
 ### Python Syntax for Subclass, Implements, & Mixin
 
