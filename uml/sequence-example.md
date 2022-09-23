@@ -1,13 +1,20 @@
-Here's example of drawing a sequence diagram using
-<https://sequencediagram.org>.
+---
+title: Sequence Diagram using sequencediagram.org
+---
+
+This is an example of sequence diagram creation using <https://sequencediagram.org>.
+
+Credit: Thanks to Pawitchaya for how to create a label for an object using `participant`.
 
 - Given: we already have an object of type Main.
-- Draw:  what happens when run() is invoked.  Show the call to `run()` as a "*found*" message. "*Found*" is a UML term, it **does not** mean to write the word "found" on your diagram.
-  - show the activation boxes
-  - show the names of methods that are called and return values
-  - show creation of the Person object
-  - include the object reference name (`pee`) in the Person box.
+- Draw:  what happens when main.run() is invoked.  Show the call to `run()` as a "*found*" message. "*Found*" is a UML term, it **does not** mean to write the word "found" on your diagram.
+- Show in the diagram:
+  - the object reference name (`pee`) on the Person object box.
+  - creation of the Person object (of course)
+  - activation bars
+  - the of methods that are called, parameters, and return values
 
+Code to show:
 ```python
 class Person:
 
@@ -25,7 +32,7 @@ class Main:
 ```
 
 <https://sequencediagram.org> 
-can show (almost) what we want using these instructions.
+can draw *almost* what we want.
 It does not show the solid circle on the "found" message.
 ```
 # define object boxes with labels
