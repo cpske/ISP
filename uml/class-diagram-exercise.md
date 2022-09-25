@@ -5,10 +5,13 @@ Exercise: Create a UML Class Diagram
 
 1. Draw a UML class diagram of the code below, including
    - attributes, methods, and data types
+   - parameters and return types on all methods. OK to omit `__str__`.
    - relationships using the correct arrow type
    - **multiplicity** on associations
-   - use standard UML notation
+   - use standard UML notation, not Python notation
    - *don't* show visibility (+, -, ~)
+   - *don't* show implementation details like dataclass or field()
+   - *good* to show `{readOnly}` on read-only (immutable) attributes
 
 ```python
 class Person:
@@ -63,6 +66,7 @@ class Enrollment:
     student: Student
     course: Course
     # field() is how to specify a default value & behavior
+    # field is an implementation detail, don't show it in UML
     grade: str = field(compare=False, default=' ')
 
     # Auto-generated constructor:
@@ -80,10 +84,11 @@ class Course:
     credits: int
 ```
 
-2. Suppose we make `CourseList` *Iterable* as shown below.  Add this to the class diagram.
-   - Show *Iterable* as an interface with an `__iter__` method
-   - CourseList *implements* Iterable
-   - Types like Iterable satisfy the intention of an interface, which is to *separate the specification of a behavior from it's implementation*, even though they aren't called "interfaces" in Python.
+2. We make `CourseList` *Iterable* as shown below.  Add this to the class diagram.
+   - The `__iter__` method returns an *Iterator* over the Enrollments.
+   - In UML, show `Iterable` as an interface with an `__iter__` method
+   - Show CourseList *implements* Iterable
+   - Types like Iterable show that a class *has* a particular method(s), without the type providing an implementation of the method(s). This is exactly what *interfaces* do.
  
 
 ```python

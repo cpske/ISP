@@ -14,7 +14,6 @@ Credit: Thanks to Pawitchaya for how to create a label for an object using `part
   - activation bars
   - the of methods that are called, parameters, and return values
 
-Code to show:
 ```python
 class Person:
 
@@ -33,7 +32,8 @@ class Main:
 
 <https://sequencediagram.org> 
 can draw *almost* what we want.
-It does not show the solid circle on the "found" message.
+It does not show the solid circle on the "found" message.    
+Copy & paste this into the sequencediagram.org online editor.
 ```
 # define object boxes with labels
 # labels are in quotes to include : and space
