@@ -66,6 +66,10 @@ Here are some examples:
 
 If you dump *all* data from the "auth" app (not just `auth.user`), you may have conflicts when you try to import the data into a new database. This is because migrations also create an `auth` app with database tables containing some data.
 
+### Suggestion for Polls Data
+
+Dump the Questions and Choices to one file.  If you want to export the Votes, then dump votes to a different file (`votes.json`).  This way, you can create a new installation of Polls that has questions but no votes. You can use the same Questions and Choices with a different set of Users, but the Votes refer to existing Users (by `user_id`).
+
 ### Importing data from a file
 
 `manage.py loaddata` reads data from one or more files.  It will fail if the data conflicts with something already in database, or the table schema doesn't match. So its usually used on a "clean" database.  
@@ -87,15 +91,12 @@ python manage.py loaddata polls.json users.json
 
 **Where to put the json files?**  You can put them *anywhere*; here are 2 options:
 
-1. Django looks in a `fixtures` directory in each app. If you put the data files in `polls/fixtures/` then load data using:
+1. Django looks in a `fixtures` directory in each app. If you put the data files in `polls/fixtures/` then load data by specifying file name only (no ".json"):
    ```
-   python manage.py loaddata foo bar   # looks for foo.json and bar.json in polls/fixtures
+   # load data from foo.json and bar.json in directory polls/fixtures/
+   python manage.py loaddata foo bar   
    ```
-2. If `polls.json` is in the current directory where manage.py is, use:
-   ```
-   python manage.py loaddata polls.json
-   ```
-3. If you put your .json files in a directory named `data` then include the path to the file(s):
+3. Put your .json files in a directory named `data` and include the path to the file(s) to load:
    ```
    python manage.py loaddata data/polls.json data/users.json
    ```
