@@ -5,5 +5,5 @@ def config():
     root = logging.getLogger()
     handler = logging.StreamHandler()
     handler.setLevel(logging.DEBUG)
-    root.addHandler(log)
+    root.addHandler(handler)
     root.setLevel(logging.DEBUG)

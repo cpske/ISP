@@ -28,9 +28,8 @@ Please do this before the course starts. Otherwise, do it in Week 1.
 - [Introduction to software process](software-process/)
 - Exercise: Software Process Basics (Google Form)
 - Exercise: [Write a Process Description for an Everyday Project](assignment/week1/general-process-exercise) 
+- [Code Quality, Coding Style, and Coding Standards](code-quality)
 - Python Coding Style: [How to Write Beautful Python Code with PEP8](https://realpython.com/python-pep8/) on [Real Python](https://realpython.com/)
-  - [How to Write Docstring Comments](code-quality/docstrings)
-  - Example given in class
 - Exercise: apply the Python style guidelines
 - Programming 2 Review, basic Python and O-O concepts.
 
@@ -91,11 +90,14 @@ Please do this before the course starts. Otherwise, do it in Week 1.
 
 - Quiz on week 1 and 2 material
 - Review Github Flow
-- Coding Standard and Code Quality
-- Docstring comments - there are several conventions and one we recommend
+- [Coding Standard and Code Quality](/code-quality/)
+- [Docstring Comments](code-quality/docstrings). Three conventions and the one we recommend.
+  - for parameters and return values use [type hints](type-hints/) instead of writing the data type in comments
+- Exercise: add docstring comments to code
 - Exercise: improve a code using Pylint
-- Exercise: add docstring comments to a code
-- Unit Testing a Bank Account code
+- Unit Tests for a Bank Account code
+- Homework: Read "*Documenting Python Code*" <https://realpython.com/documenting-python-code/>. Really *read it*.
+- Homework: Finish Unit Tests for Bank Account
 
 #### Week 3 Assignment
 
@@ -138,7 +140,7 @@ Not assigned this year:
 - [How Django handles requests (with graphic)](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Introduction#what_does_django_code_look_like) on MDN
   - *Did anyone read this?* 
 - [Django Review](django/Django-review-1.pdf)
-- Describe the Improvements to KU Polls for Iteration 2
+- Improvements to KU Polls for Iteration 2
   - add an `end_date` to polls, 
   - add methods `is_published`, `can_vote`
   - improve navigation by adding links to home page - should never need to use "Back" button
@@ -148,11 +150,10 @@ Not assigned this year:
 
 #### Week 5 Lab
 
-- [Separate configuration from code](refactoring/separate-configuration) - why and how
+- [Separate configuration from code](refactoring/separate-configuration) & how to externalize configuration
   - [Presentation](refactoring/Separate-config-from-code.pdf)
   - a [12-Factor App](https://12factor.net/config) recommended practice, also called "externalize configuration" 
-- Exercise: <https://github.com/ISP21/decouple-example>
-- Intro to Team Projects
+- Exercise: Externalize Configuration <https://github.com/ISP21/decouple-example>
 
 #### Week 5 Assignment
 
@@ -164,11 +165,14 @@ Not assigned this year:
 
 - Introduce the Team Projects.
 - [Brief Introduction to Databases](database/Database-Basics.pdf)
-- Database Exercise
-  - in class: <https://cpske.github.io/ISP/assignment/week6/database-exercise> 
-  - View & describe the KU Polls database schema using a database browser.
+- Database Exercise: <https://cpske.github.io/ISP/assignment/week6/database-exercise> 
+  - Use a database browser to view & describe the KU Polls database schema
 - Converting a software model to database model
+- [Basics of Object-Relational Mapping](database/Persistence-and-ORM.pdf) 
+- Persistence in Django: how Django provides the CRUD operatons
 - Overview of KU Polls Iteration 3
+- Homework (due before Thursday lab): Revise KU Polls domain model
+- Lab: Intro to Authentication in Django
 - Lab: Refactor KU Polls for Iteration 3 (1-user-1-vote)
 
 #### Assignment
@@ -190,39 +194,41 @@ Submit a project proposal using the Project Spreadsheet
 
 ### Week 7
 
-- [Testing in Django](testing/WebTesting.pdf) - how to test models, views, url dispatcher, and templates
-- [Code Coverage tools](testing/code-coverage) for Python 
-- Exercise: apply code coverage
-- [Introduction to Object-Relational Mapping](database/Persistence-and-ORM.pdf) - how Django provides the CRUD operatons
-- ORM Practice - interactively use Django's ORM commands to hack the U.S. presidential election
-  - <https://drive.google.com/open?id=10c6lLZwzyZU6UOKtw0zFUpIHLiWKPad2nOZpwarqHEE&authuser=1>
 - Review some previous material and assignments
+- Why spend so much time on KU Polls?
+- UML Class & Sequence Diagrams (added in 2022)
+- Class Diagram exercise
+- Sequence Diagram exercise
+- Lab: Smoke Testing of another student's KU Polls (post issues)
+- Virtual Environments for Python
 
 #### Assignment
 
-- Add Code Coverage to KU Polls
+- [KU Polls Iteration 4](assignments/ku-polls/iteration4)
+
+Not covered in 2022:
+- [Code Coverage tools](testing/code-coverage) for Python 
+- Exercise: apply code coverage
+- [Testing in Django](testing/WebTesting.pdf) - how to test models, views, url dispatcher, and templates
 - ORM modeling practice (optional) write Django models for a sales application 
   - Github Classroom Assignment: <https://classroom.github.com/a/UOcT0BOr>
   - Instructions: <https://cpske.github.io/ISP/assignment/orm/Modeling-Practice.pdf>
+
 
 ### Midterm 
 
 - Exam is 27 September. Time and Location TBA.
 - Covers everything so far.
-- Coding part will emphasize **unit testing** and **code quality**.
 - Recommended OBS Video Settings: <https://drive.google.com/open?id=1xiDH6NImH0PAAZp5AUNWtJeLzlRSYoqiAOFE8wFS1vM&authuser=1>
   - We may not need this is 2021 if we can use KU's Exam application.
+
+- Coding Part at a Later Date
+- Coding emphasize **unit testing** and **code quality**.
+- Coding will also cover **refactoring** and maybe **design patterns**.
 
 
 ### Week 8
 
-- [Code Quality, Coding Style, and Coding Standards](code-quality)
-  - coding style for Python. Already covered in week 1.
-- [Comment style in Python](code-quality/index)
-  - there are 3 common standards for how to document parameters and returns
-  - for graded work, please use the Python standard style or Google's standard, which is more concise
-  - for data type of parameters and return values: use [type hints](type-hints/) instead of writing the data type in comments!
-- Read: "Documenting Python Code" <https://realpython.com/documenting-python-code/>
 - Style checking tools. We will use pylint and flake8.
   - <https://cpske.github.io/ISP/code-quality/code-quality-tools>
   - How to configure flake8 -- but it is *better* to fix your code rather than add exceptions to flake8!
@@ -232,7 +238,6 @@ Submit a project proposal using the Project Spreadsheet
   2. Use pylint to correct some code (may use banking app or person). Modify code until you get a score of 10.
   3. Use flake8 to correct some code. Modify code until no messages from flake8.
 - For Java, the standard tool is [Checkstyle][Checkstyle].  CPSKE has its own checkstyle rules.
-- Guidelines for Team Projects
 - [Automation and Continuous Integration](automation/)
 - Exercise using CI - add Travis-CI and Codecov to demo-pyci project
   - Instructions <https://cpske.github.io/ISP/automation/travis-demo-project>

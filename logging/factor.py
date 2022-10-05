@@ -1,33 +1,32 @@
 """
-Example of using a log decorator to "wrap" a function
-so we can log calls and returns for that function.
+Compute the factors of an integer using recursion.
+
+TODO: 
+  1. Replace "print" statements with logging, using appropriate log levels.
+  2. Direct the log output to a file, so it doesn't interfere with the console
+     dialog that the user sees.
+  3. In main, catch & log the exception with a stacktrace. The user should not see the stacktrace on the console.
 """
 
 
-def log_decorator(fun):
-    """Define a decorator (wrapper) for fun that logs function calls."""
-    def wrapped_fun(*args, **kwargs):
-        # print the function call in format fun_name(arg1,...)
-        argstring = ','.join(str(arg) for arg in args)
-        print(f"{fun.__name__}({argstring})")
-        ret = fun(*args, **kwargs)
-        print(f"{ret}")
-        return ret
-    # return a function
-    return wrapped_fun
-
-
-@log_decorator
 def factor(n):
     """Return the prime factors of n, using recursion.  
-       n must be a positive integer.
+
+       :param n: a positive integer to factor
+       :returns: list of prime factors of n
+       :raises TypeError: if n is not an integer
+       :raises ValueError: if n is not a positive integer
     """
     print(f"factor({n})")
     if n == 1:
         print("return [1]") 
         return [1]
+    if not isinstance(n, int):
+        print(f"Error: factor({n}) parameter not an int")
+        raise TypeError("parameter must be an int")
     if n < 1:
-        raise ValueError("param must be positive integer")
+        print(f"Error: factor({n}) parameter not a positive int")
+        raise ValueError("parameter must be positive integer")
     # really stupid way of finding prime factors
     for f in range(2, n):
         if n % f == 0:
@@ -42,7 +41,12 @@ def factor(n):
 if __name__ == "__main__":
     n = 1
     while n > 0:
-        n = int(input("Integer to factor: "))
+        try:
+            n = int(input("Integer to factor: "))
+        except Exception as e:
+            print(e)
+            print("Please input an integer value")
+            continue
         if n == 0: break
         factors = factor(n)
         print(f"Factors of {n} are {factors}")
