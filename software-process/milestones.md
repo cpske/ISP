@@ -2,10 +2,10 @@
 title: Milestones
 ---
 
-Almost every project management approach uses **milestones** as
+Project management uses **milestones** as
 concrete indicators of progress toward completing the project.
-In *Software Project Survival Guide* by Steve McConnell, "milestone"
-is used 297 times but he never explicitly defines it.
+In *Software Project Survival Guide* by Steve McConnell, 
+the word "milestone" is used 297 times but he never explicitly defines it.
 
 So, what is a milestone?  The definitions are often vague
 and inconsistent. 
@@ -15,6 +15,7 @@ My definition:
 A **milestone** is an indicator that shows progress toward completing
 a project, along with an objectively verifiable set
 of criteria that show the milestone has been achieved.
+
 A milestone generally relates to achieving some goal or major work
 on the project, and the criteria are how to evaluate that the goal
 or work has been satisfactorily done.

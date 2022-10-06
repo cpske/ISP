@@ -160,7 +160,8 @@ A good process helps to:
 
 - structure development so you get the most done while maintaining quality
 
-  - use iterative development with short iterations and specific milestones
+  - use iterative development with short iterations 
+  - each iteration has a goal and criteria to evaluate if it has been achieved
   - have defined roles and responsibilities
   - use "pull requests", code review, and unit testing in your workflow
   - "retrospective" meeting after each iteration to improve your process
@@ -241,6 +242,15 @@ You should be familiar with the details of Waterfall, iterative and incremental,
 
 [Agile](../agile/agile) is not a software process. It is a set of values, principles, and practices for sofware development.
 
+## Goals & Milestones
+
+For any project, it is desirable to have goals and milestones.
+
+In iterative development, each iteration has a goal and criteria to evaluate
+if the goal has been achieves.
+
+Frequent [milestones](milestones.md) show progress toward finishing the project.
+Just like a "goal", a milestone has objective criteria to evaluate if has been achieved.
 
 ## Online Courses
 
