@@ -6,7 +6,7 @@ Create a directory named `logging` and copy (or write yourself) `logging_demo.py
 
 
 
-## Part 1: Practice Using Logging
+## Part 1: Add logging to `logging_demo`
 
 These exercises use the `logging_demo.py` file.
 
@@ -61,12 +61,22 @@ Push your final code to Github.
 ## Part 2: Add Logging to `factor.py`
 
 1. In `factor.py` replace "print" statements with suitable logging statements.
-2. Log the exceptions in "main", including a stacktrace (`logger.exception`).
-3. Create a function named `configure()` that configures the root logger so that all log messages all go to a file named `factor.log`.
-4. Call `configure` from main.
-5. Test your code -- all logging info should be saved in `factor.log` and no log messages cluttering the interactive console dialog.
+2. You **should print** the factors (the result) and a user-friendly message if an exception occurs.
+3. Log the exceptions in "main", including a stacktrace (`logger.exception`).  Print a user-friend message instead of exception.
+4. Create a function named `configure()` that configures the root logger so that all log messages all go to a file named `factor.log`.
+5. Call `configure` from main.
+6. Test your code.
 
 Push your final `factor.py` to Github.
+
+
+```
+Integer to factor: 99
+Factors of 99 are [3, 3, 11]
+Integer to factor: six               <-- exception written to factor.log
+Please input an integer or 0 to quit <-- user-friendly message
+Integer to factor:
+```
 
 
 ### Logging and Log Formats
