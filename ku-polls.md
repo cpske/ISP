@@ -10,8 +10,7 @@ title: Student Github Repositories
 | [Isaraa](https://github.com/oMojiko/) | <https://github.com/oMojiko/ku-polls> | <https://github.com/oMojiko/ku-polls/wiki/> |
 | [Jindaporn](https://github.com/jindasy/) | <https://github.com/jindasy/ku-polls> | <https://github.com/jindasy/ku-polls/wiki/> |
 | [Jirasak](https://github.com/breezjirasak/) | <https://github.com/breezjirasak/ku-polls> | <https://github.com/breezjirasak/ku-polls/wiki/> |
-| [JiratchayaP](https://github.com/JiratchayaPhinyodom/) | <https://github.com/JiratchayaPhinyodom/ku-polls> | <https://github.com/JiratchayaPhinyodom/ku-polls/wiki/> |
-| [JiratchayaT](https://github.com/mjrchy/) | <https://github.com/mjrchy/ku-polls> | <https://github.com/mjrchy/ku-polls/wiki/> |
+| [Jiratchaya P](https://github.com/JiratchayaPhinyodom/) | <https://github.com/JiratchayaPhinyodom/ku-polls> | <https://github.com/JiratchayaPhinyodom/ku-polls/wiki/> |
 | [Jitpanu](https://github.com/teenteennnii/) | <https://github.com/teenteennnii/ku-polls> | <https://github.com/teenteennnii/ku-polls/wiki/> |
 | [Kaopong](https://github.com/kuisskui/) | <https://github.com/kuisskui/ku-polls> | <https://github.com/kuisskui/ku-polls/wiki/> |
 | [Khemissara](https://github.com/khemissara/) | <https://github.com/khemissara/ku-polls> | <https://github.com/khemissara/ku-polls/wiki/> |
@@ -22,7 +21,6 @@ title: Student Github Repositories
 | [Kulisara](https://github.com/kulisarawiangin/) | <https://github.com/kulisarawiangin/ku-polls> | <https://github.com/kulisarawiangin/ku-polls/wiki/> |
 | [Maroj](https://github.com/MarojT/) | <https://github.com/MarojT/ku-polls> | <https://github.com/MarojT/ku-polls/wiki/> |
 | [Napasakorn](https://github.com/Savetang19/) | <https://github.com/Savetang19/ku-polls> | <https://github.com/Savetang19/ku-polls/wiki/> |
-| [Napon](https://github.com/napon2545/) | <https://github.com/napon2545/ku-polls> | <https://github.com/napon2545/ku-polls/wiki/> |
 | [Nartnatta](https://github.com/PloyyNK/) | <https://github.com/PloyyNK/ku-polls> | <https://github.com/PloyyNK/ku-polls/wiki/> |
 | [Pakorn](https://github.com/RyukungG/) | <https://github.com/RyukungG/ku-polls> | <https://github.com/RyukungG/ku-polls/wiki/> |
 | [Panitta](https://github.com/panitnt/) | <https://github.com/panitnt/ku-polls> | <https://github.com/panitnt/ku-polls/wiki/> |
@@ -44,7 +42,6 @@ title: Student Github Repositories
 | [Tanakorn](https://github.com/caneledip/) | <https://github.com/caneledip/ku-polls> | <https://github.com/caneledip/ku-polls/wiki/> |
 | [Thanadol](https://github.com/ThanadolU/) | <https://github.com/ThanadolU/ku-polls> | <https://github.com/ThanadolU/ku-polls/wiki/> |
 | [Thanida](https://github.com/thanidacwn/) | <https://github.com/thanidacwn/ku-polls> | <https://github.com/thanidacwn/ku-polls/wiki/> |
-| [Vorakorn](https://github.com/VorakornLeechavanan/) | <https://github.com/VorakornLeechavanan/ku-polls> | <https://github.com/VorakornLeechavanan/ku-polls/wiki/> |
 | [Wongsathorn](https://github.com/KwangSensei/) | <https://github.com/KwangSensei/ku-polls> | <https://github.com/KwangSensei/ku-polls/wiki/> |
 | [Woraphan](https://github.com/Unikorn996/) | <https://github.com/Unikorn996/ku-polls> | <https://github.com/Unikorn996/ku-polls/wiki/> |
 | [Zion](https://github.com/natekrth/) | <https://github.com/natekrth/ku-polls> | <https://github.com/natekrth/ku-polls/wiki/> |
