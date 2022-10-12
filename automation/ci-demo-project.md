@@ -3,24 +3,24 @@ title: Continuous Integration using Github Actions or Travis-CI
 ---
 
 This project demonstrates use of Continuous Integration (CI) to build and test a Python project. 
-Travis-CI is a popular CI server, but they recently greatly restricted the number of free builds an account can perform.
-Another choice is Github Actions.
+Some CI services you can use are Github Actions, Circle-CI, and Travis-CI.
+Travis-CI is no longer free, except for a trial period. Github is the simplest choice for Github projects.
 
-Using either service, you create a "script" of configuration and instructions for the CI server.  You also define when this script should be executed, such as every time a commit is made on the master branch.
+To use any CI service, you create a "script" of instructions for the CI server.  You also define the "events" which should cause the script to execute, such as every time a commit is made on the master branch.
 
-Finally, you need to give the CI server access to your repository or define a "hook" to notify the CI server when a commit is made.  If using Github Actions, this step isn't needed.
+Finally, you need to give the CI server access to your repository and define a "hook" to notify the CI server when an event occurs (such as a commit).  If using Github Actions, this step isn't needed.
 
 What you will do is:
 
 * Create a git repository containing some code and tests
-* Create a Github repo and push your local repo to Github
 * Run the tests. Some test will fail. That's OK (don't fix it).
-* Create a Travis-CI account and give Travis access to this project (repo).
-* Create a Travis config file for your project and push it to Github
-* Watch Travis test your code every time you change it and push to Github
+* Create a Github repo and push your local repo to Github
+* Create a Github Action to run flake8 and unit tests
+* View the build results and fix problems
+* Add a Github "Badge" to your project README.md
 
 
-### Setup a Local Repository and Github Repo Containing Sample Code 
+### Create & Run a Github Action for a Sample Code (demo-pyci)
 
 1. Download  the `demo-pyci.zip` using a link on the Google Classroom coursework page.
 
@@ -31,7 +31,6 @@ What you will do is:
     ```
     demo-pyci/
         README.md
-        requirements.txt
         statistics.py
         test_statistics.py
     ```
@@ -43,30 +42,96 @@ What you will do is:
             README.md
             ...
     ```
-  
-3. Change directory to `demo-pyci` and do this:
 
+3. Run the unit tests locally. One test should fail.
+   - This is expected.
+   - Please **do not fix the defect**.  We want to see if Github reports it.
+
+4. In the `demo-pyci` directory do this:
    - create a git repository
-   - add a .gitignore file for Python projects.  By now, you should have your own .gitignore for Python projects. Your .gitignore should include `__pycache__` and `.coverage`.
+   - add a .gitignore file for Python projects.  By now, you probably have your own .gitignore for Python projects. Your .gitignore should include `__pycache__` and `.coverage`.
    - add all files to the git repository, including .gitignore
    - commit everything to your git repo
 
-4. Create a public `demo-pyci` repository on Github. Then
+5. Create a public `demo-pyci` repository on Github. Push your local git repo to Github.
 
-   - add it as remote for your local demo-pyci repo (`git remote add origin https://...`)
-   - push everything to Github (`git push -u origin master`)
+6. **Add a Github Action**  On Github, select the **Actions** tab.  Read the suggested choices for actions.
 
-## Run the Tests Locally - One test should FAIL
+7. Select the **Python Application** Action, and click "Configure".
 
-Run the tests yourself to verify the code (almost) works.
-We will then "script" this command for Travis to run for us.
+8. The "Configure" dialog lets you edit a `.yml` configuration file.
+   - make some changes, such as change Python 3.10 to 3.9
+   - change the action name (this text is shown on the "badge" so it should be descriptive)
+     ```
+     name: Unit Tests
+     ```
+   - don't install pytest (pip install pytest) since the tests use unittest
+   - Change the command to run unit tests.  Instead of "pytest" use:
+   ```yml
+   - name: Test with unittest
+     run:  |
+       python -m unittest
+   ```
 
-Run the unit tests using test auto-discovery using command:
-```bash
-  python -m unittest
-```
+9. Write a commit message and commit this change.
 
-## Add Travis-CI for Automatic Testing
+10. Wait a few seconds for the Action to run and look at the results.  (You did this in Programming 2.)
+    - It should show that flake8 failed due a missing import of `sqrt`.
+
+11. In your local repo, "pull" changes from Github in order to get the `.github` directory containing your actions.
+    - if you don't do this, you won't be able to "push" any work to Github because the Github repo is "ahead" of your local repo by 1 commit.
+    - instead of "pull" you can use "fetch" and "merge".  There should not be any conflicts.
+
+12. Fix the code:  add the missing import to `statistics.py`.
+    ```python
+    from math import sqrt
+    ```
+    - commit the fix and push to Github
+
+13. Watch Github re-run your Action.
+
+14. **Add a Github Badge to README.md**.
+    - See <https://docs.github.com/en/actions/monitoring-and-troubleshooting-workflows/adding-a-workflow-status-badge>
+    - In README.md, use Markdown for adding an image:
+      ```markdown
+      ![Unittest workflow](https://github.com/your_github_id/demo-pyci/actions/workflows/python-app.yml/badge.svg)
+      ```
+    - Badges are usually added **after** the header line and before the first paragraph.
+    - You can use any descriptive text instead of "Unittest workflow". 
+
+## Add Code Coverage using Codecov.io
+
+The idea is this:
+
+1. Create an account on Codecov.io using your Github login for authentication
+2. Configure Codecov to access your Github repository. This involves granting Codecov.io some permissions.
+3. Define a Github Action to run "coverage" and then upload the report to Codecov.io.  You can do either:
+  - create a new Github Action ([Instructions on Codecov][codecov-github-action]), or
+  - add steps to an existing Github Action.  Since you already run tests in a Github Action, this is easiest and efficient.
+
+Codecov.io has details of using a [Github Action][codecov-github-action]
+
+Suppose you choose to add coverage to the Github Action you already have. You need to make a few changes to the `.yml` file for that Action:
+
+- install Python `coverage` package using `pip`
+- in your "Run tests" step, change `python -m unittest` to `coverage run -m unittest`
+- create an XML report for uploading by adding a `coverage xml` command. (This may not be required, but they show it in the Codecov example action)
+- add a new step (see [Codecov Github Actions][codecov-github-action]) to upload the report using Github's predefined action (no need to download the "codecov" uploading using curl):
+  ```yaml
+  - name: Upload coverage report using Github Action
+    uses: codecov/codecov-action@v3
+  ```
+
+[codecov-github-action]: https://docs.codecov.com/docs/github-2-getting-a-codecov-account-and-uploading-coverage#github-actions
+
+### Getting a Codecov "Badge" for README.md
+
+On Codecov.io, go to your repository and click the "Settings" tab. In the "Badges & Graphs" section it has Markdown code you can add to README.md.
+
+As usual, you should put this badge on a line **after** the title line in README.
+
+
+## (Not Done in 2022) Using Travis-CI for Automatic Testing
 
 [Travis-CI](https://travis-ci.com) is a continuous integration server for building, testing, and deploying software projects.  It works with many lanaguages and integrates easily with Github.
 
