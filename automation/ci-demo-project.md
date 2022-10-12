@@ -53,32 +53,33 @@ What you will do is:
    - add all files to the git repository, including .gitignore
    - commit everything to your git repo
 
-5. Create a public `demo-pyci` repository on Github. Push your local git repo to Github.
+5. Create a public `demo-pyci` repository on Github. **Push** your local git repo to Github.
 
-6. **Add a Github Action**  On Github, select the **Actions** tab.  Read the suggested choices for actions.
+6. **Add a Github Action**:  On Github, select the **Actions** tab.  Read the suggested choices for actions.
 
-7. Select the **Python Application** Action, and click "Configure".
+7. Select the "**Python Application**" Action, and click "Configure".
 
 8. The "Configure" dialog lets you edit a `.yml` configuration file.
    - make some changes, such as change Python 3.10 to 3.9
-   - change the action name (this text is shown on the "badge" so it should be descriptive)
+   - change the action name (this name is shown on the "badge" so it should be descriptive)
      ```
      name: Unit Tests
      ```
    - don't install pytest (pip install pytest) since the tests use unittest
-   - Change the command to run unit tests.  Instead of "pytest" use:
-   ```yml
-   - name: Test with unittest
-     run:  |
-       python -m unittest
-   ```
+   - Change the unit test command from "pytest" to unittest:
 
-9. Write a commit message and commit this change.
+     ```
+     - name: Test with unittest
+       run:  |
+          python -m unittest
+     ```
+
+9. Write a commit message and commit these changes to the `.yml` file.
 
 10. Wait a few seconds for the Action to run and look at the results.  (You did this in Programming 2.)
     - It should show that flake8 failed due a missing import of `sqrt`.
 
-11. In your local repo, "pull" changes from Github in order to get the `.github` directory containing your actions.
+11. In your local repo, "pull" changes from Github in order to get the `.github` directory containing your Action script.
     - if you don't do this, you won't be able to "push" any work to Github because the Github repo is "ahead" of your local repo by 1 commit.
     - instead of "pull" you can use "fetch" and "merge".  There should not be any conflicts.
 
@@ -94,42 +95,52 @@ What you will do is:
     - See <https://docs.github.com/en/actions/monitoring-and-troubleshooting-workflows/adding-a-workflow-status-badge>
     - In README.md, use Markdown for adding an image:
       ```markdown
-      ![Unittest workflow](https://github.com/your_github_id/demo-pyci/actions/workflows/python-app.yml/badge.svg)
+      ![Unittest Workflow](https://github.com/your_github_id/demo-pyci/actions/workflows/python-app.yml/badge.svg)
       ```
-    - Badges are usually added **after** the header line and before the first paragraph.
-    - You can use any descriptive text instead of "Unittest workflow". 
+    - Badges are added **after** the header line and before the first paragraph.
+    - You can use any descriptive text instead of "Unittest Workflow".
 
-## Add Code Coverage using Codecov.io
+## Add Code Coverage and Codecov.io
+
+[Codecov.io](https://codecov.io) provides useful online visualization and detailed reports of test code coverage.  It uses data from the Python `coverage` command (same command you run on your own computer).
 
 The idea is this:
 
 1. Create an account on Codecov.io using your Github login for authentication
 2. Configure Codecov to access your Github repository. This involves granting Codecov.io some permissions.
-3. Define a Github Action to run "coverage" and then upload the report to Codecov.io.  You can do either:
+3. Define a Github Action to run `coverage` and then upload the report to Codecov.io.  Either:
   - create a new Github Action ([Instructions on Codecov][codecov-github-action]), or
   - add steps to an existing Github Action.  Since you already run tests in a Github Action, this is easiest and efficient.
 
-Codecov.io has details of using a [Github Action][codecov-github-action]
-
 Suppose you choose to add coverage to the Github Action you already have. You need to make a few changes to the `.yml` file for that Action:
 
-- install Python `coverage` package using `pip`
+- install the `coverage` package using `pip`
 - in your "Run tests" step, change `python -m unittest` to `coverage run -m unittest`
-- create an XML report for uploading by adding a `coverage xml` command. (This may not be required, but they show it in the Codecov example action)
-- add a new step (see [Codecov Github Actions][codecov-github-action]) to upload the report using Github's predefined action (no need to download the "codecov" uploading using curl):
-  ```yaml
-  - name: Upload coverage report using Github Action
-    uses: codecov/codecov-action@v3
-  ```
+- create an XML report for Codecov.io by adding a `coverage xml` command **after** run unit tests with coverage
+```
+      coverage run -m unittest
+      coverage xml
+```
+- add a new step (see [Codecov Github Actions][codecov-github-action]) to upload the report a Github predefined action (no need to download the "codecov" uploader using curl):
+
+```
+    - name: Upload coverage report using Github Action
+      uses: codecov/codecov-action@v3
+```
+
+Codecov.io has details of using a [Github Action][codecov-github-action]
 
 [codecov-github-action]: https://docs.codecov.com/docs/github-2-getting-a-codecov-account-and-uploading-coverage#github-actions
 
-### Getting a Codecov "Badge" for README.md
+### Get a Codecov "Badge" for README.md
 
-On Codecov.io, go to your repository and click the "Settings" tab. In the "Badges & Graphs" section it has Markdown code you can add to README.md.
+On Codecov.io, navigate to your repository and click the "Settings" tab. 
+
+In the "Badges & Graphs" section it has Markdown code you can add to README.md.
 
 As usual, you should put this badge on a line **after** the title line in README.
 
+---
 
 ## (Not Done in 2022) Using Travis-CI for Automatic Testing
 
@@ -159,7 +170,7 @@ Many applications use YAML file format for configuration, including Travis and G
 In your local repository, create a file named `.travis.yml` that describes your 
 project.  Here is a simple `.travis.yml` for this project:
 
-```yml
+```
 language: python
 
 # you can use a different version of Python 
