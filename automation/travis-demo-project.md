@@ -1,10 +1,14 @@
 ---
-title: Continuous Integration using Travis-CI
+title: Continuous Integration using Github Actions or Travis-CI
 ---
 
-This project demonstrates use of Travis CI to build and test a Python project. 
-You will create a repository on Github, then have Travis-CI pull and test it,
-according to a "script" of instructions.
+This project demonstrates use of Continuous Integration (CI) to build and test a Python project. 
+Travis-CI is a popular CI server, but they recently greatly restricted the number of free builds an account can perform.
+Another choice is Github Actions.
+
+Using either service, you create a "script" of configuration and instructions for the CI server.  You also define when this script should be executed, such as every time a commit is made on the master branch.
+
+Finally, you need to give the CI server access to your repository or define a "hook" to notify the CI server when a commit is made.  If using Github Actions, this step isn't needed.
 
 What you will do is:
 
@@ -15,24 +19,24 @@ What you will do is:
 * Create a Travis config file for your project and push it to Github
 * Watch Travis test your code every time you change it and push to Github
 
-Travis is a *Continuous Integration* service that *automatically* builds and tests your project whenever changes are committed to the source repository.
 
 ### Setup a Local Repository and Github Repo Containing Sample Code 
 
-1. Download `demo-pyci.zip` via [this link](demo-pyci.zip) or link on Google Classroom coursework page.
+1. Download  the `demo-pyci.zip` using a link on the Google Classroom coursework page.
 
 2. Create your own Python project using the ZIP file.
+
    - Change to a directory where you store projects (**not** inside another git repo) and unpack the zip file.  
    - Unzip will create a `demo-pyci` directory containing these files:
     ```
     demo-pyci/
         README.md
-        requirements.txt    (contains only a comment line)
-        stats.py
-        stats_test.py
+        requirements.txt
+        statistics.py
+        test_statistics.py
     ```
     **INCORRECT:** Your repo should **not** have an extra layer of directories.    
-    This is wrong:
+    This is **wrong**:
     ```
     demo-pyci/
         demo-pyci/
@@ -41,12 +45,14 @@ Travis is a *Continuous Integration* service that *automatically* builds and tes
     ```
   
 3. Change directory to `demo-pyci` and do this:
+
    - create a git repository
-   - add a .gitignore file for Python projects.  By now, you should have your own .gitignore for Python projects. Your .gitignore should include `__pycache__` dirs.
+   - add a .gitignore file for Python projects.  By now, you should have your own .gitignore for Python projects. Your .gitignore should include `__pycache__` and `.coverage`.
    - add all files to the git repository, including .gitignore
    - commit everything to your git repo
 
 4. Create a public `demo-pyci` repository on Github. Then
+
    - add it as remote for your local demo-pyci repo (`git remote add origin https://...`)
    - push everything to Github (`git push -u origin master`)
 
@@ -57,14 +63,8 @@ We will then "script" this command for Travis to run for us.
 
 Run the unit tests using test auto-discovery using command:
 ```bash
-  python -m unittest discover -p "*_test.py"
+  python -m unittest
 ```
-The `-p "*_test.py"` option defines a **pattern** for autodiscovery of test files,
-since the test filename ends with `_test.py`.
-
-Runs 3 tests and one test fails.  
-
-**Do not fix the error.**  We want a failure so you can see how Travis notifies you.
 
 ## Add Travis-CI for Automatic Testing
 

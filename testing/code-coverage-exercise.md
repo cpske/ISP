@@ -60,7 +60,7 @@ For code that uses a library or framework, you want to **exclude** the library o
 
 For Django projects you want to exclude migrations, settings.py, manage.py, static files, and anything else you don't write unit tests for.
 
-In the Django Polls tutorial, I used:
+For example:
 ```bash
 [run]
 # measure branch coverage
@@ -72,17 +72,13 @@ omit =
     __init__.py
     /usr/*
     mysite/*       # the main application 
-    */migrations/* # omit migrations
+    */migrations/* # django generated migration files
     */tests.py     # omit unit test files and directories
-# explicitly include the main app
-include =
-    polls/*
 
 # exclude some methods we don't test from the report and stats
 [report]
 exclude_lines =
     def __str__    # example
-    def __repr__   # example
 ```
 
 ## How Many Unit Tests Are Enough?
