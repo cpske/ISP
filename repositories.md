@@ -11,8 +11,7 @@ title: Student Github Link Generator
 | [Isaraa](https://github.com/oMojiko/) | <https://github.com/oMojiko/repositoryname> | <https://github.com/oMojiko/repositoryname/wiki/> |
 | [Jindaporn](https://github.com/jindasy/) | <https://github.com/jindasy/repositoryname> | <https://github.com/jindasy/repositoryname/wiki/> |
 | [Jirasak](https://github.com/breezjirasak/) | <https://github.com/breezjirasak/repositoryname> | <https://github.com/breezjirasak/repositoryname/wiki/> |
-| [JiratchayaP](https://github.com/JiratchayaPhinyodom/) | <https://github.com/JiratchayaPhinyodom/repositoryname> | <https://github.com/JiratchayaPhinyodom/repositoryname/wiki/> |
-| [JiratchayaT](https://github.com/mjrchy/) | <https://github.com/mjrchy/repositoryname> | <https://github.com/mjrchy/repositoryname/wiki/> |
+| [Jiratchaya](https://github.com/JiratchayaPhinyodom/) | <https://github.com/JiratchayaPhinyodom/repositoryname> | <https://github.com/JiratchayaPhinyodom/repositoryname/wiki/> |
 | [Jitpanu](https://github.com/teenteennnii/) | <https://github.com/teenteennnii/repositoryname> | <https://github.com/teenteennnii/repositoryname/wiki/> |
 | [Kaopong](https://github.com/kuisskui/) | <https://github.com/kuisskui/repositoryname> | <https://github.com/kuisskui/repositoryname/wiki/> |
 | [Khemissara](https://github.com/khemissara/) | <https://github.com/khemissara/repositoryname> | <https://github.com/khemissara/repositoryname/wiki/> |
@@ -23,7 +22,6 @@ title: Student Github Link Generator
 | [Kulisara](https://github.com/kulisarawiangin/) | <https://github.com/kulisarawiangin/repositoryname> | <https://github.com/kulisarawiangin/repositoryname/wiki/> |
 | [Maroj](https://github.com/MarojT/) | <https://github.com/MarojT/repositoryname> | <https://github.com/MarojT/repositoryname/wiki/> |
 | [Napasakorn](https://github.com/Savetang19/) | <https://github.com/Savetang19/repositoryname> | <https://github.com/Savetang19/repositoryname/wiki/> |
-| [Napon](https://github.com/napon2545/) | <https://github.com/napon2545/repositoryname> | <https://github.com/napon2545/repositoryname/wiki/> |
 | [Nartnatta](https://github.com/PloyyNK/) | <https://github.com/PloyyNK/repositoryname> | <https://github.com/PloyyNK/repositoryname/wiki/> |
 | [Pakorn](https://github.com/RyukungG/) | <https://github.com/RyukungG/repositoryname> | <https://github.com/RyukungG/repositoryname/wiki/> |
 | [Panitta](https://github.com/panitnt/) | <https://github.com/panitnt/repositoryname> | <https://github.com/panitnt/repositoryname/wiki/> |
@@ -45,7 +43,6 @@ title: Student Github Link Generator
 | [Tanakorn](https://github.com/caneledip/) | <https://github.com/caneledip/repositoryname> | <https://github.com/caneledip/repositoryname/wiki/> |
 | [Thanadol](https://github.com/ThanadolU/) | <https://github.com/ThanadolU/repositoryname> | <https://github.com/ThanadolU/repositoryname/wiki/> |
 | [Thanida](https://github.com/thanidacwn/) | <https://github.com/thanidacwn/repositoryname> | <https://github.com/thanidacwn/repositoryname/wiki/> |
-| [Vorakorn](https://github.com/VorakornLeechavanan/) | <https://github.com/VorakornLeechavanan/repositoryname> | <https://github.com/VorakornLeechavanan/repositoryname/wiki/> |
 | [Wongsathorn](https://github.com/KwangSensei/) | <https://github.com/KwangSensei/repositoryname> | <https://github.com/KwangSensei/repositoryname/wiki/> |
 | [Woraphan](https://github.com/Unikorn996/) | <https://github.com/Unikorn996/repositoryname> | <https://github.com/Unikorn996/repositoryname/wiki/> |
 | [Zion](https://github.com/natekrth/) | <https://github.com/natekrth/repositoryname> | <https://github.com/natekrth/repositoryname/wiki/> |
