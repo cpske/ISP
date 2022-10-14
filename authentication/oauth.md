@@ -74,3 +74,68 @@ to access the user's resources.
 - [Oauth 2.0 for Client-side Web Apps](https://developers.google.com/identity/protocols/oauth2/javascript-implicit-flow) for apps where logic and resource access are done in user's browser (using Javascript)
 
 both pages have good explanation of the steps involved.
+
+## Adding OAuth to Django Project
+
+In 2022, [django-allauth][django-allauth] appears to be the best package
+for using OAuth and OpenID in Django.  It also handles local accounts and
+replaces the `django.contrib.auth` app for local accounts.
+
+The [django-allauth][] docs are easy to read, but this tutorial may
+also help:
+
+- [How To Authenticate Django Apps using django-allauth][digitalocean-allauth] tutorial by DigitalOcean.
+
+To understand what allauth can do, read the section [Supported Flows][supported-flows].
+
+The Allauth login template is pretty ugly.
+This tutorial shows how to write your own login template for django-allauth:
+<https://codeburst.io/master-the-user-authentication-in-django-allauth-f1a4368bb460>
+
+[django-allauth]: https://django-allauth.readthedocs.io/en/latest/
+[supported-flows]: https://django-allauth.readthedocs.io/en/latest/overview.html#supported-flows
+[digitalocean-allauth]: https://www.digitalocean.com/community/tutorials/how-to-authenticate-django-apps-using-django-allauth
+
+Allauth constructs:
+- `SocialApp` - a model that contains credentials for a single OAuth/OpenID provider.  It stores the "Client ID", "Client Secret", and (optional) Key used to access the provider.
+  - You add `SocialApp` records using the Django admin interface.
+  - The `name` field is the Client app name that you gave the OAuth provider when you registers for OAuth credentials. Be sure the name matches exactly.
+  - `client_id`, `secret`, and `key` are credentials given by the OAuth provider
+- `SocialAccount` - a model for a user's social account. When a user authenticates using OAuth, a SocialAccount object is created for him.  `SocialAccount` contains:
+   - `user` - foreign key to a `User` for this account
+   - `provider` - provider's name
+   - `uid` - user id
+   - `last_login`
+   - `date_joined`
+   - `extra_daa` a JSONField to store all data returned by the OAuth provider after authentication. The data returned depends on the "scope" you request from the OAuth provider.
+- `SocialToken` - stores the OAuth *access token* and foriegn keys linking it to a *SocialAccount* (user) and *SocialApp* (provider)
+
+
+### Update a User's profile after social login
+
+When a user authenticates via a social auth provider, Django associates this
+with a User instance and sets the `username` and `email` attributes, 
+but not other attributes like `first_name` or `full_name`.
+But you can add this to your application.
+
+Django has "signals" that are triggered (fired) by specific events.
+
+You can add a "post save" signal for `SocialAccount` objects:
+```python
+# Add to a models file
+from django.db.models.signals import post_save
+
+post_save.connect(update_profile, sender=SocialAccount)
+```
+
+and:
+
+```python
+def update_provile(sender, instance: SocialAccount, **kwargs):
+    """Update User data. instance.user is a reference to the Django User."""
+    user = instance.user
+    user.full_name = instance.extra_data['name'] # depends on provider
+    # get other attributes
+    user.save()
+```
+[Example code by Rishabh Agrahari](https://github.com/pyaf/allauthproject) on Github.
