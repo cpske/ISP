@@ -3,6 +3,10 @@ title: Projects
 navigation_order: 3
 ---
 
+## ISP 2022 Team Projects
+
+[List of Team Projects](https://bit.ly/isp2022-projects):&ensp; <https://bit.ly/isp2022-projects> on Google Docs
+
 ## ISP 2021 Team Projects
 
 [URLs of Deployed Projects](https://docs.google.com/spreadsheets/d/1lXzCIazaBSW-odog9lK-atoi80WIhqFKrsEpEc-0uIc/edit):&ensp; <https://bit.ly/ISP2021-projects> 
