@@ -44,7 +44,7 @@ URLs of Deployed Projects: <https://bit.ly/ISP2020-projects>
 |:-------------|:---------------|
 | [Covid Tracker](https://github.com/lisbono2001/Covid19-Tracker) | Theetouch, Puvana, Bhatara, Suchon  |
 | [EveHolder Online Event Registration](https://github.com/EveGroup/EveHolder) | Pattarin, Metaras, Kongtapp, Vichisorn |
-| [Job opportunity online platform](https://github.com/Jomsaruj/DEK-COM) | Saruj, Auttakrit, Patiphan, Setthanat |
+| [Job Opportunity Online Platform](https://github.com/Jomsaruj/DEK-COM) | Saruj, Auttakrit, Patiphan, Setthanat |
 | [Kvent Online Event Registration](https://github.com/bleachjade/Kvent) | Nattapol, Chananya, Kasidit, Jirawadee |
 | [League of Legends Insights](https://github.com/Sahanon-P/Noxus-Project) | Potchara, Sahanon, Sorawichaya, Thornthep, Phumrapee |
 | [Online tutoring appointment](https://github.com/Bouncyyahomie/TEWMA-project) | Chayapol, Jakkrathorn, Nuttapol |
@@ -55,4 +55,37 @@ URLs of Deployed Projects: <https://bit.ly/ISP2020-projects>
 | [KU-Hub Webboard](https://github.com/NarawishS/ku-hub) | Bheem, Narawish, Teeranut, Sahatsawat |
 | [Your Fitness Pal](https://github.com/kinkinkinxd/YourFitnessPal) | Panitan, Kittitouch, Peerasu, Purich |
 
+## ISP 2019 Team Projects
 
+Google Sheet: <https://docs.google.com/spreadsheets/d/1KiWhmiwhaOs7ZjXaCefmenzE7r-UEcDiYgyXPjxZrOo/>
+
+| Project Home | Team Members   | 
+|:-------------|:---------------|
+| [HamburgQ](https://github.com/kidstylex/HamburgQ) | Panthakarn, Thananan, Arisa |
+| [Quizer](https://github.com/NutthanichN/Quizer) | Nutthanich, Tetach, Wijantra |
+| [KooCook Nutritional Cookbook](https://github.com/KooCook/koocook-dj/tree/dev) | Mai, Tharathorn, Chayathon  |
+| [Vacseen](https://github.com/llleyelll/vacseen) | Chananchida, Sirikon, Sivanat |
+| [Arbitrator](https://github.com/Winternight9/Arbitrator/tree/develop) | Siwat,Supakorn, Kasidit |
+| [Thor](https://github.com/magmagcup/Thor/tree/develop) | Anant, Jitta, Sirawich, Wikrom |
+| [Riddle me this](https://github.com/KasidisGit/riddle-me-this) | Boonyanuch, Kasidis, Sukrita, Tiranan |
+| [Better Together](https://github.com/bameethanida/BetterTogether) | Chananya, Nattapol, Pawaris, Thanida |
+| [League of Saras](https://github.com/Klan300/league_of_saras) | Apipark, Kritpawit, Thun, Vichyawat |
+| [KU Event Regis](https://github.com/PunyaweeSrithongkerd/KU-Event-Regis) | Gunn, Punyawee, Warat |
+| [MyForm](https://github.com/ChatchapongC/myform) | Chatchapong, Ingkarat, Jirawadee |
+| [Explorer](https://github.com/firstknp/Explorer) | Kannipa, Tanapol, Thitaseth |
+| [Evaluately](https://github.com/mmookptr/evaluately) | Sidtipat, Nattaphon, Pakkapon, Pateera |
+
+
+[HamburgQ]: https://github.com/kidstylex/HamburgQ
+[Quizer]: https://github.com/NutthanichN/Quizer
+[KooCook]: https://github.com/KooCook/koocook-dj/tree/dev
+[Vacseen]: https://github.com/llleyelll/vacseen
+[Arbitrator]: https://github.com/Winternight9/Arbitrator/tree/develop
+[Thor]: https://github.com/magmagcup/Thor/tree/develop
+[Riddle-me-this]: https://github.com/KasidisGit/riddle-me-this
+[BetterTogether]: https://github.com/bameethanida/BetterTogether
+[League-of-Saras]: https://github.com/Klan300/league_of_saras
+[KU-Event-Regis]: https://github.com/PunyaweeSrithongkerd/KU-Event-Regis
+[MyForm]: https://github.com/ChatchapongC/myform
+[Explorer]: https://github.com/firstknp/Explorer
+[Evaluately]: https://github.com/mmookptr/evaluately

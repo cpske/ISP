@@ -1,5 +1,5 @@
 ---
-title: Type Hinting –– An Introduction
+title: Type Hints –– An Introduction
 ---
 
 by Mai Norapong
@@ -17,24 +17,24 @@ Contents:
 ## Motivations for using type hints
 
 - Improve **readability** for humans and computers
-  * Better code completion and refactoring in IDEs
-- Acts as live **documentation**
+  * Better **code completion** and **refactoring** in IDEs
+- Acts as live documentation
   * Solves the problem of docstrings not being maintained
   * Docstrings don't allow complex types
 - Reduce errors
+  * **Static analysis** detects more errors when type hints are present
+  * IDE can better detect errors as you type
   * Helps a lot in large projects
 
-While Python is known for _dynamic_ or "duck" typing (and some people will
-argue against any form of enforced type checking), many (including the retired
-BDFL Guido van Rossum) agree that _static type checking_ is still welcome in the form of "gradual type hinting". 
+While Python is known and loved for _dynamic_ or "duck" typing,
+many (including the Python creator Guido van Rossum) agree that _static type checking_ is welcome in the form of "gradual type hinting". 
 
 ## Ways to type hint
 
 ### Function annotations (PEP 3107)
 
 Function annotations were introduced in [**PEP 3107**](https://www.python.org/dev/peps/pep-3107/)
-and is available from Python 3.0 onwards.
-The PEP allows for this syntax
+and are available from Python 3.0.
 
 ```python
 def foo(a: expression, b: expression = default_value):
@@ -45,12 +45,10 @@ def bazz() -> expression:
     ...
 ```
 
-This results in a `dict` mapping from parameter names to the Python _expression_; 
-the return value is denoted by the key `'return'`. The expression is evaluated
+These annotations result in a `dict` named `__annotations__`.
+This dict is a mapping from parameter names to a Python _expression_; 
+the return value has key `'return'`. The expression is evaluated
 during function definition.
-
-This `dict` can be accessed via a _dunder_ attribute `.__annotations__` which 
-doesn't have any effect on the program on its own.
 
 [**PEP 3107**](https://www.python.org/dev/peps/pep-3107/) 
 allows for any valid python expression to be there including any `str`, 
@@ -78,11 +76,8 @@ def my_abs(x: int) -> int:
 {'x': <class 'int'>, 'return': <class 'int'>}
 ```
 
-Using these, IDEs and static type checkers like `mypy` can help you check for 
-type issues before actual run-time.
-
-In comparison with the bare bones functions below, that you're not really sure
-what the function does, the above surely is an improvement without too much effort. 
+Compare the above with the untyped code below.
+In the code below, you're not really sure what the function does.
 
 ```python
 def catch_all(*args, **kwargs):
@@ -96,10 +91,6 @@ def my_abs(x):
         x = -x
     return x
 ```
-
-Many people agree that for small "obvious" functions, you don't really
-need a detailed docstring. Type hints add just that moderate amount of detail
-without needing too much description via docstrings.
 
 ### The typing module (PEP 484)
 
@@ -280,6 +271,43 @@ class CourseList(Sized):
     def __len__(self):
         return len(self.courses)
 ```
+
+## Self-Referencing Class Type Hints
+
+If a type hint refers to a class currently being defined, you will get an error:
+```python
+class Node:
+    """A node in a graph has a parent node and child nodes."""
+
+    def __init(self, parent: Node):
+        self.parent = parent
+        self.children: Set[Node] = set()
+```
+when run using Python, this results in:
+```
+NameError: name 'Node' is not defined
+```
+
+There are 2 ways to correct this:
+
+1. in the type hints, quote the class name: `'Node'`
+2. add `from __future__ import annotations`
+
+
+## Static Analysis Tools
+
+These tools examine code to look for errors. They make use of type hints to do better analysis:
+
+[mypy][] the most popular static type analyzer for Python. PyPi calls it "*a Python linter on steroids*".
+
+[pylint][] and [flake8][] also uses type hints to find syntax and semantic errors.
+
+VS Code's Pylance and Pyright (older) perform static analysis and also use type hints.
+
+[mypy]: https://mypy.readthedocs.io/en/stable/
+[pylint]: https://pypi.org/project/pylint/
+[flake8]: https://pypi.org/project/flake8/
+
 
 ### Summary
 

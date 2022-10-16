@@ -229,60 +229,67 @@ Not covered in 2022:
 
 ### Week 8
 
-- Style checking tools. We will use pylint and flake8.
-  - <https://cpske.github.io/ISP/code-quality/code-quality-tools>
-  - How to configure flake8 -- but it is *better* to fix your code rather than add exceptions to flake8!
-  - For graded assignments you cannot customize flake8, unless the explicitly allowed.
-- Style Checking Exercise:
-  1. How do you view or change the style rules in your IDE?
-  2. Use pylint to correct some code (may use banking app or person). Modify code until you get a score of 10.
-  3. Use flake8 to correct some code. Modify code until no messages from flake8.
-- For Java, the standard tool is [Checkstyle][Checkstyle].  CPSKE has its own checkstyle rules.
-- [Automation and Continuous Integration](automation/)
-- Exercise using CI - add Travis-CI and Codecov to demo-pyci project
-  - Instructions <https://cpske.github.io/ISP/automation/travis-demo-project>
-  - Starter code (to be added) 
-[CI starter code]: <https://cpske.github.io/ISP/automation/demo-pyci.zip> 
-
-[Checkstyle]: https://checkstyle.org/index.html
+- Logging
+- User Stories
+- Milestones
+- Domain Modeling
 
 #### Assignment
 
-- Apply flake8 to your KU Polls code and fix all problems
-   - use flake8 config file to exclude code that is not yours (migrations, django packages, virtual envs)
-- [Add CI to KU Polls](assignment/week8/ku-polls-ci-assignment)
-  - Use CI to run unit tests and run code coverage
-  - Add "badges" to your KU Polls README.md for Travis and CodeCov status
-  - Site has **lots** of badges: [Checkstyle](https://github.com/checkstyle/checkstyle)
+- Write User Stories for your project
+- Use the User Stories to identify domain classes and help you create a domain model
+   - add a *domain class diagram* to your project docs
+- Add Logging to KU Polls  
 
 
 ### Week 9
 
-- Review CI assignment
-- What is "good code"?  
-  - The goal of refactoring is "good code". So, what is good code?
-  - Goals, problems, and forces motivate characteristics of "good" code
-  - Visible metrics or characteristics
-  - Principles and practies for good code
-- [Introduction to Refactoring](refactoring/) and [slides](refactoring/Refactoring.pdf)
-  - "Why" refactoring and the benefits, both in general and for specific refactorings
-- Refactoring Exercise: Pizzashop refactoring <https://github.com/ISP19/pizzashop>
-- Anything on <https://refactoring.guru/refactoring> may be on a quiz!
-- User Stories - write stories for team projects
+- [Automation and Continuous Integration](automation/)
+- Exercise using CI - add Travis-CI and Codecov to demo-pyci project
+  - Instructions <https://cpske.github.io/ISP/automation/travis-demo-project>
+  - Starter code (to be added) 
+- Code Coverage & Coverage Tool for Python
+- Exercise: add code coverage to demo-pyci project, use Codecov.io to display the report, and add badges to the project README
+
 
 #### Assignment
 
+- [Add CI to KU Polls](assignment/week8/ku-polls-ci-assignment)
+  - Use CI to run unit tests and run code coverage
+  - Add "badges" to your KU Polls README.md for Travis and CodeCov status
+
+- Reading on terminology & concepts for refactoring and design patterns
 - Read <https://refactoring.guru/refactoring> 
 - Movie Rental Refactoring <https://classroom.github.com/a/_qGEboUn>, Part 1
 - Read the articles in [Agile Practices](assignment/week9/agile-practices) (there will be quiz on this) 
-- Read tips from *Practices of an Agile Developer* ("Tips" sections in assignment)
 
 
 ### Week 10
 
-- Discussion on Team Projects 
-  - how to get started, prioritizing work, meetings with TAs
+- What is "good code"?  
+  - The goal of refactoring is "good code". So, what is good code?
+  - Goals, problems, and forces motivate the definition of "good" code
+  - Visible metrics or characteristics
+  - Principles and practices for good code
+- [Introduction to Refactoring](refactoring/) and [slides](refactoring/Refactoring.pdf)
+- [Refactoring Signs](https://refactoring.guru/refactoring/smells) (*aka* "Code Smells") on refactoring.guru
+- [When to Refactor](https://refactoring.guru/refactoring/when) and [Refactoring Process](https://refactoring.guru/refactoring/how-to)
+- [Catalog of Refactorings](https://refactoring.guru/refactoring/techniques)
+- [Static Typing](https://cpske.github.io/ISP/code-quality/Type-Checking.pdf), Static Analysis, and [Type Hints](type-hints/introduction)
+- [Type Hints](type-hints/introduction) enable IDE to do **much better refactoring**.  Without type hints, an IDE may *miss* some places where it should refactor.
+- Refactoring Exercise: Pizzashop refactoring <https://github.com/ISP19/pizzashop>
+- Anything on <https://refactoring.guru/refactoring> may be on a quiz!
+
+#### Assignment
+
 - Refactoring Practice - refactor some code on Github (link on Google Classroom)
+- Movie Rental refactoring 
+- Read tips from *Practices of an Agile Developer* ("Tips" sections in assignment)
+- (Not in 2021) Identify *refactorings* one of your projects or someone else's
+
+
+### Week 11
+
 - [Agile](agile/agile) - Agile values, principles, and the practices.
   - conists of values and mindset, not a software process
 - Exercise: [Agile Practice Review Questions](agile/agile-practice-questions.pdf)
@@ -290,14 +297,6 @@ Not covered in 2022:
   - answers available online
 - Homework: essential reading on Agile
   - read "Learn More" articles in [Agile](agile/agile#learn-more)
-
-#### Assignment
-
-- (Not in 2021) *Refactor* one of your projects or someone else's
-  - <https://cpske.github.io/ISP/assignment/week10/refactoring>
-
-
-### Week 11
 
 - [Authentication](authentication)
 - Authentication Exercise: 
