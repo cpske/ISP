@@ -275,7 +275,7 @@ Not covered in 2022:
 - [Refactoring Signs](https://refactoring.guru/refactoring/smells) (*aka* "Code Smells") on refactoring.guru
 - [When to Refactor](https://refactoring.guru/refactoring/when) and [Refactoring Process](https://refactoring.guru/refactoring/how-to)
 - [Catalog of Refactorings](https://refactoring.guru/refactoring/techniques)
-- Refactoring Exercise: Pizzashop refactoring <https://github.com/ISP19/pizzashop>
+- Refactoring Exercise: Pizzashop refactoring <https://github.com/ISP2022/pizzashop>
 - Anything on <https://refactoring.guru/refactoring> may be on a quiz!
 
 IDE's have refactoring actions that make refactoring faster and reduce errors. But in Python they *work poorly (or not at all)* unless the code has accurate *type hints*. Hence, this is a good time to review *static typing* and *type hints*, including parameterized hints for collections and classes.
