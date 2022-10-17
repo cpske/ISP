@@ -275,16 +275,17 @@ Not covered in 2022:
 - [Refactoring Signs](https://refactoring.guru/refactoring/smells) (*aka* "Code Smells") on refactoring.guru
 - [When to Refactor](https://refactoring.guru/refactoring/when) and [Refactoring Process](https://refactoring.guru/refactoring/how-to)
 - [Catalog of Refactorings](https://refactoring.guru/refactoring/techniques)
-- [Static Typing](https://cpske.github.io/ISP/code-quality/Type-Checking.pdf), Static Analysis, and [Type Hints](type-hints/introduction)
-- [Type Hints](type-hints/introduction) enable IDE to do **much better refactoring**.  Without type hints, an IDE may *miss* some places where it should refactor.
 - Refactoring Exercise: Pizzashop refactoring <https://github.com/ISP19/pizzashop>
 - Anything on <https://refactoring.guru/refactoring> may be on a quiz!
+
+IDE's have refactoring actions that make refactoring faster and reduce errors. But in Python they *work poorly (or not at all)* unless the code has accurate *type hints*. Hence, this is a good time to review *static typing* and *type hints*, including parameterized hints for collections and classes.
+- [Static Typing](https://cpske.github.io/ISP/code-quality/Type-Checking.pdf), Static Analysis, and [Type Hints](type-hints/introduction)
+- [Type Hints](type-hints/introduction) enable IDE to do **much better refactoring**.  Without type hints, an IDE may not recognize places where it should refactor.
 
 #### Assignment
 
 - Refactoring Practice - refactor some code on Github (link on Google Classroom)
-- Movie Rental refactoring 
-- Read tips from *Practices of an Agile Developer* ("Tips" sections in assignment)
+- Homework: Movie Rental refactoring 
 - (Not in 2021) Identify *refactorings* one of your projects or someone else's
 
 
@@ -297,6 +298,7 @@ Not covered in 2022:
   - answers available online
 - Homework: essential reading on Agile
   - read "Learn More" articles in [Agile](agile/agile#learn-more)
+- Read tips from *Practices of an Agile Developer* ("Tips" sections in assignment)
 
 - [Authentication](authentication)
 - Authentication Exercise: 
@@ -311,10 +313,6 @@ Not covered in 2022:
     8. Revise the KU Polls domain model
     9. Implement the changes to the domain model
   - 2020: [Add authentication to the Todo app](assignment/week11/auth-exercise-todo)
-
-#### Assignment
-
-- [KU Polls Iteration 3](assignment/ku-polls/iteration3)
 
 
 ### Week 12

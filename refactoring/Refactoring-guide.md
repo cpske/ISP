@@ -1,39 +1,25 @@
 ---
-title: Refactoring Guide
+title: Common Refactorings
 ---
 
-### Software Evolution
+- *Replace magic number with a named constant*. This applies to strings and other types as well.
 
-Software changes over time.  "Modern" development processes even increase
-the amount of change.  Consider:
+- *Rename a variable with a more informative name*. Short (one letter) names are OK for loop variables, but not much else.  Avoid abbreviations.
 
-* *Iterative and incremental development* - software evolves (changes) as you add new features
-* *Embrace Feedback and Changing Requirements* - this can cause change at the design level, too.
-* *Software reuse* - components may need to change to be suitable for reuse.
+- *Introduce explanatory variable* - if you have a long expression used as part of a statement, consider breaking it apart and assigning it to an intermediate variable that explains what it is.
 
-Other factors causing change:
+- *Eliminate Duplicate Code* - move it to a separate method, a superclass, or a mixin. Sometimes duplicate code is caused by some work being done by the wrong object.  For example, many views in "KU Polls" containing code to find a user's vote instead of a method in the Vote class to do that.
 
-* *Software development is a learning process* - we find better designs and better implementations while doing.
+- *Eliminate Unnecessary "else"*.  When the "then" part of an "if" statements causes a return from a function or method, you do not need the following "else".  The same applies to "try - except" blocks in Python.
+  ```python
+  # in a Person class
+  def __eq__(self, other) -> bool:
+      if not isinstance(other, self.__class__):
+          return False
+      else:    <-- NOT NEEDED. REMOVE IT.
+          return self.name == other.name and self.id == other.id
+   ```
 
-## Common Refactorings
+- *Move Method* - if a method is using data or other methods from another class (not a superclass) more than its own class, it probably should be moved to the other class. This is the *Information Expert* principle.
 
-* *Replace magic number with a named constant*. This applies to strings and other types as well.
-* *Rename a variable with a more informative name*. Short (one letter) names are OK for loop variables, but not much else.  Avoid abbreviations.
-* *Introduce explanatory variable* - if you have a long expression used as part of a statement, consider breaking it apart and assigning it to an intermediate variable that explains what it is.
-* *Eliminate Duplicate Code* - move it to a separate method, a superclass, or mixin.
-
-
-## Refactoring Resources and References
-
-* *Refactoring: Improving the Design of Existing Code* by Martin Fowler.  The original and most often recommended refactoring book.
-* 
-* **Chapter 24: Refactoring** in *Code Complete*
-   has checklists for refactoring and describes common refactorings. Easy to read.
-
-* [Code Smells Cheat Sheet](http://www.industriallogic.com/wp-content/uploads/2005/09/smellstorefactorings.pdf) at [Industrial Logic](https://www.industriallogic.com/blog/smells-to-refactorings-cheatsheet/). Summary and Refactoring (2 pages)
-    - table of symptoms of poor code and suggested refactorings.
-    > The symptoms of poor or hard-to-maintain code are sometimes called *code smells*.
-    > I avoid this term because smell is subjective, and I want
-    > refactoring guidelines to be objective.
-
-
+- *Extract Method* - if a method is long or appears to be doing more than one thing, try to extract a coherent block of code to another method. This may also improve your ability to test the code.
