@@ -7,10 +7,11 @@ title: Movie Rental Refactoring Part 1
 This is a well-known refactoring example from [Chapter 1][refactoring_pdf] of
 _Refactoring: Improving the Design of Existing Code_ by Martin Fowler.  
 
-The purpose of the application is to create a statement showing the movie rentals by a customer, along with the total price and "frequent renter points" earned.
+The application creates a statement showing the movie rentals by a customer, along with the total price and "frequent renter points" earned.
 
-In the application, a **Customer** rents **Movies**. A **Rental** object records the movie and number of `days_rented`.  The rental **price** of a Movie is based on its **price code** such as "New Release", "Children's Movie", or "Regular". The price code also determines the "frequent renter points" value.
-The Customer class has a `statement` method the computes and writes the price (charge) and frequent renter points for each rental, and returns the statement as a string.
+In the application, a **Customer** rents **Movies**. A **Rental** object records the movie and `days_rented`.  The rental **price** of a Movie is based on its **price code** such as "New Release", "Children's Movie", or "Regular". The price code also determines the **frequent renter points** earned for a Rental.
+
+The Customer class has a `statement` method that creates a formatted statement containing the details of each rental along with total amount and total points earned, and returns the statement as a string.
 
 `main.py` creates a customer, rents some movies, and prints a statement.
 
@@ -27,13 +28,13 @@ In Python, the refactoring are the same as Fowler's Java version, but some detai
 
 - Variable names use the Python naming convention (`total_amount`) instead of Java camelcase names (`totalAmount`), and no leading underscore.
 - Instead of `getCharge()` (Java) use `get_price`
-- Instead of `getFrequentRenterPoints()` (Java) use `get_rental_points` ("rental" instead of "renter", omit "frequent")
-- Instead of `Price` for strategies (p. 29) use `PriceStrategy` (for interface) or `PriceCode` (for Enum)
+- Instead of `getFrequentRenterPoints()` (Java) use `get_rental_points` ("rental" instead of "renter")
+- Instead of `Price` for strategies (p. 29) use `PriceStrategy` (for interface) or `PriceCode` (if using an Enum)
 
 
 ## Instructions
 
-Before and after each refactoring you should **run the unit tests**.
+Before *and* after each refactoring you should **run the unit tests**.
 
 Perform each of these refactorings:
 
