@@ -192,7 +192,7 @@ class PriceCode(Enum):
 
 Whether you use an Enum or an abstract base class with subclasses, the code for Movie will be similar. The important part is that Movie *delegates* computation of price and rental points to the PriceStrategy  or PriceCode enum instead of using `if ... elif ... elif ...`.
 
-![UML of Final Code](movie_rental_part1.png)
+![UML of Final Code](movierental-part1-uml.png)
 
 
 ## Resources
