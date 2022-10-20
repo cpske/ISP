@@ -1,45 +1,36 @@
 ## Virtualenv Quickstart
 
-Your `python` and `pip` commands may be different from those shown here.
+Your `python` and `pip` commands may be named `python3` and `pip3`.
+
+If you have `virtualenv` installed you can use `virtualenv` instead of `python -m venv`.  According to developers, "virtualenv" is more efficient.
 
 ```bash
-# update pip and install virtualenv
-cmd>  python3 -m pip install --upgrade pip
-cmd>  python3 -m pip install virtualenv
-
-# create a virtualenv for django-polls project
+# create a virtual envronment for django-polls project
 cmd>  cd /someplace/django-polls
-cmd>  virtualenv env
+cmd>  python -m venv env 
 
-# Activate the virtualenv using "activate" script
+# Activate the virtual env using "activate" script
 # some shells use "." instead of "source"
 # Windows: enter 'env\Scripts\activate' (no "source")
 cmd>  source env/bin/activate 
 
-# install packages into this virtualenv (only once)
+# install packages into this virtual environment (only once)
 (env)cmd>  pip3 install -r requirements.txt
 
-# run app inside this virtualenv
+# run app inside this virtual environment
 (env)cmd>  python3 manage.py runserver
 
-# exit the virtualenv
+# when finished, exit the virtual environment 
 (env)cmd>  deactivate
 ```
 
 This example created a directory named `env` for the project virtual environment files.    
-To delete the virtualenv, delete the `env` directory.
+To delete the virtual envirionment, delete the `env` directory.
 
 ## Don't Commit the `env` Directory to Git!
 
 Add the "env" directory (or whatever name you use) to `.gitignore`
 and update .gitignore in your git repo.    
-**Don't commit virtualenv dirs** to git.
+**Don't commit** virtualenv directories to git.
 
-**Note**: The `env` directory **is totally unrelated** to the `.env` file used by python-decouple.
-
-## More Info
-
-Read [Using Virtualenv](virtualenv) for a better understanding.    
-Or read the official docs [Installing packages using pip and virtualenv][virtualenv].
-
-[virtualenv]: https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/
+**Note**: The `env` directory is unrelated to the `.env` file used by python-decouple.

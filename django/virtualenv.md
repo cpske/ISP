@@ -1,99 +1,77 @@
 ## Running Python Apps in a Virtual Environment
 
-You can run Python apps in a *virtual environment* that contains a separate, stand-alone copy of Python and all the Python add-ons that the application requires.
+You can run Python apps in a *virtual environment* that contains a separate, stand-alone copy of Python and the Python add-ons that the application requires.
 
 A virtual environment lets you configure and test apps in a stable
 environment that **isolates the app** from other Python stuff on your computer.  
-When installing and testing other people's apps, 
-you can install the application's dependencies in its own virtualenv
-without modifying your own Python installation.    
-And, you can delete the virtualenv when you are done using the app.
+This solves several problems:
+- you want to install and run someone else's app on your computer, without changing the Python packages on your computer
+- you want to verify that your app can run on someone else's computer (may not have the same Python packages as yours)
+- you want to have multiple different Python "environments" or Python versions 
 
-A big problem in development is that code runs differently (or not at all!) 
-on different computers due to differences in the version of Python and 
-the add-ons installed.
+Using a virtual environment solves most of these problems.
 
-Even on your *own machine*, an app may stop working when you upgrade
-Python or add-on packages.
+### Creating a Virtual Environment
 
-Using a virtual environment eliminates most of these problems.
+There are several commands for creating a virtual environment:
+- `python -m venv`
+- virtualenv (Python package)
+- pipenv (another Python package)
 
+In this write up we will use the builtin `venv` module.  It has less functionality than the virtualenv or pipenv packages, but is good enough.
 
-### Installing Virtualenv
-
-Python has a package named [virtualenv][virtualenv].
-It is included in some Python distrubutions, otherwise install it using `pip`.
-
-> Note: if you want to install pip and virtualenv **globally** (instead of your personal python packages dir) then run these commands as root or admin.
-
-On Linux/MacOS the commands are usually `python3` and `pip3`; on other systems just `python` and `pip`.
-
-1. Make sure your `pip` is up-to-date:
-    ```bash
-    python3 -m pip install --upgrade pip3
-    python3 -m pip --version
-    # Check consistency. This should be the same thing.
-    pip3 --version
-    ```
-2. Install virtualenv.
-    ```
-    python3 -m pip install virtualenv
-    ```
-    or invoke pip directly:
-    ```
-    pip3 install virtualenv
-    ```
-
-### Using Virtualenv
-
-The basic workflow is like this. 
-
-1. Create a virtualenv directory named `env` inside the project directory. You can use any name instead of "env".
+1. Create a virtual env directory named `env` **inside** a project directory. You can use any name instead of "env" ("env" and "venv" are typical names):
    ```bash
    cd /some/directory/django-polls
-   virtualenv env
+   python3 -m venv  env 
    ```
-2. Activate the virtualenv using the `activate` script. On Linux/MacOS and bash shell, you *source* this script, meaning to run it in your current shell. Use the "." command or "source" command.
+   This creates an `env` subdirectory with structure like this:
+   ```
+   env
+   env/bin
+   env/include
+   env/lib
+   env/share
+   ```
+   The `env/bin` directory contains python, python3, pip, and pip3 commands.  But they aren't on your shell's "path" until you "activate" the virtual env.
+2. Start the virtual environment by "sourcing" the `activate` script. In a Bash or Zshell (Linux, MacOS, or Windows with git-bash installed), type:
     ```bash
-    .  env/bin/activate
+    source env/bin/activate
     ```
     or:
     ```
-    source env/bin/activate
+    . env/bin/activate
     ```
     On Microsoft Windows:
     ```
     env\Scripts\activate
     ```
-    When virtualenv is activated it prepends `(env)` to your shell prompt so you know it is active.
-3. (First time only) Install requirements from `requirements.txt`:
+    When the virtual env is activated it prepends `(env)` to your shell prompt so you know it is active.  
+    ```
+    (env) cmd>
+    ```
+3. (First time only) Install requirements *inside* the virtual environment:
     ```bash
-    (env)cmd>  pip install -r requirements.txt
+    (env) cmd>  pip install -r requirements.txt
     ```
     Requirements are installed only in the virtual env directory (`env`).
-4. Run the app or do whatever you want:
+4. Run the application or do whatever you want:
     ```bash
-    (env)cmd>  python3 manage.py runserver
+    (env) cmd>  python3 manage.py runserver
     ```
 5. Exit the virtualenv using `deactivate`.  
 You can also exit by closing the shell window.
-    ```bash
-    (env)cmd>  deactivate
-    ```
+   ```bash
+   (env) cmd>  deactivate
+   ```
 
 After initial setup, to run the app just "activate" the virtualenv and run the app.
 
-### Exclude virtualenv files from Git!
+### Exclude virtual environment directories from Git!
 
-Add the virtualenv directory to your `.gitignore` file and **don't commit virtualenv directories** into git.
+Add the virtualenv directory (`env`) to your `.gitignore` file and **don't commit** virtualenv directories into git.
 
 ---
-## virtualenvwrapper
-
-[Vrtualenvwrapper][virtualenvwrapper] is an add-on for virtualenv to improve management of virtualenvs and makes them easier to use, esp. if you are working on multiple projects. Many developers love it.
-
-However, the basic "virtualenv" may be better
-for preparing a venv configuration to run on a cloud service.
 
 ## Pipenv
 
