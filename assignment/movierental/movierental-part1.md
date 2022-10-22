@@ -153,13 +153,14 @@ Another way to implement a Strategy in Python is to use an Enum.
 - The Enum defines the methods required by the strategy
 - Each member of the enum is one concrete pricing strategy (regular, childrens', new release).
 - Each enum member has a dict named `value`, that you define when you declare the enum member.  Here's a naive example of assigning fixed values for "price" and "frp" (frequent renter points):
+
 ```python
 from enum import Enum
 
 class PriceCode(Enum):
    # these are the members (instances) of the enum
-   new_release = { "price": 3, "frp": 2 }
-   regular = {"price": 2, "frp": 1 }
+   NEW_RELEASE = { "price": 3, "frp": 2 }
+   REGULAR_PRICE = {"price": 2, "frp": 1 }
 
    def get_price(self, days):
       return self.value["price"]*days
@@ -169,22 +170,24 @@ class PriceCode(Enum):
 ```
 
 You can assign an Enum member to a variable, and then invoke its methods:
+
 ```python
->>> price_code = PriceCode.new_release
+>>> price_code = PriceCode.NEW_RELEASE
 >>> print("Rental price for 4 days:", price_code.get_price(4))
 Rental price for 4 days: 12
 ```
 
 - You can assign functions to the enum values using lambdas.  Each enum member defines it's own lambda for pricing and frequent renter points.
 This is more flexible than the naive approach above.
+
 ```python
 from enum import Enum
 
 class PriceCode(Enum):
-    new_release = {"price": lambda days: 3.0*days, 
+    NEW_RELEASE = {"price": lambda days: 3.0*days, 
                     "frp": lambda days: days
                   }
-    normal = { ... }
+    REGULAR_PRICE = { ... }
     ...
 
     def get_price(self, days: int) -> float:
