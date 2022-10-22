@@ -196,9 +196,15 @@ class PriceCode(Enum):
         return pricing(days)
 ```
 
-Whether you use an Enum or an abstract base class with subclasses, the code for Movie will be similar. The important part is that Movie *delegates* computation of price and rental points to the PriceStrategy or PriceCode enum instead of using `if ... elif ... elif ...`. This is "*Replace Switch with Polymorphism*".
+Whether you use an Enum or an abstract base class with subclasses, the code for Movie will be similar. The important part is that Movie *delegates* computation of price and rental points to the PriceStrategy or PriceCode enum instead of using `if ... elif ... elif ...`. 
+
+This is the refactoring "*Replace Switch with Polymorphism*", implemented using the *Strategy Pattern*.
 
 ![UML of Final Code](movierental-part1-uml.png)
+
+If you use an *enum* the structure would be:
+
+![UML of Final Code](movierental-part1-enum-uml.png)
 
 
 ## Resources
