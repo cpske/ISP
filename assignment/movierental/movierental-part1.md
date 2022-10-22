@@ -29,7 +29,7 @@ In Python, the refactoring are the same as Fowler's Java version, but some detai
 - Variable names use the Python naming convention (`total_amount`) instead of Java camelcase names (`totalAmount`), and no leading underscore.
 - Instead of `getCharge()` (Java) use `get_price`
 - Instead of `getFrequentRenterPoints()` (Java) use `get_rental_points` ("rental" instead of "renter")
-- Instead of `Price` for strategies (p. 29) use `PriceStrategy` (for interface) or `PriceCode` (if using an Enum)
+- Instead of `Price` for strategies (p. 29) use `PriceStrategy`
 
 
 ## Instructions
@@ -38,7 +38,7 @@ Before *and* after each refactoring you should **run the unit tests**.
 
 Perform each of these refactorings:
 
-1. *Extract Method for rental price calculation*.  In `Customer.statement()` extract the code that calculates the price of each rental.
+1. *Extract Method for rental price calculation*.  In `Customer.statement()` extract the code that calculates the price of one rental.
    - Make it a separate method. Fowler calls it `amountFor` but a Pythonic name would be `amount_for` or `get_price(rental)`. 
 
 2. *Move Method*. After extracting the method for price calculation (above),
@@ -157,7 +157,7 @@ Another way to implement a Strategy in Python is to use an Enum.
 ```python
 from enum import Enum
 
-class PriceCode(Enum):
+class PriceStrategy(Enum):
    # these are the members (instances) of the enum
    NEW_RELEASE = { "price": 3, "frp": 2 }
    REGULAR_PRICE = {"price": 2, "frp": 1 }
@@ -172,7 +172,7 @@ class PriceCode(Enum):
 You can assign an Enum member to a variable, and then invoke its methods:
 
 ```python
->>> price_code = PriceCode.NEW_RELEASE
+>>> price_code = PriceStrategy.NEW_RELEASE
 >>> print("Rental price for 4 days:", price_code.get_price(4))
 Rental price for 4 days: 12
 ```
@@ -183,7 +183,7 @@ This is more flexible than the naive approach above.
 ```python
 from enum import Enum
 
-class PriceCode(Enum):
+class PriceStrategy(Enum):
     NEW_RELEASE = {"price": lambda days: 3.0*days, 
                     "frp": lambda days: days
                   }
@@ -196,15 +196,18 @@ class PriceCode(Enum):
         return pricing(days)
 ```
 
-Whether you use an Enum or an abstract base class with subclasses, the code for Movie will be similar. The important part is that Movie *delegates* computation of price and rental points to the PriceStrategy or PriceCode enum instead of using `if ... elif ... elif ...`. 
+Whether you use an Enum or an abstract base class with subclasses, the code for Movie will be similar. The important part is that Movie *delegates* computation of price and rental points to the PriceStrategy instead of using `if ... elif ... elif ...`. 
 
 This is the refactoring "*Replace Switch with Polymorphism*", implemented using the *Strategy Pattern*.
+
+### UML Class Diagram
 
 ![UML of Final Code](movierental-part1-uml.png)
 
 If you use an *enum* the structure would be:
 
 ![UML of Final Code](movierental-part1-enum-uml.png)
+
 
 
 ## Resources

@@ -4,187 +4,161 @@ title: Movie Rental Refactoring Part 2
 
 This is a continuation of the Movie Rental refactoring assignment.
 
-Before you start, verify that you correctly implemented the refactorings
-from the previous assignment.
+These refactorings assume your code has the methods shown in the UML class diagrams at the end of [Movie Rental Part 1](movierental-part1#uml-class-diagram).
 
-Even if your refactoring is correct, you may want to change some method names to match this.
-
-## Verify The Previous Refactorings
-
-**PriceCode** is a class or enum for price codes.
-Either way, it should have the 2 methods shown below.
-If you are using Python and a class hierarchy, then it is
-OK not to have static constants for `new_release`, `normal`, `childrens`.
-
-For Java, use uppercase for constants (NEW\_RELEASE, NORMAL, CHILDRENS).
-The constants are (of course) static references to PriceCode (or subclass) objects.
-
-<table border="1" style="width:24em">
-<tr><th width="40%">PriceCode</th></tr>
-<tr><td>
-<u>new_release</u> <br/>
-<u>normal</u> <br/>
-<u>childrens</u> <br/>
-</td>
-</tr>
-<tr><td>
-price(days: int) <br/>
-frequent_rental_points(days: int)
-</td>
-</tr>
-</table>
-
----
-**Movie** has only a title and price code.
-
-**NO** methods for `get_price` or `get_rental_points`.  Movie has an accessor for price code and title, only. Rental computes price and frequent rental points.
-
-<table border="1" style="width:24em;">
-<tr><th>Movie</th></tr>
-<tr><td>
-title <br/>
-price_code <br/>
-</td>
-</tr>
-<tr><td>
-get_title(): string <br/>
-get_price_code(): PriceCode
-</td>
-</tr>
-</table>
-
----
-
-**Rental** has methods to compute the rental charge and frequent rental points.
-
-**Good** if Rental also has a `get_title` that returns the movie title.  This was described in the feedback from last assignment.
-
-<table border="1" style="width:24em;">
-<tr><th>Rental</th></tr>
-<tr><td>
-movie: Movie <br/>
-days_rented: int
-</td>
-</tr>
-<tr><td>
-get_charge(): float <br/>
-get_rental_points(): float <br/>
-get_title(): string <br/>
-</td>
-</tr>
-</table>
-
----
-
-**Customer** is a class with methods to add a rental, get total charges, get total rental points, and get a statement.
-
-<table border="1" style="width:24em;">
-<tr><th>Customer</th></tr>
-<tr><td>
-name: string <br/>
-rentals: List[Rental]
-</td>
-</tr>
-<tr><td>
-add_rental(rental): <br/>
-get_name(): string <br/>
-compute_rental_points(): int <br/>
-compute_total_charge(): float <br/>
-statement(): string
-</td>
-</tr>
-</table>
+`Customer`, `Rental`, `Movie`, and `PriceCode` (alternate name: PriceStrategy) should have the methods shown in the UML diagram.
 
 &nbsp;
 
 ## Assignment - More Refactorings
 
-### 1. Move price code
+## 1. Refactor Rental Price and Rental Points
 
-Movie has a `price_code` attribute, but Movie doesn't use it for anything.
-Only `Rental` uses the price code.
+The `Customer` class calls `Rental` to get the rental price and rental points, `Rental` calls Movie, and Movie calls `PriceStrategy` to compute these: 
 
-From a modeling perspective, "price code" is not a characteristic of movies.
-"Price code" is a construct that's part of the rental business.
+```python
+# Rental class
+def get_price(self):
+    return self.movie.get_price(self.days_rented)
 
-> Not only that, the price code may change!    
-> "Mulan" is a "New Release" now, but in 2021 it won't be.    
+def get_rental_points(self):
+    return self.movie.get_rental_points(self.days_rented)
+```
+Movie delegates these methods to the `price_code`:
 
-So, `price_code` should be in Rental instead of Movie.
+```python
+# Movie class
+def get_price(self, days_rented):
+    return self.price_code.get_price(days_rented)
 
-Refactoring Signs and Design Principles that support this change:
+def get_rental_points(self, days_rented):
+    return self.price_code.get_rental_points(days_rented)
+```
 
-* The code shows *Feature Envy* but the solution is the opposite of what is suggested on Refactoring Guru.
-* The code has *Message Chains* Rental -> Movie -> PriceCode.
-* Moving price code improves *encapsulation*, since only the Rental class uses it.
+What *Refactoring Signs* or *Design Principles* apply here?
 
-### 2. Add Attributes to Movie
+- Middle Man: both Rental and Movie are acting as *middle man* for these methods
+- Single Responsibility Principle: Movie is responsible for knowing the information about a movie **and** for knowing the price code, rental price, and rental points. So Movie is responsible to the movie producer (or movie information service) and the rental store.
+- Low Cohesion: conceptually, *rental price* and *rental points* are properties of a Rental, not a Movie.
 
-The revised Movie class has only a title. That's an **Anemic Class**. Add some useful features of real movies.
+Solution: Apply **Remove Middle Man**. In this case the "Middle Man" is `Movie`.  We can have `Rental` invoke `price_code` methods directly. Eliminate `get_price` and `get_rental_points` in Movie.
+
+
+### 2. Move `price_code` Attribute
+
+2.1 After the above refactoring, only `Rental` uses the price code.  Move it to Rental.
+
+2.2 Write a justification for this refactoring:
+
+- what *refactoring signs* (code smells) suggest it?
+- what *design principle* suggests it?
+
+
+### 3. Add Attributes to Movie
+
+The revised Movie class has only a title. That's an **Anemic Class**. Add some useful features of real movies. 
 
 Add:
 * `year` - the year the movie was released
-* `genre` - list, tuple, or set of Strings representing *genre* for a movie.
-* `is_genre(string)` - returns true if the string parameter matches one of the movie's *genre*.  
+* `genre` - a **collection** *genre* names (strings), as a list or set.
+* `is_genre(string)` returns true if the string parameter matches one of the movie's *genre*.  
+* `__str__` returns "*Title* (year)" of the movie
 
 Make Movie **immutable**. There is no reason for other classes to modify a Movie.
 
-By making Movie immutable, it is safe to use the same Movie object in several Rental objects.
+Making Movie immutable reduces the chance for errors, since multiple Rentals may use the same Movie instance.
 
-In Java this is easy: define attributes as private and don't provide any "set" methods.
 
-In Python, use a leading underscore on attribute names and write either `get_something` methods or read-only properties.  In this app we've already used `get_title`, etc., so for consistency use "getters".
+### 4. Define a Factory for Movies
 
-### 3. Add a Movie Catalog
-
-In the code you have now, someone would create a movie like this:
+In the current code (after #3), someone creates a movie like this:
 ```
 movie = new Movie("Mulan", 2020, ["Action","Adventure","Drama"])
 ```
 
-That's a lot of data.  Make it easier to create movies by adding a Factory.
+That's a lot of data.  
+- Where does the data come from?
+- How does the class that *instantiates* a Movie get the data it needs?
 
-Name the factory `MovieCatalog`.
+Apply two design principles:
 
-* Create a MovieCatalog as described in class. It gets movie data from a CSV file (reference below).
-* It has a `get_movie(title)` method that returns a movie with matching title.
-* Try to be reasonably **efficient** - **don't** read the file every time `get_movie` is called!
+- Encapsulation - encapsulate and hide creation of Movie objects
+- Separation of Concerns - the objects that *use* movies are separate from the objects that *create* movies
+
+Define a factory class to create and access Movies, named `MovieCatalog`.
+
+- MovieCatalog gets movie data from a CSV file (reference below).
+- MovieCatalog is a *singleton*. We want only one instance of it.
+- It has a `get_movie(title)` method that returns a movie with matching title.
+- Try to be *efficient* - **don't** read the file every time `get_movie` is called!
+- **No Credit** for a) code that reads the CSV file more than once, b) code that saves all the CSV data as strings (save Movies instead), c) code that tries to save the entire CSV data in memory while creating movies (process one line at a time).
+
+Here's how the catalog will be used:
 ```python
 catalog = MovieCatalog()
 movie = catalog.get_movie("Mulan")
 ```
 
-**Programming Challenge**: try to use *lazy instantiation*. 
+Some titles have more than one movie. `get_movie` should have an optional second parameter for the `year`.  If `year` is omitted, return the **newest** Movie matching the requested title.  Title must be an exact match, ignoring case.
+```python
+catalog = MovieCatalog()
+old_movie = catalog.get_movie("Titanic", 1953)
+new_movie = catalog.get_movie("Titanic")     # returns 1997 "Titanic" movie
+```
 
-- define a generator that reads one line of data from the CSV file and yields a movie
-- get_movie(title) first checks if the `title` matches the title of movies already in the catalog (a dict object). If not, it calls the generator to read more data (and adds more movies to the catalog) until a matching title is found or end of data.
+**Programming Challenge**: use *lazy instantiation*. 
+
+- instead of a method that creates all the movies at once, define a generator 
+- a generator reads data from the CSV file and 'yields' a movie
+- get_movie(title) first checks if the `title` matches the title of movies already in the catalog. If not, it calls the generator to read more data (and adds more movies to the catalog) until a matching title is found or end of data.
+- assume that CSV data is sorted from newest to oldest movies
+
 
 ### 4. Define a Factory Method for Price Codes
 
-How does Rental assign a price code to a movie?
+How does the movie rental store assign a price code to a movie?
 
-The rules for price code are:
-
-* If the movie was released this year, it's a *New Release*
-* Otherwise, if one of the movie's *genre* is "Children" it's price code is "childrens"
-* Otherwise it's a Normal movie
-
-Where to put this code?  
-
-For high cohesion and low coupling, it should be in `PriceCode`.
-
-In Python, define a **class method** named `for_movie(movie)` that returns a `PriceCode`.
-
-In Java, define a **static method** named `forMovie(movie)`.
+In the current code, the code that creates a rental must assign a price code, which means it has to know the price codes for all movies:
 
 ```python
-# Example of getting price code
+movie = catalog.get_movie("Top Gun: Maverick")
+days  = 4
+price_code = PriceCode.NEW_RELEASE
+rental = Rental(movie, days, price_code)
+```
+
+Define a method to automatically compute the price code for a movie.
+The rules are:
+
+- If the movie was released this year, it's a *New Release*
+- Otherwise, if any of the movie's *genre* is "Childrens" or "Children's" than it's a "childrens" price code
+- Otherwise it's a Regular movie
+
+What class should provide this method? Apply some design principles:
+
+- *Information Expert*: choose a class that already has most of the information needed to determine the price code
+- *Low Coupling*: choose a class that is already coupled to the price codes
+- *High Cohesion*: choose a class that is already responsible for price codes, or that closely uses the price codes
+
+*Information Expert* suggest both Movie and PriceCode (or PriceStrategy).
+But adding this method to Movie will couple Movie to the PriceCode, which it is not, and would violate the *Single Responsibility Principle*.
+
+Adding the method to PriceCode (or PriceStrategy) has *high cohesion* but also adds coupling to Movie.
+
+Adding the method to Rental also has *high cohesion* but if you use a `if ... elif ... elif` then it reduces polymorphism.
+
+Which class does *Single Responsibility* suggest?
+
+Define a **class method** named `code_for_movie(movie)` that returns a `PriceCode`.
+
+The Rental object can determine its own price code, so we can simplify
+creation of Rentals:
+
+```python
 catalog = MovieCatalog()
 movie = catalog.get_movie("Mulan")
-price_code = PriceCode.for_movie(movie)
-print(price_code)
-
-new_release
+days_rented = 3
+rental = Rental(movie, days_rented)
 ```
 
 ### Movie Rental Data
@@ -193,9 +167,18 @@ The data is in the file `movies.csv` in repository:
 
 https://github.com/jbrucker/movierental
 
-Lines beginning with a '#' symbol are comments and should be ignored.
+Each line contains one of these:
+- movie data:  id,title,year,genre1|genre2|... (1 or more genre)
+- blank line
+- comment line beginning with '#' sympbol.
 
-I will add some more movies to the small file that is there now.
+Blank lines and comment lines should be ignored.
+If any data line contains invalid movie data then log an error message:
+```
+Line 37: Unrecognized format "164179,Arrival,2016"
+```
+in this example the *genre* field is missing
+Lines beginning with a '#' symbol are comments and should be ignored.
 
 ## What to Submit
 
