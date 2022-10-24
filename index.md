@@ -172,6 +172,7 @@ Not assigned this year:
 - Persistence in Django: how Django provides the CRUD operatons
 - Overview of KU Polls Iteration 3
 - Homework (due before Thursday lab): Revise KU Polls domain model
+- [Authentication](authentication)
 - Lab: Intro to Authentication in Django
 - Lab: Refactor KU Polls for Iteration 3 (1-user-1-vote)
 
@@ -229,17 +230,19 @@ Not covered in 2022:
 
 ### Week 8
 
-- Logging
+- [Logging](logging/)
+- [Logging practice](logging/logging-practice)
 - User Stories
-- Milestones
-- Domain Modeling
+- [Milestones](project/Milestones.pdf)
+- [Domain Modeling](project/Domain-Models.pdf) and [Category List](project/Conceptual-Category-List.pdf) to help discover domain classes
+
 
 #### Assignment
 
-- Write User Stories for your project
+- [Add Logging to KU Polls](assignment/ku-polls/logging)
+- Write User Stories for your project.  Add them to the project wiki.
+- Add a *domain class diagram* to your project docs
 - Use the User Stories to identify domain classes and help you create a domain model
-   - add a *domain class diagram* to your project docs
-- Add Logging to KU Polls  
 
 
 ### Week 9
@@ -257,11 +260,10 @@ Not covered in 2022:
 - [Add CI to KU Polls](assignment/week8/ku-polls-ci-assignment)
   - Use CI to run unit tests and run code coverage
   - Add "badges" to your KU Polls README.md for Travis and CodeCov status
-
 - Reading on terminology & concepts for refactoring and design patterns
 - Read <https://refactoring.guru/refactoring> 
-- Movie Rental Refactoring <https://classroom.github.com/a/_qGEboUn>, Part 1
-- Read the articles in [Agile Practices](assignment/week9/agile-practices) (there will be quiz on this) 
+- [Movie Rental Refactoring, Part 1](assignment/movierental/movierental-part1)
+  - Starter Code on Github: <https://classroom.github.com/a/_qGEboUn>
 
 
 ### Week 10
@@ -280,59 +282,46 @@ Not covered in 2022:
 
 IDE's have refactoring actions that make refactoring faster and reduce errors. But in Python they *work poorly (or not at all)* unless the code has accurate *type hints*. Hence, this is a good time to review *static typing* and *type hints*, including parameterized hints for collections and classes.
 - [Static Typing](https://cpske.github.io/ISP/code-quality/Type-Checking.pdf), Static Analysis, and [Type Hints](type-hints/introduction)
+- Static Type Checking Exercise: [scorecard.py](type-hints/scorecard.py)
 - [Type Hints](type-hints/introduction) enable IDE to do **much better refactoring**.  Without type hints, an IDE may not recognize places where it should refactor.
 
 #### Assignment
 
 - Refactoring Practice - refactor some code on Github (link on Google Classroom)
-- Homework: Movie Rental refactoring 
-- (Not in 2021) Identify *refactorings* one of your projects or someone else's
+- Homework: Movie Rental refactoring, Part 1
+- (Not in 2021) Identify *refactorings* in your Programming 2 project
 
 
 ### Week 11
+
+- [Review common refactorings](refactoring/Refactoring-Review.pdf)
+- More Refactoring - structure of classes, creating objects
+  - [Refactoring Patterns](refactoring/Refactoring-Patterns.pdf)
+- [Type Hints](type-hints)
+- Another [Type Hints Introduction](https://fastapi.tiangolo.com/python-types/) on FastAPI; really good, simple examples.
+- Type Hints Practice - on Google Docs
+
+Assignment:
+
+- [Movie Rental Refactoring, Part 2](assignment/week12/movie-rental2)
+- Team Projects: prepare to demo your work next week
+
+## Week 12
+
+*needs update*
 
 - [Agile](agile/agile) - Agile values, principles, and the practices.
   - conists of values and mindset, not a software process
 - Exercise: [Agile Practice Review Questions](agile/agile-practice-questions.pdf)
 - Optional: [Agile Crossword Puzzle](agile/crossword-puzzle.pdf) 
   - answers available online
-- Homework: essential reading on Agile
-  - read "Learn More" articles in [Agile](agile/agile#learn-more)
-- Read tips from *Practices of an Agile Developer* ("Tips" sections in assignment)
-
-- [Authentication](authentication)
-- Authentication Exercise: 
-  - 2021: Add authentication to KU Polls
-    1. Discuss and plan the feature
-    2. Create a new branch for your work
-    3. Add authentication. See [Django Authentication](django/authentication)
-    4. Create one or two users
-    5. Write tests
-    6. Add authorization to KU Polls. See [Django Authorization](django/authorization)
-    7. Test it
-    8. Revise the KU Polls domain model
-    9. Implement the changes to the domain model
-  - 2020: [Add authentication to the Todo app](assignment/week11/auth-exercise-todo)
-
-
-### Week 12
-
-- [Review common refactorings](refactoring/Refactoring-Review.pdf)
-- More Refactoring - involving structure of classes, or for creating objects
-  - [Refactoring Patterns](refactoring/Refactoring-Patterns.pdf)
-- [Type Checking](code-quality/Type-Checking.pdf)
-- Type Checking Exercise: [scorecard.py](type-hints/scorecard.py)
-- [Type Hints](type-hints)
-  - Another [Type Hints Intro](https://fastapi.tiangolo.com/python-types/) on FastAPI; really good, simple examples.
-- [Type Hints Practice](type-hints/type-hints-practice.doc)
-- [Logging](logging/) - you already did in KU Polls Iteration 3
-- [Logging practice](logging/logging-practice)
-
 
 Assignment:
 
-- [Movie Rental Refactoring, Part 2](assignment/week12/movie-rental2)
-- Team Projects: prepare to demo your work next week
+- Read the articles in [Agile Practices](assignment/week9/agile-practices) (there will be quiz on this) 
+- Read tips from *Practices of an Agile Developer* ("Tips" sections in assignment)
+- Homework: essential reading on Agile
+  - read "Learn More" articles in [Agile](agile/agile#learn-more)
 
 
 ### Week 13
