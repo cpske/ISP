@@ -6,7 +6,7 @@ This is a continuation of the Movie Rental refactoring assignment.
 
 These refactorings assume your code has the methods shown in the UML class diagrams at the end of [Movie Rental Part 1](movierental-part1#uml-class-diagram).
 
-`Customer`, `Rental`, `Movie`, and `PriceCode` (or `PriceStrategy`) should have the methods shown in the UML diagram from part 1.
+`Customer`, `Rental`, `Movie`, and `PriceCode` (or `PriceStrategy`) should have the methods shown in the [UML diagram from Part 1](movierental-part1#uml-class-diagram).
 
 The `PriceCode` (or `PriceStrategy`) code should be in a **separate file**, not in movies.py or rental.py.  Suggested filename is `pricing.py`.
 
@@ -43,14 +43,14 @@ What *Refactoring Signs* or *Design Principles* apply here?
 - Single Responsibility Principle: Movie is responsible for knowing the information about a movie **and** for knowing the price code, rental price, and rental points. So Movie is responsible to the movie producer (or movie information service) and the rental store.
 - Low Cohesion: conceptually, *rental price* and *rental points* are properties of a Rental, not a Movie.
 
-Solution: Apply **Remove Middle Man**. In this case the "Middle Man" is `Movie`.  We can have `Rental` invoke `price_code` methods directly. Eliminate `get_price` and `get_rental_points` in Movie.
+Solution: Apply **Remove Middle Man**. In this case the "Middle Man" is `Movie`.  Make `Rental` invoke `price_code` methods directly. Eliminate `get_price` and `get_rental_points` in Movie.
 
 
 ### 2. Move `price_code` Attribute
 
-After the above refactoring, only `Rental` uses the price code.  Move it to Rental. Also move `get_price_code` from Movie.
+After the above refactoring, only `Rental` uses the price code.  Move it to Rental. Also move `get_price_code` from Movie to Rental.
 
-What is a justification for this refactoring?
+What is the justification for this refactoring?
 
 - what *refactoring signs* (code smells) suggest it?
 - what *design principle* suggests it?
