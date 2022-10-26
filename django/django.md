@@ -15,7 +15,7 @@ title: Django
 * [Logging](logging) is an essential part of web apps
 * [Messages Framework](messages-framework) is a clean, easy way to transfer error messages from a view (controller) to a page template, without using the context
 * [Organize Unit Tests](test-organization) create a `tests/` directory containing multiple test files. More modular and scales better.
-* [Put Models in Separate Files](separate-model-classes) how to use a `models` folder and separate files for model classes.
+* [Put Models in Separate Files](organize-django-code) how to use a `models` folder and separate files for model classes.
 * [Virtualenv](virtualenv) and [Quickstart](virtualenv-quickstart) how to make you app more portable using a virtual environment. Many cloud services require this for Python apps.
 
 ---

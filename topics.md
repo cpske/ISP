@@ -316,7 +316,7 @@ Easily pass messages from a view to a template.
 [Organize Tests & Models](django/test-organization)
 </td>
 <td markdown="span">
-[Separate your tests](django/test-organization) and [models](django/separate-model-classes) into individual files. Helps avoid conflicts on team projects.
+[Separate your tests](django/test-organization) and [models](django/organize-django-code) into individual files, to reduce conflicts on team projects.
 </td>
 </tr>
 

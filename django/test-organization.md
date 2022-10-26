@@ -77,4 +77,4 @@ The `-v 2` is optional; it displays one line for each test method run.
 
 You can (probably should) refactor your models classes into individual files, instead of putting them all in `models.py`.  
 
-This is described in [Separate Models into Separate Files](separate-model-classes).
+This is described in [Divide Models and Views into Separate Files](organize-django-code).
