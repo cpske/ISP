@@ -26,26 +26,26 @@ have more ideas on project setup and organization.
 Here is an example for the 'polls' app:
 
 ```
-     BEFORE                      AFTER
-polls/                      polls/
-    __init__.py                 __init__.py
-    apps.py                     apps.py
+     BEFORE                        AFTER
+polls/                        polls/
+    __init__.py                   __init__.py
+    apps.py                       apps.py
     forms.py
-    models.py                   models/
-                                    __init__.py
-                                    question.py
-                                    choice.py
-                                    vote.py
+    models.py                     models/
+                                      __init__.py
+                                      question.py
+                                      choice.py
+                                      vote.py
     tests.py                    tests/
-                                    __init__.py
-                                    test_question.py
-                                    test_choice.py
-                                    test_vote.py
-                                    test_views.py
-    views.py                    views/          (views is optional,
-                                    index.py    depending on complexity)
-                                    detail.py
-                                    results.py
+                                      __init__.py
+                                      test_question.py
+                                      test_choice.py
+                                      test_vote.py
+                                      test_views.py
+    views.py                      views/            (dividing views may not
+                                      index.py       be needed if file is small)
+                                      detail.py
+                                      results.py
 ```
 
 ## Divide Models into Separate Files
