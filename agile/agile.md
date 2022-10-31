@@ -2,16 +2,17 @@
 title: Agile Software Development
 ---
 
-"Agile" is a software development mindset based on a set of values.
+"Agile" is a mindset based on a set of **values**.
 The values are elaborated in a collection of 12 principles.
-There are many practices and methodologies to help you apply Agile, but the mindset is the most important factor for success in applying practices or methods, accordging to experts.
+
+There are many practices and methodologies to help you apply Agile, but the mindset is the most important factor for success in applying practices or methods, according to experts.
 
 Agile is *not* a software process -- Agile values and practices are part of many software processes.
 
 
-The "*Agile Manifesto*" states the core values for agile software development.
+## Agile Manifesto
 
-These **values** are the reason "why" agile uses specific practices and development process.
+The *manifesto* states the core values for agile software development.
 
 1. **Individuals and Interactions** over *Processes and Tools*
    - People respond to business needs and direct the development process
@@ -25,6 +26,8 @@ These **values** are the reason "why" agile uses specific practices and developm
 
 4. **Responding to Change** over *Following a Plan*
 
+These **values** are the reason "why" agile uses specific practices.
+
 Ref: [Agile Alliance](https://www.agilealliance.org/agile101/the-agile-manifesto/)
 
 Agile encourages frequent delivery of running software, customer collaboration,
@@ -36,7 +39,7 @@ face-to-face meetings, and self-organizing teams.
 When people consider adopting Agile, they usually start with Agile "practices". James Newkirk says this approach is likely to fail.
 
 **Values** explain *why* you are doing the practices.  If you don't embrace and agree with the "why", then the practices will fail.  
-When the team encounters a problem, if they have "practices" without the "values", they won't have a basis for deciding how to resolve the problem.
+When the team encounters a problem, if they have "practices" without the "values", they won't have a basis to decide how to resolve the problem.
 
 This is explained in the video by James Newkirk, starting at 40:00 minutes.
 
@@ -49,6 +52,7 @@ Newkirk summarized *his* values and XP values as:
 | Feedback                  | Feedback                    |
 | Tranparency               | Communication               |
 | Sustainability            | Courage                     |
+
 
 ## Agile Values & Practices
 
@@ -76,19 +80,25 @@ Practices:
 Value: **Sustainability**
 
 Practices:
-- Weekly Cycle - avoid overtime, overwork
+
+- Weekly Cycle - avoid overtime and overwork
 - Energized work - focus while at work
-- Slack time
+- Plan for Slack time
+- Try to maintain a *sustainable pace*.  Don't overwork. 
+- Avoid "big bang" effort near end of project.
 
-Try to maintain a *sustainable pace*.  Don't overwork. Avoid "big bang" effort near end of project.
+Fact:
 
-Your productivity and skill goes down if you overwork. Error rates increase after 6-8 hours.
+- Your productivity and skill goes down if you overwork. Error rates increase after 6-8 hours.
 
-Balance "*Productivity - Productive Capacity*" (P/PC), described by Stephen Covey in *The 7 Habits*.
+Keeping a Balance:
+
+- Balance "*Productivity - Productive Capacity*" (P/PC), as described by Stephen Covey in *The 7 Habits* ("*Sharpen the saw*").
 
 Value: **Minimalism**
 
 Practices:
+
 - Incremental Design
 - User Stories
 - Minimum Viable Product & Progressive Refinement
@@ -100,7 +110,7 @@ What is a *Minimum Viable Product*?
 | Wrong                        | Right                             |
 |:-----------------------------|:----------------------------------|
 | The crappiest product you could possibly release. | The smallest product release that successfully achieves it's desired outcomes. |
-|                              | A minimal viable product is also the smallest thing you could create to prove or disprove an assumption. |
+|                              | The smallest thing you can create to prove or disprove an assumption. |
 
 Source: Jeff Patton, *User Story Mapping*
 
@@ -186,7 +196,7 @@ Purpose of retrospective is to improve the team's development process.
 
 ## Agile Practice Exam
 
-[Sample Questions from agileexams.com](https://www.agileexams.com/sample/) many of them just about knowing the names of things.
+[Sample Questions from agileexams.com](https://www.agileexams.com/sample/) many of them just knowing the names of things (poor questions -- understanding the *meaning* and *reason* is more important).
 
 
 ## Learn More 
