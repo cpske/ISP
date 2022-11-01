@@ -7,35 +7,45 @@ Presentation: [Software Reviews](Reviews.pdf)
 
 ## Benefits of Code Review
 
-* *Find defects* including coding and logic errors, performance problems, security vulnerabilities
-* *Better code quality* - improve the implementation, readability, uniformity, and (as a consequence) maintainabiility
+* *Find defects* including coding and logic errors, security vulnerabilities
+* *Better code quality* - implementation, readability, uniformity, and (as a result) maintainabiility
 * *Find better solutions* by sharing ideas
-* *Knowledge Transfer* between team members - approach and technology used, rationale for the implementation/solution.  Code reviews are a good way for more experienced developers to share knowledge with others.
+* *Knowledge Transfer* between team members - technology used & rationale.  A good way for more experienced developers to share knowledge.
 * *Increase Collective Ownership* of code
 
 ## Code Review versus Testing
 
-Studies show hat code reviews find 60-70% of *latent defects*, versus 30-40% discovery rate for testing.  A *Latent defect* is an error in the code that has not yet resulted in a mis-function of the program because the conditions (inputs, environment, state of the software, etc.) to activate the defect haven't occurred.  
+Code Eeviews find 60-70% of **latent defects**, versus 30-40% discovery for testing.  
 
-Imagine a car with self-driving software with this error: if the car comes to a red light and there is a truck with a big green ball painted on a yellow background, then the software thinks it's a green light and goes through the intersection.  This defect doesn't cause the car to misbehave until those conditions actually occur. So it's *latent*.
+A **latent defect** is an error in the code that has not yet resulted in a mis-function of the program because the conditions (inputs, environment, state of the software, etc.) to activate the defect haven't occurred.  
 
-Testing often discovers coding errors and deviations from the specification, whereas code review uncovers more problems related to maintainability or failure to meet requirements.  
+*Latent Defect in a Self-Driving Car*
 
-Code review is also more effective at finding security vulnerabilities, provided that reviewers look for them!
+A self-driving car comes to a red light and there is a truck with a big green light (that is brighter) on the other side of the intersection. The software thinks it's a green traffic light and goes through the intersection.  
+
+This defect doesn't appear until those conditions actually occur. So it's *latent*... and may not be tested for!
+
+* Testing often discovers coding errors and deviations from the specification
+
+* Code review discovers problems related to maintainability or failure to meet requirements
+
+* Code review is more effective for finding security vulnerabilities, provided that reviewers look for them!
+
 
 ## Kinds of Code Review
 
-1. **Self Review** the developer carefully reads and reviews his own code.  Some guidelines are:
-    - must take a break between writing code and reviewing it
-    - be mentally "fresh". Don't review at the end of a day's work
-    - plan what you will review for: code defects? standards defects? security issues?
-    - use a separate reading for different review purposes. If you try to combine too many objectives in one reading you will miss many problems.
-    - use a checklist and guidance
-    - record errors you find, but finish the reading before you try to fix them
+1. **Self Review** the developer carefully reads and reviews his own code.  Some guidelines:
+   - take a break between writing code and reviewing it
+   - be mentally "fresh". Don't review at the end of a day's work
+   - plan what you will review for: code defects? standards defects? security issues?
+   - use a separate reading for different review purposes. If you combine too many objectives in one reading you will miss many problems.
+   - use a checklist and guidance
+   - record errors you find, but finish the reading before you try to fix them
 
 2. **Desk Check** ask another developer to review your code (at his desk).  Informal and useful to find defects and get ideas for improvement.
 
-3. **Walk Through** code review meeting with a small number of people, where one person presents or "walks through" the code line by line, while others look for defects, ask questions to improve their understanding, and share ideas for alternate implementations.
+3. **Walk Through** code review meeting with a small number of people, where one person presents or "walks through" the code line by line, while others look for defects, ask questions, and share ideas for alternate implementations.
+   - Reviews should try to understand the code
 
 4. **Pair Programming** one person writes code while the other reviews and "navigates". Maybe not a "review" since it occurs at time of creation.
 
@@ -44,17 +54,19 @@ Code review is also more effective at finding security vulnerabilities, provided
    - Pull Requests are example
 
 6. **Formal Inspection** or **Code Review** a methodical review of artifacts (often using printouts) by a group, for the purpose of finding defects.  
-   - Reviewers must prepare for inspections by reviewing the code individually before, and record issues and questions.
-   - One person is designated as moderator, to facilitate an orderly meeting, make sure everyone has chance to speak, and ensure issues receive rapid follow-up and closure
+   - Reviewers must prepare for inspection by reviewing the code individually before, and record issues and questions.
+   - One person acts as moderator, to facilitate an orderly meeting, make sure everyone has chance to speak, and ensure issues receive rapid follow-up and closure
    - Defects are acknowledged, refuted, or marked for further study during the inspection.
-   - A written record is produced describing who participated, what was inspected, a list of defects or issues found with line ranges, and follow up status.
+   - A written record is created. It describe who participated, what was inspected, a list of defects or issues found with line numbers, and follow up status.
    - The code author must follow up on all issues and respond to each.
    - Reviewers subsequentally approve the author's resolution to each issue, or ask (with explanation) for further investigation
 
 
 ### Effective Review Rate
 
-The rate depends on the programming language, experience of reviewers, and other factors, but in general should be at most **200 - 300 lines per hour**. Wikipedia has 200-400 lines/hr, but other sources cite 300 as upper limit, based on experical studies.
+The rate depends on the programming language, experience of reviewers, and other factors.
+
+In general should be at most **200 - 300 lines per hour**. Wikipedia has 200-400 lines/hr, but other sources cite 300 as upper limit, based on studies.
 
 If you review too fast then you will overlook defects or lose opportunity to share understanding of the code.
 
@@ -89,7 +101,7 @@ Good Checklists From ISP Students:
 
 During reviews:
 
-* Question, don't criticise.
+* Question, don't criticize.
 * If you must criticise, criticize code not people.
 * Try to see the author's perspective. Assume he had a reason for each thing.
 * Be humble.

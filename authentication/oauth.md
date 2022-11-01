@@ -50,25 +50,31 @@ to access the user's resources.
 | Authorization Code | Web apps where logic is on backend and private, so it can hold a secret key used to get an access token. |
 | Implicit Grant | Single page web apps (logic runs in web browser) or native/mobile app. 
 | Resource Owner Password Credential  | Application that cannot launch a web browser. The user gives his password to the app, which uses it to access user's Resources. Requires high trust between user and app. |
-| PKCE           | Extension to implicit flow that adds a random secret to prevent CSRF and other attacks. |
+| PKCE           | Proof Key for Code Exchange is an extension to the Authorization Code Flow (and maybe for Implicit Flow) that adds a random secret to prevent CSRF and other attacks. |
 
 
 ## Who Can Access Your Data?
 
-1. Who has access to your resources on Google?
+1. What Apps Use Google to Authenticate You?
 
    - Go to <https://accounts.google.com>
-   - Choose "Data & privacy"
-   - Under "Data from Apps and services you use", choose "**Third-party apps with account access**"
+   - Choose "Security" (used to be under "Data & Privacy")
+   - Choose "Signing in to other sites"
    - How many are there?
 
-2. Who has acess to your resources on Facebook?
+2. What Apps can access your Google data?
+   - Go to your account ("Manage my account")
+   - Choose "Data & Privacy"
+   - Choose **Third Party Apps with Account Access**
+
+3. Who has acess to your resources on Facebook?
 
    - Go to Facebook
    - Expand the "Account" icon (weird downward triangle in upper-right corner)
    - Choose "Settings & Privacy"
    - Choose "Settings" (*why is Facebook making this info so hard to access?*)
    - Select "Apps & Websites" (?) from left side 
+
 
 ## Using Google OAuth
 

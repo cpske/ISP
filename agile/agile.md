@@ -9,6 +9,13 @@ There are many practices and methodologies to help you apply Agile, but the mind
 
 Agile is *not* a software process -- Agile values and practices are part of many software processes.
 
+## Presentations
+
+[Intro to Agile](agile.pdf) my slides    
+[Practices of an Agile Developer](PracticesOfAnAgileDeveloper-slides.pdf) based on the book    
+[Scrum Questions & Answers](Scrum-Questions-and-Answers.pdf)    
+[Introduction to Agile](https://www.agilealliance.org/agile101/agile-basics/introduction-to-agile/) video by James Newkirk
+
 
 ## Agile Manifesto
 
