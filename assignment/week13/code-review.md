@@ -2,12 +2,13 @@
 title: Code Review Assignment
 ---
 
-This is a team assignment, but **everyone** should do the reading and study. 
+This is a team assignment, but **everyone** should do the reading and study.
 
 1. Read Code Review best practices 
-2. Write your own code review procedure.
-3. Study some example checklists and "scripts".
-4. Write your own code review checklist.
+2. Write your own code review procedure or "script".
+3. Study some example checklists and create your own.
+4. Perform a code walkthrough and create a written summary.
+
 
 ### 1. Read Code Review Best Practices
 
@@ -22,30 +23,35 @@ This is a team assignment, but **everyone** should do the reading and study.
 ### 2. Create your own Code Review Procedure
 
 Create a procedure or "script" for how you will do group code "walk-through".
-The procedure is like a plan for how to do them, including:
+The procedure helps everyone know what to expect and what needs to get done.
 
 Before:
 
-1. What is the **goal** of your code review?
-2. How to you schedule a code review?  How long?
-3. What do the articles (above) recommend you do **before** a code review?
-   - Which of them make sense for your team? (Don't try to be too complex.)
+- What should be done before the review?
+- What materials should be available for the review?
 
 During:
 
 - What should you do during the code review?
-- Who does what?
 - Be specific
 
 After:
 
-- What should be done after the code review?  Who does it?
+- What should be done after the code review?  
+- Who does it?
 
-### 3. Checklist Examples
 
-A checklist reminds you what you should check during a group code review, walk-through, or individual review (reviewing a Pull Request or your own code!).
+### 3. Create a Practical Checklist Tailored to Your Needs
 
-It should be practical & short.  You should **update it** as you get better at doing reviews.
+A checklist reminds you what you should do during a review, walk-through, or individual review (such as a Pull Request).
+
+- It should be things **that apply to your project**
+- You should **update it** as you get experience doing reviews
+  - add, remove, refine items in the checklist
+- Write what you *actually* find useful to look for
+- Try to make it short
+- **No B.S.** copied from examples
+- (Optional) Group items into categories so its easier to check them
 
 Some examples (please don't copy them!):
 
@@ -56,38 +62,47 @@ Some examples (please don't copy them!):
 
 Poor Examples:
 
-- [2019 Project](https://docs.google.com/document/d/1yKp1QEeML1Y40vKWtDQXcF1b86ywMhAMUPt1jFsnZ90/edit) - some items are OK but most are too general and vague. "Refactor", "Check logic of the function", "Test quality", "Check line-by-line code" (generic) are not helpful guidance.
+- [2019 Project](https://docs.google.com/document/d/1yKp1QEeML1Y40vKWtDQXcF1b86ywMhAMUPt1jFsnZ90/edit) 
+  - some items are OK but most are too general and vague. 
+  - Too vague or generic to be useful: "Refactor", "Check logic of the function", "Test quality", "Check line-by-line code" 
 - [2020 Project](https://github.com/Jomsaruj/DEK-COM/wiki/Code%20Review%20Checklist) most things don't apply to code review. It is more like an "agile project checklist".
 
-These checklists are good for ideas but they are too long, and some parts don't apply to your projects:
 
-- PSP <https://cpske.github.io/ISP/code-review/PSP-Review-Script-Checklist.pdf>
-- Java <https://cpske.github.io/ISP/code-review/Java-Code-Review-Checklist.pdf>
+## 4. Perform a Code Walk-through & Create a Summary
+
+- The whole team should participate.
+- One person should write notes of issues raised, defects, work to follow up on.
+- You might use a Google Doc so that everyone can write in it.
+- Create Issues for defects & any work to follow-up on (even if not bugs). Write details in the Issue rather than in the summary report.
+- (Optional) Use **tags** on issues to categorize them.
+
+Written Summary should include: 
+
+- what artifact was reviewed, including version number and URL (if online).
+- why did you do the walk-through? what was the goal?
+- who participated
+- start & finish times, date
+- summary of issues & important points. This can include defects, unanswered questions, suggestions for improvements, and more.
+- to avoid duplication, write details of issues directly in your issue tracker and refer to them in your summary. Include a few words to describe it,  e.g. "Issue #42. Exception not handled or reported".
+  - If you write the report in your Github wiki, there is markdown to reference issues.
+- try to keep it short & don't waste time on beauty.
+- no one reads long reports.
+
+> Write the summary as if for a team member who missed the walk-through, or who wants to review it later.  Write just enough to inform him/her.
 
 
-### 4. Create a Code Review Checklist
+## What to Submit
 
-It should be things you should do or should review during a group review (walk-through or code review) or individually (reviewing a Pull Request or your own code).
-
-- It should be things **that apply to your project**
-- You should **update it** for problems you find during code review
-  - remove items, add items, refine items
-- Write what you find useful to look for
-- Make it short and helpful
-- **No B.S.** copied from examples. 
-- Group items into categories so its easier to check them.
-
-## Where to Submit
-
-Write the checklist and procedure (or script) in your project wiki and provide **link(s)** in the main landing page of your project "information hub" (for most teams, this is the wiki).
+1. Put the checklist and procedure (script) in your project wiki and provide **link(s)** in the main landing page of your project "Information Hub".
+2. Create a summary (with date) on your Information Hub.  If you write the summary as a Google Doc, then include a link to it.  Be sure to share it with everyone.
 
 ## Grading Criteria
 
-1. Use of good English.
+1. Use of good English in Checklist & Script.
 2. Clarity and consistency.
 3. Applies to your project and shows some thought. Not copied from examples.
    - No nonsense or stuff you don't actually do.
-4. Uniqueness of items - two items don't cover the same thing.
-5. Make use of automation tools. If something can be checked using a tool then do that instead of doing it via manual review.
+4. Content should be specific and practical.
+5. Make use of automation tools. If something can be checked using a tool then do that instead of manual review; Coding style, for example.
 
 

@@ -14,8 +14,9 @@ Agile is *not* a software process -- Agile values and practices are part of many
 [Intro to Agile](agile.pdf) my slides    
 [Practices of an Agile Developer](PracticesOfAnAgileDeveloper-slides.pdf) based on the book    
 [Scrum Questions & Answers](Scrum-Questions-and-Answers.pdf)    
-[Introduction to Agile](https://www.agilealliance.org/agile101/agile-basics/introduction-to-agile/) video by James Newkirk
+[Introduction to Agile](https://www.agilealliance.org/agile101/agile-basics/introduction-to-agile/) video by [James Newkirk][]
 
+[James Newkirk]: https://www.agilealliance.org/author/5066175
 
 ## Agile Manifesto
 
@@ -119,14 +120,13 @@ What is a *Minimum Viable Product*?
 | The crappiest product you could possibly release. | The smallest product release that successfully achieves it's desired outcomes. |
 |                              | The smallest thing you can create to prove or disprove an assumption. |
 
-Source: Jeff Patton, *User Story Mapping*
-
 
 ## Twelve Agile Principles
 
 Source: [12 Principles](https://www.agilealliance.org/agile101/12-principles-behind-the-agile-manifesto/) at Agile Alliance.
 [Another version, with commentary](https://www.smartsheet.com/comprehensive-guide-values-principles-agile-manifesto#the-twelve-agile-manifesto-principles).    
-[Nice interpretation of the 12 principles](http://www.consultparagon.com/blog/12-principles-of-agile-methodologies) at Paragon Consulting.    
+A longer explanation of each principle is at
+[Kananize](https://kanbanize.com/agile/project-management/principles).
 
 1. *Satisfy the Customer* through early and frequent release of software. Collaboration and communication with Customer.
 2. *Accommodate change*
@@ -148,6 +148,10 @@ Source: [12 Principles](https://www.agilealliance.org/agile101/12-principles-beh
     Quality products come from skilled and motivated team members who have decision-making power, take ownership, communicate regularly, and share ideas.
 12. *Regular Reflection* on how to become more effective.
     - (What are some *actions* that might result from reflection?)
+
+This was very good, but link doesn't work now:
+
+[Nice interpretation of the 12 principles](http://www.consultparagon.com/blog/12-principles-of-agile-methodologies) at Paragon Consulting.    
 
 ## Methods based on Agile Values
 
@@ -182,6 +186,7 @@ A **Story Map** shows relationships between stories. It shows:
 * stories ordered by release
 
 ![example story map](/ISP/images/story-map-example.png)
+
 ## Burn down and Burn up charts
 
 A **burn down** chart shows the remaining work versus time.
