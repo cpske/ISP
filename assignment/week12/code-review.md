@@ -2,61 +2,67 @@
 title: Code Review Assignment
 ---
 
-This is a team assignment, but **everyone** should do the reading and study.
+This is a team assignment, but **everyone** should do the reading and contribute.
 
-1. Read Code Review best practices 
-2. Write your own code review procedure or "script".
-3. Study some example checklists and create your own.
+1. Read the Code Review best practices.
+2. Write your own code review procedure.
+3. Study some example checklists and create your own checklist.
 4. Perform a code walkthrough and create a written summary.
+
+For this course, "code review" means walk-through.
 
 
 ### 1. Read Code Review Best Practices
 
-1.1 Read these Code Review Best Practices (they are short).
+Read these Code Review Best Practices. They are short and each one has some unique ideas.
 
 * SmartBear: <https://www.kessler.de/prd/smartbear/BestPracticesForPeerCodeReview.pdf>
 * Perforce: <https://www.perforce.com/blog/qac/9-code-review-best-practices>
 * JetBrains: <https://blog.jetbrains.com/upsource/2018/08/30/code-review-best-practices/>
 
-1.2 Which best practices will you apply to your project?  Choose the ones that are practical and useful. List them.
+Choose the best practices that you think are useful for your code reviews and apply them.
 
 ### 2. Create your own Code Review Procedure
 
-Create a procedure or "script" for how you will do group code "walk-through".
-The procedure helps everyone know what to expect and what needs to get done.
+Create a procedure for how you will do group code "walk-through".
+The procedure helps everyone know what to expect and what needs to be done.
 
-Before:
+Don't try to be formal or comprehensive. The procedure should be brief instructions for "*How we do code walk-throughs*".
+
+You probably want to include:
+
+*Preparation*:
 
 - What should be done before the review?
 - What materials should be available for the review?
 
-During:
+*Perform The Review*:
 
 - What should you do during the code review?
 - Be specific
 
-After:
+*Afterwards or Follow-up*:
 
 - What should be done after the code review?  
 - Who does it?
+- What should be the final result?
+- Result should include where the written summary of the walk-through posted on your wiki or Google Docs.
 
 
 ### 3. Create a Practical Checklist Tailored to Your Needs
 
-A checklist reminds you what you should do during a review, walk-through, or individual review (such as a Pull Request).
+Create a checklist of things you should do for a review, walk-through, or individual review (such as a Pull Request).
 
 - It should be things **that apply to your project**
-- You should **update it** as you get experience doing reviews
+- You should **update it** over time, based on experience
   - add, remove, refine items in the checklist
-- Write what you *actually* find useful to look for
-- Try to make it short
-- **No B.S.** copied from examples
-- (Optional) Group items into categories so its easier to check them
+- Write what you *actually* find useful
+- Be minimalist. Try to make the checklist short, at least initially.
+- Checklist can include things to do other than reviewing code.
+- (Optional) Group the items into categories so its easier to do them
 
 Some examples (please don't copy them!):
 
-- [Vacseen Project Checklist](https://docs.google.com/document/d/1sJqZ3WlXeycAEXh6zB1JEkJHjNAY0ihp8oIT0eFlDfk/edit) (2019)
-- [KooCook Project Script & Checklist](https://docs.google.com/document/d/1GSI0FGx4NZyqwAVUOYt641X0tsdqfeRz3O-R3XnfGFE/edit) (2019)
 - [KU Event Regis](https://docs.google.com/document/d/1pRlqTeCQEq9T0g3NPf8yt26aUKCSKC3rqEyI3L4xy_I/edit#heading=h.imm89g97i44a) (2019)
 - [Real Estate Rental](https://docs.google.com/document/d/1plSBYDK-mYTJ-u1JY7BV-esmCcP8XGtpmY4gUwgzB0g/edit) (2020)
 
@@ -71,8 +77,8 @@ Poor Examples:
 ## 4. Perform a Code Walk-through & Create a Summary
 
 - The whole team should participate.
-- One person should write notes of issues raised, defects, work to follow up on.
-- You might use a Google Doc so that everyone can write in it.
+- One person should write a summary of issues raised, defects, work to follow up on.
+- Consider using a Google Doc so that everyone can write at the same time.
 - Create Issues for defects & any work to follow-up on (even if not bugs). Write details in the Issue rather than in the summary report.
 - (Optional) Use **tags** on issues to categorize them.
 
@@ -83,9 +89,9 @@ Written Summary should include:
 - who participated
 - start & finish times, date
 - summary of issues & important points. This can include defects, unanswered questions, suggestions for improvements, and more.
-- to avoid duplication, write details of issues directly in your issue tracker and refer to them in your summary. Include a few words to describe it,  e.g. "Issue #42. Exception not handled or reported".
-  - If you write the report in your Github wiki, there is markdown to reference issues.
-- try to keep it short & don't waste time on beauty.
+- to avoid duplication, write details of issues directly in your issue tracker and refer to them in your summary. In the summary, write only a few words to describe it and refer to the issue,  e.g. "Issue #42. Exception not handled or reported".
+  - The Github wiki has markdown syntax to reference Github issues.
+- try to keep it short. Don't waste time on beauty.
 - no one reads long reports.
 
 > Write the summary as if for a team member who missed the walk-through, or who wants to review it later.  Write just enough to inform him/her.
@@ -93,8 +99,8 @@ Written Summary should include:
 
 ## What to Submit
 
-1. Put the checklist and procedure (script) in your project wiki and provide **link(s)** in the main landing page of your project "Information Hub".
-2. Create a summary (with date) on your Information Hub.  If you write the summary as a Google Doc, then include a link to it.  Be sure to share it with everyone.
+1. Put your code review checklist and procedure in your project wiki and provide **link(s)** in the main landing page of your "Information Hub".
+2. Create a summary (with date) of your code walk-through on your Information Hub.  If you write the summary as a Google Doc, then include a link to it.  Be sure to share with everyone.
 
 ## Grading Criteria
 
@@ -104,5 +110,3 @@ Written Summary should include:
    - No nonsense or stuff you don't actually do.
 4. Content should be specific and practical.
 5. Make use of automation tools. If something can be checked using a tool then do that instead of manual review; Coding style, for example.
-
-
