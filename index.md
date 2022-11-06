@@ -86,7 +86,7 @@ Please do this before the course starts. Otherwise, do it in Week 1.
   - [unittest](https://docs.python.org/3/library/unittest.html) in the official Python docs
 - Exercise: unit testing practice (simple exercise)
 
-### Week 3 Lab
+#### Week 3 Lab
 
 - Quiz on week 1 and 2 material
 - Review Github Flow
@@ -281,73 +281,77 @@ Not covered in 2022:
 - Anything on <https://refactoring.guru/refactoring> may be on a quiz!
 
 IDE's have refactoring actions that make refactoring faster and reduce errors. But in Python they *work poorly (or not at all)* unless the code has accurate *type hints*. Hence, this is a good time to review *static typing* and *type hints*, including parameterized hints for collections and classes.
+
 - [Static Typing](https://cpske.github.io/ISP/code-quality/Type-Checking.pdf), Static Analysis, and [Type Hints](type-hints/introduction)
 - Static Type Checking Exercise: [scorecard.py](type-hints/scorecard.py)
-- [Type Hints](type-hints/introduction) enable IDE to do **much better refactoring**.  Without type hints, an IDE may not recognize places where it should refactor.
+- [Type Hints](type-hints) and [Introduction](type-hints/introduction) by Mai Noripong
+- Another [Type Hints Introduction](https://fastapi.tiangolo.com/python-types/) on FastAPI; really good, simple examples.
+- [Type Hints Practice](https://docs.google.com/document/d/1S-5o_NHJXQosnQIT3pvI20wxxzonOKm_ryG0lYKu_Ws/) on Google Docs
 
 #### Assignment
 
 - Refactoring Practice - refactor some code on Github (link on Google Classroom)
 - Homework: Movie Rental refactoring, Part 1
-- (Not in 2021) Identify *refactorings* in your Programming 2 project
 
 
 ### Week 11
 
-- [Review common refactorings](refactoring/Refactoring-Review.pdf)
-- More Refactoring - structure of classes, creating objects
-  - [Refactoring Patterns](refactoring/Refactoring-Patterns.pdf)
-- [Type Hints](type-hints)
-- Another [Type Hints Introduction](https://fastapi.tiangolo.com/python-types/) on FastAPI; really good, simple examples.
-- Type Hints Practice - on Google Docs
-
-Assignment:
-
-- [Movie Rental Refactoring, Part 2](assignment/week12/movie-rental2)
-- Team Projects: prepare to demo your work next week
-
-## Week 12
-
-*needs update*
-
-- [Agile](agile/agile) - Agile values, principles, and the practices.
-  - conists of values and mindset, not a software process
-- Exercise: [Agile Practice Review Questions](agile/agile-practice-questions.pdf)
-- Optional: [Agile Crossword Puzzle](agile/crossword-puzzle.pdf) 
-  - answers available online
-
-Assignment:
-
-- Read the articles in [Agile Practices](assignment/week9/agile-practices) (there will be quiz on this) 
-- Read tips from *Practices of an Agile Developer* ("Tips" sections in assignment)
-- Homework: essential reading on Agile
-  - read "Learn More" articles in [Agile](agile/agile#learn-more)
-
-
-### Week 13
-
-- [Software Reviews](code-review/)
-- Project Demos
+- [Review common refactorings](refactoring/Refactoring-Review.pdf) - submit your answers on Google Classroom (Google Form)
+- More Refactoring - structure of classes, creating objects (*Not done in 2022*)
+- [Refactoring Patterns](refactoring/Refactoring-Patterns.pdf)
+- Intro to Design Patterns
+- Singleton & Factory Method Patterns - other patterns are covered in Prog2 and SS&D
+- Type Hints Practice (*see link in Week 10*)
 
 #### Assignment
 
-- Read "Reviews" chapter from textbook by Stellman and Greene.
-- Read Code Review Best Practices (read the links, not just my summary)
-  - <https://cpske.github.io/ISP/code-review/code-review-best-practices>
-- [Create a Code Review Script and Checklist](assignment/week13/code-review). 
-  - Write them in your project wiki and add links from your project README.md
+- [Movie Rental Refactoring, Part 2](assignment/week12/movie-rental2)
+- Team Projects: prepare to demo your work soon
+
+## Week 12
+
+- [Agile](agile/agile) - Agile values, principles, and practices.
+- Exercise: [Agile Practice Review Questions](agile/agile-practice-questions.pdf)
+- Introduction to OAuth
+- Exercise: OAuth Playground and questions on Google Classroom (form)
+- [Code Reviews][code-review]
+
+[code-review]: https://cpske.github.io/ISP/code-review/
+[code-review-assignment]: https://cpske.github.io/ISP/assignment/week12/code-review
+
+#### Assignment
+
+- Read [Reviews](code-review/Reviews-Stellman-and-Greene.pdf) chapter from book by Stellman and Greene.
+- Read 3 [Code Review Best Practices](code-review/code-review-best-practices) articles in [Code Review Assignment][code-review-assignment]
+- [Create a Code Review Script and Checklist](assignment/week12/code-review) and then do a walk-through of project code
+
+- (*not in 2022*) Homework: Read the [Learn More](agile/agile#learn-more) articles in [Agile](agile/agile). They are fundamental.
+- Optional: [Agile Crossword Puzzle](agile/crossword-puzzle.pdf) 
+  - answers available online
+- (*not in 2022*) Read the articles in [Agile Practices](assignment/week9/agile-practices) (there will be quiz on this) 
+- Read tips from *Practices of an Agile Developer* ("Tips" sections in assignment)
+
+### Week 13
+
+- Project Demos
+- Refactoring Review (again)
+- Review Movie Rental refactoring
+
+
+#### Assignment
+
+- Reading on Agile Practices (tba)
 
 
 ### Week 14
 
-- Final exam date. Schedule date(s) for project presentations.
-- The [12-Factor App](web/12FactorApp.pdf) - 7 factors that apply to your projects
-- Review some Agile Practices (week 10 assignment), including comments in code.
-- Review Movie Rental refactoring problems.
 - Remaining project demos.
+- Review Agile Practices (week 10 assignment), including comments in code.
+- The [12-Factor App](web/12FactorApp.pdf) - 7 factors that apply to your projects
 - Testing Pyramid and End-to-End Testing in [Web Testing](testing/WebTesting.pdf)
 - [Selenium](testing/Selenium-intro) for testing web applications. Some slides in [Web Testing](testing/WebTesting.pdf)
 - [Selenium Exercise](testing/SeleniumExercise.pdf) scrape search results from DuckDuckGo
+- Robot Framework - a great tool for automation and E2E testing.
 
 #### Assignment
 
