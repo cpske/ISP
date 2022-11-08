@@ -3,9 +3,9 @@ title: Agile Software Development
 ---
 
 "Agile" is a mindset based on a set of **values**.
-The values are elaborated in a collection of 12 principles.
+The values are elaborated in a collection of [12 principles](#twelve-agile-principles)
 
-There are many practices and methodologies to help you apply Agile, but the mindset is the most important factor for success in applying practices or methods, according to experts.
+There are many practices and methodologies based on Agile concepts, but the mindset is the most important factor for success in application, according to experts.
 
 Agile is *not* a software process -- Agile values and practices are part of many software processes.
 
@@ -61,6 +61,57 @@ Newkirk summarized *his* values and XP values as:
 | Tranparency               | Communication               |
 | Sustainability            | Courage                     |
 
+## Twelve Agile Principles
+
+Sources: 
+- [12 Principles](https://www.agilealliance.org/agile101/12-principles-behind-the-agile-manifesto/) at Agile Alliance.
+- [Another version with commentary](https://www.smartsheet.com/comprehensive-guide-values-principles-agile-manifesto#the-twelve-agile-manifesto-principles). I prefer this one.
+- [Kananize](https://kanbanize.com/agile/project-management/principles) for longer explanation of each principle.
+
+1. *Satisfy the Customer* through early and frequent release of software. Collaboration and communication with Customer.
+2. *Accommodate change*
+   - Welcome changing requirements, even late in development.
+   - Change means you are getting closer to client's true needs.
+3. *Deliver frequently*  (Didn't they already write this in #1?)
+4. *Collaborate between stakeholders and developers*
+5. *Support, trust, and motivate the people involved*
+6. *Enable face-to-face interactions* within team and between team-customer.
+7. *Working software is the primary measure of progress*
+8. *Maintain a Sustainable Pace* - be able to deliver quality iteration-after-iteration, project after project; maintain work/life balance.
+   - P-PC Balance (Stephen Covey's Principle of Effectiveness).
+   - Avoid overtime.
+9. *Continuous Attention to Excellence* - attention to technical detail and design enhances agility, improves the product, enables change.
+10. *Keep it Simple* – develop just enough for current goal.
+    - "Maximizing the amount of work not done"
+    - Not an excuse for bad design or poor code (principle 9)
+11. *Self-Organizing Teams* encourage the best results.    
+    Quality products come from skilled and motivated team members who have decision-making power, take ownership, communicate regularly, and share ideas.
+12. *Regular Reflection* on how to become more effective.
+    - (What are some *actions* that might result from reflection?)
+
+<!-- This reference was very good, but link no longer works
+[Nice interpretation of the 12 principles](http://www.consultparagon.com/blog/12-principles-of-agile-methodologies) at Paragon Consulting.    
+-->
+
+## Methods based on Agile Values
+
+* Scrum and XP are development-focused methods based on Agile values.
+* "Plan Based" or "Plan Driven" processes are considered non-agile, but this is not true -- Plan-based projects can incorporate agile values.
+  - Unified Process (UP) is main example.
+  - Plan-based vs Agile process is a continuum of choices, not either-or.
+
+## Agile Practices You Can Use
+
+* [Retrospectives](#retrospectives) - reflect on how to do better, and take action. Agile Alliance says this is the *most important* practice.
+* User Stories - requirements from the user's perspective
+* Test-Driven Development - write tests before writing the code
+* Code Review - review all your code and ask others to review it, too.
+* Pair Programming - one person codes (focus on the code) while another thinks and reviews (how code fits the overall design)
+* Time-boxed iterations 
+* Maintain a Sustainable Pace - do work early and regularly, not at the deadline. Avoid overwork.
+* Continuous Integration - automate build and testing of your product, so you have constant feedback.
+* Task Board - so everyone is aware of what others are working on.
+* Burndown chart - monitor your progress daily.
 
 ## Agile Values & Practices
 
@@ -94,14 +145,11 @@ Practices:
 - Plan for Slack time
 - Try to maintain a *sustainable pace*.  Don't overwork. 
 - Avoid "big bang" effort near end of project.
-
-Fact:
-
-- Your productivity and skill goes down if you overwork. Error rates increase after 6-8 hours.
+- Fact: Your productivity and skill goes down if you overwork. Error rates increase after 6-8 hours.
 
 Keeping a Balance:
 
-- Balance "*Productivity - Productive Capacity*" (P/PC), as described by Stephen Covey in *The 7 Habits* ("*Sharpen the saw*").
+- Balance "*Productivity - Productive Capacity*" (P/PC), as described in *The 7 Habits of Highly Effetive People* ("*Sharpen the saw*").
 
 Value: **Minimalism**
 
@@ -121,57 +169,6 @@ What is a *Minimum Viable Product*?
 |                              | The smallest thing you can create to prove or disprove an assumption. |
 
 
-## Twelve Agile Principles
-
-Source: [12 Principles](https://www.agilealliance.org/agile101/12-principles-behind-the-agile-manifesto/) at Agile Alliance.
-[Another version, with commentary](https://www.smartsheet.com/comprehensive-guide-values-principles-agile-manifesto#the-twelve-agile-manifesto-principles).    
-A longer explanation of each principle is at
-[Kananize](https://kanbanize.com/agile/project-management/principles).
-
-1. *Satisfy the Customer* through early and frequent release of software. Collaboration and communication with Customer.
-2. *Accommodate change*
-   - Welcome changing requirements, even late in development.
-   - Change means you are getting closer to client's true needs.
-3. *Deliver frequently*  (Didn't they already write this in #1?)
-4. *Collaborate between stakeholders and developers*
-5. *Support, trust, and motivate the people involved*
-6. *Enable face-to-face interactions* within team and between team-customer.
-7. *Working software is the primary measure of progress*
-8. *Maintain a Sustainable Pace* - be able to deliver quality iteration-after-iteration, project after project; maintain work/life balance.
-   - P-PC Balance (Stephen Covey's Principle of Effectiveness).
-   - Avoid overtime.
-9. *Continuous Attention to Excellence* - attention to technical detail and design enhances agility, improves the product, enables change.
-10. *Keep it Simple* – develop just enough for current goal.
-    - "Maximizing the amount of work not done"
-    - Not an excuse for bad design or poor code (principle 9)
-11. *Self-Organizing Teams* encourage the best results.    
-    Quality products come from skilled and motivated team members who have decision-making power, take ownership, communicate regularly, and share ideas.
-12. *Regular Reflection* on how to become more effective.
-    - (What are some *actions* that might result from reflection?)
-
-This was very good, but link doesn't work now:
-
-[Nice interpretation of the 12 principles](http://www.consultparagon.com/blog/12-principles-of-agile-methodologies) at Paragon Consulting.    
-
-## Methods based on Agile Values
-
-* Scrum and XP are development-focused methods based on Agile values.
-* "Plan Based" or "Plan Driven" processes are considered non-agile, but this is not really true -- Plan based projects can incorporate agile values.
-  - Unified Process (UP) is main example.
-  - Plan-based vs Agile process is a continuum of choices, not either-or.
-
-## Agile Practices You Can Use
-
-* User Stories - requirements from the user's perspective
-* Test-Driven Development - write tests before writing the code
-* Code Review - review all your code and ask others to review it, too.
-* Pair Programming - one person codes (focus on the code) while another thinks and reviews (how code fits the overall design)
-* Time-boxed iterations 
-* Maintain a Sustainable Pace - do work early and regularly, not at the deadline. Avoid overwork.
-* [Retrospectives](#retrospectives) - reflect on how to do better, and take action
-* Continuous Integration - automate build and testing of your product, so you have constant feedback.
-* Task Board - so everyone is aware of what others are working on.
-* Burndown chart - monitor your progress daily.
 
 
 ## Story Map versus Task Board
