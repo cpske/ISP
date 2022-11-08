@@ -206,11 +206,6 @@ Purpose of retrospective is to improve the team's development process.
 
 4. Decide what to do.  Create a plan for improvements or changes to make in the next sprint.
 
-## Agile Practice Exam
-
-[Sample Questions from agileexams.com](https://www.agileexams.com/sample/) many of them just knowing the names of things (poor questions -- understanding the *meaning* and *reason* is more important).
-
-
 ## Learn More 
 
 * [Agile 101](https://www.agilealliance.org/agile101/) at Agile Alliance.    
@@ -218,19 +213,25 @@ Purpose of retrospective is to improve the team's development process.
   - [slides from the book](PracticesOfAnAgileDeveloper-slides.pdf)
   - [Quick Reference Card](../resources/PAD-quickref.pdf)
   - Book excepts - URL given in class
-* Video [Introduction to Agile](https://www.agilealliance.org/agile101/agile-basics/introduction-to-agile/) starting at 36:00, by James Newkirk, explains importance of Agile values and practices related to values.
-* *Learning Agile* by Stellman and Green (O'Reilly). The best book about Agile.  The content is similar to *Head First PMP* (lots of stories and example questions) but *Learning Agile* is much shorter.
-* [Agile Practice Guide](Agile-Practice-Guide.pdf) from Agile Alliance.
 
+* Video [Introduction to Agile](https://www.agilealliance.org/agile101/agile-basics/introduction-to-agile/) starting at 36:00, by James Newkirk, explains importance of Agile values and practices related to values.
+
+* [Agile Practice Guide](Agile-Practice-Guide.pdf) from Agile Alliance.
+  - Each chapter has concise recommendations for different aspects of using Agile in a project.
+  - The text is actually quite short, and can be read in any order.
 
 Interesting, but less valuable:
 
-* Video: [Agile at Microsoft](https://www.youtube.com/watch?v=-LvCJpnNljU) about the Visual Studio Team Services transition to agile. Interesting, but some fuzzy use of buzzwords like "team owns X", "team is empowered to ...". 41 minutes.
+* Video: [Agile at Microsoft](https://www.youtube.com/watch?v=-LvCJpnNljU) about the Visual Studio Team Services transition to agile. Interesting, but fuzzy use of buzzwords. 41 minutes.
+
+## Agile Practice Exam
+
+[Sample Questions from agileexams.com](https://www.agileexams.com/sample/) many of them just knowing the names of things (poor questions -- understanding the *meaning* and *reason* is more important).
 
 ## Agile Books
 
-*Learning Agile* by Stellman & Greene (O'Reilly 2013). The authors have practiced, taught, and written about Agile for 20 years. Covers the same topics as *Head First Agile*.
+*Learning Agile* by Stellman & Greene (O'Reilly 2013). The best book about Agile. The authors have practiced, taught, and written about Agile for 20 years. Covers the same topics as *Head First Agile*.
 
-*Head First Agile* by Stellman & Greene (2017) - very memorable explanation and examples of Agile practices and values; many review questions and sample questions from PMI Exam. But long. *Learning Agile* has the same content in fewer pages, without the cute examples and review questions.
+*Head First Agile* by Stellman & Greene (2017) - very memorable explanation and examples of Agile practices and values; many review questions and sample questions from PMI Exam. But long. *Learning Agile* has more material in fewer pages.
 
-*Agile Practice Guide* by AgileAlliance and PMI. Short, precise guide to applying Agile. Appendix X3 is a tool to assess how suitable Agile is to a project. Tool is similar to Barry Boehm's book *Balancing Agility and Discipline*.
+*Agile Practice Guide* by Agile Alliance and PMI. Short, precise guide to applying Agile. Appendix X3 is a tool to assess how suitable Agile is to a project; similar to Barry Boehm's book *Balancing Agility and Discipline*.
