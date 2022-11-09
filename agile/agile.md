@@ -46,7 +46,7 @@ face-to-face meetings, and self-organizing teams.
 
 When people consider adopting Agile, they usually start with Agile "practices". James Newkirk says this approach is likely to fail.
 
-**Values** explain *why* you are doing the practices.  If you don't embrace and agree with the "why", then the practices will fail.  
+**Values** explain *why* you do the practices.  
 When the team encounters a problem, if they have "practices" without the "values", they won't have a basis to decide how to resolve the problem.
 
 This is explained in the video by James Newkirk, starting at 40:00 minutes.
@@ -68,7 +68,7 @@ Sources:
 - [Another version with commentary](https://www.smartsheet.com/comprehensive-guide-values-principles-agile-manifesto#the-twelve-agile-manifesto-principles). I prefer this one.
 - [Kananize](https://kanbanize.com/agile/project-management/principles) for longer explanation of each principle.
 
-1. *Satisfy the Customer* through early and frequent release of software. Collaboration and communication with Customer.
+1. *Satisfy the Customer* through early and frequent release of software. Communicate with the Customer; listen to feedback.
 2. *Accommodate change*
    - Welcome changing requirements, even late in development.
    - Change means you are getting closer to client's true needs.
@@ -81,8 +81,8 @@ Sources:
    - P-PC Balance (Stephen Covey's Principle of Effectiveness).
    - Avoid overtime.
 9. *Continuous Attention to Excellence* - attention to technical detail and design enhances agility, improves the product, enables change.
-10. *Keep it Simple* – develop just enough for current goal.
-    - "Maximizing the amount of work not done"
+10. *Keep it Simple* – develop just enough for the current goal.
+    - "Maximize the amount of work not done"
     - Not an excuse for bad design or poor code (principle 9)
 11. *Self-Organizing Teams* encourage the best results.    
     Quality products come from skilled and motivated team members who have decision-making power, take ownership, communicate regularly, and share ideas.
