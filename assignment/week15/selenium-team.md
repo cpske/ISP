@@ -1,23 +1,33 @@
+---
+title: Homework: E2E Test of KU Polls
+---
 
-### 5. E2E Test of Your Django Polls
-
-Write functional (E2E) tests of your Django Polls app using Selenium.
+Write functional (E2E) tests of your KU Polls app using Selenium.
 
 **What to Submit**
 
 Put all tests in file `polls/tests/functional_test.py` and commit it to
 your django-polls repository on Github, in the master branch.
 
-**What to Test**
+**Assignment**
 
-1. Go to `/polls/`.  Find an `H1` tag and verify that it contains "Current Polls" (or whatever text your heading is).
-2. Got to `/polls/` and find a poll question on the page.  The test passes if it is found.
+Use Selenium Webdriver and either unittest or pytest to implement the tests below.  Use either Chrome or Firefox as the web browser (not Edge or Safari).
+
+
+Write 4 unit tests:
+
+1. Go to `/polls/`.  Find an `H1` tag and verify that it contains the page title that you used in your app.
+2. Got to `/polls/` and find a poll question on the page. The test passes if it is found.
+   - Do **not** assume that the question has id 1 or any other specific id.
+   - You may also test the question text. That's even better.
 3. Click on a polls hyperlink.  Verify that it goes to a page with list of choices to vote on.
 4. Click on the first choice.  Verify that it goes to a page of voting results.
+   - Do **not** assume that the choices have any specific id. That may vary.
 
+You need to create *at least* one Question with some Choices (one Choice is not enough!).  Use a `setUp` method for that.
+
+Since you create the Question and Choices in setUp, your test code knows what text to expect, so you can write selenium E2E tests that go beyond what is required and test the actual text of the polls voting page.
 That's it!  E2E testing (functional testing) tests that your app behaves correctly, but doesn't try to throughly test every detail.  Use unittests for details.
-
-You can use either `unittest` or `pytest` for these tests.
 
 **Suggestions**
 
@@ -35,16 +45,12 @@ tests to use.  You a `setUp` method or `setUpClass` (done only once).
         """This method is called before every test."""
         pass
     ```
+
 * Setup for `pytest`: https://docs.pytest.org/en/latest/xunit_setup.html
 
-Write tests to do this.  You may want to modify your templates to make page elements easier to find.
+* Starting Selenium and opening a browser window takes time, so do it in setUpClass instead of in setUp.
 
-For example, in your `index.html` template, add an `id` or `class` attribute to your elements for polls questions.
-
-## What to Submit
-
-In the code you submit, use Chrome or Firefox as the browser.
-Don't use Safari or Microsoft Edge, because they don't work on Linux.
+* When all the tests finish you should close the browser window.  unittest has a `tearDownClass` method for clean-up tasks like that.
 
 
 ## More Info
