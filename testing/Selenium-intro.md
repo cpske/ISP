@@ -7,18 +7,35 @@ It is often used for testing, but can also be used for other applications.
 
 ## Installation
 
-For Python, use:
+Install Selenium For Python:
 ```
 pip install selenium
 ```
-You also need a **web driver** for each browser you want to automate.
-Drivers for different browsers are available at these links.
-* [Chrome](https://sites.google.com/chromium.org/driver/)
-* [Edge](https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/)
-* [Firefox](https://github.com/mozilla/geckodriver/releases) also called "geckodriver". 
-* [Safari](https://developer.apple.com/documentation/webkit/testing_with_webdriver_in_safari)
-  - MacOS includes Safari webdriver at `/usr/bin/safaridriver`, no need to install anything
-  - web page has example Python unittest code for Selenium webdriver with Safari
+You also need a **browser driver** for the web browser you want to automate.
+
+[Install Web Browser drivers](https://www.selenium.dev/documentation/webdriver/getting_started/install_drivers/) explains different ways to get drivers.
+
+- Selenium Manager - automates everything
+- [WebDriver Manager for Python](https://github.com/SergeyPirogov/webdriver_manager) code to automatically update your WebDriver, but requires you write extra Python code
+- Download the driver yourself and **put it on your PATH**. (This is the original way.)
+
+These instructions use the 3rd approach.
+
+1. Download a browser driver.
+   - [Firefox][GeckoDriver]: <https://github.com/mozilla/geckodriver/releases>
+   - [Safari][SafariDriver]: already installed as `/usr/bin/safaridriver`. But visit the link for examples of how to use it.
+   - [Chrome & Chromium][ChromeDriver]: <https://chromedriver.chromium.org/downloads>
+   - Other browser: <https://www.selenium.dev/documentation/webdriver/getting_started/install_drivers/#quick-reference>
+
+2. Install it in a directory on your shell PATH.
+   - For most users, `$HOME/bin` works.
+   - Use a directory **without spaces in the path**.
+
+
+[ChromeDriver]: https://sites.google.com/chromium.org/driver/
+[EdgeDriver]: https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/
+[GeckoDriver]: https://github.com/mozilla/geckodriver/releases
+[SafariDriver]: https://developer.apple.com/documentation/webkit/testing_with_webdriver_in_safari
 
 
 ## Getting Started
@@ -44,7 +61,7 @@ driver = webdriver.Firefox()
 driver.get( url )
 ```
 
-Or do the same thing using Chrome. The parameter (`chromedriver`) is needed **only** if it is not on your shell search path.
+Or do the same thing using Chrome. The parameter (`/path/to/chromedriver`) is needed **only** if it is **not** on your shell search PATH.
 
 ```python
 browser = webdriver.Chrome('/path/to/chromedriver')
