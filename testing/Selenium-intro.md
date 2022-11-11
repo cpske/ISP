@@ -1,9 +1,9 @@
 ## Selenium
 
 Selenium is a tool for *browser automation*.  You can programmatically
-control what the browser does.
+control what a web browser does.
 
-It is often used for testing, but can also be used for other applications.
+It is often used for testing, but is also useful for other applications.
 
 ## Installation
 
@@ -29,7 +29,7 @@ These instructions use the 3rd approach.
 
 2. Install it in a directory on your shell PATH.
    - For most users, `$HOME/bin` works.
-   - Use a directory **without spaces in the path**.
+   - Preferrably use a directory **without spaces in the path**.
 
 
 [ChromeDriver]: https://sites.google.com/chromium.org/driver/
@@ -48,10 +48,13 @@ You can use another browser instead of Firefox, provided you have a webdriver.
 
 ### The Goal
 
+What are the Top 10 Web Pages for a search of "Kasetsart University"?
+
 We will write code to tell a browser to visit <https://duckduckgo.com> and search for "Kasetsart University". Then we will look for hyperlinks in the search results.
 
 ```python
 from selenium import webdriver
+from selenium.webdriver.common.by import By
 
 # URL to fetch and display
 url = "https://duckduckgo.com"
@@ -68,21 +71,15 @@ browser = webdriver.Chrome('/path/to/chromedriver')
 browser.get( url )
 ```
 
-> What is `browser`?    
-> `type(browser)`
-> 
-> It is an instance of a subclass of selenium.webdriver.remote.webdriver.WebDriver
-
-The page contains a search box (input field) with ID 
+The Duckduckgo home page contains a **search box** (input field) with ID 
 `search_form_input_homepage`.
 >
-> You can discover the element ID yourself by right-clicking on the search box and choosing Inspect in Firefox or Chrome.
+> You can discover the element ID yourself by right-clicking on the search box and choosing **Inspect** in Firefox or Chrome.
 >
 
-Tell the browser to select this element:
+Tell the browser to select the element using its 'id' attribute:
 ```python
-field_id = 'search_form_input_homepage'
-input_field = browser.find_element_by_id(field_id)
+input_field = browser.find_element(By.ID, 'search_form_input_homepage')
 # did it work?
 assert input_field != None
 ```
@@ -91,8 +88,7 @@ Enter some text in the field and press RETURN to search:
 ```python
 from selenium.webdriver.common.keys import Keys
 
-# note: look at the browser window -- you can see the text
-# appear in the search field after you call send_keys()
+# text appear in the search field when you call send_keys()
 input_field.send_keys("Kasetsart University")
 input_field.send_keys(Keys.RETURN)
 ```
@@ -100,90 +96,78 @@ input_field.send_keys(Keys.RETURN)
 ## Searching Data on a Page
 
 The next step is to get the search results, and
-to get the URL for each search result.  WebDriver has
-many `find_element_by` and `find_elements_by` methods.
-- find by HTML tag
-- find by class name
-- find by CSS selector
-- find by element id attribute
-- find by XPath expression (quite powerful)
+to get the URL for each search result.   
 
-A simple but stupid technique is to look for all "a" tags.
+WebDriver has `find_element(by,value)` and `find_elements(by,value)` 
+methods to find things on a page.  The `by` parameter can be:
+- By.CLASS\_NAME (css class)
+- By.ID
+- By.LINK\_TEXT or By.PARTIAL\_LINK\_TEXT
+- By.NAME
+- By.TAG\_NAME
+
+A simple technique is to look for all "a" tags.
 
 ```python
-elements = driver.find_elements_by_tag_name("a")
+elements = browser.find_elements(By.TAG_NAME, "a")
 len(elements)
+117
 ```
-too many!   
-Try Right-Click -> Inspect on a search result to discover its structure.
-You will see that the actual search result URLs have a class name of `result__url`.
+Too many results!   
 
-Try:
+Instead, search for hyperlinks containing the text "Kasetsart":
 ```python
-elements = driver.find_elements_by_class_name("result__url")
+elements = browser.find_elements(By.PARTIAL_LINK_TEXT, "Kasetsart")
 len(elements)
+17
 ```
 
-> `elements` is a list of selenium.webdriver.remote.webdriver.WebElement objects.    
-> Your code will frequently use `WebElement` for testing things.
+The values returned by `find_elements` are WebElement objects 
+for parts of the web page's Document Object Model (DOM).
+WebElements may contain:
 
-Print one URL from the results:
+- text
+- attributes
+- other WebElements
+
+Print the value of `href` for the first result:
 ```python
-url = elements[0].get_attribute('href')
-print(url)
+>>> elements[0].get_attribute('href')
+'https://duckduckgo.com/?q=Kasetsart%20University&t=h_'
+```
+this link refers to something on Duckduckgo itself, not what we want.
+
+Try another:
+```python
+>>> elements[w].get_attribute('href')
+'https://en.wikipedia.org/wiki/Kasetsart_University'
 ```
 
 Simulate clicking on a hyperlink:
 ```python
-elements[0].click()
+elements[2].click()
 ```
-go back:
+it should show the Wikipedia page for KU.
+
+Go back:
+
 ```python
 browser.back()
-```
-try another link:
-```python
-elements[1].click()
 ```
 
 ## Question About `WebElement` Methods
 
-Why does `WebElement` have both `find_element_by_name` and `find_elements_by_name`, and `find_element_by_id` and `find_elements_by_id`?    
+Why does `WebElement` have both `find_element` and `find_elements` methods?
 
 Isn't that redundant?
 
-What could go wrong with this code?
 
-```python
-elements = driver.find_elements_by_class_name("result__url")
-
-if len(elements) > 0:
-    url = elements[0].get_attribute('href')
-    browser.get(url)
-```
-
-## Selenium `find_element` Method and `By` Class
-
-Selenium WebDriver has a general `find_element` method that can handle
-all the above cases:
-```python
-from selenium.webdriver.common.by import By
-
-# find a Login link
-element = driver.find_element(By.LINK_TEXT, "Login")
-
-# find an element with id 'login'
-element = driver.find_element(By.ID, 'login')
-```
-
-[Locating Elements](https://selenium-python.readthedocs.io/locating-elements.html) in the Selenium docs has explanation and examples of using "By".
 
 
 ## Use Type Hints to Improve Coding with Selenium
 
-Use Python **type hints** to enable the IDE to offer better command
+Python **type hints** enable the IDE to offer better command
 completion, syntax help, and automatic type checking.
-It will help you code faster and reduce defects.
 
 In Selenium, the classes you interact with most often are WebElement
 and WebDriver, plus the Python list class (for results).
@@ -193,8 +177,7 @@ from typing import List
 from selenium.webdriver.remote.webelement import WebElement
 from selenium.webdriver.remote.webdriver import WebDriver
 
-# somewhere in code you create a web browser
-# it will be a subclass of selenium.webdriver.remote.webdriver.WebDriver
+# add type hints to improve code completion in IDE
 
 browser: WebDriver = webdriver.Firefox()
 
@@ -202,11 +185,8 @@ browser: WebDriver = webdriver.Firefox()
 browser.get("https://www.google.com/search?q=Kasetsart+University")
 
 # when you search for elements, you get a List of WebElements
-elements: List[WebElement] = browser.find_element_by_tag_name("a")
+elements: List[WebElement] = browser.find_element(By.TAG_NAME, "a")
 ```
-
-For example, after you get a page, how can your search it?
-If you type `browser.find` (and maybe Ctrl+SPACE) your IDE will display all the "find" methods along with the parameters they accept.
 
 ## Writing Unit Tests with Selenium
 
@@ -224,7 +204,9 @@ To run your unit tests on a CI server, run the browser in [headless mode](#web-b
 
 [Test Automation using Selenium](https://blog.testproject.io/2019/07/16/set-your-test-automation-goals/) a good 8-part tutorial about automatic testing. Has explanations of the code.
 
-[Getting Started](https://selenium-python.readthedocs.io/getting-started.html) in [selenium-python.readthedocs.io](https://selenium-python.readthedocs.io/) has good explanation and easy to read.
+[Getting Started](https://selenium-python.readthedocs.io/getting-started.html) in [selenium-python.readthedocs.io](https://selenium-python.readthedocs.io/) how to install and start using Selenium.
+
+[Locating Elements](https://selenium-python.readthedocs.io/locating-elements.html) in the Selenium docs explains use of "By" with examples.
 
 [Web Automation with Python and Selenium](https://realpython.com/modern-web-automation-with-python-and-selenium/) automate a browser to play music on bandcamp.com, article on RealPython.com.  
 
@@ -293,6 +275,3 @@ my_options.add_argument("--headless")
 If you use selenium in unit tests, the tests usually start a browser
 before each test and stop it after each test, which uses a lot of time.
 You can run Chrome as a service to reduce start-up time.
-
-
-
