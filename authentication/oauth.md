@@ -118,6 +118,19 @@ Allauth constructs:
    - `extra_daa` a JSONField to store all data returned by the OAuth provider after authentication. The data returned depends on the "scope" you request from the OAuth provider.
 - `SocialToken` - stores the OAuth *access token* and foriegn keys linking it to a *SocialAccount* (user) and *SocialApp* (provider)
 
+### Reverse URLs
+
+Instead of the django.contrib.auth url names `login`, `logout`, `password_change`, etc. you can use the Allauth url names:
+
+- `allauth:account_login`
+- `allauth:account_logout`
+- `allauth:account_set_password`
+- etc. (send an invalid GET request with DEBUG=True to see all)
+
+### Specify the `LOGIN_URL`
+
+The `@login_required` decorator will redirect users to `settings.LOGIN_URL`
+
 
 ### Update a User's profile after social login
 

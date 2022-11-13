@@ -513,9 +513,10 @@ Good places for project documentation:
 
 ---
 
-Links to test your link scanner (Week 15 assignment):
+Links to test your link scanner:
 
 - <a> "a" tag without "href"</a>
 - <a href="#project-documentation">project documentation</a> "href" with page fragment only (valid reference)
 - <a href="#project-and-foo-boards">project and task boards</a> "href" with page fragment only (invalid ref)
 - <a href="https://www.does.not.exist">www.does.not.exist</a> href with unresolvable hostname
+- <a>another linkless "a" tag</a>
