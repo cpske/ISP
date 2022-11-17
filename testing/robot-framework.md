@@ -62,7 +62,7 @@ Robot creates 3 output files:
 - log.html
 - report.html
 
-The `report.html` contains a detailed report of your tests.
+The `report.html` contains a detailed report of the test results. View it in a browser.
 
 You can specify filenames or suppress creation of each of these files using the -o -l and -r options:
 ```
@@ -104,10 +104,10 @@ These libraries mostly provide an interface between RF's keyword language and Py
 Other libraries (you have to install them yourself):
 
 - [SeleniumLibrary][selenium-library] a browser control library using Selenium.
-- [Browser Library][browser-library] control a web browser, test elements on a page, click elements. 
+- [Browser Library][browser-library] another library to control a web browser, test elements on a page, click elements. 
 - [Browser](https://marketsquare.github.io/robotframework-browser/Browser.html) Keywords reference with explanation
 
-I use only SeleniumLibrary.
+I use SeleniumLibrary.
 
 ### Robot Framework Standard Tools
 
