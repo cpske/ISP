@@ -2,6 +2,136 @@
 title: Feedback on Movie Rental Refactoring Problem
 ---
 
+### Don't Fall for the Quick Hack
+
+Six students wrote code like this:
+
+```python
+def price_code_for_movie(movie: Movie):
+    """Return the price code for a movie."""
+    if movie.year == 2022:
+        return PriceCode.NEW_RELEASE
+    if movie.is_genre("children"):
+        return PriceCode.CHILDRENS_PRICE
+    return PriceCode.REGULAR_PRICE
+```
+
+### Needs Refactoring + 2 Latent Errors
+
+```python
+def __init__(self):
+    self.catalog = []                       # 6. Divid Long Method
+    with open('movies.csv', 'r') as file:   # 1. Rename
+        rows = csv.reader(file)             # 1. Rename, 5. Fix Error
+        for r in rows:                      # 1. Rename
+            if not r:
+                continue
+            if not r[0].startswith('#'):    # 2. Replace Nested if
+                try:
+                    self.catalog.append(
+                         Movie(r[1],r[2],r[3].split('|'))) # 4. Intro Var
+                except IndexError:          # 3. Replace Exception
+                    logging.error(
+                      f'Line {rows.line_num}:\ 
+                      Unrecognized format "{",".join(r)}"')
+```
+
+1. Use expressive variable names:
+   ```python
+   def __init__(self):
+       self.catalog = []
+       with open('movies.csv', 'r') as csv_file: 
+           csv_reader = csv.reader(file)
+           for movie_data in csv_reader:
+   ```
+
+2. *Replace Nested If with Guard Conditions* 
+3. *Replace Exception with Test*
+   ```python
+           if not movie_data:
+               continue
+           if movie_data[0].startswith('#'):
+               continue
+           if len(movie_data) != 4: # wrong number of fields
+               logging.error(f'Line {rows.line_num}:\ 
+                     Unrecognized format "{",".join(movie_data)}"')
+   ```
+   **Good**: Using logging for error messages.
+
+4. *Introduce Explaining Variable*
+   ```python
+           (_, title, year, genre_str) = movie_data
+           movie = Movie(title, year, genre_str.split('|'))
+           self.catalog.append(movie)
+   ```
+
+5. Fix Error by *Question Until You Understand* and *Don't Fall for the Quick Hack*
+   - Problem: fields in CSV data may containing leading spaces
+   - *Don't Fall for the Quick Hack* == *Quick Fixes Become Quicksand*
+     ```python
+     # Don't do this
+     Movie(title.strip(), year.strip(), genre_str.strip().split('|'))
+     ```
+   - Observation: spaces in data are common. The library function oughta be able to handle that.
+   - Solution: Check the Python Library doc for `csv.reader`. 
+     ```python
+             csv_reader = csv.reader(file, skipinitialspace=True)
+     ```
+   - Another Solution: Use a **regular expression** to split the line. Try this:
+     ```python
+     >>> import re
+     >>> fruit = "Apple  ,Banana, Carrot ,    Durian"
+     >>> re.split(r"\s*,\s*", fruit)
+     ```
+     Got it? `\s` = match whitespace `\s*` = match 0 or more whitespace.
+
+6. *Divide Long Method*
+   - It is easier to test.
+   - Easier to modify
+   ```python
+   def __init__(self):
+       self.catalog = self.load_movies("movies.csv")
+
+   def load_movies(self, filename) -> Collection[Movie]:
+   ```
+
+### *Continuous Attention to Technical Excellence*
+
+What could go wrong?
+
+```python
+   def __init__(self) -> None:
+       with open('movies.csv') as csv_file:
+           csv_reader = csv.reader(csv_file, delimiter=',')
+           next(csv_reader, None)
+           next(csv_reader, None)
+           self.catalog = list(csv_reader)
+```
+
+### Inconsistent Returns
+
+A method should consistently return a value (even `None`), or consistently not return a value.
+
+(From the same code as above)
+```python
+    def get_movie(self, title: str, year=None):
+        for movie in self.catalog:
+            if movie[1] == title and int(movie[2]) == year:
+                genre = movie[3].split("|")
+                return Movie(title, int(movie[2]), genre)
+            elif movie[1] == title:
+                genre = movie[3].split("|")
+                return Movie(title, int(movie[2]), genre)
+```
+
+1. No error checking.
+2. Missing return at end of method. It works here, but not a good style.
+3. Inefficient.
+
+
+[Kittiporn, Phukit, Pun, Supakrit]
+
+
 [Movie Rental Part 1](#movie-rental-refactoring-part-1)    
 [Movie Rental Part 2](#movie-rental-refactoring-part-2)
 
