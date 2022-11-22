@@ -2,10 +2,13 @@
 title: Bug Bounty - Test 'Production' Web Apps
 ---
 
-**Deadline:** Nov 29, 12:00 noon (so teams have time to fix problems)
+**Deadline:** 27 Nov, 6:00 PM  so that teams have time to review & fix problems.
 
-By now, every team should have deployed their application to a cloud service.
-The URLs are posted in the class projects sheet: <https://bit.ly/ISP2021-projects>
+This week, every team should have deployed their application to a cloud service.
+
+URLs are posted in the class projects sheet: <https://bit.ly/isp2022-projects>
+
+Report Bugs here [Bug Hunting](https://docs.google.com/spreadsheets/d/1dlIcnRwHkHJULFYWduymDe1ynh9XrFAi4XW2oYWK2CA/) and on the project's Issue Tracker.
 
 ## Assignment
 
@@ -13,13 +16,23 @@ Try to find defects (bugs) in other teams' apps, using the cloud-deployed versio
 
 ## What's a Defect?
 
-- Anything in their [project proposal](https://bit.ly/ISP2021-projects) but cannot be done in the actual app.
-- App returns incorrect or invalid data
-- Security problems.  Please try SQL Injection and Javascript Injection.
-  - if you are more ambitious, try fuzz testing (sending random data).
-- Authorization errors, such as being able to modify data submitted by someone else or access a restricted page without login. These are security errors.
-- Mistakes in the UI, including spelling and formatting errors.
-- Navigation errors: Links that don't work or go to the wrong page.  Inability to navigate, such as cannot get back to main page without using browser Back button). Any valid request that returns a 404 Not Found response.
+- Functionality: any feature listed in their [project proposal](https://bit.ly/isp2022-projects) but cannot be done in the actual app.
+- Functionality/correctness: App returns incorrect or invalid data or fails to retain data when it should
+- Security errors.  
+  - Disclosure of confidential settings. Can you get it to print the settings on an error page?
+  - Data exfiltration, meaning to access data you should not be able to access
+  - if you are more ambitious, try fuzz testing (sending random requests)
+  - please try SQL Injection or Javascript Injection
+- Authorization errors (a subset of "Security" errors)
+  - being able to modify data submitted by someone else 
+  - access a restricted page without login ("authorization bypass")
+  - you don't have to use the web UI!  Discover what URLs that app uses (including looking at source code) and try submitting GET/POST/PUT/DELETE requests direct to those URLs without authorization.  This may work well with REST web service urls.
+  - try to access the admin account (guess common passwords)
+- Appearance: Mistakes in the UI, including spelling and formatting errors.
+- Navigation errors: 
+  - Links that don't work or go to the wrong page.
+  - Inability to navigate, such as cannot get back to the main page without using browser Back button (remember KU Polls?).  This is a "Usability" error.
+  - Any valid request that returns a 404 Not Found response.
 - Anything that causes the app to become unresponsive, return an exception page, or a 5xx status code page.
 - Anything that fails to work.
 - Installation instructions don't work. You tried to install and run it locally using installation instructions in project's Github repository, but they don't work. This includes missing steps.
@@ -28,35 +41,17 @@ Try to find defects (bugs) in other teams' apps, using the cloud-deployed versio
 ## Testing and Reporting
 
 1. Test as many other apps as you want to find defects and earn bug bounties.
-   - The first report of a confirmed, unique defect earns 1 point.
-2. **Report Defects** in 2 places:
-   - First, open an issue on team's project repository.
-     1. describe the problem
-     2. include information on **how to reproduce the problem**
-     3. helpful: include screenshot(s) showing the problem
-   - Second, add a row to the Google spreadsheet at <http://bit.ly/isp-project-testing> on the "Bug Reports" page.  Include:
-     1. your name
-     2. project name
-     3. defect category (categories are in the bug reporting sheet)
-     4. link to issue on Github
-     5. brief description of defect
-4. Wait for team to **confirm the bug**.  If they do not confirm within 2 days, email the instructor.
-5. No points for finding defects in your own application. But you should report issues anyway.
+
+2. **Reporting Defects**:  See instruction on the "Bug Bounty" spreadsheet.
 
 ## Earn Bug Bounty Points
 
-The first person to report each confirmed, unique "bug" or "defect" related to functionality will earn 1 point. Points count as extra homework score.
+The first person to report each confirmed, unique "bug" or "defect" related to functionality or installation earns 1 point. Security defects earn 2 points. Usability, Appearance, and Other defects earn 1 point if deemed significant by instructor.
 
 The person who finds the most defects will earn an extra 5 points.
 
+Points count as an extra homework score.
 
-## Other Defects (No Bounty But Please Report)
-
-Please report the following, even though they don't earn bug points.
-
-- spelling mistakes
-- confusing navigation
-- non-intuitive behavior (app behaves differently from what users would normally experience in a web app). 
 
 ## Validation by Development Team
 
@@ -70,33 +65,29 @@ Use these labels:
 * **cannot reproduce**
 * **not a bug** - if you can't reproduce it, or conclude that its not a bug. You should explain *why* its not a bug in your comment closing the issue.
 
+---
 
-## Example of Non-Intuitive Behavior in a Commercial Web Site
+## Non-Intuitive Behavior in a Real, Commercial Web Site
 
-Kiatnakin-Phatra Asset Management has web-based application at <https://kkpamonline.kkpfg.com/>
-A client can view his portfolio, buy or redeem mutual funds, and view a transaction report.
+Kiatnakin-Phatra Asset Management has web application at <https://kkpamonline.kkpfg.com/>
 
-On the top-right of the page is a `Logout` link.  Most users would **expect** that clicking on this link will log them out.
+A client can view his portfolio, buy or sell mutual funds, and view transactions.
 
-![Phatra Navigation Bar](/images/Phatra-Navbar.png)
+On the top-right of the page is a `Logout` link.  You would **expect** to be logged out by clicking this link:
+
+![KKPAM Navigation Bar](/images/Phatra-Navbar.png)
 
 When you click "Logout" is shows a page like this:
 
-![Phatra Logout Screen](/images/PhatraLogoutScreen.png)
+![KKPAM Logout Screen](/images/PhatraLogoutScreen.png)
 
 **Is the person logged out?**  The answer is **no**.
 
-You can use the browser "Back" button to re-enter the site and you are still logged in!  This is *non-intuitive* and a potential security risk.
+You can use the browser "Back" button to re-enter the site and you are still logged in!  
 
-Its also stupid.  The "Close" button won't close the browser window.
+This is *non-intuitive* and a potential security risk.
 
-## Multiple Defects at KKPAM
+Its also stupid.  The "Close" button does not (cannot) close the browser window.
 
-The web app actually has **multiple defects**.
 
-1. You must click through 4 pages to get to the page showing your portfolio.
-2. On a standard 1368x1024 display (typical notebook display) the "Logout" button is pushed off the right edge of screen.
-3. Click on a fund name shows uninteresting info about the fund instead of details of your holdings of that fund, which is the **expected & desired behavior** for most people.
-4. Pages have a "Main Menu" button that shows the portfolio pages. This **is not** a main menu. Example of **inconsistent naming**.
-5. The logout page has a `Close` button, but it doesn't work in any modern browser!  
-   - This makes me think the developers don't understand the way browsers work.
+The KKPAM web app has other defects as well, including UI controls that are off-screen on some displays!
