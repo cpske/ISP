@@ -77,12 +77,20 @@ Resources to learn unittest:
 ### [Code Coverage](code-coverage)
 
 [Code Coverage](code-coverage) uses a tool to measure how much of your code is really being tested by unit tests.
-- It is easy to use while running your tests. 
+- Easy to use while running your tests. 
 - Helps you find sections of code that you need to write better tests for.
 
-To use code coverage on your own computer, use the [coverage](https://coverage.readthedocs.io/) Python package.
+To use code coverage on your own computer, use the [coverage](https://coverage.readthedocs.io/) Python package:
+```bash
+coverage run -m unittest test_*.py
+coverage report
+# create a detailed report in HTML format
+coverage html
+# view the report in a web browser
+firefox htmlcov/index.html
+```
 
-To run code coverage as part of automatic testing (C.I. or Github Actions) try CodeCov or Coveralls.
+To run code coverage as part of automatic testing (C.I. or Github Actions) you run `coverage` as above, then use CodeCov or Coveralls to process and display the .coverage data.
 
 
 ## Java Unit Testing
@@ -177,12 +185,12 @@ Tester
 
 3. Exhaustive testing is impossible
 
-4. You will never know when you have found the last bug -- cannot guarantee software is defect=free
+4. You cannot know when you have found the last bug -- cannot guarantee software has zero defects
 
-5. It takes more time than you have to test less than you would like
+5. Testing takes more time than you have, even to test less than you would like
 
 6. You will run out of time before you run out of test cases
-   * If that's not true, you should be looking for more test cases
+   - If that's not true, you should look for more test cases
 
 ## Web Testing
 
@@ -196,7 +204,8 @@ In this class we will use Selenium, and may cover the Robot Framework.
 
 * [Extensive List of Python Testing Tools](https://wiki.python.org/moin/PythonTestingToolsTaxonomy) on [wiki.python.org](http://wiki.python.org) includes mock objects, web testing, fuzz testing, source code checkers, code coverage, unit test, and acceptance/business logic testing tools.
 * [Testing Your Code](https://docs.python-guide.org/writing/tests/) good article introduces testing using unit test, py.test, Hypothesis, and mock.
+* [Getting Started with Testing](https://realpython.com/python-testing/) on RealPython.
 * Presention: [Intro to Different Kinds of Testing](Intro-Testing.pdf), not relevant to this course
-* <a>"a" tag without an href</a>
-* <a>Another lame "a" tag to test your link scanner</a>
+* <a>'a' tag without an href</a>
+* <a>Another lame &lt;a&gt; tag to test your link scanner</a>
 
