@@ -165,7 +165,8 @@ Code Reviews should look for security vulnerabilities including:
 * Summary of [Best Practices For Peer Code Review](https://www.kessler.de/prd/smartbear/BestPracticesForPeerCodeReview.pdf) from SmartBear.com
   - Their results seem biased.  They sell a tool for remote code review.
 
-* [Improving Software Quality through Inspections](Improving Software Quality through Inspections.pdf) a classic paper
+* <a>Hyperlink without href attribute</a>
+* <a>Another lame hyperlink to test your scanner</a>
 
 [review-board]: https://www.reviewboard.org/
 [review-board-github]: https://github.com/reviewboard/reviewboard

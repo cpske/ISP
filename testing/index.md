@@ -197,5 +197,6 @@ In this class we will use Selenium, and may cover the Robot Framework.
 * [Extensive List of Python Testing Tools](https://wiki.python.org/moin/PythonTestingToolsTaxonomy) on [wiki.python.org](http://wiki.python.org) includes mock objects, web testing, fuzz testing, source code checkers, code coverage, unit test, and acceptance/business logic testing tools.
 * [Testing Your Code](https://docs.python-guide.org/writing/tests/) good article introduces testing using unit test, py.test, Hypothesis, and mock.
 * Presention: [Intro to Different Kinds of Testing](Intro-Testing.pdf), not relevant to this course
-
+* <a>"a" tag without an href</a>
+* <a>Another lame "a" tag to test your link scanner</a>
 
