@@ -2,16 +2,19 @@
 title: Feedback on Tax Calculator Refactoring
 ---
 
-## 1. Replace nested conditional with guard condition.
+Refactoring #1 and #2 are 5 points each. The others are 10 points each.
 
+## 1. Replace nested conditional with guard condition
+
+**5 Points** for correct code similar to this:
 ```python
 def __eq__(self, other):
-    if not isinstance(other, Person):       # The "guard"
+    if not isinstance(other, Person):    # The "guard"
         return False
+    return (self.id, self.last_name) == (other.id, other.last_name)
 ```
 
-**No Credit** for this because it doesn't return *anything* if
-the test is False:
+**No Credit** for this because it does not return *anything* if the test is False:
 
 ```python
 def __eq__(self, other):
@@ -19,7 +22,7 @@ def __eq__(self, other):
         return self.id == other.id and self.last_name == other.last_name
 ```
 
-**No Credit** for this (adds unnecessary "elif" and also fails to return a boolean in one case):
+**No Credit** for this for same reason as above, plus the `elif` is not necessary (should be "if").
 
 ```python
 def __eq__(self, other):
@@ -29,7 +32,7 @@ def __eq__(self, other):
         return True
 ```
 
-**No Credit** for this becuase it fails to achieve the goal of "remove nested conditional":
+**No Credit** for this becuase it fails to achieve the goal of "remove nested conditional". There is still a nested "if".
 
 ```python
 def __eq__(self, other):
@@ -39,7 +42,7 @@ def __eq__(self, other):
     return False
 ```
 
-**1 Point** for this. After a "guard clause" then you should not need `else`.
+**1 Point** for this. After a "guard clause" you should not need `else`.
 
 ```python
 def __eq__(self, other):
@@ -52,7 +55,7 @@ def __eq__(self, other):
 
 ## 2. Remove unnecessary "if"
 
-Either of these are OK but the first solution is better (a true "guard")
+(**5 Points**) Either of these are OK but the first solution is better (a true "guard")
 
 ```python
 def __eq__(self, other):
@@ -60,7 +63,7 @@ def __eq__(self, other):
         return False
     return self.id == other.id and self.last_name == other.last_name
 ```
-
+or
 ```python
 def __eq__(self, other):
     if isinstance(other, Person):
@@ -71,25 +74,28 @@ def __eq__(self, other):
 
 Change TaxCalculator parameter to be a `Person` **and** save the Person reference in TaxCalculator. 
 
-Requires changes in `main`, `TaxCalculatorTest.setUp`, and `TaxCalculator` `__init__` and `compute_and_print_tax`.
+Requires changes in `main`, `TaxCalculatorTest.setUp`, and `TaxCalculator.__init__` and `compute_and_print_tax`.
 
 ```python
 # main.py
-
 if __name__ == '__main__':
     taxpayer = Person("1409900123456", "Fatalai", "Jon")
     tax_calc = TaxCalculator(taxpayer)
 ```
-
+In `tax_calculator.py`:
 ```python
-# tax_calculator.py
-
 class TaxCalculator:
     def __init__(self, taxpayer: Person):
         self.taxpayer = taxpayer
 ```
+and in `test_tax_calculator.py`:
+```python
+    def setUp(self):
+        person = Person(...)
+        self.tc = TaxCalculator(person)
+```
 
-**6 Points** for this:
+**6 Points** for passing whole object and then saving only Person attributes in TaxCalculator:
 
 ```python
 class TaxCalculator:
@@ -113,12 +119,12 @@ In the original code there are 3 blocks similar to this:
             ordinary_income += amount
             ordinary_tax_withheld += tax
 
-    # similar code for dividend
+    ...similar code for dividend
 
-    # similar code for interest
+    ...similar code for interest
 ```
 
-**First Solution**: One method to compute same thing as the above. This is not recommended because in the code you often want only one of the two values.
+**Simple Solution**: One method to compute the same thing as the above. This is not the best refactoring because in the code you often need only one of the two values (sum of income or tax withheld).
 
 ```python
     def sum_income_by_type(self, income_category: str):
@@ -140,21 +146,21 @@ then in `compute_and_print_tax`:
     dividend_income, dividend_tax_withheld = self.sum_income_by_type("interest")
 ```
 
-**Second Solution**: extract one method to sum income and one to sum tax withheld by income type. This solution makes the code much cleaner and simpler.
+**Better Solution**: extract one method to sum income and one method to sum tax withheld, by income type. This solution makes the other code much cleaner and simpler.
 
-Here's what it looks like after refactoring #10 (use an Enum for income types):
+Here's the code after refactoring #10 (replace tuple with an `Income` class)
 ```python
     def sum_income_by_type(self, income_type: IncomeType) -> float:
         """The sum of all income for a given income_type."""
         return sum(income.amount
                    for income in self.incomes 
-                    if income.income_type = income_type)
+                   if income.income_type == income_type)
 
     def sum_tax_withheld_by_type(self, income_type: IncomeType) -> float:
         """The sum of all tax withheld for a given income_type."""
         return sum(income.tax_withheld
                    for income in self.incomes 
-                    if income.income_type = income_type)
+                   if income.income_type == income_type)
 ```
 
 **5 Points** for writing separate methods for each income category, as below. These methods *still* contain duplicate code, it is just moved someplace else.
@@ -166,7 +172,7 @@ Here's what it looks like after refactoring #10 (use an Enum for income types):
     dividend_income, dividend_tax_withheld = self.sum_dividend()
 ```
 
-**5 Points** for passing the sum as a parameter. This is an anti-refactoring (code smell: modifying a parameter) and serves no purpose.
+**5 Points** for passing the sum as a parameter. This is an anti-refactoring (Code Smell: *modifying a parameter*) and serves no purpose.
 
 ```python
     ordinary_income = 0
@@ -265,7 +271,7 @@ def get_income_tax(self, net_income):
 
 OK to replace the `if ... elif` with a loop over a list of tax brackets and tax rates **provided** they are local variables or class constants (not global constants). However, I think that makes the code *harder to understand*.
 
-**5 Points** for code like this (did not remove redundant substraction). The goal of refactoring is it improve the code.  This is only a partial improvement.
+**5 Points** for code like this. (1) Did not remove redundant subtraction, (2) local variable for 60,000 Bt deduction. The goal of refactoring is it improve the code.  This is only a partial improvement.
 ```python
 def get_income_tax(self, income):
     """Compute the ordinary income tax on income."""
@@ -280,9 +286,12 @@ def get_income_tax(self, income):
     return tax
 ```
 
+**No Credit** for code that has 2 identical methods for computing "ordinary income tax" and "combined income tax" that use the same formula.  That is still **duplicate code**.
+
+
 ## 6. Inline Temp and Replace "elif" with "if"
 
-Eliminate assignment to the local variable `tax` in the code above. Insted, simply return the tax. When you do that, you do not need "elif" either:
+Eliminate assignment to the local variable `tax` in the code above. Simply return the tax. When you do that, you can also replace "elif" with "if" and remove the final "else" clause:
 ```python
 def get_income_tax(self, net_income) -> float:
     """Compute the ordinary income tax on net_income.
@@ -313,28 +322,171 @@ def get_income_tax(self, net_income) -> float:
 ## 7. Divide Long Method Doing Two Things
 
 Create separate methods for tax computation and printing a tax summary.
+
 - `compute_tax` - compute and return the tax owed or amount to refund
-- `print_tax`  - print the tax due
+- `print_tax`  - print the tax form
 
-Notice that in `compute_tax` you do not need the tax withheld at all.
-If you wrote separate methods for Refactoring #5 then your code is much simpler.
+In my code, I refactored `compute_tax` into two parts:
 
-Example solution is listed after the last refactoring.
+- `total_tax` - (property) compute the total tax liability
+- `total_tax_withheld` - (property) returns total tax withheld.
+
+`compute_tax` is just 1 line of code and `total_tax` is simpler because it does not need the tax withheld. 
+
+Example solution is given at the end of this file.
 
 ## 8. Extract Variable for a Sum Computed Several Times
 
-This is the sum of different income types is computed several times.
-In the final solution, you may not have this sum anymore.
-In that case, you get credit if your refactoring produced a *clean* solution
-where the sum is not needed.
+The sum of the tax on income types is computed several times:
+```python
+if ordinary_income_tax + interest_tax + dividend_tax <= all_income_tax:
+    # use tax computed separately on each income category
+    separate_income_types = True
+else:
+    # use the tax computed on combined incomes
+    separate_income_types = False
 
+if ordinary_income_tax+interest_tax+dividend_tax > total_tax_withheld:
+    # owes some additional tax
+    print(format2.format("Amount of Tax Owed",
+        ordinary_income_tax + interest_tax + dividend_tax 
+        - total_tax_withheld)
+    )
+```
 
+Introduce a variable for the sum:
+```python
+total_tax = ordinary_income_tax + interest_tax + dividend_tax 
+if total_tax <= all_income_tax:
+    # use tax computed separately on each income category
+    separate_income_types = True
+else:
+    # use the tax computed on combined incomes
+    separate_income_types = False
+```
+
+In retrospect, `all_income_tax` is a confusing name. `simple_tax` would be better.
+
+## 9. Eliminate Flag Variable
+
+The flag variable is `separate_income_types`.  The only thing it is used for is to decide which result to use for the total income tax.
+
+You can eliminate it by using one variable for the total tax, assigned the suitable value for the two cases:
 
 ```python
-Separate tax computation 
-## Please Stop Writing Loops Like This
+if total_tax > all_income_tax:
+    # use the combined tax computation since it gives less tax
+    total_tax = all_income_tax
+```
+And after that, use `total_tax` and eliminate the `if` using flag variable.
 
-Iterate over elements in a list:
+
+## 10. Define Enum for Income Types
+
+```python
+from enum import Enum
+
+class IncomeType(Enum):
+    ORDINARY = "Wages"
+    INTEREST = "Interest"
+    DIVIDEND = "Dividend"
+
+    # __str__ is not required, but useful for printing tax form
+    def __str__(self):
+        return self.value
+```
+
+And in the code to sum income by type:
+```python
+    def sum_income_by_type(self, income_type: IncomeType) -> float:
+        """The sum of all income for a given income_type."""
+        return sum(income.amount
+                   for income in self.incomes 
+                   if income.income_type == income_type)
+```
+
+Then modify the constants at the top of `test_tax_calculator.py`:
+```python
+# constants used in tests
+ORDINARY = IncomeType.ORDINARY
+INTEREST = IncomeType.INTEREST
+DIVIDEND = IncomeType.DIVIDEND
+```
+
+**5 Point** if you define an Enum, but just extract the string values everywhere, like this:
+```python
+# constants used in tests
+ORDINARY = IncomeType.ORDINARY.value  # a string!
+
+# or in the test code -- you shouldn't change the tessts!
+self.addIncome(IncomeType.ORDINARY.value, "KU", 200000, 50000)
+self.addIncome(IncomeType.INTEREST.value, "Bangkok Bank", 10000, 0)
+```
+
+## 11. Introduce Parameter Object for Income
+
+The code uses 4 parameters to describe an income item and TaxCalculator saves them as tuples. Using tuples creates awkward code.
+```python
+def add_income(self, income_type, desc, amount, tax_withheld):
+    self.incomes.append(
+         income_type, desc, amount, tax_withheld))
+```
+
+*Introduce a Parameter Object* for income data. 
+
+Define a dataclass for the income data:
+```python
+from dataclasses import dataclass
+
+@dataclass(frozen=True)
+class Income:
+    income_type:  IncomeType   # Enum
+    description:  str
+    amount:       float
+    tax_withheld: float
+```
+That's it! All the code you need is auto-generated.
+
+In TaxCalculator, modify `add_income`:
+
+```python
+    def add_income(self, income: Income):
+        self.incomes.append(income)
+```
+
+and modify the methods that iterate over `self.incomes` to use `Income` instead of a tuple. 
+The code is cleaner & simpler:
+```python
+    @property
+    def total_income(self):
+        """The person's total income."""
+        return sum(income.amount for income in self.incomes)
+```
+
+Finally, in `test_tax_calculator.py` update the `addIncome` adapter method to pass a **parameter object** instead of many parameters:
+
+```python
+    def addIncome(self, income_type, description, amount, tax_withheld):
+        """Utility method to simplify refactoring of add_income()."""
+        self.tc.add_income(
+                Income(income_type, description, amount, tax_withheld)
+                )
+```
+
+**6 Points** if you discard the parameter object in `add_income` and just save a tuple:
+```python
+    def add_income(self, income: Income):
+        self.incomes.append(
+                (income.income_type, income.description,
+                 income.amount, income.tax_withheld)
+            )
+```
+This violates *Preserve Whole Object* and makes the code more complex.
+
+
+## Please Do Not Write `for` Loops Like This
+
+Some codes look like this:
 
 ```python
 # Don't do this
@@ -342,14 +494,15 @@ for k in range(len(self.incomes)):
     income = self.incomes[k]
     ...
 ```
+This is not fluent use of Python. It looks like a C programmer writing C code in Python.
 
-This looks like a C programmer writing C code in Python. It's not fluent use of Python.
-
-Simpler and more flexible (works with *any* Collection or *any* Iterable):
+It is simpler and more flexible (works with *any* Collection or *any* Iterable) to write:
 
 ```python
 for income in self.incomes:
    ...
 ```
 
-And, of course, consider if a *list comprehension* can replace the for loop.
+Also consider if a *list comprehension* can replace the `for` loop.
+
+The only situation to use `for k in range(...)` is if you need to know the element index (`k`) inside the loop.

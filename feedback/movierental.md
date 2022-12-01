@@ -20,7 +20,7 @@ def price_code_for_movie(movie: Movie):
 
 ```python
 def __init__(self):
-    self.catalog = []                       # 6. Divid Long Method
+    self.catalog = []                       # 6. Divide Long Method
     with open('movies.csv', 'r') as file:   # 1. Rename
         rows = csv.reader(file)             # 1. Rename, 5. Fix Error
         for r in rows:                      # 1. Rename
