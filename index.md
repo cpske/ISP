@@ -233,8 +233,8 @@ Not covered in 2022:
 - [Logging](logging/)
 - [Logging practice](logging/logging-practice)
 - User Stories
-- [Milestones](project/Milestones.pdf)
-- [Domain Modeling](project/Domain-Models.pdf) and [Category List](project/Conceptual-Category-List.pdf) to help discover domain classes
+- [Milestones](software-process/Milestones.pdf)
+- [Domain Modeling](modeling/Domain-Models.pdf) and [Category List](modeling/Conceptual-Category-List.pdf) to help discover domain classes
 
 
 #### Assignment

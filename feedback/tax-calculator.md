@@ -335,17 +335,20 @@ In my code, I refactored `compute_tax` into two parts:
 
 Example solution is given at the end of this file.
 
+**5 Points** if `compute_tax` calls `print_tax`.
+
+**5 Points** if `print_tax` requires that the caller first invoke `compute_tax` to set attributes that `print_tax` uses (Sequential Coupling).
+
+**<= 5 Points** if `print_tax` prints incorrect values.
+
+**No Credit** if `print_tax` duplicates the tax calculation in `compute_tax`.
+
+
 ## 8. Extract Variable for a Sum Computed Several Times
 
-The sum of the tax on income types is computed several times:
-```python
-if ordinary_income_tax + interest_tax + dividend_tax <= all_income_tax:
-    # use tax computed separately on each income category
-    separate_income_types = True
-else:
-    # use the tax computed on combined incomes
-    separate_income_types = False
+The sum of the tax on the income types is computed at least **6 times**:
 
+```python
 if ordinary_income_tax+interest_tax+dividend_tax > total_tax_withheld:
     # owes some additional tax
     print(format2.format("Amount of Tax Owed",
@@ -354,31 +357,98 @@ if ordinary_income_tax+interest_tax+dividend_tax > total_tax_withheld:
     )
 ```
 
-Introduce a variable for the sum:
+Introduce a **local** variable (`total_tax`) for the sum:
+
 ```python
 total_tax = ordinary_income_tax + interest_tax + dividend_tax 
+if total_tax > total_tax_withheld:
+    # owes some additional tax
+    print(format2.format("Amount of Tax Owed", 
+                         total_tax-total_tax_withheld) )
+```
+
+
+## 9. Eliminate Flag Variable
+
+The flag variable is `separate_income_types`.  The only thing it is used for is to decide which tax calculation to use for the total income tax.
+
+```python
 if total_tax <= all_income_tax:
-    # use tax computed separately on each income category
+    # use the tax computed separately on each income category
     separate_income_types = True
 else:
     # use the tax computed on combined incomes
     separate_income_types = False
 ```
 
-In retrospect, `all_income_tax` is a confusing name. `simple_tax` would be better.
-
-## 9. Eliminate Flag Variable
-
-The flag variable is `separate_income_types`.  The only thing it is used for is to decide which result to use for the total income tax.
-
-You can eliminate it by using one variable for the total tax, assigned the suitable value for the two cases:
+You can eliminate it by assigning the tax choice to a variable:
 
 ```python
 if total_tax > all_income_tax:
     # use the combined tax computation since it gives less tax
     total_tax = all_income_tax
 ```
+or (if you prefer):
+```python
+total_tax = min(total_tax, all_income_tax)
+```
+
 And after that, use `total_tax` and eliminate the `if` using flag variable.
+> In retrospect, `simplified_tax` would be better name for `all_income_tax`.
+
+**No Credit** if you simply replace `separate_income_types` with `total_tax <= all_income_tax` in if tests.  The purpose if this refactoring is to eliminate the unnecessary conditional cases and duplicate code.
+
+We want to replace this duplicate code:
+
+```python
+if total_tax <= all_income_tax:
+    print(format.format("Total Tax & Total Tax Withheld",
+                        total_tax, total_tax_withheld)
+          )
+    print()
+    # Does he get a tax refund or owe additional tax?
+    if total_tax > total_tax_withheld:
+        # tax owed = total taxes - total tax withheld
+        print(format2.format("Amount of Tax Owed",
+                             total_tax - total_tax_withheld)
+              )
+    else:
+        # tax refund = total tax withheld - total tax
+        print(format2.format("Amount of Tax Overpaid",
+                             total_tax_withheld - total_tax)
+              )
+else:
+    print(format.format("Total Tax & Total Tax Withheld",
+                        all_income_tax, total_tax_withheld)
+          )
+    print()
+    # Does he get a tax refund or owe additional tax?
+    if all_income_tax > total_tax_withheld:
+        print(format2.format("Amount of Tax Owed",
+                             all_income_tax - total_tax_withheld)
+              )
+    else:
+        print(format2.format("Amount of Tax Overpaid",
+                             total_tax_withheld - all_income_tax)
+              )
+```
+
+with this:
+```
+total_tax = min(all_income_tax, total_tax)
+
+tax_owed = total_tax - total_tax_withheld
+
+print(format.format("Total Tax & Total Tax Withheld",
+                    total_tax, total_tax_withheld) )
+if tax_owed >= 0:
+    print(format2.format("Amount of Tax Owed", tax_owed))
+else:
+    print(format2.format("Amount of Tax Overpaid", -tax_owed))
+```
+**The Acid Test**:    
+Your code should not have 2 print statements for "Amount of Tax Owed" and 2 print statments for for "Amount of Tax Overpaid".
+
 
 
 ## 10. Define Enum for Income Types
