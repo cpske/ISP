@@ -93,7 +93,7 @@ Define a factory class to create and access Movies, named `MovieCatalog`.
 - MovieCatalog is a *singleton*. We want only one instance.
 - It has a `get_movie` method that returns a movie with matching title and optional year. If year is omitted, return the *newest* release.
   ```python
-  # Get the most recente 'Mulan' movie.
+  # Get the most recent 'Mulan' movie.
   movie = catalog.get_movie("Mulan")
   # Get 'Mulan' released in 1998
   movie = catalog.get_movie("Mulan", 1998)
@@ -149,10 +149,10 @@ Do the following:
   rental = Rental(movie, days_rented)
   ```
 
-Design Principles to consider (you don't need to use all of these):
+Design Principles to consider in making your decision.  You don't need to use all of these.
 
-- *Low Coupling*: choose a class/module that results in minimal coupling or adds the least coupline
-- *High Cohesion*: choose a class that is already responsible for price codes, or that closely uses the price codes
+- *Low Coupling*: choose a class/module that results in minimal coupling or adds the least coupling
+- *High Cohesion*: choose a class that that closely uses the price codes
 - *Single Responsibility Principle*: choose a class/module that is "responsible" to the actor who sets prices
 - *Information Expert*: choose a class that already has most of the information needed to determine the price code
 - any other design principle or refactoring guide that you apply.

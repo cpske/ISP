@@ -59,12 +59,12 @@ observe that the method uses information about the rental but not about the cust
    - In `customer.statement()` call this method.
    - Write a unit test in `rental_test.py` to verify your new method computes frequent renter points correctly.
 
-6. *Extract Method to compute total charge*. Move the computation of *total aount* from `statement` to a separate method in `Customer`.  `statement` calls this method to get the total amount.
+6. *Extract Method to compute total charge*. Move the computation of *total amount* from `statement` to a new, separate method in `Customer`.  `statement` calls this method to get the total amount.
    - `statement` calls this method **only once** to get the total amount. Not inside a loop!
    - eliminate the temp variable `total_amount`.
    - write a unit test for this new method in `customer_test.py` to verify the total charge for a collection of rentals is correct.
 
-7. *Extract Method to compute total rental points*. Instead of computing total rental points in `statement`, extract a method to compute and return it -- just like for total rental price (above).
+7. *Extract Method to compute total rental points*. Instead of computing total rental points in `statement`, extract a method to compute and return it -- just like for total rental price (above).  Define a `get_rental_points` method in `Rental`.
    - eliminate the temp variable `frequent_renter_points` and instead call this method **one time**.
    - write a unit test for this new method in `customer_test.py` to verify the total renter points is computed correctly.
 

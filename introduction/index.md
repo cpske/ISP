@@ -123,7 +123,7 @@ Nonetheless, we *assess* your understanding using:
 
 The project score is based on how well you apply a process and your individual contribution to the project.  The final product is only a part of the project score.
 
-**Minimum Exam Average to Pass**: *average* exam score of **at least 50%** to pass.
+**Minimum Exam Average to Pass**: *average* exam score of **at least 50%** on both written and programming exams to pass.
 
 If you achieve the minimum exam average, then the approximate grading scale based on all your work is:
 

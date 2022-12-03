@@ -4,7 +4,7 @@ title: Feedback on Tax Calculator Refactoring
 
 Refactoring #1 and #2 are 5 points each. The others are 10 points each.
 
-## 1. Replace nested conditional with guard condition
+## 1. Replace nested conditional with guard condition (in Person)
 
 **5 Points** for correct code similar to this:
 ```python
@@ -32,7 +32,7 @@ def __eq__(self, other):
         return True
 ```
 
-**No Credit** for this becuase it fails to achieve the goal of "remove nested conditional". There is still a nested "if".
+**No Credit** for this. It fails to achieve the goal of "remove nested conditional". There is still a nested "if".
 
 ```python
 def __eq__(self, other):
@@ -53,7 +53,7 @@ def __eq__(self, other):
 ```
 
 
-## 2. Remove unnecessary "if"
+## 2. Remove unnecessary "if" (in Person)
 
 (**5 Points**) Either of these are OK but the first solution is better (a true "guard")
 
@@ -107,7 +107,7 @@ class TaxCalculator:
 
 ## 4. Extract Method for Computation Done 3 Times
 
-In the original code there are 3 blocks similar to this:
+In the original code there are 3 code blocks similar to this:
 
 ```python
     # total ordinary income and tax withheld on ordinary income
@@ -119,12 +119,12 @@ In the original code there are 3 blocks similar to this:
             ordinary_income += amount
             ordinary_tax_withheld += tax
 
-    ...similar code for dividend
+    ...similar code for "dividend"
 
-    ...similar code for interest
+    ...similar code for "interest"
 ```
 
-**Simple Solution**: One method to compute the same thing as the above. This is not the best refactoring because in the code you often need only one of the two values (sum of income or tax withheld).
+**Simple Solution**: One method to compute both income and tax withheld, with income tax as parameter. This is not the best refactoring because in the code you often need only one of the two values (income or tax withheld).
 
 ```python
     def sum_income_by_type(self, income_category: str):
@@ -243,7 +243,7 @@ The long formula for ordinary income tax is written twice in `compute_and_print_
         ordinary_income_tax = 965000 + 0.35*(ordinary_income-deduction - 4000000)
 ```
 
-This code is screaming to be a separate method and eliminate the redundant `ordinary_income-deduction`.
+This code is screaming to be a separate method and eliminate the redundant `ordinary_income - deduction`.
 
 ```python
 def get_income_tax(self, net_income):
@@ -271,6 +271,8 @@ def get_income_tax(self, net_income):
 
 OK to replace the `if ... elif` with a loop over a list of tax brackets and tax rates **provided** they are local variables or class constants (not global constants). However, I think that makes the code *harder to understand*.
 
+**Why Not A Parameter for `deduction`?** The tax formula does not need to know about deductions.  All it needs to know is the net taxable ordinary income.
+
 **5 Points** for code like this. (1) Did not remove redundant subtraction, (2) local variable for 60,000 Bt deduction. The goal of refactoring is it improve the code.  This is only a partial improvement.
 ```python
 def get_income_tax(self, income):
@@ -286,7 +288,7 @@ def get_income_tax(self, income):
     return tax
 ```
 
-**No Credit** for code that has 2 identical methods for computing "ordinary income tax" and "combined income tax" that use the same formula.  That is still **duplicate code**.
+**No Credit** for creating 2 identical methods that compute "ordinary income tax" and "combined income tax" using the same formula.  That is still **duplicate code**.
 
 
 ## 6. Inline Temp and Replace "elif" with "if"
@@ -321,7 +323,7 @@ def get_income_tax(self, net_income) -> float:
 
 ## 7. Divide Long Method Doing Two Things
 
-Create separate methods for tax computation and printing a tax summary.
+Replace `compute_and_print_tax` with separate methods for tax computation and printing a tax summary
 
 - `compute_tax` - compute and return the tax owed or amount to refund
 - `print_tax`  - print the tax form
@@ -331,11 +333,16 @@ In my code, I refactored `compute_tax` into two parts:
 - `total_tax` - (property) compute the total tax liability
 - `total_tax_withheld` - (property) returns total tax withheld.
 
-`compute_tax` is just 1 line of code and `total_tax` is simpler because it does not need the tax withheld. 
+`compute_tax` is just 1 line of code and `total_tax` is simpler because it does not need the tax withheld.  It also makes the code easier to test.
+```python
+    def compute_tax(self):
+        # these are properties, NOT attributes
+        return self.total_tax - self.total_tax_withheld
+```
 
-Example solution is given at the end of this file.
+A link to example solution is given at the end of this file.
 
-**5 Points** if `compute_tax` calls `print_tax`.
+**5 Points** if `compute_tax` calls `print_tax`.  We should be able to use either method without invoking the other one.
 
 **5 Points** if `print_tax` requires that the caller first invoke `compute_tax` to set attributes that `print_tax` uses (Sequential Coupling).
 
@@ -346,7 +353,7 @@ Example solution is given at the end of this file.
 
 ## 8. Extract Variable for a Sum Computed Several Times
 
-The sum of the tax on the income types is computed at least **6 times**:
+The sum of tax on the income types is computed at least **6 times**:
 
 ```python
 if ordinary_income_tax+interest_tax+dividend_tax > total_tax_withheld:
@@ -367,10 +374,9 @@ if total_tax > total_tax_withheld:
                          total_tax-total_tax_withheld) )
 ```
 
-
 ## 9. Eliminate Flag Variable
 
-The flag variable is `separate_income_types`.  The only thing it is used for is to decide which tax calculation to use for the total income tax.
+The flag variable is `separate_income_types`.  The only thing it is used for is to decide which tax calculation to use for the total tax.
 
 ```python
 if total_tax <= all_income_tax:
@@ -381,7 +387,7 @@ else:
     separate_income_types = False
 ```
 
-You can eliminate it by assigning the tax choice to a variable:
+You can eliminate the flag variable by assigning the tax choice to a variable:
 
 ```python
 if total_tax > all_income_tax:
@@ -392,11 +398,11 @@ or (if you prefer):
 ```python
 total_tax = min(total_tax, all_income_tax)
 ```
-
-And after that, use `total_tax` and eliminate the `if` using flag variable.
 > In retrospect, `simplified_tax` would be better name for `all_income_tax`.
 
-**No Credit** if you simply replace `separate_income_types` with `total_tax <= all_income_tax` in if tests.  The purpose if this refactoring is to eliminate the unnecessary conditional cases and duplicate code.
+Then, use `total_tax` and eliminate the `if` that test the flag variable.
+
+**No Credit** if you simply replace `separate_income_types` with `total_tax <= all_income_tax` in `if` statements.  The purpose if this refactoring is to eliminate the unnecessary conditional cases and duplicate code.
 
 We want to replace this duplicate code:
 
@@ -435,6 +441,7 @@ else:
 
 with this:
 ```
+# choose tax calculation to use (eliminate flag variable)
 total_tax = min(all_income_tax, total_tax)
 
 tax_owed = total_tax - total_tax_withheld
@@ -446,6 +453,7 @@ if tax_owed >= 0:
 else:
     print(format2.format("Amount of Tax Overpaid", -tax_owed))
 ```
+
 **The Acid Test**:    
 Your code should not have 2 print statements for "Amount of Tax Owed" and 2 print statments for for "Amount of Tax Overpaid".
 
@@ -486,7 +494,7 @@ DIVIDEND = IncomeType.DIVIDEND
 **5 Point** if you define an Enum, but just extract the string values everywhere, like this:
 ```python
 # constants used in tests
-ORDINARY = IncomeType.ORDINARY.value  # a string!
+ORDINARY = IncomeType.ORDINARY.value   # a string!
 
 # or in the test code -- you shouldn't change the tessts!
 self.addIncome(IncomeType.ORDINARY.value, "KU", 200000, 50000)
@@ -499,10 +507,8 @@ The code uses 4 parameters to describe an income item and TaxCalculator saves th
 ```python
 def add_income(self, income_type, desc, amount, tax_withheld):
     self.incomes.append(
-         income_type, desc, amount, tax_withheld))
+         (income_type, desc, amount, tax_withheld))
 ```
-
-*Introduce a Parameter Object* for income data. 
 
 Define a dataclass for the income data:
 ```python
@@ -553,6 +559,15 @@ Finally, in `test_tax_calculator.py` update the `addIncome` adapter method to pa
 ```
 This violates *Preserve Whole Object* and makes the code more complex.
 
+---
+
+## Example Solution
+
+<https://github.com/ISP2022/tax-calculator-example>
+
+If you see anything that can be improved, please post an issue! And email me, too.  Thanks.
+
+---
 
 ## Please Do Not Write `for` Loops Like This
 
