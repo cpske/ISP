@@ -233,8 +233,9 @@ Not covered in 2022:
 - [Logging](logging/)
 - [Logging practice](logging/logging-practice)
 - User Stories
-- [Milestones](software-process/Milestones.pdf)
+- [Milestones](software-process/Milestones.pdf) to show progress toward completion of a project
 - [Domain Modeling](modeling/Domain-Models.pdf) and [Category List](modeling/Conceptual-Category-List.pdf) to help discover domain classes
+- Lab: User Stories.  Construct User Stories, then use them to discover Domain Classes.
 
 
 #### Assignment
@@ -253,6 +254,7 @@ Not covered in 2022:
   - Starter code (to be added) 
 - Code Coverage & Coverage Tool for Python
 - Exercise: add code coverage to demo-pyci project, use Codecov.io to display the report, and add badges to the project README
+- Lab: Adding *badges* to your Github repo, to indicate status. Badges provide a quick visual indicator of project health.
 
 
 #### Assignment
@@ -261,6 +263,7 @@ Not covered in 2022:
   - Use CI to run unit tests and run code coverage
   - Add "badges" to your KU Polls README.md for Travis and CodeCov status
 - Reading on terminology & concepts for refactoring and design patterns
+  - Next week you will be asked to explain these terms and concepts, and identify them in code.
 - Read <https://refactoring.guru/refactoring> 
 - [Movie Rental Refactoring, Part 1](assignment/movierental/movierental-part1)
   - Starter Code on Github: <https://classroom.github.com/a/_qGEboUn>
@@ -268,11 +271,10 @@ Not covered in 2022:
 
 ### Week 10
 
-- What is "good code"?  
-  - The goal of refactoring is "good code". So, what is good code?
-  - Goals, problems, and forces motivate the definition of "good" code
-  - Visible metrics or characteristics
-  - Principles and practices for good code
+- What is "good code"?  How can we improve the quality of code?
+  - Goals, problems, and forces on software that motivate the defination of "good code" and why it's important.
+  - Visible metrics and characteristics of good and poor code
+  - Principles and practices for writing good code
 - [Introduction to Refactoring](refactoring/) and [slides](refactoring/Refactoring.pdf)
 - [Refactoring Signs](https://refactoring.guru/refactoring/smells) (*aka* "Code Smells") on refactoring.guru
 - [When to Refactor](https://refactoring.guru/refactoring/when) and [Refactoring Process](https://refactoring.guru/refactoring/how-to)
@@ -280,28 +282,32 @@ Not covered in 2022:
 - Refactoring Exercise: Pizzashop refactoring <https://github.com/ISP2022/pizzashop>
 - Anything on <https://refactoring.guru/refactoring> may be on a quiz!
 
-IDE's have refactoring actions that make refactoring faster and reduce errors. But in Python they *work poorly (or not at all)* unless the code has accurate *type hints*. Hence, this is a good time to review *static typing* and *type hints*, including parameterized hints for collections and classes.
-
 - [Static Typing](https://cpske.github.io/ISP/code-quality/Type-Checking.pdf), Static Analysis, and [Type Hints](type-hints/introduction)
 - Static Type Checking Exercise: [scorecard.py](type-hints/scorecard.py)
 - [Type Hints](type-hints) and [Introduction](type-hints/introduction) by Mai Noripong
 - Another [Type Hints Introduction](https://fastapi.tiangolo.com/python-types/) on FastAPI; really good, simple examples.
 - [Type Hints Practice](https://docs.google.com/document/d/1S-5o_NHJXQosnQIT3pvI20wxxzonOKm_ryG0lYKu_Ws/) on Google Docs
 
+> IDEs have refactoring actions that perform refactoring faster and reduce errors. 
+> But, in Python the refactoring tools *work poorly* unless the code has accurate *type hints*. *Type Hints* also improve static analysis so that tools can find more problems and potential errors.
+> Please pay special attention to the type hints for Collections, return types, and optional values.
+
 #### Assignment
 
-- Refactoring Practice - refactor some code on Github (link on Google Classroom)
-- Homework: Movie Rental refactoring, Part 1
+- Homework: Learn the Refactorings on [Refactoring.Guru](https://refactoring.guru/refactoring). Details on Google Classroom.
+- Homework: Movie Rental refactoring, Part 1.
 
 
 ### Week 11
 
 - [Review common refactorings](refactoring/Refactoring-Review.pdf) - submit your answers on Google Classroom (Google Form)
-- More Refactoring - structure of classes, creating objects (*Not done in 2022*)
+- More Refactoring - refactor structure of classes, creating objects (*Not done in 2022*)
 - [Refactoring Patterns](refactoring/Refactoring-Patterns.pdf)
 - Intro to Design Patterns
 - Singleton & Factory Method Patterns - other patterns are covered in Prog2 and SS&D
 - Type Hints Practice (*see link in Week 10*)
+- Lab: Organizing Django code. Replace "models.py", "tests.py", and "views.py" with directories (packages) containing multiple files. 
+- Lab: [CookieCutter Django](https://github.com/cookiecutter/cookiecutter-django) and [documentation](https://cookiecutter-django.readthedocs.io/en/latest/) have examples and good advice for structuring Django projects. Discover and describe some of them.
 
 #### Assignment
 
@@ -315,6 +321,8 @@ IDE's have refactoring actions that make refactoring faster and reduce errors. B
 - Introduction to OAuth
 - Exercise: OAuth Playground and questions on Google Classroom (form)
 - [Code Reviews][code-review]
+
+- Lab: perform a short code review and **then** start on your team's code refview script and checklist.
 
 [code-review]: https://cpske.github.io/ISP/code-review/
 [code-review-assignment]: https://cpske.github.io/ISP/assignment/week12/code-review
@@ -333,14 +341,18 @@ IDE's have refactoring actions that make refactoring faster and reduce errors. B
 
 ### Week 13
 
-- Project Demos
 - Refactoring Review (again)
 - Review Movie Rental refactoring
+- Testing Pyramid and End-to-End Testing in [Web Testing](testing/WebTesting.pdf)
+- [Selenium](testing/Selenium-intro) for testing web applications. Some slides in [Web Testing](testing/WebTesting.pdf)
+- [Selenium Exercise](testing/SeleniumExercise.pdf) scrape search results from DuckDuckGo
+- Lab: Project Demos
 
 
 #### Assignment
 
 - Reading on Agile Practices (tba)
+- [Link Scanner](assignment/week15/selenium) write an app to scan and test all links on a web page using Selenium, and reports bad links.
 
 
 ### Week 14
@@ -348,14 +360,10 @@ IDE's have refactoring actions that make refactoring faster and reduce errors. B
 - Remaining project demos.
 - Review Agile Practices (week 10 assignment), including comments in code.
 - The [12-Factor App](web/12FactorApp.pdf) - 7 factors that apply to your projects
-- Testing Pyramid and End-to-End Testing in [Web Testing](testing/WebTesting.pdf)
-- [Selenium](testing/Selenium-intro) for testing web applications. Some slides in [Web Testing](testing/WebTesting.pdf)
-- [Selenium Exercise](testing/SeleniumExercise.pdf) scrape search results from DuckDuckGo
 - Robot Framework - a great tool for automation and E2E testing.
 
 #### Assignment
 
-- [Link Scanner](assignment/week15/selenium) write an app to scan and test all links on a web page 
 - Team assignment: 
   1. create installation instructions for your project
   2. use a virtualenv for local installation
