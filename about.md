@@ -6,9 +6,9 @@ navigation_order: 4
 ## About the Course
 
 
-| **Time**     | Wed 9:00-11:00++, Thurs 13:00-16:00 starting 10 Aug 2022. 
+| Lecture      | Mon 10:00-12:00, CPE room 507.
 | -------------|--------------------------------------------------------
-| Location     | CPE Room 204.  Some lectures **online** using Google Meet.
+| Lab          | Tues 13:00-16:00, CPE Room 202 (may change)
 | Github       | We use [Github](https://github.com) for assignments. You need a Github account. 
 | Schedule & Assignments | [Google Classroom/Classwork][classroom-classwork].
 | Google Classroom       | [Classroom Link][google-classroom]. Class code **r3466kb** 
@@ -26,7 +26,7 @@ navigation_order: 4
 
 ### How to Join [Google Classroom][google-classroom] and Join a Meeting
 
-1. Join the [Google Classroom](https://classroom.google.com).  Use the Class Code in the table above or click this [Classroom invitation link][google-classroom-invite].
+1. Join the course's [Google Classroom](https://classroom.google.com).  Use the Class Code in the table above.
 2. To join a meeting, click on the "Meet" link (video icon) on the Google Classroom page: [classroom meet icon](images/google-meet-icon.png)
 3. Complete this [Student Info Form](https://forms.gle/WE3jN4miDKabFBje8) so we know your Github ID.
 
@@ -85,3 +85,4 @@ To see if your email address or a password you use has been exposed
 in a data breach, visit [haveibeenpwned.com](https://haveibeenpwned.com).
 
 Passwords are *not* sent over the Internet. Local comparison using hashes.
+

@@ -5,16 +5,22 @@ title: Introduction to ISP
 Presentation: [Introduction to Course](Introduction-to-Course.pdf)     
 
 Individual Software Process (ISP) covers the fundamentals of software process,
-focusing on the knowledge and skills to be an effective software developer -- both individually and on a team.
+focusing on the knowledge and skills to be an effective software developer, both individually and on a team.
 
-Topics include software process models, writing good quality code, reviewing and testing code, refactoring, using a Git workflow, automation, Agile values and principles, performing iterative development in a small team, and process improvement.
+Topics include software process models, writing good quality code, reviewing and testing code, refactoring, using a Git workflow, automation, Agile principles and values, performing iterative development in a small team, and process improvement.
 
-"Good code" includes consistently using a coding convention, documenting your code, writing code that is readable and testable, reviewing, and restructuring (refactoring) when needed.
+"Good code" includes consistently using a coding convention, using *best practices*, write code that is readable and testable, documenting your code, reviewing, and restructuring (refactoring) when needed.
 
-To practice these skills, you will develop a small web application as part of a team, and also learn about HTTP and web frameworks.
+To practice all these skills, you will develop a web application as part of a team, and also learn about HTTP and web frameworks.
 
 *01219346 Software Process &amp; Project Management*
 covers software process in more depth. 
+
+### What Does ChatGPT Recommend?
+
+I asked: "*What is the most important process knowledge for software developers?*
+
+Read: [ChatGPT's answer](chatgpt)
 
 ### Goals
 
@@ -26,7 +32,6 @@ covers software process in more depth.
 
 Topics are listed on the [course index page](../topics).    
 The topics are provided for reference -- it's not in the order we cover them.
-
 
 ### How to Join Google Classroom?  How to Contact TAs & Instructor?
 
@@ -40,8 +45,8 @@ You should have a microphone so you can participate in class meetings.
 
 ## Coursework
 
-* Weekly Class Meeting, Wednesday 10:00-12:00.
-* Weekly Lab Thursday 13:00-16:00.
+* Weekly Class Meeting ("Lecture")
+* Weekly Lab
 * Quiz some weeks.
 * Weekly Reading and Problems. Please do before next class.
 * Team Software Project
@@ -51,7 +56,7 @@ You should have a microphone so you can participate in class meetings.
 Platform we will use:
 
 * [Google Classroom](https://classroom.google.com) for announcements, assignments, and discussion.
-* Github Classroom for some assignments and quizzes. 
+* Github Classroom for programming assignments and quizzes. 
 * Course Material on <https://cpske.github.io/ISP/>. 
 * Discord for discussion and quiz/exam monitoring.
 
@@ -64,6 +69,7 @@ Platform we will use:
   - Good editors: Atom, Notepad++, Sublime, VS Code (a bit slow), TextMate (for Mac)
 * Git command line client
   - The Git tool included in IDEs is useful, but you still need the command line `git` and know how to use it!
+* OBS Studio to record your screen during exams.
 
 
 ### Why a Team Software Project?
@@ -140,4 +146,5 @@ If you achieve the minimum exam average, then the approximate grading scale base
 
 [8 Recommendations to Developers](Jomzap-Recommendations.pdf) by Jomzaap Sittipithaya (จอมทรัพย์ สิทธิพิทยา), SKE graduate, entrepreneur, and co-founder of Exzy Corp, from his presentation at KU.    
 [Advise from TaskWorld](TaskWorld-Advise) by SKE grads working at TaskWorld (international software firm in Bangkok).
+
 
