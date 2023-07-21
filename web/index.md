@@ -101,6 +101,8 @@ Two excellent, recommended places to learn are:
 
 [Mozilla Developer Network][MDN] (MDN).
 
+[Prestige.dev](https://prestige.dev) an in-browser tool for sending HTTP requests and viewing responses.  Other uses.  Looks like a Jupyter notebook.
+
 [MDN]: https://developer.mozilla.org
 [hotframeworks]: https://hotframeworks.com "Popularity of different web frameworks based on appearance on Github and Stackoverflow." 
 [calavijo]: http://blog.websitesframeworks.com "Comparison of Web Frameworks - Rails, Grails, Django, Code Igniter"
