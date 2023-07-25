@@ -2,11 +2,7 @@
 title: Tools to Check Code Quality
 ---
 
-Tools can check coding style and possible code problems, such as semantic errors or use of undefined variables. They are called "linters", "static analyzers", or "code auditors".  
-
-The name "lint" comes from the classic `lint` tool for C-language programs. 
-
-Tools can find:
+Tools can check coding style and possible code problems, such as semantic errors or use of undefined variables. The tools help with:
 
 1. Coding Problems
    - language violations
@@ -20,6 +16,10 @@ Tools can find:
    - violation of commenting convention
    - inconsistent coding style
 
+They are called "linters", "static analyzers", or "code auditors".    
+The name "lint" comes from the classic `lint` tool for C-language programs. 
+
+
 
 ## Coding Quality Tools
 
@@ -28,32 +28,38 @@ article in [Real Python][real-python-code-quality] discribes the benefits of cod
 
 The top tools for Python are:
 
-* [Pylint](https://www.pylint.org/) one of the most widely used tools.  Checks for style using PEP8 guidelines and looks for bad code signs.  
+* [Pylint](https://www.pylint.org/) one of the most widely used tools.  Checks for style using PEP8 guidelines and looks for signs of bad code.  
   - Checks code style and possible problems
-  - Assigns **quality score** to your code
-  - Can configure to ignore some items or some parts of code (.pylintrc)
+  - Assigns a **quality score** to your code
+  - Can configure to ignore some items or some parts of your code (.pylintrc)
   - Can create UML class diagrams
-  - Don't expect to eliminate all warnings
+  - You cannot always eliminate all warnings from pylint (but don't give up easily)
   - Install: `pip install pylint`
   - Usage: `pylint path_to_code`  (one or more file names or directory name)
 
-* [Flake8](http://flake8.pycqa.org/en/latest/) combines 3 tools:
+* [ruff](https://github.com/astral-sh/ruff) extremely fast tool that combines functionality of flake8, pydocstyle, and more. It is written in Rust.
+  - Install: `pip install ruff`
+  - Usage: `ruff check path/filename.py` or `ruff check dirname` or `ruff check .`
+
+* [Flake8](https://flake8.pycqa.org/en/latest/) combines 3 tools:
   - PyFlakes - finds errors and potential code problems
   - pycodestyle - checks coding style using a subset of PEP8
   - Mccabe - checks McCabe complexity of code
   - Install: `pip install flake8`
   - Flake8 has many plugins, including a [Django plugin](https://pypi.org/project/flake8-django/)
 
-* [MyPy](http://mypy-lang.org/) static type checking using type hints
+* [MyPy](https://mypy-lang.org/) static type checking using type hints
   - [Code examples](http://mypy-lang.org/examples.html) on Mypy home, side-by-side examples of using type hints
+  - MyPy is different from pylint, ruff, flake8 in what it checks for. So you should use both.
 
-* [Pydocstyle](http://www.pydocstyle.org/en/stable/) tool to check that docstring comments match the PEP257 standard.  Very useful!
+* [Pydocstyle](https://www.pydocstyle.org/en/stable/) tool to check that docstring comments match the PEP257 standard.  Very useful!
   - if you use flake8, add this to flake8: `pip3 install flake8-pydocstrings`
   - otherwise, install it as stand-alone tool: `pip3 install pydocstyle`
 
-* [Pylama](https://github.com/klen/pylama) A wrapper for 9 different tools, including the tools in Flake8.
+* [Pylama](https://github.com/klen/pylama) A wrapper for 9 different tools, including the tools in Flake8.  Ruff may be a better choice.
 
-* This [Github repo][github-code-analysis-tools] has more details and even more tools.
+* This [Github Code Analysis repo][github-code-analysis-tools] has details of even more tools!
+
 
 ## Running pylint or flake8
 
