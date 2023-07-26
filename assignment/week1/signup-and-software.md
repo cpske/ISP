@@ -2,20 +2,24 @@
 title: Course Preparation
 ---
 
-1. Join [Google Classroom](https://classroom.google.com) for "219245 ISP (2022)". Use [this link][classroom-invite] or enter class code [r3466kb][classroom-invite].
-2. Tell us your Github login on this form: <https://forms.gle/UP9owsjtYNZtZ1wN6>
-3. Update your Github Profile, include 
-   - **photo** that clearly shows your face (at least 50% of vertical space)
-   - your **real name** correctly **capitalized** ("Steve Jobs") -- first name only or first and last name are OK.  Not a nickname; Not your Github login.
-4. Install **required software**, if you don't have them:
-   1. Git including the `git` command. Download from <https://git-scm.com>
-   2. Python 3.8 or newer.
-   3. IDE for Python.  [PyCharm][], [PyDev][] (Eclipse), and [VS Code][vscode] are good.
-   4. Pytest. Type `pytest` in a terminal window to see if it is installed. Ifnot, install it using `pip install pytest`. On some machines, it is "pip3" instead of "pip".
-   5. A good text editor that does syntax highlighting, for situations where you need to edit a single file.
-      - Popular editors: [Atom][], [Notepad++][] (Windows), [Sublime][], [VS Code][vscode] (a bit slow), [TextMate][] (Mac)
-      - Terminal-based editor: [vim][] (hard to learn), many others
-      - Windows Notepad is NOT a good editor.
+Please do this before the first week ISP lab:
+
+
+1. Join the [Google Classroom][google-classroom-invite] for this course. Class code is **5zjkval**.
+2. Tell us your Github id on this form: <https://forms.gle/QK36o6ky1D85KLsN7>
+3. Update your Github Profile. Please include 
+   - **photo** that clearly shows your face. Face should be at least 50% of vertical space.
+   - your **real name** correctly **capitalized** ("Steve Jobs") -- first name only ("Steve") or first and last name ("Steve Jobs") are OK.  
+   - Not a nickname; Not your Github login.
+4. Join our [Discord Server][discord-invite].
+5. Install the **required software**, if you don't have them:
+   - **Git** including the `git` command. Download from <https://git-scm.com>
+   - Python 3.9 or newer.
+   - IDE for Python.  [PyCharm][], [PyDev][] (Eclipse), and [VS Code][vscode] are good.
+   - [OBS Studio][obsproject], to record your computer screen during coding tests.
+   - A good **text editor** with syntax highlighting, for situations where you want to edit a single text file.
+     - Good editors: [Atom][], [Notepad++][] (Windows), [Sublime][], [VS Code][vscode] (a bit slow), [TextMate][] (Mac), or [vim][] (hard to learn).
+     - Windows Notepad is NOT a good editor.
 
 [Atom]: https://atom.io
 [Notepad++]: https://notepad-plus-plus.org
@@ -26,8 +30,13 @@ title: Course Preparation
 [TextMate]: https://macromates.com/
 [nano]: https://www.nano-editor.org/
 [vim]: https://www.vim.org/
+[obsproject]: https://obsproject.com/
 
-[classroom-invite]: https://classroom.google.com/c/NDk2ODk1MDE0NTgy?cjc=r3466kb
+[google-classroom]: https://classroom.google.com/c/NjE0ODE4Mzg4ODEz
+[google-classroom-invite]: https://classroom.google.com/c/NjE0ODE4Mzg4ODEz?cjc=5zjkval
+[classroom-classwork]: https://classroom.google.com/w/NjE0ODE4Mzg4ODEz/t/all
+[discord-invite]: https://discord.gg/gy2gbFNa
+
 
 ---
 
@@ -35,13 +44,8 @@ title: Course Preparation
 
 Your Github account is part of **your resume**.  Make it look professional!
 
-Include at least
-
-1. Real name, first name only or first and last
-2. Photo that clearly shows your face (at least 50% of vertical space)
-3. Brief description of you. What are your software-related interests?
-
-![Kongpon Github Profile](../../images/Kongpon-profile.png)&emsp; 
+![Kongpon Github Profile](../../images/Kongpon-profile.png)&emsp;&emsp;
 ![Siratee Github Profile](../../images/Siratee-profile.png)
 
 Note: you do not need to include your email in your profile, for privacy.
+

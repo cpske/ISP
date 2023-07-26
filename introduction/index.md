@@ -47,7 +47,7 @@ You should have a microphone so you can participate in class meetings.
 
 * Weekly Class Meeting ("Lecture")
 * Weekly Lab
-* Quiz some weeks.
+* Quiz and Unit Assessments some weeks.
 * Weekly Reading and Problems. Please do before next class.
 * Team Software Project
 * Regular virtual/live meetings with TAs
@@ -64,8 +64,8 @@ Platform we will use:
 ### Software You Need
 
 * IDE such as PyCharm (IntelliJ), PyDev (Eclipse), or VS Code
-* Python 3.8 or newer
-* Good text editor (something better than Notepad). IDE is OK, but slow for editing a single file. 
+* Python 3.9 or newer
+* Good text editor (something better than Notepad).
   - Good editors: Atom, Notepad++, Sublime, VS Code (a bit slow), TextMate (for Mac)
 * Git command line client
   - The Git tool included in IDEs is useful, but you still need the command line `git` and know how to use it!
@@ -74,9 +74,8 @@ Platform we will use:
 
 ### Why a Team Software Project?
 
-A challenge in creating software is working effectively as a team. 
-Many skills we study in ISP involve other people, 
-and are intended to improve team work.
+A major challenge in creating software is working effectively as a team. 
+Many skills we study in ISP are intended to improve team work.
 
 Hence, we need a *team* project to practice both individual and project-related skills.
 
@@ -121,15 +120,15 @@ Grade is about knowledge and ability to apply it -- not about *points*.
 
 Nonetheless, we *assess* your understanding using:
 
-- *exams*
+- *assessments* on each learning unit, instead of comprehensive midterm & final exams
 - *quizzes*
 - *participation in class*
-- *assignments*
+- *assignments* (homework)
 - *project work and use of good software process*
 
-The project score is based on how well you apply a process and your individual contribution to the project.  The final product is only a part of the project score.
+The project score is based on how well you apply a process, the technical quality, and your individual contribution to the project.  The final product is only a part of the project score.
 
-**Minimum Exam Average to Pass**: *average* exam score of **at least 50%** on both written and programming exams to pass.
+**Minimum Average to Pass**: *average* assessments score of **at least 50%** on both lecture and lab parts to pass.
 
 If you achieve the minimum exam average, then the approximate grading scale based on all your work is:
 
@@ -141,6 +140,8 @@ If you achieve the minimum exam average, then the approximate grading scale base
 <tr> <td> 55 - 65 </td> <td>  D  </td></tr>
 <tr> <td> &nbsp;0 - 55 </td> <td>  F  </td></tr>
 </table>
+
+A "+" grade is given to the upper part of the B, C, and D ranges.
 
 ### Advise from SKE Graduates
 
