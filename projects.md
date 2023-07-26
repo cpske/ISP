@@ -1,6 +1,6 @@
 ---
 title: Projects
-navigation_order: 3
+navigation_order: 2
 ---
 
 ## ISP 2022 Team Projects

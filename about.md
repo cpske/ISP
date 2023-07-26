@@ -1,6 +1,6 @@
 ---
 title: About
-navigation_order: 4
+navigation_order: 3
 ---
 
 ## About the Course
@@ -43,11 +43,11 @@ navigation_order: 4
 
 [Punn](https://github.com/Halcyon905) (ปัณณ์) @halcyon.1111 `email("Punn", "Chunwimaleung", 2)` 
 
-**Project Memtors**, *in addition to the TAs we are lucky to also have...*
+**Project Advisors**, *in addition to the TAs we are lucky to also have...*
 
 [Sahanon](https://github.com/Sahanon-P) @pst\_ping `email("Sahanon", "Phisetpakasit")`
 
-[Preawpan[(https://github.com/Tezigudo) `email("Preawpan", "Thamapipol")`
+[Preawpan](https://github.com/Tezigudo) `email("Preawpan", "Thamapipol")`
 
 <!--
 [Siratee](https://github.com/sirateek) `email("Siratee", "Kittiwitchawoakul")` Line: (on request)

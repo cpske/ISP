@@ -1,391 +1,522 @@
 ---
-title: Schedule
+title: Topics
 navigation_order: 1
 ---
 
-> This schedule may be wrong!    
-> See **[Google Classroom][google-classroom]** for weekly material and assignments.
->
-> Do the assignments as posted on [Google Classroom][google-classroom].
+<table border="0">
+<tr valign="top"> <th width="25%">Topic</th> <th width="75%">Description</th> </tr>
+<tr valign="top">
+<td markdown="span">
+[Introduction](introduction/index)
+</td>
+<td markdown="span">
+[Introduction to course and goals](introduction/index), 
+prerequisites, required work, project, and grading.    
+[Advice from an SKE scholar & entrepeneur](introduction/Jomzap-Recommendations.pdf).    
+</td>
+</tr>
 
-[google-classroom]: https://classroom.google.com/c/NDk2ODk1MDE0NTgy?cjc=r3466kb
+<tr valign="top">
+<td markdown="span">
+[Software Processes](software-process) <br/>
+</td>
+<td markdown="span">
+An introduction to software process concepts and practices. The Waterfall process compared to iterative and incremental development; the Unified Software Develop Process (UP) as a model.    
+[Github features that support SDLC](https://github.com/features)
+</td>
+</tr>
+
+<tr valign="top">
+<td markdown="span">
+[Agile](agile/agile)
+</td>
+<td markdown="span">
+[Agile values, principles, and practices](agile/agile) for software development.
+Agile values and practices can be incorporated into any development process.
+</td>
+</tr>
+
+<tr valign="top">
+<td markdown="span">
+[Scrum](agile/scrum)
+</td>
+<td markdown="span">
+Scrum for managing development work and iterations.
+</td>
+</tr>
+
+<tr valign="top">
+<td markdown="span">
+[Git](git)
+</td>
+<td markdown="span">
+Git commands and common tasks, structure of a git repo, branches, merging, and remote repos.    
+[Visualize][GitVisualizer] a repo as a graph.    
+[Use SSH Keys](https://help.github.com/articles/connecting-to-github-with-ssh/) for authentication instead of your Github password.
+</td>
+</tr>
+
+<tr valign="top">
+<td markdown="span">
+Git and Development
+</td>
+<td markdown="span">
+[Using Github](git/Using-Github) and [slides](git/Using-Github.pdf).    
+[Github Flow](git/index#github-flow), branches, issues, &amp;
+[pull requests](git/Pull-Requests.pdf).    
+Github Flow is a workflow for a team to effectively work together using git.    
+Importance of descriptive commit messages and Pull Requests.
+</td>
+</tr>
+
+<tr valign="top">
+<td markdown="span">
+[Unit Testing](testing)
+</td>
+<td markdown="span">
+Testing "units" of code.  Testing behavior - not just methods.      
+[JUnit for Java](/testing/Intro-to-Unit-Testing.pdf) and 
+[Unit test in Python](testing/PythonUnitTesting.pdf)    
+[Code Coverage](testing/code-coverage)    
+</td>
+</tr>
+
+<tr valign="top">
+<td markdown="span">
+Mock Objects
+</td>
+<td markdown="span">
+Mock Objects for testing.
+</td>
+</tr>
+
+<!-- Types and Type Checking -->
+<tr valign="top">
+<td markdown="span"> 
+Static Typing
+</td>
+<td markdown="span">
+[Intro to Types and Type Checking](code-quality/Type-Checking.pdf) (slides)
+and [Python Type Hinting](type-hints/introduction) by Mai.       
+Python docs [Typing support][python-typing] and
+[Collections base classes][python-abc-collections] are excellent.    
+Add type hints to detect errors: [scorecard.py](type-hints/scorecard.py)      
+Mai's [Type Hint Practice](type-hints/type-hints-practice.pdf).     
+</td>
+</tr>
+
+<tr valign="top">
+<td markdown="span">
+[Code Quality](code-quality)
+</td>
+<td markdown="span">
+Principles, guides, tips, and [tools](code-quality/code-quality-tools) for writing good quality "clean" code.    
+Coding standard, [docstring comments](code-quality/docstrings) and [code checkers](code-quality/code-quality-tools).
+Essential for all developers!
+</td>
+</tr>
+
+<tr valign="top">
+<td markdown="span">
+[Refactoring](refactoring)
+</td>
+<td markdown="span">
+Improve code by restructuring it without changing the external functionality.    
+[Common refactoring situations](refactoring/Refactoring-Patterns.pdf) and how to do them using an IDE.
+</td>
+</tr>
+
+<tr valign="top">
+<td markdown="span">
+[Assertions](code-quality/assertion)
+</td>
+<td markdown="span">
+"Asserts" are tests of what should be true at some point in code.  Assertions reduce errors and document code-level assumptions.
+</td>
+</tr>
+
+<tr valign="top">
+<td markdown="span"> 
+[Code Review](code-review)
+</td>
+<td markdown="span">
+[Software Review](code-review/Reviews.pdf) slides and [Overview](code-review)      
+[Code Review Best Practices](code-review/code-review-best-practices) from experts    
+[Reviews chapter from Stellman &amp; Greene](code-review/Reviews-Stellman-and-Greene.pdf)    
+[Review Checklists](code-review#checklists) examples and guidance    
+Assignment: Code Review Checklist and Procedure (script)
+</td>
+</tr>
+
+<tr valign="top">
+<td markdown="span"> 
+Web App Testing    
+End-to-End Testing    
+</td>
+<td markdown="span">
+[Web App Testing](testing/WebTesting.pdf) how to test web apps, includes E2E with Selenium.    
+[Intro to Selenium](testing/Selenium-intro) and [Page Scraping](testing/Selenium-scraping).
+</td>
+</tr>
+
+<tr valign="top">
+<td markdown="span"> 
+[Automation and CI](automation)  
+</td>
+<td markdown="span">
+[Continuous Integration](https://docs.travis-ci.com/user/for-beginners)    
+[Ant](automation/Ant.pdf), [Make](automation/Make.pdf), and other build tools  
+</td>
+</tr>
+
+<tr valign="top">
+<td markdown="span"> 
+[Authentication](authentication)  
+</td>
+<td markdown="span">
+Techniques for authenticating users and software clients (apps), including OAuth.    
+Django's [authentication](django/authentication) and [authorization](django/authorization) modules.
+</td>
+</tr>
+
+<tr valign="top">
+<td markdown="span"> 
+[UML](uml)
+</td>
+<td markdown="span">
+The standard for visual software modeling and design.    
+You should be able to understand common UML diagrams.
+</td>
+</tr>
+</table>
+
+[git-branching]: https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell
+[git-book-branching-and-merging]: https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging
+[isp-qa]: https://isp2018.github.io/isp-qa/ 	
+[type-hints]: type-hints/introduction.md
+[python-abc-collections]: https://docs.python.org/3/library/collections.abc.html
+[python-typing]: https://docs.python.org/3/library/typing.html
+---
+
+## Web Applications and Django
+
+<table border="0">
+<tr valign="top"> <th width="25%">Topic</th> <th width="75%">Description</th> </tr>
+
+<tr valign="top">
+<td markdown="span">
+[HTTP](web/index)
+</td>
+<td markdown="span">
+HTTP is the communication protocol used by web apps and web services.    
+[Introduction to HTTP](web/HTTP.pdf)    
+[HTTP in Action](web/HTTP-in-Action.pdf) class exercises using HTTP, requires ncat or netcat.    
+</td>
+</tr>
+
+<tr valign="top">
+<td markdown="span">
+[Web Servers and Frameworks](web/index#web-frameworks)
+</td>
+<td markdown="span">
+[Introduction](web/Web-Apps-and-Web-Servers.pdf) to how a web server and web app typically handle requests and responses.  This helps make sense of the various components of a web framework.    
+[WSGI](web/wsgi-servers) standard for connecting Python web apps to web app servers.
+</td>
+</tr>
+
+<tr valign="top">
+<td markdown="span">
+[Django](django/django)
+</td>
+<td markdown="span">
+[Introduction to Django](django/Intro-to-Django.pdf) and MVC design pattern.
+</td>
+</tr>
+
+<tr valign="top">
+<td markdown="span">
+[KU Polls Project](assignment/ku-polls/)
+</td>
+<td markdown="span">
+A polls application based on the Django Polls tutorial, implemented as an iterative and incremental project.  Each iteration involves planning, design, implementation, testing, and review.
+</td>
+</tr>
+
+<tr valign="top">
+<td markdown="span">
+[Database Basics](database/Database-Basics.pdf)
+</td>
+<td markdown="span">
+Intro to database concepts and how to use a database in code.
+Tables, field types, identity fields, relating tables, basic CRUD operations.
+</td>
+</tr>
+
+<tr valign="top">
+<td markdown="span">
+[Object-Relational Mapping](database/orm)
+</td>
+<td markdown="span">
+ORM concepts and frameworks. Different domain models and their database table schema.
+All web frameworks use ORM.
+Understanding ORM concepts makes it easier to understand and work
+with Django models.
+</td>
+</tr>
+
+<tr valign="top">
+<td markdown="span"> 
+[12-Factor App](web/12FactorApp.pdf)   
+</td>
+<td markdown="span">
+Recommendations for maintainable cloud-based applications, by Heroku. 
+</td>
+</tr>
+ 
+<tr valign="top">
+<td markdown="span">
+[Separate Configuration from Code](refactoring/separate-configuration)
+</td>
+<td markdown="span"> 
+[Separate configuration from code](refactoring/Separate-config-from-code.pdf) is a good practice for all software, not just web apps.    
+How to [Externalize Configuration](django/external-configuration) in Django.
+</td>
+</tr>
+
+<tr valign="top">
+<td markdown="span">
+[Import and Export Data](django/data-import-export) 
+</td>
+<td markdown="span">
+How to create "starter" data so that others can easily set-up and use your Django application.
+</td>
+</tr> 
+
+<tr valign="top">
+<td markdown="span">
+[Virtual Environment](django/virtualenv)
+</td>
+<td markdown="span"> 
+[Virtualenv Quickstart](django/virtualenv-quickstart) and [Using Virtualenv](django/virtualenv) - how to run apps in a virtual environment
+for portability, reliability, and security.
+</td>
+</tr>
+
+<tr valign="top">
+<td markdown="span">
+[Messages Framework](django/messages-framework) 
+</td>
+<td markdown="span">
+Easily pass messages from a view to a template.
+</td>
+</tr>
+
+<tr valign="top">
+<td markdown="span"> 
+[Organize Tests & Models](django/test-organization)
+</td>
+<td markdown="span">
+[Separate your tests](django/test-organization) and [models](django/organize-django-code) into individual files, to reduce conflicts on team projects.
+</td>
+</tr>
+
+<tr valign="top">
+<td markdown="span">
+[Logging](logging/)
+</td>
+<td markdown="span">
+[Logging](logging/Logging.pdf) is an essential part of a web application.   
+[Logging Practice](logging/logging-practice) and [demo_log.py](logging/demo_log.py) code
+</td>
+</tr>
+
+<tr valign="top">
+<td markdown="span"> 
+Deployment
+</td>
+<td markdown="span">
+How to package and deploy a web application.
+Manage dependencies and isolate applications in containers.
+</td>
+</tr>
+</table>
 
 ---
 
-### Schedule
-
-#### Preparation
-
-Please do this before the course starts. Otherwise, do it in Week 1.
-
-- [Sign-up and Install Required Software](assignment/week1/signup-and-software)
-- Read [About the course](about) for essential class resources & how to contact TAs.
-
-
-### Week 1
-
-- [Introduction to the course](introduction/)
-- [Introduction to software process](software-process/)
-- Exercise: Software Process Basics (Google Form)
-- Exercise: [Write a Process Description for an Everyday Project](assignment/week1/general-process-exercise) 
-- [Code Quality, Coding Style, and Coding Standards](code-quality)
-- Python Coding Style: [How to Write Beautful Python Code with PEP8](https://realpython.com/python-pep8/) on [Real Python](https://realpython.com/)
-- Exercise: apply the Python style guidelines
-- Programming 2 Review, basic Python and O-O concepts.
-
-
-#### Week 1 Lab
-
-- [Git](git/) concepts, Git commits as a graph, managing files and using Git history. 
-- Exercise: Git practice (submit on Github)
-- Exercise: use the [Git Visualizer](http://git-school.github.io/visualizing-git/) to see a git graph
-- Exercise: use `gitk` tool that is included with git
-- Exercise: complete parts 1-2 of [Learn Git Interactive](https://learngitbranching.js.org/). Section on *Moving Work Around* is recommended.
-- [Using Github](git/Using-Github) & Github Classroom.
-- Exercise: practice using Github Classroom (not done in 2022)
-- Quiz: Programming Skill Assessment
-
-#### Week 1 Assignment
-
-- [Software Process Homework](assignment/week1/software-process-homework) reading assignment
-- [Software Process Questions](https://forms.gle/M5RcqiDUh4NkFviW9) based on the reading
-- Git commands "cheat sheet" on Github
-
-
-### Week 2
-
-- [Scrum](agile/scrum)
-  - Watch [Scrum in Under 10 Minutes](https://www.youtube.com/watch?v=XU0llRltyFM) on Youtube
-  - [Introduction to Scrum](agile/scrum) with links you should **read**
-  - Read [Scrum Guide](https://www.scrumguides.org/scrum-guide.html). Anything in the Scrum Guide may be on a quiz.
-- [Git branch and merge](git/branch-and-merge)
-- Exercise: practice merge and conflict resolution
-- [Git remotes](https://cpske.github.io/ISP/git/Git-Remotes.pdf)
-
-#### Week 2 Lab
-
-- Feedback on Week 1 assignments
-- Github Flow and Pull Requests - [Github's Intro](https://guides.github.com/introduction/flow/)
-- Exercise: Github Flow questions (Google form)
-- Exercise: KU Cafe
-
-#### Week 2 Assignment
-
-- Reading Assignment:
-  - [Scrum Guide](https://scrumguides.org/scrum-guide.html)
-  - [Github Flow](https://guides.github.com/introduction/flow/)
-  - [Pull Request Tutorial](https://yangsu.github.io/pull-request-tutorial/)
-  - [Commenting on Pull Requests](https://help.github.com/en/articles/commenting-on-a-pull-request)
-- Complete at least parts 1 & 2 of this tutorial: <https://learngitbranching.js.org/>
-- Add Remote Commands to your Git "cheat sheet" from Week 1, using remotes.md in starter code.
-
-### Week 3
-
-- [Introduction to Testing](testing/)
-- [Python Unit Testing](testing/PythonUnitTesting.pdf) my slides
-  - [unittest](https://docs.python.org/3/library/unittest.html) in the official Python docs
-- Exercise: unit testing practice (simple exercise)
-
-#### Week 3 Lab
-
-- Quiz on week 1 and 2 material
-- Review Github Flow
-- [Coding Standard and Code Quality](/code-quality/)
-- [Docstring Comments](code-quality/docstrings). Three conventions and the one we recommend.
-  - for parameters and return values use [type hints](type-hints/) instead of writing the data type in comments
-- Exercise: add docstring comments to code
-- Exercise: improve a code using Pylint
-- Unit Tests for a Bank Account code
-- Homework: Read "*Documenting Python Code*" <https://realpython.com/documenting-python-code/>. Really *read it*.
-- Homework: Finish Unit Tests for Bank Account
-
-#### Week 3 Assignment
-
-- Create a Burn-down chart for a Sprint. 
-Not assigned this year:
-- [Command Line Basics](assignment/week3/Command-Line-Basics.odt) you should know (nothing to submit) 
-  - <https://drive.google.com/open?id=1igAYSBGdshgz1ESZOjcFwP0x-vCT-02CatdWEcVV7aQ>
-
-### Week 4
-
-- **Preparation:** install ncat on your computer and TEST IT: <https://nmap.org/ncat/>.
-- [Intro to TCP/IP and HTTP Protocol](web/index), [presentation](web/HTTP.pdf)
-- Exercise: [HTTP in Action](web/HTTP-in-Action.pdf). Manually enter HTTP requests and responses using ncat.
-
-
-#### Week 4 Lab
-
-- [Intro to Django](django/Intro-to-Django.pdf)
-- [KU Polls Project Inception](assignment/ku-polls/inception) 
-  - Create a Vision, Requirements, and a Roadmap for the project (Project Plan)
-  - Initialize a Github repository, add essential docs to a Wiki, and start a Project
-- Description of KU Polls first iteration (Django Polls tutorial)
-  - Domain Model for Polls app - `Question` and `Choice` classes
-  - You will be implementing features according to the tutorial, so goods tasks are "Implement Tutorial part 1", "Implement Tutorial part 2", etc.
-  - As you do each part of the tutorial **add a long description** to each task, using Markdown.
-  - Development work on a git branch named `iteration1`. Push this branch to Github. Merge to master/main when done.
-
-#### Week 4 Assignment
-
-- [KU Polls Iteration 1](assignment/ku-polls/iteration1) (Django Tutorial)
-  - submit work in your own `ku-polls` repo on Github.
-  - use correct repo structure! No extra layer of directories.
-
-
-### Week 5
-
-- Review progress on KU Polls iteration 1.
-- [Web app and web framework overview](web/index#web-frameworks) and [presentation](web/Web-Apps-and-Web-Servers.pdf)
-  - was week 4 in prior years
-- [How Django handles requests (with graphic)](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Introduction#what_does_django_code_look_like) on MDN
-  - *Did anyone read this?* 
-- [Django Review](django/Django-review-1.pdf)
-- Improvements to KU Polls for Iteration 2
-  - add an `end_date` to polls, 
-  - add methods `is_published`, `can_vote`
-  - improve navigation by adding links to home page - should never need to use "Back" button
-  - add default landing page (redirect)
-  - externalize configuration data and secrets
-- Quiz: Unit Testing
-
-#### Week 5 Lab
-
-- [Separate configuration from code](refactoring/separate-configuration) & how to externalize configuration
-  - [Presentation](refactoring/Separate-config-from-code.pdf)
-  - a [12-Factor App](https://12factor.net/config) recommended practice, also called "externalize configuration" 
-- Exercise: Externalize Configuration <https://github.com/ISP21/decouple-example>
-
-#### Week 5 Assignment
-
-- Start background work and proposal for course team project
-- [KU Polls Iteration 2](assignment/ku-polls/iteration2.md)
-
-
-### Week 6
-
-- Introduce the Team Projects.
-- [Brief Introduction to Databases](database/Database-Basics.pdf)
-- Database Exercise: <https://cpske.github.io/ISP/assignment/week6/database-exercise> 
-  - Use a database browser to view & describe the KU Polls database schema
-- Converting a software model to database model
-- [Basics of Object-Relational Mapping](database/Persistence-and-ORM.pdf) 
-- Persistence in Django: how Django provides the CRUD operatons
-- Overview of KU Polls Iteration 3
-- Homework (due before Thursday lab): Revise KU Polls domain model
-- [Authentication](authentication)
-- Lab: Intro to Authentication in Django
-- Lab: Refactor KU Polls for Iteration 3 (1-user-1-vote)
-
-#### Assignment
-
-- Django Review Questions (answer online): <https://forms.gle/zPuPzzt76QWboFZXA>
-- (Not assigned in 2021, but a good thing to do) [Test another student's KU Polls](assignment/week6/ku-polls-peer-testing)
-
-
-### Team Project
-
-Submit a project proposal using the Project Spreadsheet
-
-- Project Guidelines: <http://bit.ly/ISP-project-description>
-- Proposal Template: <http://bit.ly/ISP-project-template>
-- Project Proposals: 
-  * <http://bit.ly/ISP2021-projects> to submit your team and proposal
-  * <http://bit.ly/ISP2020-projects> last year's proposals
-
-
-### Week 7
-
-- Review some previous material and assignments
-- Why spend so much time on KU Polls?
-- UML Class & Sequence Diagrams (added in 2022)
-- Class Diagram exercise
-- Sequence Diagram exercise
-- Lab: Smoke Testing of another student's KU Polls (post issues)
-- Virtual Environments for Python
-
-#### Assignment
-
-- [KU Polls Iteration 4](assignments/ku-polls/iteration4)
-
-Not covered in 2022:
-- [Code Coverage tools](testing/code-coverage) for Python 
-- Exercise: apply code coverage
-- [Testing in Django](testing/WebTesting.pdf) - how to test models, views, url dispatcher, and templates
-- ORM modeling practice (optional) write Django models for a sales application 
-  - Github Classroom Assignment: <https://classroom.github.com/a/UOcT0BOr>
-  - Instructions: <https://cpske.github.io/ISP/assignment/orm/Modeling-Practice.pdf>
-
-
-### Midterm 
-
-- Exam is 27 September. Time and Location TBA.
-- Covers everything so far.
-- Recommended OBS Video Settings: <https://drive.google.com/open?id=1xiDH6NImH0PAAZp5AUNWtJeLzlRSYoqiAOFE8wFS1vM&authuser=1>
-  - We may not need this is 2021 if we can use KU's Exam application.
-
-- Coding Part at a Later Date
-- Coding emphasize **unit testing** and **code quality**.
-- Coding will also cover **refactoring** and maybe **design patterns**.
-
-
-### Week 8
-
-- [Logging](logging/)
-- [Logging practice](logging/logging-practice)
-- User Stories
-- [Milestones](software-process/Milestones.pdf) to show progress toward completion of a project
-- [Domain Modeling](modeling/Domain-Models.pdf) and [Category List](modeling/Conceptual-Category-List.pdf) to help discover domain classes
-- Lab: User Stories.  Construct User Stories, then use them to discover Domain Classes.
-
-
-#### Assignment
-
-- [Add Logging to KU Polls](assignment/ku-polls/logging)
-- Write User Stories for your project.  Add them to the project wiki.
-- Add a *domain class diagram* to your project docs
-- Use the User Stories to identify domain classes and help you create a domain model
-
-
-### Week 9
-
-- [Automation and Continuous Integration](automation/)
-- Exercise using CI - add Travis-CI and Codecov to demo-pyci project
-  - Instructions <https://cpske.github.io/ISP/automation/travis-demo-project>
-  - Starter code (to be added) 
-- Code Coverage & Coverage Tool for Python
-- Exercise: add code coverage to demo-pyci project, use Codecov.io to display the report, and add badges to the project README
-- Lab: Adding *badges* to your Github repo, to indicate status. Badges provide a quick visual indicator of project health.
-
-
-#### Assignment
-
-- [Add CI to KU Polls](assignment/week8/ku-polls-ci-assignment)
-  - Use CI to run unit tests and run code coverage
-  - Add "badges" to your KU Polls README.md for Travis and CodeCov status
-- Reading on terminology & concepts for refactoring and design patterns
-  - Next week you will be asked to explain these terms and concepts, and identify them in code.
-- Read <https://refactoring.guru/refactoring> 
-- [Movie Rental Refactoring, Part 1](assignment/movierental/movierental-part1)
-  - Starter Code on Github: <https://classroom.github.com/a/_qGEboUn>
-
-
-### Week 10
-
-- What is "good code"?  How can we improve the quality of code?
-  - Goals, problems, and forces on software that motivate the defination of "good code" and why it's important.
-  - Visible metrics and characteristics of good and poor code
-  - Principles and practices for writing good code
-- [Introduction to Refactoring](refactoring/) and [slides](refactoring/Refactoring.pdf)
-- [Refactoring Signs](https://refactoring.guru/refactoring/smells) (*aka* "Code Smells") on refactoring.guru
-- [When to Refactor](https://refactoring.guru/refactoring/when) and [Refactoring Process](https://refactoring.guru/refactoring/how-to)
-- [Catalog of Refactorings](https://refactoring.guru/refactoring/techniques)
-- Refactoring Exercise: Pizzashop refactoring <https://github.com/ISP2022/pizzashop>
-- Anything on <https://refactoring.guru/refactoring> may be on a quiz!
-
-- [Static Typing](https://cpske.github.io/ISP/code-quality/Type-Checking.pdf), Static Analysis, and [Type Hints](type-hints/introduction)
-- Static Type Checking Exercise: [scorecard.py](type-hints/scorecard.py)
-- [Type Hints](type-hints) and [Introduction](type-hints/introduction) by Mai Noripong
-- Another [Type Hints Introduction](https://fastapi.tiangolo.com/python-types/) on FastAPI; really good, simple examples.
-- [Type Hints Practice](https://docs.google.com/document/d/1S-5o_NHJXQosnQIT3pvI20wxxzonOKm_ryG0lYKu_Ws/) on Google Docs
-
-> IDEs have refactoring actions that perform refactoring faster and reduce errors. 
-> But, in Python the refactoring tools *work poorly* unless the code has accurate *type hints*. *Type Hints* also improve static analysis so that tools can find more problems and potential errors.
-> Please pay special attention to the type hints for Collections, return types, and optional values.
-
-#### Assignment
-
-- Homework: Learn the Refactorings on [Refactoring.Guru](https://refactoring.guru/refactoring). Details on Google Classroom.
-- Homework: Movie Rental refactoring, Part 1.
-
-
-### Week 11
-
-- [Review common refactorings](refactoring/Refactoring-Review.pdf) - submit your answers on Google Classroom (Google Form)
-- More Refactoring - refactor structure of classes, creating objects (*Not done in 2022*)
-- [Refactoring Patterns](refactoring/Refactoring-Patterns.pdf)
-- Intro to Design Patterns
-- Singleton & Factory Method Patterns - other patterns are covered in Prog2 and SS&D
-- Type Hints Practice (*see link in Week 10*)
-- Lab: Organizing Django code. Replace "models.py", "tests.py", and "views.py" with directories (packages) containing multiple files. 
-- Lab: [CookieCutter Django](https://github.com/cookiecutter/cookiecutter-django) and [documentation](https://cookiecutter-django.readthedocs.io/en/latest/) have examples and good advice for structuring Django projects. Discover and describe some of them.
-
-#### Assignment
-
-- [Movie Rental Refactoring, Part 2](assignment/week12/movie-rental2)
-- Team Projects: prepare to demo your work soon
-
-## Week 12
-
-- [Agile](agile/agile) - Agile values, principles, and practices.
-- Exercise: [Agile Practice Review Questions](agile/agile-practice-questions.pdf)
-- Introduction to OAuth
-- Exercise: OAuth Playground and questions on Google Classroom (form)
-- [Code Reviews][code-review]
-
-- Lab: perform a short code review and **then** start on your team's code refview script and checklist.
-
-[code-review]: https://cpske.github.io/ISP/code-review/
-[code-review-assignment]: https://cpske.github.io/ISP/assignment/week12/code-review
-
-#### Assignment
-
-- Read [Reviews](code-review/Reviews-Stellman-and-Greene.pdf) chapter from book by Stellman and Greene.
-- Read 3 [Code Review Best Practices](code-review/code-review-best-practices) articles in [Code Review Assignment][code-review-assignment]
-- [Create a Code Review Script and Checklist](assignment/week12/code-review) and then do a walk-through of project code
-
-- (*not in 2022*) Homework: Read the [Learn More](agile/agile#learn-more) articles in [Agile](agile/agile). They are fundamental.
-- Optional: [Agile Crossword Puzzle](agile/crossword-puzzle.pdf) 
-  - answers available online
-- (*not in 2022*) Read the articles in [Agile Practices](assignment/week9/agile-practices) (there will be quiz on this) 
-- Read tips from *Practices of an Agile Developer* ("Tips" sections in assignment)
-
-### Week 13
-
-- Refactoring Review (again)
-- Review Movie Rental refactoring
-- Testing Pyramid and End-to-End Testing in [Web Testing](testing/WebTesting.pdf)
-- [Selenium](testing/Selenium-intro) for testing web applications. Some slides in [Web Testing](testing/WebTesting.pdf)
-- [Selenium Exercise](testing/SeleniumExercise.pdf) scrape search results from DuckDuckGo
-- Lab: Project Demos
-
-
-#### Assignment
-
-- Reading on Agile Practices (tba)
-- [Link Scanner](assignment/week15/selenium) write an app to scan and test all links on a web page using Selenium, and reports bad links.
-
-
-### Week 14
-
-- Remaining project demos.
-- Review Agile Practices (week 10 assignment), including comments in code.
-- The [12-Factor App](web/12FactorApp.pdf) - 7 factors that apply to your projects
-- Robot Framework - a great tool for automation and E2E testing.
-
-#### Assignment
-
-- Team assignment: 
-  1. create installation instructions for your project
-  2. use a virtualenv for local installation
-- Team Assignment: deploy your application to a cloud service
-
-
-### Week 15
-
-- Review
-- Bug Hunting - find problems in other teams' software
-
-#### Assignment
-
-- Individual assignment: [install and run another team's project](assignment/week15/installation-testing)
-  - Post issues for any problems in their installation instructions.
-  - Goal is to find problems with installation and setup, not in the application itself (that is next week's Bug Bounty assignment).
-
-- [Bug Bounty](assignment/week15/bug-bounty) - try to find bugs in deployed projects of other teams 
-  - URLs of deployed projects are shown in Google Sheet for Project Testing
-  - Top bug hunters will earn extra assignment points
-
-<a></a>
-<a href="#week-1"></a>
-<a href="#week-8"></a>
-<a href="#schedule"></a>
+## Other Topics
+
+These may be *implicitly* covered as part of other topics.
+
+<table border="0">
+<tr valign="top"> <th width="25%">Topic</th> <th width="75%">Description</th> </tr>
+<tr valign="top">
+<td markdown="span">
+Project Planning
+</td>
+<td markdown="span">
+1. Writing a good Vision statement    
+2. Defining Goals and Milestones    
+3. Key planning concepts from the RUP framework    
+4. Prioritizing development (RUP: value to customer, high risk, importance to architecture)    
+5. Prototyping to reduce risk and uncertainly
+</td>
+</tr>
+<tr valign="top">
+<td markdown="span">
+Essential Project Documents
+</td>
+<td markdown="span">
+*Vision Statement* - describes goal and "vision" of the product    
+*Requirements* - features, use cases or user stories ("Software Requirements Specification" in some projects)    
+*Project Plan* - overall plan of what to build at each iteration, and the process to use   
+*Iteration Plan* - goal, milestones, and tasks for one iteration    
+*Software design* - document at least high level design    
+*Project notebook*, e.g. wiki, to record:
+	- decisions related to architecture 
+	- important design decisions and *why* you made them (rationale)    
+	- solutions and knowledge      
+*Build & installation instructions* - including dependencies
+</td>
+</tr>
+<tr valign="top">
+<td markdown="span">
+[License](https://choosealicense.com)
+</td>
+<td markdown="span">
+Understand the different open source licenses like GNU, BSD, MIT,  and Creative Commons
+so you can choose one that matches what you want.    
+Don't just *blindly* write "GNU" which is incomplete (should be "GNU GPL v3" or similar) and inappropriate for many projects.  The GPL can be quite restrictive!
+</td>
+</tr>
+<tr valign="top">
+<td markdown="span">
+Project Tools
+</td>
+<td markdown="span">
+Project board - a board for whole project and task board for each iteration   
+Issue tracker - bugs, change requests, and more    
+Burn-down or Burn-up chart (optional) - track your rate of progress    
+Project wiki - good location for iteration plans, software design notebook, recording knowledge and solutions    
+</td>
+</tr>
+<tr valign="top">
+<td markdown="span">
+Information Radiator
+</td>
+<td markdown="span">
+Create **one place** that quickly conveys all useful info about your project.    
+When project info (tasks, communication, docs, tools) are spread across many different places, people don't use them!    
+The information radiator is **one place** that links to everything you need.
+Some teams use Slack, Discord, or the Project Board as info radiator.   
+*Web hooks*, *integrations*, and *badges* can be used to connect tools and notifications.     
+</td>
+</tr>
+<tr valign="top">
+<td markdown="span">
+Task Boards
+</td>
+<td markdown="span">
+Task board should be part of your workflow -- part of an *information radiator*.  Good choices are:     
+[Trello](https://trello.com)    
+[Asana](https://asana.com)     
+[Github Project Boards](https://docs.github.com/en/github/managing-your-work-on-github/about-project-boards)        
+[7 Scrum Software Tools สำหรับใช้บริหารจัดการโปรเจค](https://www.borntodev.com/2020/02/20/scrum-software-tools/) (Thai)    
+Note: task board must to viewable by TAs and instructor!
+</td>
+</tr>
+<tr valign="top">
+<td markdown="span">
+[Markdown](documentation/markdown)
+</td>
+<td markdown="span">
+Everyone should know how to use Markdown. It's the *lingua franca* of online project docs. Much easier and cleaner to write than HTML.
+</td>
+</tr>
+<tr valign="top">
+<td markdown="span">
+Process Improvement
+</td>
+<td markdown="span">
+How to discover and *implement* improvements to your development process
+</td>
+</tr>
+<tr valign="top">
+<td markdown="span">
+Measuring Progress and Quality
+</td>
+<td markdown="span">
+Velocity - the team's rate of task completion <br/>
+Common software metrics, like LOC, functions, code "units". <br/>
+Count and classify defects.  Design defects, coding defects, test defects, regression defects.
+</td>
+</tr>
+<tr valign="top">
+<td markdown="span">
+Estimation
+</td>
+<td markdown="span">
+[Estimation slides](estimation/Estimation.pdf) and [Prof. Jittat's Slides](estimation/06a-estimation.pdf)<br/>
+Frequent question of managers and customers is "*how long will it take?*" or "*when will be ready?*"  Planning requires good estimates, but most developers are very poor at estimation.
+<br/>
+- How to estimate development time and code size <br/>
+- Track your effort in order to improve ability to estimate <br/>
+- [Agile Estimation](http://www.construx.com/Resources/Presentation/Agile_Estimation__Key_Principlies_and_Practices_for_Successful_Agile_Practices/) talk by Construx (Steve McConnell's company)
+</td>
+</tr>
+<tr valign="top">
+<td markdown="span">
+Self-improvement
+</td>
+<td markdown="span">
+- Importance of continual learning and reading<br/>
+- Advise from [SKE grad @ TaskWorld](introduction/taskworld-advise)<br/>
+- _Pragmatic Programmer_ Item 5: Your Knowledge Portfolio (p. 37) <br/>
+- Goal-directed learning instead of comprehensive learning or random videos<br/>
+- Track your own performance<br/>
+- Create and improve your own Personal Software Process
+</td>
+</tr>
+<tr valign="top">
+<td markdown="span">
+Communication
+</td>
+<td markdown="span">
+One of the main causes of unsuccessful projects is poor communication.
+</td>
+</tr>
+<tr valign="top">
+<td markdown="span">
+Anti-Patterns for Developers
+</td>
+<td markdown="span">
+[10 practices of highly ineffective software developers](https://www.infoworld.com/article/2615765/application-development/10-practices-of-highly-ineffective-software-developers.html) on InfoWorld
+</td>
+</tr>
+
+</table>
+
+[Old 2019 ISP index](2019/)
+
+---
+## Project Documentation 
+
+Good places for project documentation:
+
+* [Github Wiki][github-wiki] - good for all kinds of project docs, plans, designs, reference material, and retrospective summaries
+* [Github pages](https://pages.github.com/) - create a static site from a specified directory or branch of your project repository
+* [readthedocs.io](https://readthedocs.io)
+* [swagger.io](https://swagger.io) - mainly for API and programmer docs
+
+[github-wiki]: https://guides.github.com/features/wikis/
+
+[GitVisualizer]: http://git-school.github.io/visualizing-git/ "Interative tool draws a graph of commits in a repo"
+
+---
+
+Links to test your link scanner:
+
+- <a> "a" tag without "href"</a>
+- <a href="#project-documentation">project documentation</a> "href" with page fragment only (valid reference)
+- <a href="#project-and-foo-boards">project and task boards</a> "href" with page fragment only (invalid ref)
+- <a href="https://www.does.not.exist">www.does.not.exist</a> href with unresolvable hostname
+- <a>another linkless "a" tag</a>
