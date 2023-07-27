@@ -7,13 +7,13 @@ navigation_order: 3
 
 | Lecture      | Mon 10:00-12:00, CPE room 507.
 | -------------|--------------------------------------------------------
-| Lab          | Tues 13:00-16:00, CPE Room 202 (may change)
+| Lab          | Tues 13:00-16:00, CPE Room 202.
 | Google Classroom       | Announcements, schedule, and assignments. [Classroom Link][google-classroom] or use class code **5zjkval** 
 | Schedule & Assignments | [Google Classroom > Classwork][classroom-classwork].
 | Github       | [Github](https://github.com) to submit coding work & quiz. You need a Github account. 
-| Collection of Course Material | <https://cpske.github.io/ISP>, but order may not match the course.
-| Discord                | Q&A, discussion, meeting with TAs. [Invite Link][discord-invite] to join.
-| Sign-up & Preparation  | Please do this [Sign-up and Preparation](assignment/week1/signup-and-software) before the first class.
+| Collection of Course Material | <https://cpske.github.io/ISP>, but some content may not match this course.
+| Discord                | Q&A, discussion, meeting with TAs. Join using this [Invite Link][discord-invite].
+| Sign-up & Preparation  | Please do this [Sign-up and Preparation](assignment/week1/signup-and-software) before the first lab.
 | Scores       | <https://bit.ly/isp2023-scores> for classwork and homework 
 
 
@@ -43,7 +43,7 @@ navigation_order: 3
 
 [Punn](https://github.com/Halcyon905) (ปัณณ์) @halcyon.1111 `email("Punn", "Chunwimaleung", 2)` 
 
-**Project Advisors**, *in addition to the TAs we are lucky to also have...*
+*In addition to the regular TAs we are lucky to also have...*
 
 [Sahanon](https://github.com/Sahanon-P) @pst\_ping `email("Sahanon", "Phisetpakasit")`
 
@@ -55,7 +55,7 @@ navigation_order: 3
 
 ### Instructors
 
-[Sirisilp](https://github.com/sirisilp) `email("Sirisin", "Kongsilp")`
+[Sirisilp](https://github.com/sirisilp) `email("Sirisilp", "Kongsilp")`
 
 [Jim](https://github.com/jbrucker) `email("J", "Brucker", 7)`
 
