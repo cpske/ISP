@@ -12,7 +12,7 @@ Please do this before the first week ISP lab:
    - your **real name** correctly **capitalized** ("Steve Jobs") -- first name only ("Steve") or first and last name ("Steve Jobs") are OK.  
    - Not a nickname; Not your Github login.
 4. Join our [Discord Server][discord-invite].
-5. Install the **required software**, if you don't have them:
+5. Install this **required software**, if you don't have them:
    - **Git** including the `git` command. Download from <https://git-scm.com>
    - Python 3.9 or newer.
    - IDE for Python.  [PyCharm][], [PyDev][] (Eclipse), and [VS Code][vscode] are good.
@@ -36,7 +36,6 @@ Please do this before the first week ISP lab:
 [google-classroom-invite]: https://classroom.google.com/c/NjE0ODE4Mzg4ODEz?cjc=5zjkval
 [classroom-classwork]: https://classroom.google.com/w/NjE0ODE4Mzg4ODEz/t/all
 [discord-invite]: https://discord.gg/gy2gbFNa
-
 
 ---
 

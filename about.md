@@ -30,10 +30,6 @@ navigation_order: 3
 3. Complete this [Student Info Form](https://forms.gle/WE3jN4miDKabFBje8) so we know your Github ID.
 
 
-### [Introduction to the Course](introduction/index)
-
-(click the above line for course intro doc)
-
 ### Teaching Assistants
 
 [Napasakorn](https://github.com/Savetang19) (นภัสกร) @savetang `email("Napasakorn", "Boonkerd")`
