@@ -5,8 +5,8 @@ navigation_order: 5
 
 ## About the Course
 
-| Lecture      | Mon 10:00-12:00, CPE room 507.
-| -------------|--------------------------------------------------------
+| Lecture      | Mon 9:00-12:00, CPE room 507.  Please come on time.
+|--------------|--------------------------------------------------------
 | Lab          | Tues 13:00-16:00, CPE Room 202.
 | Google Classroom       | Announcements, schedule, and assignments. [Classroom Link][google-classroom] or use class code **5zjkval** 
 | Schedule & Assignments | [Google Classroom > Classwork][classroom-classwork].
@@ -23,27 +23,20 @@ navigation_order: 5
 
 Please do this [Sign-up and Preparation](assignment/week1/signup-and-software) before the first lab.
 
-#### How to Join [Google Classroom][google-classroom] and Join a Meeting
-
-1. Join the course's [Google Classroom](https://classroom.google.com).  Use the Class Code in the table above.
-2. To join a meeting, click on the "Meet" link (video icon) on the Google Classroom page: [classroom meet icon](images/google-meet-icon.png)
-3. Complete this [Student Info Form](https://forms.gle/WE3jN4miDKabFBje8) so we know your Github ID.
-
 
 #### Instructors & Teaching Assistants
 
-You are encouraged to contact instructors and TAs on Discord, Google Classroom (post to stream), or via email.
-- please post questions in public on Google Classroom and Discord, so others can benefit from the answers!
+You are encouraged to contact instructors and TAs on Discord, Google Classroom (post to Stream), or via email.
+- please post questions in public on Google Classroom and Discord, so others can benefit from the answers.
 - please post interesting material, comments, and feedback on Discord
 
-| Name                        | Email                             |
-|:----------------------------|:----------------------------------|
+| Name                        | Email
+|:----------------------------|:---------------
 | [Sirisilp Kongsilp](https://github.com/sirisilp), lecture instructor | `email("Sirisilp", "Kongsilp")` |
 | [Jim Brucker](https://github.com/jbrucker), lab instructor |  `email("J", "Brucker", 7)`
 | [Napasakorn](https://github.com/Savetang19) (นภัสกร), TA |  `email("Napasakorn", "Boonkerd")`
-| [Pawitchaya](https://github.com/GToidZ) (ปวิชญา), TA | `email("Pawitchaya", "Chaloeijanya
-", 2)`
-| [Punn](https://github.com/Halcyon905) (ปัณณ์), TA  | `email("Punn", "Chunwimaleung", 2)` 
+| [Pawitchaya](https://github.com/GToidZ) (ปวิชญา), TA | `email("Pawitchaya", "Chaloeijanya", 2)`
+| [Punn](https://github.com/Halcyon905) (ปัณณ์), TA  | `email("Punn", "Chunwimaleung", 2)`
 | [Preawpan](https://github.com/Tezigudo), TA | `email("Preawpan", "Thamapipol")`
 | [Sahanon](https://github.com/Sahanon-P), Project Advsor | `email("Sahanon", "Phisetpakasit")`
 
@@ -66,4 +59,3 @@ Software "bots" scan everything on the web and collect email addresses for spam 
 
 To check if your email address or password has been exposed 
 in a data breach, visit [haveibeenpwned.com](https://haveibeenpwned.com).
-
