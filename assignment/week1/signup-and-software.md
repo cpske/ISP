@@ -1,20 +1,24 @@
 ---
-title: Course Preparation
+title: Course Preparation for ISP
 ---
 
-Please do this before the first week ISP lab:
+Please do this before the first week ISP lab.
 
+### Sign-up
 
 1. Join the [Google Classroom][google-classroom-invite] for this course. Class code is **5zjkval**.
 2. Tell us your Github id on this form: <https://forms.gle/QK36o6ky1D85KLsN7>
-3. Update your Github Profile. Please include 
+3. Join our [Discord Server][discord-invite].  Please add your **real name** as a *nickname* on this server.
+
+### Preparation
+
+1. Update your Github Profile. Please include 
    - **photo** that clearly shows your face. Face should be at least 50% of vertical space.
    - your **real name** correctly **capitalized** ("Steve Jobs") -- first name only ("Steve") or first and last name ("Steve Jobs") are OK.  
    - Not a nickname; Not your Github login.
-4. Join our [Discord Server][discord-invite].
-5. Install this **required software**, if you don't have them:
+2. Install this **required software**, if you don't have them:
    - **Git** including the `git` command. Download from <https://git-scm.com>
-   - Python 3.9 or newer.
+   - Python 3.9 or newer. Python 3.11 is recommended.
    - IDE for Python.  [PyCharm][], [PyDev][] (Eclipse), and [VS Code][vscode] are good.
    - [OBS Studio][obsproject], to record your computer screen during coding tests.
    - A good **text editor** with syntax highlighting, for situations where you want to edit a single text file.
@@ -35,11 +39,11 @@ Please do this before the first week ISP lab:
 [google-classroom]: https://classroom.google.com/c/NjE0ODE4Mzg4ODEz
 [google-classroom-invite]: https://classroom.google.com/c/NjE0ODE4Mzg4ODEz?cjc=5zjkval
 [classroom-classwork]: https://classroom.google.com/w/NjE0ODE4Mzg4ODEz/t/all
-[discord-invite]: https://discord.gg/gy2gbFNa
+[discord-invite]: https://discord.gg/jJJGrEJUqB
 
 ---
 
-### Examples of Good Github Profiles
+### Good Github Profiles
 
 Your Github account is part of **your resume**.  Make it look professional!
 
