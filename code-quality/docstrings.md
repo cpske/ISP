@@ -188,27 +188,19 @@ def gcd(a, b):
 - <https://numpydoc.readthedocs.io/en/latest/format.html>
 
 
-## ISP Recommended Docstring Style
+## ISP Docstring Style
 
-First, which docstring style do you prefer?
+In ISP, please use the Sphinx style (looks like ReStructured Text), but use *type hints* for parameter and return types instead of writing them in comments.
 
-- [ ] Google 
-- [ ] Sphinx/reST 
-- [ ] Numpy 
-- [ ] Other: `_________________`
+Why?
 
+1. Visual formatting is a waste of your time! 
+   - waste time correcting formatting when things change
+   - documenting data types in comments is *useless*. Use type hints.
+   - extra lines cause comments to fill the window, so you cannot see comments and the code in one screen.
+2. *Type hints* are used by static analyizer and IDEs, so document types using type hints instead of in comments.  
 
-Next, we will agree on a style in class.
-
-
-## Use Type Hints instead of Comments for Data Types
-
-Instead of defining data types in Docstring comments, define them as type hints.  The type hints can be used by static analysis tools like `flake8` and `mypy`.
-
-Avoid writing data types *both places* to avoid redundancy & possible inconsistency. 
-
-The `max` function works with either int or float, so instead of 'int' we can use Number
-for the type hints:
+This `max` function works with either int or float, so we declare the type as `Number` which includes both `int` and `float`:
 
 ```python
 from numbers import Number
@@ -218,14 +210,16 @@ def max(a: Number, b: Number) -> Number:
 
     :param a: first value to compare
     :param b: second value to compare
-
     :returns: the maximum of a and b
+    :raises:  TypeError if a or b are not numeric values (Numbers)
     """
+    if not isinstance(a, Number) or not isinstance(b, Number):
+        raise TypeError("parameters must be numeric (int or float)")
     if a > b: 
        return a
     return b
 ```
-Notice the docstring does **not** include data type of Args and Returns (*avoid redundancy*).
+Notice the docstring does **not** include the data type of parameters or returns.
 
 
 ## Module and Class Comments

@@ -1,6 +1,6 @@
 ---
 title: About
-navigation_order: 3
+navigation_order: 5
 ---
 
 ## About the Course
@@ -11,49 +11,41 @@ navigation_order: 3
 | Google Classroom       | Announcements, schedule, and assignments. [Classroom Link][google-classroom] or use class code **5zjkval** 
 | Schedule & Assignments | [Google Classroom > Classwork][classroom-classwork].
 | Github       | [Github](https://github.com) to submit coding work & quiz. You need a Github account. 
-| Collection of Course Material | <https://cpske.github.io/ISP>, but some content may not match this course.
-| Discord                | Q&A, discussion, meeting with TAs. Join using this [Invite Link][discord-invite].
-| Sign-up & Preparation  | Please do this [Sign-up and Preparation](assignment/week1/signup-and-software) before the first lab.
-| Scores       | <https://bit.ly/isp2023-scores> for classwork and homework 
-
+| Discord                | Q&A, discussion, meeting with TAs. **Join** using this [Invite Link][discord-invite].
+| Scores       | <https://bit.ly/isp2023-scores> for classwork, labs, and homework.
 
 [google-classroom]: https://classroom.google.com/c/NjE0ODE4Mzg4ODEz
 [google-classroom-invite]: https://classroom.google.com/c/NjE0ODE4Mzg4ODEz?cjc=5zjkval
 [classroom-classwork]: https://classroom.google.com/w/NjE0ODE4Mzg4ODEz/t/all
 [discord-invite]: https://discord.gg/gy2gbFNa
 
+#### Preparation & Sign-up
 
-### How to Join [Google Classroom][google-classroom] and Join a Meeting
+Please do this [Sign-up and Preparation](assignment/week1/signup-and-software) before the first lab.
+
+#### How to Join [Google Classroom][google-classroom] and Join a Meeting
 
 1. Join the course's [Google Classroom](https://classroom.google.com).  Use the Class Code in the table above.
 2. To join a meeting, click on the "Meet" link (video icon) on the Google Classroom page: [classroom meet icon](images/google-meet-icon.png)
 3. Complete this [Student Info Form](https://forms.gle/WE3jN4miDKabFBje8) so we know your Github ID.
 
 
-### Teaching Assistants
+#### Instructors & Teaching Assistants
 
-[Napasakorn](https://github.com/Savetang19) (นภัสกร) @savetang `email("Napasakorn", "Boonkerd")`
- 
-[Pawitchaya](https://github.com/GToidZ) (ปวิชญา) @GToidZ `email("Pawitchaya", "Chaloeijanya
+You are encouraged to contact instructors and TAs on Discord, Google Classroom (post to stream), or via email.
+- please post questions in public on Google Classroom and Discord, so others can benefit from the answers!
+- please post interesting material, comments, and feedback on Discord
+
+| Name                        | Email                             |
+|:----------------------------|:----------------------------------|
+| [Sirisilp Kongsilp](https://github.com/sirisilp), lecture instructor | `email("Sirisilp", "Kongsilp")` |
+| [Jim Brucker](https://github.com/jbrucker), lab instructor |  `email("J", "Brucker", 7)`
+| [Napasakorn](https://github.com/Savetang19) (นภัสกร), TA |  `email("Napasakorn", "Boonkerd")`
+| [Pawitchaya](https://github.com/GToidZ) (ปวิชญา), TA | `email("Pawitchaya", "Chaloeijanya
 ", 2)`
-
-[Punn](https://github.com/Halcyon905) (ปัณณ์) @halcyon.1111 `email("Punn", "Chunwimaleung", 2)` 
-
-*In addition to the regular TAs we are lucky to also have...*
-
-[Sahanon](https://github.com/Sahanon-P) @pst\_ping `email("Sahanon", "Phisetpakasit")`
-
-[Preawpan](https://github.com/Tezigudo) `email("Preawpan", "Thamapipol")`
-
-<!--
-[Siratee](https://github.com/sirateek) `email("Siratee", "Kittiwitchawoakul")` Line: (on request)
- -->
-
-### Instructors
-
-[Sirisilp](https://github.com/sirisilp) `email("Sirisilp", "Kongsilp")`
-
-[Jim](https://github.com/jbrucker) `email("J", "Brucker", 7)`
+| [Punn](https://github.com/Halcyon905) (ปัณณ์), TA  | `email("Punn", "Chunwimaleung", 2)` 
+| [Preawpan](https://github.com/Tezigudo), TA | `email("Preawpan", "Thamapipol")`
+| [Sahanon](https://github.com/Sahanon-P), Project Advsor | `email("Sahanon", "Phisetpakasit")`
 
 #### Code for Email
 
@@ -66,13 +58,12 @@ def email(firstname: str, lastname: str, nlast: int = 1) -> str:
     return f"{firstname}.{lastname[0:nlast]}\u0040{DOMAIN}"
 ```
 
-*Why obfuscate email addresses?*    
+#### *Why obfuscate email addresses?*    
 
-Software "bots" scan the web for email addresses 
-and use them to send spam and phishing attacks.
+Software "bots" scan everything on the web and collect email addresses for spam and phishing.  
 
 [Have I Been Pwned?](https://haveibeenpwned.com)
 
-To check if your email address or a password you use has been exposed 
+To check if your email address or password has been exposed 
 in a data breach, visit [haveibeenpwned.com](https://haveibeenpwned.com).
 
