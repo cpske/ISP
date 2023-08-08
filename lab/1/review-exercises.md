@@ -1,14 +1,19 @@
 ## Python Review (Done After the Github Warm-up)
 
-1. Why use **properties** instead of simply exposing an object's attributes?
-   - Code that exposes the attributes:
+1. Why use **properties** instead of simply allowing the application to access an object's attributes?
+   - What we want:
+     ```python
+     m = Money(5, "Baht")
+     print("You have", m.value, m.currency)
+     ```
+   - Allow direct access to an objevt's attributes ("expose the attributes"):
      ```python
      class Money:
          def __init__(self, value, currency):
              self.value = value
              self.currency = currency
      ```
-   - Code defines properties and *hides* the attributes:
+   - Define properties and *hide* the attributes from other code:
      ```python
      class Money:
          def __init__(self, value, currency):
@@ -19,12 +24,7 @@
        def value(self):
             return self._value
      ```
-   - For both codes we can write:
-     ```python
-     m = Money(5, "Baht")
-     print(m.value, m.currency)
-     ```
-   - **Question:**  Why use properties (and hide the attributes?
+   - **Question:**  Why use properties instead of exposing attributes?
 
 2. Using properties to control access to attributes is an example of what **fundamental principle of OOP**? (Name this principle.)
    - Why is this a good thing?

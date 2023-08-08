@@ -2,7 +2,6 @@
 bin/
 # code and labs are for assignments deployed via Github classroom
 code/
-labs/
 2022/
 # This is a separate repository.
 resources/
