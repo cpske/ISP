@@ -2,18 +2,31 @@
 title: Git Branches
 ---
 
-A git repository can contain multiple branches.
-The files on each branch can be checked in/out and updated separately,
-without affecting other branches.
+A git repository can contain many branches.
+The files on each branch can be edited & updated, without affecting anything on other branches.
 
-Each branch has a name, like "master".  The name is just a **movable label** that points to the head of the branch.
+Here's a git repo with 3 branches. The circles are commits (git commit):
+![git branches](./git-branches.png)
 
 ## Understanding Branches
 
-A git repository is a **graph**, with commits as nodes.
-Each git branch is a branch on the graph.  The branch name is a **label** that points to the head of the branch.    
+A git repository is a **graph**, with commits as nodes on the graph.
+Each git branch is a branch on the graph.  The branch name is a **label** that always points to the **head** of the branch (usually the most recent commit).    
 
 Try the online [Git Visualizer](http://git-school.github.io/visualizing-git) - type git commands like "git commit", "git branch", "git checkout", "git reset" and see results on the graph. 
+
+*Common Mistake*: a branch name is a movable label that points to the "head" of a branch. It does not refer to the entire branch.
+
+## Why & How to Use Branches in Your Project?
+
+In a project use branches to...
+
+- **work on a new feature**, so new work does not mess up the tested and runnable "master" code.  Code on one branch won't affect other branches (until you merge).
+- **several people can work on features at the same time**, without conflicts. Each person works on his own "feature branch".
+- **fix bugs**.  When a bug is reported, create a new `bugfix` branch to work on a fix.  Once the fix is thoroughly tested you *merge* it into the main or release branch. An extra benefit is the "bugfix" branch will contain a history of what you changed to fix the bug.
+- **experiment**. Try new "proof of concept" code that may or may not be added to your project using a separate branch.
+
+Use branches even if you are the only person working on the project!
 
 ### Commands for Branches
 
@@ -25,7 +38,7 @@ Try the online [Git Visualizer](http://git-school.github.io/visualizing-git) - t
   ```
   cmd> git checkout foo
   ```
-* Create a branch and checkout in one command:
+* Create branch and checkout in one command:
   ```
   cmd> git checkout -b foo
   ```
@@ -35,11 +48,11 @@ Try the online [Git Visualizer](http://git-school.github.io/visualizing-git) - t
   ```
   cmd> git checkout master
   ```
-* Show your branches (the "\*" indicates current branch):
+* Show your branches (the \* shows your current branch):
   ```
   cmd> git branch
   * master
-  foo
+    foo
   ```
 * List all branches including remote branches:
   ```
@@ -47,14 +60,15 @@ Try the online [Git Visualizer](http://git-school.github.io/visualizing-git) - t
   ```
 * Display branch history as a tree: `gitk --all`.
 
-* Display history on command line (there are many variations):
+* Display history in a terminal window (there are many options for this):
   ```
   cmd> git log --oneline --graph --all
   ```
+* Usually `git log1` is an *alias* for the above command.
 
-### Example Repositories with Many Branches
+### Some Projects with Many Branches
 
-ISP 2018 [Dailigram][] project. "gitk --all" shows branches and tags.
+ISP 2022 [WongNung][] project by your TAs (Pawitchaya & Napasakorn). "gitk --all" shows branches and tags.
 
 ISP 2019 [Koocook][] project (Mai, Thanathorn, Chayathon) separate branch for major features.  A professional, shippable product.
 
@@ -62,6 +76,7 @@ VS Code <https://github.com/microsoft/vscode>. How many branches? How many commi
 
 [Koocook]: https://github.com/KooCook/koocook-dj/tree/dev
 [Dailigram]: https://github.com/LilBank/dailigram
+[WongNung]: https://github.com/WongNung/WongNung
 
 ## Merging
 
@@ -85,11 +100,9 @@ What can happen?
 ## Tracking Branches
 
 A **tracking branch** is a local branch with a corresponding remote branch.
-It tracks (follows) changes to the remote branch (use `fetch` or `pull` to copy), 
-and can push changes to the remote branch.
+Use use `fetch` or `pull` to update your local copy, and `push` to update the remote branch, to keep them in sync.
 
-When you clone a remote repository, your local "master" branch is
-set to track "origin/master", meaning "master" on the remote repo named "origin".  Other branches are **not cloned** by default.
+When you clone a remote repository, your local "master" branch is set to track "origin/master", meaning "master" on the remote repo named "origin".  Other branches are **not cloned** by default.
 
 * Create a local "tracking branch" for some branch that already exists on a remote repository:
    ```
@@ -180,7 +193,7 @@ a tracking branch for it?
 cmd>  git checkout --track origin/dev-auth
 ```
 
-### Good Collection of "How To" for Git Branching
+### Good Collection of Branching "How To"
 
 This page has some useful Git commands for working with branches and remotes:
 
@@ -189,16 +202,6 @@ This page has some useful Git commands for working with branches and remotes:
 * Rename a branch: `git branch -m old_name new_name`  (or use `--move`)
 * Delete a branch: `git branch -d branch_name  (or use `--delete`)
 * Force delete a branch with unmerged commits: `git branch -d --force branch-name` (`-D` is same as `-d --force`)
-
-
-## Why & How to Use Branches in Your Project?
-
-A branch lets you create a separate variation of a repository that can be modified without affecting other branches.  Common uses are:
-
-1. Use a branch to **work on a new feature**, so new work doesn't mess up the tested and runnable "master" branch code.  Errors on the branch won't affect other branches.
-2. Enable several people to work on different features at the same time, without conflicts.
-3. Use a branch to **fix bugs**.  Once the fix is tested and verified it can be "merged" into production code.
-4. You can release code (from master) while work is going on (in branches).
 
 ## Resources to Learn More
 
