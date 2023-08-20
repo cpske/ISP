@@ -1,5 +1,5 @@
 # Files to not commit to git
-bin/
+bin/env.sh
 # code and labs are for assignments deployed via Github classroom
 code/
 2022/

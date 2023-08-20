@@ -25,9 +25,9 @@ function replaceUrls(oldtext, newtext) {
 
 function formChanged() {
     // the replacement text
-	var reponame = document.getElementsByName("repo_name")[0].value;
-
-    var counter = replaceUrls("repositoryname", reponame);
+	var reponame = document.getElementsByName("repository_name")[0].value;
+    // template text to replace
+    var counter = replaceUrls("repo_name", reponame);
     document.getElementById("counter").innerHTML = repositories.length;
     //for(var x in document.getElementsByClassName("repository")) {
     //   text = text + " " + x.innerText;
@@ -55,8 +55,8 @@ Press <kbd>[Reset Page]</kbd> to restore generic text before next substitution.
   <table style="padding: 10px" width="50%">
   <tr>
      <td>
-     <label for="repo_name">Repository name:</label>&nbsp;&nbsp;
-     <input type="text" name="repo_name"/>&nbsp;&nbsp;
+     <label for="repository_name">Repository name:</label>&nbsp;&nbsp;
+     <input type="text" name="repository_name"/>&nbsp;&nbsp;
      <!-- type="button" overrides default type="submit" so page does not refresh-->
      <button type="button" onclick="formChanged()">Update URLs</button>&nbsp;&nbsp;
      <button type="submit">Reset Page</button>
