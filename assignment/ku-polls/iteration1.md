@@ -5,16 +5,17 @@ title: KU Polls Iteration 1
 You will learn Django and implement KU Polls using the [Django Tutorial][django-tutorial].
 The assignments for the next 3 weeks will add to this code, so don't fall behind.
 
-## Assignment 
+The Requirements for this iteration are:
 
-The code you will produce for this iteration match the [Django Tutorial][django-tutorial].
-
-The Requirement are as in the example project:
 1. Display a list of poll questions
 2. Visiter can select a poll question and vote for a choice. His vote is added to the total.
 3. Visitor can see total votes for each choice in a poll.
 4. Each poll has a publication date (start date) & is visible only on or after this date.
 5. Administrator can add or modify poll questions and choices.
+
+## Assignment 
+
+The code you will produce for this iteration matches the [Django Tutorial][django-tutorial].
 
 1. Create a wiki page named "Iteration 1 Plan" page in your `ku-polls` wiki. Include:
    - **Goal** for the iteration
@@ -22,39 +23,54 @@ The Requirement are as in the example project:
    - **Milestone**, at least one
    - **Acceptance Criteria** - how to evaluate the result?
 
-2. Create a **task board** named "Iteration 1" in your "KU Polls" Project (that you created in the lab).
-   - Add tasks and features for this iteration.
-   - Convert "tasks" to "issues" wherever it makes sense.
-   - Suggestion: if you add an "Iteration" field to your Project (in Project Settings), you can assign tasks to an iteration (using the table view).  Then, in the "Iteration 1" project tab (view as task board) add a "Filter" so that only tasks with "Iteration" value of 1 are shown.
+2. Create a **Project** with a Table View for all tasks. 
+   - Define columns and fields you want.
+   - Define a field named `Iteration` in Project "Settings".  You assign tasks to an Iteration.
+   - Then, you can create a Task Board for each iteration and **filter** only the tasks whose iteration value is the one you want.
+     > If you have an `Iteration` field and assign tasks/backlog to an iteration (1, 2, ...), then when you create a Task Board for an iteration you can apply a *filter* so that the Task Board includes only items that match a particular value of `Iteration` (field). 
+   - Add Product Backlog of features to implement
+   - *At the start of each iteration:* refine the Backlog and add additional tasks you discover
 
-3. Use Github Flow.
-   - Create a **git branch** named `iteration1` and do your work on this branch.
-   - **Push to Github** when you finish **each part** of the Django tutorial. 
+3. Create a **Task Board** named "Iteration 1" in your Project.
+   - Add tasks for work to do in this iteration.
+   - You can define tasks like "Implement tutorial part 1", "Implement tutorial part 2", ..., "Add Good Poll Questions", etc.
+   - Convert "tasks" to "issues" where it makes sense.
 
-4. Implement parts 1 - 6 of the [Django Tutorial][django-tutorial].
-   Your Django project code should be in the root directory of your `ku-polls` repository (which you have already created), not a subdirectory.    
-   So, when you create the Django project do it like this (instead of as in the tutorial):
+4. The Django project should be created directly in the `ku-polls` repo that you clone from Github.  Be careful how you create the Django project to avoid making an extra layer of subdirectories.  Do this:
    ```
-   # change directory to your ku-polls repository (Windows use chdir)
-   cd ku-polls
-   # create a Django project *here*.  The "." parameter means to create it in this directory.
+   git clone https://github.com/xxxxxx/ku-polls
+   chdir ku-polls
+   # create a Django project HERE (.) and put config files in a subdir named mysite (no hyphen)
    django-admin startproject mysite .
-   # Show the files. Windows: "dir" any other OS: "ls"
-   ls
    ```
-   it should show:
-   ```
-   README.md    (file you cloned from Github repo)
-   manage.py
-   mysite       (directory)
-   ```
+   - OK to use a different name for the config dir (mysite) but it should be a valid Python package name (no hyphen) and **not** `polls` which will be an "app" within the project.
+   - Verify: Your `ku-polls` repository should look like this:
+     ```
+     .gitignore
+     manage.py             # this file created by django
+     mysite/               # config directory created by django
+     README.md
+     requirements.txt
+     ```
 
-5. Add at least **2 interesting poll questions** to your application, and **delete** the boring "What's up?" question.
-   - no trivial questions like "How are you?", "What's your favorite color?"
+5. Use a Branch and Github Flow.
+   - Create a **branch** named `iteration1` and do your work on this branch.
 
-6. Optional: add embellishments, such as a graph of poll results, a custom background, or CSS styling.
+6. **Push to Github** after you finish **each part** of the Django tutorial, e.g.
+     ```
+     git checkout -b iteration1
+     ...(do tutorial part 1, test it, and add the files)
+     git commit -m "Implement tutorial part 1"
+     git push
+     ```
 
-7. When you finish and test everything, open a **Pull Request** to merge, then review your own work, and **merge** branch `iteration1` into `master`. It should be a simple "fast forward" merge.
+7. Implement parts 1 - 6 of the [Django Tutorial][django-tutorial].
+   - Please read the tutorial *carefully*. There is a lot of info in the text.
+
+8. Add at least **2 interesting poll questions** to your application, and **delete** the boring "What's up?" question.
+   - No boring, trivial questions like "How are you?", "What's your favorite color?"
+
+8. When you finish and test everything, open a **Pull Request** to merge, then review your own work, and **merge** branch `iteration1` into `master`. It should be a simple "fast forward" merge.
 
 
 ### Suggestions
@@ -62,7 +78,11 @@ The Requirement are as in the example project:
 - Do **not use copy and paste** when doing the tutorial. You learn **better** by engaging your senses -- that means typing it yourself! Typing also forces you to *remember* what you just read.
 
 - The tutorial converts function-based views to class views.  It is OK to leave some views as function-based views, but you should try class views -- they can do a lot more.
-- Part 7 of the tutorial (customizing the admin interface) is helpful but not required.
+- Part 7 of the tutorial (customizing the admin interface) is useful but not required.
+
+### Optional: Embellishment
+
+You can add CSS styling to web pages and/or add a graph to the poll results page.
 
 ### Optional: Improve Security
 
@@ -76,21 +96,26 @@ The Django `settings.py` file contains sensitive information that you should not
 SECRET_KEY = 'some-random-secret-key'
 ```
 
-For security, the value of the `SECRET_KEY` should not be in a file commited to Github.  
+For security, the value of the `SECRET_KEY` should not be in a separate file and not committed to git. 
 
-On the ISP github.io site, the topic [Externalize Configuration][] explains how
-to put configuration data in a separate file and *easily* use the data 
-in `settings.py`.  After that, your settings.py would look like this:
+You can do this in 4 steps:
 
-```python
-from decouple import config
+1. Install the `python-decouple` package: `pip install python-decouple`
+2. Add `python-decouple` to your `requirements.txt` file on a separate line.
+3. Edit `mysite/settings.py` and define `SECRET_KEY` as an environment variable:
+   ```python
+   from decouple import config
 
-SECRET_KEY = config('SECRET_KEY', default='missing-secret-key') 
-```
+   SECRET_KEY = config('SECRET_KEY', default='fake-secret-key') 
+   ```
+4. Create a file for externalized data. It is named `.env` in the project's root directory (not the mysite directory) and contains this:
+   ```
+   # contents of .env
+   SECRET_KEY = your-actual-secret-key-without-quotation-marks
+   ```
+   The `.env` file should not be committed to git.
 
-The data file (usually named `.env`) should not be committed to git.
-
-[Externalize Configuration]: https://cpske.github.io/ISP/django/external-configuration
+For details, see [Externalize Configuration](https://cpske.github.io/ISP/django/external-configuration) on the ISP github.io site. 
 
 
 ## What To Submit
@@ -98,9 +123,10 @@ The data file (usually named `.env`) should not be committed to git.
 When you are done, your Github repository should look like this:
 ```
     .gitignore
+    db.squlite3          <-- Please include so we can run your code
     manage.py
     README.md
-    requirements.txt     <-- List of required Python packages, including Django
+    requirements.txt     <-- List of required Python packages
     mysite/              <-- where application settings.py and urls.py are
         settting.py
         urls.py
@@ -114,7 +140,7 @@ This is incorrect:
 ```
     .gitignore
     README.md
-    ku-polls/            <-- Wrong: django project in a subdirectory
+    ku-polls/            <-- Wrong: django project in a subdirectory of your repo
         manage.py
         mysite/
             settting.py
@@ -122,22 +148,18 @@ This is incorrect:
             etc.
         polls/               
 ```
-You can use the subdirectory layout in other projects (if you want) but not this assignment.
 
-README.md should contain a brief description of the app and links to wiki pages:
+More complex projects *do use subdirs* as shown above, but not for this assignment.
 
-- Vision Statement
-- Requirements
-- Development Plan
-- Iteration 1 Plan
+**db.sqlite3** - normally you should *not* commit a database to Git. But for Iteration 1 we need it in order to run your code.  You will delete this later after creating a *data fixture*.
 
 Your Github repository should also contain:
 
 - `iteration1` branch merged into master or main
 - at least 1 Pull Request, now closed
-- "KU Polls" Project in the "Projects" tab.
-- "Iteration 1" task board in the "KU Polls" Project.  Most tasks should be "Done".
-- Github Issues for work in Iteration 1, now closed
+- "KU Polls" Project in the "Projects" tab
+- Github Issues for work in Iteration 1, now closed.
+- "Iteration 1" task board in the "KU Polls" Project.  All (or most) tasks should be "Done".
 
 ## References
 
@@ -147,30 +169,25 @@ Your Github repository should also contain:
 
 [django-tutorial]: https://docs.djangoproject.com/en/4.1/intro/tutorial01/
 
-### Evaluation
+### Evaluation Criteria
 
-1. Github Flow (3). 1 point for each of these:
-   - has `iteration1` branch with work. From code view click "2 branches" link to quickly view this.
-   - `iteration1` has been merged into `main` (`master`).
+1. Github Flow (3).
+   - has `iteration1` branch with your work.
+   - `iteration1` has been merged into `main` (or `master`).
    - has a Pull Request to merge iteration1 into main and PR is **closed**.
 
 2. Project and Tasks: (3)
-   Project is shown on repo "Projects" tab **or** there is a link to Project in README.      If not, no credit (don't search for their Project -- it should be referred to in repo)
-   1 point each:
-   - Has a Project with tasks.
-   - Project has an "Iteration 1" task board with several tasks. (Tasks might be named "Implement tutorial part n" n=1..6)
-   - The tasks are (almost) all "Done".
+   - Project is shown on repo "Projects" tab **and** there - Has a Project with tasks for work done. (1pt)
+   - Project has an "Iteration 1" task board with several tasks. (Tasks can be named "Implement tutorial part n" n=1..6, "Create Good Poll Questions", etc) (1pt)
+   - All tasks (or almost all) are "Done". (1pt)
 
 3. Running App with 2 Good Questions
    - Clone either "main" or "iteration1"
    - Code should include a `db.sqlite3` file
    - Should run and show 2 good questions. Not trivial questions like "What is your favorite color?".
-   - Penalty for NOT removing the dumb "What's Up?" question. (This was in assignment.)
-   ```
-   python manage.py runserver
-   ```
+   - Penalty for NOT removing dumb "What's Up?" question.
 
-4. Tests (2)
+4. Tests
    - Has at least 5 tests.     
      2 points = tests all pass    
      1 point = some tests fail or fewer than 5 tests
@@ -179,13 +196,14 @@ Your Github repository should also contain:
    python manage.py test polls
    ```
 
-5. Code Quality (2) - Examine `polls/models.py`
+5. Code Quality. Examine `polls/models.py`
    - 1 point: `polls/models.py` contains descriptive docstring comment.
-      - No credit for: `"""The Question class.""" or similar trivial comment.
-   - 1 point: blank line between **every** method and between classes 
-     - No point if even one case where  methods/classes not separated by blank line:
+   - No credit for: `"""The Question class.""" or similar trivial, uninformative comment.
+   - 1 point: 1 blank line between **every** method. **2 blank lines** between classes. 
+   - No point if even one instance of methods/classes not separated by blank line.
+
 ```python
-# No credit - missing docstring and missing blank line before first method
+# No credit - missing docstring and missing blank line before `was_published` method
 class Question(models.Model):
     question_text = CharField(max_length=200)
     pub_date = DateTimeField(...)
@@ -195,4 +213,3 @@ class Question(models.Model):
     def __str__(self):
         return str(self.question_text)
 ```
-
