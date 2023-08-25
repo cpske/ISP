@@ -19,24 +19,23 @@ The code you will produce for this iteration matches the [Django Tutorial][djang
 
 1. Create a wiki page named "Iteration 1 Plan" page in your `ku-polls` wiki. Include:
    - **Goal** for the iteration
-   - **Features** to implement
-   - **Milestone**, at least one
+   - **Features** to implement and other major work (but not tasks)
+   - **Milestone**, a concrete, visible indicator of progress.
    - **Acceptance Criteria** - how to evaluate the result?
 
 2. Create a **Project** with a Table View for all tasks. 
    - Define columns and fields you want.
-   - Define a field named `Iteration` in Project "Settings".  You assign tasks to an Iteration.
-   - Then, you can create a Task Board for each iteration and **filter** only the tasks whose iteration value is the one you want.
-     > If you have an `Iteration` field and assign tasks/backlog to an iteration (1, 2, ...), then when you create a Task Board for an iteration you can apply a *filter* so that the Task Board includes only items that match a particular value of `Iteration` (field). 
+   - In the Project settings, define a field named `Iteration`. Each task should be assigned to an Iteration.
+   - Then, in your Task Board for each iteration you can **filter** only the tasks whose iteration value is the one you want.
    - Add Product Backlog of features to implement
-   - *At the start of each iteration:* refine the Backlog and add additional tasks you discover
 
 3. Create a **Task Board** named "Iteration 1" in your Project.
    - Add tasks for work to do in this iteration.
-   - You can define tasks like "Implement tutorial part 1", "Implement tutorial part 2", ..., "Add Good Poll Questions", etc.
-   - Convert "tasks" to "issues" where it makes sense.
+   - In Iteration 1 you will write code following the Django Tutorial, so you may define tasks like "Implement tutorial part 1", "Implement tutorial part 2", ..., 
+   - Other work you must do: "Add Good Poll Questions", "Review work and merge into main"
+   - Convert "tasks" to "issues". Most tasks *should* be issues, but you may have some "housekeeping" tasks that are not issues in the repo.
 
-4. The Django project should be created directly in the `ku-polls` repo that you clone from Github.  Be careful how you create the Django project to avoid making an extra layer of subdirectories.  Do this:
+4. Create the Django project directly in the `ku-polls` repo that you clone from Github -- not in a subdirectory.  Be careful how you create the project to avoid creating an extra subdirectory.  Do this:
    ```
    git clone https://github.com/xxxxxx/ku-polls
    chdir ku-polls
@@ -47,14 +46,14 @@ The code you will produce for this iteration matches the [Django Tutorial][djang
    - Verify: Your `ku-polls` repository should look like this:
      ```
      .gitignore
-     manage.py             # this file created by django
-     mysite/               # config directory created by django
+     manage.py             # this file is created by django
+     mysite/               # config directory is created by django
      README.md
      requirements.txt
      ```
 
-5. Use a Branch and Github Flow.
-   - Create a **branch** named `iteration1` and do your work on this branch.
+5. Create a Branch and use Github Flow.
+   - Create a branch named **iteration1** and do your work on this branch.
 
 6. **Push to Github** after you finish **each part** of the Django tutorial, e.g.
      ```
@@ -62,27 +61,29 @@ The code you will produce for this iteration matches the [Django Tutorial][djang
      ...(do tutorial part 1, test it, and add the files)
      git commit -m "Implement tutorial part 1"
      git push
+     # repeat for part 2, part 3, ... all in iteration1 branch
      ```
 
 7. Implement parts 1 - 6 of the [Django Tutorial][django-tutorial].
    - Please read the tutorial *carefully*. There is a lot of info in the text.
 
-8. Add at least **2 interesting poll questions** to your application, and **delete** the boring "What's up?" question.
+8. Add at least **2 interesting poll questions** to your app, and **delete** the boring "What's up?" question.
    - No boring, trivial questions like "How are you?", "What's your favorite color?"
 
-8. When you finish and test everything, open a **Pull Request** to merge, then review your own work, and **merge** branch `iteration1` into `master`. It should be a simple "fast forward" merge.
+9. When you finish and test everything, open a **Pull Request** to merge.    
+   Then, take a break.  Afterwards, review your own work, and **merge** branch `iteration1` into `master`. It should be a simple "fast forward" merge.
 
 
 ### Suggestions
 
-- Do **not use copy and paste** when doing the tutorial. You learn **better** by engaging your senses -- that means typing it yourself! Typing also forces you to *remember* what you just read.
+- Do **not use copy and paste** when doing the tutorial. You learn **better** by actually typing it yourself!  Typing engages your senses and forces you to *remember* what you just read.
 
-- The tutorial converts function-based views to class views.  It is OK to leave some views as function-based views, but you should try class views -- they can do a lot more.
+- The tutorial converts function-based views to class views.  It is OK to leave some function-based views, but you should try class views -- they can do a lot more.
 - Part 7 of the tutorial (customizing the admin interface) is useful but not required.
 
 ### Optional: Embellishment
 
-You can add CSS styling to web pages and/or add a graph to the poll results page.
+You can add CSS styling to pages and/or add a graph of the poll results.
 
 ### Optional: Improve Security
 
@@ -123,7 +124,7 @@ For details, see [Externalize Configuration](https://cpske.github.io/ISP/django/
 When you are done, your Github repository should look like this:
 ```
     .gitignore
-    db.squlite3          <-- Please include so we can run your code
+    db.squlite3          <-- Please include this so we can run your code
     manage.py
     README.md
     requirements.txt     <-- List of required Python packages
@@ -140,7 +141,7 @@ This is incorrect:
 ```
     .gitignore
     README.md
-    ku-polls/            <-- Wrong: django project in a subdirectory of your repo
+    ku-polls/            <-- Wrong: django project in a subdir of your repo
         manage.py
         mysite/
             settting.py
