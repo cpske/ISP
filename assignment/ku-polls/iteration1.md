@@ -7,11 +7,16 @@ The assignments for the next 3 weeks will add to this code, so don't fall behind
 
 The Requirements for this iteration are:
 
-1. Display a list of poll questions
+1. Display a list of poll questions with multiple-choice answers.
 2. Visiter can select a poll question and vote for a choice. His vote is added to the total.
 3. Visitor can see total votes for each choice in a poll.
 4. Each poll has a publication date (start date) & is visible only on or after this date.
-5. Administrator can add or modify poll questions and choices.
+5. Poll questions and choices can be added or changed using the admin interface.
+
+Features not implemented in this iteration:
+
+- we will not implement any authentication and, as a result, will not track who has replied to which poll question. 
+- hence, a user cannot change a previously submitted poll choice, although he can submit another choice
 
 ## Assignment 
 
@@ -81,9 +86,9 @@ The code you will produce for this iteration matches the [Django Tutorial][djang
 - The tutorial converts function-based views to class views.  It is OK to leave some function-based views, but you should try class views -- they can do a lot more.
 - Part 7 of the tutorial (customizing the admin interface) is useful but not required.
 
-### Optional: Embellishment
+### Optional: Improve Appearance
 
-You can add CSS styling to pages and/or add a graph of the poll results.
+You can add CSS styling to pages, add a graph of the poll results, and other stylistic improvements.
 
 ### Optional: Improve Security
 
@@ -121,38 +126,39 @@ For details, see [Externalize Configuration](https://cpske.github.io/ISP/django/
 
 ## What To Submit
 
-When you are done, your Github repository should look like this:
+Your Github repository should look like this:
 ```
-    .gitignore
-    db.squlite3          <-- Please include this so we can run your code
-    manage.py
-    README.md
-    requirements.txt     <-- List of required Python packages
-    mysite/              <-- where application settings.py and urls.py are
-        settting.py
-        urls.py
-        etc.
-    polls/               <-- the polls "app" code and templates
-    templates/           <-- global templates and admin app custom templates
+.gitignore
+db.squlite3          <-- Please include this so we can run your code
+manage.py
+README.md
+requirements.txt     <-- List of required Python packages
+mysite/              <-- where application settings.py and urls.py are
+    settting.py
+    urls.py
+    etc.
+polls/               <-- the polls "app" code and app templates
+templates/           <-- global templates
 ```
 
-Wrong: your Github repo should not contain an extra level of directories.    
+*Wrong*: the Django project should not be in a subdirectory of your Github repo.    
 This is incorrect:
 ```
-    .gitignore
-    README.md
-    ku-polls/            <-- Wrong: django project in a subdir of your repo
-        manage.py
-        mysite/
-            settting.py
-            urls.py
-            etc.
-        polls/               
+.gitignore
+README.md
+requirements.txt
+ku-polls/         <-- Wrong: django project in a subdir of your repo
+   manage.py
+   mysite/
+       settting.py
+       urls.py
+       etc.
+   polls/               
 ```
 
-More complex projects *do use subdirs* as shown above, but not for this assignment.
+More complex projects *do use subdirs* as shown above, but please don't do that in this assignment.
 
-**db.sqlite3** - normally you should *not* commit a database to Git. But for Iteration 1 we need it in order to run your code.  You will delete this later after creating a *data fixture*.
+**db.sqlite3** - Please include this for Iteration 1.  Normally you should *not* commit a database to Git, and you will delete this later after creating a *data fixture* for polls data.
 
 Your Github repository should also contain:
 
@@ -172,10 +178,10 @@ Your Github repository should also contain:
 
 ### Evaluation Criteria
 
-1. Github Flow (3).
-   - has `iteration1` branch with your work.
+1. Github Flow (3)
+   - repo has `iteration1` branch with all your work.
    - `iteration1` has been merged into `main` (or `master`).
-   - has a Pull Request to merge iteration1 into main and PR is **closed**.
+   - a Pull Request to merge iteration1 into main and PR is **closed**.
 
 2. Project and Tasks: (3)
    - Project is shown on repo "Projects" tab **and** there - Has a Project with tasks for work done. (1pt)
@@ -183,13 +189,13 @@ Your Github repository should also contain:
    - All tasks (or almost all) are "Done". (1pt)
 
 3. Running App with 2 Good Questions
-   - Clone either "main" or "iteration1"
-   - Code should include a `db.sqlite3` file
-   - Should run and show 2 good questions. Not trivial questions like "What is your favorite color?".
-   - Penalty for NOT removing dumb "What's Up?" question.
+   - we will clone either "main" or "iteration1"
+   - code should include a `db.sqlite3` file containing your questions
+   - code runs and shows 2 good questions. No trivial questions like "What is your favorite color?" or "What's up?".
+   - Penalty for not removing dumb "What's Up?" question.
 
 4. Tests
-   - Has at least 5 tests.     
+   - Code as at least 5 unit tests and tests are not redundant.     
      2 points = tests all pass    
      1 point = some tests fail or fewer than 5 tests
      0 point = no tests or they all fail
@@ -197,14 +203,14 @@ Your Github repository should also contain:
    python manage.py test polls
    ```
 
-5. Code Quality. Examine `polls/models.py`
-   - 1 point: `polls/models.py` contains descriptive docstring comment.
-   - No credit for: `"""The Question class.""" or similar trivial, uninformative comment.
-   - 1 point: 1 blank line between **every** method. **2 blank lines** between classes. 
+5. Code Quality based on eximation of `polls/models.py`
+   - 1 point: `polls/models.py` contains descriptive docstring comments, including module, class, and method comments.
+   - No credit for: `"""The Question class.""" or other trivial, uninformative comment.
+   - 1 point for layout: 1 blank line between **every** method. **2 blank lines** between classes. 
    - No point if even one instance of methods/classes not separated by blank line.
 
 ```python
-# No credit - missing docstring and missing blank line before `was_published` method
+# No credit - missing docstrings and missing blank line before `was_published` method
 class Question(models.Model):
     question_text = CharField(max_length=200)
     pub_date = DateTimeField(...)
