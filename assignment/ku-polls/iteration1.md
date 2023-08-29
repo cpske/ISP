@@ -204,7 +204,7 @@ Your Github repository should also contain:
    - Penalty for not removing dumb "What's Up?" question.
 
 4. Tests
-   - Code as at least 5 unit tests and tests are not redundant.     
+   - Code has at least 5 unit tests and the tests are not redundant.     
      2 points = tests all pass    
      1 point = some tests fail or fewer than 5 tests
      0 point = no tests or they all fail
