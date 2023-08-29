@@ -28,16 +28,13 @@ The code you will produce for this iteration matches the [Django Tutorial][djang
    - **Features** to implement and other major work (but not tasks)
    - **Acceptance Criteria** - how to evaluate the result?
 
-2. Create a Github **Project** with a Table View all tasks. 
-   - Define columns and fields you want.
-   - In the Project settings, define a field named `Iteration`. Each task should be assigned to an Iteration.
-   - Then, in your Task Board for each iteration you can **filter** only the tasks whose iteration value is the one you want.
-   - Add Product Backlog of features to implement
+2. Create a Github **Project** for KU Polls.
 
-3. Create a **Task Board** named "Iteration 1" in your Project.
-   - Add tasks for work to do in this iteration.
-   - In Iteration 1 you will write code following the Django Tutorial, so you may define tasks like "Implement tutorial part 1", "Implement tutorial part 2", ..., 
-   - Other work you must do: "Add Good Poll Questions", "Review work and merge into main"
+3. In the Project, create a *Task Board* named "**Iteration 1**".
+   - Task Board should have 4 columns for task status, as in KU Int'l Cafe. 
+   - Add tasks for work to do in Iteration 1.
+   - You will write code following the Django Tutorial, so you can define tasks like "Implement tutorial part 1", "Implement tutorial part 2", ..., 
+   - Other work: "Add Good Poll Questions", "Review work and merge into main"
    - Convert "tasks" to "issues". Most tasks *should* be issues, but you may have some "housekeeping" tasks that are not issues in the repo.
 
 4. Create the Django project directly in the `ku-polls` repo that you clone from Github -- not in a subdirectory.  Be careful how you create the project to avoid creating an extra subdirectory.  Do this:
@@ -89,7 +86,7 @@ The code you will produce for this iteration matches the [Django Tutorial][djang
 
 ### Suggestions
 
-- Do **not use copy and paste** when doing the tutorial. You learn **better** by actually typing it yourself!  Typing engages your senses and forces you to *remember* what you just read.
+- Do **not use copy and paste** when doing the tutorial. You learn **better** by typing it yourself!  Typing engages your senses and forces you to *remember* what you just read.
 
 - The tutorial converts function-based views to class views.  It is OK to leave some function-based views, but you should try class views -- they can do a lot more.
 - Part 7 of the tutorial (customizing the admin interface) is useful but not required.
