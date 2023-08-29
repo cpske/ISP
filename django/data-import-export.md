@@ -7,87 +7,98 @@ Useful for:
 
 * creating a backup
 * transferring data to a different database, such as when switching to a different server or different database.
-* creating initial data for others who install and use your app
+* moving the project to a different computer
+* creating initial data for others who install your app
 
-## Using Django dumpdata
+## Export Data using dumpdata
 
-The `manage.py` interface to [django-admin][django-admin] has a `dumpdata` command to export part or all of your application database data to a file.  There are many useful options described in the [django-admin dumpdata][django-admin] documentation.
+The `manage.py` script has a `dumpdata` command to export part or all of your application database to a file.  There are many useful options described in the [django-admin dumpdata][django-admin] documentation.
 
-Create a dump of the "polls" models in JSON format and output it to the console:
+* You can specify which "apps" and which "tables" to dump
+* The data is in JSON format, which is human readable. 
+
+Create a dump of the "polls" models in JSON format. Output is to the console:
 ```bash
 python manage.py dumpdata --indent=2 polls
 ```
-The `--indent=2` option requests formatted, easy-to-read output, indented 2 spaces per level of nesting.
+The `--indent=2` option requests output indented 2 spaces per nesting level. Ifyou don't include ``--indent=xx` the output is very dense and hard to read.
 
-By default, when you "load" data from a file, Django looks in a `fixtures` directory inside your "app" directory.  
+There are 2 ways to output to a file:
+```
+# 1. redirect standard output to a file
+python manage.py dumpdata --indent=2 polls > polls.json
 
-For the polls application, first create a `polls/fixtures` directory:
-```bash
-mkdir polls/fixtures
+# 2. use the -o option
+python manage.py dumpdata --indent=2 -o polls.json polls 
+```
+**Don't forget the `polls` argument!**  If you omit it, then manage.py will dump all tables (including Django's own tables) which is not portable.
+
+
+## Import Data Using loaddata
+
+Import data into a database using:
+```
+python manage.py loaddata  polls.json
+```
+You can specify more than one data file.  Sometimes the order matters. For example, if the "polls" data refers to "users" (a user owns his votes) then you *might* need to create users before loading polls data. 
+```
+python manage.py loaddata users.json polls.json
 ```
 
-Then dump polls data to a file named `seed.json` in our polls/fixtures directory using the `-o` (output file) option:
+If files are in a directory (e.g. `data/`, specify the path, too. For example
+```
+python manage.py loaddata data/users.json data/polls.json
+```
 
-```bash
+
+## Creating a "Data Fixture"
+
+Django calls the initial data for an "app" a **data fixture** and it looks for this data in an "app" subdirectory named `fixtures`.
+For the `polls` app, the data fixture directory is `polls/fixtures`.
+
+Suppose we want to create a start-up fixture named "seed".
+The commands would be:
+```
+# create the fixtures directory (one time)
+mkdir polls/fixtures
+# export the polls data to seed.json
 python manage.py dumpdata --indent=2 -o polls/fixtures/seed.json polls
 ```
 
-The `-o outputfile` option specifies a file to receive dump data, the `polls` parameter means dump only data for the polls app.
+Then edit `polls/fixtures/seed.json` to remove any unwanted data.
 
-Don't forget the `polls` argument!  If you omit it, then manage.py will dump all tables (including Django's own tables) which is not portable.
+### Loading a Data Fixture
 
-Edit `polls/fixtures/seed.json` to remove any unwanted data.
-
-## Using Django loaddata
-
-`manage.py` has a `loaddata` command to import data from a JSON file.
-
-For import, Django (by convention) looks for data in a `fixtures` directory inside an "app" directory such as `polls/fixtures`.
+If you specify a filename *without a path*, Django will look in the "fixtures" directories of all apps for the file.
 
 To load the data into a fresh, empty database use:
 ```bash
 python manage.py loaddata seed.json
 ```
-Django will look in every app's `fixtures` directory for files named `seed.json`, and import the data into the database.
 
 See the [django-admin][django-admin] docs for more dumpdata and loaddata options.
 
+## Using Data as Part of Installation
 
-### Creating Initial Data for Others to Use
+When someone installs your Django Polls project (or you deploy it to a cloud service) there won't be a database.
 
-To create initial data to distribute with your project, you need to
-do a little more work.
-
-1. Use `manage.py dumpdata -o init.json polls` to create a data file.
-2. Edit the file to remove excess poll questions and choices, and **set the vote counts** to zero.
-3. Put the data file in directory `polls/fixtures`.
-4. **Test it** on a fresh install of your project!
-
-> Real Developers test everything.  Don't *assume* it will work.
-
-When someone installs your Django Polls project he won't have a database,
-so he needs to run:
+So the installation process must run:
 ```bash
 python manage.py migrate
-python manage.py loaddata init.json   (or whatever filename you choose)
+python manage.py loaddata seed.json   (or whatever filename you choose)
 ```
 
-## Using a Migration instead of "manage.py loaddata"
+### Challenge for Hackers: Use a Migration instead of "manage.py loaddata"
 
-You can create a migration file to load initial data into the database.
+You can create a migration file to load data into a database.
 This makes it easier for others to install your app, since they
 only need to run `manage.py migrate`.  
 
 There's a good description and example in
 [Data Migrations][data-migrations] on RealPython.com.
 
-### Challenge for Hackers
-
 Can you write a data migration (in Python) do read a JSON file
 created by `dumpdata` and load it into the database?
-
-That would give you both the simplicity of initializing data using a migration, 
-and convenience of having data in a separate file you can easily modify.
 
 ---
 ## References

@@ -22,13 +22,13 @@ Features not implemented in this iteration:
 
 The code you will produce for this iteration matches the [Django Tutorial][django-tutorial].
 
-1. Create a wiki page named "Iteration 1 Plan" page in your `ku-polls` wiki. Include:
+1. Create a wiki page named "Iteration 1 Plan" page in your `ku-polls` wiki. Your "Iteration 1 Plan" should have these sections:
    - **Goal** for the iteration
-   - **Features** to implement and other major work (but not tasks)
    - **Milestone**, a concrete, visible indicator of progress.
+   - **Features** to implement and other major work (but not tasks)
    - **Acceptance Criteria** - how to evaluate the result?
 
-2. Create a **Project** with a Table View for all tasks. 
+2. Create a Github **Project** with a Table View all tasks. 
    - Define columns and fields you want.
    - In the Project settings, define a field named `Iteration`. Each task should be assigned to an Iteration.
    - Then, in your Task Board for each iteration you can **filter** only the tasks whose iteration value is the one you want.
@@ -75,7 +75,15 @@ The code you will produce for this iteration matches the [Django Tutorial][djang
 8. Add at least **2 interesting poll questions** to your app, and **delete** the boring "What's up?" question.
    - No boring, trivial questions like "How are you?", "What's your favorite color?"
 
-9. When you finish and test everything, open a **Pull Request** to merge.    
+9. Do not include `db.sqlite3` in your repository.  Instead, export your polls data to a file named **data/polls-v1.json**.  Here's is how:
+   ```
+   # in your "ku-polls" repository, enter:
+   mkdir data
+   python manage.py dumpdata --indent=2 -o data/polls-v1.json polls
+   ```
+   Include `data/` and `data/polls-v1.json` in your git repository.
+
+10. When you finish and test everything, open a **Pull Request** to merge.    
    Then, take a break.  Afterwards, review your own work, and **merge** branch `iteration1` into `master`. It should be a simple "fast forward" merge.
 
 
@@ -129,10 +137,11 @@ For details, see [Externalize Configuration](https://cpske.github.io/ISP/django/
 Your Github repository should look like this:
 ```
 .gitignore
-db.squlite3          <-- Please include this so we can run your code
 manage.py
 README.md
 requirements.txt     <-- List of required Python packages
+data/
+    polls-v1.json    <-- polls data from your database
 mysite/              <-- where application settings.py and urls.py are
     settting.py
     urls.py
@@ -158,8 +167,6 @@ ku-polls/         <-- Wrong: django project in a subdir of your repo
 
 More complex projects *do use subdirs* as shown above, but please don't do that in this assignment.
 
-**db.sqlite3** - Please include this for Iteration 1.  Normally you should *not* commit a database to Git, and you will delete this later after creating a *data fixture* for polls data.
-
 Your Github repository should also contain:
 
 - `iteration1` branch merged into master or main
@@ -169,6 +176,8 @@ Your Github repository should also contain:
 - "Iteration 1" task board in the "KU Polls" Project.  All (or most) tasks should be "Done".
 
 ## References
+
+[Import and Export Data](https://cpske.github.io/ISP/django/data-import-export) in Django. How to save data from your database to a file, and load the data again later.  This lets you recreate the database on another computer or switch to a different database (e.g. switch from SQLite to Postgresql).
 
 [Learn about Github Project Boards](https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects)
 

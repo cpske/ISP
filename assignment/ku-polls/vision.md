@@ -67,3 +67,12 @@ Two such products are:
 
 * Survey Monkey - (students should write their own summary of this)
 
+## Main Features
+
+1. An authorized person can create poll or survey questions with multiple choices and a specified start and end date (the polling period). These date are optional; if not specified then a poll remains open indefinitely.
+2. Authenticated users can submit a response to any poll question during the polling period.
+3. A user can revisit a poll page to view his/her response, and can change it during the polling period.
+4. No responses or change to a response are allowed after a poll's end date.
+5. Poll questions are not visible before a poll's starting date.
+6. Anyone can view the results of a poll question at any time after the starting date, but only authorized users can vote for a poll. 
+7. Voting may be restricted to people with a KU login.
