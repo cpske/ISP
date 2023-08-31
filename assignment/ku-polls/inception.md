@@ -39,23 +39,17 @@ In this lab, you will perform project set-up and inception activities.
    ```
    Django >= 4.1, <5.0
    ```
-6. Create a **Wiki** in your `ku-polls` repo, to contain project documents and software design documents. Wiki will eventually contain these pages:
-   - `Home` (conventional name) is the default landing page, contains links to other Wiki pages. A visitor should be able to find all project docs from Home.
-      - `Home` contains a short explanation of what the Wiki is for.
-   - `Vision` describes the purpose of the project, who is affected, how the product will benefit them, and the "business case" for the project.
-   - `Requirements` - a list of the major requirements and features of the product. Separate *functional requirements* from *non-functional requirements*. **Requirements must be updated at each iteration.**
-   - `Development Plan` - schedule of how/when you'll implement the features, with goals
-   - `Iteration 1 Plan` the plan for the first iteration of ku-polls.
+6. Create a **Wiki** in your `ku-polls` repo, to contain project documents and software design documents. Wiki should contain these pages:
 
-
-### How to Create Wiki Pages?
-
-The idea is: in an existing wiki page (e.g. Home) create a link to a page that doesn't exist yet.  A wiki link is text inside double brackets like this `[[Page Title]]`.
-
-Save the page, view it, and click on the (<font color="red">red</font>) link.
-
-Github will prompt you to create the new page!
-
+   - **Home** is the default landing page. It should explain what the Wiki is for and have links to other wiki pages.
+     - A visitor should be able to find all project docs from Home.
+   - **Vision** describes the purpose of the project, who is affected, how the product will benefit them, and the "business case" for the project.
+   - **Requirements** 
+     1. A numbered list of the requirements and features of the product.
+     2. Requirements should be written as things the program must or should do.
+     3. *Functional* and *non-functional* requirements should be separate numbered lists.  I don't require any *non-functional* requirements for KU Polls, but an example would be "Written in Python using the Django web framework".
+   - **Development Plan** - schedule of how/when you'll implement the features, with goals
+     - Edit and personalize the Development Plan according to what you think you will actually do.
 
 ### How to Refer to Wiki Pages in a Project README
 
@@ -87,6 +81,7 @@ All project documents are in the [Project Wiki](../../wiki/Home).
 
 Avoid using the absolute path to a wiki page in hyperlinks. The link will break if you ever move, clone, or rename the repo.
 See [Relative Links in READMEs](https://help.github.com/articles/adding-images-to-wikis/).
+
 
 ## 2. Project Inception
 
@@ -124,10 +119,9 @@ Most projects write a more detailed Vision that is a few pages long.
 
 ### Requirements 
 
-Write requirements as a numbered list, based on what you read in the class Vision and discussion.
-As a developer, try not to invent your our requirements.
+Write a numbered list of the requirements for the KU Polls application, based on what you read in the class Vision statement and class discussion.
 
-Many projects write requirements as User Stories or Use Cases. We're not doing that here.
+Requirements are things the program should do.
 
 Characteristics of good requirements are:
 
@@ -141,6 +135,8 @@ Characteristics of good requirements are:
 * Testable
 * Written as complete sentences with clear, correct English.
 
+Many projects write requirements as User Stories or Use Cases. We're not doing that here.
+
 Avoid writing implementation details as requirements.
 
 ### Development Plan or Software Development Plan
@@ -150,18 +146,19 @@ Avoid writing implementation details as requirements.
 Also called "Project Plan" or "Software Development Plan". It should include:
 
 1. Brief description of what will be produced. Refer to Requirements & Vision instead of duplicating details.
-2. Timeline or Schedule 
-   - how long is project? how long are iterations? 
-   - table: a schedule of what to implement in each iteration, with a goal or milestone for each iteration.
-   - this may change, but you need an initial estimate so people can see if your plan is reasonable and feasible
-3. Software Process you will use
-   - briefly describe process (you will use Iterative & Incremental)
-   - How to manage work products: use git and Github Flow.
+2. Software Process (the process you will use)
+   - briefly describe your process (you will use Iterative & Incremental)
+   - how long are the iterations? (1 week)
+   - How to manage work products? Use git and Github Flow.
    - Quality assurance plan - what testing and review will you do?
+3. Timeline or Schedule 
+   - table: a schedule of what to implement in each iteration
+   - a goal or milestone for each iteration
+   - the schedule may change, but you need an initial estimate so everyone can see if the plan is reasonable, feasible, and complete.
 4. Technology and Tools
    - Significant technologies you will use. Include frameworks.
-5. Resources you need -- you can omit this for this project.
-   - How many people? (for this assignment -- just you) What skills?
+5. Resources you need -- you can **omit this** for this project.
+   - How many people? (for this assignment: just you) What skills?
    - Computing resources required: cloud service? CI server? database?
 
 ### Iteration Plans
@@ -176,6 +173,15 @@ The iteration plan includes:
 
 ---
 
+### How to Create Wiki Pages?
+
+The idea is: in an existing wiki page (e.g. Home) create a link to a page that doesn't exist yet.  A wiki link is text inside double brackets like this `[[Page Title]]`.
+
+Save the page, view it, and click on the (<font color="red">red</font>) link.
+
+Github will prompt you to create the new page!
+
+
 ### How To Use a Github Wiki
 
 A wiki is a good location for project documents. 
@@ -183,16 +189,14 @@ A good example is Microsoft [VS Code Project](https://github.com/microsoft/vscod
 
 [Documenting your projects on Github](https://guides.github.com/features/wikis/) describes what should be in your README and in what order.
 
-> Demo in class
-
 [About Wikis](https://docs.github.com/en/github/building-a-strong-community/about-wikis) on Github has a good intro to wiki features.
 
 Links:
+
 - To link to another wiki page, open an existing page (e.g. Home) and write the link as: ``[[Title of Page]]``.  There is also a setting to use Markdown-style links to Wiki pages. 
 - To link to the world-wide web use standard Markdown: `[text to display](path-or-url)`
 
 Images: 
 - [Adding Images to Wikis](https://help.github.com/articles/adding-images-to-wikis/)
-
 
 
