@@ -3,7 +3,8 @@ title: Online Services with Badges
 ---
 
 A good article on "*why badges?*": [Code Repository Badges](https://github.com/dwyl/repo-badges)
-- it also shows *how* to create badges for docs, security, CI builds, test coverage, and Javascript "goodparts" (based on the book *Javascript: The Good Parts*).
+
+- article shows *how* to create badges for docs, security, CI builds, test coverage, and Javascript "goodparts"
 
 ## CI Services that Provide Badges
 
@@ -28,7 +29,7 @@ You might consider if these are useful for your project:
 
 [List of Badges in Markdown](https://github.com/Naereen/badges) many examples, mostly using shields.io.
 
-Open Source Licenses: I suggest you do **not** attach a license to your project unless you read and agree to what the license actually states. To learn more, read the [Open Source License Comparison][open-source-licenses] and [ChooseaLicense.com](https://choosealicense.com).
+Open Source Licenses: I suggest you do **not** attach a license to your project **unless** you read and agree to what the license actually states. To learn more, read the [Open Source License Comparison][open-source-licenses] and [ChooseaLicense.com](https://choosealicense.com).
 
 [open-source-licenses]: https://en.wikipedia.org/wiki/Comparison_of_free_and_open-source_software_licenses
 

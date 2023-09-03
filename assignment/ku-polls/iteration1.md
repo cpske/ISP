@@ -28,14 +28,14 @@ The code you will produce for this iteration matches the [Django Tutorial][djang
    - **Features** to implement and other major work (but not tasks)
    - **Acceptance Criteria** - how to evaluate the result?
 
-2. Create a Github **Project** for KU Polls.
+2. Create a Github **Project** for KU Polls. (You may have done this during the project inception.)
 
 3. In the Project, create a *Task Board* named "**Iteration 1**".
    - Task Board should have 4 columns for task status, as in KU Int'l Cafe. 
    - Add tasks for work to do in Iteration 1.
    - You will write code following the Django Tutorial, so you can define tasks like "Implement tutorial part 1", "Implement tutorial part 2", ..., 
    - Other work: "Add Good Poll Questions", "Review work and merge into main"
-   - Convert "tasks" to "issues". Most tasks *should* be issues, but you may have some "housekeeping" tasks that are not issues in the repo.
+   - Convert "tasks" to "issues". Tasks for development work *should* be issues, but you may have some "housekeeping" tasks that are not issues. For example, editing the links is README.md.
 
 4. Create the Django project directly in the `ku-polls` repo that you clone from Github -- not in a subdirectory.  Be careful how you create the project to avoid creating an extra subdirectory.  Do this:
    ```
