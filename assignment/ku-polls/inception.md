@@ -45,9 +45,10 @@ In this lab, you will perform project set-up and inception activities.
      - A visitor should be able to find all project docs from Home.
    - **Vision** describes the purpose of the project, who is affected, how the product will benefit them, and the "business case" for the project.
    - **Requirements** 
-     1. A numbered list of the requirements and features of the product.
-     2. Requirements should be written as things the program must or should do.
-     3. *Functional* and *non-functional* requirements should be separate numbered lists.  I don't require any *non-functional* requirements for KU Polls, but an example would be "Written in Python using the Django web framework".
+     1. A **numbered** list of the features and capabilities of the product.
+     2. These are requirements for KU Polls, **not** a list of features for Iteration 1.
+     3. Requirements should be written as things the program should do.
+     4. *Functional* and *non-functional* requirements should be separate numbered lists.  We don't have any *non-functional* requirements for KU Polls, but an example would be "Written in Python using the Django web framework".
    - **Development Plan** - schedule of how/when you'll implement the features, with goals
      - Edit and personalize the Development Plan according to what you think you will actually do.
 

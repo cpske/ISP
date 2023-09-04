@@ -5,7 +5,7 @@ title: KU Polls Iteration 1
 You will learn Django and implement KU Polls using the [Django Tutorial][django-tutorial].
 The assignments for the next 3 weeks will add to this code, so don't fall behind.
 
-The Requirements for this iteration are:
+The features to implement in this iteration are:
 
 1. Display a list of poll questions with multiple-choice answers.
 2. Visiter can select a poll question and vote for a choice. His vote is added to the total.
