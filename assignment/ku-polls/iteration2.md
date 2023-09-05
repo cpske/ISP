@@ -31,7 +31,9 @@ You will also automate running of tests.
    - `end_date` can be `null`. If it is null, then voting is allowed anytime after `pub_date`.
 
 2. Add a default for the `pub_date`.  The default is the current date and time.
-   - See below for hints. Many students code this wrong!
+   - This doesn't work:  `pub_date = DateTimeField( ..., default=timezone.now())`
+   - Use a function name without parens instead of the function value so that it is evaluated when the object is created. But there is an easier way...
+   - DateTimeField has an `auto_add_now` option for this.
 
 3. Items 1 & 2 change the database schema, so you need to make a migration and apply it ("migrate").
 
@@ -47,7 +49,7 @@ You will also automate running of tests.
    - question with pub date in the past
 
 7. Write at least **4 unit tests** for `can_vote`.    
-   - Design 4 tests for different cases.  The tests should not be redundant.
+   - Design 3 tests for different cases.  The tests should not be redundant.
    - Use a descriptive name for each test and write a one sentence docstring to describe what you are testing, e.g.
    ```python
    def test_cannot_vote_after_end_date(self):
@@ -100,7 +102,7 @@ Navigating the app's pages is clumsy. Sometimes a visitor has to use the browser
      # what is a safe default for DEBUG?
      DEBUG = config("DEBUG", cast=bool, default=???)
      ```
-   - See [Externalize Configuration](/ISP/django/external-configuration/) for more info.
+   - See [Externalize Configuration](/ISP/django/external-configuration) for more info.
 
 3. Do **not** commit `.env` to Git, but *do* create and commit a `sample.env` file so that someone knows what they need to set.
    - include helpful comments in `sample.env`
@@ -116,6 +118,7 @@ Navigating the app's pages is clumsy. Sometimes a visitor has to use the browser
    # Your timezone
    TIME_ZONE = Asia/Bangkok
    ```
+
 4. Add correctly-formatted docstring comments to the models and views.
    - Write class docstring and method/function docstring.
    - First line should be a complete sentence.
