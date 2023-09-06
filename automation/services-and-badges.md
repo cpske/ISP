@@ -2,13 +2,14 @@
 title: Online Services with Badges
 ---
 
-A good article on "*why badges?*": [Code Repository Badges](https://github.com/dwyl/repo-badges)
+*Why Use Badges?* A good article: [Code Repository Badges](https://github.com/dwyl/repo-badges)
 
-- article shows *how* to create badges for docs, security, CI builds, test coverage, and Javascript "goodparts"
+- the article shows *how* to create badges for docs, security, CI builds, test coverage, and Javascript "goodparts"
 
-## CI Services that Provide Badges
 
-You might consider if these are useful for your project:
+## Services that Provide Badges
+
+You might consider using some of these in your project:
 
 | URL                         | Used for            |
 |:----------------------------|:--------------------|
@@ -22,6 +23,7 @@ You might consider if these are useful for your project:
 | https://hakiri.io/          | security analysis   |
 | https://snyk.io/            | security analysis   |
 | https://gitter.im/          | chat channel        |
+
 
 ## Badge Services
 
@@ -37,12 +39,9 @@ Open Source Licenses: I suggest you do **not** attach a license to your project 
 ## Some Sites with Interesting Badges
 
 * [Jekyll](https://github.com/jekyll/jekyll) has badges for Appveyer, Codeclimate, Hakiri, sponsors, Travis
-* [VS Code](https://github.com/microsoft/vscode) has badges for Azure, Github open issues by category, chat on gitter
 * [DBeaver](https://github.com/dbeaver/dbeaver) has badges for Codacy, Travis, Twitter, Github for Java CI
 * [Checkstyle](https://github.com/checkstyle/checkstyle) has *ridiculous* number of badges.
 
-
-## Self-hosted Services
 
 ### [SonarQube](https://www.sonarqube.org)
 
@@ -51,20 +50,4 @@ Open Source Licenses: I suggest you do **not** attach a license to your project 
 SonarQube Community Edition is free. You can download it as a Docker image or ZIP file of source.
 
 [7-best-tools]: https://www.comparitech.com/net-admin/best-static-code-analysis-tools/
-
-
-### Security Analysis Tools
-
-[Top 12 Open Source Code Security Tools](https://spectralops.io/blog/top-12-open-source-code-security-tools/), an article by CheckPoint, 
-recommends some tools to check for security issues in dependencies.
-Some of the tools also perform static analysis of your code.
-
-- Contrast OSS (commercial)
-- Sprectral (their own product)
-- WhiteSource (commercial)
-- ShiftLeft Scan (free and open source)
-- SonarQube (free community edition)
-- Safety (free and open source) checks Python requirements.txt or virtual environments for security issues.  Github Dependabot does this.
-- Snyk
-
 
