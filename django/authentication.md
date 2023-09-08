@@ -9,23 +9,26 @@ Django's authentication provides for user login, logout, sign-up, and password r
 * **User** and **Group** models that store user info
 * **views** (url handlers) and Forms for login, logout, changing password, and others
 * **session middleware** to associate users with sessions
-* **decorators** (for view code) to require login or validate authorization before a view can be used. Decorators reduce code in views.
+* **decorators** (for your view code) to require login or validate authorization before a view can be used.
 * **password validators** for things like minimum password length
 
-The [MDN Django Tutorial][mdn-auth-tutorial] is a good introduction and 
-[Django Auth Docs][django-user-auth] have details with examples.
+
+[Django Auth Docs][django-user-auth] has details with examples.
+The [MDN Django Auth Tutorial][mdn-auth-tutorial] is a good introduction.
 
 
-## How to Use Authentication in Django
+## Steps to Use Authentication in Django
 
-1. In `settings.py` enable the `auth` app, middleware, and authentication backends.
-2. Run migrations if necessary (usually it is not).
-3. Add urls for login, logout, etc., in `urls.py`.
-4. Add a template for login and logout.  
+- [Enable Authentication](#enable-authentication)
+- [Create a Template for Login](#create-a-template-for-login)
+- [Add Default Redirects for KU Polls](#add-default-redirects-for-ku-polls)
+
+2. Make and run migrations if necessary (usually it is not).
+3. Add urls for login, logout, etc. to your `urls.py`.
+4. Create a template for login and logout. 
    - You may need to create a `templates` directory for this.
-5. Tell Django where to redirect the user *after* he logs in or logs out.
+5. Add settings to tell Django where to redirect the user *after* he logs in or logs out.
 6. Add authentication checks in your views. For example, require that a visitor be logged in order to access some view(s).
-
 
 ### Enable Authentication
 
@@ -37,9 +40,10 @@ The [MDN Django Tutorial][mdn-auth-tutorial] is a good introduction and
        ...
    ]
    ```
-   - If you add `django.contrib.auth` to settings.py, you need to run **makemigrations** and **migrate** to create database tables for User and Group.
 
-2. In `settings.py` you need two middleware components. Usually these are included by default:
+2. If you add `django.contrib.auth` to settings.py, you need to run **makemigrations** and **migrate** to create database tables for User and Group.
+
+3. In `settings.py` you need two middleware components. Usually these are included by default:
    ```python
    MIDDLEWARE = [
    ...
@@ -51,30 +55,30 @@ The [MDN Django Tutorial][mdn-auth-tutorial] is a good introduction and
    ]
    ```
 
-3. Enable at least one **authentication backend** to authenticate users.  The standard password-based backend is (probably enabled by default):
+3. Enable at least one **authentication backend** to authenticate users.   
+   The "ModelBackend" provides standard password-based authentication:
    ```python
    AUTHENTICATION_BACKENDS = [
        # username/password authentication
       'django.contrib.auth.backends.ModelBackend',  
    ]
    ```
-   You can add OAuth authentication by adding the `social-auth` or `allauth` package as another authentication backend. 
 
-4. Add the Django auth views to your URLs. By convention, use `accounts/` as the prefix for these URLs:
+4. Add the `auth` views to your `urls.py` file. By convention, `accounts/` is the prefix for these URLs:
    ```python
    urlpatterns = [
        path('admin/', admin.site.urls),
-       path('accounts/', include('django.contrib.auth.urls')),
+       path('accounts/', include('django.contrib.auth.urls')),  <-- auth views
        ...,
    ]
    ```
-   `auth.urls` adds several URLs (see below). The most important ones to get started are:
+   `auth.urls` defines several URLs. The most important ones to get started are:
    ```python
    accounts/login/                  [name='login']
    accounts/logout/                 [name='logout']
    ```
 
-5. Each `auth.urls` view uses a form named `form`.  You need to provide a **template** for each view to display the form and send results back to the view.
+5. Each `auth.urls` view requires a form named `form`.  You need to provide a **template** for each view to display the form and send results back to the view.
    ```
    URL                  View        Template
    /accounts/login      login       templates/registration/login.html
@@ -82,14 +86,17 @@ The [MDN Django Tutorial][mdn-auth-tutorial] is a good introduction and
    This url and view is not provided by Django:
    /signup              signup      templates/registration/sign_up.html
    ```
-   Do this in the next 3 steps:
+
+### Create a Template For Login 
+
+Optionally also create a "Logged Out" or "Sign up" template.
 
 6. Create directories `templates` and `templates/registrion` in your application top-level folder:
    ```
    ku-polls/
        mysite/
        polls/
-       templates/             <--- new directory
+       templates/             <--- new directory (maybe)
            registration/      <--- new directory
    ```
 
@@ -136,7 +143,7 @@ The [MDN Django Tutorial][mdn-auth-tutorial] is a good introduction and
    </html>
     ```
    {% endraw %}
-   The login fields align better if you use a table instead of paragraphs. Perfectionists can replace `form.as_p` with this:
+   For Perfectionists: rendering the form as an html table looks nicer than paragraphs.  You can replace `form.as_p` with this:
    {% raw %}
    ```html
      <table>
@@ -145,10 +152,10 @@ The [MDN Django Tutorial][mdn-auth-tutorial] is a good introduction and
     ```
    {% endraw %}
 
-8. **Test it.** Start the Django server and navigate to `localhost:8000/accounts/login/`.
+9. **Test it.** Start the Django server and navigate to `localhost:8000/accounts/login/`.
    - It should show a Login form.
 
-9. [Create a user](#create-a-user).  Here is how to create a user with the Django interactive shell. This code creates is a user named "Harry" with password "hackme22".
+10. [Create a user](#create-a-user).  Here is how to create a user with the Django interactive shell. This code creates is a user named "harry" with password "hackme22".
    ```bash
    $ python manage.py shell
 
@@ -162,28 +169,27 @@ The [MDN Django Tutorial][mdn-auth-tutorial] is a good introduction and
    user.save()
    ```
 
-10. After a user "logs in", what page should be shown?
-    - The default is redirect to `/accounts/profile`.  This is **not** what you want. 
-    - Specify a **default** redirect page in `settings.py`:
+### Add Default Redirects for KU Polls
+
+After a user "logs in", what page should be shown?
+
+The default is redirect to `/accounts/profile`.  This is **not** what we want. 
+**Note:** If the login `request` object contains a `next` key, the Django login view will redirect to the URL specified by `next`.  That is why there is a hidden field named `next` in the vote form above (it preserves the value of `next` from the previous redirect).
+
+1. Specify a **default** redirect page in `settings.py`:
     ```python
     LOGIN_REDIRECT_URL = '/polls/'    # show list of polls
-    LOGOUT_REDIRECT_URL = '/'         # after logout, go where?
+    LOGOUT_REDIRECT_URL = '/'         # after logout, direct to where?
     ```
-   - If the login `request` contains a field named `next`, the Django login view will redirect to the URL specified by `next` after a successful login.  That's why there is a hidden field named `next` in the form above (it preserves the value of `next` from the previous redirect).
 
-### Require Login to Vote
+### Require Login in Views
 
-You can test whether a user is logged in using:
-1. Code.  The `request` parameter always contains a `user` attribute, even if no one is logged in.
-   ```python
-   def vote(request, question_id):
-       """Vote for a choice on a question (poll)."""
-       user = request.user
-       if not user.is_authenticated:
-          return redirect('login')
-   ```
+You can require a user to login to access some views.  In KU Polls, 
+we require a user to login before voting.
 
-2. Annotation on view methods.
+There are 3 ways to do it.
+
+1. **`@login_required`** annotation for view methods.
    ```python
    from django.contrib.auth.decorators import login_required
 
@@ -192,7 +198,7 @@ You can test whether a user is logged in using:
        """Vote for a choice on a question (poll)."""
    ```
 
-3. "Mixin" on class-based views.
+2. **Mixin** for class-based views.
    ```python
    from django.contrib.auth.mixins import LoginRequiredMixin
 
@@ -201,6 +207,16 @@ You can test whether a user is logged in using:
        model = Question
        template_name = 'polls/detail.html'
    ```
+
+3. **Code**.  The `request` parameter **always** contains a `user` attribute, even if no one is logged in.
+   ```python
+   def vote(request, question_id):
+       """Vote for a choice on a question (poll)."""
+       user = request.user
+       if not user.is_authenticated:
+          return redirect('login')
+   ```
+
 
 ### Create a User
 
@@ -232,8 +248,8 @@ Other ways to create users are:
 
 - add a registration or "sign-up" page to your app
 - using the admin interface
-- write a Python script to create users and run it in a Django shell or via a custom URL (put your code in a view)
-- use a data fixture. Good for creating a demo user in your deployed app.
+- write a Python script to create users and run it in a Django shell
+- use a data fixture and `manage.py loaddata` to read the file
 
 
 ### Adding a "Sign-up" Page

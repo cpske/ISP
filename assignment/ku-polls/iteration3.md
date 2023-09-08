@@ -2,38 +2,52 @@
 title: KU Polls Iteration 3
 ---
 
-## Features to Add in Iteration 3
+## New Features to Add in Iteration 3
 
-Add user authentication and allow each user only 1 vote per poll.
-
-User authentication is done using username and password.
-
-Behavior to add or modify is:
-
-- A visitor can login and logout.
-- Only an authenticated (logged in) user can submit a vote.
-- Anyone can view the list of polls and poll results (same as before)
+- User accounts and ability for users to login and logout.
+- A visitor must login in order to submit a vote or change his vote(s).
+- An authenticated visitor is allowed only 1 vote per poll, but he can change his vote anytime while voting is allowed for a poll.
 - A user can change his vote on a poll during the voting period, and his new vote replaces his old vote. 
 - If a user selects a poll he already voted for, the list of choices shows which choice he/she previously selected. For example, a radio button is pre-selected for his previous vote.
-- Add a link to "Login" or "Logout" to the polls index page.
-- (Optional) Add logging of important events.
+- Add a link for "Login" or "Logout" to web pages.  For usability, it is preferrably to have this link appear in the same place on all pages (e.g. common header or sidebar).
+
+Other Behavior:
+
+- Anyone can view the list of polls and poll results (same as before)
+- (Optional for now) Add logging of important events, such as login, logout, failed login, and submitting a vote.
 
 ## Requirements
 
+Project Management:
+
 1. Create an Iteration 3 Plan in your wiki.
-2. Add Iteration 3 tasks to your Project. Create an "Iteration 3" task board with these tasks.
+2. Review and update your Requirements document. 
+3. Update the Development Plan for iteration 3.
+4. Create an Iteration 3 Task Board and add tasks.
    - Also convert task to "Issues" so they appear in your repo on Github.
-3. Do work on an `iteration3` branch and push it to Github regularly.
-4. Write unit tests to verify the new requirements.
-5. Add at least 2 demo users to your database.  In `README.md` add the username and password for these users.  This is so we can use your application.  For **example**
+
+Software Process and Development:
+
+1. Do work on an `iteration3` branch and push it to Github regularly.
+2. Write unit tests to verify the new work is correct and satisfies requirements.
+3. Add at least 2 demo users to your database.  In `README.md` add the username and password for these users.  This is so we can use your application.  For **example**
    ```
-   | Username  | Password  |
-   |-----------|-----------|
-   |   demo1   | demopass1 |
-   |   demo2   | demopass2 |
+   | Username  | Password        |
+   |-----------|-----------------|
+   |   demo1   | stupidpassword1 |
+   |   demo2   | stupidpassword2 |
    ```
+4. **Data Fixtures** When you are done create new data import files for questions, polls, and users.
+   ```
+   cmd> python manage.py dumpdata --indent=2 -o data/polls.json polls 
+   cmd> python manage.py dumpdata --indent=2 -o data/users.json polls 
+
 6. (Optional) Add a "Registration" feature so someone can create a login.  The `django.contrib.auth` app provides a view to do this. You need to add a template and a link to Django's url.
 
+### Incremental Development
+
+You should try to make small changes to the code and test each change
+You want to maintain runnable code as much as possible.  
 ### Design Hints
 
 You need to keep track of who has voted for which poll.
@@ -56,6 +70,7 @@ code, so your templates and tests will still work!
 
 ### Use Query Methods instead of Fetching All Votes
 
+Retrieving all 
 Try to write efficent code for summing the votes for a choice.
 
 The Django query methods like `filter`, `count`, and `sum` generate code that uses database operations without creating lots of objects.  This is much more efficient and faster.
