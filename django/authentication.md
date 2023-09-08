@@ -20,14 +20,11 @@ The [MDN Django Auth Tutorial][mdn-auth-tutorial] is a good introduction.
 ## Steps to Use Authentication in Django
 
 - [Enable Authentication](#enable-authentication)
-- [Create a Template for Login](#create-a-template-for-login)
 - [Add Default Redirects for KU Polls](#add-default-redirects-for-ku-polls)
+- [Create a Template for Login](#create-a-template-for-login)
+- [Add User Greeting to a Templates](add-user-greeting-to-a-template) and a link to login
+- [Require Login in Views](#require-login-in-views) a user most login to vote
 
-2. Make and run migrations if necessary (usually it is not).
-3. Add urls for login, logout, etc. to your `urls.py`.
-4. Create a template for login and logout. 
-   - You may need to create a `templates` directory for this.
-5. Add settings to tell Django where to redirect the user *after* he logs in or logs out.
 6. Add authentication checks in your views. For example, require that a visitor be logged in order to access some view(s).
 
 ### Enable Authentication
@@ -46,12 +43,12 @@ The [MDN Django Auth Tutorial][mdn-auth-tutorial] is a good introduction.
 3. In `settings.py` you need two middleware components. Usually these are included by default:
    ```python
    MIDDLEWARE = [
-   ...
-   # SessionMiddleware manages sessions spanning multiple requests
-   'django.contrib.sessions.middleware.SessionMiddleware',
-   # AuthenticationMiddleware associates a user with session and requests
-   'django.contrib.auth.middleware.AuthenticationMiddleware',
-   ...
+       ...
+       # SessionMiddleware manages sessions spanning multiple requests
+       'django.contrib.sessions.middleware.SessionMiddleware',
+       # AuthenticationMiddleware associates a user with session and requests
+       'django.contrib.auth.middleware.AuthenticationMiddleware',
+       ...
    ]
    ```
 
@@ -64,7 +61,7 @@ The [MDN Django Auth Tutorial][mdn-auth-tutorial] is a good introduction.
    ]
    ```
 
-4. Add the `auth` views to your `urls.py` file. By convention, `accounts/` is the prefix for these URLs:
+4. In your site `urls.py` file, add the `auth` views. By convention, `accounts/` is the prefix for these URLs:
    ```python
    urlpatterns = [
        path('admin/', admin.site.urls),
@@ -72,7 +69,7 @@ The [MDN Django Auth Tutorial][mdn-auth-tutorial] is a good introduction.
        ...,
    ]
    ```
-   `auth.urls` defines several URLs. The most important ones to get started are:
+   `django.contrib.auth.urls` defines several URLs. The most important ones to get started are:
    ```python
    accounts/login/                  [name='login']
    accounts/logout/                 [name='logout']
@@ -85,7 +82,29 @@ The [MDN Django Auth Tutorial][mdn-auth-tutorial] is a good introduction.
    /accounts/logout     logout      templates/registration/logged_out.html
    This url and view is not provided by Django:
    /signup              signup      templates/registration/sign_up.html
+ 
+
+### Add Default Redirects for KU Polls
+
+After a user "logs in", what page should he be shown?
+
+The default is redirect to `/accounts/profile`, which does not exist.
+
+After a user logs in, redirect the browser to the polls index.
+
+1. In `settings.py` specify a default redirect page:
+   ```python
+   LOGIN_REDIRECT_URL = '/polls/'    # after login, show list of polls
+   LOGOUT_REDIRECT_URL = '/'         # after logout, direct to where?
    ```
+
+2. **Alternative: Use URL names** instead of *hard-coding* the `/polls/` URL, you can use a URL name (from urls.py):
+   ```python
+   LOGIN_REDIRECT_URL = 'polls:index'  # after login, show list of polls
+   ```
+
+**Note:** If the login `request` object contains a `next` key, the Django login view will redirect to the URL specified by `next` instead of the default redirect.
+
 
 ### Create a Template For Login 
 
@@ -100,13 +119,12 @@ Optionally also create a "Logged Out" or "Sign up" template.
            registration/      <--- new directory
    ```
 
-7. In `mysite/settings.py` tell Django to use this template directory:
+7. In `mysite/settings.py` include the templates directory:
    ```python
-   import os.path
-
    TEMPLATES = [
        {
-           'DIRS': [os.path.join(BASE_DIR, 'templates')],
+           # old way: 'DIRS': [os.path.join(BASE_DIR, 'templates')],
+           'DIRS': BASE_DIR / "templates")],
            'APP_DIRS': True,
            ...
        }
@@ -121,7 +139,7 @@ Optionally also create a "Logged Out" or "Sign up" template.
                login.html       <--- create this
                logged_out.html  <--- (do this later)
    ```
-   A simple login template is:
+   The simplest login template is:
    {% raw %}
    ```html
    <html>
@@ -135,15 +153,12 @@ Optionally also create a "Logged Out" or "Sign up" template.
      </p>
      <input type="hidden" name="next" value="{{next}}"/>
     </form>
-   {# If you have a password_reset template, then add here #}
-   <p>
-   <a href="{% url 'password_reset' %}">Forgot password?</a>
-   </p>
+   {# If you have a password_reset template, then add a link here #}
    </body>
    </html>
     ```
    {% endraw %}
-   For Perfectionists: rendering the form as an html table looks nicer than paragraphs.  You can replace `form.as_p` with this:
+   Nicer Page Template: rendering the form as an html table looks nicer than paragraphs.  You can replace `form.as_p` with this:
    {% raw %}
    ```html
      <table>
@@ -163,24 +178,51 @@ Optionally also create a "Logged Out" or "Sign up" template.
 
    # username and email fields are required, others are optional.
    # Use named parameters to avoid errors.
-   user = User.objects.create( username='harry', email='harry@hackerone.com')
+   user = User.objects.create(username='harry', 
+                              email='harry@hackerone.com',
+                              first_name="Harry")
    user.set_password("hackme22")
-   user.first_name = "Harry"
    user.save()
    ```
 
-### Add Default Redirects for KU Polls
+Django also has a `User.objects.create_user()` method where you can specify the password as a named parameter.
 
-After a user "logs in", what page should be shown?
+11. **Login as this User**.
 
-The default is redirect to `/accounts/profile`.  This is **not** what we want. 
-**Note:** If the login `request` object contains a `next` key, the Django login view will redirect to the URL specified by `next`.  That is why there is a hidden field named `next` in the vote form above (it preserves the value of `next` from the previous redirect).
 
-1. Specify a **default** redirect page in `settings.py`:
-    ```python
-    LOGIN_REDIRECT_URL = '/polls/'    # show list of polls
-    LOGOUT_REDIRECT_URL = '/'         # after logout, direct to where?
-    ```
+### Add User Information to a Template
+
+Show the username in your templates. If a user is not logged in, then add a link to Loginl
+- If you have a global `base` template, add it there.
+
+Inside HTML templates access user information, such as:
+{% raw %}
+```
+{{ user }}                     - reference to user object, never null
+{% if user.is_authenticated %} - true if user is logged in
+{{ user.username }}            - the user login name or empty string
+{{ user.first_name }}          - may be an empty string 
+```
+{% endraw %}
+
+In your `base` template or your polls `index` template, 
+greet the user or ask him to login:
+{% raw %}
+```html
+{% if user.is_authenticated %}
+   Welcome back, {{ user.username }} 
+{% else %}
+   Please <a href="{% url 'login' %}?next={{request.path}}">Login</a>
+{% endif %}
+```
+{% endraw %}
+
+In the login link we added a **query parameter**: {% raw %}`?next={{request.path}}`{% endraw %}
+
+The `next=path` tells Django's login view that after login to come back to this page.  Otherwise, it will redirect him to the default page (in settings.py).
+
+**Note:** This only works if your `login.html` template *also* passes `next` to the Django login view. See the code above.
+
 
 ### Require Login in Views
 
@@ -217,38 +259,42 @@ There are 3 ways to do it.
           return redirect('login')
    ```
 
+---
 
 ### Create a User
 
-To add a user interactively using the Django shell:
+You can use these methods in a Python function or the Django shell.
+
+**User.objects.create\_user** convenience method:
 
 ```python
 from django.contrib.auth.models import User
 
-# The username and email fields are required, others are optional.
 # Use named parameters to avoid errors.
+# username and email fields are required, others are optional.
 user = User.objects.create_user( 'username', 
           email='email@some.domain', 
           password='password')
 
-# set other User attributes (optional)
+# set optional attributes
 user.first_name = "Harry"
 user.last_name = "Hacker"
 user.save()
 ```
 
-Another way, without the `create_user` convenience method:
+**User.objects.create**:
 ```
-user = User.objects.create( username='username', email='email@some.domain') 
+user = User.objects.create(username='username', 
+                           email='email@some.domain') 
 user.set_password("secret")
 user.first_name = "Harry"
 user.save()
 ```
+
 Other ways to create users are:
 
 - add a registration or "sign-up" page to your app
 - using the admin interface
-- write a Python script to create users and run it in a Django shell
 - use a data fixture and `manage.py loaddata` to read the file
 
 
@@ -301,7 +347,7 @@ example of how.
    <h2>Register</h2>
    <form method="POST">
        {% csrf_token %}
-       <table>
+       <table style="padding: 2ex;">
        {{ form.as_table }}
        <tr>
        <td colspan="2">
@@ -315,14 +361,6 @@ example of how.
    {% endraw %}
    If you don't have a global `base.html` for your templates, then omit the "extends", "block", and "endblock" statements.
 
-
-
-### Next Steps
-
-Once you enable login and logout, the next things to do are:
-
-1. [Access user information in views](#access-user-information-in-views) and [templates](#access-user-information-in-templates).
-2. Use a decorator to require login to access a view method.  A reliable way to enforce authentication.
 
 
 ### URLs Provided by Django's `auth` Application
@@ -356,20 +394,6 @@ so in your `login.html` template do something like this:
 ```
 {% endraw %}
 
-## What is a User?
-
-When you enable `django.contrib.auth` in your project, Django
-adds database tables for User, Group, Permissions, and tables for relations between these.
-
-The model classes in `django.contrib.auth` are:
-
-| Class   | Table       | Description      |
-|:--------|:------------|:------------------|
-| User    | `auth_user` | User with first_name, last_name, password, email, id, and date_joined |
-| Group   | `auth_group` |Group with an id and name. |
-| Permission | `auth_permissions` | Permission with id, codename, and permission name. |
-
-
 
 ### LoginRequired Mixin to Require Login for Class-based Views
 
@@ -386,42 +410,6 @@ class EyesOnlyView(LoginRequiredMixin, ListView):
 > functionality from multiple classes is combined into another
 > class.  That is, behavior is "mixed in".
 
-### Access User Information in a Template
-
-Inside HTML templates access information about a user using:
-{% raw %}
-```
-{{ user }}                     - reference to user object, not null
-{% if user.is_authenticated %} - true if user is logged in
-{{ user.username }}            - the user login name or empty string
-{{ user.first_name }}          - may be empty string if not set in model
-```
-{% endraw %}
-For example, to greet a user or ask him to login:
-{% raw %}
-```html
-{% if user.is_authenticated %}
-   Welcome back, {{ user.username }}
-{% else %}
-   Please <a href="{% url 'login' %}">Login</a>
-{% endif %}
-```
-{% endraw %}
-But, in the above code after logging in the user will be redirected to the default LOGIN_REDIRECT_URL.  To cause the browser to come back to this page after login, append the `next=` query parameter to the login URL:
-{% raw %}
-```
-{% if user.is_authenticated %} 
-    Welcome back, {{ user.username }}
-{% else %}
-    Please <a href="{% url 'login'%}?next={{request.path}}">Login</a>
-{% endif %}
-```
-{% endraw %}
-This example shows that you can access the `request` object inside a template, too.
-
-**Note:** This only works if your `login.html` template *also* passes `next` to the Django login view.  You should include a *hidden field* in the template for the `next` field.
-
-
 ### Access User Information in a View
 
 The logged in user is saved as part of the *session* and included in the `request` object (HttpRequest), which is passed to every view.
@@ -434,27 +422,6 @@ def vote(request, question_id):
     print("current user is", user.id, "login", user.username)
     print("Real name:", user.first_name, user.last_name)
 ```
-
-### Django Redirects for Login and Logout
-
-The Django `auth` login and logout views will redirect the browser after login or logout.
-Specify where to redirect a user after login or logout in `settings.py`:
-```python
-LOGIN_REDIRECT_URL = '/todo/'
-LOGOUT_REDIRECT_URL = '/todo/'
-```
-Instead of a hard-coded URL, you can use the name of a view.  If the URL does not contain a '/' then Django will look for a named view.  If you have a view named '`home`' then use:
-```python
-LOGIN_REDIRECT_URL = 'home'
-LOGOUT_REDIRECT_URL = 'home'
-```
-
-For a particular `login` or `logout` request, you can specify where to redirect the browser using the `?next=url` query parameter.  For example:
-{% raw %}
-```
-Please <a href="{% url 'login'%}?next={{request.path}}">Login</a>
-```
-{% endraw %}
 
 ### Signing Up a New User
 
@@ -581,5 +548,4 @@ William Vincent [Login/Logout Tutorial][auth_tutorial] has same info as this doc
 [mdn-auth-tutorial]: https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Authentication
 [auth_tutorial]: https://wsvincent.com/django-user-authentication-tutorial-login-and-logout/
 [signup_tutorial]: https://wsvincent.com/django-user-authentication-tutorial-signup/
-
 
