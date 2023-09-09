@@ -2,34 +2,38 @@
 title: Authentication in Django
 ---
 
-Django provides an authentication system, which you can combine with your own forms (UI) and different authentication "backends".
+Django provides an authentication system, which you can combine with your own forms (UI) and different *authentication backends* -- like username/password or OAuth.
 
-Django's authentication provides for user login, logout, sign-up, and password reset.  It consists of:
+Django's authentication model includes:
 
 * **User** and **Group** models that store user info
-* **views** (url handlers) and Forms for login, logout, changing password, and others
+* **Views** and **Forms** for login, logout, changing password, forgot password, and more
 * **session middleware** to associate users with sessions
-* **decorators** (for your view code) to require login or validate authorization before a view can be used.
-* **password validators** for things like minimum password length
-
+* **decorators** (for your view code) to require login or validate authorization
+* **password validators** for things like required minimum password length
 
 [Django Auth Docs][django-user-auth] has details with examples.
 The [MDN Django Auth Tutorial][mdn-auth-tutorial] is a good introduction.
 
 
-## Steps to Use Authentication in Django
+## How to Use Authentication in Django
 
-- [Enable Authentication](#enable-authentication)
-- [Add Default Redirects for KU Polls](#add-default-redirects-for-ku-polls)
-- [Create a Template for Login](#create-a-template-for-login)
-- [Add User Greeting to a Templates](add-user-greeting-to-a-template) and a link to login
-- [Require Login in Views](#require-login-in-views) a user most login to vote
+- Step 1. [Enable Authentication](#enable-authentication)
+- Step 2. [Add Default Redirects for KU Polls](#add-default-redirects-for-ku-polls)
+- Step 3. [Create a Template for Login Page](#create-a-template-for-login-page)
+- Step 4. [Add User Greeting to a Templates](add-user-greeting-to-a-template) and a link to login
+- Step 5. [Require Login in Views](#require-login-in-views) a user most login to vote
 
-6. Add authentication checks in your views. For example, require that a visitor be logged in order to access some view(s).
+- Extra Material: 
+[Create a Sign-up Page for New Users](#create-a-sign-up-page-for-new-users),
+[Access User Information in a View](#access-user-information-in-a-view),
+[How to Create Users](create-users),
+[Resources](#resources)
+
 
 ### Enable Authentication
 
-1. In your site's `settings.py` file check that `INSTALLED_APPS` includes `django.contrib.auth`
+1. In your site's `settings.py` file verify that `INSTALLED_APPS` includes `django.contrib.auth` (add it if necessary):
    ```python
    INSTALLED_APPS = [
        'django.contrib.admin',
@@ -38,7 +42,7 @@ The [MDN Django Auth Tutorial][mdn-auth-tutorial] is a good introduction.
    ]
    ```
 
-2. If you add `django.contrib.auth` to settings.py, you need to run **makemigrations** and **migrate** to create database tables for User and Group.
+2. If you added `django.contrib.auth` to settings.py, you need to run **makemigrations** and **migrate** to create database tables for User and Group.
 
 3. In `settings.py` you need two middleware components. Usually these are included by default:
    ```python
@@ -56,12 +60,12 @@ The [MDN Django Auth Tutorial][mdn-auth-tutorial] is a good introduction.
    The "ModelBackend" provides standard password-based authentication:
    ```python
    AUTHENTICATION_BACKENDS = [
-       # username/password authentication
+       # username & password authentication
       'django.contrib.auth.backends.ModelBackend',  
    ]
    ```
 
-4. In your site `urls.py` file, add the `auth` views. By convention, `accounts/` is the prefix for these URLs:
+4. In your site `urls.py` file, add the `auth` urls. By convention, `accounts/` is the prefix for these URLs:
    ```python
    urlpatterns = [
        path('admin/', admin.site.urls),
@@ -71,18 +75,16 @@ The [MDN Django Auth Tutorial][mdn-auth-tutorial] is a good introduction.
    ```
    `django.contrib.auth.urls` defines several URLs. The most important ones to get started are:
    ```python
-   accounts/login/                  [name='login']
-   accounts/logout/                 [name='logout']
+   accounts/login/                  name='login'
+   accounts/logout/                 name='logout'
    ```
 
-5. Each `auth.urls` view requires a form named `form`.  You need to provide a **template** for each view to display the form and send results back to the view.
+5. Each `auth.urls` has a **view** that provides a **form** named `form`.  You need to provide a **template** for each view to display the form and send results back to the view.
    ```
    URL                  View        Template
    /accounts/login      login       templates/registration/login.html
    /accounts/logout     logout      templates/registration/logged_out.html
-   This url and view is not provided by Django:
-   /signup              signup      templates/registration/sign_up.html
- 
+   ```
 
 ### Add Default Redirects for KU Polls
 
@@ -106,11 +108,11 @@ After a user logs in, redirect the browser to the polls index.
 **Note:** If the login `request` object contains a `next` key, the Django login view will redirect to the URL specified by `next` instead of the default redirect.
 
 
-### Create a Template For Login 
+### Create a Template For Login Page
 
-Optionally also create a "Logged Out" or "Sign up" template.
+Optionally also create templates for "Logged Out" or "Sign up".
 
-6. Create directories `templates` and `templates/registrion` in your application top-level folder:
+6. Create directories named `templates` and `templates/registration` in your application top-level folder:
    ```
    ku-polls/
        mysite/
@@ -170,7 +172,7 @@ Optionally also create a "Logged Out" or "Sign up" template.
 9. **Test it.** Start the Django server and navigate to `localhost:8000/accounts/login/`.
    - It should show a Login form.
 
-10. [Create a user](#create-a-user).  Here is how to create a user with the Django interactive shell. This code creates is a user named "harry" with password "hackme22".
+10. [Create a user](#create-users).  Here is how to create a user with the Django interactive shell. This code creates is a user named "harry" with password "hackme22".
    ```bash
    $ python manage.py shell
 
@@ -240,7 +242,7 @@ There are 3 ways to do it.
        """Vote for a choice on a question (poll)."""
    ```
 
-2. **Mixin** for class-based views.
+2. **Mixin** for class-based views.  To require login for a class-based view, use:
    ```python
    from django.contrib.auth.mixins import LoginRequiredMixin
 
@@ -261,48 +263,19 @@ There are 3 ways to do it.
 
 ---
 
-### Create a User
+### Create a Sign-up Page for New Users
 
-You can use these methods in a Python function or the Django shell.
+These steps describe how to enable visitors to create their own local account.
+In most apps it is better to use OAuth so that visitors can login using
+their Google, Github, Facebook, etc., account.  
+Enabling OAuth is *suprisingly easy* to do in Django.
 
-**User.objects.create\_user** convenience method:
+To enable visitors to create a local account:
 
-```python
-from django.contrib.auth.models import User
-
-# Use named parameters to avoid errors.
-# username and email fields are required, others are optional.
-user = User.objects.create_user( 'username', 
-          email='email@some.domain', 
-          password='password')
-
-# set optional attributes
-user.first_name = "Harry"
-user.last_name = "Hacker"
-user.save()
-```
-
-**User.objects.create**:
-```
-user = User.objects.create(username='username', 
-                           email='email@some.domain') 
-user.set_password("secret")
-user.first_name = "Harry"
-user.save()
-```
-
-Other ways to create users are:
-
-- add a registration or "sign-up" page to your app
-- using the admin interface
-- use a data fixture and `manage.py loaddata` to read the file
-
-
-### Adding a "Sign-up" Page
-
-In most apps it is better to use OAuth than to let users create local
-accounts.  If you do need to let people create accounts, here is an
-example of how.
+- define a url for a "Sign up" page
+- create a view to handle this page
+- create a page template for the sign-up page
+ 
 
 1. In your project `urls.py` file add a "signup/" url:
    ```python
@@ -325,20 +298,24 @@ example of how.
            form = UserCreationForm(request.POST)
            if form.is_valid():
                form.save()
+               # get named fields from the form data
                username = form.cleaned_data.get('username')
-               raw_passwd = form.cleaned_data.get('password')
+               # password input field is named 'password1'
+               raw_passwd = form.cleaned_data.get('password1')
                user = authenticate(username=username,password=raw_passwd)
                login(request, user)
               return redirect('polls')
            # what if form is not valid?
            # we should display a message in signup.html
        else:
+           # create a user form and display it the signup page
            form = UserCreationForm()
-       return render(request, 'registration/signup.html', {'form':form})
+       return render(request, 'registration/signup.html', {'form': form})
    ```
-   An important thing here is that the view uses Django's UserCreateForm, and passes this form to the template for rendering.
+   The important thing here is that the view uses Django's UserCreationForm, and passes this form to the template for rendering.  `UserCreationForm` provides code to validate and clean input data.
 
-3. Create a `signup.html` form.  This form is rendered by `signup()` (above) in response to a GET request (GET /signup). In `templates/registration/signup.html` write:
+3. Create a `signup.html` template containing a sign up form.  The `signup` view (above) renders this template when the user visits /signup, and re-renders the page if a POST request finds any problems in the form data.    
+   In `templates/registration/signup.html` write:
    {% raw %}
    ```html
    {% extends 'base.html' %}
@@ -348,7 +325,7 @@ example of how.
    <form method="POST">
        {% csrf_token %}
        <table style="padding: 2ex;">
-       {{ form.as_table }}
+       {{ form.as_table }}     {# this line shows the sign-up form #}
        <tr>
        <td colspan="2">
        <button type="submit">Register</button>
@@ -359,11 +336,54 @@ example of how.
    {% endblock %}
    ```
    {% endraw %}
-   If you don't have a global `base.html` for your templates, then omit the "extends", "block", and "endblock" statements.
 
+If you don't have a global `base.html` for your templates, then omit the "extends", "block", and "endblock" statements.
 
+The important parts of this template are 
+- render the form: `form.as_table`
+- POST-ing the form back to the correct URL.  The &lt;form method='POST'&gt; tage doesn't specify an action URL, so the default is to send it back to the same URL the page came from (the "signup" view).
 
-### URLs Provided by Django's `auth` Application
+---
+
+### Create Users
+
+You can use these methods in a Python function or the Django shell.
+
+**User.objects.create\_user** convenience method:
+
+```python
+from django.contrib.auth.models import User
+
+# Use named parameters to avoid errors.
+# username and email fields are required, others are optional.
+user = User.objects.create_user( 'username', 
+          email='email@some.domain', 
+          password='password')
+
+# set optional attributes
+user.first_name = "Harry"
+user.last_name = "Hacker"
+user.save()
+```
+
+**User.objects.create** method:
+```
+user = User.objects.create(username='username', 
+                           email='email@some.domain') 
+user.set_password("secret")
+user.first_name = "Harry"
+user.save()
+```
+
+Other ways to create users are:
+
+- add a registration or "sign-up" page to your app
+- the admin interface
+- use a data fixture and `manage.py loaddata` to read user data from a file
+
+---
+
+### URLs in Django's `auth` Application
 
 Django's `auth` app provides views for each of these URLs:
 ```python
@@ -376,12 +396,13 @@ accounts/password_reset/done/    [name='password_reset_done']
 accounts/reset/<uidb64>/<token>/ [name='password_reset_confirm']
 accounts/reset/done/             [name='password_reset_complete']
 ```
-to use these views you must create a template for each in a folder named `registration`.  
-The templates should have the same name as the views: the `login` view 
+
+to use these views you must create a template for each in a folder named `templates/registration`.  
+The templates should have the same name as the view: the `login` view 
 expects a template named `login.html`.  The login view encapsulates its data in a Form named `form`,
 so in your `login.html` template do something like this:
 {% raw %}
-```
+```html
 <form method="POST">
   {% csrf_token %}
   <table style="padding: 2ex;">
@@ -394,21 +415,6 @@ so in your `login.html` template do something like this:
 ```
 {% endraw %}
 
-
-### LoginRequired Mixin to Require Login for Class-based Views
-
-For class-based views use a *mixin* to require authentication:
-```python
-from django.contrib.auth.mixins import LoginRequiredMixin
-
-class EyesOnlyView(LoginRequiredMixin, ListView):
-    # this is the default. Same default as in auth_required decorator
-    login_url = '/accounts/login/'
-    rest of your view code
-```
-> **Mixin** is a design style or design pattern where
-> functionality from multiple classes is combined into another
-> class.  That is, behavior is "mixed in".
 
 ### Access User Information in a View
 
@@ -423,79 +429,11 @@ def vote(request, question_id):
     print("Real name:", user.first_name, user.last_name)
 ```
 
-### Signing Up a New User
 
-The Django `auth` app has a UserCreateForm with validators that impose some strict criteria on passwords and prevent duplicate usernames.  But you have to provide
-your own view (controller) and template to use this form.
+## Django's Password Validators
 
-In my polls app, I added the view right to top-level urls.py file:
-```python
-# mysite/urls.py
-...
-from . import views
-
-urls = [
-    ...,
-    path('accounts/', include('django.contrib.auth.urls')),  # Django auth app
-    path('signup/', views.signup, name='signup'),
-    ]
-```
-and in `mysite/views.py` define a "signup" method that handles both GET and POST requests.  A GET request returns a sign-up form.  
-
-A POST request validates the form data.  If it is valid, then `form.save()` causes the user data to be saved to the Users table (auth_users).  This shows how
-forms can simplify code by encapsulating (and inheriting) common actions for
-accepting, validating, and saving data.
-{% raw %}
-```python
-def signup(request):
-    """Register a new user."""
-    if request.method == 'POST':
-        form = UserCreationForm(request.POST)
-        if form.is_valid():
-            form.save()
-            username = form.cleaned_data.get('username')
-            raw_passwd = form.cleaned_data.get('password')
-            user = authenticate(username=username,password=raw_passwd)
-            login(request, user)
-            return redirect('polls')
-        # what if form is not valid?
-        # we should display a message in signup.html
-    else:
-        form = UserCreationForm()
-    return render(request, 'registration/signup.html', {'form': form})
-```
-{% endraw %}
-
-Finally, we need a template for sign-up.  As shown in the above view code,
-we inject the UserCreationForm object as a variable named `form`.
-You can put the template anywhere you like. As shown in the `render()` function call in the view, I put mine in a subdirectory of `templates/` named `registrations`.  That is, BASE_DIR/templates/registion/signup.html.
-
-A simple user sign-up template is:
-{% raw %}
-```html
-{% block content %}
-<h2>Register</h2>
-<form method="POST">
-    {% csrf_token %}
-    <table>
-    {{ form.as_table }}
-    <tr>
-    <td colspan="2">
-    <button type="submit">Register</button>
-    </td>
-    </tr>
-    </table>
-</form>
-{% endblock %}
-```
-{% endraw %}
-
-The important parts of this template are a) render the form `{{form.as_table}}`
-and b) POSTing the form back to the correct URL.  Since the &lt;form method='POST'&gt; block doesn't specify an action, the default action is to send it back to the same URL the page came from.
-
-## Django's Annoying Password Validators
-
-Django provides a collection of *validators* for authentication data.   They are usually:
+Django provides a collection of *validators* for authentication data.   
+They are defined in `settings.py`, usually:
 ```python
 # settings.py
 AUTH_PASSWORD_VALIDATORS = [
@@ -513,7 +451,9 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 ```
-The password requirements are good but sometimes annoying. You can customize them. Look at the constructors for the validator classes (above) in the file `django/contribe/auth/password_validation.py`.  Each constructor has some named parameters. You can specify a value for those named parameters
+These password requirements are good but sometimes annoying. You can customize them. 
+
+Look at the constructors for the password validator classes in the file `django/contribe/auth/password_validation.py`.  Each constructor has some named parameters. You can specify parameter values to customize the validators.
 
 | Validator                | Constructor Parameters     |
 |:-------------------------|:---------------------------|
@@ -524,12 +464,6 @@ The password requirements are good but sometimes annoying. You can customize the
 
 `NumericPasswordValidator` checks if a password is purely alphanumeric (disallowed).  If you want to allow alphanumeric passwords, comment out the validator.
 
-
-Don't copy this!  It's for example only.
-```python
-# if you copy this, you are an idiot
-
-```
 
 ---
 
