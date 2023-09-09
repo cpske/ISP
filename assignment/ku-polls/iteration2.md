@@ -32,8 +32,7 @@ You will also automate running of tests.
 
 2. Add a default for the `pub_date`.  The default is the current date and time.
    - This doesn't work:  `pub_date = DateTimeField( ..., default=timezone.now())`
-   - Use a function name without parens instead of the function value so that it is evaluated when the object is created. But there is an easier way...
-   - DateTimeField has an `auto_add_now` option for this.
+   - Use a function name **without parens** instead of the function value so that it is evaluated when the object is created. 
 
 3. Items 1 & 2 change the database schema, so you need to make a migration and apply it ("migrate").
 

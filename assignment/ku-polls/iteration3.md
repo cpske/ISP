@@ -6,10 +6,10 @@ title: KU Polls Iteration 3
 
 - User accounts and ability for users to login and logout.
 - A visitor must login in order to submit a vote or change his vote(s).
-- An authenticated visitor is allowed only 1 vote per poll, but he can change his vote anytime while voting is allowed for a poll.
+- An authenticated user is allowed only 1 vote per poll, but he can change his vote anytime while voting is allowed for a poll.
 - A user can change his vote on a poll during the voting period, and his new vote replaces his old vote. 
 - If a user selects a poll he already voted for, the list of choices shows which choice he/she previously selected. For example, a radio button is pre-selected for his previous vote.
-- Add a link for "Login" or "Logout" to web pages.  For usability, it is preferrably to have this link appear in the same place on all pages (e.g. common header or sidebar).
+- Add a link for "Login" or "Logout" to web pages.  It is good UI design if these links appear in the *same place* on all pages (e.g. a common header or sidebar).
 
 Other Behavior:
 
@@ -18,7 +18,7 @@ Other Behavior:
 
 ## Requirements
 
-Project Management:
+Project Management Artifacts:
 
 1. Create an Iteration 3 Plan in your wiki.
 2. Review and update your Requirements document. 
@@ -40,14 +40,15 @@ Software Process and Development:
 4. **Data Fixtures** When you are done create new data import files for questions, polls, and users.
    ```
    cmd> python manage.py dumpdata --indent=2 -o data/polls.json polls 
-   cmd> python manage.py dumpdata --indent=2 -o data/users.json polls 
+   cmd> python manage.py dumpdata --indent=2 -o data/users.json auth.user
+   ```
 
-6. (Optional) Add a "Registration" feature so someone can create a login.  The `django.contrib.auth` app provides a view to do this. You need to add a template and a link to Django's url.
 
 ### Incremental Development
 
 You should try to make small changes to the code and test each change
 You want to maintain runnable code as much as possible.  
+
 ### Design Hints
 
 You need to keep track of who has voted for which poll.
@@ -58,22 +59,21 @@ This requires a change in the domain model, as discussed in the lab.
 `Vote` needs a reference to `user` and `choice`. These are ForeignKey attributes in the Vote model class.
 
 After this change, there is no "votes" attribute in Choice.
-But, our templates use `choice.votes` to display the votes, 
-and we would like to avoid making a lot of changes to code.
-Your unit tests may also use `choice.votes`.
+But, our templates use `choice.votes` to display the votes. 
 
-To **hide the change** redefine `votes` as a read-only property
-that computes the votes for a choice each time it is called.
-The `votes` property "*looks*" like the `votes` attribute in the old
-code, so your templates and tests will still work!
+**Hide the change** by redefining `votes` as a read-only property
+that counts the votes for a choice each time it is called.
+The `votes` property "*looks*" like the old `votes` attribute,
+so your templates and tests should still work!
 
 
-### Use Query Methods instead of Fetching All Votes
+### Use Query Methods Instead of Fetching All Votes
 
-Retrieving all 
+Retrieving all data from a table and creating Python objects is **inefficient**.
 Try to write efficent code for summing the votes for a choice.
 
-The Django query methods like `filter`, `count`, and `sum` generate code that uses database operations without creating lots of objects.  This is much more efficient and faster.
+Use Django query methods like `filter`, `count`, and `sum`.
+They generate code that uses database operations without creating lots of objects.  This is much more efficient and faster.
 
 - *Inefficient*: get all the votes and sum the ones that match a choice. This requires getting all the data from the Vote table and creating Vote objects.
    ```python
@@ -84,7 +84,7 @@ The Django query methods like `filter`, `count`, and `sum` generate code that us
            count += 1
    ```
 
-- *Effcient*: Create a query to select the votes you want, and count them!  The work is done by the database without returning a lot of data or creating a lot of Vote objects. 
+- *Efficient*: Create a query to select the votes you want, and count them!  The work is done by the database without returning a lot of data or creating a lot of Vote objects. 
    ```python
    # count the votes for some_choice
    count = Vote.objects.filter(choice=some_choice).count()
@@ -96,7 +96,7 @@ Your code now has many unit tests, so consider separating tests
 into separate files, as recommended in the MDN Django Tutorial.
 
 - Create a `polls/tests` directory with an `__init__.py` file.
-- Divide your tests into separate files, grouped however makes sense, such as:
+- Divide your tests into separate files, with related tests in one file, such as:
   ```
   polls/tests/
              __init__.py

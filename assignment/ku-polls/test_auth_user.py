@@ -31,7 +31,7 @@ class UserAuthTest(django.test.TestCase):
 
 
     def test_logout(self):
-        """a user can logout using the logout url.
+        """A user can logout using the logout url.
 
         As an authenticated user,
         when I visit /accounts/logout/
@@ -56,7 +56,7 @@ class UserAuthTest(django.test.TestCase):
 
 
     def test_login_view(self):
-        """a user can login using the login view."""
+        """A user can login using the login view."""
         login_url = reverse("login")
         # Can get the login page
         response = self.client.get(login_url)
@@ -67,6 +67,7 @@ class UserAuthTest(django.test.TestCase):
                      "password": "FatChance!"
                     }
         response = self.client.post(login_url, form_data)
+        # after successful login, should redirect browser somewhere
         self.assertEqual(302, response.status_code)
         # should redirect us to the polls index page ("polls:index")
         self.assertRedirects(response, reverse("polls:index"))
