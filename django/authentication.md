@@ -21,7 +21,7 @@ The [MDN Django Auth Tutorial][mdn-auth-tutorial] is a great introduction.
 - Step 1. [Enable Authentication](#enable-authentication)
 - Step 2. [Add Default Redirects for KU Polls](#add-default-redirects-for-ku-polls)
 - Step 3. [Create a Template for Login Page](#create-a-template-for-login-page)
-- Step 4. [Add User Greeting to a Templates](add-user-greeting-to-a-template) and a link to login
+- Step 4. [Add User Greeting to a Template](#add-user-greeting-to-a-template) and a link to login
 - Step 5. [Require Login in Views](#require-login-in-views) a user most login to vote
 
 - Extra Material: 
@@ -170,7 +170,7 @@ In `settings.py` specify defaults for login and logout.  Two syntaxes:
 9. **Test it.** Start the Django server and navigate to `localhost:8000/accounts/login/`.
    - It should show a Login form.
 
-10. [Create a user](#create-users).  Here is how to create a user with the Django interactive shell. This code creates is a user named "harry" with password "hackme22".
+10. Create a user.  Here is how to create a user with the Django interactive shell.
     ```bash
     $ python manage.py shell
 
@@ -179,33 +179,26 @@ In `settings.py` specify defaults for login and logout.  Two syntaxes:
     # username field is required, others are optional.
     # Use named parameters to avoid errors.
     user = User.objects.create(username='harry', 
-                              email='harry@hackerone.com',
-                              first_name="Harry")
+                               email='harry@hackerone.com')
     user.set_password("hackme22")
+    user.first_name = "Harry"
     user.save()
     ```
-    See below for other ways to create users.
+    See below for other ways to [create users](#how-to-create-users).
 
-11. **Test it:** Login as this User.
+11. **Test it:** Login as this user.
 
+12. **Unit tests:** You should write unit tests for authentication.
+    - Example tests: [`test_auth_user.py`](../assignment/ku-polls/test_auth_user.py)
+    - Copy the tests into your `polls/` directory to use them.
 
-### Access User Information in a Template
+### Add User Greeting to a Template
 
-Show the username in your templates. If a visitor is not logged in, then show a link to Login.
-- If you have a global `base` template, add this to the base template.
-
-Inside page templates access user information, such as:
-{% raw %}
-```
-{{ user }}                     - reference to user object, never null
-{% if user.is_authenticated %} - true if user is logged in
-{{ user.username }}            - the user login name or empty string
-{{ user.first_name }}          - may be an empty string 
-```
-{% endraw %}
+KU Polls should show some text so a user knows that he is logged in.
 
 In your `base` template or your polls `index` template, 
 greet the user or ask him to login:
+
 {% raw %}
 ```html
 {% if user.is_authenticated %}
@@ -218,7 +211,7 @@ greet the user or ask him to login:
 
 In the login link we added a **query parameter**: {% raw %}`?next={{request.path}}`{% endraw %}
 
-The `next=path` tells Django's login view that after login to come back to this page.  Otherwise, it will redirect him to the default `LOGIN_REDIRECT_URL`.    
+The `next=path` tells Django's login view to redirect back to this page after the user logs in.  Otherwise, it will redirect him to the default `LOGIN_REDIRECT_URL`.    
 (*`next` only works if your `login.html` template also passes `next` to the Django login view function.*)
 
 
@@ -243,7 +236,7 @@ we require a user to login in order to vote.
 
 **Two Other Ways** to require login in views:
 
-1. For a class-based views use the `LoginRequired` **Mixin**.
+1. For a class-based view use the `LoginRequired` **Mixin**.
    ```python
    from django.contrib.auth.mixins import LoginRequiredMixin
 
@@ -343,6 +336,36 @@ The important parts of this template are
 
 ---
 
+### Access User Information in a View
+
+The logged in user is saved as part of the *session* and included in the `request` object (HttpRequest), which is passed to every view.
+
+```python
+def vote(request, question_id):
+    """Vote for one of the answers to a question."""
+    user = request.user
+    print("current user is", user.id, "login", user.username)
+    print("Real name:", user.first_name, user.last_name)
+```
+
+
+### Access User Information in a Template
+
+Show the username in your templates. If a visitor is not logged in, then show a link to Login.
+- If you have a global `base` template, add this to the base template.
+
+Inside page templates access user information, such as:
+{% raw %}
+```
+{{ user }}                     - reference to user object, never null
+{% if user.is_authenticated %} - true if user is logged in
+{{ user.username }}            - the user login name or empty string
+{{ user.first_name }}          - may be an empty string 
+```
+{% endraw %}
+
+---
+
 ### How to Create Users
 
 You can use these methods in a Python function or the Django shell.
@@ -395,9 +418,10 @@ accounts/reset/<uidb64>/<token>/ [name='password_reset_confirm']
 accounts/reset/done/             [name='password_reset_complete']
 ```
 
-to use these views you must create a template for each in a folder named `templates/registration`.  
-The templates should have the same name as the view: the `login` view 
-expects a template named `login.html`.  The login view encapsulates its data in a Form named `form`,
+to use these views you must create a template for the view you want in a folder named `templates/registration`.  
+The templates should have the same name as the view name: 
+the `login` view expects a template named `login.html`.
+The login view encapsulates its data in a Form named `form`,
 so in your `login.html` template do something like this:
 {% raw %}
 ```html
@@ -412,21 +436,6 @@ so in your `login.html` template do something like this:
 </form>
 ```
 {% endraw %}
-
-
-### Access User Information in a View
-
-The logged in user is saved as part of the *session* and included in the `request` object (HttpRequest), which is passed to every view.
-
-```python
-@login_required
-def vote(request, question_id):
-    """Vote for one of the answers to a question."""
-    user = request.user
-    print("current user is", user.id, "login", user.username)
-    print("Real name:", user.first_name, user.last_name)
-```
-
 
 ## Django's Password Validators
 

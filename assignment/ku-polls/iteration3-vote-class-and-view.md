@@ -77,10 +77,10 @@ def vote(request, question_id):
 
 Retrieving data from a database table and creating Python objects uses a lot of **time** and **memory**.
 
-It is more **efficient** to make the database do the work.
+It is more **efficient** to let the database do the work.
 Django query methods like `filter`, `count`, and `sum` use database operations instead of objects.  This is much faster.
 
-Example: count all the votes for a choice.    
+Example: count all the votes for a choice.   
 This code is *inefficient*: 
 ```python
 # INEFFICIENT: retrieves all vote data & create objects
@@ -91,7 +91,7 @@ for vote in Vote.objects.all():
         count += 1
 ```
 
-*More Efficient*: Use a query to select the votes and count them!  This requires a single SQL expression.
+*More Efficient*: Use a query to select the votes and count them.  This requires a single SQL expression.
 ```python
 count = Vote.objects.filter(choice=some_choice).count()
 ```
