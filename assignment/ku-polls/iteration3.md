@@ -4,12 +4,13 @@ title: KU Polls Iteration 3
 
 ## New Features to Add in Iteration 3
 
-- User accounts and ability for users to login and logout.
-- A visitor must login in order to submit a vote or change his vote(s).
-- An authenticated user is allowed only 1 vote per poll, but he can change his vote anytime while voting is allowed for a poll.
+- A visitor must authenticate (login) in order to submit a vote or change his vote(s).
+- Each authenticated user gets only only 1 vote per poll.
 - A user can change his vote on a poll during the voting period, and his new vote replaces his old vote. 
-- If a user selects a poll he already voted for, the list of choices shows which choice he/she previously selected. For example, a radio button is pre-selected for his previous vote.
-- Add a link for "Login" or "Logout" to web pages.  It is good UI design if these links appear in the *same place* on all pages (e.g. a common header or sidebar).
+- If a user selects a poll he already voted on, the list of choices shows which choice he/she previously selected. For example, a radio button is selected for his previous choice.
+- When a user submits a vote there is visual confirmation of his vote, such as a message on the next page he is shown.
+- A visitor can login and logout.
+- A link for "Login" or "Logout" is shown on all web pages.  It is good UI design if these links appear in the *same place* on all pages (e.g. a common header or sidebar).
 
 Other Behavior:
 
@@ -23,7 +24,8 @@ Project Management Artifacts:
 1. Create an Iteration 3 Plan in your wiki.
 2. Review and update your Requirements document. 
 3. Update the Development Plan for iteration 3.
-4. Create an Iteration 3 Task Board and add tasks.
+4. Add a **Domain Model** to your Wiki. Include a UML class diagram and some text to explain the reasoning for your domain model.
+5. Create an Iteration 3 Task Board and add tasks.
    - Also convert task to "Issues" so they appear in your repo on Github.
 
 Software Process and Development:
@@ -43,52 +45,15 @@ Software Process and Development:
    cmd> python manage.py dumpdata --indent=2 -o data/users.json auth.user
    ```
 
-
 ### Incremental Development
 
-You should try to make small changes to the code and test each change
-You want to maintain runnable code as much as possible.  
+Try to make small changes to the code and test each change so that you 
+can easily fix problems.  Commit code after each change.
 
-### Design Hints
+### Hints
 
-You need to keep track of who has voted for which poll.
-This requires a change in the domain model, as discussed in the lab.
+See the documents in Week 6 folder of Google Classroom.
 
-![user-vote-choice](user-vote-choice.png)
-
-`Vote` needs a reference to `user` and `choice`. These are ForeignKey attributes in the Vote model class.
-
-After this change, there is no "votes" attribute in Choice.
-But, our templates use `choice.votes` to display the votes. 
-
-**Hide the change** by redefining `votes` as a read-only property
-that counts the votes for a choice each time it is called.
-The `votes` property "*looks*" like the old `votes` attribute,
-so your templates and tests should still work!
-
-
-### Use Query Methods Instead of Fetching All Votes
-
-Retrieving all data from a table and creating Python objects is **inefficient**.
-Try to write efficent code for summing the votes for a choice.
-
-Use Django query methods like `filter`, `count`, and `sum`.
-They generate code that uses database operations without creating lots of objects.  This is much more efficient and faster.
-
-- *Inefficient*: get all the votes and sum the ones that match a choice. This requires getting all the data from the Vote table and creating Vote objects.
-   ```python
-   # INEFFICIENT: requires getting all the data and creating many objects
-   count = 0
-   for vote in Vote.objects.all():
-       if vote.choice == some_choice:
-           count += 1
-   ```
-
-- *Efficient*: Create a query to select the votes you want, and count them!  The work is done by the database without returning a lot of data or creating a lot of Vote objects. 
-   ```python
-   # count the votes for some_choice
-   count = Vote.objects.filter(choice=some_choice).count()
-   ```
 
 ### (Optional) Divide Tests into Separate Files
 
