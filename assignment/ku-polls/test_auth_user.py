@@ -4,7 +4,7 @@ from django.urls import reverse
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate # to "login" a user using code
 from polls.models import Question, Choice
-
+from mysite import settings
 
 class UserAuthTest(django.test.TestCase):
 
@@ -21,7 +21,7 @@ class UserAuthTest(django.test.TestCase):
         self.user1.first_name = "Tester"
         self.user1.save()
         # we need a poll question to test voting
-        q = Question.create("First Poll Question")
+        q = Question.objects.create(question_text="First Poll Question")
         q.save()
         # a few choices
         for n in range(1,4):
@@ -52,7 +52,7 @@ class UserAuthTest(django.test.TestCase):
         self.assertEqual(302, response.status_code)
         
         # should redirect us to where? Polls index? Login?
-        self.assertRedirects(response, reverse('login'))
+        self.assertRedirects(response, reverse(settings.LOGOUT_REDIRECT_URL))
 
 
     def test_login_view(self):
@@ -70,7 +70,7 @@ class UserAuthTest(django.test.TestCase):
         # after successful login, should redirect browser somewhere
         self.assertEqual(302, response.status_code)
         # should redirect us to the polls index page ("polls:index")
-        self.assertRedirects(response, reverse("polls:index"))
+        self.assertRedirects(response, reverse(settings.LOGIN_REDIRECT_URL))
 
 
     def test_auth_required_to_vote(self):

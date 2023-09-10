@@ -16,7 +16,6 @@ A **software model** shows how we will implement the domain model in code. It in
 
 `Vote` needs a reference to `user` and `choice`. These are ForeignKey attributes in the Vote model class.
 
-[[contents]]
 
 ### 1. Create a Vote Model
 
@@ -47,7 +46,34 @@ class Choice(models.Model):
       todo
 ```
 
-#### Use Query Methods Instead of Python Code
+### 3. Revise the `vote` view
+
+The last thing we need to change in how the `vote` view works:
+
+```
+def vote(request, question_id):
+    question = get_object_or_404(Question, id=question_id)
+    user = request.user
+
+    vote = get the previous vote on this question by this user
+    if vote exists then
+         update the user's choice
+    else
+         create a new vote
+         record the user's choice
+    save the vote
+```
+
+### 4. Test It
+
+* Migrate the database.
+* Run unit tests.
+* Login and vote.
+
+
+---
+
+### Use Query Methods Instead of Python Code
 
 Retrieving data from a database table and creating Python objects uses a lot of **time** and **memory**.
 
@@ -78,16 +104,6 @@ Get all votes for `question1`:
 # [v for v in votes if v.choice.question == question1]
 Vote.objects.filter(choice__question=question1)
 ```
-
-### 3. Revise the `vote` view
-
-The last thing we need to change in how the `vote` view works:
-```python
-def vote(request):
-   
-
-```
-
 
 
 ## Resources
