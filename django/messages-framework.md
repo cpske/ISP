@@ -98,9 +98,9 @@ messages.set_level( request, messages.DEBUG )
 messages.set_level( request, None )
 ```
 
-### Methods for Setting Messages in Pyton
+### Methods for Setting Messages
 
-The `django.contrib.messages` module includes these methods for setting messages:
+The `django.contrib.messages` module includes these methods:
 
 | `messages` method |
 |-------------------|
@@ -112,6 +112,7 @@ The `django.contrib.messages` module includes these methods for setting messages
 | `messages.add_message`(request, level: int, "Message text") |
 
 You can define your own message severity:
+
 ```python
 CRITICAL = 50
 messages.add_message(request, CRITICAL, "Database error occurred.")
@@ -133,10 +134,10 @@ a [context argument][django-shortcuts], such as this view code:
    return render(request, 'polls/detail.html', context)
 ```
 
-The Django messages framework provides a more complete solution for this.
+The Django messages framework is a more complete solution and easier to use.
 
 Since Django uses the name `messages` for its messages object,
-you should avoid the name `messages` in your own context.
+you should avoid the name `messages` for your own context variables.
 
 ### Messages in Forms
 

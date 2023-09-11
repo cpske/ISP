@@ -102,7 +102,7 @@ logger.info(f"{user.username} logged in from {ip_addr}")
 logger.warn(f"Failed login attempt for {username} from {ip_addr}")
 try:
     question = Question.objects.get(id=question_id)
-except Question.DOES_NOT_EXIST as ex:
+except Question.DoesNotExist as ex:
     logger.exception(f"Non-existent question {question_id} %s", ex)
 ```
 
