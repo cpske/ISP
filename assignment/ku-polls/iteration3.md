@@ -5,62 +5,63 @@ title: KU Polls Iteration 3
 ## New Features to Add in Iteration 3
 
 - A visitor must authenticate (login) in order to submit a vote or change his vote(s).
-- Each authenticated user gets only only 1 vote per poll.
-- A user can change his vote on a poll during the voting period, and his new vote replaces his old vote. 
+- An authenticated user gets only 1 vote per poll.
+- A user can change his vote on a poll during the voting period and his new vote replaces his old vote. 
 - If a user selects a poll he already voted on, the list of choices shows which choice he/she previously selected. For example, a radio button is selected for his previous choice.
 - When a user submits a vote there is visual confirmation of his vote, such as a message on the next page he is shown.
 - A visitor can login and logout.
-- A link for "Login" or "Logout" is shown on all web pages.  It is good UI design if these links appear in the *same place* on all pages (e.g. a common header or sidebar).
+- A link for "Login" or "Logout" is shown on most or all web pages.  In good UI design these links appear in the *same place* on every page (e.g. a common header or sidebar).
 
 Other Behavior:
 
 - Anyone can view the list of polls and poll results (same as before)
-- (Optional for now) Add logging of important events, such as login, logout, failed login, and submitting a vote.
+- (Optional) Add logging of important events, such as login, logout, failed login, and submitting a vote.
 
 ## Requirements
 
-Project Management Artifacts:
+Project Artifacts:
 
-1. Create an Iteration 3 Plan in your wiki.
-2. Review and update your Requirements document. 
-3. Update the Development Plan for iteration 3.
-4. Add a **Domain Model** to your Wiki. Include a UML class diagram and some text to explain the reasoning for your domain model.
-5. Create an Iteration 3 Task Board and add tasks.
-   - Also convert task to "Issues" so they appear in your repo on Github.
+- An Iteration 3 Plan in your wiki with goal, milestone(s), major work.
+- Reviewed and updated Requirements document. 
+- Updated the Development Plan for iteration 3.
+- A **Domain Model** to your Wiki. Include a UML class diagram and some text to explain the reasoning for your domain model.
+- Iteration 3 Task Board with complete tasks for work to do.
+  - Convert task to "Issues" when it makes sense so they appear in your repo on Github.
+- `iteration3` branch containing your work, merged into master.
 
-Software Process and Development:
+Process Requirement:
+
+- Use Github Flow.
+- Commit and push work regularly.
+- **No credit** (zero) for one big commit at end of work or pushing all work to Github on last day of assignment.
+
+Software Development:
 
 1. Do work on an `iteration3` branch and push it to Github regularly.
-2. Write unit tests to verify the new work is correct and satisfies requirements.
-3. Add at least 2 demo users to your database.  In `README.md` add the username and password for these users.  This is so we can use your application.  For **example**
+2. *Make small changes* to code and test each one so you can easily fix problems.  **Commit code** after each successful change.
+3. Write unit tests to verify the new work is correct and satisfies requirements. A few "auth" tests are provided as starting point -- please expand on them.
+4. Add at least 2 demo users to your database.  In `README.md` add the username and password for these users.  This is so we can use your application.  For **example**
    ```
    | Username  | Password        |
    |-----------|-----------------|
    |   demo1   | stupidpassword1 |
    |   demo2   | stupidpassword2 |
    ```
-4. **Data Fixtures** When you are done create new data import files for questions, polls, and users.
+5. **Data Fixtures** Create new data files for questions, votes, and users.
    ```
    cmd> python manage.py dumpdata --indent=2 -o data/polls.json polls 
    cmd> python manage.py dumpdata --indent=2 -o data/users.json auth.user
    ```
+   **Note the file name** is `polls.json` for polls data since the format will be different than old data.
 
-### Incremental Development
-
-Try to make small changes to the code and test each change so that you 
-can easily fix problems.  Commit code after each change.
-
-### Hints
-
-See the documents in Week 6 folder of Google Classroom.
 
 
 ### (Optional) Divide Tests into Separate Files
 
-Your code now has many unit tests, so consider separating tests
+Your code now has many unit tests. Consider separating tests
 into separate files, as recommended in the MDN Django Tutorial.
 
-- Create a `polls/tests` directory with an `__init__.py` file.
+- Create a `polls/tests` directory containing an `__init__.py` file.
 - Divide your tests into separate files, with related tests in one file, such as:
   ```
   polls/tests/
@@ -71,40 +72,41 @@ into separate files, as recommended in the MDN Django Tutorial.
              test_voting.py
    ```
 - Delete the original `tests.py` file
-- Fix the imports in test files. Instead of `.models` use `polls.models`. Similarly for `.views`.
+- Fix the imports in test files. Instead of `import .models` use `import polls.models`. Similarly for `views`.
 
 
 ### (Optional) Logging
 
-(Optional) Add logging of some important events:
+Add logging of important events:
 
 | Event                      | Log Level |
 |----------------------------|-----------|
 | user login or logout       | info      |
-| unsuccessful login attempt (username or password incorrect) | warning |
+| unsuccessful login attempt | warning   |
 | user submits a vote        | info      |
+| exception caught in code   | error     |
 
-- all log messages should include the date and time (that's done by the formatter, don't put it in your log message).
-- login/logout messages should include the user's IP address
-- log to the console, like Django does.
-- use `loggers`, not print statements!
+- use [Django Logging][django-logging] which uses Python's `logging` module.
+- log messages automatically include (a) date and time, (b) location in code. This is done by the Formatter, so don't put it in the log message you write.
+- login/logout messages should include the user's IP address 
 
-Django uses Python's logging library. 
-
-You configure the logger behavior, including message format, in `settings.py`.
+You can configure the logger behavior, including message format, in `settings.py`.
 
 An example of using logging is:
 
 ```python
 import logging
-logger = logging.getLogger("polls") 
 
-logger.info(f"{user} logged in from {ip_addr}")
-logger.warn(f"Invalid login attempt for {username} from {ip_addr}")
-logger.error("Caught unexpected exception: " + str(exception))
+logger = logging.getLogger("polls")
+logger.info(f"{user.username} logged in from {ip_addr}")
+logger.warn(f"Failed login attempt for {username} from {ip_addr}")
+try:
+    question = Question.objects.get(id=question_id)
+except Question.DOES_NOT_EXIST as ex:
+    logger.exception(f"Non-existent question {question_id} %s", ex)
 ```
 
-### Getting a Visitor's IP Address (for Logging)
+### Getting a Visitor's IP Address - for Logging
 
 When someone logs in you should include their IP address in the log message.
 
@@ -132,8 +134,9 @@ this is OK, but request headers can be manipulated by the sender.
 
 ## Documents that may help
 
-- My page on Django Authentication: <https://cpske.github.io/ISP/django/authentication>
 - MDN page on Django Authentication: <https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Authentication>
+- My tutorial on Django Authentication: <https://cpske.github.io/ISP/django/authentication>
 - My page on Django Authorization: <https://cpske.github.io/ISP/django/authorization>
-- Sample Unit Tests (may need editing): <https://cpske.github.io/ISP/assignment/ku-polls/user-auth-tests.py>
 - Logging in Django: <https://docs.djangoproject.com/en/dev/howto/logging/>
+
+[django-logging]: https://docs.djangoproject.com/en/dev/howto/logging/
