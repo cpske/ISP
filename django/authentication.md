@@ -108,6 +108,12 @@ In `settings.py` specify defaults for login and logout.  Two syntaxes:
 
 **Note:** If the login `request` object contains a `next` key, the Django login view will redirect to the URL specified by `next` instead of the default redirect.
 
+#### Does it Work?
+
+- Rerun tests.  They should still pass.
+- Start server and visit <http://localhost:8000/accounts/asdfasdfasdfasdf/> with `DEBUG=True`. It should show a listing of `/accounts/` URLs.
+- Visit the login page: <http://localhost:8000/accounts/login/>.  What does the error message tell you?
+
 ### Create a Template For Login Page
 
 6. Create directories named `templates` and `templates/registration` in your application top-level folder:
@@ -119,12 +125,12 @@ In `settings.py` specify defaults for login and logout.  Two syntaxes:
            registration/      <--- new directory
    ```
 
-7. In `mysite/settings.py` include the templates directory:
+7. In `mysite/settings.py` include a global templates directory:
    ```python
    TEMPLATES = [
        {
            # old way: 'DIRS': [os.path.join(BASE_DIR, 'templates')],
-           'DIRS': [BASE_DIR / 'templates'],
+           'DIRS': [BASE_DIR / 'templates'],   # <--- global templates
            'APP_DIRS': True,
            ...
        }
