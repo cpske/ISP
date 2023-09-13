@@ -12,15 +12,15 @@ You will also automate running of tests.
 
 ## Tasks
 
-1. Create an **Iteration 2 Plan** document in your ku-polls wiki and write a plan as you did for Iteration 1.
-2. Create an "Iteration 2" task board and define tasks.
-3. Add links to "Iteration 2 Plan" in:
+1. Create an **Iteration 2 Plan** in your ku-polls wiki and write a plan as you did for Iteration 1.
+2. Add links to "Iteration 2 Plan" in:
    - Home (on wiki)
    - README.md
 3. Review and update these wiki documents:
    - **Development Plan**
    - **Requirements** (add any new features)
-3. Create an `iteration2` branch for your work.
+4. Create an "Iteration 2" task board and define tasks.
+5. Create an `iteration2` branch for your work.
    - First, be sure you have merged *all work* from `iteration1` into `master` and pushed both branches to Github.
    - Create `iteration2` as a branch from `master` (not iteration1).
 
@@ -37,10 +37,10 @@ You will also automate running of tests.
 3. Items 1 & 2 change the database schema, so you need to make a migration and apply it ("migrate").
 
 4. In the Question class, add two methods:
-   - `is_published` returns True if the current date is on or after question's publication date. Use local date/time, not UTC!
+   - `is_published` returns True if the current date-time is on or after question's publication date. Use local date/time, not UTC!
    - `can_vote` returns True if voting is allowed for this question. That means, the current date/time is between the `pub_date` and `end_date`. If `end_date` is null then can vote *anytime* after `pub_date`.
 
-5. Modify your views code to use these two methods.  This is *better encapsulation* than directly testing `question.pub_date >= something`. 
+5. Modify your views code to use these two methods. The view code should *not* directly test `question.pub_date >= something` (poor encapsulation).
 
 6. Write **unit tests** for `is_published`. Test these cases:
    - question with future pub date
@@ -132,4 +132,52 @@ Navigating the app's pages is clumsy. Sometimes a visitor has to use the browser
 2. Add a github "badge" to README.md that shows the status of tests.
 
 3. All tests should pass.  They should pass both on Github and when TA runs your code in a virtual env.
+
+## Evaluaton
+
+Project Artifacts
+
+- "Iteration 2 Plan" is accurate and complete: GOAL, MILESTONE, FEATURES/WORK
+- Iteration 2 Task Board has tasks covering the work. Most or all are "Done".
+- Requirements doc is project requirements, not iteration requirements.
+- README has link to Iteration 2 Plan
+- README has Badge showing tests pass on Github
+
+Configuration
+
+- `sample.env` works (either copy to `.env` or source into the environment)
+- `mysite/settings.py` externalize and has defaults for:
+  - `SECRET_KEY`
+  - `DEBUG`
+  - `ALLOWED_HOSTS`
+  - `TIME_ZONE`
+- `python-decouple` is in "requirements.txt"
+
+Code
+
+- `is_published` is correct
+- `can_vote` is correct
+- both methods have docstring describing what they do and what they return
+- views do not directly test value of `question.pub_date`
+
+Tests
+
+- all unit tests pass
+- at least 3 tests for `is_published`
+- at least 4 tests for `can_vote`
+
+Configure App
+
+- migrations run without error
+- loaddata works
+
+Run the App
+
+- "/" redirected to "/polls/"
+- "/polls/" shows poll status (open or closed)
+- poll detail page has "Back to Index" or similar
+- can vote
+- polls results page has "Back to Index" or similar
+- links to view poll results w/o voting
+- cannot vote on closed poll, even using URL bar or HTTP client app
 
