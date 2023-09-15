@@ -8,7 +8,7 @@ title: KU Polls Iteration 3
 - An authenticated user gets only 1 vote per poll.
 - A user can change his vote on a poll during the voting period and his new vote replaces his old vote. 
 - If a user selects a poll he already voted on, the list of choices shows which choice he/she previously selected. For example, a radio button is selected for his previous choice.
-- When a user submits a vote there is visual confirmation of his vote, such as a message on the next page he is shown.
+- When a user submits a vote there is visual confirmation of his vote, such as a message on the results page "*Your vote for xxxx has been saved*".
 - A visitor can login and logout.
 - A link for "Login" or "Logout" is shown on most or all web pages.  In good UI design these links appear in the *same place* on every page (e.g. a common header or sidebar).
 
@@ -24,30 +24,29 @@ Project Artifacts:
 - An Iteration 3 Plan in your wiki with goal, milestone(s), major work.
 - Reviewed and updated Requirements document. 
 - Updated the Development Plan for iteration 3.
-- A **Domain Model** to your Wiki. Include a UML class diagram and some text to explain the reasoning for your domain model.
+- A **Domain Model** page in your Wiki. Include a UML class diagram and some text to explain the reasoning for your domain model.
 - Iteration 3 Task Board with complete tasks for work to do.
   - Convert task to "Issues" when it makes sense so they appear in your repo on Github.
 - `iteration3` branch containing your work, merged into master.
 
 Process Requirement:
 
-- Use Github Flow.
+- Use Github Flow. Work on `iteration3` branch.
 - Commit and push work regularly.
-- **No credit** (zero) for one big commit at end of work or pushing all work to Github on last day of assignment.
+- **No credit** (zero) for one big commit & push of work at end of the iteration.
 
 Software Development:
 
-1. Do work on an `iteration3` branch and push it to Github regularly.
-2. *Make small changes* to code and test each one so you can easily fix problems.  **Commit code** after each successful change.
-3. Write unit tests to verify the new work is correct and satisfies requirements. A few "auth" tests are provided as starting point -- please expand on them.
-4. Add at least 2 demo users to your database.  In `README.md` add the username and password for these users.  This is so we can use your application.  For **example**
+1. *Make small changes* to code and test each one so you can easily fix problems.  **Commit code** after each successful change.
+2. Write unit tests to verify the new work is correct and satisfies requirements. A few "auth" tests are provided as starting point -- please expand on them.
+3. Add at least 2 demo users to your database.  In `README.md` add the username and password for these users.  This is so we can use your application.  For **example**
    ```
    | Username  | Password        |
    |-----------|-----------------|
    |   demo1   | stupidpassword1 |
    |   demo2   | stupidpassword2 |
    ```
-5. **Data Fixtures** Create new data files for questions, votes, and users.
+4. **Data Fixtures** Create new data files for questions, votes, and users.
    ```
    cmd> python manage.py dumpdata --indent=2 -o data/polls.json polls 
    cmd> python manage.py dumpdata --indent=2 -o data/users.json auth.user
@@ -86,8 +85,8 @@ Add logging of important events:
 | user submits a vote        | info      |
 | exception caught in code   | error     |
 
-- use [Django Logging][django-logging] which uses Python's `logging` module.
-- log messages automatically include (a) date and time, (b) location in code. This is done by the Formatter, so don't put it in the log message you write.
+- use [Django Logging][django-logging] which is Python's `logging` module.
+- logging methods automatically include (a) date and time, (b) location in code. This is done by the Formatter, so don't add it in the log message you write.
 - login/logout messages should include the user's IP address 
 
 You can configure the logger behavior, including message format, in `settings.py`.
@@ -99,14 +98,18 @@ import logging
 
 logger = logging.getLogger("polls")
 logger.info(f"{user.username} logged in from {ip_addr}")
-logger.warn(f"Failed login attempt for {username} from {ip_addr}")
+logger.warn(f"Failed login for {username} from {ip_addr}")
+
+# Example of logging an exception.
+# log.exception will include a stack trace
+# log.error can be used to omit stack trace
 try:
     question = Question.objects.get(id=question_id)
 except Question.DoesNotExist as ex:
     logger.exception(f"Non-existent question {question_id} %s", ex)
 ```
 
-### Getting a Visitor's IP Address - for Logging
+### Getting a Visitor's IP Address for Logging
 
 When someone logs in you should include their IP address in the log message.
 
@@ -116,8 +119,7 @@ Getting the visitor's **actual** IP address is harder than it looks,
 as commenters mention here:
 <https://stackoverflow.com/questions/4581789/how-do-i-get-user-ip-address-in-django>
 
-One implementation (copied from the Internet)
-uses HttpRequest headers sent by the client, 
+One implementation uses HttpRequest headers sent by the client, 
 `HTTP_X_FORWARDED_FOR` and `REMOTE_ADDR`
 
 ```python
@@ -130,9 +132,9 @@ def get_client_ip(request):
         ip = request.META.get('REMOTE_ADDR')
     return ip
 ```
-this is OK, but request headers can be manipulated by the sender.
+This is OK, but request headers can be manipulated by the sender.
 
-## Documents that may help
+## Resources that may help
 
 - MDN page on Django Authentication: <https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Authentication>
 - My tutorial on Django Authentication: <https://cpske.github.io/ISP/django/authentication>

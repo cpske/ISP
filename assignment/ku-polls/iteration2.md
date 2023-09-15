@@ -152,6 +152,8 @@ Configuration
   - `ALLOWED_HOSTS`
   - `TIME_ZONE`
 - `python-decouple` is in "requirements.txt"
+- migrations run without error
+- loaddata works 
 
 Code
 
@@ -166,18 +168,13 @@ Tests
 - at least 3 tests for `is_published`
 - at least 4 tests for `can_vote`
 
-Configure App
-
-- migrations run without error
-- loaddata works
-
-Run the App
+Run the App - Functionality
 
 - "/" redirected to "/polls/"
-- "/polls/" shows poll status (open or closed)
+- "/polls/" page shows poll status: open or closed
 - poll detail page has "Back to Index" or similar
 - can vote
 - polls results page has "Back to Index" or similar
-- links to view poll results w/o voting
+- link to view poll results without voting
 - cannot vote on closed poll, even using URL bar or HTTP client app
 
