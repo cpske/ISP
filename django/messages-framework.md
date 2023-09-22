@@ -149,6 +149,19 @@ using `form.name.errors` and `form.email.errors`.
 
 The Django [Working with Forms][django-forms] page has explanation and examples.
 
+### How to Get All Messages
+
+May be useful for unit tests to verify a message was set:
+```python
+from django.contrib import messages
+
+response = client.post(url, post_data)
+request  = response.request
+
+storage = messages.get_messages(request)
+for message in storage:
+    # todo check the message
+```
 
 ### Using Messages with Bootstrap
 

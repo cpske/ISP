@@ -75,7 +75,7 @@ import django.test
 from django.urls import reverse
 
 class MyTest(django.test.TestCase):
-    def setUp():
+    def setUp(self):
         super().setUp()
         self.client = django.test.Client()
 
@@ -106,11 +106,11 @@ To fully test the UI, use another tool such as Selenium.
 
 ## Useful django.test.TestCase Methods
 
-| Method                      | Meaning |
-|-----------------------------|----------------------------------|
-| assertRedirects(response,url) | HttpResponse is a redirect     |
-| assertTemplateUsed(response, template)  | test a templates was used      |
-| assertContains(response,text) | response contains some text |
+| Method                        | Meaning                          |
+|-------------------------------|----------------------------------|
+| assertRedirects(response,url) | HttpResponse is a redirect       |
+| assertTemplateUsed(response, template) | test a templates was used      |
+| assertContains(response,text) | response contains some text      |
 
 ## Useful django.test.Client Methods
 
@@ -119,7 +119,7 @@ To fully test the UI, use another tool such as Selenium.
 
 ## Reference
 
-This StackOverflow page has additional information about organizing tests:
+This StackOverflow page has good information about organizing tests:
 [Organizing Django Unit Tests](https://stackoverflow.com/questions/5160688/organizing-django-unit-tests/20932450#20932450)
 
 [Testing in Django - Part 1: Best Practices](https://realpython.com/testing-in-django-part-1-best-practices-and-examples/) example using this test organization. Article also describes use of `coverage` for code coverage and Selenium for UI testing.

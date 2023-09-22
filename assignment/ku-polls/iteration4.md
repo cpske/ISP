@@ -73,7 +73,7 @@ Your release (1.0.0) uses [Semantic Versioning](https://semver.org/), where each
 
 You already know how to do create data fixtures.  Here are a few details on the use of `dumpdata`.
 
-- Dump the data for all tables in an app (e.g. `polls`):
+- Dump the data for all tables in the `polls` app:
   ```
   python manage.py dumpdata --indent=2 -o somefile polls
   ```
@@ -93,13 +93,11 @@ If you dump *all* data from the `auth` app (not just `auth.user`), you may have 
 
 ### Suggestion for Polls Data
 
-Consider dumping votes data into a separate file from the Questions and Choices data.  This way, you can create a new installation that has poll questions but no votes. A real deployment would not include your demo users, so it would not include their votes, either.
+Consider using one file for the Questions and Choices data, and a separate file for the votes data.  This way, you can create a new installation that has poll questions but no votes. A real deployment would not include your demo users, so it would not include their votes, either.
 
 
 ### Resources
 
-- My write-up [Using a Virtual Environment](https://cpske.github.io/ISP/django/virtualenv) or [Virtualenv Quickstart](https://cpske.github.io/ISP/django/virtualenv-quickstart).
-- [Virtualenv](https://virtualenv.pypa.io/en/latest/user_guide.html) User Guide, if you prefer to use virtualenv.
 - [Data Import and Export](https://cpske.github.io/ISP/django/data-import-export), my summary.
 - [Providing Initial Data for Models](https://docs.djangoproject.com/en/2.2/howto/initial-data/) in the official Django docs.
 - [Data Migrations](https://realpython.com/data-migrations/) on RealPython.com describes how to create a migration for initial data.

@@ -12,8 +12,8 @@ Django has two kinds of Forms:
 * Render as an HTML form containining input fields.
 * Validate input values, both on client-side and server-side.
   - avoids the need to write the code yourself
-  - but you should be careful that the server-side validations is thorough
-* On server, can extract data from form fields.
+  - you should still be careful that the server-side validations are thorough
+* On server, a form can return the data from form fields.
 * A ModelForm can directly save form data to a Model object in the database, using `form.save()`.
 
 ### Don't Rely on Client-side Form Validation
