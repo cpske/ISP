@@ -272,27 +272,39 @@ class CourseList(Sized):
         return len(self.courses)
 ```
 
-## Self-Referencing Class Type Hints
+## Self-Referencing Type Hints
 
 If a type hint refers to a class currently being defined, you will get an error:
 ```python
 class Node:
     """A node in a graph has a parent node and child nodes."""
 
-    def __init(self, parent: Node):
+    def __init__(self, parent: Node):
         self.parent = parent
         self.children: Set[Node] = set()
 ```
-when run using Python, this results in:
+when you run this code, Python reports:
 ```
 NameError: name 'Node' is not defined
 ```
 
 There are 2 ways to correct this:
 
-1. in the type hints, quote the class name: `'Node'`
-2. add `from __future__ import annotations`
+1. In the type hints, quote the class name: `'Node'`
+   ```python
+   class Node:
+        def __init__(self, parent: 'Node'):
+            self.children: Set['Node'] = set()
+   ```
 
+2. Add `from __future__ import annotations`
+   ```python
+   from __future__ import annotations
+
+   class Node:
+        def __init__(self, parent: Node):
+            self.children: Set[Node] = set()
+   ```
 
 ## Static Analysis Tools
 

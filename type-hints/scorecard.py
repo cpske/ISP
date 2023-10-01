@@ -1,19 +1,23 @@
 """
-Example code containing common errors that can 
-be detected by static type checking.  
-Please don't fix this code by inspection.
+This code contains common errors that can 
+be detected by static type checking.
+Please do not fix this code by inspection.
 
 Instead, add type hints and watch your IDE tell
 you what the errors are.
 
-Please add these hints ONE AT A TIME and SAVE the file.
+Add these hints ONE AT A TIME and SAVE the file
+after adding each type hint.
 Look for errors detected in the main block.
 
 1) add type to parameter:      add_score(self, score: float)
 2) add type to return value:   average(self) -> float
 3) add type to list attribute: self.scores: List[float] = []
 
-For more info on type hints, see Mai's write-up in the ISP Github repo.
+**NOTE**: `List` is a type from the typing package.
+`List` is not the same as Python `list` type and not the same
+as collections.abc.List.  When you want to add a type hint for
+a list you should use typing.List, not those other "lists".
 """
 from typing import List
 

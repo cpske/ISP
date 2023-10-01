@@ -2,8 +2,8 @@
 title: Code Quality
 ---
 
-Writing and maintaining high quality code is one of the developer's
-responsibilities.
+Maintaining high quality code is one of the developer's
+top responsibilities.
 
 It is easy to neglect code quality when working under a deadline,
 fixing bugs, or adding a new feature. Over time the code becomes
@@ -16,11 +16,11 @@ Eventually, such code is discarded and rewritten -- a waste of money.
 *Code Quality* is subjective, but accepted **characteristics** of good quality code are:
 
 - code does what it should
-- can be tested
-- uses a consistent style
+- code can be tested (testable)
 - easy to understand
+- uses a consistent style
 - is well-documented
-- can be maintained (the above factors greatly influence this)
+- can be maintained (the above factors influence this)
 
 References:
 
@@ -35,38 +35,37 @@ References:
 The above articles recommend these best practices:
 
 1. Use a Coding Standard
-2. Analyze Code Before Code Reviews - both manually and using [tools](code-quality-tools)
+2. Analyze Your Code - both manually and using [tools](code-quality-tools)
 3. Follow Code Review Best Practices
 4. Refactor Code
 
-## Best Practices for Code Quality
+**10 Specific Practices**
 
-In more detail:
-
-1. Consistently use a **coding standard** (coding style)
-2. Write [document comments](docstrings) (Javadoc or Python docstring) using a standard format
+1. Consistently use a **coding standard**. For Python use PEP8.
+2. Write [document comments](docstrings) (Javadoc or Python docstring) in a standard format
 3. Use descriptive names for classes, functions, and variables
-4. Strive for short functions (methods) that do just one thing
-5. Use return values instead of side effects where possible
-6. Avoid unexpected side effects. This includes the "command query separation principle".
+4. Write short functions (methods) that do only one thing
+5. Use return values instead of side effects when possible
+6. Avoid unexpected side effects. Use the "*Command Query Separation Principle*".
 7. Review all your code.
 8. On a team project, ask others to review your code.
-9. Use tools to check your code. This includes static analysis, linters, and style checking.
-10. Refactor to improve code.  
+9. Use tools to check your code. Perform static analysis, linting, and style checking.
+10. Refactor to improve code.
 
 Many projects have a "refactoring day" when the only work done is code review and refactoring.
 
-*Zen of Python* on Code Quality. At the Python interactive prompt, type:
+*Zen of Python* on Code Quality. Run Python and type:
 
 ```python
->>> import this
+   >>> import this
 ```
 
 ## Clean Code
 
 *Clean Code* refers to code that follows good design principles and is well-written. 
+
 Clean Code is easier to read, test, maintain, and evolve.    
-Just what *defines* Clean Code is a bit vague and subjective, 
+What *defines* Clean Code can be vague and subjective, 
 just as "good", "well", and "easy" are subjective.
 
 [Clean Code](http://www.jeremybytes.com/Downloads/CleanCode.pdf) PDF by JeremyBytes. His web page on [clean code](ww.jeremybytes.com/Demos.aspx#CC) has other useful material.
@@ -82,28 +81,24 @@ To discuss:
 
 ## Coding Style and Coding Convention
 
-Code is *easier to read* if you consistently apply 
-some guidelines, and *easier for others to read* if everyone
-on the team uses the same coding style.
-
 Team projects usually have a "coding standard" -- some companies
-have a single company coding standard. 
-Google, Apache Foundation, and Microsoft have coding standards.
+have a single coding standard.
+Google, Microsoft, and the Apache Foundation have coding standards.
 
-Over time, common coding standards and guides have emerged.
+Over time, **common coding guidelines** have emerged.
 There is *some* variation in the details of a coding style guide,
 but they all agree on most of the details.
 
 
-## Coding Standard
+## Coding Standard for Python
 
 These docs show the Python "official" coding standard, called PEP8:
 
-* [pep8.org](http://pep8.org/) is a single page easy-to-read summary of how to use [PEP 8](https://www.python.org/dev/peps/pep-0008/) the official Python Style Guide.
-* Python Guide for Docstrings [PEP 257](https://www.python.org/dev/peps/pep-0257/)
-* [How to Write Beautiful Code with PEP8](https://realpython.com/python-pep8/) on RealPython. Lot's of helpful examples.
+- [How to Write Beautiful Code with PEP8](https://realpython.com/python-pep8/) on RealPython. Lot's of helpful examples.
+- [pep8.org](http://pep8.org/) is a single page easy-to-read summary of how to use [PEP 8](https://www.python.org/dev/peps/pep-0008/) the official Python Style Guide.
+- Python Guide for Docstrings [PEP 257](https://www.python.org/dev/peps/pep-0257/)
 
-* [Google Python Style Guide](https://google.github.io/styleguide/pyguide.html)
+- [Google Python Style Guide](https://google.github.io/styleguide/pyguide.html)
   - Style Guide lists "pros" and "cons" of style choices & explains **why** to help you decide what's important.
 
   - Rule #1 is "run `pylint` over your code"! (using Google's .pylintrc)
@@ -115,19 +110,24 @@ These docs show the Python "official" coding standard, called PEP8:
 
 ### Documenting Your Code
 
-See [Docstrings](docstrings) for how to write documentation comments in Python.
+[PEP257 Docstrings](https://peps.python.org/pep-0257/) is a one page guide to the Python docstring standard.
 
-In Python, there is not a universal agreement for how to document parameters, return values, and exceptions for a method or function. There are 3 styles:
-* Tools for creating documentation from docstrings:
-  - pydoc
-  - python interactive: `help(something)` shows formatted docstring
-  - `print(something.__doc__)`
-  - Sphinx and the Napolean addon. Used to create ReadTheDocs style web docs.
+Documenting parameters, returns, and exceptions is important!
+There are (at least) 3 styles for this,
+which are described in my [Docstrings](docstrings) write-up.
 
-Comments in code
+We will use [Sphinx style docstrings](https://sphinx-rtd-tutorial.readthedocs.io/en/latest/docstrings.html) **except** use Type Hints for parameter and return types, *not* docstring comments.  So don't use the `:type var:` tags in docstrings.
 
-- comments should explain *why* and details not obvious from code. 
-- Don't explain "how" that is evident from the code itself.
+Tools for generating nice documentation from docstrings:
+- pydoc
+- python interactive: `help(something)` shows formatted docstring
+- `print(something.__doc__)` shows docstring for `something`
+- Sphinx and Napolean (add-on). Used to create ReadTheDocs style web docs.
+
+### Comments in Code
+
+- Use comments to explain *why* and details that are not obvious from code. 
+- Don't explain "what" or "how" that is evident from the code itself.
 
 
 ### Code Quality and Code Checking Tools
@@ -136,10 +136,13 @@ Comments in code
 
 My [Code Quality Tools](code-quality-tools) page describes some tools for Python.
 
-Recommended: 
-- `flake8` with `flake8-docstrings` extension; `mypy` for static checking using type hints.
+Recommended Tools: 
+
+- `flake8` with `flake8-docstrings` extension
+- `ruff` a fast alternative to flake8. Claims to check a superset of flake8.
+- `mypy` for static checking using type hints.
 - PyCharm has a builtin code checking tool, and be configured to use an extneral tool
-- VS Code: choose an external tool in settings
+- VS Code: choose an external "Lint" tool in settings
 
 [real-python-code-quality]: https://realpython.com/python-code-quality/
 
@@ -160,17 +163,18 @@ https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/coding
 1. Programming 2 (Java) coding standard.
 2. Oracle's Java coding standard.
 
+## *Practices of an Agile Developer*
 
-## "*Practices of an Agile Developer*"
-
-Many Tips in the book *Practices of an Agile Developer* concern code quality. The authors must think it's important!
-
-Some examples:
+Many Tips in the book *Practices of an Agile Developer* concern code quality. The authors think it's important!
 
 Tip 2. *Quick Fixes Become Quicksand*    
+
 Tip 25. *Program Intently and Expressively*    
+
 Tip 26. *Communicate in Code*    
+
 Tip 30. *Write Cohesive Code*    
 
 
-[Quick References](../resources/PAD-quickref.pdf) from *Practices of an Agile Developer*
+[Quick Reference](../resources/PAD-quickref.pdf) from *Practices of an Agile Developer*.
+

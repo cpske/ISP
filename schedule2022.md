@@ -28,7 +28,9 @@ Please do this before the course starts. Otherwise, do it in Week 1.
 - Exercise: Software Process Basics (Google Form)
 - Exercise: [Write a Process Description for an Everyday Project](assignment/week1/general-process-exercise) 
 - [Code Quality, Coding Style, and Coding Standards](code-quality)
-- Python Coding Style: [How to Write Beautful Python Code with PEP8](https://realpython.com/python-pep8/) on [Real Python](https://realpython.com/)
+- Python Coding Style: [How to Write Beautiful Python Code with PEP8](https://realpython.com/python-pep8/) on [Real Python](https://realpython.com/)
+- [PEP257 Docstrings](https://peps.python.org/pep-0257/) - only one page
+- [Sphinx style docstrings](https://sphinx-rtd-tutorial.readthedocs.io/en/latest/docstrings.html) good for documenting parameters, returns, and exceptions
 - Exercise: apply the Python style guidelines
 - Programming 2 Review, basic Python and O-O concepts.
 
