@@ -4,12 +4,12 @@ title: Movie Rental Refactoring Part 1
 
 ## Description
 
-This is a well-known refactoring example from [Chapter 1][refactoring_pdf] of
+This is a well-known refactoring problem from [Chapter 1][refactoring_pdf] of
 _Refactoring: Improving the Design of Existing Code_ by Martin Fowler.  
 
 The application creates a statement showing the movie rentals by a customer, along with the total price and "frequent renter points" earned.
 
-In the application, a **Customer** rents **Movies**. A **Rental** object records the movie and `days_rented`.  The rental **price** of a Movie is based on its **price code** such as "New Release", "Children's Movie", or "Regular". The price code also determines the **frequent renter points** earned for a Rental.
+In the application, a **Customer** rents **Movies**. A **Rental** object records the `movie` and `days_rented`.  The rental `price` of a Movie is based on its **price code** such as "New Release", "Children's Movie", or "Regular". The price code also determines the **frequent renter points** earned for a Rental.
 
 The Customer class has a `statement` method that creates a formatted statement containing the details of each rental along with total amount and total points earned, and returns the statement as a string.
 
@@ -17,18 +17,18 @@ The Customer class has a `statement` method that creates a formatted statement c
 
 ## Assignment
 
-This assignment a contains Python translation of the original Java version.
+This assignment contains a Python translation of the original Java version.
 
 The [PDF from Chapter 1][refactoring_pdf] explains the 
-motivation for each refactoring and how to do it.  Please read it.
+motivation for each refactoring and how to do it.  It is helpful to read it.
 
 ### Changes in the Python Version
 
-In Python, the refactoring are the same as Fowler's Java version, but some details are different.
+In Python, the refactoring are the same as in Fowler's Java version, but some details are different.
 
 - Variable names use the Python naming convention (`total_amount`) instead of Java camelcase names (`totalAmount`), and no leading underscore.
-- Instead of `getCharge()` (Java) use `get_price`
-- Instead of `getFrequentRenterPoints()` (Java) use `get_rental_points` ("rental" instead of "renter")
+- Instead of `getCharge()` (Java) use `get_price()`
+- Instead of `getFrequentRenterPoints()` (Java) use `get_rental_points` (Note "rental" instead of "renter")
 - Instead of `Price` for strategies (p. 29) use `PriceStrategy`
 
 
@@ -36,7 +36,7 @@ In Python, the refactoring are the same as Fowler's Java version, but some detai
 
 Before *and* after each refactoring you should **run the unit tests**.
 
-Perform each of these refactorings:
+Perform these refactorings:
 
 1. *Extract Method for rental price calculation*.  In `Customer.statement()` extract the code that calculates the price of one rental.
    - Make it a separate method. Fowler calls it `amountFor` but a Pythonic name would be `amount_for` or `get_price(rental)`. 
@@ -72,49 +72,60 @@ observe that the method uses information about the rental but not about the cust
    Do this in **three steps**.
    - Step 1: make the Movie class compute its own rental price and rental points. Rental calls `movie.get_rental_points(days)` and `movie.get_price(days)`.
    - Step 2: *Replace Switch with Polymorphism* (Page 29). Replace price code constants with a hierarchy of `PriceStrategy` objects. Fowler calls the superclass `Price`. Since this is the *Strategy Pattern*, let's call it PriceStrategy. *See below for details*.
-   - Step 3: Movie *delegates* the computation of rental price and rental points to the PriceStrategy object.
+   - Step 3: Movie *delegates* the computation of rental price and rental points to the `PriceStrategy` object.
    - Replace the constants for price code with PriceStrategy objects.
    - In Fowler's article, this is a long refactoring because he first uses inheritance (Movie subclasses on page 28) and then explains why that's a poor solution.
-   - This refactoring uses the principle "*Prefer composition over inheritance*".
+   - This refactoring uses the principle: "*Prefer composition over inheritance*".
+   - Details of [How to Implement a Price Strategy](#how-to-implement-price-strategy) are given below
 
-*How to Implement Price Strategy*: In Python, there are two ways to define polymorphic price objects
-- [Define a Price Strategy Hierarchy](#define-a-pricestrategy-class-hierarchy) as in the Java version.
+9. Missing or Incorrect Refactorings?
+
+   - In the final code, do you see anything that *still* needs refactoring, based on the refactoring signs ("code smells") or design principles?
+   - Do you think any of the refactorings are wrong?
+   - Share your ideas on Discord and we will discuss them after this assignment. 
+   - If there is not much contribution on Discord, then it will be a quiz instead of a discussion.
+
+
+### How to Implement Price Strategy
+
+There are two ways:
+
+- [Define a Price Strategy Hierarchy](#define-a-pricestrategy-class-hierarchy) as in the Java version.  This is the most flexible approach since strategy objects can contain complex methods.
+
+Another way, which we used in the Pizzashop exercise, is to use an enum.  This is simpler but not as flexible as strategy objects:
+
 - [Define an Enum for Price Strategy](#define-an-enum-for-pricestrategy) where each Enum member implements the strategy methods as lambdas.  This only works if the strategies are simple enough to be implemented as lambda expressions.
 
+Whether you use strategy classes or an Enum, the code for Rental will be similar. The important part is that Rental (or Movie) *delegates* computation of price and rental points to the PriceStrategy instead of using `if ... elif ... elif ...`. 
 
-### Missing Refactorings?
-
-In the final code, do you see anything that *still* needs refactoring, based on the refactoring signs ("code smells") or design principles?
-
-Do you think any of the refactorings are wrong?
-
-Share your ideas on Discord and we will discuss them after this assignment is finished.
+This is the refactoring "*Replace Switch with Polymorphism*", implemented using the *Strategy Pattern*.
 
 
-### Define a PriceStrategy Class Hierarchy
+#### Define a PriceStrategy Class Hierarchy
 
 In Java, to apply the Strategy Pattern you define an Interface for the strategy (`PriceStrategy`) and then define concrete implementations of the interface, such as RegularPrice, NewRelease, and ChildrensPrice.
 
-Python does not require defining an interface for the strategy, but for clarity and type safety you can create an abstract base class (`PriceStrategy`) for the interface with abstract methods that subclasses must implement.  `RegularPrice`, `NewRelease`, etc., extend  `PriceStrategy` and implement the methods.
+Python does not require an interface for the strategy, but for clarity, documentation, and type checking you can create an abstract base class (`PriceStrategy`) as the interface with abstract methods that subclasses must implement.  `RegularPrice`, `NewRelease`, etc., extend  `PriceStrategy` and implement these methods.
 
 ```python
 from abc import ABC, abstractmethod
 
 class PriceStrategy(ABC):
-   """Abstract base class (interface) for rental pricing."""
-
-    @abstractmethod
-    def get_rental_points(self, days: int) -> int:
-        """The frequent renter points earned for this rental."""
-        pass
+   """Abstract base class defines methods for rental pricing."""
 
     @abstractmethod
     def get_price(self, days: int) -> float:
         """The price of this movie rental."""
         pass
+
+    @abstractmethod
+    def get_rental_points(self, days: int) -> int:
+        """The frequent renter points earned for this rental."""
+        pass
 ```
 
 Each concrete price strategy implements the abstract methods:
+
 ```python
 class NewRelease(PriceStrategy):
     """Pricing rules for New Release movies."""
@@ -139,46 +150,47 @@ class NewRelease(PriceStrategy):
 class RegularPrice(PriceStrategy):
     ...
 
-# Predefined instances of the strategies used as constants
+# Define instances of the strategies as named constants
 NEW_RELEASE = NewRelease()
 REGULAR = RegularPrice()
 CHILDREN = ChildrensPrice()
 ```
 Python requires the instances be created *after* the class definition.
 
+#### Make the Price Strategies be Singletons
 
-### Define an Enum for PriceStrategy
+We only need one instance of each Strategy class, since they do not have any state.
+
+By carefully writing a Singleton `__new__` method in the base class, each child class will be a Singleton.
+
+```python
+class PriceStrategy(ABC):
+    _instance = None
+
+    @classmethod
+    def __new__(cls):
+        if not cls._instance:
+            cls._instance = super(PriceStrategy, cls).__new__(cls)
+        return cls._instance
+```
+
+You should verify that (a) instances of NewRelease and RegularMovie are *not* the same, (b) all instances of RegularMovie *are* the same object.
+
+
+#### Define an Enum for PriceStrategy
 
 Another way to implement a Strategy in Python is to use an Enum. 
+
 - The Enum defines the methods required by the strategy
 - Each member of the enum is one concrete pricing strategy (regular, childrens', new release).
-- Each enum member has a dict named `value`, that you define when you declare the enum member.  Here's a naive example of assigning fixed values for "price" and "frp" (frequent renter points):
+- Each enum member has a dict named `value`, that you define when you declare the enum member. 
 
-```python
-from enum import Enum
+The price of rentals is a function of days rented, frequent rental points is also a function of days rented.  Hence, each enum member needs its own *functions* for these, and we don't want to use `if ... elsif ... ` logic.  That is error-prone and not extensible.
 
-class PriceStrategy(Enum):
-   # these are the members (instances) of the enum
-   NEW_RELEASE = { "price": 3, "frp": 2 }
-   REGULAR_PRICE = {"price": 2, "frp": 1 }
+(If anyone does that, they will get ZERO credit.)
 
-   def get_price(self, days):
-      return self.value["price"]*days
-   
-   def get_rental_points(self, days):
-      return self.value["frp"]
-```
+But, you can define `lambda` expressions for the rental price and rental point functions:
 
-You can assign an Enum member to a variable, and then invoke its methods:
-
-```python
->>> price_code = PriceStrategy.NEW_RELEASE
->>> print("Rental price for 4 days:", price_code.get_price(4))
-Rental price for 4 days: 12
-```
-
-- You can assign functions to the enum values using lambdas.  Each enum member defines it's own lambda for pricing and frequent renter points.
-This is more flexible than the naive approach above.
 
 ```python
 from enum import Enum
@@ -196,17 +208,15 @@ class PriceStrategy(Enum):
         return pricing(days)
 ```
 
-Whether you use an Enum or an abstract base class with subclasses, the code for Movie will be similar. The important part is that Movie *delegates* computation of price and rental points to the PriceStrategy instead of using `if ... elif ... elif ...`. 
 
-This is the refactoring "*Replace Switch with Polymorphism*", implemented using the *Strategy Pattern*.
 
 ### UML Class Diagram
 
 ![UML of Final Code](movierental-part1-uml.png)
 
-If you use an *enum* the structure would be:
+If you use an *enum* the structure would be ("PriceCode" should be "PriceStrategy"):
 
-![UML of Final Code](movierental-part1-enum-uml.png)
+![UML of Code using Enum](movierental-part1-enum-uml.png)
 
 
 
