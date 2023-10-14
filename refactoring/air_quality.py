@@ -12,13 +12,12 @@ DON'T
 
 """
 def air_quality(data) -> str:
-    """Return an air quality rating based on meausrements.
+    """Return an air quality rating based on observed data.
 
-    Arguments:
-    data: list of air quality readings from some location
-    Returns:
-    String description of air quality
+    :param data: list of air quality index (AQI) readings from a location
+    :returns: String description of air quality
     """
+    # check extreme cases
     if not data:
         return "no data"
     elif max(data) <= 10:

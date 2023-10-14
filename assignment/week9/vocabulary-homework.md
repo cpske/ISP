@@ -13,6 +13,8 @@ Please be sure you understand and can explain each of the terms below.
 - **Cohesion**, in particular, what are *Functional Cohesion* and *Informational [or Communication] Cohesion*? 
   - It is not so important to know "temporal cohesion", "informational cohesion", "sequential cohesion", etc.  When developers refer to cohesion they usually mean "functional cohesion".
 
+- Software **Component** is key to a *modular design*, which is a "best practice" for building testable, maintainable software.  So, what is a software component? It's not just a class.
+
 - **Coupling**
 
 - **Encapsulation** and **Data Hiding** or *Information Hiding*, core concepts in OO programming.

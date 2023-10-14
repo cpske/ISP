@@ -23,8 +23,8 @@ without changing the external functionality.
 
 ### Presentation Slides
 
-[Intro to Refactoring](Refactoring.pdf)    
-[Refactoring Signs and Patterns](Refactoring-Patterns.pdf)      
+[Intro to Refactoring](Refactoring-Intro.pdf)    
+[Refactoring Signs and Patterns](Refactoring-Signs-Patterns.pdf)      
 
 
 ### Refactoring Signs and Symptoms
