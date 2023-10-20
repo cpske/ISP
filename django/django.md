@@ -14,8 +14,7 @@ title: Django
 * [Import and Export Data](data-import-export) save database data to a file and import the data file into a new installation of the app
 * [Logging](logging) is an essential part of web apps
 * [Messages Framework](messages-framework) is a clean, easy way to transfer error messages from a view (controller) to a page template, without using the context
-* [Organize Unit Tests](test-organization) create a `tests/` directory containing multiple test files. More modular and scales better.
-* [Put Models in Separate Files](organize-django-code) how to use a `models` folder and separate files for model classes.
+* [Organize Models and Tests](organize-django-code) how to create a `models` and `tests` directory containing separate files for different models and tests. This improves code maintenance and reduces conflicts in team projects.
 * [Virtualenv](virtualenv) and [Quickstart](virtualenv-quickstart) how to make you app more portable using a virtual environment. Many cloud services require this for Python apps.
 
 ---

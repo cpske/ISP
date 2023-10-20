@@ -320,10 +320,10 @@ Easily pass messages from a view to a template.
 
 <tr valign="top">
 <td markdown="span"> 
-[Organize Tests & Models](django/test-organization)
+[Organize Tests & Models](django/organize-django-code)
 </td>
 <td markdown="span">
-[Separate your tests](django/test-organization) and [models](django/organize-django-code) into individual files, to reduce conflicts on team projects.
+Separate your models, tests, and views into individual files (in packages) to reduce conflicts on team projects.
 </td>
 </tr>
 
