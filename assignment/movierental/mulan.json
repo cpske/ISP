@@ -1,0 +1,81 @@
+{"url": "https://www.omdbapi.com/"},
+{
+    "Title": "Mulan",
+    "Year": "1998",
+    "Rated": "G",
+    "Released": "19 Jun 1998",
+    "Runtime": "87 min",
+    "Genre": "Animation, Adventure, Comedy",
+    "Director": "Tony Bancroft, Barry Cook",
+    "Writer": "Robert D. San Souci, Rita Hsiao, Chris Sanders",
+    "Actors": "Ming-Na Wen, Eddie Murphy, BD Wong",
+    "Plot": "To save her father from death in the army, a young maiden secretly goes in his place and becomes one of China's greatest heroines in the process.",
+    "Language": "English, Mandarin",
+    "Country": "United States, Japan",
+    "Awards": "Nominated for 1 Oscar. 17 wins & 21 nominations total",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BODkxNGQ1NWYtNzg0Ny00Yjg3LThmZTItMjE2YjhmZTQ0ODY5XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg",
+    "Ratings": [
+        {
+            "Source": "Internet Movie Database",
+            "Value": "7.6/10"
+        },
+        {
+            "Source": "Rotten Tomatoes",
+            "Value": "86%"
+        },
+        {
+            "Source": "Metacritic",
+            "Value": "71/100"
+        }
+    ],
+    "Metascore": "71",
+    "imdbRating": "7.6",
+    "imdbVotes": "306,109",
+    "imdbID": "tt0120762",
+    "Type": "movie",
+    "DVD": "01 Jan 2014",
+    "BoxOffice": "$120,620,254",
+    "Production": "N/A",
+    "Website": "N/A",
+    "Response": "True"
+},
+{
+    "Title": "Mulan",
+    "Year": "2020",
+    "Rated": "PG-13",
+    "Released": "04 Sep 2020",
+    "Runtime": "115 min",
+    "Genre": "Action, Adventure, Drama",
+    "Director": "Niki Caro",
+    "Writer": "Rick Jaffa, Amanda Silver, Lauren Hynek",
+    "Actors": "Liu Yifei, Donnie Yen, Gong Li",
+    "Plot": "To keep her ailing father from serving in the Imperial Army, a fearless young woman disguises herself as a man and battles northern invaders in China.",
+    "Language": "English, Mandarin",
+    "Country": "United States, China",
+    "Awards": "Nominated for 2 Oscars. 8 wins & 42 nominations total",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BYjdlZjRiYTUtN2NlNC00MDkxLWI0MmItOTUwNTg1YTU4MWUxXkEyXkFqcGdeQXVyMTA1OTEwNjE@._V1_SX300.jpg",
+    "Ratings": [
+        {
+            "Source": "Internet Movie Database",
+            "Value": "5.8/10"
+        },
+        {
+            "Source": "Rotten Tomatoes",
+            "Value": "72%"
+        },
+        {
+            "Source": "Metacritic",
+            "Value": "66/100"
+        }
+    ],
+    "Metascore": "66",
+    "imdbRating": "5.8",
+    "imdbVotes": "155,814",
+    "imdbID": "tt4566758",
+    "Type": "movie",
+    "DVD": "04 Sep 2020",
+    "BoxOffice": "N/A",
+    "Production": "N/A",
+    "Website": "N/A",
+    "Response": "True"
+}

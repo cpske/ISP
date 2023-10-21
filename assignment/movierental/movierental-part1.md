@@ -139,8 +139,8 @@ class NewRelease(PriceStrategy):
 ```
 
 The strategy objects don't save any *state* so we can share one instance among many Movies.  In the file containing the strategies create one instance of each strategy and use it in place of the constants in Movie:
+
 ```python
-"""price_strategy module."""
 class PriceStrategy(ABC):
     ...
 
@@ -159,7 +159,7 @@ Python requires the instances be created *after* the class definition.
 
 #### Make the Price Strategies be Singletons
 
-We only need one instance of each Strategy class, since they do not have any state.
+We need only one instance of each Strategy class, since they do not have any state.
 
 By carefully writing a Singleton `__new__` method in the base class, each child class will be a Singleton.
 
@@ -174,7 +174,7 @@ class PriceStrategy(ABC):
         return cls._instance
 ```
 
-You should verify that (a) instances of NewRelease and RegularMovie are *not* the same, (b) all instances of RegularMovie *are* the same object.
+You should verify that (a) instances of NewRelease, ChildrensMovie, and RegularMovie are *not* the same, (b) all instances of RegularMovie *are* the same object.
 
 
 #### Define an Enum for PriceStrategy
@@ -209,12 +209,11 @@ class PriceStrategy(Enum):
 ```
 
 
-
 ### UML Class Diagram
 
 ![UML of Final Code](movierental-part1-uml.png)
 
-If you use an *enum* the structure would be ("PriceCode" should be "PriceStrategy"):
+If you use an *enum* the structure would be:
 
 ![UML of Code using Enum](movierental-part1-enum-uml.png)
 
