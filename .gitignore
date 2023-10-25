@@ -15,6 +15,8 @@ _site/
 *.log
 .~lock*
 header.md
+*-soln*
+*-solution*
 # index.html is auto-generated from index.md, but subdir indices are created by me
 /index.html
 # Directories not to publish

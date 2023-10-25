@@ -179,21 +179,27 @@ rental = Rental(movie, days_rented)
 
 The movie data is in a file named `movies.csv` at this URL:
 
-https://cpske.github.io/ISP/assignment/movierental/movies.csv
+<https://cpske.github.io/ISP/assignment/movierental/movies.csv>
 
 Each line is one of:
-- movie data:  id,title,year,genre1|genre2|... (1 or more genre)
+
+- movie data in CSV format with one or more "genre" separated by a vertical bar
+  ```
+  movie_id,title,year,genre1|genre2|...
+  # for example
+  202301,Oppenheimer,2023,Biography|Drama|History
+  ```
 - blank line
-- comment line beginning with '#' symbol. These may occur *anywhere* in the file, not just the start or end.
+- comment line beginning with '#' symbol. Comment lines may occur *anywhere* in the file.
 
 Blank lines and comment lines may be **anywhere in the file**, not just the top of file.
 Blank lines and comment lines should be ignored. 
 
-If any data line contains invalid movie data then `log` an error message like this one:
+If any data line contains invalid movie data then `log` an error using the Python logging module. Use a log message like this one:
 ```
 Line 37: Unrecognized format "164179,Arrival,2016"
 ```
-skip the erroneous line but continue processing the CSV file.
+Skip the erroneous line but continue processing the CSV file.
 
 
 ## What to Submit

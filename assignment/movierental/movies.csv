@@ -1,19 +1,31 @@
-# Movies are listed in reverse cronological order by release date.
 #id,title,year,genres
-202201,The Batman,2022,Action|Crime|Drama
-202202,Avatar: The Way of Water,2022,Action|Adventure|Fantasy
-202203,Glass Onion: A Knoves Out Mystery,2022,Comedy|Crime|Drama
-202204,Asteroid City,2022,Comedy|Romance
-202205,The Wild Bunch,2022,Action
-202206,Elvis,2022,Biography|Drama|Music
-202207,Babylon,2022,Comedy|Drama|History
-202208,Django/Zorro,2022,Adventure|Drama|Western
-202209,Top Gun: Maverick,2022,Action|Drama
-202210,Turning Red,2022,Animation|Adventure|Children|Comedy
-202211,Bullet Train,2022,Action|Comedy|Thriller
-202212,The Northman,2022,Action|Adventure|Drama
-202213,Everything Everywhere All at Once,2022,Action|Adventure|Comedy
-202214,The Ice Age Adventures of Buck Wild,2022,Animation|Adventure|Comedy|Dhildren
+748,The Arrival,1996,Action|Sci-Fi|Thriller
+1022,Cinderella,1950,Animation|Children|Musical
+1907,Mulan:1998:Animation|Action|Children
+109687,Particle Fever,2013,Documentary
+116979,The Legend of Sarila,2013,Adventure|Animation|Children
+117529,Jurassic World,2015,Action|Adventure|Drama|Sci-Fi|Thriller
+122904,Deadpool,2016,Action|Adventure|Comedy|Sci-Fi
+125916,Fifty Shades of Grey,2015,Drama|Romance
+134130,The Martian,2015,Adventure|Drama|Sci-Fi
+136020,Spectre,2015,Action|Adventure|Crime
+136562,Steve Jobs,2015,Drama
+136864,Batman v Superman: Dawn of Justice,2016,Action|Adventure|Fantasy|Sci-Fi
+139644,Sicario,2015,Crime|Drama|Mystery
+141846,Steve Jobs: The Man in the Machine,2015,Documentary
+142488,Spotlight,2015,Thriller
+142492,Son of Saul,2015,Drama
+143385,Bridge of Spies,2015,Drama|Thriller
+163645,Hacksaw Ridge,2016,Drama|War
+164179,Arrival,2016,Sci-Fi
+164909,La La Land,2016,Comedy|Drama|Romance
+166918,The Great Wall,2016,Action|Adventure|Thriller
+175615,Almost Holy,2015,Documentary
+202000,A Tenant,2020,Action|Sci-Fi
+202001,Mulan,2020,Action|Adventure|Children
+202002,Weathering With You,2020,Animation|Drama|Children
+202003,Little Fish,2020,Drama|Romance|Sci-fi
+202004,Spider Man: No Way Home,2020,Action|Adventure|Fantasy
 202101,Belle,2021,Animation|Adventure|Drama
 202102,Dune,2021,Action|Adventure|Drama
 202103,Drive My Car,2021,Drama
@@ -30,30 +42,38 @@
 202114,Luca,2021,Animation|Adventure|Children|Comedy
 202115,Cinderella,2021,Children|Comedy|Fantasy
 202116,Encanto,2021,Animation|Children|Comedy
-202000,A Tenant,2020,Action|Sci-Fi
-202001,Mulan,2020,Action|Adventure|Children
-202002,Weathering With You,2020,Animation|Drama|Children
-202003,Little Fish,2020,Drama|Romance|Sci-fi
-202004,Spider Man: No Way Home,2020,Action|Adventure|Fantasy
-122904,Deadpool,2016,Action|Adventure|Comedy|Sci-Fi
-136864,Batman v Superman: Dawn of Justice,2016,Action|Adventure|Fantasy|Sci-Fi
-163645,Hacksaw Ridge,2016,Drama|War
-164179,Arrival,2016,Sci-Fi
-164909,La La Land,2016,Comedy|Drama|Romance
-166918,The Great Wall,2016,Action|Adventure|Thriller
-117529,Jurassic World,2015,Action|Adventure|Drama|Sci-Fi|Thriller
-125916,Fifty Shades of Grey,2015,Drama|Romance
-134130,The Martian,2015,Adventure|Drama|Sci-Fi
-136020,Spectre,2015,Action|Adventure|Crime
-136562,Steve Jobs,2015,Drama
-139644,Sicario,2015,Crime|Drama|Mystery
-141846,Steve Jobs: The Man in the Machine,2015,Documentary
-142488,Spotlight,2015,Thriller
-142492,Son of Saul,2015,Drama
-143385,Bridge of Spies,2015,Drama|Thriller
-175615,Almost Holy,2015,Documentary
-109687,Particle Fever,2013,Documentary
-116979,The Legend of Sarila,2013,Adventure|Animation|Children
-1907,Mulan,1998,Animation|Action|Children
-748,The Arrival,1996,Action|Sci-Fi|Thriller
-1022,Cinderella,1950,Animation|Children|Musical
+202201,The Batman,2022,Action|Crime|Drama
+202202,Avatar: The Way of Water,2022,Action|Adventure|Fantasy
+202203,Glass Onion: A Knoves Out Mystery,2022,Comedy|Crime|Drama
+202204,Asteroid City,2022,Comedy|Romance
+202205,The Wild Bunch,2022,Action
+202206,Elvis,2022,Biography|Drama|Music
+202207,Babylon,2022,Comedy|Drama|History
+202208,Django/Zorro,2022,Adventure|Drama|Western
+202209,Top Gun: Maverick,2022,Action|Drama
+202210,Turning Red,2022,Animation|Adventure|Children|Comedy
+202211,Bullet Train,2022,Action|Comedy|Thriller
+202212,The Northman,2022,Action|Adventure|Drama
+202213,Belle,2021,Animation|Adventure|Children|Drama
+202213,Everything Everywhere All at Once,2022,Action|Adventure|Comedy
+202214,The Ice Age Adventures of Buck Wild,2022,Animation|Adventure|Comedy|Dhildren
+202301,Oppenheimer,2023,Biography|Drama|History
+202302,The Covenant,2023,Action|Drama|Thriller
+202303,Gran Turismo,2023,Action|Adventure|Drama
+202304,A Million Miles Away,2023,Biography|Drama
+202305,Killers of the Flower Moon,2023,Crime|Drama|History
+202306,Reptile,2023,Crime|Drama|Mystery
+202307,The Burial,2023,Drama
+202308,The Creator,2023,Action|Adventure|Drama
+202309,Fair Play,2023,Drama|Mystery|Thriller
+202310,Taylor Swift: The Eras Tour,2023,Music
+202311,Mission Impossible: Dead Reckoning Part One,2023,Action|Adventure|Thriller
+202312,Barbie,2023,Adventure|Comedy|Fantasy
+202313,Ferrari,2023,Biography|Drama|History
+202314,The Equalizer 3,2023,Action|Crime|Thriller
+202315,Poor Things,2023,Romance|Sci-Fi
+202316,Napolean,2023,Action|Adventure|Biography|History
+202317,Sound of Freedom,2023,Biography|Crime|Drama
+202318,Anatomy of a Fall,2023,Crime|Drama|Thriller
+202319,Elemental,2023,Animation|Adventure|Comedy
+202320,Dumb Money,2023,Biography|Comedy|Drama
