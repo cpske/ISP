@@ -2,7 +2,6 @@
 title: Software Testing
 ---
 
-
 Software projects perform several types of testing:
 
 * *Unit Testing* tests individual components, such as classes and and functions.
@@ -26,7 +25,7 @@ Your development workflow should usually be:
 - analyze any test failures and correct the code (or tests)
 - repeat
 
-In **Test Driven Development** (TDD) you write the tests **before** you write the code.  TDD usually results in better tests and better code under test.
+In **Test Driven Development** (TDD) you write the tests **before** you write the code.  TDD usually results in better tests and better code.
 
 Unit Testing Benefits:
 
@@ -34,17 +33,17 @@ Unit Testing Benefits:
 2. helps you stay focused on current work
 3. makes you think about what code *should* do, even in 'edge' cases
 4. avoid re-introducing previously fixed errors, called *regression errors*
-5. gives you **confidence** to change the code
-6. tests are **required** before doing refactoring
-7. enables testing to be automated (unlike manual testing)
+5. enables testing to be automated (unlike manual testing)
+6. gives you **confidence** to change the code
+7. tests are **necessary** before doing refactoring
 
 How to design test cases?
 
 - test *behavior* not just methods. One test may use several methods.
-- test for: edge cases, failure cases, typical cases, extreme cases
+- test edge cases, failure cases, typical cases, extreme cases
 - example tests for sqrt:
-  - edge case: sqrt(0), sqrt(1.0E-15)
-  - failure case: sqrt(-0.1) 
+  - edge case: sqrt(0), sqrt(1.0E-31)
+  - failure case: sqrt(-0.01) 
   - typical case: `sqrt(x) for x in [0.25, 0.5, 1, 1.5, 4.0, 26, (10000.5)**2]`
   - extreme case: sqrt(1.8E+308) - `1.8e+308` is the largest floating point value in Python
 - things likely to go wrong, or where programmer may make a mistake
@@ -65,7 +64,7 @@ The ones we will cover are:
 
 [python-unittest]: https://docs.python.org/3/library/unittest.html
 
-Presentation: [Python Unit Testing](PythonUnitTesting.pdf)
+Presentation: [Python Unit Testing](Python-Unit-Testing.pdf)
 
 Resources to learn unittest:
 

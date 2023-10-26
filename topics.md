@@ -81,10 +81,10 @@ Importance of descriptive commit messages and Pull Requests.
 [Unit Testing](testing)
 </td>
 <td markdown="span">
-Testing "units" of code.  Testing behavior - not just methods.      
-[JUnit for Java](/testing/Intro-to-Unit-Testing.pdf) and 
-[Unit test in Python](testing/PythonUnitTesting.pdf)    
+[Intro to Unit Testing](testing/Intro-to-Unit-Testing.pdf).  Test behavior, not just methods.      
+[Unit test in Python](testing/Python-Unit-Testing.pdf) and
 [Code Coverage](testing/code-coverage)    
+[JUnit for Java](testing/Intro-to-Unit-Testing.pdf)
 </td>
 </tr>
 
@@ -320,10 +320,10 @@ Easily pass messages from a view to a template.
 
 <tr valign="top">
 <td markdown="span"> 
-[Organize Tests & Models](django/organize-django-code)
+[Organize Django Code](django/organize-django-code)
 </td>
 <td markdown="span">
-Separate your models, tests, and views into individual files (in packages) to reduce conflicts on team projects.
+Separate your models, tests, and views into individual files (in packages) to reduce conflicts on team projects. The Mozilla Developer Network (MDN) and Cookie Cutter Django project.
 </td>
 </tr>
 
