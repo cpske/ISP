@@ -211,17 +211,17 @@ There are plugins for better analysis of Django projects:
   - Usage: `cd django-project; flake8`
   - flake8 automatically uses the plugin. In my test, it needs some extra configuration to eliminate superfluous messages.
 
-## Check Style for Java
+## Checkstyle for Java
 
-Java is a statically typed, compiled language. A Java IDE and compiler perform a lot of checks for syntax and semantic errors, hence there is less work for other tools.  Some examples of this are:
+Java is a statically typed, compiled language. A Java IDE and compiler perform a lot of checks for syntax and semantic errors. For example:
 
-* A variable must always be declared (avoids spelling errors in variable names).
+* A variable must always be declared (catches spelling errors in variable names).
 * Java won't let you use a local variable before a value is explicitly assigned. 
 * Attributes are assigned a default value (null, zero, or false) but the IDE and compiler will warn you if it looks like you are using an attribute before explicitly assigning a value.
-* Compiler and IDE both warn if you don't close a locally created resource, like a Scanner or InputStream.
+* Compiler and IDE warn if you don't close a locally created resource, such as an InputStream.
 * Compiler won't let you pass the wrong type as a parameter or return the wrong type from a method.
 
-For code style checking the standard tool is [Checkstyle](https://checkstyle.sourceforge.io) and [Checkstyle on Github](https://github.com/checkstyle/checkstyle).  It can be integrated into any IDE, even BlueJ.
+The standard code style checking tool is [Checkstyle](https://checkstyle.sourceforge.io) and [Checkstyle on Github](https://github.com/checkstyle/checkstyle).  Checkstyle can be integrated into any IDE, even BlueJ.
 
 * [Using Checkstyle](https://skeoop.github.io/docs/Checkstyle.pdf) from Programming 2
 * KU Checkstyle Rules [ku-checkstyle.xml](https://skeoop.github.io/docs/ku-checkstyle.xml) by Thai Pangsakulyanont. The rules define the coding standard that Checkstyle expects.

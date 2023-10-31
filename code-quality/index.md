@@ -9,7 +9,19 @@ It is easy to neglect code quality when working under a deadline,
 fixing bugs, or adding a new feature. Over time the code becomes
 harder to understand and maintain, and harder to test.
 
-Eventually, such code is discarded and rewritten -- a waste of money.
+Eventually, such code is discarded and rewritten.
+
+[What is Code Quality](#what-is-code-quality)    
+[10 Best Practices](#10-best-practices)    
+[Clean Code](#clean-code)    
+[Coding Convention for Project or Organization](#coding-convention-for-project-or-organization)    
+[What To Include in your Coding Guide](#what-to-include-in-your-coding-guide)    
+[Python Coding Standards](#python-coding-standards)    
+[Documentation in Code](#documention-in-code)    
+[Style Checkers and Static Analysis](#style-checkers-and-static-analysis-tools)    
+[Django's Coding Style Guide](#djangos-coding-style-guide)    
+[Java Coding Style](#java-coding-style)    
+[Practices of an Agile Developer](#practices-of-an-agile-developer)    
 
 ## What is Code Quality?
 
@@ -30,35 +42,23 @@ References:
 [perforce-code-quality]: https://www.perforce.com/blog/sca/what-code-quality-and-how-improve-code-quality
 [dzone-code-quality-metrics]: https://dzone.com/articles/code-quality-metrics
 
-## How to Improve Code Quality
-
-The above articles recommend these best practices:
-
-1. Use a Coding Standard
-2. Analyze Your Code - both manually and using [tools](code-quality-tools)
-3. Follow Code Review Best Practices
-4. Refactor Code
-
-**10 Specific Practices**
+## 10 Best Practices
 
 1. Consistently use a **coding standard**. For Python use PEP8.
-2. Write [document comments](docstrings) (Javadoc or Python docstring) in a standard format
-3. Use descriptive names for classes, functions, and variables
-4. Write short functions (methods) that do only one thing
-5. Use return values instead of side effects when possible
+2. Write [document comments](docstrings) in a standard format: Javadoc or Python docstring. 
+3. Use descriptive names for classes, functions, and variables.
+4. Write short functions (methods) that do only one thing.
+5. Use return values instead of side effects when possible.
 6. Avoid unexpected side effects. Use the "*Command Query Separation Principle*".
 7. Review all your code.
-8. On a team project, ask others to review your code.
-9. Use tools to check your code. Perform static analysis, linting, and style checking.
+8. On a team project, review code with others. 
+   - Use a Code Review guide & checklist.
+9. Use tools to check code. Perform static analysis, linting, and style checking.
+   - pylint, flake8, or ruff for style, linting, and some error checking
+   - mypy for static analysis
 10. Refactor to improve code.
 
 Many projects have a "refactoring day" when the only work done is code review and refactoring.
-
-*Zen of Python* on Code Quality. Run Python and type:
-
-```python
-   >>> import this
-```
 
 ## Clean Code
 
@@ -79,74 +79,114 @@ To discuss:
 * Look at coding guidelines from some real projects. [Apache](https://apache.org) is a good source.
 
 
-## Coding Style and Coding Convention
+## Coding Convention for Project or Organization
 
-Team projects usually have a "coding standard" -- some companies
-have a single coding standard.
-Google, Microsoft, and the Apache Foundation have coding standards.
+Team projects usually have a "coding standard". It helps others understand your code, and avoids pointless commit conflicts caused when each person's IDE reformats the same block of code.
 
-Over time, **common coding guidelines** have emerged.
-There is *some* variation in the details of a coding style guide,
-but they all agree on most of the details.
+Google, Microsoft, and the Apache Foundation have organization-wide coding standards.  The [VSCode Project](https://github.com/microsoft/vscode/wiki) has a coding standard.
+
+## What to include in your coding guide 
+
+Some ideas -- you decide what is important to your team.
+
+- how to name files and how to organize them
+- code formatting rules
+- coding rules
+  - naming convention
+  - handling exceptions - don't ignore exceptions
+  - when to raise an exception
+  - logging?
+  - assertions?
+  - use guard clauses instead of nested "if"?
+- do you require type hints?
+  - how much detail?
+  - do collection type hints use `collections.abc` or `typing`?
+- Use [code checking tools](#style-checkers-and-static-analysis-tools)?
+- Use an autoformatting tool to make it easy?
+  - IDE formatting rules - you can export and share these
+  - [Black][black] and [Pylink][pylink] code formatting tools
+- [Comments and comment style](#documentation-in-code), especially method and class docstrings.
 
 
-## Coding Standard for Python
+- Keep it simple and practical
 
-These docs show the Python "official" coding standard, called PEP8:
+- Document by example is OK, instead of long text (TL;DR)
+
+[black]: https://github.com/psf/black
+[pylink]: https://github.com/google/pyink
+
+
+## Python Coding Standards
+
+PEP8 is the Python "official" coding standard:
 
 - [How to Write Beautiful Code with PEP8](https://realpython.com/python-pep8/) on RealPython. Lot's of helpful examples.
-- [pep8.org](http://pep8.org/) is a single page easy-to-read summary of how to use [PEP 8](https://www.python.org/dev/peps/pep-0008/) the official Python Style Guide.
-- Python Guide for Docstrings [PEP 257](https://www.python.org/dev/peps/pep-0257/)
+- [pep8.org](http://pep8.org/) is a single page easy-to-read summary of how to use [PEP 8](https://peps.python.org/pep-0008/) the official Python Style Guide.
 
-- [Google Python Style Guide](https://google.github.io/styleguide/pyguide.html)
-  - Style Guide lists "pros" and "cons" of style choices & explains **why** to help you decide what's important.
+[Google's Python Style Guide](https://google.github.io/styleguide/pyguide.html)
+- Style guide lists "pros" and "cons" of style choices & explains **why** do it.
+- Rule #1 is "Run `pylint` over your code using this [.pylintrc][pylintrc]"
+- Part 2 is guide for using the Python language 
+- Part 3 "Python Style Rules" for coding style
+- Part 4 "Parting Words" is: *Be Consistent*
+- Google's guide is very prescriptive (do and don't) on how to write code
 
-  - Rule #1 is "run `pylint` over your code"! (using Google's .pylintrc)
-  - Part 2 is guidelines for using the Python language 
-  - Part 3 "Python Style Rules" are rules for coding style
-  - Part 4 "Parting Words" is *Be Consistent*
-  - Google's guide is very prescriptive (do and don't) on how to write code
+[pylintrc]: https://google.github.io/styleguide/pylintrc
 
 
-### Documenting Your Code
+## Documentation in Code
 
 [PEP257 Docstrings](https://peps.python.org/pep-0257/) is a one page guide to the Python docstring standard.
 
-Documenting parameters, returns, and exceptions is important!
-There are (at least) 3 styles for this,
-which are described in my [Docstrings](docstrings) write-up.
+My [Docstrings](docstrings) write-up describes 3 styles for parameters, returns, and exceptions in docstrings.
 
-We will use [Sphinx style docstrings](https://sphinx-rtd-tutorial.readthedocs.io/en/latest/docstrings.html) **except** use Type Hints for parameter and return types, *not* docstring comments.  So don't use the `:type var:` tags in docstrings.
+We will use [Sphinx style docstrings](https://sphinx-rtd-tutorial.readthedocs.io/en/latest/docstrings.html) **except** use **Type Hints** for parameter and return types, *not* docstring comments.  So don't use the `:type var:` tags in docstrings.
 
-Tools for generating nice documentation from docstrings:
-- pydoc
-- python interactive: `help(something)` shows formatted docstring
+```python
+def average(values: Collection[float|int]) -> float:
+    """Compute the arithmetic average of a collection of values.
+
+    :param values: non-empty collection of numeric values to average
+    :returns: the population average of the values
+    :raises ValueError: if collection is empty or contains invalid values
+    """
+```
+
+View docstrings in Python interactive shell:
+
+- `help(something)` shows formatted docstring
 - `print(something.__doc__)` shows docstring for `something`
-- Sphinx and Napolean (add-on). Used to create ReadTheDocs style web docs.
+
+Tools to  generate formatted documentation:
+
+- pydoc
+- Sphinx and Napolean (add-on). Create HTML or ReSt format docs. Used to create [ReadTheDocs](https://readthedocs.com) content.
 
 ### Comments in Code
 
-- Use comments to explain *why* and details that are not obvious from code. 
+- Use comments to explain *why* and details that are not obvious from the code. 
 - Don't explain "what" or "how" that is evident from the code itself.
 
 
-### Code Quality and Code Checking Tools
-
-[Python Code Quality][real-python-code-quality] best practices & tools, on RealPython.com.
-
-My [Code Quality Tools](code-quality-tools) page describes some tools for Python.
-
-Recommended Tools: 
+## Style Checkers and Static Analysis Tools
 
 - `flake8` with `flake8-docstrings` extension
 - `ruff` a fast alternative to flake8. Claims to check a superset of flake8.
-- `mypy` for static checking using type hints.
-- PyCharm has a builtin code checking tool, and be configured to use an extneral tool
-- VS Code: choose an external "Lint" tool in settings
+- `pylint` performs both style checking and some static analysis
+- `mypy` for static analysis. Uses type hints for improved static analysis.
+
+PyCharm has a builtin code checking tool; you can customize it, or configure PyCharm to use an external tool.
+
+VS Code: choose an external "Lint" tool in settings (CTRL-SHIFT-P and type 'python')
+
+[Python Code Quality][real-python-code-quality] on *RealPython.com* explains best practices & tools.
+
+My [Code Quality Tools](code-quality-tools) page describes how to use some tools.
 
 [real-python-code-quality]: https://realpython.com/python-code-quality/
 
-### Django's Coding Style Guide
+
+## Django's Coding Style Guide
 
 Django uses the Python PEP8 and PEP? (another PEP) with a few exceptions, described in the link below.
 
@@ -158,14 +198,9 @@ Django uses `flake8` to check coding style.
 https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/coding-style/
 
 
-### Coding Style For Java
-
-1. Programming 2 (Java) coding standard.
-2. Oracle's Java coding standard.
-
 ## *Practices of an Agile Developer*
 
-Many Tips in the book *Practices of an Agile Developer* concern code quality. The authors think it's important!
+Many Tips in [Practices of an Agile Developer](../resources/PAD-quickref.pdf) concern code quality. The authors must think it's important!
 
 Tip 2. *Quick Fixes Become Quicksand*    
 
@@ -175,6 +210,5 @@ Tip 26. *Communicate in Code*
 
 Tip 30. *Write Cohesive Code*    
 
-
-[Quick Reference](../resources/PAD-quickref.pdf) from *Practices of an Agile Developer*.
+[PAD Quick Reference](../resources/PAD-quickref.pdf) from *Practices of an Agile Developer*.
 
