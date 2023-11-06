@@ -3,9 +3,13 @@ title: Projects
 navigation_order: 4
 ---
 
+## ISP 2023 Team Projects
+
+[Team Projects & Documents](https://bit.ly/isp2023-projects) on Google Docs: <https://bit.ly/isp2023-projects>
+
 ## ISP 2022 Team Projects
 
-[List of Team Projects](https://bit.ly/isp2022-projects):&ensp; <https://bit.ly/isp2022-projects> on Google Docs
+[ISP 2022 Team Projects](https://bit.ly/isp2022-projects) on Google Docs: <https://bit.ly/isp2022-projects>
 
 ## ISP 2021 Team Projects
 

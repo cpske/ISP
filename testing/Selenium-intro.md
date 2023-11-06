@@ -72,14 +72,14 @@ browser.get( url )
 ```
 
 The Duckduckgo home page contains a **search box** (input field) with ID 
-`search_form_input_homepage`.
+`searchbox_input`.
 >
 > You can discover the element ID yourself by right-clicking on the search box and choosing **Inspect** in Firefox or Chrome.
 >
 
 Tell the browser to select the element using its 'id' attribute:
 ```python
-input_field = browser.find_element(By.ID, 'search_form_input_homepage')
+input_field = browser.find_element(By.ID, 'searchbox_input')
 # did it work?
 assert input_field != None
 ```
@@ -111,7 +111,7 @@ A simple technique is to look for all "a" tags.
 ```python
 elements = browser.find_elements(By.TAG_NAME, "a")
 len(elements)
-117
+125
 ```
 Too many results!   
 
@@ -119,7 +119,7 @@ Instead, search for hyperlinks containing the text "Kasetsart":
 ```python
 elements = browser.find_elements(By.PARTIAL_LINK_TEXT, "Kasetsart")
 len(elements)
-17
+13
 ```
 
 The values returned by `find_elements` are WebElement objects 
@@ -137,13 +137,22 @@ Print the value of `href` for the first result:
 ```
 this link refers to something on Duckduckgo itself, not what we want.
 
-Try another:
+Print the top 10 links:
 ```python
->>> elements[w].get_attribute('href')
-'https://en.wikipedia.org/wiki/Kasetsart_University'
+>>> for k in range(0,10):
+>>>     print(k, elements[w].get_attribute('href'))
+
+Results will vary. Something like:
+
+0 https://duckducgo.com/y.js?blah_blah_blah (tracking url)
+1 https://www.ku.ac.th/
+2 https://en.wikipedia.org/wiki/Kasetsart_University
+3 https://www.topuniversities.com/universities/kasetsart-university
+4 https://www.ku.ac.th/en/campus-information
+...
 ```
 
-Simulate clicking on a hyperlink:
+Simulate clicking on a hyperlink (pick one you want to visit). Let's visit Wikipedia:
 ```python
 elements[2].click()
 ```
