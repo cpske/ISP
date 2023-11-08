@@ -1,73 +1,126 @@
 ---
-title: Link Finder using Selenium
+title: Link Scanner and Tester using Selenium
 ---
 
-Write the following class and functions using Selenium.
-Starter code is provided on Github Classroom.
+Write a Python application that finds all hyperlinks on a web page and tests them.  It then prints on the console:
 
-`main.py` contains an example usage.  When I ran it, it printed 93 hyperlinks.
+1. All unique URLs of hyperlinks and images on the page, sorted.  
+   - Remove parameters, query parameters, and fragments from the URLs.
+   - Include URLs found in "a" and "img" tags only. Don't include links inside `<style>`, `<script>`, or audio/video tags.
+   - If you can sort by reverse domain names, do so, but this is not required. For example, all the "xxx.ku.ac.th" urls would appear together, including www.iup.ku.ac.th, eng.ku.ac.th, cpe.eng.ku.ac.th, etc. Otherwise, sort the URLs in ordinary dictionary order.
 
-#### What to Submit
+2. Print all URLs that require authentication, authorization, or payment to access.
+   - you can determine this using the HTTP response code
+   - if there are no such URLs, then skip this part of the output
+
+3. Print all bad or invalid URLs.
+
+Name the file `linkscanner.py`. It should be runnable and accept a URL to scan as command line parameter. For example:
+```
+cmd>  python linkscanner.py https://cpe.ku.ac.th
+```
+
+### Programming Requirements
+
+- The application must *not* open a browser window. Run in headless mode.
+- Use a current version of Chrome or Firefox (not Safari).  You can assume that the Chrome and Firefox webdrivers are installed and on the user's PATH.
+- To facilitate changing the browser settings, in `linkscanner.py` include a Browser class with `get_browser` class method as described below.
+- If your app requires any packages not in the Python standard library, include a `requirements.txt` file.
+
+## What to Submit
 
 Push your code to Github Classroom.
 
-#### Plagiarism
 
-If copying is detected on this assignment, everyone involved will receive F for the course.
+> **Requirement for Individual Work**
+>
+> This is an individual assignment. Please discover how to implement it yourself. Do not ask other students, including classmates, for help, or share code. You may ask TAs for clarification or technology questions.
+>
+> There are many ways to implement this assignment, so highly similar codes will be questioned. If copying is detected, everyone involved will receive F for the course. 
 
-### 1. Singleton Class to Create a Headless Browser
+### 1. Browser Class to Create a Headless Browser
 
-Complete the `Browser` class.  Write a `get_browser` class method that returns a singleton instance of a *headless* Firefox or Chrome web browser (your choice).
+Write a `Browser` class (in `linkscanner.py`) with a `get_browser` class method that returns a singleton instance of a *headless* Firefox or Chrome `WebDriver` (your choice).    
+Usage:
 
 ```python
+# create a headless Selenium browser
 browser = Browser.get_browser()
-browser.get("http://some.place") # nothing is shown on screen
+browser.get("https://some.place")  # nothing is shown on screen
 browser2 = Browser.get_browser()
-browser2 is browser              # browser is a singleton
+browser2 is browser               # get_browser returns same instance
 True
 ```
-- "Headless" means there is no GUI interface for the browser. This makes it much faster.
-- Use Chrome or Firefox (no other browser).
-- Your code should be portable, so do not specify a path to your browser driver in code.
+- Your code should be portable, so do not specify a path to the Chrome or Firefox webdriver. Assume it is on the search path.
+- "Headless" means there is no GUI window for the browser. This makes it much faster.
 - A technique that works for both Chrome and Firefox is to use the `--headless` argument:
   ```python
   options = webdriver.FirefoxOptions()
   options.add_argument("--headless")
   browser = webdriver.Firefox(options=options)
   ```
-- Your code should work if someone omits the options, so it opens **one** browser window. That is, with a small modification the code runs in either GUI and headless modes.
+- By simply modifying this code to omit the `options`, then Selenium would open **only one** browser window. This can be useful for testing your code or visually confirming the results.
 
 
-### 2. Link Finder
+### 2. Write Seperate Methods or Functions for Each Action
 
-Use Selenium to implement this:
-```python
-def find_link(url: str, link_text: str) -> str:
-    """Search a web page for a hyperlink with link text that exactly matches link_text.  
-    
-    Return the matching hyperlink URL. If more than one match, return the first one.
+Write the best code that you can and apply principles you learned from refactoring.
 
-    :param url: URL of the web page to scan
-    :param link_text: the text of a hyperlink to search for
-    :return: string form of the first matching hyperlink URL, or None if no match
-    :raises ValueError: if the url is invalid
-    """
+That includes using separate functions or methods for different tasks, not one long method that does everything.
+
+### 3. Determine Link Status Without Fetching the Page
+
+To test the status of a URL, send a HEAD request.  This returns only the page header and status code, which is much faster than getting the entire page.
+
+Python's `urllib` and the `requests` package are both good tools for this. You should instruct the code to follow redirects instead of returning a 30X status code.
+
+### 4. Parse URLs to Remove Query, Params, Fragment, etc.
+
+URLs may include the following elements:
+```
+schema://network.locati.on/path;parameter?query1=value1&query2=value2#fragment
+```
+Some parts may be omitted and some can appear out of order.  You should remove parameters, query params, and page fragments from URLs before printing them.
+
+Instead of writing code to remove the unwanted parts, let [urllib.parse][urllib.parse] do it for you! 
+There is an example in the [URL Parsing][url-parsing] section.
+
+[urllib.parse]: https://docs.python.org/3/library/urllib.parse.html
+[url-parsing]: https://docs.python.org/3/library/urllib.parse.html#url-parsing
+
+### Example Output
+
+The example shows the output format. The URL is deliberated incorrect.    
+I will try to add an example, but you should create your own example web page containing a variety of URLs. 
+
+```bash
+cmd> python linkscanner.py https://cpske.github.io/testpage
+
+Valid URLs
+https://cpske.github.io/ISP/about/
+https://cpske.github.io/ISP/introduction/
+https://cpske.github.io/ISP/software-process/
+https://cpske.github.io/ISP/images/SDLC.png
+https://cpske.github.io/ISP/images/tcp-ip-packet-layout.gif
+http://git-school.github.io/visualizing-git/
+https://yangsu.github.io/pull-request-tutorial/
+https://classroom.googleapis.com/v1/courses
+https://realpython.com/
+https://api-m.paypal.com/v1/invoicing/invoices
+https://www.scrumguides.org/scrum-guide.html
+https://realpython.com/python-pep8/
+https://www.youtube.com/watch
+
+URLs Requiring Authorization or Payment
+https://classroom.googleapis.com/v1/courses
+https://api-m.paypal.com/v1/invoicing/invoices
+
+Bad URLs
+https://cpske.github.io/ISP/projects/2023
+https://learngitbranching.js.org/sandbox
 ```
 
-### 3. Find All Hyperlinks on a Page
+### References
 
-Write a method that returns a collection of all the link URLs that appear in `<a>` tags on a page (so it doesn't include URLs of Javascript or CSS files, which don't use the `<a>` tag).
+- HTTP Response Codes <https://developer.mozilla.org/en-US/docs/Web/HTTP/Status>
 
-```python
-def find_links(url: str) -> Collection[str]:
-    """Return the URLs of all hyperlinks found inside of <a> tags. 
-    
-    This excludes links to Javascript and CSS files.
-    The returned collection of hyperlinks should be unique.
-
-    :param url: URL of the web page to scan
-    :return: collection of unique urls of hyperlinks on the page
-    :raises ValueError: if the url is not valid
-    """
-```
-- Some `<a>` tags may not contain an `href` attribute. Your code should handle that case. Don't crash or return empty elements in the collection.
