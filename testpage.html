@@ -1,0 +1,70 @@
+<head>
+<title>Link Scanner Test Page</title>
+<body>
+
+<ul>
+<li> The CPE home page is <a href=https://www.cpe.ku.ac.th>https://www.cpe.ku.ac.th</a>.
+
+<li> <a href="http://ku.ac.th">KU's Home page</a> has multiple redirects.
+
+<li> The TAs contact info is on <a href="https://cpske.github.io/ISP/about#instructors-and-teaching-assistants">About</a> page.
+
+<li> A link the <a href="#url-parsing">URL Parsing</a> section on this page.
+
+<li> <a href=https://cpske.github.io/ISP/>ISP Material on Github.io</a>
+<li> <a href=https://cpske.github.io/ISP/about>About the Course</a>
+<li> <a href=https://cpske.github.io/ISP/topics.html>List of ISP Topics</a>
+<li> <a href=https://bit.ly/isp2023-projects>Projects Google Sheet</a> (redirect)
+
+</ul>
+
+<h3>Images</h3>
+
+<style>
+.flex-container {
+	display: flex;
+	flex-direction: row;
+    align-content: space-around;
+    padding: 2em;
+}
+</style>
+
+<div class="flex-container">
+<div>
+<img src="images/SDLC.png" alt="SDLC"/> 
+<p align="center">
+Former ISP Logo
+</p>
+</div>
+<div>
+<img src="https://www.ku.ac.th/assets/images/header/KU_logo_62x62_th.svg" alt="KU Logo" width="220" height="220"/> 
+<p align="center">
+KU Logo
+</p>
+</div>
+</div>
+
+
+<h3><a name="url-parsing">URL Parsing</a></h3>
+
+To split or filter parts of a URL use <a href=https://docs.python.org/3/library/urllib.parse.html#url-parsing>urllib.parse</a>
+
+Don't write your own code.
+
+<h3>Some "Challenging" Links</h3>
+
+<ol>
+<li>
+Google Classroom API page <a href="https://classroom.googleapis.com/v1/courses">https://classroom.googleapis.com/v1/courses</a> requires authentication.
+<li>
+<a href="https://api-m.paypal.com/v1/invoicing/invoices">Paypal Invoices</a>  requires authentication.
+<li>
+Does <a href="https://www.yahoooooooooo.com">Yahoooooooooo.com</a> exist? 
+<li>
+<a name="findme">This is an &lt;a&gt; tag without href.</a> (should not be output)
+<li>
+Invalid url? <a href="htt_ps://foo+bar!">htt_ps://foo+bar!</a>
+</ol>
+
+</body>
+</html>
