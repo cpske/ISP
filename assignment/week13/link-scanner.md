@@ -80,7 +80,9 @@ URLs may include the following elements:
 ```
 schema://network.locati.on/path;parameter?query1=value1&query2=value2#fragment
 ```
-Some parts may be omitted and some can appear out of order.  You should remove parameters, query params, and page fragments from URLs before printing them.
+A semi-colon indicates the start of url parameters; a "?" starts the query parameters, and, of course, a page-frament begins with "#".
+
+Some URL parts may be omitted or can appear out of order.  You should remove parameters, query params, and page fragments from URLs before printing them.
 
 Instead of writing code to remove the unwanted parts, let [urllib.parse][urllib.parse] do it for you! 
 There is an example in the [URL Parsing][url-parsing] section.

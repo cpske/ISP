@@ -11,7 +11,7 @@ navigation_order: 5
 | Google Classroom       | Announcements, schedule, and assignments. [Classroom Link][google-classroom] or use class code **5zjkval** 
 | Schedule & Assignments | [Google Classroom > Classwork][classroom-classwork].
 | Github       | [Github](https://github.com) to submit coding work & quiz. You need a Github account. 
-| Discord                | Q&A, discussion, meeting with TAs. **Join** using this [Invite Link][discord-invite].
+| Discord                | Q&A, discussion, meet with TAs.  **Join** using this [Invite Link][discord-invite].
 | Scores       | <https://bit.ly/isp2023-scores> for classwork, labs, and homework.
 
 [google-classroom]: https://classroom.google.com/c/NjE0ODE4Mzg4ODEz
@@ -24,11 +24,7 @@ navigation_order: 5
 Please do this [Sign-up and Preparation](assignment/week1/signup-and-software) before the first lab.
 
 
-#### Instructors & Teaching Assistants
-
-You are encouraged to contact instructors and TAs on Discord, Google Classroom (post to Stream), or via email.
-- please post questions in public on Google Classroom and Discord, so others can benefit from the answers.
-- please post interesting material, comments, and feedback on Discord
+#### Instructors and Teaching Assistants
 
 | Name                        | Email
 |:----------------------------|:---------------
@@ -39,6 +35,7 @@ You are encouraged to contact instructors and TAs on Discord, Google Classroom (
 | [Punn](https://github.com/Halcyon905) (ปัณณ์), TA  | `email("Punn", "Chunwimaleung", 2)`
 | [Preawpan](https://github.com/Tezigudo), TA | `email("Preawpan", "Thamapipol")`
 | [Sahanon](https://github.com/Sahanon-P), Project Advsor | `email("Sahanon", "Phisetpakasit")`
+
 
 #### Code for Email
 
