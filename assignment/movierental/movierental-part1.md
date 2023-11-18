@@ -39,36 +39,32 @@ Before *and* after each refactoring you should **run the unit tests**.
 Perform these refactorings:
 
 1. *Extract Method for rental price calculation*.  In `Customer.statement()` extract the code that calculates the price of one rental.
-   - Make it a separate method. Fowler calls it `amountFor` but a Pythonic name would be `amount_for` or `get_price(rental)`. 
+   - Make it a separate method. Fowler calls it `amountFor` but a Pythonic name would be `get_price(rental)`. 
 
 2. *Move Method*. After extracting the method for price calculation (above),
 observe that the method uses information about the rental but not about the customer.  Hence, the method should be in the `Rental` class instead of the `Customer` class. 
-   - Move the method to the `Rental` class. 
+   - Move the `get_price` method to the `Rental` class. 
    - The `rental` parameter is now `self`.
-   - After moving the method, verify that the method is referenced correctly in code.  Customer should call `rental.amount_for()`.
+   - After moving the method, verify that the method is referenced correctly in code.  Customer should call `rental.get_price()`.
     - write a unit test for this method in `rental_test.py`.
 
-3. *Rename Method*. The method name `amount_for` or `amountFor` is no longer descriptive, so rename it. Fowler uses `getCharge` but "charge" could be confused with a credit card "charge". Use `get_price(self)` as the new name.
-    - Verify that the method is renamed everywhere! 
-    - Check it in Customer and `rental_test.py`.
+3. *Replace Temp Variable with Query* (*aka* "Inline Temp").  In `statement()`, instead of assigning `charge = rental.get_price()` (Java: `charge = rental.getCharge()`) and then using `charge`, directly invoke `rental.get_price()` wherever it is needed ("Inline Temp"). 
 
-4. *Replace Temp Variable with Query* (*aka* "Inline Temp").  In `statement()`, instead of assigning `charge = rental.get_price()` (Java: `charge = rental.getCharge()`) and then using `charge`, directly invoke `rental.get_price()` wherever it is needed ("Inline Temp"). 
-
-5. *Extract Frequent Renter Points*. Repeat the steps you performed above for rental price to frequent renter points in `statement`. 
+4. *Extract Frequent Renter Points*. Repeat the steps you performed above for rental price to frequent renter points in `statement`. 
    - The calculation of renter points depends only on information in a Rental, so move this calculation to the Rental class. Name the new method `rental_points`.
    - In `customer.statement()` call this method.
    - Write a unit test in `rental_test.py` to verify your new method computes frequent renter points correctly.
 
-6. *Extract Method to compute total charge*. Move the computation of *total amount* from `statement` to a new, separate method in `Customer`.  `statement` calls this method to get the total amount.
+5. *Extract Method to compute total charge*. Move the computation of *total amount* from `statement` to a new, separate method in `Customer`.  `statement` calls this method to get the total amount.
    - `statement` calls this method **only once** to get the total amount. Not inside a loop!
    - eliminate the temp variable `total_amount`.
    - write a unit test for this new method in `customer_test.py` to verify the total charge for a collection of rentals is correct.
 
-7. *Extract Method to compute total rental points*. Instead of computing total rental points in `statement`, extract a method to compute and return it -- just like for total rental price (above).  Define a `get_rental_points` method in `Rental`.
+6. *Extract Method to compute total rental points*. Instead of computing total rental points in `statement`, extract a method to compute and return it -- just like for total rental price (above).  Define a `get_rental_points` method in `Rental`.
    - eliminate the temp variable `frequent_renter_points` and instead call this method **one time**.
    - write a unit test for this new method in `customer_test.py` to verify the total renter points is computed correctly.
 
-8. *Replace Conditional Logic with Polymorphism* (Fowler, p. 28).  In `Rental.get_price` (Java: `getCharge`) there is a long `if ... elif ... elif` to compute the rental price by testing the Movie price code. In the Java version, this is a `switch` statement.  Replace this with *polymorphism*.    
+7. *Replace Conditional Logic with Polymorphism* (Fowler, p. 28).  In `Rental.get_price` (Java: `getCharge`) there is a long `if ... elif ... elif` to compute the rental price by testing the Movie price code. In the Java version, this is a `switch` statement.  Replace this with *polymorphism*.    
    Do this in **three steps**.
    - Step 1: make the Movie class compute its own rental price and rental points. Rental calls `movie.get_rental_points(days)` and `movie.get_price(days)`.
    - Step 2: *Replace Switch with Polymorphism* (Page 29). Replace price code constants with a hierarchy of `PriceStrategy` objects. Fowler calls the superclass `Price`. Since this is the *Strategy Pattern*, let's call it PriceStrategy. *See below for details*.
@@ -78,7 +74,7 @@ observe that the method uses information about the rental but not about the cust
    - This refactoring uses the principle: "*Prefer composition over inheritance*".
    - Details of [How to Implement a Price Strategy](#how-to-implement-price-strategy) are given below
 
-9. Missing or Incorrect Refactorings?
+8. Missing or Incorrect Refactorings?
 
    - In the final code, do you see anything that *still* needs refactoring, based on the refactoring signs ("code smells") or design principles?
    - Do you think any of the refactorings are wrong?
