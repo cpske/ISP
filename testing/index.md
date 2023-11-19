@@ -17,15 +17,17 @@ Software projects perform several types of testing:
 
 Unit testing tests individual classes, methods, and functions.
 
-Your development workflow should usually be:
+Presentation: [Introduction to Unit Testing](Intro-to-Unit-Testing.pdf)
+
+Your development workflow should be:
 
 - write some code
 - write tests for what the code **should** do, based on the spec (not what you actually coded)
 - run the tests
-- analyze any test failures and correct the code (or tests)
+- analyze test failures and correct the code (or correct the tests)
 - repeat
 
-In **Test Driven Development** (TDD) you write the tests **before** you write the code.  TDD usually results in better tests and better code.
+In **Test Driven Development** (TDD) you write the tests **before** you write the code.  TDD often results in better tests and better code.
 
 Unit Testing Benefits:
 
@@ -37,7 +39,7 @@ Unit Testing Benefits:
 6. gives you **confidence** to change the code
 7. tests are **necessary** before doing refactoring
 
-How to design test cases?
+### How to design test cases?
 
 - test *behavior* not just methods. One test may use several methods.
 - test edge cases, failure cases, typical cases, extreme cases
@@ -61,8 +63,11 @@ The ones we will cover are:
 * [unittest][python-unittest] the most commonly used test framework, included with Python
 * [PyTest](https://www.pytest.org) a popular, light-weight testing framework. Results are easy to understand but test conditions are a bit limited.
 * [Doctest]() for test-by-example in code. Provides tests and documentation at the same time, but not usually a thorough test.
+* [Mock objects][unittest-mock] for programmable "fake" objects to isolate the target code from dependencies. You "mock" the dependencies to return known values. [RealPython][realpython-mock] has good introduction.
 
 [python-unittest]: https://docs.python.org/3/library/unittest.html
+[unittest-mock]: https://docs.python.org/3/library/unittest.mock.html
+[realpython-mock]: https://realpython.com/python-mock-library/
 
 Presentation: [Python Unit Testing](Python-Unit-Testing.pdf)
 
