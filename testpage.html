@@ -2,19 +2,24 @@
 <title>Link Scanner Test Page</title>
 <body>
 
+<style>
+h2, h3 { font-family: "Arial, Helvetica, sans-serif"; }
+</style>
+
+<h3>Valid links</h3>
 <ul>
 <li> The CPE home page is <a href=https://www.cpe.ku.ac.th>https://www.cpe.ku.ac.th</a>.
 
 <li> <a href="http://ku.ac.th">KU's Home page</a> has multiple redirects.
 
-<li> The TAs contact info is on <a href="https://cpske.github.io/ISP/about#instructors-and-teaching-assistants">About</a> page.
+<li> The TA contact info is on <a href="https://cpske.github.io/ISP/about#instructors-and-teaching-assistants">About</a> page.
 
 <li> A link the <a href="#url-parsing">URL Parsing</a> section on this page.
 
 <li> <a href=https://cpske.github.io/ISP/>ISP Material on Github.io</a>
-<li> <a href=https://cpske.github.io/ISP/about>About the Course</a>
+<li> <a href=https://cpske.github.io/ISP/about>About the Course</a> (duplicate URL)
 <li> <a href=https://cpske.github.io/ISP/topics.html>List of ISP Topics</a>
-<li> <a href=https://bit.ly/isp2023-projects>Projects Google Sheet</a> (redirect)
+<li> <a href=https://bit.ly/isp2023-projects>Projects Google Sheet</a> (bit.ly redirect url)
 
 </ul>
 
@@ -51,7 +56,7 @@ To split or filter parts of a URL use <a href=https://docs.python.org/3/library/
 
 Don't write your own code.
 
-<h3>Some "Challenging" Links</h3>
+<h3>"Challenging" Links</h3>
 
 <ol>
 <li>
@@ -61,7 +66,7 @@ Google Classroom API page <a href="https://classroom.googleapis.com/v1/courses">
 <li>
 Does <a href="https://www.yahoooooooooo.com">Yahoooooooooo.com</a> exist? 
 <li>
-<a name="findme">This is an &lt;a&gt; tag without href.</a> (should not be output)
+<a name="findme">This is an &lt;a&gt; tag without href.</a> (link scanner should not output this)
 <li>
 Invalid url? <a href="htttps://foo+bar!">htttps://foo+bar!</a>
 </ol>

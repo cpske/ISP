@@ -13,6 +13,16 @@ There are also other services you can use for "static" sites.
 
 ### Digital Ocean
 
+- Student pack offers one-time $200 credit, valid for one year.
+- My Suggestion: save this for your senior project. Don't use it for ISP.
+
+### Microsoft Azure
+
+Students get $100 credit for Azure services. No credit card needed.
+- You can renew this $100 credit annually.
+- <https://azure.microsoft.com/en-us/free/students>
+- Self-paced online training courses: <https://learn.microsoft.com/en-us/training/>
+
 
 ### Low Cost VPS Hosting
 
@@ -51,4 +61,9 @@ Microsoft Azure
 - "free" VPS but pay-as-you-go bandwidth charges
 - $200 free credit for new account
 - $100 student free credit without a credit card, renewable annually
+
+Azure Training - short online tutorials at <https://learn.microsoft.com>
+
+- 
+Deploy via Asure Cloud Shell
 

@@ -9,7 +9,7 @@ This week, every team should have deployed their application to a cloud service.
 URLs are posted in the class projects sheet: <https://bit.ly/isp2023-projects>
 
 Report Bugs 
-1. Google sheete [Bug Hunting](https://docs.google.com/spreadsheets/d/1dlIcnRwHkHJULFYWduymDe1ynh9XrFAi4XW2oYWK2CA/) **and**
+1. Google sheet [Bug Hunting](https://docs.google.com/spreadsheets/d/1dlIcnRwHkHJULFYWduymDe1ynh9XrFAi4XW2oYWK2CA/) **and**
 2. On the project's Issue Tracker
 
 ## Assignment
@@ -63,11 +63,12 @@ Points count as an extra homework score.
 
 Development Team apply these labels:
 
-* **bug** - if you confirm its a bug that hasn't been reported before.
-* **duplicate** - the issue duplicates another issue. Add a comment like "Duplicates #18" to the issue, and close it.
-* **question** - request for more information is needed, because the problem isn't clear or you can't reproduce it.  Add **bug**, **duplicate**, or **not a bug** label when you understand the issue.
-* **cannot reproduce**
-* **not a bug** - if you can't reproduce it, or conclude that its not a bug. You should explain *why* its not a bug in your comment closing the issue.
+* **Confirmed** - if you confirm its a bug that hasn't been reported before.
+* **Duplicate** - the issue duplicates another issue. Add a comment like "Duplicates #18" to the issue, and close it.
+* **Need Clarification** - request for more information is needed, because the problem isn't clear or you can't reproduce it.  Update the label (Confirmed, Not a Defect, etc.) when you understand the issue.
+* **Cannot Reproduce**
+* **Not a Defect** - If the team concludes that its not actually a defect. You should explain *why* its not a bug in your comment closing the issue.  
+  - If the bug reporter still believes its a defect, he may reopen the issue once. He may also contact a TA to arbitrate, if necessary.
 
 ---
 
