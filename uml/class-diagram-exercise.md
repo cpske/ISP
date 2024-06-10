@@ -1,17 +1,23 @@
 ---
 title: UML Class Diagram Exercise
 ---
-Exercise: Create a UML Class Diagram
 
-1. Draw a UML class diagram of the code below, including
-   - attributes, methods, and data types
-   - parameters and return types on all methods. OK to omit `__str__`.
-   - relationships using the correct arrow type
-   - **multiplicity** on associations
-   - use standard UML notation, not Python notation
-   - *don't* show visibility (+, -, ~)
-   - *don't* show implementation details like dataclass or field()
-   - *good* to show `{readOnly}` on read-only (immutable) attributes
+Draw this diagram on paper.
+
+Do your own work & please *do not* look at your neighbor's work.
+
+### 1. Draw a UML class diagram of the code below
+
+Include in your diagram:
+- attributes, methods, and data types
+- parameters on methods
+- return type on all methods. If a method return None, don't show anything.
+- relationship between Person and Student, using correct type of arrow.
+Don't Show:
+- *don't show* visibility (+, -, ~)
+- *don't show* `self` parameter (its not an actual parameter in object invocation)
+- *don't show* attributes & methods in subclass that are inherited from parent class but not overridden
+
 
 ```python
 class Person:
@@ -23,8 +29,10 @@ class Person:
         pass
 
     def __init__(self, first_name: str, last_name: str,
-              citizen_id: str):
-        # code omitted
+                 citizen_id: str):
+        self.first_name = first_name
+        self.last_name = last_name
+        self.citizen_id = citizen_id
 
     def set_birthday(self, birthdate: date):
         self.birthday = birthdate
@@ -36,141 +44,95 @@ class Person:
 class Student(Person):
     """A person studying at an educational institution."""
     pass
+```
 
 
+### 2. Add these classes to your UML Class Diagram
+
+Show:
+- relationships using the correct arrow type
+- **multiplicity** on associations
+- use standard UML notation, not Python notation.
+  A Python `list[str]` is written as `str[*]` in UML.
+- show `{readOnly}` after read-only (immutable) attributes
+
+Don't Show:
+- *don't show* implementation details like `dataclass` or `field()`
+- *don't show* attributes & methods in subclass that are inherited from parent class, but not overridden
+
+```python
 class CourseList:
     """Courses that a student is enrolled in."""
 
     def __init__(self, student: Student):
         self.student = student
-        # courselist consists of enrollments, not courses
-        self.courses: List[Enrollment] = []
+        # courselist consists of Enrollments for the student's courses
+        self.enrollments: List[Enrollment] = []
 
     def add_course(self, course: Course):
+        #TODO verify that student is not already enrolled in this course
         enroll = Enrollment(self.student, course)
-        self.courses.add(enroll)
+        self.enrollments.add(enroll)
 
     def credits(self) -> int:
         """compute and return the total credits enrolled."""
-        return sum(e.course.credits for e in self.courses)
+        return sum(e.course.credits for e in self.enrollments)
 
 # Course & Enrollment contain only attributes and standard
 # methods for __eq__, __repr__, and __str__.
-# Instead of writing boring code, use a dataclass.
-# It automatically generates constructor, __str__, __eq__, __repr__
+# Use a 'dataclass' to auto-generate standard code.
+# Dataclass automatically generates constructor, __str__, __eq__, __repr__
 from dataclasses import dataclass, field
 
-@dataclass
+@dataclass(frozen=true)  # Course attributes are immutable (read-only)
+class Course:
+    """A course in the university catalog."""
+    # the attributes of a course
+    course_id: str
+    description: str
+    credits: int
+    # Dataclass auto-generates this constructor:
+    #def __init__(self, course_id, description, credits):
+
+    # Dataclass auto-generates these methods: 
+    # __str__ and __eq__
+
+@dataclass          # attributes are mutable
 class Enrollment:
-    # the attributes of an enrollment
+    """Enrollment represents a student taking a course, and records his grade."""
     student: Student
     course: Course
     # field() is how to specify a default value & behavior
     # field is an implementation detail, don't show it in UML
     grade: str = field(compare=False, default=' ')
 
-    # Auto-generated constructor:
+    # Dataclass auto-generates this constructor:
     #def __init__(self, student, course, grade=' '):
 
     def __str__(self):
         """Override the default string of dataclass."""
-        return f"{self.course.id} grade {self.grade}"
-
-
-@dataclass(frozen=true)  # make Course objects immutable
-class Course:
-    id: str        # course id
-    description: str
-    credits: int
+        return f"{self.course.course_id} grade {self.grade}"
 ```
 
-2. We make `CourseList` *Iterable* as shown below.  Add this to the class diagram.
-   - The `__iter__` method returns an *Iterator* over the Enrollments.
-   - In UML, show `Iterable` as an interface with an `__iter__` method
-   - Show CourseList *implements* Iterable
-   - Types like Iterable show that a class *has* a particular method(s), without the type providing an implementation of the method(s). This is exactly what *interfaces* do.
- 
+### 3. Discussion
 
+3.1 In `Course` why name the course ID as `course_id`.  Why not just use `id`?
 ```python
-from typing import Iterable, Iterator
-
-class CourseList(Iterable[Enrollment]):
-
-    def __iter__(self) -> Iterator[Enrollment]:
-        """Return an iterator for enrollments in this courselist."""
-        return iter(self.courses)
+class Course:
+    id: str         # "id" means the course id number (obviously)
 ```
 
-Submit your diagram to the assignment on Google Classroom. If you embed your diagram in a Google doc it is easier for instructor to give comments.
+3.2 Why is `course_id` declared as `str`?  Shouldn't it be an `int`?
+```python
+class Course
+    course_id: int
+```
+
+3.3 (Design Pattern) Why have separate classes for `Course` and `Enrollment`?  If we move the `grade` parameter to `Course`, then we can eliminate the `Enrollment` class.
 
 ---
 
-## Iterable & Iterator
+### UML Quick Reference
 
-In Python, [Iterable][Iterable-refs] and [Iterator][Iterator-refs] are **types** (in the `typing` package) with
-implementations as *abstract base classes* in the `collections.abc` package.
+Visual Paradigm Class Diagram Tutorial <https://www.visual-paradigm.com/guide/uml-unified-modeling-language/uml-class-diagram-tutorial/>
 
-In Java, C#, and other languages, *Iterable* and *Iterator* are *interfaces*.
-Since an **interface** is a specification for some behavior without an implementation,
-Python *types* are conceptually like *interfaces*.
-
-[Iterable-refs]: https://docs.python.org/3/search.html?q=Iterable
-[Iterator-refs]: https://docs.python.org/3/search.html?q=Iterator
-[iterable]: https://docs.python.org/3/library/typing.html?highlight=iterable#typing.Iterable
-[iterator]: https://docs.python.org/3/library/typing.html?highlight=iterator#typing.Iterator
-
-[Iterable][iterable] is used extensively in Python, even though you may rarely
-call it explicitly.   
-
-What kind of object can you use in each of these statements?
-```python
-for x in ___?what?___:
-    do something with x
-```
-or 
-```python
-[foo(x) for x in ___?what?____ if predicate(x)]
-```
-or
-```python
-sorted_values = sorted(?what?)
-```
-In all three cases, you can use anything that is *Iterable*.
-
-
-[Iterable][iterable] A class is *Iterable* if it's instances create an Iterator (for some sequence) when you invoke `iter(object)`.
-- `CourseList(Iterable)` means CourseList implements Iterable.
-- `Iterable[X]` means the iterators created by this Iterable returns objects of type X.
-- `CourseList(Iterable[Enrollment])` means CourseList is Iterable and the Iterator returns Enrollment objects.
-- list, set, dict, and strings are all Iterable.
-
-[Iterator][iterator] is a type that *iterates* over a sequence of values each time `next()` is called.  Iterator specifies a single method `__next__` that is invoked by calling `next(iterator)`.
-
-```python
-s = "Strings are Iterable"
-# get an iterator for this string
-it = iter(s)
-# iterate over the elements 
-next(it)
-'S'
-next(it)
-'t'
-next(it)
-'r'
-next(it)
-'i'
-```
-You usually don't use an iterator explicitly. Iterator is used by `for` loops, list comprehensions, and other constructs.
-
-
-### Python Syntax for Subclass, Implements, & Mixin
-
-In Python, the same notation is used for inheritance, typing, and mixins:
-```python
-from collections.abc import Sized, Callable
-
-class Subclass(Parent, Sized, Callable):
-    """A class that is a subclass of Parent,
-    and also has the Sized and Callable behavior.
-    """
-```

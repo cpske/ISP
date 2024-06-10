@@ -1,0 +1,8 @@
+Composing Methods
+Dealing with Generalization
+Moving Features
+Organizing Data
+Simplifying Conditional Expressions
+Simplifying Method Calls
+
+

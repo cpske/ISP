@@ -2,9 +2,6 @@
 bin/env.sh
 # code and labs are for assignments deployed via Github classroom
 code/
-2022/
-# This is a separate repository.
-resources/
 __pycache__/
 _site/
 .*
@@ -17,13 +14,15 @@ _site/
 header.md
 *-soln*
 *-solution*
+# resources is a separate repository.
+resources/
 # index.html is auto-generated from index.md, but subdir indices are created by me
 /index.html
 # Directories not to publish
-private/
+bin/
+Jittat/
 misc/
 old/
+private/
 quiz/
 solution/
-Jittat/
-Paruj/

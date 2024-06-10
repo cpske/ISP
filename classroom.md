@@ -1,6 +1,6 @@
 ---
 title: Classroom
-navigation_order: 2
+navigation_order: 3
 ---
 
 <title>Redirecting to Google Classroom/</title>

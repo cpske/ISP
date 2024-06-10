@@ -1,6 +1,6 @@
 ---
 title: Topics
-navigation_order: 3
+navigation_order: 1
 ---
 
 A collection of historical material from ISP. 
@@ -14,7 +14,7 @@ Please see [Google Classroom][google-classroom] for current topics & material.
 <tr valign="top"> <th width="25%">Lab Topic</th> <th width="75%">Description</th> </tr>
 <tr valign="top">
 <td markdown="span">
-[ISP2022 Introduction](introduction/index) 
+[ISP Introduction](introduction/index) 
 </td>
 <td markdown="span">
 [Introduction to course and goals](introduction/index), 

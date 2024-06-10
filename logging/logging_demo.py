@@ -42,6 +42,7 @@ def console_config():
 
     See:  help(logging.basicConfig)
     Ref:  https://docs.python.org/3/library/logging.html#logging.basicConfig
+    Ref:  https://docs.python.org/3/library/logging.html#logrecord-attributes
     """
     # define a custom format for log messages (use it in your
     # call to basicConfig)
@@ -50,13 +51,13 @@ def console_config():
 
 
 def file_config():
-    """Configure logging to a file."""
+    """Configure logging to a file.
+
+    See: https://docs.python.org/3/library/logging.html#logrecord-attributes
+    """
     # TODO specify a log file, threshold level, format, 
     #      and append mode so log files are not overwritten
-    # Format should be "(asctime) (logger_name) (levelname) (funcName): (message)"
-    # don't actually print the parenthesis in log messages!
-    #
-    # See: https://docs.python.org/3/library/logging.html#logrecord-attributes
+    # Format should be: "time  logger_name  loglevelname funcName: log-message"
     pass
 
 

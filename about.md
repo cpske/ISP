@@ -5,19 +5,18 @@ navigation_order: 5
 
 ## About the Course
 
-| Lecture      | Mon 9:00-12:00, CPE room 507.  Please come on time.
+| Lecture      | Mon 13:00-15:00, CPE room 202. Please come on time.
 |--------------|--------------------------------------------------------
-| Lab          | Tues 13:00-16:00, CPE Room 202.
-| Google Classroom       | Announcements, schedule, and assignments. [Classroom Link][google-classroom] or use class code **5zjkval** 
+| Lab          | Tue 13:00-16:00, CPE Room 202. May extend past 16:00 some weeks.
+| Google Classroom       | Announcements, schedule, and assignments. [Classroom Link][google-classroom] or use class code **TBA**
 | Schedule & Assignments | [Google Classroom > Classwork][classroom-classwork].
 | Github       | [Github](https://github.com) to submit coding work & quiz. You need a Github account. 
-| Discord                | Q&A, discussion, meet with TAs.  **Join** using this [Invite Link][discord-invite].
-| Scores       | <https://bit.ly/isp2023-scores> for classwork, labs, and homework.
+| Discord                | Q&A, discussion, meet with TAs.  |
+| Scores       | <https://bit.ly/isp2024-scores> for classwork, labs, and homework.
 
 [google-classroom]: https://classroom.google.com/c/NjE0ODE4Mzg4ODEz
 [google-classroom-invite]: https://classroom.google.com/c/NjE0ODE4Mzg4ODEz?cjc=5zjkval
 [classroom-classwork]: https://classroom.google.com/w/NjE0ODE4Mzg4ODEz/t/all
-[discord-invite]: https://discord.gg/gy2gbFNa
 
 #### Preparation & Sign-up
 
@@ -28,7 +27,6 @@ Please do this [Sign-up and Preparation](assignment/week1/signup-and-software) b
 
 | Name                        | Email
 |:----------------------------|:---------------
-| [Sirisilp Kongsilp](https://github.com/sirisilp), lecture instructor | `email("Sirisilp", "Kongsilp")` |
 | [Jim Brucker](https://github.com/jbrucker), lab instructor |  `email("J", "Brucker", 7)`
 | [Napasakorn](https://github.com/Savetang19) (นภัสกร), TA |  `email("Napasakorn", "Boonkerd")`
 | [Pawitchaya](https://github.com/GToidZ) (ปวิชญา), TA | `email("Pawitchaya", "Chaloeijanya", 2)`
