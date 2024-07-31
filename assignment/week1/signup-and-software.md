@@ -4,26 +4,36 @@ title: Course Preparation for ISP
 
 Please do this before the first week ISP lab.
 
-### Sign-up
+### 1. Sign-up
 
-1. Join the [Google Classroom][google-classroom-invite] for this course. Class code is **5zjkval**.
-2. Tell us your Github id on this form: <https://forms.gle/QK36o6ky1D85KLsN7>
-3. Join our [Discord Server][discord-invite].  Please add your **real name** as a *nickname* on this server.
+[google-classroom]: https://classroom.google.com/c/NjE0ODE4Mzg4ODEz
+[discord-invite]: https://discord.gg/jJJGrEJUqB
 
-### Preparation
+1. Join the [Google Classroom][google-classroom] for this course. 
+2. Tell us your Github id on this form: <https://forms.gle/rbJrt89ar5Swx9VC8>
+3. Join our Discord Server. Link announced in class and maybe on [About the Course](../../about) page.
 
-1. Update your Github Profile. Please include 
-   - **photo** that clearly shows your face. Face should be at least 50% of vertical space.
-   - your **real name** correctly **capitalized** ("Steve Jobs") -- first name only ("Steve") or first and last name ("Steve Jobs") are OK.  
-   - Not a nickname; Not your Github login.
-2. Install this **required software**, if you don't have them:
-   - **Git** including the `git` command. Download from <https://git-scm.com>
-   - Python 3.9 or newer. Python 3.11 is recommended.
-   - IDE for Python.  [PyCharm][], [PyDev][] (Eclipse), and [VS Code][vscode] are good.
-   - [OBS Studio][obsproject], to record your computer screen during coding tests.
-   - A good **text editor** with syntax highlighting, for situations where you want to edit a single text file.
-     - Good editors: [Atom][], [Notepad++][] (Windows), [Sublime][], [VS Code][vscode] (a bit slow), [TextMate][] (Mac), or [vim][] (hard to learn).
-     - Windows Notepad is NOT a good editor.
+### 2. Update Your Github Profile
+
+Update your Github Profile. Your profile should include 
+
+- **photo** that clearly shows your face. Face should be **at least 40%** of vertical space. No credit if face is not clear, obscured, or too small.
+- your **real name**, either full name ("Steve Jobs") or first name only ("Steve") are OK. Use **correct capitalization** with space (not "steve jobs" or "SteveJobs").
+- Not a nickname. Not your Github login.
+
+See examples below.
+
+### 3. Install or Upgrade Required Software 
+
+Install this **required software**, if you don't have them:
+
+- **Git** including the `git` command. Download from <https://git-scm.com>
+- Python 3.11 or newer. Python 3.11 is recommended.
+- IDE for Python.  [PyCharm][], [PyDev][] (Eclipse), and [VS Code][vscode] are good.
+- [OBS Studio][obsproject], to record your computer screen during coding tests.
+- A good **text editor** with syntax highlighting, for situations where you want to edit a single text file.
+  - Good editors: [Atom][], [Notepad++][] (Windows), [Sublime][], [VS Code][vscode] (a bit slow), [TextMate][] (Mac), or [vim][] (a bit hard to learn).
+  - Windows Notepad is NOT a good editor.
 
 [Atom]: https://atom.io
 [Notepad++]: https://notepad-plus-plus.org
@@ -35,11 +45,6 @@ Please do this before the first week ISP lab.
 [nano]: https://www.nano-editor.org/
 [vim]: https://www.vim.org/
 [obsproject]: https://obsproject.com/
-
-[google-classroom]: https://classroom.google.com/c/NjE0ODE4Mzg4ODEz
-[google-classroom-invite]: https://classroom.google.com/c/NjE0ODE4Mzg4ODEz?cjc=5zjkval
-[classroom-classwork]: https://classroom.google.com/w/NjE0ODE4Mzg4ODEz/t/all
-[discord-invite]: https://discord.gg/jJJGrEJUqB
 
 ---
 
