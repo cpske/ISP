@@ -22,7 +22,7 @@ From *Software Engineering*, by Ian Summerville:
 > 3. Software validation
 > 4. Software evolution
 
-Chapter 2 (*Software Process*) of Summerville's book describes software
+Chapter 2 of Summerville's book (*Software Process*) describes software
 process models and activities. It includes common processes, such as Waterfall and RUP.
 
 ---
@@ -57,6 +57,7 @@ and:
 > (umbrella activities) that are applicable to all projects.
 
 According to Pressman, the "framework activities" are:
+
 * communication
 * planning
 * modeling
@@ -77,19 +78,19 @@ An Activity consist of a sequence of actions, which can be broken down into
 
 A **software process** is a method of developing software.
 
-A *process model* describing a process consists of:
+A _process **model**_ (abstraction for software processes) consists of:
 
-- Activities (many things does to achieve some purpose)
-- Actions done as part of an Activity
-- Tasks specific work items does as part of an Action 
+- **Activities** (many things does to achieve some purpose)
+- **Actions** done as part of an Activity
+- **Tasks** specific work items does as part of an Action 
 
-Activities, actions, and tasks all involve people and produce some tangible output, called "work products".
+Activities, actions, and tasks all involve people and produce some tangible output, called "**work products**".
 
 Example
 
 - Activity: *Testing* (a big thing that involves several activities)
 - Action: *Construct and Run Unit Tests for Iteration 2 features*
-- Task: *Write Unit Tests for the BankAccount class*
+- Task: *Write Unit Tests for the ShoppingCart class*
 
 ## Do You Have a Software Process? 
 
@@ -149,24 +150,24 @@ Example:
 * How can you reduce time or effort with reducing scope or quality?
 * Can you improve quality without increasing effort or time?
 
-One way is a change in technology: a different language or better development tools.  But these usually don't have a big effect.
+1. Change in technology: use a different language or better development tools.  But these usually don't have a big effect.
 
-Another factor is training and education.  That takes time,
-so it may not help a current project.
+2. Training and education can improve productivity.  That takes time, so it may not help a current project.
 
-One factor that *can* have a big effect is **software process**.
+3. Improve the **software process** -- this can have a *big*, *immediate* effect.
 
 A good process helps to:
 
-- structure development so you get the most done while maintaining quality
+- structure development so you get more done while maintaining quality
 
-  - use iterative development with short iterations 
-  - each iteration has a goal and criteria to evaluate if it has been achieved
-  - have defined roles and responsibilities
-  - use "pull requests", code review, and unit testing in your workflow
-  - "retrospective" meeting after each iteration to improve your process
-  - continuous integration (CI) to automatically test your software
-  - track issues and defects
+Examples:
+- use iterative development with short iterations 
+- each iteration has a goal and criteria to evaluate if it has been achieved
+- have defined roles and responsibilities
+- use "pull requests", code review, and unit testing in your workflow
+- "retrospective" meeting after each iteration to improve your process
+- continuous integration (CI) to automatically test your software
+- track issues and defects
 
 - make routine decisions automatic so you don't waste time deciding them
 
@@ -183,9 +184,10 @@ Software process models view a process as **activities** broken down into smalle
 
 Activities, actions, and tasks use inputs including work products (created by previous work), guidance, standards, checklists, and more, collectively called **artifacts**.  A **work product** is the output of the activity, action, or task.
 
-For any activity or task you need a clear *goal* and a way to know when the task is "done".  That is an **acceptance criteria**.
+For any activity or task you need a clear *goal* and a way to know when the task is "done".  That is, **acceptance criteria** (often more than 1).
 
 In the Waterfall Model, activities are the phases of the project life cycle. 
+
 Ideally, a project would progress linearly from the Requirements phase through Maintenance.  In practice, it is necessary to **backtrack** to previous phases to correct errors or deficiencies.  This leads to schedule and cost overrun.
 
 In Waterfall or any linear process, engineers feel compelled to "get it right"
@@ -240,32 +242,33 @@ Less common but often mentioned in textbooks are:
 
 You should be familiar with the details of Waterfall, iterative and incremental, and the UP.
 
-[Agile](../agile/agile) is not a software process. It is a set of values, principles, and practices for sofware development.
+[Agile](../agile/agile) is **not** a software process. It is a set of values, principles, and practices for sofware development that apply to many processes.
 
 ## Goals & Milestones
 
-For any project, it is desirable to have goals and milestones.
+Any project should have goals and milestones.
 
 In iterative development, each iteration has a goal and criteria to evaluate
-if the goal has been achieves.
+if the goal is achieved.
 
-Frequent [milestones](milestones.md) show progress toward finishing the project.
-Just like a "goal", a milestone has objective criteria to evaluate if has been achieved.
+Frequent [milestones](milestones.md) show progress toward finishing the project
+... or toward finishing an iteration or "product increment".
+Like a "goal", a milestone has objective criteria to evaluate that is reached.
+
 
 ## Online Courses
-
 
 [Software Development Processes and Methodologies](https://www.coursera.org/learn/software-processes/), U. of Minnesota on Coursera.  A good overview course for the activities in a software process. Some good advise on developer habits.
  * This course is part of a 4-course series "Software Development Lifecycle" by U.M. that looks interesting.
 
-*Engineering Practices for Building Quality Software* on coursera.org (free).
+[Engineering Practices for Building Quality Software](https://www.coursera.org/learn/engineering-practices-secure-software-quality) on coursera.org (free).
  * Also by U. of Minnesota.
+ * As the name suggests, it describes thing you should include in your process in order to improve software quality.
+
+*Agile Development using Ruby on Rails* (two courses on edX.org) by David Patterson and Armando Fox of U.C. Berkeley. This is very popular and content somewhat similar to this course, but we don't use Ruby on Rails.
 
 https://www.freestudy.com/best-free-online-software-engineering-courses/ description and links to other software engineering courses.
 
-There are many good courses on edX and Coursera related to this subject.  Many are titled "software engineering" or "software development".
-
-A popular course pair on edX is "Agile Development using Ruby on Rails" by David Patterson and Armando Fox of U.C. Berkeley.
 
 ### Reading
 
@@ -273,13 +276,13 @@ A popular course pair on edX is "Agile Development using Ruby on Rails" by David
   - short, concise description of software process models and activities
 
 * [Software Life-Cycle Models (ch. 2) and Software Processes (ch. 3)][schach] from *Object-Oriented and Classical Software Engeering*, 8E, by William Schach.
-  - more detail than Summerville's explanation, emphasis on the U.P.
-  - chapter 2 contains describes different life cycles
-  - chapter 3 describes the "workflows" in a software process, using the UP as a model
+  - more detail than Summerville's explanation, emphasis on the Unified Process (UP)
+  - chapter 2 describes different development life cycles
+  - chapter 3 describes the "workflows" in a process, using the UP as a model
 
 * Pressman, Chapter 2 [Process Models][pressman] is a slightly more abstract introduction to software processes, from Pressman *Software Engineering: A Practioner's Approach*, 7E, another highly-regarded textbook.
 
-* Winston Royce, [Managing the Development of Large Software Systems][royce], the original article describing the waterfall model (Royce did not call it waterfall). This **classic paper** is very short.
+* Winston Royce, [Managing the Development of Large Software Systems][royce], the **classic** article describing the waterfall model (Royce did not call it "waterfall"). The paper is very short.
 
 [summerville]: https://cpske.github.io/ISP/resources/Software-Process-Summerville.pdf
 [schach]: https://cpske.github.io/ISP/resources/Software-Process-Schach.pdf

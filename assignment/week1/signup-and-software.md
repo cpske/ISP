@@ -6,7 +6,7 @@ Please do this before the first week ISP lab.
 
 ### 1. Sign-up
 
-[google-classroom]: https://classroom.google.com/c/NjE0ODE4Mzg4ODEz
+[google-classroom]: https://classroom.google.com/c/NjkxNTc2NDc5NzM4
 [discord-invite]: https://discord.gg/jJJGrEJUqB
 
 1. Join the [Google Classroom][google-classroom] for this course. 
