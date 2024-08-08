@@ -1,4 +1,4 @@
-A vision document outlines the long-term vision and goals of a software product. 
+A vision document describes the purpose, goals, and intended result of a software product. 
 
 This example Vision document is for a hypothetical project named "EduTrack".
 

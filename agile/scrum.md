@@ -11,10 +11,10 @@ To learn about Scrum,
 2. Read the official [Scrum Guide][] by the creators of Scrum.
    - Downloadable [Thai translation](https://scrumguides.org/download.html) as PDF.
 
-The official [Scrum Guide][] is a bit dense.  Two other excellent docs are:
+The official [Scrum Guide][] is a bit dense.  Other excellent docs are:
+
 - [Comprehensive Scrum Guide][] by Visual Paradigm.  A single (long) page with many illustrations.
 - More detailed [Scrum Primer][] 20-page decription of Scrum. Really excellent!
-- *Head First Agile* chapter [Project Management with Scrum][Head First Scrum]. Memorable, entertaining, examples, & lots of questions (with answers).
 
 Then answer these [Questions about Scrum](https://forms.gle/Cg4JxJZvkAxD3kiU6) 
 
@@ -38,7 +38,6 @@ Good answers here:
 * [Scrum Values](https://www.scrumalliance.org/about-scrum/values) from ScrumAlliance.org
 * [Scrum Tutorial: Values](https://www.knowledgehut.com/tutorials/scrum-tutorial/scrum-values)
 * [Scrum for Dummies: Values](https://www.dummies.com/careers/project-management/the-5-scrum-values/)
-* *Managing Projects with Scrum* (Head First) in [Resources](#resources-to-learn-more).
 
 ## Three Pillars of Scrum
 
@@ -52,7 +51,7 @@ Read about these in: [Scrum Guide][], [Scrum Primer][], and [Managing Projects w
 
 ## Using Scrum
 
-To use Scrum you should *clearly* know & apply these:
+To use Scrum you should *clearly* understand & apply these:
 
 1. Backlog planning
 2. Iteration planning
