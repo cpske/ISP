@@ -17,13 +17,13 @@ Practice: [HTTP Exercise](HTTP-in-Action.pdf) send and receive HTTP yourself!
 ### HTTP Exercises Require netcat or ncat
 
 * **netcat** (nc) is included with Linux and Mac OSX, or add it as a package.
-  - Windows users: use ncat instead.
-* **ncat** is a newer implementation of netcat that supports TLS/SSL.  It uses the same syntax as netcat, with added options.
+  - Windows users: use **ncat** instead.
+* **ncat** is a newer implementation that supports TLS/SSL.  It uses the same syntax as netcat, with new options.
   - https://nmap.org/ncat/
   - written by the author of the well-known `nmap` port scanner
 * [netcat command summary](netcat_summary_sans.pdf) from SANS Institute
 
-Test that netcat/ncat is working.  In a terminal (shell) window enter:
+Test that ncat is working.  In a terminal (shell) window enter:
 ```
 ncat -v -l -p 8000
 
