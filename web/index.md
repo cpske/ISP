@@ -83,11 +83,11 @@ This is a huge subject.  Web developers need some knowledge of:
 * Backend framework - how to create the back-end for your application
 * How to deploy your web application in a production-quality web server
 
-Two excellent, recommended places to learn are:
+Two recommended places to learn are:
 
 [Mozilla Developer Tutorials](https://developer.mozilla.org/en-US/docs/Web/Tutorials) on HTML, CSS, and Javascript. There is also a great tutorial on Django.
 
-[W3Schools](https://www.w3schools.com) has tutorials and references for everything related to the web.  Good place to learn HTML, CSS, and Javascript. The MDN tutorials have better explanation of underlying concepts and technology.
+[W3Schools](https://www.w3schools.com) has tutorials and references for everything related to the web.  Good place to learn HTML, CSS, and Javascript. The MDN tutorials (above) have deeper explanations of concepts and technology.
 
 ---
 
