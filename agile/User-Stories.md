@@ -6,6 +6,7 @@ title: User Stories
 ## Qualities of Good User Stories
 
 _INVEST_:
+
 * Independent - described independently of other user stories
 * Negotiable - the features are the result of negotiation
 * Valuable - add value to the product (as determined by P.O.)

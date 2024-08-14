@@ -22,7 +22,7 @@ navigation_order: 4
 
 | Name                        | Email
 |:----------------------------|:---------------
-| Jim Brucker, instructor     | `email("J", "Brucker", 7)`
+| James Brucker, instructor   | `email("J", "Brucker", 7)`
 | Krittin (JJ), TA            | `email("Krittin", "Setdhavanich", 3)`
 | Nanthawat (Boom), TA        | `email("Nanthawat", "Duang-Ead", 2)`
 | Sirin (Toey), TA            | `email("Sirin", "Phungkun", 2)`
@@ -45,7 +45,9 @@ Software "bots" scan web pages and collect email addresses for spam and phishing
 
 #### [Have I Been Pwned?](https://haveibeenpwned.com)
 
-To check if your email address or password has been exposed 
-in a data breach, visit [haveibeenpwned.com](https://haveibeenpwned.com).
+Check if your email address or password has been exposed 
+in a data breach at [haveibeenpwned.com](https://haveibeenpwned.com).
 
 The check is done in your browser -- your email or password are *not* transmitted.
+
+You don't reuse the same password on different sites, right?
