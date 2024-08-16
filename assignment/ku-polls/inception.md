@@ -6,14 +6,15 @@ Everyone will individually implement a Django application for conducting poll an
 
 In this lab, you will perform project set-up and inception activities.
 
-> "*Inception*" refers to the first phase of a software project, when you learn about the project idea, its purpose and stakeholders, and decide if the project is worth pursuing.
+> "*Inception*" refers to the first phase of a software project, when you learn about the project idea, its purpose and stakeholders, agree on a vision for the project, and perform preliminary work to decide if the project is worth pursuing.
 
 ## 1. Setup Project Infrastructure
 
 1. Create a public repo named `ku-polls` in **your own** Github account.
    - Please spell it **exactly** this way: `ku-polls`.
+   - **Wrong**: `ku_polls`, `kupolls`, `KU-POLLS`, or any other name except as above.
 
-2. Repo should have (at least) these files:
+2. Repo should have (at least) these files in the top-level of the repo, **not** in a subdirectory
    ```
    README.md
    .gitignore        # configured for a Python project
@@ -22,12 +23,13 @@ In this lab, you will perform project set-up and inception activities.
 
 3. **README.md** should answer these questions:
    - what does this application do?
+   - what does the UI look like? (an image)
    - how do I install and run it? (write this later)
-   - links to other docs and info. Include links to these wiki documents:
+   - **links** to other docs and info. Include links to these wiki documents:
      - Vision Statement
-     - Development Plan
+     - Requirements
+     - Project Plan, *aka* Project Development Plan
      - Iteration 1 Plan
-   An *example* repo is given in class. You **may not** copy it, but you can copy some text and may copy the Vision Statement (in wiki).
 
 4. **`.gitignore`** should ignore pycache dirs, IDE files, MacOS junk, `.env`, "env" and "venv" (virtual environments), log files, and anything you can *recreate* from source, such as Django's 'staticfiles' directory.
 
@@ -35,40 +37,42 @@ In this lab, you will perform project set-up and inception activities.
    ```
     Django
    ```
-   There are several ways to specify required *versions* as part of requirements, for example:
+   You can also specify required *versions* as part of requirements, for example (this means any version of Django between 5.1 and 5.2):
    ```
-   Django >= 4.1, <5.0
+   Django >= 5.1, <5.2
    ```
 6. Create a **Wiki** in your `ku-polls` repo, to contain project documents and software design documents. Wiki should contain these pages:
 
-   - **Home** is the default landing page. It should explain what the Wiki is for and have links to other wiki pages.
+   - **Home** is the default landing page. It should explain what the Wiki is for and have **links to other wiki pages**. You should be able to find anything from the Home page.
      - A visitor should be able to find all project docs from Home.
    - **Vision** describes the purpose of the project, who is affected, how the product will benefit them, and the "business case" for the project.
-   - **Requirements** 
-     1. A **numbered** list of the features and capabilities of the product.
-     2. These are requirements for KU Polls, **not** a list of features for Iteration 1.
-     3. Requirements should be written as things the program should do.
-     4. *Functional* and *non-functional* requirements should be separate numbered lists.  We don't have any *non-functional* requirements for KU Polls, but an example would be "Written in Python using the Django web framework".
-   - **Development Plan** - schedule of how/when you'll implement the features, with goals
-     - Edit and personalize the Development Plan according to what you think you will actually do.
+   - **Requirements** lists the functional and non-functional requirements
+   - **Project Plan** a schedule of how/when you will implement the features, with goals
+
+   **Other Documents** that you will add during the project (you don't need to create this now):
+   - `Iteration Plans` one file for each iteration, with major work to do, a goal, and a milestone
+   - `Domain Model` UML diagram(s) of the domain model, with explanation
+   - `Howto` summary of how to do things that you discover while doing the project. Very useful for team projects.
+   - `Retrospectives` summary and action plan from your Retrospectives. For ease of review, put all retrospectives in one file.
+
 
 ### How to Refer to Wiki Pages in a Project README
 
-Example README.md:
-
-```
+In README.md use `../../wiki/xxx` to refer to a page in the Wiki of a project.    
+For cxample
+```markdown
 ## KU Polls: Online Survey Questions 
 
 An application to conduct online polls and surveys based
-on the [Django Tutorial project][django-tutorial], with
+on the [Django Tutorial project](TODO-write-URL-of-the-django-tutorial-here), with
 additional features.
 
 This app was created as part of the [Individual Software Process](
-https://cpske.github.io/ISP) course at Kasetsart University.
+https://cpske.github.io/ISP) course at [Kasetsart University](https://www.ku.ac.th).
 
 ## Install and Run
 
-to be added.
+To be added.
 
 ## Project Documents
 
@@ -76,27 +80,28 @@ All project documents are in the [Project Wiki](../../wiki/Home).
 
 - [Vision Statement](../../wiki/Vision%20Statement)
 - [Requirements](../../wiki/Requirements)
-
-[django-tutorial]: TODO-write-the-django-tutorial-URL-here
+- [Project Plan](../../wiki/Project%20Plan)
 ```
 
-Avoid using the absolute path to a wiki page in hyperlinks. The link will break if you ever move, clone, or rename the repo.
+Use the relative path to wiki pages in hyperlinks (as shown above) and avoid using the absolute path. 
 See [Relative Links in READMEs](https://help.github.com/articles/adding-images-to-wikis/).
 
+`%20` is the hexadecimal code for a space character.
 
-## 2. Project Inception
+
+## 2. Perform Project Inception
 
 After creating the project infrastructure, create important documents that describe this project:
 
 - Vision Statement
 - Requirements
-- Project Development Plan
+- Project Plan
 
 > This will be discussed in lab.
 
 ---
 
-### Vision Statement
+### 2.1 Vision Statement
 
 A Vision statement describes the purpose and indented goal of the project.
 A Vision helps unify everyone's understanding of the goal, who is affected, and what the intended outcome is. It should be realistic.
@@ -108,21 +113,26 @@ A Vision includes:
 - Vision of the solution
 - Who are stakeholders and how they will benefit from the solution
 - Business case or value proposition of the project
-- A good Vision is ***visual***.  Include images or mock-ups of what you intend to produce.
 
-A popular template for a short Vision statement
-is [this one](https://www.atlascode.com/blog/creating-a-software-product-vision-statement/).
-But the short form is vague and missing a lot of important details.
-
-Most projects write a more detailed Vision that is a few pages long. 
-[Advantis](https://www.edvantis.com/blog/project-vision-in-software-development/) has good suggestions on how to create a software project vision.
+Most projects write a detailed Vision that is a few pages long. 
+[Advantis](https://www.edvantis.com/blog/project-vision-in-software-development/) 
+has good suggestions on how to create a software project vision.
 
 
-### Requirements 
+### 2.2 Requirements 
 
-Write a numbered list of the requirements for the KU Polls application, based on what you read in the class Vision statement and class discussion.
+This file contains a numbered list of functional requirements and a separater numbered list of non-functional requirements.
+These are requirements for the *entire* KU Polls application, **not** a list of features for Iteration 1.
 
-Requirements are things the program should do.
+1. Functional Requirements are things the program should do. For this assignment you can use the "Main Features" from the Vision as functional requirements.
+   - Functional Requirements are things the program should do, so avoid the owrk "can" in general.
+   - Add any additional requirements discussed in class.
+
+2.*Nonfunctional Requirements* as a separate numbered list. Examples:
+  - Written in Python 
+  - Uses the Django web framework
+  - Portable. Can be installed and run on Windows, Linux, or MacOS.
+
 
 Characteristics of good requirements are:
 
@@ -140,11 +150,11 @@ Many projects write requirements as User Stories or Use Cases. We're not doing t
 
 Avoid writing implementation details as requirements.
 
-### Development Plan or Software Development Plan
+### 2.3 Project Plan
 
-*See the example project -- please don't copy the text !*
+The terms "Project Plan", "Software Development Plan", and "Project Development Plan" refer to the same thing.
 
-Also called "Project Plan" or "Software Development Plan". It should include:
+It should include:
 
 1. Brief description of what will be produced. Refer to Requirements & Vision instead of duplicating details.
 2. Software Process (the process you will use)
@@ -157,14 +167,16 @@ Also called "Project Plan" or "Software Development Plan". It should include:
    - a goal or milestone for each iteration
    - the schedule may change, but you need an initial estimate so everyone can see if the plan is reasonable, feasible, and complete.
 4. Technology and Tools
-   - Significant technologies you will use. Include frameworks.
+   - Significant technologies you will use, such as Python, your IDE, unittest test framework. 
+   - Include frameworks (Django)
 5. Resources you need -- you can **omit this** for this project.
-   - How many people? (for this assignment: just you) What skills?
+   - How many people? For this assignment: just you 
+   - What skills? For this assignment: Knowledge of Python and Django
    - Computing resources required: cloud service? CI server? database?
 
 ### Iteration Plans
 
-You will make an iteration plan (in separate file) for *each iteration*.  You will do this as homework.
+You will make an iteration plan (in a separate file) for *each iteration* at the start of the iteration.
 
 The iteration plan includes:
 - goal for the iteration
@@ -178,14 +190,12 @@ The iteration plan includes:
 
 The idea is: in an existing wiki page (e.g. Home) create a link to a page that doesn't exist yet.  A wiki link is text inside double brackets like this `[[Page Title]]`.
 
-Save the page, view it, and click on the (<font color="red">red</font>) link.
-
-Github will prompt you to create the new page!
+Save the page, view it, and click on the <font color="red">red</font> link to create the new page!
 
 
 ### How To Use a Github Wiki
 
-A wiki is a good location for project documents. 
+A wiki is an excellent location for project documents. 
 A good example is Microsoft [VS Code Project](https://github.com/microsoft/vscode).
 
 [Documenting your projects on Github](https://guides.github.com/features/wikis/) describes what should be in your README and in what order.
@@ -195,9 +205,8 @@ A good example is Microsoft [VS Code Project](https://github.com/microsoft/vscod
 Links:
 
 - To link to another wiki page, open an existing page (e.g. Home) and write the link as: ``[[Title of Page]]``.  There is also a setting to use Markdown-style links to Wiki pages. 
-- To link to the world-wide web use standard Markdown: `[text to display](path-or-url)`
+- To link to the world-wide web use standard Markdown:   
+  `[text to display](url-or-path)` such as `[Wikipedia](https://wikipedia.org)`
 
 Images: 
-- [Adding Images to Wikis](https://help.github.com/articles/adding-images-to-wikis/)
-
-
+- See [Adding Images to Wikis](https://help.github.com/articles/adding-images-to-wikis/) on Github.
