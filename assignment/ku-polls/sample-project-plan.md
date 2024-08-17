@@ -1,3 +1,6 @@
+> This is an example Project Plan for KU Polls. 
+> You may use it, but you should carefully read and customize it.
+
 # KU Polls Project Plan 
 
 Author:  James Brucker    

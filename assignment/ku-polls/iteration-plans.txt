@@ -1,0 +1,46 @@
+
+## Iteration Plans
+
+You will make an iteration plan (in a separate file) for *each iteration* at the start of the iteration.
+
+The iteration plan includes:
+- goal for the iteration
+- feature(s) to implement and other major work to be done.  Omit task-level work because that will be in the Task Board and we don't want duplication.
+- a milestone
+- evaluation criteria
+
+
+## Weekly Work
+
+|   Week    | Major Work and Features |
+|:---------:|-------------------------|
+|     1     | Learn fundamentals of creating a web app using Django. |
+|           | Display a list of poll questions. |
+|           | Application has a page showing all recent poll questions with links to a detail page for each question. |
+|           | Detail page for each poll question displays the question and a list of choices.|
+|           | Visitor can choose a poll question and submit a "vote" on it. His/her selection is counted toward the total.|
+|           | Visitor can see the total votes for each choice on a poll question after voting.|
+|           | Every poll has a publication date (start date) and is only visible on or after that date.|
+|           | The poll questions, responses, and vote count are saved in a database.|
+|           | Polls can be added or changed using the admin interface. |
+|     2     | Learn and apply page styling with CSS. |
+|           | Separate sensitive configuration data from source code.|
+|           | Use a Python virtual environment for running the application. |
+|           | A poll has an end date. No voting is allowed after the end date.|
+|           | Question model has methods for `is_published` and `can_vote` with unit tests.|
+|           | Improved Navigation: pages have navigation links so a visitor can return to the polls home page from page or view the results without submitting a choice ("voting") without using browser "back" button. |
+|           | The polls index allows visitors to navigate directly to the poll results page.|
+|           | Improve formatting of the poll detail page and poll results page. |
+|           | If a visitor enters the URL of an unpublished poll, they are redirected to the polls list page and a message is displayed.|
+|           | Unit tests are run automatically on Github when new code is pushed. |
+|           | Code coverage is applied to measure how well unit tests cover the code. The coverage results are displayed online. |
+|     3     | Add authentication in order to vote. A visitor must first authenticate ("log in").|
+|           | Unauthenticated visitors cannot vote. In this case, a poll's detail page has a link to login but no link to submit a vote. |
+|           | Each visitor is allowed only one vote per poll question. |
+|           | A visitor can see and change his/her vote on a poll during the voting period, and his/her new vote replaces the old vote. |
+|           | If a user selects a poll he already voted for, the list of choices shows which choice he/she previously selected.|
+|           | Add links to “Login” or “Logout” to the polls index page. |
+|     4     | Create data fixtures to initialize users and polls data.|
+|           | Write installation instructions for the application. |
+|           | Add “How to Run” instructions that include using the virtual env.|
+|           | Review and cleanup all code.|
