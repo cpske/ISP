@@ -8,13 +8,22 @@ In this lab, you will perform project set-up and inception activities.
 
 > "*Inception*" refers to the first phase of a software project, when you learn about the project idea, its purpose and stakeholders, agree on a vision for the project, and perform preliminary work to decide if the project is worth pursuing.
 
+## 0. Vision of the Project
+
+In lab there will a description of the vision for KU Polls and chance for
+you to ask questions and offer suggestions.
+
+After everyone understands the vision and goals of the project, you will
+start individual work by creating the project infrastructure 
+and initial artifacts.
+
 ## 1. Setup Project Infrastructure
 
 1. Create a public repo named `ku-polls` in **your own** Github account.
    - Please spell it **exactly** this way: `ku-polls`.
    - **Wrong**: `ku_polls`, `kupolls`, `KU-POLLS`, or any other name except as above.
 
-2. Repo should have (at least) these files in the top-level of the repo, **not** in a subdirectory
+2. Repo should have (at least) these files in the **top-level** of the repo, **not** in a subdirectory
    ```
    README.md
    .gitignore        # configured for a Python project
@@ -37,29 +46,30 @@ In this lab, you will perform project set-up and inception activities.
    ```
     Django
    ```
-   You can also specify required *versions* as part of requirements, for example (this means any version of Django between 5.1 and 5.2):
+   It is better to also specify required *versions* of important packages, for example (this means any version of Django between 5.1 and 5.2):
    ```
    Django >= 5.1, <5.2
    ```
 6. Create a **Wiki** in your `ku-polls` repo, to contain project documents and software design documents. Wiki should contain these pages:
 
-   - **Home** is the default landing page. It should explain what the Wiki is for and have **links to other wiki pages**. You should be able to find anything from the Home page.
-     - A visitor should be able to find all project docs from Home.
+   - **Home** is the default landing page. It should explain what the Wiki is for and have **links to other wiki pages**. 
+     - A visitor should be able to **find all project docs** from Home using descriptive links.
    - **Vision** describes the purpose of the project, who is affected, how the product will benefit them, and the "business case" for the project.
-   - **Requirements** lists the functional and non-functional requirements
-   - **Project Plan** a schedule of how/when you will implement the features, with goals
+   - **Requirements** lists the functional and non-functional requirements.
+   - **Project Plan** a schedule of how/when you will implement the features, with goals.
 
-   **Other Documents** that you will add during the project (you don't need to create this now):
+   **Other Documents** you will add to the wiki later (do not create these now):
    - `Iteration Plans` one file for each iteration, with major work to do, a goal, and a milestone
    - `Domain Model` UML diagram(s) of the domain model, with explanation
    - `Howto` summary of how to do things that you discover while doing the project. Very useful for team projects.
    - `Retrospectives` summary and action plan from your Retrospectives. For ease of review, put all retrospectives in one file.
+   - `Technical Notes` (optional) any information you learn during the project that is worth keeping for later reference, including useful links.  Pro developers do this.
 
 
 ### How to Refer to Wiki Pages in a Project README
 
 In README.md use `../../wiki/xxx` to refer to a page in the Wiki of a project.    
-For cxample
+Example README:
 ```markdown
 ## KU Polls: Online Survey Questions 
 
@@ -70,7 +80,11 @@ additional features.
 This app was created as part of the [Individual Software Process](
 https://cpske.github.io/ISP) course at [Kasetsart University](https://www.ku.ac.th).
 
-## Install and Run
+## Installation
+
+To be added. If the procedure is long, put it in the wiki or a separate file.
+
+## Running the Application
 
 To be added.
 
@@ -83,13 +97,14 @@ All project documents are in the [Project Wiki](../../wiki/Home).
 - [Project Plan](../../wiki/Project%20Plan)
 ```
 
-Use the relative path to wiki pages in hyperlinks (as shown above) and avoid using the absolute path. 
+Links to wiki pages use a relative path (as shown above) and avoid using the absolute path. 
 See [Relative Links in READMEs](https://help.github.com/articles/adding-images-to-wikis/).
 
 `%20` is the hexadecimal code for a space character.
 
+---
 
-## 2. Perform Project Inception
+## 2. Create Project Inception Artifacts
 
 After creating the project infrastructure, create important documents that describe this project:
 
@@ -99,7 +114,6 @@ After creating the project infrastructure, create important documents that descr
 
 > This will be discussed in lab.
 
----
 
 ### 2.1 Vision Statement
 
@@ -167,22 +181,12 @@ It should include:
    - a goal or milestone for each iteration
    - the schedule may change, but you need an initial estimate so everyone can see if the plan is reasonable, feasible, and complete.
 4. Technology and Tools
-   - Significant technologies you will use, such as Python, your IDE, unittest test framework. 
-   - Include frameworks (Django)
+   - Significant technologies you will use, such as Python, your IDE, unittest test framework, or web server. Don't guess or add thing you don't know.
+   - Mention frameworks you will use (Django)
 5. Resources you need -- you can **omit this** for this project.
    - How many people? For this assignment: just you 
    - What skills? For this assignment: Knowledge of Python and Django
    - Computing resources required: cloud service? CI server? database?
-
-### Iteration Plans
-
-You will make an iteration plan (in a separate file) for *each iteration* at the start of the iteration.
-
-The iteration plan includes:
-- goal for the iteration
-- feature(s) to implement and other major work to be done.  Omit task-level work because that will be in the Task Board and we don't want duplication.
-- a milestone
-- evaluation criteria
 
 ---
 

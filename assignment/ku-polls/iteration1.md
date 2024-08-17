@@ -24,8 +24,8 @@ The code you will produce for this iteration matches the [Django Tutorial][djang
 
 1. Create a wiki page named "Iteration 1 Plan" page in your `ku-polls` wiki. Your "Iteration 1 Plan" should have these sections:
    - **Goal** for the iteration
-   - **Milestone**, a concrete, visible indicator of progress.
-   - **Features** to implement and other major work (but not tasks)
+   - **Milestone**, a concrete, visible indicator of progress. More than 1 is fine.
+   - **Features** to implement and other **major work** (but not detailed tasks)
    - **Acceptance Criteria** - how to evaluate the result?
 
 2. Create a Github **Project** for KU Polls. (You may have done this during the project inception.)
@@ -70,9 +70,9 @@ The code you will produce for this iteration matches the [Django Tutorial][djang
    - Please read the tutorial *carefully*. There is a lot of info in the text.
 
 8. Add at least **2 interesting poll questions** to your app, and **delete** the boring "What's up?" question.
-   - No boring, trivial questions like "How are you?", "What's your favorite color?"
+   - No trivial, boring questions like "How are you?" or "What's your favorite color?"
 
-9. Do not include `db.sqlite3` in your repository.  Instead, export your polls data to a file named **data/polls-v1.json**.  Here's is how:
+9. Do not include `db.sqlite3` in your Github repository.  Instead, export your polls data to a file named **data/polls-v1.json**.  Here's is how:
    ```
    # in your "ku-polls" repository, enter:
    mkdir data
@@ -81,7 +81,12 @@ The code you will produce for this iteration matches the [Django Tutorial][djang
    Include `data/` and `data/polls-v1.json` in your git repository.
 
 10. When you finish and test everything, open a **Pull Request** to merge.    
-   Then, take a break.  Afterwards, review your own work, and **merge** branch `iteration1` into `master`. It should be a simple "fast forward" merge.
+    - Then, take a break.  *Really*.
+
+11. After a break, review your own work, then:
+    - **merge** branch `iteration1` into `master` (or `main`). It should be a simple "fast forward" merge.
+    - close the Pull Request on Github. There are multiple ways to do this.
+    - *Note:* Github can merge the branch and close the Pull Request with a single click. But then you must "pull" master to your local repo.
 
 
 ### Suggestions
@@ -91,9 +96,6 @@ The code you will produce for this iteration matches the [Django Tutorial][djang
 - The tutorial converts function-based views to class views.  It is OK to leave some function-based views, but you should try class views -- they can do a lot more.
 - Part 7 of the tutorial (customizing the admin interface) is useful but not required.
 
-### Optional: Improve Appearance
-
-You can add CSS styling to pages, add a graph of the poll results, and other stylistic improvements.
 
 ### Optional: Improve Security
 
@@ -119,12 +121,17 @@ You can do this in 4 steps:
 
    SECRET_KEY = config('SECRET_KEY', default='fake-secret-key') 
    ```
-4. Create a file for externalized data. It is named `.env` in the project's root directory (not the mysite directory) and contains this:
+4. Create a file for externalized data. The file is named `.env` in the project's root directory (not the mysite directory) and contains this:
    ```
    # contents of .env
    SECRET_KEY = your-actual-secret-key-without-quotation-marks
    ```
-   The `.env` file should not be committed to git.
+   The `.env` file should not be committed to git, but its good to add a `sample.env` file to git so other users know what info they need to put in the file, e.g.
+   ```
+   # sample.env
+   # Define a Django secret key here.
+   SECRET_KEY = bogus-secret-key
+   ```
 
 For details, see [Externalize Configuration](https://cpske.github.io/ISP/django/external-configuration) on the ISP github.io site. 
 

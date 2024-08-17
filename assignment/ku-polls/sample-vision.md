@@ -1,14 +1,10 @@
----
-title: Sample Vision & Scope of KU Polls Application
----
-
 > This is an example Vision & Scope for KU Polls. 
-> You may use it, but please carefully read and customize it.
->
-> Review and update the Vision during the project.
+> You may use it, but you should carefully read and customize it.
+
+# KU Polls Vision and Scope
 
 Author:  James Brucker    
-Rev Date: 17-8-2024
+Revised: 17-8-2024
 
 ## Background
 
