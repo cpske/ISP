@@ -4,20 +4,19 @@ title: KU Polls Project Inception
 
 Everyone will individually implement a Django application for conducting poll and surveys, called "KU Polls".  
 
-In this lab, you will perform project set-up and inception activities.
+In this lab, you will perform project Inception activities.
 
-> "*Inception*" refers to the first phase of a software project, when you learn about the project idea, its purpose and stakeholders, agree on a vision for the project, and perform preliminary work to decide if the project is worth pursuing.
+> "*Inception*" refers to the first phase of a software project, when you learn about the project idea, its purpose and stakeholders, agree on a vision, and perform preliminary work.
 
-## 0. Vision of the Project
+## 1. Vision of the Project
 
-In lab there will a description of the vision for KU Polls and chance for
-you to ask questions and offer suggestions.
+In lab there will a description of the vision for KU Polls and discussion.
+You should ask questions and offer suggestions.
 
-After everyone understands the vision and goals of the project, you will
-start individual work by creating the project infrastructure 
-and initial artifacts.
+After everyone agrees on the vision and goals of the project,
+create your project intrastructure on Github, and add initial artifacts.
 
-## 1. Setup Project Infrastructure
+## 2. Setup Project Infrastructure
 
 1. Create a public repo named `ku-polls` in **your own** Github account.
    - Please spell it **exactly** this way: `ku-polls`.
@@ -50,26 +49,27 @@ and initial artifacts.
    ```
    Django >= 5.1, <5.2
    ```
-6. Create a **Wiki** in your `ku-polls` repo, to contain project documents and software design documents. Wiki should contain these pages:
+6. Create a **Wiki** in your `ku-polls` repo for project documents and software design documents.    
+   The Wiki must contain these pages:
 
    - **Home** is the default landing page. It should explain what the Wiki is for and have **links to other wiki pages**. 
-     - A visitor should be able to **find all project docs** from Home using descriptive links.
-   - **Vision** describes the purpose of the project, who is affected, how the product will benefit them, and the "business case" for the project.
+     - A visitor should be able to **find all project docs** from Home using the descriptions and links provided.
+   - **Vision** describes the purpose, goals, and "vision" of the project.
    - **Requirements** lists the functional and non-functional requirements.
-   - **Project Plan** a schedule of how/when you will implement the features, with goals.
+   - **Project Plan** a description of how you will perform the project, schedule of how/when you will implement the features, and goals.
 
-   **Other Documents** you will add to the wiki later (do not create these now):
+**Other Documents** you will add to the wiki later. You do not need to create these now:
+ 
    - `Iteration Plans` one file for each iteration, with major work to do, a goal, and a milestone
    - `Domain Model` UML diagram(s) of the domain model, with explanation
    - `Howto` summary of how to do things that you discover while doing the project. Very useful for team projects.
    - `Retrospectives` summary and action plan from your Retrospectives. For ease of review, put all retrospectives in one file.
    - `Technical Notes` (optional) any information you learn during the project that is worth keeping for later reference, including useful links.  Pro developers do this.
 
-
 ### How to Refer to Wiki Pages in a Project README
 
-In README.md use `../../wiki/xxx` to refer to a page in the Wiki of a project.    
-Example README:
+In README.md use `../../wiki/xxx` to refer to a page in the project's Wiki.    
+Example README.md:
 ```markdown
 ## KU Polls: Online Survey Questions 
 
@@ -112,41 +112,37 @@ After creating the project infrastructure, create important documents that descr
 - Requirements
 - Project Plan
 
-> This will be discussed in lab.
+> These are discussed in lab.
 
 
 ### 2.1 Vision Statement
 
-A Vision statement describes the purpose and indented goal of the project.
+Create a document named **Vision and Scope** in the Wiki.
+
+A Vision statement describes the purpose and goal of the project.
 A Vision helps unify everyone's understanding of the goal, who is affected, and what the intended outcome is. It should be realistic.
 
-A Vision includes:
-
-- Background information
-- Description of the problem and who is affected
-- Vision of the solution
-- Who are stakeholders and how they will benefit from the solution
-- Business case or value proposition of the project
-
-Most projects write a detailed Vision that is a few pages long. 
-[Advantis](https://www.edvantis.com/blog/project-vision-in-software-development/) 
-has good suggestions on how to create a software project vision.
+[Advantis](https://www.edvantis.com/blog/project-vision-in-software-development/) has good suggestions on how to create a software project vision.
 
 
 ### 2.2 Requirements 
 
-This file contains a numbered list of functional requirements and a separater numbered list of non-functional requirements.
-These are requirements for the *entire* KU Polls application, **not** a list of features for Iteration 1.
+Create a file named **Requirements** in the Wiki.
+
+Write a numbered list of *Functional requirements* and a separate numbered list of *Non-functional requirements*.
+These are the requirements for the *entire* KU Polls application, **not** a list of features for Iteration 1.
+
+Hint: You can get many requirements from the sample Vision and Project Plan.
 
 1. Functional Requirements are things the program should do. For this assignment you can use the "Main Features" from the Vision as functional requirements.
-   - Functional Requirements are things the program should do, so avoid the owrk "can" in general.
-   - Add any additional requirements discussed in class.
+   - In general, avoid the word "can". Use "should" or "most" instead.
+   - Read the sample Vision and Project Plan for requirements.
+   - Add any additional requirements agreed on in class.
 
-2.*Nonfunctional Requirements* as a separate numbered list. Examples:
+2.*Nonfunctional Requirements* are qualities of the program. Write them as a separate numbered list. Examples:
   - Written in Python 
   - Uses the Django web framework
   - Portable. Can be installed and run on Windows, Linux, or MacOS.
-
 
 Characteristics of good requirements are:
 
@@ -156,33 +152,33 @@ Characteristics of good requirements are:
 * Feasible
 * Necessary
 * Unambiguous
-* Singular (one requirement is one thing)
 * Testable
+* Singular -- one requirement specifies only one thing
 * Written as complete sentences with clear, correct English.
 
-Many projects write requirements as User Stories or Use Cases. We're not doing that here.
+Many projects write requirements as User Stories or Use Cases. For this project, just use a numbered list.
 
 Avoid writing implementation details as requirements.
 
 ### 2.3 Project Plan
 
-The terms "Project Plan", "Software Development Plan", and "Project Development Plan" refer to the same thing.
+> The terms "Project Plan", "Software Development Plan", and "Project Development Plan" refer to the same thing.
 
-It should include:
+Create a file named **Project Plan** containing:
 
-1. Brief description of what will be produced. Refer to Requirements & Vision instead of duplicating details.
-2. Software Process (the process you will use)
+1. Brief description of what will be produced. Avoid duplicating details in the Requirements & Vision, refer to those documents instead.
+2. Software Process you will use
    - briefly describe your process (you will use Iterative & Incremental)
    - how long are the iterations? (1 week)
    - How to manage work products? Use git and Github Flow.
    - Quality assurance plan - what testing and review will you do?
 3. Timeline or Schedule 
-   - table: a schedule of what to implement in each iteration
-   - a goal or milestone for each iteration
+   - table: a schedule of features to implement in each iteration
+4. A goal or milestone for each iteration
    - the schedule may change, but you need an initial estimate so everyone can see if the plan is reasonable, feasible, and complete.
-4. Technology and Tools
-   - Significant technologies you will use, such as Python, your IDE, unittest test framework, or web server. Don't guess or add thing you don't know.
-   - Mention frameworks you will use (Django)
+5. Technology and Tools
+   - Significant technologies you will use, such as Python, your IDE, unittest test framework, database, and web server. Don't guess at thing you don't know.
+   - Frameworks you will use (Django)
 5. Resources you need -- you can **omit this** for this project.
    - How many people? For this assignment: just you 
    - What skills? For this assignment: Knowledge of Python and Django
