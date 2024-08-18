@@ -40,7 +40,7 @@ IP addresses of allow respondants, or create a password (one password
 used by everyone) to limit respondants, but no way to limit based
 on domain or individual identity. 
 
-### Stakeholders and Their Needs
+### Stakeholders and Their Interests
 
 | Stakeholder | Goal or Needs                                     |
 |:------------|:--------------------------------------------------|

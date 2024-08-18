@@ -7,35 +7,35 @@ The assignments for the next 3 weeks will add to this code, so don't fall behind
 
 The features to implement in this iteration are:
 
-1. Display a list of poll questions with multiple-choice answers.
-2. Visiter can select a poll question and vote for a choice. His vote is added to the total.
+1. Display a list of poll questions with multiple choices.
+2. Visiter can select a poll question and select ("vote") for a choice. His vote is added to the total for that choice.
 3. Visitor can see total votes for each choice in a poll.
 4. Each poll has a publication date (start date) & is visible only on or after this date.
 5. Poll questions and choices can be added or changed using the admin interface.
 
 Features not implemented in this iteration:
 
-- we will not implement any authentication and, as a result, will not track who has replied to which poll question. 
-- hence, a user cannot change a previously submitted poll choice, although he can submit another choice
+- we will not implement any authentication and, as a result, will not track who has replied to each poll question. 
+- a user cannot change a previously submitted poll choice, although he can submit another choice ("vote")
 
 ## Assignment 
 
 The code you will produce for this iteration matches the [Django Tutorial][django-tutorial].
 
-1. Create a wiki page named "Iteration 1 Plan" page in your `ku-polls` wiki. Your "Iteration 1 Plan" should have these sections:
+1. Create a wiki page named "`Iteration 1 Plan`" page in your `ku-polls` wiki. Add a link to this page in **Home**.
+2. Your "Iteration 1 Plan" should have these sections:
    - **Goal** for the iteration
-   - **Milestone**, a concrete, visible indicator of progress. More than 1 is fine.
-   - **Features** to implement and other **major work** (but not detailed tasks)
+   - **Milestone**, a concrete, visible indicator of progress. More than one milestone is fine.
+   - **Features** to implement and other **major work** but not detailed tasks (put those on the task board)
    - **Acceptance Criteria** - how to evaluate the result?
 
 2. Create a Github **Project** for KU Polls. (You may have done this during the project inception.)
 
 3. In the Project, create a *Task Board* named "**Iteration 1**".
-   - Task Board should have 4 columns for task status, as in KU Int'l Cafe. 
-   - Add tasks for work to do in Iteration 1.
-   - You will write code following the Django Tutorial, so you can define tasks like "Implement tutorial part 1", "Implement tutorial part 2", ..., 
-   - Other work: "Add Good Poll Questions", "Review work and merge into main"
-   - Convert "tasks" to "issues". Tasks for development work *should* be issues, but you may have some "housekeeping" tasks that are not issues. For example, editing the links is README.md.
+   - Task Board should have at least 3 columns for task status (Backlog or Todo, In Progress, Done). 
+   - Add tasks for work to do in Iteration 1. See below for example tasks.
+   - Better: create a **table** in your Github Project named "Backlog". Add tasks to the Backlog. Then create an Iteration 1 task board that shows selected tasks from the backlog.
+   - Convert "tasks" to "issues" so they are also shown in the Issue Tracker. Tasks for development work *should* be issues, but you may have some "housekeeping" tasks that are not issues. For example, editing the links is README.md.
 
 4. Create the Django project directly in the `ku-polls` repo that you clone from Github -- not in a subdirectory.  Be careful how you create the project to avoid creating an extra subdirectory.  Do this:
    ```
@@ -54,8 +54,7 @@ The code you will produce for this iteration matches the [Django Tutorial][djang
      requirements.txt
      ```
 
-5. Create a Branch and use Github Flow.
-   - Create a branch named **iteration1** and do your work on this branch.
+5. Create a git branch named **iteration1** and do your work on this branch.
 
 6. **Push to Github** after you finish **each part** of the Django tutorial, e.g.
      ```
@@ -85,23 +84,39 @@ The code you will produce for this iteration matches the [Django Tutorial][djang
 
 11. After a break, review your own work, then:
     - **merge** branch `iteration1` into `master` (or `main`). It should be a simple "fast forward" merge.
-    - close the Pull Request on Github. There are multiple ways to do this.
-    - *Note:* Github can merge the branch and close the Pull Request with a single click. But then you must "pull" master to your local repo.
-
+    - **close** the Pull Request on Github. There are several ways to do this.
+    - *Note:* Github can merge the branch and close the Pull Request with a single click. You must "pull" master to your local repo.
 
 ### Suggestions
 
 - Do **not use copy and paste** when doing the tutorial. You learn **better** by typing it yourself!  Typing engages your senses and forces you to *remember* what you just read.
 
 - The tutorial converts function-based views to class views.  It is OK to leave some function-based views, but you should try class views -- they can do a lot more.
-- Part 7 of the tutorial (customizing the admin interface) is useful but not required.
+- Part 7 of the tutorial (customizing the admin interface) is not required, but useful. Implement it if you like.
+
+### Example Tasks
+
+Here are example tasks with a description.  If you want, you can split these into smaller tasks and/or use more descriptive titles.
+
+| Task Title                | Description              |
+|---------------------------|---------------------------|
+| Initialize Django application and polls app |Implement tutorial part 1. Initialize Django application and a "polls" app with a simple page template, define URLs. Learn the Django project structure and how to use the 'manage.py' script.|
+| Implement tutorial part 2 |Initialize database, create models for polls app, learn how to use Django interactive shell to interactively explore models by running python commands. Learn to use Django admin interface.   |
+| Implement tutorial part 3 |Create pages for list of polls, poll details, and results view, and write logic for them. Learn Django template syntax. |
+| Implement tutorial part 4 |Create a form for the polls detail (voting) page. 'Done:' user can view choices for a poll, select and submit a choice, and see his vote in included in the results. |
+| Implement tutorial part 5 |Learn how to perform tests using the Django interactive shell. Write unittests for models and views. |
+| Add CSS styling and stylesheet |Implement tutorial part 6. Add CSS stylesheet and page styles. Learn how to use static files in Django. |
+| Add Polls Questions       |Add 2 interesting polls with multiple choices.        |
+| Create Data Fixture       |Export polls data to a file. 'Done': polls data can be imported to a new database and are shown in the app. |
+| Review and Test Code      |Open a PR and Review all code. Verify code is documented and uses standard Python coding style. All unit tests pass. |
+| Merge Branch              |Merge `iteration1` branch into main/master and close the Pull Request. |
 
 
 ### Optional: Improve Security
 
 Everyone will do this in Iteration 2, but if you are security-conscious then do this now.
 
-The Django `settings.py` file contains sensitive information that you should not commit to Github.  Right now, the only sensitive value is `SECRET_KEY`:
+The Django `settings.py` file contains sensitive information that you should not commit to Github.  The only sensitive value now is `SECRET_KEY`:
 
 ```python
 # File: mysite/settings.py
@@ -109,9 +124,10 @@ The Django `settings.py` file contains sensitive information that you should not
 SECRET_KEY = 'some-random-secret-key'
 ```
 
-For security, the value of the `SECRET_KEY` should not be in a separate file and not committed to git. 
+For security, the value of the `SECRET_KEY` should never be committed to Github!
+Instead, specify it in a separate file that is not committed to git.
 
-You can do this in 4 steps:
+Do this in 4 steps:
 
 1. Install the `python-decouple` package: `pip install python-decouple`
 2. Add `python-decouple` to your `requirements.txt` file on a separate line.
@@ -121,7 +137,7 @@ You can do this in 4 steps:
 
    SECRET_KEY = config('SECRET_KEY', default='fake-secret-key') 
    ```
-4. Create a file for externalized data. The file is named `.env` in the project's root directory (not the mysite directory) and contains this:
+4. Create a file for the config data. The file is named `.env` in the project's root directory (not the mysite directory) and contains this:
    ```
    # contents of .env
    SECRET_KEY = your-actual-secret-key-without-quotation-marks
@@ -129,7 +145,7 @@ You can do this in 4 steps:
    The `.env` file should not be committed to git, but its good to add a `sample.env` file to git so other users know what info they need to put in the file, e.g.
    ```
    # sample.env
-   # Define a Django secret key here.
+   # Specify your Django secret key here. No quotation marks.
    SECRET_KEY = bogus-secret-key
    ```
 
@@ -151,6 +167,13 @@ mysite/              <-- where application settings.py and urls.py are
     urls.py
     etc.
 polls/               <-- the polls "app" code and app templates
+    admin.py
+    migrations/
+    models.py
+    templates/
+    tests.py
+    views.py
+    etc.
 templates/           <-- global templates
 ```
 
@@ -161,23 +184,24 @@ This is incorrect:
 README.md
 requirements.txt
 ku-polls/         <-- Wrong: django project in a subdir of your repo
-   manage.py
-   mysite/
-       settting.py
-       urls.py
-       etc.
-   polls/               
+    manage.py
+    mysite/
+    polls/               
 ```
 
 More complex projects *do use subdirs* as shown above, but please don't do that in this assignment.
 
-Your Github repository should also contain:
+## Work to Submit
+
+Your Github repository should contain:
 
 - `iteration1` branch merged into master or main
-- at least 1 Pull Request, now closed
+- a Pull Request, now closed
 - "KU Polls" Project in the "Projects" tab
-- Github Issues for work in Iteration 1, now closed.
-- "Iteration 1" task board in the "KU Polls" Project.  All (or most) tasks should be "Done".
+- "Iteration 1" task board in the "KU Polls" project & tasks for all work.
+- Tasks for the work in Iteration 1 have descriptions and are now done.
+- Well formatted, descriptive README.md with links to wiki files.
+- Wiki containing pages: "Home", "Vision and Scope", "Project Plan", "Requirements", and "Iteration 1 Plan"
 
 ## References
 
@@ -189,7 +213,7 @@ Your Github repository should also contain:
 
 [django-tutorial]: https://docs.djangoproject.com/en/4.1/intro/tutorial01/
 
-### Evaluation Criteria
+### Evaluation Criteria (May be Revised)
 
 1. Github Flow (3)
    - repo has `iteration1` branch with all your work.
@@ -203,7 +227,10 @@ Your Github repository should also contain:
 
 3. Running App with 2 Good Questions
    - we will clone either "main" or "iteration1"
-   - code should include a `db.sqlite3` file containing your questions
+   - after running migrations, we can import your poll questions & choices using:
+     ```
+     python manage.py loaddata data/polls-v1.json
+     ```
    - code runs and shows 2 good questions. No trivial questions like "What is your favorite color?" or "What's up?".
    - Penalty for not removing dumb "What's Up?" question.
 
