@@ -53,7 +53,7 @@ In this case, there are 3 steps
     cmd> git add src                   (add your source code)
     cmd> git commit -m "initial code checkin"
     ```
-   A `.gitignore` file (optional) prevents you from accidentally committing the wrong files to git.  Once you have a good `.gitignore` file, you can copy it from one project to another. 
+   A `.gitignore` file prevents you from accidentally committing the wrong files to git.  Once you have a good `.gitignore` file, you can copy it from one project to another. 
 
 2. On [Github](https://github.com) create an **empty** repository for the project.
     a. on Github click on the "+" icon at upper-right of your home page and choose "create new repository".
@@ -76,12 +76,10 @@ You only need to type `git push -u origin master` the **first time** you connect
 
 This is easy.
 
-If the project already exists on Github then do:
-
-1. Using a web browser, go to the project page on github so you can copy the URL
+1. Using a web browser, go to the project page on Github so you can copy the URL
 2. Click the "Code" button. This will show the URL to use for cloning. 
     * Click the button next to the URL to copy it to your clipboard 
-3. In the **parent directory** of where you want to clone the project, enter the command:
+3. On your computer, in the **parent directory** of where you want to clone the project, enter the command:
     ```shell
     cmd> git clone https://github.com/billgates/someproject.git
     ```
@@ -117,6 +115,9 @@ local changes using `git push`.
 > ```
 > The project is in `workspace/project1/project1/`.
 
+### Pro Tip
+
+Instead of the command line, clone the Github repo and start a project in your IDE.
 
 ### Case 3: You don't have ANYTHING yet
 
@@ -144,6 +145,8 @@ origin https://github.com/hacker/assignment1 (fetch)
 origin https://github.com/hacker/assignment1 (pull)
 ```
 
+### More Detail About My Remote
+
 To see more information, including remote branches, use:
 ```
 cmd>  git remote show origin
@@ -160,6 +163,13 @@ cmd>  git remote show origin
   Local refs configured for 'git push':
     master pushes to master (up to date)
     dev    pushes to dev    (up to date)
+```
+
+### Is My Local Copy Up to Date with Remote?
+
+Use the above command (`git remote show origin`) or
+```
+git branch -vv
 ```
 
 ### Typical Workflow Using Git and Github
