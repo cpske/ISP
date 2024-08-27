@@ -13,13 +13,13 @@ You will also automate running of tests.
 ## Tasks
 
 1. Create an **Iteration 2 Plan** in your ku-polls wiki and write a plan as you did for Iteration 1.
-2. Add links to "Iteration 2 Plan" in:
-   - Home (on wiki)
+2. Add links to "Iteration 2 Plan" in
+   - Home page in Wiki
    - README.md
 3. Review and update these wiki documents:
-   - **Development Plan**
-   - **Requirements** (add any new features)
-4. Create an "Iteration 2" task board and define tasks.
+   - **Project Plan** - in particular, add details of Iteration 2 major work & goal or milestone
+   - **Requirements** - add any new requirements that are significant
+4. Create an `Iteration 2` task board and define tasks.
 5. Create an `iteration2` branch for your work.
    - First, be sure you have merged *all work* from `iteration1` into `master` and pushed both branches to Github.
    - Create `iteration2` as a branch from `master` (not iteration1).
@@ -31,8 +31,10 @@ You will also automate running of tests.
    - `end_date` can be `null`. If it is null, then voting is allowed anytime after `pub_date`.
 
 2. Add a default for the `pub_date`.  The default is the current date and time.
-   - This doesn't work:  `pub_date = DateTimeField( ..., default=timezone.now())`
+   - This **doesn't work**:  `pub_date = DateTimeField( ..., default=timezone.now())`
+     - The expression is evaluated when the code is first loaded, not when a new Question is created.
    - Use a function name **without parens** instead of the function value so that it is evaluated when the object is created. 
+   - Don't use `auto_now`. It doesn't do what you might expect.
 
 3. Items 1 & 2 change the database schema, so you need to make a migration and apply it ("migrate").
 
@@ -43,11 +45,11 @@ You will also automate running of tests.
 5. Modify your views code to use these two methods. The view code should *not* directly test `question.pub_date >= something` (poor encapsulation).
 
 6. Write **unit tests** for `is_published`. Test these cases:
-   - question with future pub date
+   - question with future pub date (should not be shown in the UI)
    - question with the default pub date (now)
    - question with pub date in the past
 
-7. Write at least **4 unit tests** for `can_vote`.    
+7. Write at least **3 unit tests** for `can_vote`.    
    - Design 3 tests for different cases.  The tests should not be redundant.
    - Use a descriptive name for each test and write a one sentence docstring to describe what you are testing, e.g.
    ```python
@@ -68,23 +70,22 @@ Navigating the app's pages is clumsy. Sometimes a visitor has to use the browser
 1. If someone goes to the base URL of the web site, such as `http://localhost:8000/`, redirect them to the polls index page.
    - After the redirect, the visitor's web browser should show the actual URL (`http://localhost:8000/polls/`) not the base URL `/`.
    - Many ways to do this. Have a look at Django's `RedirectView` class and `RedirectView.as_view()` method.
-
-2. Add links so a visitor to view results without voting.
-   - On polls index page, add a "Results" links for each question, so someone can view results without voting.
-   - On the poll "detail" page, also add a link to "Results".
-   
-3. Improve navigation between pages.
+  
+2. Improve navigation between pages.
    - On the polls detail page, add a "Back to List of Polls" link so visitor can go back to the index.
    - On the voting results page, also add a "Back to List of Polls" link (same text message as above).
    - You can use any *intuitive* text or icon you like instead of "Back to List of Polls"; but be consistent.
    - Remove the "Vote again" link. A visitor should get only one vote per poll!
 
+3. Add links so that a visitor to view polls results without voting.
+   - On polls index page, add a "Results" link for each question.
+   - On the poll "detail" page, also add a link to "Results".
+
 ## Other Enhancements
 
 1. Improve appearance of the voting results page.
-   - Make the votes align in a column 
-   - Remove the bullets
-   - Hint: use an html table instead of bulleted list.
+   - Make the choice text and votes line up in columns (use a table or CSS) 
+   - Remove the ugly bullets!
    - Remove the word "votes" after the count (it's just clutter)
 
 2. Externalize configuration data in `settings.py`.
@@ -113,7 +114,7 @@ Navigating the app's pages is clumsy. Sometimes a visitor has to use the browser
    DEBUG = False
    # ALLOWED_HOSTS is a comma-separated list of hosts that can access the app.
    # You can use wildcard chars (*) and IP addresses. Use * for any host.
-   ALLOWED_HOSTS = *.ku.th, localhost, 127.0.0.1, ::1
+   ALLOWED_HOSTS = localhost, 127.0.0.1, ::1, testserver
    # Your timezone
    TIME_ZONE = Asia/Bangkok
    ```
@@ -123,7 +124,7 @@ Navigating the app's pages is clumsy. Sometimes a visitor has to use the browser
    - First line should be a complete sentence.
    - Use `flake8` to verify docstrings.
 
-## Testing
+## Testing (This isn't required in 2024 -- we'll add it later)
 
 1. Create a Github Action to automatically run your unit tests.
    - You only need to run using one version of Python (the Github template uses many versions)
