@@ -57,7 +57,14 @@ For Python, there are many packages that do this. Here are two:
 
 * [python-decouple][python-decouple] - flexible and general-purpose. Reads values from environment or a file. Good documentation.
 * [django-environ][django-environ] - similar to python-decouple, adds convenience methods for converting values to the formats used in Django's `settings.py`.
-* [list of Django configuration packages][django-configuration] if you don't like either python-decouple or django-environ
+* others.  See [list of Django configuration packages][django-configuration].
+
+## Why I Like `python-decouple`
+
+1. Thoroughly tested.
+2. General use. It's not specific to Django.
+3. Flexible: can get values from a file or environment variable.
+4. *Cast* the result to any datatype you want using built-in or user-defined casts.
 
 ## Java Properties
 

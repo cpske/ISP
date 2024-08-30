@@ -215,17 +215,30 @@ Your Github repository should contain:
 
 ### Evaluation Criteria (May be Revised)
 
-1. Github Flow (3)
+1. Process
+   - Has many commits to Github, at least 1 commit for each part of the tutorial
+   - Work pushed during the week. Not everything pushd on last day before deadline.
+   - Descriptive, distinct commit comments. Should describe what was done.
+   - "Update xxx" is not a descriptive commit comment
+
+2. Github Flow
    - repo has `iteration1` branch with all your work.
    - `iteration1` has been merged into `main` (or `master`).
    - a Pull Request to merge iteration1 into main and PR is **closed**.
 
-2. Project and Tasks: (3)
+3. Project and Tasks
    - Project is shown on repo "Projects" tab **and** there - Has a Project with tasks for work done. (1pt)
    - Project has an "Iteration 1" task board with several tasks. (Tasks can be named "Implement tutorial part n" n=1..6, "Create Good Poll Questions", etc) (1pt)
    - All tasks (or almost all) are "Done". (1pt)
 
-3. Running App with 2 Good Questions
+4. Installs and Runs.  Has a data fixture (file containing questions & choices).
+   ```
+   ./manage.py migrate
+   ./manage.py loaddata data/polls-v1.json
+   ./manage.py runserver
+   ```
+
+5. Running App with 2 Good Questions
    - we will clone either "main" or "iteration1"
    - after running migrations, we can import your poll questions & choices using:
      ```
@@ -234,16 +247,14 @@ Your Github repository should contain:
    - code runs and shows 2 good questions. No trivial questions like "What is your favorite color?" or "What's up?".
    - Penalty for not removing dumb "What's Up?" question.
 
-4. Tests
-   - Code has at least 5 unit tests and the tests are not redundant.     
-     2 points = tests all pass    
-     1 point = some tests fail or fewer than 5 tests
-     0 point = no tests or they all fail
+6. Tests
+   - Code has at least 10 unit tests and the tests are not redundant.     
+   - Tests all pass.
    ```
    python manage.py test polls
    ```
 
-5. Code Quality based on eximation of `polls/models.py`
+7. Code Quality based on examination of `polls/models.py`
    - 1 point: `polls/models.py` contains descriptive docstring comments, including module, class, and method comments.
    - No credit for: `"""The Question class.""" or other trivial, uninformative comment.
    - 1 point for layout: 1 blank line between **every** method. **2 blank lines** between classes. 

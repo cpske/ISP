@@ -24,6 +24,13 @@ You will also automate running of tests.
    - First, be sure you have merged *all work* from `iteration1` into `master` and pushed both branches to Github.
    - Create `iteration2` as a branch from `master` (not iteration1).
 
+6. After you update the model (add `end_date`) and revise your polls questions, create a new data file named **data/polls-v2.json**.
+   ```
+   # in your "ku-polls" repository, enter:
+   python manage.py dumpdata --indent=2 -o data/polls-v2.json polls
+   ```
+   Include `data/` and `data/polls-v2.json` in your git repository.
+
 
 ## New Features
 
