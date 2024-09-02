@@ -1,0 +1,56 @@
+You should write descriptive commit messages, and do not
+reuse commit messages.
+The message should provide a useful summary of what was changed
+in the commit, not just "update x".
+For example, "added dependency on python-decouple".
+Real projects write multi-line commit messages.
+
+Do these messages tell you what was done?
+
+```
+# git log --oneline
+
+97b4b1e Implement tutorial part 1
+c5242bf (origin/main, origin/HEAD) Create Django
+4211a81 Update README.md
+dc65a14 (main) Update README.md
+2d2eb25 Update README.md
+e295fe5 Update .gitignore
+e6f7990 Update requirements.txt
+89ce977 Update requirements.txt
+a153f6b Update README.md
+12216bb Update requirements.txt
+54c751f Update .gitignore
+3d90fdc Update README.md
+c4cf9e9 Update README.md
+b57193d Update README.md
+71baa79 Update README.md
+f619e60 Update README.md
+fbc2a4d Update README.md
+691ec88 Create requirements.txt
+e15d56b Initial commit
+```
+
+Here is another student's work (really):
+```
+36fee0d (HEAD -> iteration1) part4
+bc25bdf part3
+e88928f part2
+f53ac97 part1
+8f79191 Update requirements.txt
+a1caaf9 Update .gitignore
+870b229 Update README.md
+9a70e7d Update README.md
+7bd269c Update README.md
+c8cac39 Update README.md
+5a085a3 Update README.md
+04062fd Update README.md
+cb0beea Update README.md
+96f9d02 Update README.md
+0444b12 Update README.md
+c9f7cae Update README.md
+d05b0af Update README.md
+786c4a8 Update README.md
+ba6d04e Update README.md
+504c294 Create .gitignore
+```

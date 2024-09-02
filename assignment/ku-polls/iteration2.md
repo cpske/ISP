@@ -22,7 +22,7 @@ You will also automate running of tests.
 4. Create an `Iteration 2` task board and define tasks.
 5. Create an `iteration2` branch for your work.
    - First, be sure you have merged *all work* from `iteration1` into `master` and pushed both branches to Github.
-   - Create `iteration2` as a branch from `master` (not iteration1).
+   - Create `iteration2` as a branch from `master` (not from `iteration1`).
 
 6. After you update the model (add `end_date`) and revise your polls questions, create a new data file named **data/polls-v2.json**.
    ```
@@ -49,7 +49,8 @@ You will also automate running of tests.
    - `is_published` returns True if the current date-time is on or after question's publication date. Use local date/time, not UTC!
    - `can_vote` returns True if voting is allowed for this question. That means, the current date/time is between the `pub_date` and `end_date`. If `end_date` is null then can vote *anytime* after `pub_date`.
 
-5. Modify your views code to use these two methods. The view code should *not* directly test `question.pub_date >= something` (poor encapsulation).
+5. Modify your views code to use the `is_published` and `can_vote` methods instead of testing date values. The view code should *not* directly test `question.pub_date >= something` (poor encapsulation).
+   - Does your view code look *cleaner* and *easier to read* after this change?
 
 6. Write **unit tests** for `is_published`. Test these cases:
    - question with future pub date (should not be shown in the UI)
@@ -143,46 +144,50 @@ Navigating the app's pages is clumsy. Sometimes a visitor has to use the browser
 
 ## Evaluaton
 
-Project Artifacts
+1. Project Artifacts
 
 - "Iteration 2 Plan" is accurate and complete: GOAL, MILESTONE, FEATURES/WORK
 - Iteration 2 Task Board has tasks covering the work. Most or all are "Done".
-- Requirements doc is project requirements, not iteration requirements.
+- Requirements document contains project requirements, not iteration requirements.
 - README has link to Iteration 2 Plan
-- README has Badge showing tests pass on Github
 
-Configuration
+2. Configuration
 
 - `sample.env` works (either copy to `.env` or source into the environment)
 - `mysite/settings.py` externalize and has defaults for:
-  - `SECRET_KEY`
-  - `DEBUG`
-  - `ALLOWED_HOSTS`
-  - `TIME_ZONE`
+  - `SECRET_KEY = config("SECRET_KEY", ...)`
+  - `DEBUG      = config("DEBUG", default=?, cast=bool)`
+  - `ALLOWED_HOSTS = config("ALLOWED_HOSTS", default="localhost,...", cast=Csv())`
+  - `TIME_ZONE  = config("TIME_ZONE", default="Asia/Bangkok")`
 - `python-decouple` is in "requirements.txt"
-- migrations run without error
-- loaddata works 
 
-Code
+3. Running
+   - migrations run without error
+   - loaddata works 
+     ```
+     python manage.py loaddata data/polls-v2.json
+     ```
 
-- `is_published` is correct
-- `can_vote` is correct
-- both methods have docstring describing what they do and what they return
-- views do not directly test value of `question.pub_date`
+4. Code
 
-Tests
+   - `is_published` is correct
+   - `can_vote` is correct
+   - both methods have docstring describing what they do and what they return
+   - views do not directly test value of `question.pub_date`
 
-- all unit tests pass
-- at least 3 tests for `is_published`
-- at least 4 tests for `can_vote`
+5. Tests
 
-Run the App - Functionality
+   - all unit tests pass
+   - at least 3 tests for `is_published`
+   - at least 3 tests for `can_vote`
 
-- "/" redirected to "/polls/"
-- "/polls/" page shows poll status: open or closed
-- poll detail page has "Back to Index" or similar
-- can vote
-- polls results page has "Back to Index" or similar
-- link to view poll results without voting
-- cannot vote on closed poll, even using URL bar or HTTP client app
+6. Run the App - Functionality
+
+   - "/" redirected to "/polls/"
+   - "/polls/" page shows poll status: open or closed
+   - poll detail page has "Back to Index" or similar
+   - can vote
+   - polls results page has "Back to Index" or similar
+   - link to view poll results without voting
+   - cannot vote on a closed poll, even using URL bar or HTTP client app
 

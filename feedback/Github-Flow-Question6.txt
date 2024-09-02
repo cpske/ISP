@@ -1,0 +1,18 @@
+Github Flow
+------   6 points
+Update master     1
+Implement         3
+Create branch     2
+Wait for team     6
+Push your wrk     4
+Open a PR         5
+------ 
+all 7-10:      3 pt
+exact order:   1 pt
+------
+Merge branch      8
+Close PR         10
+Pull master again 7
+Push master       9
+
+

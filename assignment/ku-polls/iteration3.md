@@ -15,45 +15,56 @@ title: KU Polls Iteration 3
 Other Behavior:
 
 - Anyone can view the list of polls and poll results (same as before)
-- (Optional) Add logging of important events, such as login, logout, failed login, and submitting a vote.
+- Logging of important events: login, logout, failed login, and submitting a vote.
 
 ## Requirements
 
-Project Artifacts:
+### New and Updated Project Artifacts
 
-- An Iteration 3 Plan in your wiki with goal, milestone(s), major work.
+- An Iteration 3 Plan in your wiki with goal, milestone(s), and list of major work.
 - Reviewed and updated Requirements document. 
 - Updated the Development Plan for iteration 3.
-- A **Domain Model** page in your Wiki. Include a UML class diagram and some text to explain the reasoning for your domain model.
+- Updated **Domain Model** page in your Wiki. Add a new UML class diagram and some text to explain the reasoning for your domain model.
 - Iteration 3 Task Board with complete tasks for work to do.
   - Convert task to "Issues" when it makes sense so they appear in your repo on Github.
 - `iteration3` branch containing your work, merged into master.
 
-Process Requirement:
+### Process Requirement
 
 - Use Github Flow. Work on `iteration3` branch.
-- Commit and push work regularly.
+- Commit and push work **regularly**.
 - **No credit** (zero) for one big commit & push of work at end of the iteration.
 
-Software Development:
+### Features
 
-1. *Make small changes* to code and test each one so you can easily fix problems.  **Commit code** after each successful change.
-2. Write unit tests to verify the new work is correct and satisfies requirements. A few "auth" tests are provided as starting point -- please expand on them.
-3. Add at least 2 demo users to your database.  In `README.md` add the username and password for these users.  This is so we can use your application.  For **example**
+1. Add new model classes to implement the new Domain Model.
+
+2. Use Django's built-in authentication "app" for user management (username and password).
+
+3. Use the Django [Messages Middleware](../../django/messages-framework) to display messages on pages.
+   - This will make your code and templates *much* cleaner and simpler.
+
+4. In the Django tutorial they use an `error_message` field in the poll detail template (`detail.html`).  Replace this cludgy code with the messages middleware.
+
+5. Add at least 3 demo users to your database.  To make it easier for TAs to evaluate your code, please use these names:
+   | username   | password   |
+   |------------|------------|
+   | demo1      | hackme11   |
+   | demo2      | hackme22   |
+   | demo3      | hackme33   |
+   - You can add more users if you want.
+
+6. **Data Fixtures** Create 2 data files. One file for polls questions, one file for user data. 
    ```
-   | Username  | Password        |
-   |-----------|-----------------|
-   |   demo1   | stupidpassword1 |
-   |   demo2   | stupidpassword2 |
-   ```
-4. **Data Fixtures** Create new data files for questions, votes, and users.
-   ```
-   cmd> python manage.py dumpdata --indent=2 -o data/polls.json polls 
+   cmd> python manage.py dumpdata --indent=2 -o data/polls-v3.json polls 
    cmd> python manage.py dumpdata --indent=2 -o data/users.json auth.user
    ```
-   **Note the file name** is `polls.json` for polls data since the format will be different than old data.
 
+### Coding Suggestion
 
+1. *Make small changes* to code and test each change so you can easily fix problems.  **Commit code** after each successful change.
+
+2. Write unit tests to verify the new work is correct and satisfies requirements. A few "auth" tests are provided as starting point -- please expand on them.
 
 ### (Optional) Divide Tests into Separate Files
 
@@ -71,10 +82,10 @@ into separate files, as recommended in the MDN Django Tutorial.
              test_voting.py
    ```
 - Delete the original `tests.py` file
-- Fix the imports in test files. Instead of `import .models` use `import polls.models`. Similarly for `views`.
+- Fix the imports in test files. Change `import .models` to `import polls.models`.
+- Similarly, change `import .views` to `import polls.views`.
 
-
-### (Optional) Logging
+### Logging
 
 Add logging of important events:
 
@@ -97,12 +108,14 @@ An example of using logging is:
 import logging
 
 logger = logging.getLogger("polls")
+# log an information message
 logger.info(f"{user.username} logged in from {ip_addr}")
+# log a warning message
 logger.warn(f"Failed login for {username} from {ip_addr}")
 
-# Example of logging an exception.
+# Logging an exception.
 # log.exception will include a stack trace
-# log.error can be used to omit stack trace
+# log.error can be used instead if you don't want the stack trace
 try:
     question = Question.objects.get(id=question_id)
 except Question.DoesNotExist as ex:
