@@ -2,9 +2,10 @@
 title: Authentication in Django
 ---
 
-Django provides an authentication system, which you can combine with your own forms (UI) and different *authentication backends* -- like username/password or OAuth.
+Django provides an authentication system, which you can combine with your own 
+templates (UI) and different *authentication backends* -- like username/password or OAuth.  You can also customize things like password requirements.
 
-The Django authentication model includes:
+Django `django.contrib.auth` app includes:
 
 * **User** and **Group** models that store user info
 * **Views** and **Forms** for login, logout, changing password, and more
@@ -22,7 +23,11 @@ The [MDN Django Auth Tutorial][mdn-auth-tutorial] is a great introduction.
 - Step 2. [Add Default Redirects for KU Polls](#add-default-redirects-for-ku-polls)
 - Step 3. [Create a Template for Login Page](#create-a-template-for-login-page)
 - Step 4. [Add User Greeting to a Template](#add-user-greeting-to-a-template) and a link to login
-- Step 5. [Require Login in Views](#require-login-in-views) a user most login to vote
+- Step 5. [Require Login in Views](#require-login-in-views) a user most login to vote.  *Only one line of code!*
+
+Exercises
+- 1. In the polls index, add a link to Logout if the user is logged in.
+- 2. Define a base page template for your pages.  Put the greeting and login/logout links in the base template instead of duplicating them on every page.
 
 - Extra Material: 
 [Create a Sign-up Page for New Users](#create-a-sign-up-page-for-new-users),
@@ -94,16 +99,11 @@ The default is redirect to `/accounts/profile`, which does not exist.
 
 In `settings.py` specify defaults for login and logout.  Two syntaxes:
 
-1. Specify the default redirect page as a path:
-   ```python
-   LOGIN_REDIRECT_URL = '/polls/'    # after login, show list of polls
-   LOGOUT_REDIRECT_URL = '?'         # after logout, direct to where?
-   ```
-
-2. **Use URL names** instead of *hard-coding* paths.  This is better:
+1. Specify where to redirect after login or logout:
+   - You can use a *path* like `LOGIN_DIRECT_URL = '/polls/'`, but using a url name is better.
    ```python
    LOGIN_REDIRECT_URL = 'polls:index'  # after login, show list of polls
-   LOGOUT_REDIRECT_URL = 'login' 
+   LOGOUT_REDIRECT_URL = 'login'       # after logout, return to login page
    ```
 
 **Note:** If the login `request` object contains a `next` key, the Django login view will redirect to the URL specified by `next` instead of the default redirect.
@@ -259,7 +259,11 @@ we require a user to login in order to vote.
        user = request.user
        if not user.is_authenticated:
           return redirect('login')
+          # or, so the user comes back here after login...
+          return redirect(f"{settings.LOGIN_URL}?next={request.path}")
    ```
+
+See: [Limiting access to logged-in users](https://docs.djangoproject.com/en/5.1/topics/auth/default/#limiting-access-to-logged-in-users) in the Django docs.
 
 ---
 
@@ -374,39 +378,39 @@ Inside page templates access user information, such as:
 
 ### How to Create Users
 
-You can use these methods in a Python function or the Django shell.
+You can use these methods in a Python function or the Django shell or in code:
 
-**User.objects.create\_user** convenience method:
+1. **User.objects.create\_user** convenience method:
 
-```python
-from django.contrib.auth.models import User
+   ```python
+   from django.contrib.auth.models import User
+   
+   # Use named parameters to avoid errors.
+   # username and email fields are required, others are optional.
+   user = User.objects.create_user( 'username', 
+             email='email@some.domain', 
+             password='password')
+   
+   # set optional attributes
+   user.first_name = "Harry"
+   user.last_name = "Hacker"
+   user.save()
+   ```
 
-# Use named parameters to avoid errors.
-# username and email fields are required, others are optional.
-user = User.objects.create_user( 'username', 
-          email='email@some.domain', 
-          password='password')
+2. **User.objects.create** method:
+   ```
+   user = User.objects.create(username='username', 
+                              email='email@some.domain') 
+   user.set_password("secret")
+   user.first_name = "Harry"
+   user.save()
+   ```
 
-# set optional attributes
-user.first_name = "Harry"
-user.last_name = "Hacker"
-user.save()
-```
+3. Add a registration or "sign-up" page to your app.
 
-**User.objects.create** method:
-```
-user = User.objects.create(username='username', 
-                           email='email@some.domain') 
-user.set_password("secret")
-user.first_name = "Harry"
-user.save()
-```
+4. Use the admin interface
 
-Other ways to create users are:
-
-- add a registration or "sign-up" page to your app
-- the admin interface
-- use a data fixture and `manage.py loaddata` to read user data from a file
+5. Create a data fixture (JSON file) containing user info and `manage.py loaddata` to read the data from a file.
 
 ---
 
@@ -478,6 +482,14 @@ Look at the constructors for the password validator classes in the file `django/
 `NumericPasswordValidator` checks if a password is purely alphanumeric (disallowed).  If you want to allow alphanumeric passwords, comment out the validator.
 
 
+## Logout
+
+Django (as of version 5.1) does not allow invoking the `logout` view using the GET method.  It requires POST.
+
+This means you will have to create a logout page with a form that subits a POST request to logout.
+
+There may be other work-arounds for this.
+
 ---
 
 ### Resources
@@ -491,7 +503,7 @@ William Vincent [Django Sign Up Tutorial][signup_tutorial] shows another way of 
 William Vincent [Login/Logout Tutorial][auth_tutorial] has same info as this doc but also uses a `base.html` to structure page templates.
 
 
-[django-user-auth]: https://docs.djangoproject.com/en/4.1/topics/auth/
+[django-user-auth]: https://docs.djangoproject.com/en/5.1/topics/auth/
 [mdn-auth-tutorial]: https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Authentication
 [auth_tutorial]: https://wsvincent.com/django-user-authentication-tutorial-login-and-logout/
 [signup_tutorial]: https://wsvincent.com/django-user-authentication-tutorial-signup/

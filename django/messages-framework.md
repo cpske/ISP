@@ -1,23 +1,23 @@
 ## Django Messages Framework
 
-* When a user clicks a "Save" button your app saves something
+* When a user clicks the "Save" button your app saves something
 then returns to the current page.   
-How does user know that "save" succeeded?
+  > How does the user know that "save" succeeded?
 
 * User submits a vote but the app was unable to save his vote.    
-  How do you inform the user of this?
+  > How do you inform the user that his vote *was not* recorded?
 
 The Django Messages Framework addresses these situations and more.
 
-"messages" is an object that is automatically included in the
-context to every HTML template.  You can set messages in a view
-(see example below) so the template can display them.
+`messages` is an object that is automatically part of the
+context to every HTML template.  You set messages in a view
+(see example below) and a template can retrieve and display them.
 You don't need to add messages to the context yourself!
 
 Messages are cleared after a response is successfully returned,
 so the next request will have a clean, empty messages object.
 
-## Configuration
+## Configuration to Use Messages
 
 The default `settings.py` contains all the required messages components.
 They are:
@@ -28,18 +28,17 @@ They are:
     - `django.contrib.sessions.middleware.SessionMiddleware`
     - `django.contrib.messages.middleware.MessageMiddleware`
 
-* **TEMPLATES** in the `context_processors` list include:
+* **TEMPLATES** the `context_processors` list includes:
     - `django.contrib.messages.context_processors.messages`
 
 
+## Using Messages in a View
 
-## Using Messages
-
-Messages usually originate from a view.  A view wants to notify the user
+Messages usually originate in a view.  A view wants to notify the user
 of some event or problem, e.g. "Your vote was recorded"
 or "Sorry, that's not a valid choice".
 
-Here's an example:
+Example:
 
 ```python
 from django.contrib import messages
@@ -47,16 +46,20 @@ from django.contrib import messages
 def vote_for_poll(request, question_id):
     choice_id = request.POST['choice']
     if not choice_id:
+        # no choice_id was set
         messages.error(request, f"You didn't make a choice")
-        return redirect('polls:someplace')
+        return redirect('polls:detail', question_id)
     # TODO: Record the vote (choice)
-    messages.success(request, "Your choice successfully recorded. Thank you.")
+    messages.success(request, "Your choice was successfully recorded.")
     return redirect('polls:results')
 ```
+### Using Messages in a Template
 
-Messages is a collection; each message has its own level and CSS tags. If there are no messages to display then `if messages` is `False`.
+Messages is a collection; each message has its own level and CSS tags. 
+If there are no messages to display then `if messages` is `False`.
 
 To display messages in an html template, use code such as:
+
 {% raw %}
 ```html
 {% if messages %}
@@ -84,8 +87,15 @@ The higher the level, the more important the messages are:
 | WARNING    | 30     | warning  | Something unusual or unexpected, but not a failure. |
 | ERROR      | 40     | error    | An error or failure occurred.      |
 
-By default, Django will only display messages of level 20 or higher.    
-To change the threshold value, in `settings.py` write: 
+
+## Message Severity
+
+By default, Django only displays messages of level 20 or higher.    
+
+The idea is that normally you want to show a user only messages that are
+useful to him/her.
+
+To change the threshold value for messages, in `settings.py` write: 
 ```python
    MESSAGE_LEVEL = 10    # show debug messages and higher
 ```
@@ -100,10 +110,10 @@ messages.set_level( request, None )
 
 ### Methods for Setting Messages
 
-The `django.contrib.messages` module includes these methods:
+Use these methods in your views to set a message.
 
-| `messages` method |
-|-------------------|
+| `django.contrib.messages` method |
+|----------------------------------|
 | `messages.debug`(request, "Message text") |
 | `messages.info`(request, "Message text") |
 | `messages.success`(request, "Message text") |
@@ -123,21 +133,6 @@ messages.info(request, "Your vote was recorded", extra_tags='alert')
 ```
 ---
 
-### Messages Don't Require Context Variables
-
-Another way to inject a message into a template is to use 
-a [context argument][django-shortcuts], such as this view code:
-
-```python
-   q = Question.objects.get(...)
-   context = {'question': q, 'message': "Here's your question!"}
-   return render(request, 'polls/detail.html', context)
-```
-
-The Django messages framework is a more complete solution and easier to use.
-
-Since Django uses the name `messages` for its messages object,
-you should avoid the name `messages` for your own context variables.
 
 ### Messages in Forms
 
@@ -151,7 +146,7 @@ The Django [Working with Forms][django-forms] page has explanation and examples.
 
 ### How to Get All Messages
 
-May be useful for unit tests to verify a message was set:
+This is useful for unit tests to verify a message was set:
 ```python
 from django.contrib import messages
 
