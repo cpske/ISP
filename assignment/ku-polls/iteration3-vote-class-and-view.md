@@ -37,13 +37,15 @@ class Vote(models.Model):
 
 
 ### 2.1 Write a `Choice.votes` property
+
 ```python
 class Choice(models.Model):
 
    @property
    def votes(self):
       """Return the number of votes for this choice."""
-      todo
+      Todo: one statement to count the votes for this choice
+      (at least 2 ways to do this)
 ```
 
 ### 3. Revise the `vote` view
@@ -77,21 +79,22 @@ def vote(request, question_id):
 
 Retrieving data from a database table and creating Python objects uses a lot of **time** and **memory**.
 
-It is more **efficient** to let the database do the work.
-Django query methods like `filter`, `count`, and `sum` use database operations instead of objects.  This is much faster.
+**Better**: let the database do the work. It is faster, uses less memory, and more efficient.
+Use django query methods like `filter`, `count`, and `sum` use database operations instead of objects.
 
 Example: count all the votes for a choice.   
-This code is *inefficient*: 
+
+**Wrong**: This is *inefficient*. If you do this on a quiz, you will get **zero credit** (maybe even negative points). 
 ```python
 # INEFFICIENT: retrieves all vote data & create objects
-# Most of the data is never used.
+#              Most of the data is never used.
 count = 0
 for vote in Vote.objects.all():
     if vote.choice == some_choice:
         count += 1
 ```
 
-*More Efficient*: Use a query to select the votes and count them.  This requires a single SQL expression.
+**Right**: Use a query to select the votes and count them.  This requires a single SQL expression.
 ```python
 count = Vote.objects.filter(choice=some_choice).count()
 ```
