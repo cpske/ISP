@@ -1,10 +1,17 @@
-"""Tests of authentication."""
+"""Tests of user authentication.
+
+   Put this file in a subdirectory of your ku-polls project,
+   for example, a directory named "auth".
+   Then run: manage.py test auth
+
+"""
 import django.test
 from django.urls import reverse
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate # to "login" a user using code
 from polls.models import Question, Choice
 from mysite import settings
+
 
 class UserAuthTest(django.test.TestCase):
 
@@ -48,7 +55,8 @@ class UserAuthTest(django.test.TestCase):
               self.client.login(username=self.username, password=self.password)
                        )
         # visit the logout page
-        response = self.client.get(logout_url)
+        form_data = {}
+        response = self.client.post(logout_url, form_data)
         self.assertEqual(302, response.status_code)
         
         # should redirect us to where? Polls index? Login?
@@ -90,10 +98,10 @@ class UserAuthTest(django.test.TestCase):
         response = self.client.post(vote_url, form_data)
         # should be redirected to the login page
         self.assertEqual(response.status_code, 302)  # could be 303
-        # TODO: this fails because reverse('login') does not include
+        # TODO: this test fails because reverse('login') does not include
         # the query parameter ?next=/polls/1/vote/
-        # How to fix it?
         #self.assertRedirects(response, reverse('login') )
+        # How to fix it? 
         login_with_next = f"{reverse('login')}?next={vote_url}"
         self.assertRedirects(response, login_with_next )
 

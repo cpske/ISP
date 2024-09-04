@@ -333,7 +333,8 @@ Separate your models, tests, and views into individual files (in packages) to re
 </td>
 <td markdown="span">
 [Logging](logging/Logging.pdf) is an essential part of a web application.   
-[Logging Practice](logging/logging-practice) and [demo_log.py](logging/demo_log.py) code
+[Logging Practice](logging/logging-practice) and [demo_log.py](logging/demo_log.py) code    
+[Django Logging](django/logging)
 </td>
 </tr>
 

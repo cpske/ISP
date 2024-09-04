@@ -211,7 +211,7 @@ Your Github repository should contain:
 
 [Documenting your Projects on Github](https://guides.github.com/features/wikis/). 
 
-[django-tutorial]: https://docs.djangoproject.com/en/4.1/intro/tutorial01/
+[django-tutorial]: https://docs.djangoproject.com/en/stable/intro/tutorial01/
 
 ### Evaluation Criteria (May be Revised)
 

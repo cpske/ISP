@@ -1,6 +1,3 @@
-# Logging in Django
-
-Configure logging in `settings.py`.
 
 ## How to Create a Log Message
 
@@ -29,7 +26,7 @@ An example from the polls tutorial application.
 ```python
 def vote(request, question_id):
     """Vote for one of the polls identified by question_id."""
-    ### Purely informational
+    ### informational (a usual event)
     logger.info("Vote submitted for poll #{0}".format(question_id))
     try:
         q = Question.objects.get(id=question_id)
@@ -60,10 +57,65 @@ control how much logging is done and where the log messages go.
 | django.security.csrf | Log cross-site request forgery attacks. |
 
 
+## How to Configure Logging
+
+Configure logging in your project's `settings.py`. You can specify:
+
+- define one or more "loggers". For example a "console logger", a "file logger", or a network logger.
+- which log messages (debug, info, etc.) to log to each output stream
+- the format of log messages
+
+See [Django Logging Howto][django-logging-howto] for details.
+
+## Example Logging Configuration
+
+This is not guaranteed to work.
+
+```python
+# settings.py
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'details': {
+            'format': '{levelname} {asctime} {module} {message}',
+            'style': '{',
+        },
+        'simple': {
+            'format': '{levelname} {message}',
+            'style': '{',
+        },
+    },
+    'handlers': {
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': 'polls.log',
+            'formatter': 'details',
+        },
+        'console': {
+            'level': 'INFO',
+            'class': 'logging.StreamHandler',
+            'formatter': 'simple',
+        },
+    },
+    'loggers': {
+        'polls': {
+            'handlers': ['file', 'console'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+    },
+}
+```
+
 ## Reference
 
-[Django Logging](https://docs.djangoproject.com/en/2.1/topics/logging/) in Django documentation.
+[Django Logging Howto][django-logging-howto]
 
-[Django Logging Extensions](https://docs.djangoproject.com/en/2.1/topics/logging/#django-s-logging-extensions) describes the various loggers that Django uses for its own messages, such as `django.request` and `django.security`.
+[Django Logging](https://docs.djangoproject.com/en/stable/topics/logging/) full documentation
 
- 
+[Django Logging Extensions](https://docs.djangoproject.com/en/stable/topics/logging/#django-s-logging-extensions) describes the various loggers that Django uses for its own messages, such as `django.request` and `django.security`.
+
+[django-logging-howto]: https://docs.djangoproject.com/en/stable/howto/logging/ 

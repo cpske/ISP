@@ -2,7 +2,7 @@
 title: Django Testing with Selenium
 ---
 
-See <https://docs.djangoproject.com/en/4.1/topics/testing/tools/#django.test.LiveServerTestCase>
+See <https://docs.djangoproject.com/en/stable/topics/testing/tools/#django.test.LiveServerTestCase>
 
 Django has a `LiveServerTestCase` and `StaticLiveServerTestCase` that are subclasses of TestCase.
 

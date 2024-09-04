@@ -84,11 +84,11 @@ Exercises
    accounts/logout/                 name='logout'
    ```
 
-5. Each `auth.urls` has a **view** that provides a **form** named `form`.  You need to provide a **template** for each view to display the form and send results back to the view.
+5. Each `auth.urls` has a **view** that provides a **form** named `form`.  You need to write a **template** for each view to display the form and send results back to the view.
    ```
-   URL                  View        Template
-   /accounts/login      login       templates/registration/login.html
-   /accounts/logout     logout      templates/registration/logged_out.html
+   URL                  View Name   Your Template
+   accounts/login/      login       templates/registration/login.html
+   accounts/logout/     logout      templates/registration/logged_out.html
    ```
 
 ### Add Default Redirects for KU Polls
@@ -111,7 +111,9 @@ In `settings.py` specify defaults for login and logout.  Two syntaxes:
 #### Does it Work?
 
 - Rerun tests.  They should still pass.
+
 - Start server and visit <http://localhost:8000/accounts/asdfasdfasdfasdf/> with `DEBUG=True`. It should show a listing of `/accounts/` URLs.
+
 - Visit the login page: <http://localhost:8000/accounts/login/>.  What does the error message tell you?
 
 ### Create a Template For Login Page
@@ -122,7 +124,7 @@ In `settings.py` specify defaults for login and logout.  Two syntaxes:
        mysite/
        polls/
        templates/             <--- new directory (maybe)
-           registration/      <--- new directory
+           registration/      <--- new directory for login template
    ```
 
 7. In `mysite/settings.py` include a global templates directory:
@@ -169,12 +171,15 @@ In `settings.py` specify defaults for login and logout.  Two syntaxes:
    ```html
      <table>
      {{ form.as_table }}
+     <tr>
+     <td colspan="2"><button type="submit">Login</button> </td>
+     </tr>
      </table>
     ```
    {% endraw %}
 
 9. **Test it.** Start the Django server and navigate to `localhost:8000/accounts/login/`.
-   - It should show a Login form.
+   - It should show your Login form.
 
 10. Create a user.  Here is how to create a user with the Django interactive shell.
     ```bash
@@ -186,7 +191,8 @@ In `settings.py` specify defaults for login and logout.  Two syntaxes:
     # Use named parameters to avoid errors.
     user = User.objects.create(username='harry', 
                                email='harry@hackerone.com')
-    user.set_password("hackme22")
+    user.set_password("hackme2")
+    # first_name is optional
     user.first_name = "Harry"
     user.save()
     ```
@@ -263,11 +269,31 @@ we require a user to login in order to vote.
           return redirect(f"{settings.LOGIN_URL}?next={request.path}")
    ```
 
-See: [Limiting access to logged-in users](https://docs.djangoproject.com/en/5.1/topics/auth/default/#limiting-access-to-logged-in-users) in the Django docs.
+See: [Limiting access to logged-in users](https://docs.djangoproject.com/en/stable/topics/auth/default/#limiting-access-to-logged-in-users) in the Django docs.
 
+
+## Logout
+
+Django (as of version 5.1) does not allow invoking the `logout` view using the GET method.  It requires POST.
+
+This means you need a `<form>` that submits a POST request to logout.
+To add a "logout" button to a template, you could use:
+{% raw %}
+```html
+{% if user.is_authenticated %}
+   <form action="{% url 'logout' %}" method="post"> 
+   {% csrf_token %} 
+   <button type="submit">Log Out</button> 
+   </form>
+{% endif %}
+```
+{% endraw %}
+
+
+There may be other work-arounds for this.
 ---
 
-Extra Material
+## Extra Material
 
 
 ### Create a Sign-up Page for New Users
@@ -481,14 +507,6 @@ Look at the constructors for the password validator classes in the file `django/
 
 `NumericPasswordValidator` checks if a password is purely alphanumeric (disallowed).  If you want to allow alphanumeric passwords, comment out the validator.
 
-
-## Logout
-
-Django (as of version 5.1) does not allow invoking the `logout` view using the GET method.  It requires POST.
-
-This means you will have to create a logout page with a form that subits a POST request to logout.
-
-There may be other work-arounds for this.
 
 ---
 
