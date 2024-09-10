@@ -295,7 +295,7 @@ How to [Externalize Configuration](django/external-configuration) in Django.
 [Import and Export Data](django/data-import-export) 
 </td>
 <td markdown="span">
-How to create "starter" data so that others can easily set-up and use your Django application.
+Save database table data to a text file and import it again.  This can be used to provide "starter" data so others can easily set-up and use your Django application.
 </td>
 </tr> 
 

@@ -4,20 +4,16 @@ title: Database Practice
 
 Use a database browser to browse the structure of your Django-polls database.
 
-Preferred: use [DBeaver](https://dbeaver.io/) GUI app to interact with almost any database, including Sqlite. Can draw ER diagrams. Home: <https://dbeaver.io/>
+Preferred tool: [DBeaver](https://dbeaver.io/) GUI app to interact with almost any database, including Sqlite. It can draw ER diagrams, too. Home: <https://dbeaver.io/>
 
-If you have a problem with DBeaver, other tools that work are:
-
-- [Sqlitebrowser](https://sqlitebrowser.org/) free GUI app to browse SQLite database. https://sqlitebrowser.org/, but doesn't draw ER diagram.
-- **sqlite3** - command line tool included with SQLite. Don't need to install anything, but has only command line interface. You use SQL commands to view or modify the database.
-  - See below for how to use sqlite3 to view a database.
+[Sqlitebrowser](https://sqlitebrowser.org/) free GUI app to browse an SQLite database. https://sqlitebrowser.org/, but doesn't draw ER diagram.
 
 The Django polls database file is `db.sqlite3` in your django-polls directory.
----
+
 
 ## Questions
 
-1. The Django Polls database contains many tables.  Which tables contain the data for your "polls" app?
+1. The Django Polls database contains many tables.  What are the **names** of the tables that contain data for your "polls" app?
 
 
 2. What are the **fields** in the database table for "choice"?
@@ -62,19 +58,22 @@ The Django polls database file is `db.sqlite3` in your django-polls directory.
 
 ---
 
-### Using `sqlite` or `sqlite3` Command Line Tool
+### The `sqlite` or `sqlite3` Command Line Tool
+
+This is for reference. The sqlite-browser and dbeaver apps are recommended.
 
 `sqlite` or `sqlite3` command line app is part of the SQLite package. 
-You can use it to view or change a database, and issue SQL commands.
+You can use it to view or modify a database, and issue SQL commands.
 
 * Commands beginning with "." are commands to sqlite, e.g. `.help`
+* To exit the application, enter `.exit`
 * Other commands are SQL
 * Examples:
   ```
   cmd> sqlite3  db.sqlite3
   sqlite> .help                         (show help message)
   sqlite> .tables                       (show tables)
-  sqlite> .schema --indent polls_choice (show structure of a table)
+  sqlite> .schema --indent polls_choice (show structure of one table)
   sqlite> .mode column                  (print query results in columns)
   sqlite> SELECT * FROM polls_choice;   (SQL query, must end in semi-colon)
   sqlite> .exit
