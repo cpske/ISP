@@ -10,7 +10,6 @@ can install and run.
 ### 1. New and Revised Functionality
 
 1. List of polls displays all published polls, not just newest polls. Polls are sorted by date, from newest to oldest.
-2. A user can delete his own vote on a poll, provided the poll is still open for voting.
 
 ### 2. Automation using Github
 
@@ -18,40 +17,39 @@ can install and run.
    - Use Python 3.11
    - Provide values of externalized vars (`DEBUG`, `SECRET_KEY`, ...) suitable for testing.
    - Two ways to provide variable values:
-     1. set environment variables in your action script
-     2. provide a testing.env file that your action script renames to .env in the action
+     1. Set env variables in your Action script. [Using Environment Variables in Actions](https://graphite.dev/guides/github-actions-env-variables).
+     2. Provide a testing.env file that your Action script renames to .env
 
-2. Include a status badge in README, **after** the title line.
+2. Include a status badge in README.md **after** the title line.
 
 ### 3. Review and Clean-up
 
 1. Review and revise the poll questions, as needed.
-   - Questions must be written in good English
+   - Questions and Choices must be written in good English
    - Choices must be sufficient for the question
    - Example: "*What's your favorite car brand?*" should have more choices than just Honda, Toyota, and Mazda!
 
 2. README.md
    - No stupid title lines like "ku-polls". Should be short and descriptive.
-   Must have this content
-   - first section describes the app
+   - first section (after title line and badge) describes the app
    - "Installation" section contains a **link** to `Installation.md` file in the repo
    - "Running the Application" or "How to Run" containing steps to run it in a virtual env.
-   - "Demo Users" (or similar text) has a table of logins & passwords created by the data fixture
+   - "Demo Users" (or similar section title) has a table of logins & passwords created by the data fixture
    - "Project Documents"
-   - No **colons** in section titles
+   - No **colon** after section titles
      ```
-     ## Running the Application:  <--- wrong. No colon.
+     ## Running the Application:  <--- wrong. No colon after title text.
      ```
 
-3. Create a Markdown file `Installation.md` containing instructions for how to install and configure your app.
+3. Create a Markdown file `Installation.md` containing instructions for how to install and configure your app. How to...
    - clone or download the code from Github
    - create a virtual environment and install dependencies
-   - how to set values for externalized variables
-   - running migrations
-   - how to run tests
+   - set values for externalized variables
+   - run migrations
+   - run tests
    - install data from the data fixtures
    - **anything else** that needs to be done during installation
-   - Installation.md is in your source repo instead of the wiki, so that anyone who clones your repo or downloads a "Release" will have this file.
+   - `Installation.md` is in your source repo instead of the wiki, so that anyone who clones your repo or downloads a "Release" will have this file.
 
 4. Test your installation instructions. 
    - Create a fresh clone from Github and follow your instructions, line by line.
@@ -62,64 +60,9 @@ can install and run.
    - lines in models can be up to 100 chars long
    - ignore minor issues like missing docstring in `__init__.py` files
 
-### 4. Create a Tag for "Release Candidate" on Github
+### 4. Create Data Fixtures
 
-To signal that your code is ready for others to test please do this:
-
-1. Add a **tag** "v1.0.0-rc1" to your Github repo.
-2. Check the box in the KU Polls Peer Review spreadsheet and please try to contact the reviewer, too.
-
-You **do not** need to create a "release" for this -- just a **tag**.
-
-**This must be done by Saturday evening.**
-
-### 5. Peer Review (Due by Sunday, 8PM)
-
-Everyone is assigned to install and test someone else's KU Polls.
-
-1. Clone the most recent code on the student's repo -- even if it is newer than the "v1.0.0-rc1" tag.  Everything on the master branch is "ready to deploy", so this should be fine.
-
-2. Install according to `Installation.md` and run it. Report issues on their Issue Tracker.
-
-3. Record all issue numbers for your issues in the Peer Testing spreadsheet on Google Docs.
-
-### 6. Resolve & Close All Issues
-
-Fix all the issues (if any) that your peer reviewer reports.  
-
-When you close an issue **you must provide a description of what you did and why you are closing the issue**.
-If you close an issue without "fixing" it, explain why.
-
-### 7. Create a Release 1.0.0 and Tag on Github
-
-After peer review and resolving all issues, push your work to Github and
-create a `v1.0.0` tag and `1.0.0` Release of your code on Github.  
-
-Include:
-
-- a good description of what features are included or not implemented in this release.  Write how to report issues.
-- a tag using a standard format. Github recommends using the "v" prefix, i.e. `v1.0.0`.
-
-### Help for Github Releases
-
-See: <https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository>
-
-Good Examples of Releases: [Python Packaging Authority (pypa)](https://github.com/pypa/) but there are some inconsistency in release naming and tags ("v" prefix or not). Good descriptions. 
-
-[Semantic Versioning](https://semver.org/) describes the meaning of the 3 numbers in a release (1.0.21), and when to increment the version.  Some projects (pipenv) use Date Versioning, e.g. 2024.9.8, but we're not doing that here.
-
-### Process Requirements
-
-1. Create an Iteration 4 Plan in your wiki.
-2. Add Iteration 4 tasks to your Project and to an "Iteration 4" task board.
-   - Also convert tasks to "Issues".
-3. Do work on an `iteration4` branch and push it to Github regularly.
-4. When finished, open a PR and merge into `main` (of course).
-5. Get peer feedback.  Fix all issues using a branch, OK to use `iteration4` branch. You can merge again into `main` when done.
-
-### Data Fixtures
-
-This time create 3 data files.
+For this release create 3 data files.
 
 - Data for Question and Choices only (no Votes)
   ```
@@ -138,10 +81,77 @@ Be careful: if you dump *all* data from the `auth` app (not just `auth.user`), t
 
 By separating the Question and Choice data from other data, someone can install a "clean" polls app with your questions but without any users or votes.
 
-You can load all 3 files in one command:
+You can load data files 1-by-1 or all 3 files in one command:
 ```
 python manage.py loaddata data/polls-v4.json data/votes-v4.json data/users.json
 ```
+
+### 5. Create a "Release Candidate" Tag and Request Peer Review
+
+**Deadline:** Saturday, 20:00. Earlier is more polite to your reviewer.
+
+To signal that your code is ready for others to test please do this:
+
+1. Add a **tag** "v1.0.0-rc1" (Release Candidate 1) to your Github repo.
+2. Contact your reviewer -- email, telepone, Discord, Line, etc.
+3. In the peer review sheet, write the date & time you notified the reviewer (e.g. "14/9 13:15").
+
+You **do not** need to create a Github "release" for this -- just a **tag**.
+
+### 6. Peer Review (Due by Sunday, 8PM)
+
+**Deadline:** Sunday, 20:00.  Earlier is better.
+
+Everyone is assigned to install and test someone else's KU Polls.
+
+If the Code Author does not contact you by 8PM on Saturday, then clone whatever is on master and use that for review -- even if there is no tag.
+
+1. Clone the most recent 'main' or 'master' branch from the student's repo. You can checkout the "v1.0.0-rc1" tag or use the HEAD of master (if it is newer). Everything on the master branch is "ready to deploy", so this should be fine.
+
+2. Install according to `Installation.md` and run it. Report issues using the Github Issue Tracker.
+   - report incorrect, missing, or unclear installation instructions, too
+
+3. Record the issue numbers for your issues in the Peer Testing spreadsheet on Google Docs.
+
+Please post "Issues" for suggestions and constructive feedback, too! (not only defects)
+
+### 7. Resolve & Close All Issues
+
+Fix all the defects (if any) that your peer reviewer found.  
+
+When you close an issue you **must provide a description of what you did and why you are closing the issue**. Don't just press "Close" button.
+
+If you close an issue without fixing it, explain why in the close message.
+
+### 8. Create a Release 1.0.0 and Tag on Github
+
+**Deadline:** See Google Classroom
+
+After peer review and resolving all issues, push your work to Github and
+create a `v1.0.0` tag and `1.0.0` Release of your code on Github.  
+
+Include:
+
+- a good description of what features are included or not implemented in this release.  
+- how to report issues.
+
+### Process Requirements
+
+1. Create an Iteration 4 Plan in your wiki.
+2. Add Iteration 4 tasks to your Project and to an "Iteration 4" task board.
+   - Also convert tasks to "Issues".
+3. Do work on an `iteration4` branch and push it to Github regularly.
+4. When finished, open a PR and merge into `main` (of course).
+5. Get peer feedback.  Fix issues using a branch. It's OK to use `iteration4` branch or a new branch. Merge into `main` again when done.
+
+
+### Help for Github Releases
+
+See: <https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository>
+
+Good Examples of Releases: [Python Packaging Authority (pypa)](https://github.com/pypa/) but there are some inconsistencies in release naming and tags ("v" prefix or not). Good descriptions. 
+
+[Semantic Versioning](https://semver.org/) describes the meaning of the 3 numbers in a release (1.0.21), and when to increment the version.  Some projects (pipenv) use Date Versioning, e.g. 2024.9.8, but we're not doing that here.
 
 ### Resources
 
