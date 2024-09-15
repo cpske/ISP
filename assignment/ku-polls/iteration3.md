@@ -55,12 +55,14 @@ Other Behavior:
    - for submit a vote, include the username, question id, and choice id in the message.
 
 6. Add these 3 demo users to your database.  To help the TAs run your code, please use these names:
-   | username   | password   |
-   |------------|------------|
-   | demo1      | hackme11   |
-   | demo2      | hackme22   |
-   | demo3      | hackme33   |
-   - You can add more users if you want.
+   ```
+   username   password
+   --------   --------
+   demo1      hackme11
+   demo2      hackme22
+   demo3      hackme33
+   ```
+   - You can add other users if you want.
 
 7. **Data Fixtures** Create 2 data files. One file for polls questions, one file for user data. 
    ```

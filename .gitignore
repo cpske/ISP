@@ -1,6 +1,7 @@
 # Files to not commit to git
 bin/env.sh
-# code and labs are for assignments deployed via Github classroom
+# code and labs for assignments deployed via Github classroom
+# they contain their own git repos
 code/
 __pycache__/
 _site/

@@ -148,7 +148,7 @@ Submit a project proposal using the Project Spreadsheet
 4. Sequence Diagrams
 5. Testing and Mock Objects
 6. Draw a burn-down chart
-7. Write Sphinx-style docstring and type hints from Google style docstring.
+7. Write Sphinx-style docstring and type hints from code using Google style docstring.
    - complete missing parts of docstring by studying the code.
 8. Type hints exercise
 

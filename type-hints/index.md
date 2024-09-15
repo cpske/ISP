@@ -51,10 +51,9 @@ Your IDE should then detect another error in main.
 
 Hint 3: Add a hint that the `scores` attribute is a list of float:
 ```python
-from typing import List
 
     def __init__(self):
-        self.scores: List[float] = []
+        self.scores: list[float] = []
 ```
 Your IDE should then detect another error in main.
 
@@ -69,19 +68,6 @@ Your IDE should then detect another error in main.
 
 To understand the type hints for collections and "interface" behavior on classes, you should read the [collections.abc doc page](https://docs.python.org/3/library/collections.abc.html). Each of the types in collections.abc has a corresponding type with the same name in the `typing` package -- use `typing` in your type hints, not `collections.abc`.
 
-For example, if the Scorecard class is a collection of scores with a **length** and you can **iterate** over the scores, then you would write:
-
-```python
-from typing import Iterable, Sized
-
-class Scorecard(Iterable[float], Sized):
-
-    def __len__(self):   # method required by Sized type
-        return len(self.scores)
-
-    def __iter__(self):  # method required by Iterable type
-        return iter(self.scores)
-```
 
 ## Type Checking Tools
 
@@ -95,7 +81,8 @@ class Scorecard(Iterable[float], Sized):
 
 The VS Code [Pyright](https://github.com/microsoft/pyright)
 and [Pylance](https://github.com/microsoft/pyright) extensions 
-perform static type checking for VS Code.  
+perform static type checking for VS Code.
+
 Pyright checks usage across all files in a project, which *should* provide better type checking than mypy. So, you shouldn't need mypy with VS Code. 
 Pylance is a *proprietary, closed source* extension (Pyright is open source).
 
