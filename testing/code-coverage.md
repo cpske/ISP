@@ -59,53 +59,20 @@ In many cases you just type
    ```
    coverage html
    ```
-   The output is put in subdirectory `htmlcov`.    
-   Open the file `htmlcov/index.html` in a web browser. You can click on any file name to see what statements were "covered" during the run.
+   The output is in subdirectory `htmlcov`.    
+   Open the file **`htmlcov/index.html`** in a web browser. Click on any file name to see what statements were "covered" (or not) during the run.
 
-6. By default, `coverage` performs statement coverage.  To request that it also verify that all *branches* in the code are executed add the `--branch` option:
-   ```
-   coverage run --branch  -m unittest auction_test.py
-   # the reports will include branch coverage information
-   coverage report
-   coverage html
-   ```
+## Branch Coverage
 
-## Configure Coverage Using .coveragerc
+By default, `coverage` performs only statement coverage.  
+To request that it also verify that all *branches* in the code are executed add the `--branch` option:
 
-You can configure what files are analyzed by `coverage` using
-a `.coveragerc` file in your project directory, as described
-in the [Coverages Docs][coverage-docs].
-
-One useful option is to request "branch coverage", to count how completely "if - else ..." branches are executed.
-
-For code that uses a library or framework, you want to **exclude** the library or framework from coverage analysis, since it's not useful and distorts the results.
-
-For Django projects you want to exclude migrations, settings.py, manage.py, static files, and anything else you don't write unit tests for.
-
-In the Django Polls tutorial, I used:
-```bash
-[run]
-# measure branch coverage
-branch = True
-# don't measure python standard library (this is the default)
-cover_pylib = False
-# omit uninteresting stuff
-omit =
-    __init__.py
-    /usr/*
-    mysite/*       # the main application 
-    */migrations/* # omit migrations
-    */tests.py     # omit unit test files and directories
-# explicitly include the main app
-include =
-    polls/*
-
-# exclude some methods we don't test from the report and stats
-[report]
-exclude_lines =
-    def __str__    # example
-    def __repr__   # example
 ```
+   coverage run --branch  -m unittest auction_test.py
+   # the report (and html) will contain a new column for branch coverage
+   coverage report
+```
+
 
 ## How Many Unit Tests Are Enough?
 
@@ -134,6 +101,44 @@ A simple formula for computing it is:
 ```
 The complexity score is usually a bound for the number of tests needed to cover every path.  [Wikipedia][wikipedia-cyclomatic] has more details and examples.
 
+
+## Configure Coverage Using .coveragerc
+
+You can configure what files are analyzed by `coverage` using
+a `.coveragerc` file in your project directory, as described
+in the [Coverages Docs][coverage-docs].
+
+One useful option is to request "branch coverage", to count how completely "if - else ..." branches are executed.
+
+For code that uses a library or framework, you want to **exclude** the library or framework from coverage analysis, since it's not useful and distorts the results.
+
+For Django projects you want to exclude migrations, settings.py, manage.py, static files, and anything else you don't write unit tests for.
+
+In the Django Polls tutorial, I used:
+```bash
+[run]
+# measure branch coverage
+branch = True
+# don't measure python standard library (this should be the default)
+cover_pylib = False
+# omit uninteresting stuff
+omit =
+    __init__.py
+    /usr/*           # Linux location of Python libraries
+    mysite/*         # application configuration files
+    #TODO            omit migrations
+    #TODO            omit unit test files and directories
+    #TODO            omit __init__.py files
+# explicitly include the main app
+include =
+    polls/*
+
+# in the report, exclude some methods we don't need to test
+[report]
+exclude_lines =
+    def __str__    # example
+    def __repr__   # example
+```
 
 ### 100% Code Coverage Does Not Mean Tests are Perfect
 

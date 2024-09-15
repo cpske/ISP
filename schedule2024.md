@@ -4,18 +4,14 @@ title: Schedule
 
 > This schedule may be wrong!    
 > See **[Google Classroom][google-classroom]** for weekly material and assignments.
->
-> Do the assignments as posted on [Google Classroom][google-classroom].
 
-[google-classroom]: https://classroom.google.com/c/NDk2ODk1MDE0NTgy?cjc=r3466kb
+[google-classroom]: https://classroom.google.com/w/NjkxNTc2NDc5NzM4/t/all
 
 ---
 
 ### Schedule
 
 #### Preparation
-
-Please do this before the course starts. Otherwise, do it in Week 1.
 
 - [Sign-up and Install Required Software](assignment/week1/signup-and-software)
 - Read [About the course](about) for essential class resources & how to contact TAs.
@@ -32,7 +28,7 @@ Please do this before the course starts. Otherwise, do it in Week 1.
 - Review of "Your Software Process" Assignment
 - Writing a Vision and Scope Document
   - Google Doc <https://docs.google.com/document/d/1iVuHzEUcEYQ5SUfIY6bKUe0nfM3WQbk5V9XO6yxFrlk/>
-  - Excerpt from Stellman & Greene <https://cpske.github.io/ISP/vision/Project-Planning-Stellman-and-Greene.pdf>
+  - Excerpt from Stellman & Greene on [Software Project Planning](https://cpske.github.io/ISP/vision/Project-Planning-Stellman-and-Greene.pdf) and the Vision.
   - Exercise. Analyze a Vision & Scope
 
 #### Week 1 Assignment
@@ -48,7 +44,7 @@ Please do this before the course starts. Otherwise, do it in Week 1.
 
 - [Scrum](agile/scrum)
   - Watch [Scrum in Under 10 Minutes](https://www.youtube.com/watch?v=XU0llRltyFM) on Youtube
-  - [Introduction to Scrum](agile/scrum) with links you should **read**
+  - [Introduction to Scrum](agile/scrum) contains links that you should **read**
   - Read [Scrum Guide](https://www.scrumguides.org/scrum-guide.html). Anything in the Scrum Guide may be on a quiz.
 - Exercise: Scrum Questions (Google Form)
 - Scrum Review Questions done in class
@@ -57,13 +53,11 @@ Please do this before the course starts. Otherwise, do it in Week 1.
 
 - Read [Scrum Guide](https://www.scrumguides.org/scrum-guide.html).
 - Read at least one of these to get another perspective on Scrum:
-  - Scrum Primer - practical guide to using Scrum in a project. Mostly text. The authors are software process experts.
-    https://cpske.github.io/ISP/resources/Scrum-Primer.pdf
-  - "Comprehensive Scrum Guide" by Visual Paradigm.  Very good with lots of illustrations & links.
+  - [Scrum Primer](https://cpske.github.io/ISP/resources/Scrum-Primer.pdf) - practical guide to using Scrum in a project. Mostly text. The authors are software process experts.
+  - [Comprehensive Scrum Guide](https://www.visual-paradigm.com/scrum/what-is-scrum/) by Visual Paradigm.  Very good with lots of illustrations & links.
     A couple of minor misstatements, I think.
-    https://www.visual-paradigm.com/scrum/what-is-scrum/
 - Not required: my Scrum notes https://cpske.github.io/ISP/agile/scrum
-- Preview the Week 3 material on HTTP (you may already know a lot of it).
+- Preview the Week 3 material on HTTP.
 
 
 ### Week 3
@@ -75,10 +69,10 @@ Please do this before the course starts. Otherwise, do it in Week 1.
 
 ### Week 3 Lab
 
-- Introduction to Web Frameworks
+- Introduction to Web Frameworks - what they do
 - [KU Polls Project Inception](assignment/ku-polls/inception)
   - create a repository, wiki, and Github project
-  - write a Vision & Scope, Project Plan with timeline, 
+  - write a Vision & Scope, Project Plan with timeline 
 - Brief [Intro to Django](django/Intro-to-Django.pdf)
 
 #### Week 3 Assignment
@@ -119,8 +113,8 @@ Submit a project proposal using the Project Spreadsheet
 
 - Description of KU Polls Iteration 3
 - [Authentication](authentication) and Authentication in Django
-- Group Coding of Revised Domain Model for KU Polls
-  1. Update your Domain Model (document in project wiki)
+- In-class group coding of revised Domain Model for KU Polls
+  1. Update your Domain Model (a document in your project wiki) & submit a link
   2. Implement User login/logout feature and require login to vote (but no change to votes model)
   3. Refactor to use Vote object for each user's vote
 
@@ -141,9 +135,37 @@ Submit a project proposal using the Project Spreadsheet
 - [Logging practice](logging/logging-practice) submitted to Github Classroom
 
 
+#### Week 6 Assignment
+
+- [KU Polls Iteration 4](assignment/ku-polls/iteration4.md)
+- Test another student's KU Polls, including instalation instructions
+
+### Week 7
+
+1. [Code Coverage](testing/code-coverage) in Python
+2. Exercise: How good were the tests in last week's CI assignment?  Was any code missed? 
+3. Type Hints and Static Typing
+4. Sequence Diagrams
+5. Testing and Mock Objects
+6. Draw a burn-down chart
+7. Write Sphinx-style docstring and type hints from Google style docstring.
+   - complete missing parts of docstring by studying the code.
+8. Type hints exercise
+
+
+#### Week 7 Assignment
 
 
 
+
+### Midterm 
+
+- Exam is 25 September. Room 202.
+- Covers everything so far.
+
+---
+
+## Topics Not Covered (Yet)
 
 ### Database and ORM
 
@@ -153,37 +175,9 @@ Submit a project proposal using the Project Spreadsheet
 - Converting a software model to database model
 - [Basics of Object-Relational Mapping](database/Persistence-and-ORM.pdf) 
 
-
 - ORM modeling practice (optional) write Django models for a sales application 
   - Github Classroom Assignment: <https://classroom.github.com/a/UOcT0BOr>
   - Instructions: <https://cpske.github.io/ISP/assignment/orm/Modeling-Practice.pdf>
-
-
-
-### Week 7
-
-- Review some previous material and assignments
-- Why spend so much time on KU Polls?
-- UML Class & Sequence Diagrams (added in 2022)
-- Class Diagram exercise
-- Sequence Diagram exercise
-- Lab: Smoke Testing of another student's KU Polls (post issues)
-- Virtual Environments for Python
-
-#### Assignment
-
-- [KU Polls Iteration 4](assignments/ku-polls/iteration4)
-
-
-### Midterm 
-
-- Exam is 25 September. Room 202.
-- Covers everything so far.
-
-Not covered in 2022:
-- [Code Coverage tools](testing/code-coverage) for Python 
-- Exercise: apply code coverage
-- [Testing in Django](testing/WebTesting.pdf) - how to test models, views, url dispatcher, and templates
 
 
 

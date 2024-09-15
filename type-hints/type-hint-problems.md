@@ -165,14 +165,13 @@ def pair_up(iterable: Iterable[T]) -> List[Tuple[T, T]]:
     """Pairs up each consecutive element of the iterable given.
 
     Args:
-        iterable (Iterable): The iterable to make pairs with
+        iterable: The Iterable of values to make pairs from
 
     Returns:
-        A new list of paired up elements.
+        A new list of paired elements from the parameter.
 
     Raises:
-        ValueError: When ``iterable`` is not of length 2n, where n
-            is an integer. (i.e. when there is a left-over element)
+        ValueError: if the number of elements in ``iterable`` is not even.
     """
     ##### code begins #####
     #####  code ends  #####
