@@ -2,18 +2,7 @@
 title: Schedule
 ---
 
-> This schedule may be wrong!    
-> See **[Google Classroom][google-classroom]** for weekly material and assignments.
->
-> Do the assignments as posted on [Google Classroom][google-classroom].
-
-[google-classroom]: https://classroom.google.com/c/NDk2ODk1MDE0NTgy?cjc=r3466kb
-
----
-
-### Schedule
-
-#### Preparation
+### Preparation
 
 Please do this before the course starts. Otherwise, do it in Week 1.
 
@@ -91,7 +80,7 @@ Please do this before the course starts. Otherwise, do it in Week 1.
 
 - Quiz on week 1 and 2 material
 - Review Github Flow
-- [Coding Standard and Code Quality](/code-quality/)
+- [Coding Standard and Code Quality](code-quality/)
 - [Docstring Comments](code-quality/docstrings). Three conventions and the one we recommend.
   - for parameters and return values use [type hints](type-hints/) instead of writing the data type in comments
 - Exercise: add docstring comments to code

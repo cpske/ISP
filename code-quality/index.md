@@ -50,7 +50,7 @@ References:
 4. Write short functions (methods) that do only one thing.
 5. Use return values instead of side effects when possible.
 6. Avoid unexpected side effects. Use the "*Command Query Separation Principle*".
-7. Review all your code.
+7. Review all your own code.
 8. On a team project, review code with others. 
    - Use a Code Review guide & checklist.
 9. Use tools to check code. Perform static analysis, linting, and style checking.
@@ -70,7 +70,7 @@ just as "good", "well", and "easy" are subjective.
 
 [Clean Code](http://www.jeremybytes.com/Downloads/CleanCode.pdf) PDF by JeremyBytes. His web page on [clean code](ww.jeremybytes.com/Demos.aspx#CC) has other useful material.
 
-To discuss:
+Discussion:
 
 * Important lessons from *Clean Code* and *Code Complete*.
 
@@ -79,7 +79,7 @@ To discuss:
 * Look at coding guidelines from some real projects. [Apache](https://apache.org) is a good source.
 
 
-## Coding Convention for Project or Organization
+## Coding Convention for a Project or Organization
 
 Team projects usually have a "coding standard". It helps others understand your code, and avoids pointless commit conflicts caused when each person's IDE reformats the same block of code.
 
@@ -87,33 +87,38 @@ Google, Microsoft, and the Apache Foundation have organization-wide coding stand
 
 ## What to include in your coding guide 
 
-Some ideas -- you decide what is important to your team.
+1. Include what is important to you and your team.
+2. Add things when you discover a repeated problesm.
+3. Keep it simple and practical
+4. Document by example is OK, instead of lots of text (TL;DR)
+
+Here are some good things to include: 
 
 - how to name files and how to organize them
 - code formatting rules
 - coding rules
-  - naming convention
+  - naming convention for variables, functions, classes, interfaces, and more
   - handling exceptions - don't ignore exceptions
   - when to raise an exception
-  - logging?
-  - assertions?
+  - when to use logging?
+  - use assertions?
   - use guard clauses instead of nested "if"?
 - do you require type hints?
-  - how much detail?
+  - how much detail in type hints?
   - do collection type hints use `collections.abc` or `typing`?
-- Use [code checking tools](#style-checkers-and-static-analysis-tools)?
-- Use an autoformatting tool to make it easy?
-  - IDE formatting rules - you can export and share these
-  - [Black][black] and [Pylink][pylink] code formatting tools
-- [Comments and comment style](#documentation-in-code), especially method and class docstrings.
+- how to check coding style?
+  - For example, flake8, pylint, or ruff [code checking tools](#style-checkers-and-static-analysis-tools) 
+  - Does the project have a config file to customize flake8 or pylint? (Google has one for pylint)
+- use an code formatting tool to make it easy?
+  - [Black][black] the most famous code formatter
+  - [Pyink][pyink] by Google
+  - IDE code formatting. This maybe the easiest and IDE's have plugins.
+  - Do you have a config file (rules) for the code formatter? Many teams have a standard config that everyone uses. 
+- [Comments and comment style](#documentation-in-code), especially method and class docstring comments.
 
-
-- Keep it simple and practical
-
-- Document by example is OK, instead of long text (TL;DR)
 
 [black]: https://github.com/psf/black
-[pylink]: https://github.com/google/pyink
+[pyink]: https://github.com/google/pyink
 
 
 ## Python Coding Standards

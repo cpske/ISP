@@ -10,15 +10,16 @@ import logging
 # You can use whatever makes sense.
 logger = logging.getLogger(__name__)
 logger.critical("A critical problem, such as database error.")
-logger.error("Log when an error")
-logger.warning("Log a warning about something unusual")
+logger.error("A non-fatal error, such as exception raised")
+logger.warning("a warning about something unusual")
 logger.info("Information about some interesting event, e.g. user login")
-logger.debug("Something useful for developers")
+logger.debug("messages only a developer would want to see")
 ```
+
 
 For logging exceptions with a stack trace, Logger also has:
 ```
-logger.excpetion(e)
+logger.exception(e)
 ```
 which emits an ERROR level log message.
 
@@ -27,15 +28,15 @@ An example from the polls tutorial application.
 def vote(request, question_id):
     """Vote for one of the polls identified by question_id."""
     ### informational (a usual event)
-    logger.info("Vote submitted for poll #{0}".format(question_id))
+    logger.info(f"Vote submitted for poll #{questin_id}")
     try:
         q = Question.objects.get(id=question_id)
         choice_id = request.POST['choice_id']
-        logger.info("Question {0} vote for choice {1}".format(q, choice_id))
+        logger.info(f"Vote for choice {choice_id} on question {q}")
         choice = q.choice_set.get(pk=choice_id)
     except:
-        logger.warning("Invalid question id {0} or choice id {1}"
-                       .format(question_id,choice_id))
+        logger.warning(
+                 f"Invalid question id {question_id} or choice id {choice_id}")
         context = {'question':q, 'error_message':"Missing or invalid answer choice"}
         return render(request, 'polls/detail.html', context)
 ```
