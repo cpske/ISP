@@ -36,7 +36,12 @@ In Python, the refactoring are the same as in Fowler's Java version, but some de
 
 Before *and* after each refactoring you should **run the unit tests**.
 
-Perform these refactorings:
+After each refactoring problem (problems 1 - 7), **commit** and **push** your work.  As commit message, use the first sentence in the problem, such as "*Extract Method for rental price calculation*".
+
+You should have **at least** 7 commits on Github (one for each problem), but its OK to have more.  After the last commit, you should have completed refactoring code. 
+
+
+### Perform these refactorings
 
 1. *Extract Method for rental price calculation*.  In `Customer.statement()` extract the code that calculates the price of one rental.
    - Make it a separate method. Fowler calls it `amountFor` but a Pythonic name would be `get_price(rental)`. 
@@ -74,7 +79,7 @@ observe that the method uses information about the rental but not about the cust
    - This refactoring uses the principle: "*Prefer composition over inheritance*".
    - Details of [How to Implement a Price Strategy](#how-to-implement-price-strategy) are given below
 
-8. Missing or Incorrect Refactorings?
+8. Missing or Incorrect Refactorings? (*Answer on Discord*)
 
    - In the final code, do you see anything that *still* needs refactoring, based on the refactoring signs ("code smells") or design principles?
    - Do you think any of the refactorings are wrong?

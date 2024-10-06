@@ -1,5 +1,5 @@
 ---
-title: Software Concepts and Terms 
+title: Software Concepts and Principles 
 ---
 
 Design Patterns and Refactoring use some common vocabulary and concepts concepts to explain their rationale.
@@ -7,7 +7,7 @@ Design Patterns and Refactoring use some common vocabulary and concepts concepts
 Please be sure you understand and can explain each of the terms below.
 This will be on a quiz.
 
-## Terminology
+## Concepts (Terminology)
 
 1. **Abstraction**
 
@@ -22,9 +22,7 @@ This will be on a quiz.
 
 6. **Polymorphism**
 
-8. **Separation of Concerns**
-   - The Layered Network Architecture in the ISO and Internet architecture use this approach. 
-   - Each layer provides a completely different kind of functionality, with a minimal *interface* to adjacent layers. As a result, it is possible to replace one implementation of a layer with a different implementation.
+7. *Separation of Concerns* - moved to *Design Principles*.
  
 
 ## Design Principles
@@ -46,6 +44,10 @@ Design Principles from ***Design Patterns: Elements of Reusable Object-Oriented 
 
 7. *Single Responsibility Principle* (SRP), also described as "*A class should have only one reason to change*".  
    - This is the "S" in Robert Martin's SOLID principles.
+
+8. *Separation of Concerns*
+   - The Layered Network Architecture in the ISO and Internet architecture use this approach. 
+   - Each layer provides a completely different kind of functionality, with a minimal *interface* to adjacent layers. As a result, it is possible to replace one implementation of a layer with a different implementation.
 
 ---
 
