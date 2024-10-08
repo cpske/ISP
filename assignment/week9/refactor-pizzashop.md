@@ -8,19 +8,20 @@ Try not to manually edit the code -- unless the IDE refactoring doesn't do what 
 ## Starter Code
 
 Starter code for this assignment is on Github Classroom.  Your repo will contain these source files:
-```
-pizza.py     - code for Pizza class
-pizzashop.py - create and order some pizzas. Run this to verify the code works.
-main.py      - code to order some pizzas
-```
+
+| File           | Contains                           |
+|----------------|:-----------------------------------|
+| `pizza.py`     | code for Pizza class               |
+| `pizzashop.py` | functions to create and order pizzas | 
+| `main.py`      | code to order pizzas and test prices |
 
 ## What to Submit
 
-1. Perform each refactoring and **commit** the result as a separate commit. 
+1. Perform each refactoring and **commit** the result of each one.
 
-When done, push all your code to Github.  
+   When done, there should be at least 7 commits: 6 refactorings and one modification to add a "jumbo" pizza size.
 
-There should be at least 7 commits: 6 refactorings and one modification to add a "jumbo" pizza size.
+2. Push your code to Github.
 
 ### Problem Description
 
@@ -56,7 +57,7 @@ We want to make these code improvements:
 
 Before refactoring you should have unit tests that cover all the code you plan to change, **and** the tests all pass.
 
-We don't have unit tests, but the "main" block in `pizzashop.py` provides visual tests and checks prices.
+We don't have unit tests, but `main.py` provides visual tests and checks prices using `assert`.
 
 ### Refactor 1. Replace String Literals with Named Constants
 
@@ -93,20 +94,20 @@ In the Pizza class replace the strings "small", "medium", and "large" with named
 
 4. If the IDE didn't do a complete replacement, then fix the code manually: move SMALL, MEDIUM, and LARGE to global scope and manually replace all occurences in `pizza.py`.
 
-5. Did the IDE change the sizes in `pizzashop.py`?
-   If not, edit `pizzashop.py` and replace size strings with named constants:
+5. Did the IDE change the sizes in `main.py`, too?
+   If not, edit `main.py` and replace size strings with named constants:
     ```python
     from pizza import *
 
     if __name__ == "__main__":
-        pizza1 = make_pizza(SMALL, ...)
+        pizza1 = Pizza(SMALL)
         ...
         pizza2 = Pizza(MEDIUM)
         ...
         pizza3 = make_pizza(LARGE, ...)
     ```    
     
-6. Test: Run `pizzashop.py`. Verify the results are the same.
+6. Test: Run `main.py`. Verify the output is the same.
 
 **Commit** your work with the message "`replace strings with named constants`".
 
@@ -117,9 +118,9 @@ In the Pizza class replace the strings "small", "medium", and "large" with named
     - Pycharm: right-click, Refactor -> Rename, **Preview** changes.
     - Pydev: "Refactoring" menu -> Rename
 
-2. Did the IDE **also** rename `getPrice` in `order_pizza()` and "main" (in pizzashop.py)?
+2. Did the IDE **also** rename `getPrice` in `order_pizza()`?
 
-3. **Test**: Run `pizzashop.py` and verify the output is the same as original code.
+3. **Test**: Run `main.py` and verify the output is the same as original code.
 
 **Commit** your work with the message "`rename getPrice in Pizza`".
 
@@ -129,7 +130,7 @@ In Pizza, rename `addTopping` to `add_topping`.
 
 - Repeat the same steps as above.
 - Verify name was changed everywhere
-- Test: run pizzashop.py
+- Test: run main.py and verify the results
 - **Commit** with a descriptive commit message
 
 
@@ -146,7 +147,7 @@ That is a poor location for this because:
 
 Therefore, it should be the Pizza's job to describe itself.  
 
-This is known as the *Information Expert* principle.
+This is called the *Information Expert* principle.
 
 Apply the *Extract Method* refactoring, followed by *Move Method*.
 
@@ -162,27 +163,23 @@ Apply the *Extract Method* refactoring, followed by *Move Method*.
 2. **Extract Method** to `describe(pizza)`
    - VS Code: right click -> Refactor -> 'Extract Method'. Enter `describe` as the method name. 
    - PyCharm: right click -> Refactor -> Extract -> Method and enter `describe` as the method name.
-   - PyCharm correctly suggests that "pizza" should be parameter, and it returns the description. (correct!)
-   - PyDev: Refactoring menu -> Extract method.  PyDev asks you if pizza should a parameter (correct), but the new method does not return anything.  Fix it.
-   - Update Comments (All IDE): after refactoring, move the comment line from `order_pizza` to `describe` as shown here:
+   - Update Comments: after refactoring, move the comment line from `order_pizza` to `describe` as shown here:
     ```python
-    def describe(pizza):
-        # A description of the pizza such as 'small pizza with mushroom'
-        description = pizza.size
-        if pizza.toppings:
-            description += " pizza with "+ ", ".join(pizza.toppings)
-        else:
-            description += " plain pizza"
-        return description
+    def describe(pizza) -> str:
+        """A description of the pizza such as 'small pizza with mushroom'"""
+        description = ...
+
+        return desciption
     ```
-    NOTE: Forgetting to update comments is a common problem in refactoring. Be careful.
+    NOTE: Forgetting to update comments is a common mistake in refactoring!
 
 3. **Move Method:** The code for `describe()` should be in the Pizza class (as explained above).    
-   Select the entire `describe` function. Does the IDE "Refactoring" menu have a "Move Method" refactoring?
-   - None of the 3 IDE do this correctly (in my tests), so I moved it manually.
-   - Select the `describe(pizza)` method in pizzashop.py and CUT it (edit -> cut).
-   - PASTE the method into the Pizza class.
-   - Rename the parameter name from "pizza" to "self" (Refactor -> Rename): `def describe(self)`
+   - Select the entire `describe` function. 
+   - Does the IDE "Refactoring" menu have a "Move Method" refactoring?
+   - In my tests, none of the 3 IDE did this correctly, so I moved it manually.
+   - If the IDE can move `describe` to a method in `Pizza`, do it.
+   - If not, CUT and PASTE the code yourself.
+   - Rename the parameter from "pizza" to "self": `def describe(self)` (Refactor -> Rename) 
    
 4. **Rename Method:** In `pizza.py` rename `describe(self)` to `__str__(self)`. You should end up with this:
     ```python
@@ -191,17 +188,15 @@ Apply the *Extract Method* refactoring, followed by *Move Method*.
     def __str__(self):
         """A description of the pizza such as 'small pizza with mushroom'."""
         description = self.size
-        if self.toppings:
-            description += " pizza with "+ ", ".join(self.toppings)
-        else:
-            description += " plain cheese pizza"
+        ...
+
         return description
     ```
 
 5. Back in `pizzashop.py`, modify the `order_pizza` to get the description from Pizza:
     ```python
     def order_pizza(pizza):
-        description = str(pizza)           <----- invoke pizza.__str__()
+        description = str(pizza)        <-- this invokes pizza.__str__()
         print("Order:", descripton)
         print("Price:", pizza.get_price())
     ```
@@ -213,10 +208,10 @@ Apply the *Extract Method* refactoring, followed by *Move Method*.
 
 ### Refactor 5. Eliminate Temporary Variable *aka* "Inline Temp"
 
-The code for `order_pizza` is now so simple that we don't need the `description` variable.  Eliminate it:
+The code for `order_pizza` is so simple that we don't need the `description` variable.  Eliminate it:
 ```python
     def order_pizza(pizza)
-        print("Order:", str(pizza))        # or print("Order:", pizza)
+        print("Order:", str(pizza))        # or simply print("Order:", pizza)
         print("Price:", pizza.get_price())
 ```
 
@@ -267,6 +262,8 @@ An "enum" is a class with a fixed set of instances, which are static members of 
    ```
 2. **Test the Enum**:  Add a "main" block in `pizza.py` to test PizzaSize:
    ```python
+   # file: pizza.py
+
    if __name__ == "__main__":
        # test the PizzaSize enum
        for size in PizzaSize:
@@ -280,7 +277,7 @@ An "enum" is a class with a fixed set of instances, which are static members of 
        def price(self):
            return self.value
    ```
-   and update your test code in "main":
+   and update your test code:
    ```python
    if __name__ == "__main__":
        # test the PizzaSize enum
