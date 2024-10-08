@@ -17,7 +17,7 @@ The Customer class has a `statement` method that creates a formatted statement c
 
 ## Assignment
 
-This assignment contains a Python translation of the original code written in  Java.
+This assignment contains a Python translation of the original Java version.
 
 The [PDF from Chapter 1][refactoring_pdf] explains the 
 motivation for each refactoring and how to do it.  It is helpful to read it.
@@ -26,19 +26,19 @@ motivation for each refactoring and how to do it.  It is helpful to read it.
 
 In Python, the refactoring are the same as in Fowler's Java version, but some details are different.
 
-- Variable names use the Python naming convention (`total_amount`) instead of Java camelcase (`totalAmount`), and no leading underscore.
-- `getCharge()` (Java) changed to `get_price()`
+- Variable names use the Python naming convention (`total_amount`) instead of Java camelcase names (`totalAmount`), and no leading underscore.
+- Instead of `getCharge()` (Java) use `get_price()`
 - Instead of `getFrequentRenterPoints()` (Java) use `get_rental_points` (Note "rental" instead of "renter")
-- Instead of `Price` for strategies (p. 29) use the name `PriceStrategy`
+- Instead of `Price` for strategies (p. 29) use `PriceStrategy`
 
 
 ## Instructions
 
-1. Before and after each refactoring you should **run the unit tests**.
+Before *and* after each refactoring you should **run the unit tests**.
 
-2. After each refactoring problem (problems 1 - 7), **commit** and **push** your work.  For the commit message use the first sentence in the problem, such as "*Extract Method for rental price calculation*".  It is fine to reword this, provided the meaning is clear.
+After each refactoring problem (problems 1 - 7), **commit** and **push** your work.  As commit message, use the first sentence in the problem, such as "*Extract Method for rental price calculation*".
 
-3. You should have **at least 7 commits** on Github (one for each refactoring). OK to have more commits.
+You should have **at least** 7 commits on Github (one for each problem), but its OK to have more.  After the last commit, you should have completed refactoring code. 
 
 
 ### Perform these refactorings
@@ -104,15 +104,15 @@ This is the refactoring "*Replace Switch with Polymorphism*", implemented using 
 
 #### Define a PriceStrategy Class Hierarchy
 
-In Java, to apply the Strategy Pattern you define an Interface for the strategy (`PriceStrategy`) and then define concrete implementations for RegularPrice, NewRelease, and ChildrensPrice.
+In Java, to apply the Strategy Pattern you define an Interface for the strategy (`PriceStrategy`) and then define concrete implementations of the interface, such as RegularPrice, NewRelease, and ChildrensPrice.
 
-Python does not require an interface for the strategy, but for clarity, documentation, and type checking you should create an abstract base class (`PriceStrategy`) as the interface with abstract methods. The subclasses must implement the abstract methods.
+Python does not require an interface for the strategy, but for clarity, documentation, and type checking you can create an abstract base class (`PriceStrategy`) as the interface with abstract methods that subclasses must implement.  `RegularPrice`, `NewRelease`, etc., extend  `PriceStrategy` and implement these methods.
 
 ```python
 from abc import ABC, abstractmethod
 
 class PriceStrategy(ABC):
-   """Abstract base class for rental pricing."""
+   """Abstract base class defines methods for rental pricing."""
 
     @abstractmethod
     def get_price(self, days: int) -> float:
@@ -125,21 +125,21 @@ class PriceStrategy(ABC):
         pass
 ```
 
-Each concrete price strategy implements the abstract methods.
+Each concrete price strategy implements the abstract methods:
 
 ```python
 class NewRelease(PriceStrategy):
     """Pricing rules for New Release movies."""
 
     def get_rental_points(self, days):
-        """New release rentals earn 1 point for each day rented."""
-        #TODO return rental points for a new release rented for `days`
+        """New release rentals get 1 point per day rented."""
+        return days
     
     def get_price(self, days):
         #TODO return rental price for a new release
 ```
 
-The strategy objects don't save any *state* so we can share the same instance among many Movies.  In the file containing the strategies create one instance of each strategy and use it in place of the constants in Movie:
+The strategy objects don't save any *state* so we can share one instance among many Movies.  In the file containing the strategies create one instance of each strategy and use it in place of the constants in Movie:
 
 ```python
 class PriceStrategy(ABC):
@@ -178,10 +178,45 @@ class PriceStrategy(ABC):
 You should verify that (a) instances of NewRelease, ChildrensMovie, and RegularMovie are *not* the same, (b) all instances of RegularMovie *are* the same object.
 
 
+#### Define an Enum for PriceStrategy
 
-### Class Diagram of the Refactored Code
+Another way to implement a Strategy in Python is to use an Enum. 
+
+- The Enum defines the methods required by the strategy
+- Each member of the enum is one concrete pricing strategy (regular, childrens', new release).
+- Each enum member has a dict named `value`, that you define when you declare the enum member. 
+
+The price of rentals is a function of days rented, frequent rental points is also a function of days rented.  Hence, each enum member needs its own *functions* for these, and we don't want to use `if ... elsif ... ` logic.  That is error-prone and not extensible.
+
+(If anyone does that, they will get ZERO credit.)
+
+But, you can define `lambda` expressions for the rental price and rental point functions:
+
+
+```python
+from enum import Enum
+
+class PriceStrategy(Enum):
+    NEW_RELEASE = {"price": lambda days: 3.0*days, 
+                    "frp": lambda days: days
+                  }
+    REGULAR_PRICE = { ... }
+    ...
+
+    def get_price(self, days: int) -> float:
+        """Return rental price for a given number of days."""
+        pricing = self.value["price"]  # a lambda
+        return pricing(days)
+```
+
+
+### UML Class Diagram
 
 ![UML of Final Code](movierental-part1-uml.png)
+
+If you use an *enum* the structure would be:
+
+![UML of Code using Enum](movierental-part1-enum-uml.png)
 
 
 
