@@ -362,10 +362,18 @@ These may be *implicitly* covered as part of other topics.
 Project Planning
 </td>
 <td markdown="span">
-1. Writing a good Vision statement    
+Creating a Project Development Plan with a schedule and key milestones.
+</td>
+</tr>
+<tr valign="top">
+<td markdown="span">
+Project Inception
+</td>
+<td markdown="span">
+1. Writing a good Vision & Scope statement    
 2. Defining Goals and Milestones    
-3. Key planning concepts from the RUP framework    
-4. Prioritizing development (RUP: value to customer, high risk, importance to architecture)    
+3. Key planning concepts from the U.P. framework    
+4. Prioritizing development. The UP prioritizes based on a) value to customer, b) addressing risk, c) importance to the architecture.    
 5. Prototyping to reduce risk and uncertainly
 </td>
 </tr>
@@ -378,8 +386,8 @@ Essential Project Documents
 *Requirements* - features, use cases or user stories ("Software Requirements Specification" in some projects)    
 *Project Plan* - overall plan of what to build at each iteration, and the process to use   
 *Iteration Plan* - goal, milestones, and tasks for one iteration    
-*Software design* - document at least high level design    
-*Project notebook*, e.g. wiki, to record:
+*Software Design* - document at least high level design    
+*Project Notebook* to record:
 	- decisions related to architecture 
 	- important design decisions and *why* you made them (rationale)    
 	- solutions and knowledge      
@@ -391,9 +399,8 @@ Essential Project Documents
 [License](https://choosealicense.com)
 </td>
 <td markdown="span">
-Understand the different open source licenses like GNU, BSD, MIT,  and Creative Commons
-so you can choose one that matches what you want.    
-Don't just *blindly* write "GNU" which is incomplete (should be "GNU GPL v3" or similar) and inappropriate for many projects.  The GPL can be quite restrictive!
+Understand the different open source licenses like GNU, BSD, MIT,  and Creative Commons so you can choose one that matches what you want.    
+Don't *blindly* write "GNU" which is incomplete (should be "GNU GPL v3" or similar) and inappropriate for many projects.  The GPL can be very restrictive!
 </td>
 </tr>
 <tr valign="top">
@@ -403,8 +410,8 @@ Project Tools
 <td markdown="span">
 Project board - a board for whole project and task board for each iteration   
 Issue tracker - bugs, change requests, and more    
-Burn-down or Burn-up chart (optional) - track your rate of progress    
-Project wiki - good location for iteration plans, software design notebook, recording knowledge and solutions    
+Burn-down or Burn-up chart - track your rate of progress    
+Project wiki - good location for project documents
 </td>
 </tr>
 <tr valign="top">
@@ -412,24 +419,25 @@ Project wiki - good location for iteration plans, software design notebook, reco
 Information Radiator
 </td>
 <td markdown="span">
-Create **one place** that quickly conveys all useful info about your project.    
-When project info (tasks, communication, docs, tools) are spread across many different places, people don't use them!    
-The information radiator is **one place** that links to everything you need.
-Some teams use Slack, Discord, or the Project Board as info radiator.   
+**One place** that quickly conveys all useful info about your project.    
+
+When project info (test results, tasks, design, communication) are spread across many places, people don't use them!    
+An *information radiator* is **one place** that links to everything you need.
+Some teams use Slack, Discord, or the Project Board as information radiator.   
 *Web hooks*, *integrations*, and *badges* can be used to connect tools and notifications.     
 </td>
 </tr>
 <tr valign="top">
 <td markdown="span">
-Task Boards
+Task Board
 </td>
 <td markdown="span">
-Task board should be part of your workflow -- part of an *information radiator*.  Good choices are:     
-[Trello](https://trello.com)    
+Task board should be part of your workflow.  Good choices are:     
 [Asana](https://asana.com)     
 [Github Project Boards](https://docs.github.com/en/github/managing-your-work-on-github/about-project-boards)        
+[Trello](https://trello.com)    
 [7 Scrum Software Tools สำหรับใช้บริหารจัดการโปรเจค](https://www.borntodev.com/2020/02/20/scrum-software-tools/) (Thai)    
-Note: task board must to viewable by TAs and instructor!
+Note: your task board must to viewable by TAs and instructor!
 </td>
 </tr>
 <tr valign="top">
@@ -437,7 +445,7 @@ Note: task board must to viewable by TAs and instructor!
 [Markdown](documentation/markdown)
 </td>
 <td markdown="span">
-Everyone should know how to use Markdown. It's the *lingua franca* of online project docs. Much easier and cleaner to write than HTML.
+Everyone should know how to use Markdown. It's the *lingua franca* of online project docs.  ReStructured Text (ReST) is another good, popular markup language.
 </td>
 </tr>
 <tr valign="top">
