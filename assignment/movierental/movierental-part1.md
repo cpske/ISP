@@ -5,7 +5,14 @@ title: Movie Rental Refactoring Part 1
 ## Description
 
 This is a well-known refactoring problem from [Chapter 1][refactoring_pdf] of
-_Refactoring: Improving the Design of Existing Code_ by Martin Fowler.  
+_Refactoring: Improving the Design of Existing Code_ by Martin Fowler. 
+
+The application is for a movie rental store where a customer rents movies.
+The rental price depends on the kind of movie and number of days it is rented.
+A customer earns "frequent renter points" for each rental, and the number of points earned also
+depends on the kind of movie and number of days rented.
+In this code the movies types are "new release", "children's", and "regular" (everything else),
+but it can easily handle other classifications of movies.
 
 The application creates a statement showing the movie rentals by a customer, along with the total price and "frequent renter points" earned.
 
@@ -17,7 +24,7 @@ The Customer class has a `statement` method that creates a formatted statement c
 
 ## Assignment
 
-This assignment contains a Python translation of the original code written in  Java.
+This assignment contains a Python translation of the original code written in Java.
 
 The [PDF from Chapter 1][refactoring_pdf] explains the 
 motivation for each refactoring and how to do it.  It is helpful to read it.
@@ -36,7 +43,7 @@ In Python, the refactoring are the same as in Fowler's Java version, but some de
 
 1. Before and after each refactoring you should **run the unit tests**.
 
-2. After each refactoring problem (problems 1 - 7), **commit** and **push** your work.  For the commit message use the first sentence in the problem, such as "*Extract Method for rental price calculation*".  It is fine to reword this, provided the meaning is clear.
+2. After each refactoring problem (problems 1 - 7), **commit** and **push** your work.  For the commit message use the first sentence in the problem, such as "*Extract Method for rental price calculation*".  OK to reword this, as long as the meaning is clear.
 
 3. You should have **at least 7 commits** on Github (one for each refactoring). OK to have more commits.
 

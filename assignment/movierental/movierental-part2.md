@@ -2,17 +2,19 @@
 title: Movie Rental Refactoring Part 2
 ---
 
-This is a continuation of the Movie Rental refactoring assignment. This time you will add structural-level refactorings.
+This is a continuation of the Movie Rental refactoring assignment. 
 
-These refactorings assume your code has the methods shown in the UML class diagrams at the end of [Movie Rental Part 1](movierental-part1#uml-class-diagram).
+In this assignment you will add structural-level refactorings to improve the design.
 
-`Customer`, `Rental`, `Movie`, and `PriceStrategy` should have the methods shown in the [UML diagram from Part 1](movierental-part1#uml-class-diagram).
+Prerequisites for this assignment:
 
-The `PriceStrategy` (or `PriceCode`) code should be in a **separate file**, **not** in movies.py or rental.py.  The suggested filename is `pricing.py`.
+1. Your code has the classes and methods as shown in the UML class diagrams at the end of [Movie Rental Part 1](movierental-part1#uml-class-diagram).
+
+2. The `PriceStrategy` is in a **separate file** named `pricing.py`.  PriceStrategy should **not** in `movies.py` or `rental.py`.
 
 ---
 
-### 1. Refactor Rental Price and Rental Points
+### 1. Refactor Rental Price and Rental Points (*Remove Middleman*)
 
 The `Customer` class calls `Rental` to get the rental price and rental points, `Rental` calls Movie, like this: 
 
@@ -24,7 +26,7 @@ def get_price(self):
 def get_rental_points(self):
     return self.movie.get_rental_points(self.days_rented)
 ```
-Movie *delegates* these methods to the `price_code`:
+Movie ***delegates*** these methods to the pricing strategy:
 
 ```python
 # in Movie class
@@ -37,25 +39,27 @@ def get_rental_points(self, days_rented):
 
 What *Refactoring Signs* and *Design Principles* apply here?
 
-- ***Middle Man***: both Rental and Movie are acting as *middle man*
-- ***Single Responsibility Principle*** (*SRP*): Movie is responsible for knowing the information about a movie **and** for knowing the price code, rental price, and rental points.    
+- ***Middle Man***: both Movie is acting as a *middle man*
+- Violation of ***Single Responsibility Principle*** (*SRP*): Movie is responsible for knowing the information about a movie **and** for knowing the price code, rental price, and rental points.    
   That's two unrelated sets of responsbilities, which violates *SRP*.
 - ***Low Cohesion***: *rental price* and *rental points* are properties of a Rental, not a Movie.  Only Rental needs those values.
 
-Refactor: Apply **Remove Middle Man**. In this case the "Middle Man" is `Movie`.  
-- Make `Rental` invoke the `price_code` methods directly. 
+Refactor: 
 
-- Eliminate `get_price` and `get_rental_points` in Movie.
+- Apply **Remove Middle Man**. In this case `Movie` is the "Middle Man".  
+- Make `Rental` invoke the `price_code` methods directly.
+- Remove `get_price` and `get_rental_points` from Movie.
 
 
 ### 2. Move `price_code` Attribute
 
 After the previous refactoring, only `Rental` uses the price code.  Move it to Rental. Also move `get_price_code` from Movie to Rental.
 
-What is the justification for this refactoring?
+Justify this refactoring. Write your answers in README.md (see [What to Submit](#what-to-submit)).
 
-- what *refactoring signs* (code smells) suggest it?
-- what *design principle* suggests it?
+**2.1** what *refactoring signs* (code smells) suggest this refactoring?
+
+**2.2** what *design principle* suggests this refactoring?  Why?
 
 
 ### 3. Add Attributes to Movie
@@ -66,14 +70,14 @@ The revised Movie class has only a title. That's a  [Lazy Class](https://refacto
 
 - `year` - the year the movie was released
 - `genre` - a **collection** *genre* names (strings), as a list or set.
-- `is_genre(string)` returns true if the string parameter matches any one of the movie's *genre*.  Example: `is_genre("action")`. Ignore case of letters.
+- `is_genre(string)` returns true if the string parameter matches any of the movie's *genre*.  Example: `is_genre("action")`. Ignore case of letters.
 - `__str__` returns "*Title* (year)" of the movie, e.g. "Mulan (2020)".
 - constructor: `Movie(title: str, year: int, genre: Collection[str])`
 
-3.2 Make Movie **immutable**.  Make Movie immutable to reduces error, since multiple Rentals may refer to the same Movie instance.
-- to be immutable, year, title, and genre must be read-only properties.
+3.2 Make Movie **immutable**.  Make Movie immutable to reduces errors, since multiple Rentals may refer to the same Movie instance.
+- to be immutable, the year, title, and genre must be read-only.
 
-**Suggestion**: Define Movie as a Python [dataclass][] with [frozen=True][frozen]. It will make your code smaller. You need to write only `__str__` and `is_genre`.
+**Suggestion**: Define Movie as a Python [dataclass][] with [frozen=True][frozen]. You will only need to write `__str__` and `is_genre`.
 
 [dataclass]: https://docs.python.org/3/library/dataclasses.html
 [frozen]: https://docs.python.org/3/library/dataclasses.html#frozen-instances
@@ -86,15 +90,16 @@ In the current code (after refactoring #3), to create a movie we need code like 
 movie = new Movie("Mulan", 2020, ["Action","Adventure","Drama"])
 ```
 
-There are some problems with creating movies directly in the app: 
+There are problems with creating movies directly in the app: 
 
 - Where does the movie data come from?
 - How does the class that *instantiates* a Movie get the data it needs?
+- Errors. We might enter the genre or year incorrectly.
 
-Apply two design principles:
+Apply these design principles:
 
 - Encapsulation - encapsulate and hide creation of Movie objects
-- Separation of Concerns - the classes that *use* movies are separate from the classes that *create* movies
+- Separation of Concerns - the class that *uses* movies is separate from the class that *creates* movies
 
 Define a factory class named `MovieCatalog` to create and access Movies.
 
@@ -113,7 +118,7 @@ Define a factory class named `MovieCatalog` to create and access Movies.
 - Write an **efficient** implementation: 
 
   1. MovieCatalog reads the data file **only once**.
-  2. Do *not* read the entire data file into memory as a string. It could be large. Read and process one line at a time.
+  2. Do *not* read the entire data file into memory as a string. The data could be very large. Read and process one line at a time     - Any code that reads the entire movies data file into a string will get **zero** credit.
   3. Save the data as Movie objects, not strings.
 
 - **No Credit** if you violate any of the above guidelines.
@@ -126,7 +131,6 @@ movie = catalog.get_movie("No Time to Die")
 if not movie:
    print("Sorry, couldn't find that movie.")
 ```
-
 
 ### 5. Define a Method to Determine Price Code
 
@@ -150,10 +154,11 @@ The pricing rules are:
 5.1 Decide where `price_code_for_movie` should be implemented.  It can be a class method or top-level function in an existing module.  The choices are: 
    - Movie class or movie module
    - Rental class or rental module
-   - PriceCode class/enum or the pricing module 
+   - PriceStrategy class or `pricing` module 
 
-5.2 **Document** the reason(s) for your choice in README.md.    
-    In README.md, add a section named `## Price Code Method Design` and describe where you implement this method and reasons for your choice. Include one or more of these design principles to justify your design and how it applies: 
+**5.2** Document the reason(s) for your choice in README.md.  
+    Write your answer in README.md, in a section named `Rationale`. 
+    Describe where you implement this method and **the reasons** for your choice. Include one or more of these design principles to justify your design and how it applies: 
 
   - *Low Coupling*: choose a class/module that adds the least amount of coupling when you implement the method
   - *High Cohesion*: choose a class that that closely uses the price codes
@@ -163,7 +168,7 @@ The pricing rules are:
   - If several principles suggest the *same* class or module, that's a good sign.
 
 > *Hint:* 
-> If you aren't sure which class or module to choose, then try many choices!
+> If you are not sure which class or module to choose, then try them all!
 > Implement `get_price_for_movie` in different modules/classes and see which choice gives you the simplest, cleanest code.
 
 5.3 Implement `get_price_for_movie` in the location you chose.
@@ -172,16 +177,18 @@ The pricing rules are:
   - Test that it returns the correct price strategy for each type of movie.
   - Don't use MovieCatalog to get movies.  Tests should not depend on external data like that.
 
-### 6. Modify `Rental` class to get Price Code itself
+### 6. Modify `Rental` class to determine the Price Code itself
 
-In `Rental`, remove the constructor parameter for `price_code`, so we can create a rental like this:  
+The Rental class should get the price code itself.
+
+In `Rental`, **remove** the constructor parameter for `price_code`, so we can create a rental like this:  
+
 ```python
 movie = MovieCatalog().get_movie("Oppenheimer")
 # rental determines the price code itself
 rental = Rental(movie, days_rented)
 ```
 
-The Rental gets the price code itself.
 
 ### The Movie Rental Data
 
@@ -212,11 +219,13 @@ Skip the erroneous line but continue processing the CSV file.
 
 ## What to Submit
 
-Commit your work to your existing `movierental` repository on Github.
+Commit your work to your `movierental` repository on Github.
+
+For your answers to 2.1, 2.2, and 5.2, add a level-2 section named "Rationale" to README.md.  Write your answers there.
 
 ### Challenge: *Lazy Instantiation of Movies*
 
-If the movie data is large, then creating all the movies at start-up time will make the app slow.
+Creating all the movies from data at start-up time will make the app slow and can waste memory.
 
 You can improve performance by creating movies only as needed (*lazy instantiation*).  Here's one way:
 
