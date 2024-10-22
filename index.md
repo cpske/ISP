@@ -58,21 +58,21 @@ Scrum for managing development work and iterations.
 </td>
 <td markdown="span">
 Git commands and common tasks, structure of a git repo, branches, merging, and remote repos.    
-[Visualize][GitVisualizer] a repo as a graph.    
-[Use SSH Keys](https://help.github.com/articles/connecting-to-github-with-ssh/) for authentication instead of your Github password.
+[Visualize][GitVisualizer] a git repo as a graph.    
+[Use SSH Keys](https://help.github.com/articles/connecting-to-github-with-ssh/) for secure authentication instead of a password.
 </td>
 </tr>
 
 <tr valign="top">
 <td markdown="span">
-Git and Development
+Git for Development
 </td>
 <td markdown="span">
 [Using Github](git/Using-Github) and [slides](git/Using-Github.pdf).    
 [Github Flow](git/index#github-flow), branches, issues, &amp;
 [pull requests](git/Pull-Requests.pdf).    
-Github Flow is a workflow for a team to effectively work together using git.    
-Importance of descriptive commit messages and Pull Requests.
+Github Flow is a workflow using Git effectively on a project, esp. a team project. 
+Importance of descriptive commit messages.
 </td>
 </tr>
 

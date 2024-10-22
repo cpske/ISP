@@ -1,0 +1,69 @@
+## Separation of Concerns
+
+## Separation of Concerns in Software Design
+
+**Separation of Concerns (SoC)** emphasizes dividing a program into distinct sections, each addressing a specific concern. This principle facilitates better organization, maintainability, and scalability of software.
+
+Separation of concerns refers to the practice of isolating different aspects or responsibilities within a system to create clearer boundaries and reduce interdependencies. 
+
+Each "concern" represents a specific aspect of 
+- functionality, 
+- behavior, or 
+- responsibility 
+such as user interface presentation, data storage, business logic processing, and error handling[1][2]. 
+
+
+### Benefits of Separation of Concerns
+
+1. **Modularity**: SoC encourages breaking down complex systems into smaller, manageable parts. This modular approach makes it easier to develop, understand, and maintain software as developers can work on isolated components[2][3].
+
+2. **Maintainability**: Changes made to one part of the system are less likely to impact others when concerns are well-separated. This reduces the risk of unintended side effects during updates or modifications[2][3].
+
+3. **Reusability**: Modules designed around specific concerns can be reused across different projects or contexts without significant modification[1][5].
+
+4. **Testability**: Isolated modules simplify testing processes. Developers can test individual components independently [5].
+
+5. **Collaboration**: Multiple developers can work on separate concerns concurrently without interfering with each other's work, promoting efficient workflows and shorter development cycles[2][4].
+
+
+### Implementation in Software
+
+- **Layered Architecture**: Systems are often designed with distinct layers (e.g., presentation layer, business logic layer, data access layer) that encapsulate different concerns[1].
+  
+- **Object-Oriented Programming (OOP)**: Concepts like encapsulation and inheritance support SoC by allowing developers to define clear interfaces and reduce dependencies between modules[3].
+
+- **Aspect-Oriented Programming (AOP)**: AOP addresses cross-cutting concerns—issues that affect multiple parts of a program—by allowing developers to separate these concerns from the main business logic[3].
+
+### Examples
+
+**Layered Architecture** in software, typically including:
+
+- Presentation Layer, manages the UI and presentation logic
+- Business Logic Layer, core business logic
+- Data Access Layer, responsible for data storage and interacting with database
+
+**Internet Protocol Suite** contains distinct layers each providing distinct
+services.  The boundary between layers is small and well-defined.
+
+**Logging** concerned with handling of specific kinds of messages.
+
+**Authentication** such as in Django (`django.contrib.auth`).
+
+**Microservices** architecture.  Each services handles a different "concern" of the application.
+- in E-commerce this could be product catalog, payment authorization, order tracking
+
+## SRP compared to SoC
+
+- SRP is conerned with responsibilities of individual classes or modules. Each class (or module) should have a single purppose.
+- SoC is concerned with division of entire system into distinct division into components or parts.  
+- SRP operates at a lower level of abstraction & finer grain (individual classes)
+- SoC can operate at a higher level (overall architecture) or individual components.
+
+### References
+
+[1] https://en.wikipedia.org/wiki/Separation_of_concerns
+[2] https://www.geeksforgeeks.org/separation-of-concerns-soc/
+[3] https://effectivesoftwaredesign.com/2012/02/05/separation-of-concerns/
+[4] https://www.reddit.com/r/webdev/comments/1b8umsq/why_are_devs_obsessed_with_separation_of_concerns/
+[5] https://dev.to/tamerlang/separation-of-concerns-the-simple-way-4jp2
+[6] https://nalexn.github.io/separation-of-concerns/
