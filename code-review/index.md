@@ -118,25 +118,18 @@ For authors of code under review:
 
 ## Best Practices
 
-Recommended practices from professionals:
+[Code Review Best Practices](code-revew-best-practices) from experts at...
 
-* SmartBear: <https://www.kessler.de/prd/smartbear/BestPracticesForPeerCodeReview.pdf>
-* Perforce: <https://www.perforce.com/blog/qac/9-code-review-best-practices>
-* JetBrains: <https://blog.jetbrains.com/upsource/2018/08/30/code-review-best-practices/>
+* SmartBear
+* Perforce
+* JetBrains
 
-All links in the file [Code Review Best Practices](code-revew-best-practices).
 
 ## Tools
 
-* Notebook (paper) - probably the best tool to get started.
-* Wiki page or Google Docs page - part of your project documentation.
-* Gerrit tool for online code review, integrates with git.
-* [Review Board][review-board] a web-based code review tool from MIT.
-    - free if self-hosted, monthly fee if used as a hosted service
-    - [reviewboard][review-board-github] on Github
-* Pull Requests on Github. Comment & respond online, reference lines of code in comments.
+(my links were getting old, so I removed them)
 
-### Important Security Vulnerabilities
+### Important: Review for Security Vulnerabilities
 
 Code Reviews should look for security vulnerabilities including:
 

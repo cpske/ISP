@@ -14,7 +14,7 @@ Presentation Slides:
    - passwords must be remembered and kept secret
    - **weak** since passwords can be stolen or guessed
    - servers should *never* store password as plain text or encrypted w/o salt
-   - encrypted passwords (stolen from server) can still be cracked by brute force
+   - encrypted passwords (stolen from a server) can still be cracked by brute force
 
 2. Biometrics - body-based signature
    - fingerprint
@@ -22,16 +22,19 @@ Presentation Slides:
    - facial recognition
    - voice recognition
    - vein scan
-   - only iris scan & vein scan are reasonably secure. Fingerprint, face, and voice are all hackable. 
-   - recognition system uses "metrics" based on your fingerprint, face, voice, or iris and then matches them to later requests to authenticate. 
+   - only iris scan & vein scan are reasonably secure. 
+   - Fingerprint, face, and voice are all hackable. 
+   - recognition system uses "metrics" based on your fingerprint, face, iris, etc.
    - the match is only **approximate** (heuristic)!
    - Researchers have used 3D printing to copy a fingerprint from a photograph and use it to unlock phones. (Don't wave on Facebook!)
    - developer.scb - some old info about biometrics by Siam Commerical Bank
 
 3. One-time Passwords
    - sent to your device by SMS, Line, etc.
-   - OTP generator such as Google Auth (more secure than SMS)
-   - a **list** of OTP that you print and save, *aka* "recovery passwords"
+   - OTP by SMS is **insecure** and can be intercepted
+   - OTP generator app is more secure (2FAS, Google Authenticator, 1Password)
+   - hardware OTP generator is the most secure (Yubikey)
+   - "*recovery passwords*" - a **list** of OTP that you print and save (off-line)
 
 4. Certificate-based authentication (public-private key pair)
 
@@ -45,13 +48,18 @@ Presentation Slides:
 5. USB Key or SmartCard - a private key(s) stored in a USB key or SmartCard.  
    - server sends a "challenge" that requires the private key to create a response
 
-6. Token-based authentication (digital) or magnetic stripe card.
-   - both involve a token that only you possess (hopefully!)
+6. Token-based authentication (digital) or magnetic stripe card (physical)
+   - a secret number (token) that only you possess (hopefully!)
    - can be stolen or copied (forged)
    - what is a "*skimmer*"?
 
-7. [SQRL][sqrl] novel protocol by Steve Gibson. 
-   - Similar to certificate-base authentication, but private keys can be dynamically recreated from a single "master" key and the remote site's URL, so you don't need to store many private keys
+7. Passkeys
+   - Public-private key pairs.
+   - Passkey client (on your device) generates, manages, and protects the private keys.
+   - client-server communication protocol to enforce security
+
+8. [SQRL][sqrl] novel protocol by Steve Gibson. 
+   - Similar to Passkeys (and invented before Passkeys!), but private keys can be dynamically recreated from a **single** "master" key and the remote site's URL, so you don't need to store many private keys
    - "master" key is always stored encrypted and must be unlocks with a password before use
    - Open-source project
    - Video description [SQRL Explained](https://www.youtube.com/watch?v=-J10uh75slU)
@@ -60,37 +68,6 @@ Presentation Slides:
    - Server-side support for many frameworks
 
 [sqrl]: https://www.grc.com/sqrl/sqrl.htm
-
-## Multi-Factor Authentication
-
-Use at least 2 of these:
-
-* something you know
-* something you have
-* something you are
-
-Class Exercise: 
-
-* Give examples of each of the above
-
-## Third-party Authentication 
-
-Authenticate yourself using a trusted third party
-
-- OAuth ([see below](#oauth))
-- OpenID
-- Many implementations vulnerable to "Covert Redirect" bug (2014) using XSS attack. Mostly fixed since then. 
-
-## Single Sign-on 
-
-Used on comporate networks (like KU) so a user authenticates once (to auth server) and can access many resources.  SSO uses a time-based token stored on user's device.
-- Kerberos
-- Microsoft Active Directory
-
-**WSO2 Identity Server** - Single sign-on authentication server software,
-provides server-side for OAuth, SAML, and single sign-on services.
-
-WSO2 looks interesting. See: <https://is.docs.wso2.com/en/5.9.0/>
 
 
 ### Has Your Password Been Stolen?
@@ -106,6 +83,26 @@ WSO2 looks interesting. See: <https://is.docs.wso2.com/en/5.9.0/>
 Example of a Firefox breach alert when user visits a compromised site:    
 ![firefox breach alert](firefox-breach-alert.png)
 
+## Multi-Factor Authentication
+
+Require at least 2 of these to "authenticate":
+
+* something you know
+* something you have
+* something you are
+
+### Class Exercise
+
+* Give examples of each of the above
+
+## Third-party Authentication 
+
+Authenticate yourself using a trusted third party
+
+- OAuth ([see below](#oauth))
+- OpenID
+- Many implementations vulnerable to "Covert Redirect" bug (2014) using XSS attack. Mostly fixed since then. 
+
 
 ## OAuth
 
@@ -113,7 +110,7 @@ Example of a Firefox breach alert when user visits a compromised site:
 
 When you see "Login with Google" or "Login with Facebook" - those links use OAuth to verify identity and grant access to resources you own.
 
-The original OAuth was to enable a 3rd party app to access a protected resource on a server; for example: give some app access to your contacts on Gmail.
+The original OAuth was to enable a 3rd party app to access a **protected resource on a server**; for example: give some app access to your contacts on Gmail.
 
 A natural extension of this is to assert your identity.  By granting the 3rd party app access to *anything*, you are proving your identity on the OAuth server (e.g. Google).  
 Often, the 3rd party app requests access to your real name and login or e-mail on the OAuth server.
@@ -123,7 +120,7 @@ OAuth2 (the current version) has different **flows** for different use cases, ca
 As a programmer, when you apply for access to an OAuth server (like Google) 
 it's important that you choose the correct flow (grant type)!
 
-Grant Type or Flow:
+### OAuth Grant Types or Flows
 
 1. [Server-Side Web Applications](https://www.oauth.com/oauth2-servers/server-side-apps/) (like Django):
    - choose **Web Server Flow** or **Authorization Code** grant
@@ -134,14 +131,16 @@ Grant Type or Flow:
 
 2. [OAuth for Mobile Apps](https://www.oauth.com/oauth2-servers/mobile-and-native-apps/):
    - choose **Authorization Flow**
-   - mobile apps cannot keep secret information, so there is not "client secret" and some restrictions on use
+   - mobile apps cannot keep secrets, so there is not "client secret" and some restrictions on use
    - description and diagram: [Mobile App Dev with OAuth 2](https://www.ateam-oracle.com/oauth-2-0-authorization-code-flow-for-mobile-apps) some parts are specific to Oracle
 
 3. [Browser-based Apps and "Single Page" Apps](https://www.oauth.com/oauth2-servers/single-page-apps/) 
-   - run entirely in the web browser using Javascript or Web Assembly
-   - browser-based apps cannot keep secrets, so there is not "client secret". Instead, a dynamically generated secret is sent with each request to prevent replay attacks.
+   - for an app that run entirely in the web browser using Javascript or Web Assembly
+   - browser-based apps cannot keep secrets, so there is not "client secret". 
+   - Instead, a dynamically generated secret is sent with each request to prevent replay attacks.
 
 [oauth.com]: https://www.oauth.com
+
 
 ### OAuth Resources
 
@@ -183,4 +182,18 @@ When a user visits a site, the site displays a QR code containing the site URL a
 - SQRL has extensions and add-ons for Drupal
 
 [sqrl]: https://www.grc.com/sqrl/sqrl.htm
+
+
+## Single Sign-on 
+
+Used on comporate networks (like KU) so a user authenticates once (to auth server) and can access many resources.  SSO uses a time-based token stored on user's device.
+- Kerberos
+- Microsoft Active Directory
+
+**WSO2 Identity Server** - Single sign-on authentication server software,
+provides server-side for OAuth, SAML, and single sign-on services.
+
+WSO2 looks interesting. See: <https://is.docs.wso2.com/en/5.9.0/>
+
+
 

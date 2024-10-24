@@ -20,7 +20,7 @@ Please see [Google Classroom][google-classroom] for current topics & material.
 <td markdown="span">
 [Introduction to course and goals](introduction/index), 
 prerequisites, required work, project, and grading.    
-[Advice from an SKE scholar & entrepeneur](introduction/Jomzap-Recommendations.pdf).    
+[Advice from an SKE graduate, scholar & entrepeneur](introduction/Jomzap-Recommendations.pdf).    
 </td>
 </tr>
 
@@ -128,7 +128,7 @@ Essential for all developers!
 [Refactoring](refactoring)
 </td>
 <td markdown="span">
-Improve code by restructuring it without changing the external functionality.    
+Improve code by restructuring it without changing the external functionality. [Refactoring.guru](https://refactoring.guru) is a great resource.        
 [Common refactoring situations](refactoring/Refactoring-Patterns.pdf) and how to do them using an IDE.
 </td>
 </tr>
