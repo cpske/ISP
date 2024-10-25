@@ -2,16 +2,35 @@
 title: Code Review
 ---
 
-Presentation: [Software Reviews](Reviews.pdf)
+Presentation: [Software Reviews][reviews-presentation]
+[reviews-presentation]: https://docs.google.com/presentation/d/1eSf80RFttyndaX9wokqxCUXdY1wottco/
+
+Software Reviews include reviews of
+- documents
+- designs
+- test plans and other plans
+- code
+
+That is, almost any work product.  The more important the work product,
+the more effort should be put into reviewing it.
+
+A review can be done by 1 person or many people.
+
+In general, someone *other* than the author should review each piece of work.
+
+An Agile motto is: *Review Everything*.
 
 
-## Benefits of Code Review
+## Benefits of Software Reviews
 
+- *Saves time*
+  > According to a report by the Software Engineering Institute, it costs more to not do inspections than it does to do them. (Stellman & Greene, p 75).
 * *Find defects* including coding and logic errors, security vulnerabilities
-* *Better code quality* - implementation, readability, uniformity, and (as a result) maintainabiility
+  > Code Reviews find more defects than unit tests.
+* *Better code quality* - improves implementation, readability, uniformity, and (as a result) maintainabiility
 * *Find better solutions* by sharing ideas
-* *Knowledge Transfer* between team members - technology used & rationale.  A good way for more experienced developers to share knowledge.
-* *Increase Collective Ownership* of code
+* *Knowledge Transfer* between team members.
+* *Increase Collective Ownership* of project documents, designs, and code.
 
 ## Code Review versus Testing
 
@@ -21,7 +40,7 @@ A **latent defect** is an error in the code that has not yet resulted in a mis-f
 
 *Latent Defect in a Self-Driving Car*
 
-A self-driving car comes to a red light and there is a truck with a big green light (that is brighter) on the other side of the intersection. The software thinks it's a green traffic light and goes through the intersection.  
+A self-driving car stops at a red light.  There is a truck on the other side of the intersection with a big green light on top. If the truck's light is brighter than the stop light, the software thinks it's a green traffic light and goes through the intersection.  
 
 This defect doesn't appear until those conditions actually occur. So it's *latent*... and may not be tested for!
 
@@ -66,13 +85,13 @@ This defect doesn't appear until those conditions actually occur. So it's *laten
 
 The rate depends on the programming language, experience of reviewers, and other factors.
 
-In general should be at most **200 - 300 lines per hour**. Wikipedia has 200-400 lines/hr, but other sources cite 300 as upper limit, based on studies.
-
 If you review too fast then you will overlook defects or lose opportunity to share understanding of the code.
+
+General guidance is the rate should be at most **200 - 300 lines per hour**. Wikipedia has 200-400 lines/hr, but other sources cite 300 as upper limit, based on studies.
 
 ## Checklists
 
-A checklist will make your code reviews more consistent.
+A checklist will make your code reviews more consistent and avoid forgetting to check for some kinds of problems.
 
 Good checklists:
 
@@ -93,48 +112,45 @@ Good Checklists From ISP Students:
 - [KU Event Regis](https://docs.google.com/document/d/1pRlqTeCQEq9T0g3NPf8yt26aUKCSKC3rqEyI3L4xy_I/edit#heading=h.imm89g97i44a) (2019)
 - [Real Estate Rental](https://docs.google.com/document/d/1plSBYDK-mYTJ-u1JY7BV-esmCcP8XGtpmY4gUwgzB0g/edit) (2020)
 
+## Best Practices
+
+[Code Review Best Practices](./code-review-best-practices) from experts at SmartBear, Perforce, and JetBrains.
 
 
-## Advise for Reviewers and Reviewees
+## How to Approach a Code Review
 
-[Thoughtbot](https://github.com/thoughtbot/guides/tree/master/code-review) describes how to approach code reviews and communicate effectively.
+How to communicate so that the review is effective and positive?
 
-During reviews:
+[Thoughtbot](https://github.com/thoughtbot/guides/tree/master/code-review) suggests this:
 
-* Question, don't criticize.
-* If you must criticise, criticize code not people.
-* Try to see the author's perspective. Assume he had a reason for each thing.
-* Be humble.
-* Be explicit in writing, so others can clearly understand what you mean.
-* Avoid hyperbole ("always", "never", "useless"); don't use sarcasm.
+Reviewers should
+
+- Question, don't criticize.
+- If you must criticise, criticize code not people.
+- Try to see the author's perspective. Maybe he had a reason you don't know.
+- Be humble.
+- Be explicit in writing, so others clearly understand what you mean.
+- Avoid hyperbole ("always", "never", "useless", "terrible"); don't use sarcasm.
 
 For authors of code under review:
 
-* Don't take it personally. Review is about code, not you.
-* Be grateful for suggestions.
-* Assume best intention of reviewers.
-* Be humble.
-* Try to respond to every comment, and explain the code.
-
-## Best Practices
-
-[Code Review Best Practices](code-revew-best-practices) from experts at...
-
-* SmartBear
-* Perforce
-* JetBrains
+- Code review is about code, not about you.
+- Be grateful for suggestions.
+- Assume best intention of the reviewers.
+- Be humble.
+- Try to respond to every comment, and explain the code.
 
 
 ## Tools
 
 (my links were getting old, so I removed them)
 
-### Important: Review for Security Vulnerabilities
+### Review for Security Vulnerabilities (Important)
 
 Code Reviews should look for security vulnerabilities including:
 
 - [ ] format string errors and exploits
-- [ ] using or displaying unsanitized user input
+- [ ] using, storing, or displaying unsanitized user input
 - [ ] race conditions, where behavior may depend on timing of events
 - [ ] memory leaks (probably not an issue in Python)
 - [ ] buffer overflows
@@ -149,17 +165,20 @@ Code Reviews should look for security vulnerabilities including:
 ## Resources
 
 * [Reviews](Reviews-Stellman-and-Greene.pdf), Chapter 5 in *Applied Software Project Management* by Stellman and Greene.
+
 * [Code Review Guidelines for Humans](https://phauer.com/2018/code-review-guidelines/) good article, concrete with illustrations, not too long.
 
-* Overview of [Code Review on Wikipedia](https://en.wikipedia.org/wiki/Code_review)
+* [Code Review on Wikipedia](https://en.wikipedia.org/wiki/Code_review)
 
 * [Best Kept Secrets of Peer Code Review](www.codereviewbook.com) free download at  www.CodeReviewBook.com.  Describes 5 types of peer code reviews and how to do them.
   - Mirror [Best Kept Secrets of Peer Code Review](https://static1.smartbear.co/smartbear/media/pdfs/best-kept-secrets-of-peer-code-review_redirected.pdf)
 * Summary of [Best Practices For Peer Code Review](https://www.kessler.de/prd/smartbear/BestPracticesForPeerCodeReview.pdf) from SmartBear.com
   - Their results seem biased.  They sell a tool for remote code review.
 
-* <a>Hyperlink without href attribute</a>
-* <a>Another lame hyperlink to test your scanner</a>
+Testing
+
+- <a>Hyperlink without href attribute</a>
+- <a>Another lame hyperlink to test your scanner</a>
 
 [review-board]: https://www.reviewboard.org/
 [review-board-github]: https://github.com/reviewboard/reviewboard
