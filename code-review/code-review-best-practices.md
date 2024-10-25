@@ -9,8 +9,7 @@ title: Code Review Best Practices
 
 ## Best Practices from SmartBear
 
-Ref: [Best Practices for Peer Code Review][smartbear], somewhat self-promotional
-[smartbear]: https://smartbear.com/learn/code-review/best-practices-for-peer-code-review/
+Ref: [Best Practices for Peer Code Review](https://smartbear.com/learn/code-review/best-practices-for-peer-code-review)    
 
 1. Review fewer than 400 lines of code at a time
 
@@ -22,26 +21,28 @@ Ref: [Best Practices for Peer Code Review][smartbear], somewhat self-promotional
 4. Set goals
    - not a vague, fuzzy goal like "find more bugs"
    Capture Metrics
-   - ?
+   - *What else*?
 
 5. Author should annotate his source code before the review begins
    By annotating his own code: 
    - author finds many bugs himself
    - helps reviewers understand the code, saves time
 
-
 6. Use a checklist.  
    - Checklists improve results
    - start with a standard checklist
    - add a personal checklist of your own common mistakes, or things you forget to review
 
-7. Have a process for fixing defects.
+7. Have a process to fix defects.
    - Verify that defects are actually recorded & fixed!
 
 8. Foster a positive code review culture 
-   - view finding defects as positive (it improves the code!)
+   - *positive* view toward finding defects (it improves the code!)
    - fosters good communication
    - don't criticize developers when defects are found
+   > Someone asked Thomas Edison if he was discouraged after 1,000 failures
+   > to create an electric light.
+   > Edison replied positively, *each failure meant he was getting closer to the solution*
 
 9. Embrace the subconscious implications of peer review
    - be aware of "Ego effect"
