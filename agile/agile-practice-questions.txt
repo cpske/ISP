@@ -1,0 +1,96 @@
+## Questions from Agile Practices Guide
+
+1. What is the highest priority of Agile teams? (answer is 3 words)
+ 
+2. Referring to your answer to question 1, how do they achieve that?
+
+3. You are assigned to work on two projects every week.  How should you schedule your time to minimize the time lost due to multi-tasking?
+
+
+Chapter 5
+
+4. Describe one purpose of a "Team Charter" (not Project charter) that is applicable to your team.  Why?
+Be precise in your answer. No credit if you copy the answer (I will check again every chat-bot!)
+   Answers
+   - everyone on the team knows why the project matters
+   - what is the project objective
+   - "social contract" for expected behavior
+   - define what is meant by "done"
+
+5. What is the most important Agile practice?
+
+
+9. The top Agile Values are:
+   A. Delivering value to customer and stakeholders
+   B. Individuals and Interactions (over process and tools)
+   C. Working software
+   D. Customer collaboration
+   E. Responding to change
+
+   Which of these practices promote which value?  You can check more than 1. Penalty for incorrect answers.
+
+   Create a Project Vision 
+   Team Charter
+   Frequent demonstrations and reviews
+   Retrospectives
+   Incremental development and release
+   Self-organizing, colocated teams
+   Continuous attention to design and technical excellence
+
+
+
+10. Indicate whether each of these project characteristics favors Agile or Plan-drive processes, or either process type is (nearly) equally applicable.
+
+---  Expected project duration is 2 years.
+---  There is a requirement to deliver certain functionality every 6 months.
+---  High percentage of skilled developers on the team.
+---  Development team has 30 people.
+---  Requirements are stable and well-understood.
+___  Development is done remotely. Team meets online.
+___  The customer requires an up-front agreement on project duration and cost.
+___  The project is a financial application, which must adhere to industry standards and government regulations.
+___  Project involves 3 separate companies, which requires an agreement on the architecture and complete written design specification.
+___  The project requires an innovative solution to a new kind of problem. 
+
+## Not Used
+
+3. A "Predictive Life Cycle" process is suitable for projects when the requirements have what characteristics? (there are 2)
+
+4. What is the difference between Iterative and Incremental life cycles?
+
+## Agility Chart
+
+Annex X3.4
+
+---
+
+## Noteworthy
+
+> Some agile teams deliver value within days of project inception.
+> Others take longer, ranging from 1 week to several weeks. (APG p. 24)
+
+
+---
+
+## Exercise for User Stories
+
+Rewrite these features for the Django Polls application as
+user stories, using the pattern:
+```
+As a ...
+I want to ...
+So that ...
+```
+
+Feature 1: Users can select a poll and vote on it.    
+Value: Users can express their preferences on polls. 
+
+
+Feature 2: Each user can have at most one vote on a poll question.    
+Value: The creator of poll question has more accurate counts of user preference, since one user cannot submit multiple votes.
+
+
+Feature 3: A user can view and change his choice for a poll question.    
+Value: User can change his mind about best choice for a poll, or verify that his previous choice is recorded correctly.
+
+

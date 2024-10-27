@@ -2,15 +2,16 @@
 title: OAuth
 ---
 
-**OAuth** is a protocol to enable a user (resource owner) to grant access to some of his "resources" to a 3rd party application.  The purpose of OAuth is **authorization** not 3rd party **authentication**. But *authentication* is implicitly proved by granting access to some private resource.
+**OAuth** is a protocol to enable a user to grant access to some of his "resources" to a 3rd party application.  The main purpose of OAuth is **authorization** not **authentication**. But it is commonly used for *authentication*, too.
 
+Presentation: [OAuth Concepts][oauth-concepts]
+[oauth-concepts]:  https://docs.google.com/presentation/d/1CO-OPQ_huxw8u8Kw4HKjY3LK_ya0loTE/
 
 These are good sites for learning OAuth:
 
+- [Understanding OAuth2 and Building a Basic Authorization Server of Your Own: A Beginner’s Guide](https://medium.com/google-cloud/understanding-oauth2-and-building-a-basic-authorization-server-of-your-own-a-beginners-guide-cf7451a16f66) detailed, easy to understand, and has links to pages with Python code examples.  (Requires free account on Medium)
 
-- [Understanding OAuth2 and Building a Basic Authorization Server of Your Own: A Beginner’s Guide](https://medium.com/google-cloud/understanding-oauth2-and-building-a-basic-authorization-server-of-your-own-a-beginners-guide-cf7451a16f66) more detailed, and has links to other pages with Python code examples. 
-
-- [OAuth 2.0 Simplified](https://oauth.com) at <http://oauth.com>. This site also has a hands-on [OAuth Playground](https://www.oauth.com/playground/).
+- [OAuth 2.0 Simplified](https://oauth.com) at <http://oauth.com>. This site also has a hands-on [OAuth Playground](https://www.oauth.com/playground/). 
 
 - [Create an Application](https://www.oauth.com/oauth2-servers/accessing-data/create-an-application/) example on oauth.com; use OAuth to access info about your Github repositories.
 
@@ -18,20 +19,21 @@ These are good sites for learning OAuth:
 ## Introduction
 
 
-There are 4 components involved
+There are 5 components involved
 
 - **Resource Owner** Entity (typically a person) who owns the resource. For example, a person owns his photos on Google.
-- **Resource Server** the host that provides access to the protected resources, e.g. photos.google.com.
-- **Client** the application that wants access to the resources, e.g. a photo viewing application.
-- **User Agent** is software that the user (resource owner) uses to interact with the Client.  This may be a web browser.  For mobile apps, the Client and User Agent may be the same.
 
-and one more:
+- **Resource Server** the host that provides access to the protected resources, e.g. photos.google.com.
 
 - **Authentication Server** the server that authenticates the resource owner for the Resource Server.  You may have one server that does both authentication (Authentication Server) and holds the resources (Resource Server).
 
-### OAuth Playgrounds
+- **Client** the application that wants access to the resources, e.g. a photo viewing application.
 
-Several companies have an "OAuth Playground" where you try their OAuth services using a dummy account.
+- **User Agent** is software that the user (resource owner) uses to interact with the Client.  This may be a web browser.  For mobile apps, the Client and User Agent may be the same.
+
+### OAuth Playground
+
+There are a few "OAuth Playground" where you try OAuth services using a dummy account.
 
 - [OAuth Playground](https://www.oauth.com/playground/) on oauth.com. This is the best one for experiencing the OAuth Flows.
 
@@ -55,17 +57,20 @@ to access the user's resources.
 
 ## Who Can Access Your Data?
 
-1. What Apps Use Google to Authenticate You?
+1. What Apps Use Google to **Authenticate** You?
 
    - Go to <https://accounts.google.com>
-   - Choose "Security" (used to be under "Data & Privacy")
-   - Choose "Signing in to other sites"
+   - Choose **Security**
+   - Look under **Your connections to third-party apps & services** (was: "Signing in to other sites")
    - How many are there?
 
-2. What Apps can access your Google data?
-   - Go to your account ("Manage my account")
-   - Choose "Data & Privacy"
-   - Choose **Third Party Apps with Account Access**
+2. What Apps can **Access** your data on Google?
+
+
+
+> Google keeps changing the location! 
+> (I'm starting to really dislike Google.)
+
 
 3. Who has acess to your resources on Facebook?
 

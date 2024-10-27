@@ -9,7 +9,8 @@ can install and run.
 
 ### 1. New and Revised Functionality
 
-1. List of polls displays all published polls, not just newest polls. Polls are sorted by date, from newest to oldest.
+1. List of polls displays **all** published polls, not just newest polls. 
+2. Polls are sorted by date, from newest to oldest (same as before but now show all published polls).
 
 ### 2. Automation using Github
 
@@ -21,6 +22,8 @@ can install and run.
      2. Provide a testing.env file that your Action script renames to .env
 
 2. Include a status badge in README.md **after** the title line.
+
+3. Create a Github Action to run code coverage. Add a separate code coverage badge in README.md.
 
 ### 3. Review and Clean-up
 
