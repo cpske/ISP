@@ -10,9 +10,7 @@ _Refactoring: Improving the Design of Existing Code_ by Martin Fowler.
 The application is for a movie rental store where a customer rents movies.
 The rental price depends on the kind of movie and number of days it is rented.
 A customer earns "frequent renter points" for each rental, and the number of points earned also
-depends on the kind of movie and number of days rented.
-In this code the movies types are "new release", "children's", and "regular" (everything else),
-but it can easily handle other classifications of movies.
+depends on the number of days rented and the kind of movie (such as "New Release" or "Children's").
 
 The application creates a statement showing the movie rentals by a customer, along with the total price and "frequent renter points" earned.
 

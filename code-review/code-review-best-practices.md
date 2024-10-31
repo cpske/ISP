@@ -93,6 +93,7 @@ Ref: [9 Code Review Best Practices](https://www.perforce.com/blog/qac/9-code-rev
 ## Best Practices from JetBrains
 
 Ref: [Code Review Best Practices][jetbrains] and [Video](https://youtu.be/EjwD7Pi7J_0)
+
 [jetbrains]: https://blog.jetbrains.com/upsource/2018/08/30/code-review-best-practices/) 
 
 Some of the best practices in the video apply to online reviews where reviewers work separately and asynchronously.  
