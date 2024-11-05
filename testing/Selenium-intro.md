@@ -3,7 +3,7 @@
 Selenium is a tool for *browser automation*.  You can programmatically
 control what a web browser does.
 
-It is often used for testing, but is also useful for other applications.
+It is often used for testing, but it has many other uses, like *page scraping*.
 
 ## Installation
 
@@ -11,26 +11,42 @@ Install Selenium For Python:
 ```
 pip install selenium
 ```
-You also need a **browser driver** for the web browser you want to automate.
+You also need a **browser driver** ("web driver") for the web browser you want to automate.
 
-[Install Web Browser drivers](https://www.selenium.dev/documentation/webdriver/getting_started/install_drivers/) explains different ways to get drivers.
+### Install a Web Driver
 
-- Selenium Manager - automates everything
-- [WebDriver Manager for Python](https://github.com/SergeyPirogov/webdriver_manager) code to automatically update your WebDriver, but requires you write extra Python code
-- Download the driver yourself and **put it on your PATH**. (This is the original way.)
+There are 3 ways to get a web driver (also called *browser driver*).
 
-These instructions use the 3rd approach.
+1. Download the driver yourself and **put it on your PATH**. (This is the original way.)
+2. Install Selenium Manager - it automates everything
+3. Install [WebDriver Manager for Python](https://github.com/SergeyPirogov/webdriver_manager) code to automatically update your WebDriver, but requires you write extra Python code
+
+[Install Web Browser drivers](https://www.selenium.dev/documentation/webdriver/getting_started/install_drivers/) from the Selenium docs explains how to get drivers.
+
+These instructions use the 1st approach.
 
 1. Download a browser driver.
    - [Firefox][GeckoDriver]: <https://github.com/mozilla/geckodriver/releases>
-   - [Safari][SafariDriver]: already installed as `/usr/bin/safaridriver`. But visit the link for examples of how to use it.
+   - [Safari][SafariDriver]: already installed as `/usr/bin/safaridriver`. But visit this link for good examples of how to use it.
    - [Chrome & Chromium][ChromeDriver]: <https://chromedriver.chromium.org/downloads>
    - Other browser: <https://www.selenium.dev/documentation/webdriver/getting_started/install_drivers/#quick-reference>
 
-2. Install it in a directory on your shell PATH.
+2. Install it in a directory on your shell **PATH**.
    - For most users, `$HOME/bin` works.
    - Preferrably use a directory **without spaces in the path**.
 
+3. Test it.  This code should open a new browser window:
+   ```python
+   from selenium import webdriver
+
+   # This should open a new browser window.
+   # You can use Chrome or Safari instead of Firefox.
+   driver = webdriver.Firefox()
+   ```
+   If it opens a window, try fetching a page (any URL is ok).
+   ```python
+   driver.get( "https://www.cpe.ku.ac.th" )
+   ```
 
 [ChromeDriver]: https://sites.google.com/chromium.org/driver/
 [EdgeDriver]: https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/
@@ -40,7 +56,7 @@ These instructions use the 3rd approach.
 
 ## Getting Started
 
-Presentation: [Selenium Exercise](SeleniumExercise.pdf)
+Presentation: [Selenium Exercise](Selenium-Exercise.pdf)
 
 Here are the steps start a browser and display a web page using Firefox.
 For this to work, Firefox needs to someone on your search PATH.
@@ -169,8 +185,6 @@ browser.back()
 Why does `WebElement` have both `find_element` and `find_elements` methods?
 
 Isn't that redundant?
-
-
 
 
 ## Use Type Hints to Improve Coding with Selenium
