@@ -208,7 +208,21 @@ browser: WebDriver = webdriver.Firefox()
 browser.get("https://www.google.com/search?q=Kasetsart+University")
 
 # when you search for elements, you get a List of WebElements
-elements: List[WebElement] = browser.find_element(By.TAG_NAME, "a")
+elements: List[WebElement] = browser.find_elements(By.TAG_NAME, "a")
+```
+
+## Wait for Pages to Load
+
+When you use Selenium is a Python script, the command to "get" a page may return before the page finishes loading. Then the next command might not find the thing that you want on the page (which is not completely loaded yet).
+
+Selenium has several commands to set "wait" times for results.
+
+One of them is `implicit_wait`, which applies to all page loads after it is set:
+
+```python
+# Wait up to 10 seconds for pages to load
+
+browser.implicit_wait(10)
 ```
 
 ## Writing Unit Tests with Selenium
