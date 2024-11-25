@@ -39,13 +39,12 @@ use of good names.
 
 Make expressive use of the language.
 
+Which of these is more expressive?
 ```
 assertIs(question.published_recently(), True)
 # or
 assertTrue(question.published_recently())
 ```
-
-guessing-game/game.py
 
 
 ## Tip 26. Communicate in Code
@@ -71,9 +70,10 @@ Look for small ways to improve code. Refactor both code and tests.
 
 ## Tip 30. Write Cohesive Code
 
-Applies to classes, components, and packages or releases.
+Applies to classes, components, and packages.
 
 A class containing lots of code for many different functions
 will need to change more often, and less likely to be reusable.
 
 "Keep classes focused and components small."
+
