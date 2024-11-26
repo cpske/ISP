@@ -8,22 +8,29 @@ h2, h3 { font-family: "Arial, Helvetica, sans-serif"; }
 
 <h3>Valid links</h3>
 <ul>
-<li> The CPE home page is <a href=https://www.cpe.ku.ac.th>https://www.cpe.ku.ac.th</a>.
+<li> <a href="https://ku.ac.th">KU's Home page</a> has multiple redirects.
+<li> Four links to the same page. Linkscanner should list the URL only once, without page fragments.
+     <ol>
+     <li><a href="https://cpske.github.io/ISP/about">About ISP</a> 
+     <li><a href="https://cpske.github.io/ISP/about#instructors-and-teaching-assistants">TA contact information</a> (has page frag)
+     <li><a href="https://cpske.github.io/ISP/about#code-for-email">Source code EmailTA contact information</a> (has page frag)
+     <li><a href="https://cpske.github.io/ISP/about?useless-query-param">Link with query parameter</a>
+     </ol>
 
-<li> <a href="http://ku.ac.th">KU's Home page</a> has multiple redirects.
+<li> A link to a section on this page (page frag without hostname) <a href="#url-parsing">URL Parsing</a>
 
-<li> The TA contact info is on <a href="https://cpske.github.io/ISP/about#instructors-and-teaching-assistants">About</a> page.
-
-<li> A link the <a href="#url-parsing">URL Parsing</a> section on this page.
-
-<li> <a href=https://cpske.github.io/ISP/>ISP Material on Github.io</a>
-<li> <a href=https://cpske.github.io/ISP/about>About the Course</a> (duplicate URL)
-<li> <a href=https://cpske.github.io/ISP/topics.html>List of ISP Topics</a>
-<li> <a href=https://bit.ly/isp2023-projects>Projects Google Sheet</a> (bit.ly redirect url)
+<li> <a href=https://cpske.github.io/ISP/>ISP on Github.io</a>
+<li> bit.ly redirect URL <a href=https://bit.ly/isp2024-projects>ISP 2024 Projects Sheet</a>
+<li><a href="https://api.github.com/orgs/Netflix/repos">Netflix public repos on Github</a> (172KB).
+<li> <a href=https://cpske.github.io/ISP/about>About the Course</a> (a duplicate URL)
+<li>
+<a href="https://shopee.co.th/products/some-products-on-shopee-have-crazy-long-paths-that-describe-the-product-and-they-dont-always-work-either">Long Shopee URL</a> is invalid but shopee returns 200 anyway. Output should only first <b>120 characters</b> followed by "...".
 
 </ul>
 
 <h3>Images</h3>
+
+This URLs for these should be included included in output.
 
 <style>
 .flex-container {
@@ -38,7 +45,7 @@ h2, h3 { font-family: "Arial, Helvetica, sans-serif"; }
 <div>
 <img src="images/SDLC.png" alt="SDLC"/> 
 <p align="center">
-Former ISP Logo
+ISP Logo
 </p>
 </div>
 <div>
@@ -54,24 +61,36 @@ KU Logo
 
 To split or filter parts of a URL use <a href=https://docs.python.org/3/library/urllib.parse.html#url-parsing>urllib.parse</a>
 
-Don't write your own code.
+<h3>Problem Links</h3>
 
-<h3>"Challenging" Links</h3>
+<ul>
+<li>Github repos that the authenticated user has access to: 
+<a href="https://api.github.com/user/repos">
+https://api.github.com/user/repos</a>
+Returns 401 if not authenticated.
+</li>
+<li><a href="http://localhost:8000/unauthorized/")http://localhost:8000/unauthorized/</a> Django test page returns 401 Unauthorized</a> 
+</li>
+<li><a href="http://localhost:8000/payment-required/")http://localhost:8000/payment-required/</a> Django test page returns 402 Payment Required</a> 
+</li>
+<li><a href="http://localhost:8000/forbidden/")http://localhost:8000/forbidden/</a> Django test page returns 403 Forbidden</a> 
+</li>
+<li><a href="http://localhost:8000/unacceptable/")http://localhost:8000/unacceptable/</a> Django test page returns 406 Not Acceptable</a> 
+<a href="https://api.paypal.com/v1/invoicing/invoices/">
+https://api.paypal.com/v1/invoicing/invoices/</a>
+</li>
+<li>URL does not exist
+<a href="https://www.yahoooooooooo.com">www.yahoooooooooo.com</a>
+</li>
+<li>
+<a name="findme">An &lt;a&gt; tag without href attribute.</a> (link scanner should <b>not</b>  output this and <b>not</b> crash)
+</li>
+<li>Invalid URL syntax: <a href="https://foo+bar!">https://foo+bar!</a>
+</li>
+</ul>
 
-<ol>
-<li>
-Google Classroom API page <a href="https://classroom.googleapis.com/v1/courses">https://classroom.googleapis.com/v1/courses</a> requires authentication.
-<li>
-<a href="https://api-m.paypal.com/v1/invoicing/invoices">Paypal Invoices</a>  requires authentication.
-<li>
-Does <a href="https://www.yahoooooooooo.com">Yahoooooooooo.com</a> exist? 
-<li>
-<a name="findme">This is an &lt;a&gt; tag without href.</a> (link scanner should not output this)
-<li>
-Invalid url? <a href="htttps://foo+bar!">htttps://foo+bar!</a>
-<li>
-[Really long URLs should be abbreviated](https://shopee.co.th/products/some-products-on-shopee-have-crazy-long-paths-that-describe-the-product-and-they-dont-always-work-either)
-</ol>
+<h3>Expected Output</h3>
+
 
 </body>
 </html>
