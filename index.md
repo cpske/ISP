@@ -3,16 +3,17 @@ title: Topics
 navigation_order: 1
 ---
 
-A collection of material for ISP. 
+Material for Individual Software Process.
 
-For current ISP course may cover different topics and not in this order!
+In the ISP course, topics may be covered in a different order and maybe
+not cover all the topics listed here.  
 
-Please see [Google Classroom][google-classroom] for current topics & material.
+For current course syllabus and assignments, please see [Google Classroom][google-classroom].
 
 [google-classroom]: https://classroom.google.com/c/NjkxNTc2NDc5NzM4
 
 <table border="0">
-<tr valign="top"> <th width="25%">Lab Topic</th> <th width="75%">Description</th> </tr>
+<tr valign="top"> <th width="25%">Topic</th> <th width="75%">Description</th> </tr>
 <tr valign="top">
 <td markdown="span">
 [ISP Introduction](introduction/index) 

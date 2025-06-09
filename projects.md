@@ -3,6 +3,66 @@ title: Projects
 navigation_order: 3
 ---
 
+You can view all projects docs and source code online.  To learn more about a project, read the "*Vision & Scope*" document on the project wiki, esp. the "Vision of the Solution" section.  Many projects include a link to their final presentation on the wiki.
+
+## ISP 2024 Team Projects
+
+More details of team projects are in the [Projects Spreadsheet](https://bit.ly/isp2024-projects).  
+
+**Deployed Apps** may not be running now.  Deployed apps usually cost money or consume free-tier credits, so some apps may be shutdown.
+
+
+| Project Home   | Deployed App     | Project Wiki     | Brief Description                |
+|:---------------|:-----------------|:-----------------|:---------------------------------|
+| [A+ Management][] |[A+ Management app][]   |[A+ Management wiki][] |Help preparing for A+ Exams |
+| [Event Ease][] |[Event Ease app][]      |[Event Ease wiki][]    |Event organizer          |
+| [KU TangTee][] |[KU TangTee app][]      |[KU TangTee wiki][] |Discover and join activities at KU |
+| [KU Vein][] |[KU Vein][]         |[KU Vein wiki][] |Course reviews for KU |
+| [Money Map][] |[Money Map app][]       |[Money Map wiki][] | Set savings goals and monitor your personal finances |
+| [Personalise Pantry][] |[Personalise Pantry app][] |[Personalise Pantry wiki][] |Home cooking app. |
+| [Queue Management][] |[Queue Management app][]   |[Queue Management wiki][] |Online queue management for businesses & customers |
+| [Queue Manager][] |[Queue Manager app][]   |[Queue Manager wiki][] |Online queue management for businesses & customers |
+| [RentHub Connect][] |[RentHub Connect app][] |[RentHub Connect wiki][] |Manage apartment rentals. |
+| [SpezSpellz][] |[SpezSpellz app][]      |[SpezSpellz wiki][] |Collection of spells and reviews of spells. |
+| [Workflow Automation][] |[Workflow Automation app][] |[Workflow Automation wiki][] |Simplify simple online tasks such as sending email|
+
+
+[A+ Management]: https://github.com/KhunakornP/A-plus-management
+[Event Ease]: https://github.com/Mamajin/Event-Reservation
+[KU TangTee]: https://github.com/OmegaOoh/ku-tangtee
+[KU Vein]: https://github.com/PanidaRumriankit/ku-vein
+[Money Map]: https://github.com/MoneyMap-Project/MoneyMap
+[Personalise Pantry]: https://github.com/PichapopRo/project-pantry
+[Queue Management]: https://github.com/ParimaSA/Queue_Management
+[Queue Manager]: https://github.com/pannlnwza/queue-management
+[RentHub Connect]: https://github.com/Pong50887/RentHub-Connect
+[SpezSpellz]: https://github.com/SpezSpellz/SpezSpellz
+[Workflow Automation]: https://github.com/TAGCH/Workflow-Automation
+
+[A+ Management app]: https://a-plus-management.onrender.com/
+[Event Ease app]: https://event-reservation-isp.vercel.app/
+[KU TangTee app]: https://ku-tangtee.vercel.app
+[KU Vein app]: https://ku-vein.vercel.app/
+[Money Map app]: https://moneymap-thr8.onrender.com
+[Personalise Pantry app]: https://project-pantry-beta.vercel.app/
+[Queue Management app]: https://queue-management-taupe.vercel.app/
+[Queue Manager app]: https://queue-management-1hca.onrender.com/
+[RentHub Connect app]: https://renthubconnect.onrender.com/
+[SpezSpellz app]: https://spezspellz.onrender.com/
+[Workflow Automation app]: https://workflow-automation-app.netlify.app/
+
+[A+ Management wiki]: https://github.com/KhunakornP/A-plus-management/wiki
+[Event Ease wiki]: https://github.com/Mamajin/Event-Reservation/wiki
+[KU TangTee wiki]: https://github.com/OmegaOoh/ku-tangtee/wiki
+[KU Vein wiki]: https://github.com/PanidaRumriankit/ku-vein/wiki
+[Money Map wiki]: https://github.com/MoneyMap-Project/MoneyMap/wiki
+[Personalise Pantry wiki]: https://github.com/PichapopRo/project-pantry/wiki
+[Queue Management wiki]: https://github.com/ParimaSA/Queue_Management/wiki
+[Queue Manager wiki]: https://github.com/pannlnwza/queue-management/wiki
+[RentHub Connect wiki]: https://github.com/Pong50887/RentHub-Connect/wiki/
+[SpezSpellz wiki]: https://github.com/SpezSpellz/SpezSpellz/wiki
+[Workflow Automation wiki]: https://github.com/TAGCH/Workflow-Automation/wiki/
+
 ## ISP 2023 Team Projects
 
 [Team Projects & Documents](https://bit.ly/isp2023-projects) on Google Docs: <https://bit.ly/isp2023-projects>
