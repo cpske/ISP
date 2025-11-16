@@ -2,6 +2,11 @@
 title: Resources
 ---
 
+These books provide more detail on topics covered in the course.
+The first section [Books Used in This Course](#books-used-in-this-course)
+are books that you may be asked to read from (specific sections, 
+not the entire book).
+
 ### Books Used in This Course
 
 *We won't cover everything in these.* :-)
@@ -14,20 +19,27 @@ title: Resources
 
 [Scrum &amp; XP from the Trenches](resources/Scrum-and-XP-From-The-Trenches.pdf) free e-book.  Short and practical, based on actual experience.
 
-> Try a Google search: [Best Software Engineering Books](https://www.google.co.th/search?q=best+software+engineering+books) or
-> [Best Software Development Books](https://www.google.co.th/search?q=best+software+development+books).
+### Top 10 Books for Software Developers
+
+> Try this Google search: "[Best Books for Software Engineers](https://www.google.co.th/search?q=best+books+for+software+engineers)" or
+> "[Best Software Development Books](https://www.google.co.th/search?q=best+software+development+books)"
 >
->Every "top ten" list includes several of these:
->
->- *The Pragmatic Programmer* by Hunt and Thomas
->- *Clean Code* by Robert Martin
->- *Code Complete*, 2E by Steve McConnell
->- *The Mythical Man-Month* by Fred Brooks
->- *Soft Skills* and/or *Peopleware*
->- *Refactoring* by Martin Fowler
->- *The Clean Coder* by Robert Martin
->- *Design Patterns* by Gamma, et al. The "*Gang of Four*" book.
->- *Head First Design Patterns* easier to read than Gamma, et al
+All "Top Ten" lists includes several of these:
+
+- *The Pragmatic Programmer* by Hunt and Thomas
+- *Clean Code* by Robert Martin
+- *Code Complete*, 2E by Steve McConnell
+- *The Mythical Man-Month* by Fred Brooks
+- *Soft Skills* and/or *Peopleware*
+- *Refactoring* by Martin Fowler
+- *The Clean Coder* by Robert Martin
+- *Design Patterns* by Gamma, et al. The "*Gang of Four*" book.
+- *Head First Design Patterns* easier to read than Gamma, et al
+
+and two more modern books:
+
+- *Building Microservices* by Sam Newman
+- *Designing Data-Intensive Applications* by Martin Kleppmann
 
 ### Online Courses
 
