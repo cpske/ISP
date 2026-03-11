@@ -52,7 +52,7 @@ while True:
     <html>
       <body>
             <h2>Hello {address[0]}! Got your Request at {timestamp}</h2>
-            <p>I'll get to work on it right away.</p>
+            <p>I'll get to work on your request right away.</p>
             <p>Have a nice day.:-)</p>
         </body>
     </html>
